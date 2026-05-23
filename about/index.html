@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About This Starter | BiasFall</title>
+    <meta name="description" content="Why the cognitive-bias site should live in its own repo and how this starter differs from LogFall." />
+    <meta name="author" content="Phil Stilwell" />
+    <meta name="application-name" content="BiasFall" />
+    <meta name="theme-color" content="#111111" />
+    
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script defer src="../app.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <header class="masthead">
+        <div class="masthead-inner">
+          <div class="brand-row">
+            <div class="brand-lockup">
+              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">BF</div>
+              <div>
+                <p class="brand-kicker">Cognitive Biases</p>
+                <h1 class="brand-title">BiasFall</h1>
+                <p class="brand-subtitle">A practical cognitive-biases reference with clear explanations, decision patterns, and countermeasure tools.</p>
+              </div>
+            </div>
+            <form class="site-search-form" role="search" action="../biases/" method="get">
+              <input
+                class="site-search-input"
+                type="search"
+                name="q"
+                placeholder="Search biases..."
+                aria-label="Search biases"
+                data-site-search-input
+              />
+              <button class="site-search-button" type="submit">Search</button>
+            </form>
+          </div>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../countermoves/">Countermoves</a><a href="../about/" aria-current="page">About</a></nav>
+        </div>
+      </header>
+      <main class="page-wrap">
+        <div class="breadcrumbs"><a href="../">Home</a><span>/</span><strong>About</strong></div>
+
+        <section class="detail-section">
+          <p class="eyebrow">About</p>
+          <h2 class="detail-title">A separate repo on purpose</h2>
+          <p class="detail-deck">This starter was forked from LogFall structurally, but it now assumes that cognitive biases deserve their own content model, navigation, and repair logic. The overlap is real, but the teaching unit is different.</p>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Why not keep one repo?</h4>
+            <p class="muted">Because bias pages will drift toward triggers, domains, classic distortions, and process interventions, while fallacy pages remain centered on argument structure and public reasoning mistakes. Shared code can be extracted later if the two sites stabilize.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Files to edit first</h4>
+            <ul class="muted">
+              <li><code>data/site.json</code> for name, sections, categories, and roadmap.</li>
+              <li><code>data/biases.json</code> for the actual catalog.</li>
+              <li><code>site/styles.css</code> for the visual system.</li>
+              <li><code>scripts/build.mjs</code> for page architecture.</li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">What stayed, what changed</h2>
+              <p class="section-copy">These lists are deliberately practical so the next build phase has a clear bias-first direction.</p>
+            </div>
+          </div>
+          <div class="two-column">
+            <div class="note-panel">
+              <h4>Keep</h4>
+              <ul class="muted"><li>Static GitHub Pages architecture</li><li>Single structured data source</li><li>Searchable index and category pages</li><li>Simple client-side filtering</li></ul>
+            </div>
+            <div class="note-panel">
+              <h4>Rewrite</h4>
+              <ul class="muted"><li>Replace fallacy definitions with bias mechanisms and triggers</li><li>Shift from argument diagnosis to decision distortion</li><li>Rebuild related-entry logic around shared countermeasures</li><li>Rework classroom framing around reflection and process</li></ul>
+            </div>
+            <div class="note-panel">
+              <h4>Add</h4>
+              <ul class="muted"><li>Debiasing and countermove pages</li><li>Process-level tools like decision journals and premortems</li><li>Bias-specific domain contexts such as hiring, forecasting, and postmortems</li><li>Notes on when a bias is likely to feel subjectively reasonable</li></ul>
+            </div>
+            <div class="note-panel">
+              <h4>Defer</h4>
+              <ul class="muted"><li>Illustration pipeline</li><li>Printable worksheets</li><li>Large-scale cross-linking</li><li>Assessment or quiz systems until the core taxonomy settles</li></ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-note">BiasFall starter scaffold for a cognitive-biases GitHub Pages site.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code> and <code>data/biases.json</code>. Last build: 2026-05-23.</p>
+          <p class="footer-note">Copyright © Phil Stilwell</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

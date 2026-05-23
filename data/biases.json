@@ -1,0 +1,492 @@
+[
+  {
+    "name": "Confirmation bias",
+    "slug": "confirmation-bias",
+    "aliases": ["myside bias", "selective exposure"],
+    "category": "belief-protection",
+    "domains": ["Media & politics", "Research & evidence"],
+    "effort": "Structured process",
+    "summary": "The tendency to notice, seek, and remember evidence that supports the story you already prefer more readily than evidence that threatens it.",
+    "mechanism": "Once a hypothesis feels plausible, attention and memory become selective. Friendly evidence feels weighty while counterevidence feels weak, atypical, or unimportant.",
+    "distortion": "It makes the evidence stream look more one-sided than it really is.",
+    "defaultMove": "Protect the current belief by sampling supportive cases first.",
+    "commonTrigger": "Identity-charged topics and early hunches formed under uncertainty.",
+    "firstCountermove": "Write down what evidence would seriously lower confidence before searching for more support.",
+    "signals": [
+      "You can recall supporting examples much faster than disconfirming ones.",
+      "Counterexamples are dismissed before they are investigated.",
+      "Searching stops as soon as the preferred story fits."
+    ],
+    "spotIt": [
+      "Ask which live alternative explanations were actively tested rather than merely mentioned.",
+      "Check whether the evidence list is mostly made of confirming cases.",
+      "Notice whether disconfirming data is being screened out on quality grounds only after it points the wrong way."
+    ],
+    "slowIt": [
+      "Generate two rival hypotheses before collecting the next round of evidence.",
+      "Assign one person to build the strongest countercase.",
+      "Use the same evidence standards for friendly and unfriendly cases."
+    ],
+    "reframeIt": [
+      "Treat belief revision as progress rather than loss.",
+      "Ask which result would most surprise you and go look there first.",
+      "Reword the question from 'How do I defend this?' to 'What best explains the full pattern?'"
+    ],
+    "related": ["motivated-reasoning", "availability-heuristic", "survivorship-bias"]
+  },
+  {
+    "name": "Motivated reasoning",
+    "slug": "motivated-reasoning",
+    "aliases": ["identity-protective cognition"],
+    "category": "belief-protection",
+    "domains": ["Media & politics", "Personal decisions"],
+    "effort": "Structured process",
+    "summary": "The tendency to use reasoning as a defense lawyer for desired conclusions rather than as an impartial search for what is most likely true.",
+    "mechanism": "Goals such as belonging, status, self-respect, or ideological loyalty steer which standards feel fair, which doubts feel urgent, and which explanations feel satisfying.",
+    "distortion": "It quietly changes the burden of proof depending on which conclusion you want.",
+    "defaultMove": "Scrutinize hostile claims hard while granting friendly claims easier passage.",
+    "commonTrigger": "Topics tied to tribe, ego, moral identity, or prior public commitment.",
+    "firstCountermove": "State the conclusion you do not want to be true and then spell out what evidence would nevertheless make it likeliest.",
+    "signals": [
+      "Standards tighten only for one side of the question.",
+      "The emotional tone changes when one conclusion becomes personally costly.",
+      "The strongest opposing evidence is described vaguely while friendly evidence is described concretely."
+    ],
+    "spotIt": [
+      "Look for asymmetry in skepticism: who gets grilled and who gets trusted quickly?",
+      "Check whether the evidence standard moves with the favored answer.",
+      "Notice whether the person's conclusion was psychologically attractive before the reasoning began."
+    ],
+    "slowIt": [
+      "Argue the opposite side in writing until it sounds intellectually serious.",
+      "Use a precommitted checklist for what counts as adequate evidence.",
+      "Invite a critic to inspect the standards, not just the conclusion."
+    ],
+    "reframeIt": [
+      "Treat revising a view as a gain in calibration, not a betrayal.",
+      "Ask what you would think if your out-group had made the same argument.",
+      "Separate personal identity from the fate of the proposition."
+    ],
+    "related": ["confirmation-bias", "status-quo-bias", "hindsight-bias"]
+  },
+  {
+    "name": "Availability heuristic",
+    "slug": "availability-heuristic",
+    "aliases": ["availability bias"],
+    "category": "attention-salience",
+    "domains": ["Media & politics", "Personal decisions"],
+    "effort": "Quick reset",
+    "summary": "The tendency to judge frequency, risk, or importance by how easily examples come to mind.",
+    "mechanism": "Vivid, recent, repeated, or emotionally loaded cases are easier to retrieve, so they feel more common and more representative than they are.",
+    "distortion": "It turns memory accessibility into a mistaken proxy for prevalence or probability.",
+    "defaultMove": "Let the easiest recalled example stand in for the whole distribution.",
+    "commonTrigger": "Recent news cycles, memorable anecdotes, dramatic failures, and repetition.",
+    "firstCountermove": "Ask for a base rate or outside-view frequency before trusting the vivid example.",
+    "signals": [
+      "One memorable case is doing most of the persuasive work.",
+      "The perceived risk changes sharply after recent exposure.",
+      "Examples are plentiful but representative data is thin."
+    ],
+    "spotIt": [
+      "Ask whether the current estimate is based on retrieval ease rather than a counted sample.",
+      "Check whether a recent dramatic event is distorting the sense of frequency.",
+      "Look for missing quiet cases that never became memorable."
+    ],
+    "slowIt": [
+      "List the reference class before discussing the anecdote.",
+      "Search for denominator information, not just striking cases.",
+      "Use longer time windows than the last week or last headline."
+    ],
+    "reframeIt": [
+      "Treat ease of recall as a clue about salience, not about rate.",
+      "Replace 'I can picture it' with 'How often does it actually happen?'",
+      "Ask what a boring spreadsheet would likely show."
+    ],
+    "related": ["negativity-bias", "base-rate-neglect", "survivorship-bias"]
+  },
+  {
+    "name": "Negativity bias",
+    "slug": "negativity-bias",
+    "aliases": ["negative weighting"],
+    "category": "attention-salience",
+    "domains": ["Media & politics", "Teams & management"],
+    "effort": "Quick reset",
+    "summary": "The tendency to give bad news, threats, criticism, and losses more psychological weight than equally sized positives.",
+    "mechanism": "Potential harms command attention quickly because organisms that miss threats pay steep costs. That makes negative information sticky, memorable, and behavior-shaping.",
+    "distortion": "It can make the whole environment look worse, riskier, or more hostile than the total evidence supports.",
+    "defaultMove": "Overweight what could go wrong and underweight quiet competence or improvement.",
+    "commonTrigger": "Conflict, uncertainty, public criticism, and feedback environments that highlight errors.",
+    "firstCountermove": "Force a count of what is going right before deciding how diagnostic the negative signal really is.",
+    "signals": [
+      "One bad interaction outweighs many ordinary or good ones.",
+      "The discussion keeps circling around dangers without proportioning them.",
+      "Neutral events are encoded as mildly negative by default."
+    ],
+    "spotIt": [
+      "Ask whether the current emotional weight matches the actual rate or magnitude of the problem.",
+      "Check whether positive base-line performance has disappeared from view.",
+      "Notice whether a criticism is being treated as more informative than equivalent praise."
+    ],
+    "slowIt": [
+      "Count positive, neutral, and negative cases separately.",
+      "Review trend lines instead of the single worst episode.",
+      "Distinguish serious risks from ordinary friction."
+    ],
+    "reframeIt": [
+      "Ask what a neutral observer would score here.",
+      "Treat vivid bad news as a signal to inspect, not an automatic verdict.",
+      "Make room for the possibility that the system is mixed rather than globally bad."
+    ],
+    "related": ["availability-heuristic", "fundamental-attribution-error", "halo-effect"]
+  },
+  {
+    "name": "Anchoring effect",
+    "slug": "anchoring-effect",
+    "aliases": ["anchor bias"],
+    "category": "estimation-prediction",
+    "domains": ["Forecasting & planning", "Personal decisions"],
+    "effort": "Structured process",
+    "summary": "The tendency for the first salient number, frame, or option to pull later estimates toward itself even when it is arbitrary or weakly relevant.",
+    "mechanism": "Initial values set a starting point, and later adjustment is usually too small. The mind mistakes a convenient first reference for an informative one.",
+    "distortion": "It biases negotiation, forecasting, pricing, and planning by shrinking the range of considered outcomes.",
+    "defaultMove": "Start from the first offered value and adjust insufficiently away from it.",
+    "commonTrigger": "Opening offers, first forecasts, suggested budgets, and round numbers.",
+    "firstCountermove": "Record an independent estimate before exposing yourself to any outside number.",
+    "signals": [
+      "Different opening numbers produce different 'reasonable' endpoints.",
+      "People defend estimates they generated only after seeing a suggested figure.",
+      "The discussion keeps orbiting a first number that no one has justified."
+    ],
+    "spotIt": [
+      "Ask what the estimate would have been if a different opening number had appeared first.",
+      "Check whether the anchor is actually evidence or merely the first thing mentioned.",
+      "Look for narrow revisions that never escape the initial frame."
+    ],
+    "slowIt": [
+      "Generate your own range before seeing the offered anchor.",
+      "Use outside-view distributions to set a fresh range.",
+      "Require a written reason for every major adjustment."
+    ],
+    "reframeIt": [
+      "Treat the first number as noise unless it earns authority.",
+      "Ask which variables actually determine the answer.",
+      "Work from reference classes outward rather than from the anchor inward."
+    ],
+    "related": ["overconfidence-effect", "status-quo-bias", "base-rate-neglect"]
+  },
+  {
+    "name": "Overconfidence effect",
+    "slug": "overconfidence-effect",
+    "aliases": ["overprecision"],
+    "category": "estimation-prediction",
+    "domains": ["Forecasting & planning", "Teams & management"],
+    "effort": "Structured process",
+    "summary": "The tendency to be more certain about judgments, forecasts, or abilities than the evidence warrants.",
+    "mechanism": "Coherent stories feel informative, familiarity feels like mastery, and feedback is often too sparse or noisy to recalibrate confidence reliably.",
+    "distortion": "It produces narrow forecasts, premature closure, and risky commitments that look justified mainly because they feel fluent.",
+    "defaultMove": "Confuse clarity of feeling with strength of evidence.",
+    "commonTrigger": "Fast intuitive judgment, expertise in adjacent domains, and weak feedback loops.",
+    "firstCountermove": "Translate confidence into a numeric range or probability and then compare it to real outcomes later.",
+    "signals": [
+      "Forecast ranges are too tight for the actual uncertainty.",
+      "Questions are answered quickly with little discussion of downside cases.",
+      "Past misses are remembered as near misses rather than calibration failures."
+    ],
+    "spotIt": [
+      "Ask how often this level of confidence has actually been right in comparable cases.",
+      "Check whether uncertainty has been compressed into a single-point forecast.",
+      "Notice whether disconfirming scenarios were seriously modeled."
+    ],
+    "slowIt": [
+      "Use calibrated ranges instead of point estimates.",
+      "Run a premortem before major commitments.",
+      "Track forecast scores over time rather than trusting confidence impressions."
+    ],
+    "reframeIt": [
+      "Treat uncertainty as a feature of the world, not a defect in your thinking.",
+      "Replace 'I know' with 'My current best range is...'",
+      "Ask what would have to be true for the confident view to fail."
+    ],
+    "related": ["anchoring-effect", "hindsight-bias", "outcome-bias"]
+  },
+  {
+    "name": "Sunk cost effect",
+    "slug": "sunk-cost-effect",
+    "aliases": ["escalation of commitment"],
+    "category": "choice-commitment",
+    "domains": ["Personal decisions", "Teams & management"],
+    "effort": "Team protocol",
+    "summary": "The tendency to keep investing in a losing path because of what has already been spent, even when the forward-looking case has weakened.",
+    "mechanism": "People hate waste, identity loss, and public admission of error. Past investment becomes psychologically fused with current justification.",
+    "distortion": "It keeps projects, habits, and strategies alive for backward-looking reasons rather than forward-looking ones.",
+    "defaultMove": "Treat past spending as a reason to continue rather than as an unrecoverable cost.",
+    "commonTrigger": "Public commitments, long-running projects, and high personal ownership.",
+    "firstCountermove": "Ask what you would do if the past investment had been made by someone else and could not be recovered.",
+    "signals": [
+      "The defense of the project begins with how much has already been spent.",
+      "Exit feels like admitting humiliation rather than changing course.",
+      "Stopping rules were never defined before the investment started."
+    ],
+    "spotIt": [
+      "Ask whether any forward-looking reason remains once prior costs are ignored.",
+      "Check whether continuation is being justified by pride, face, or sunk effort.",
+      "Look for the missing stop rule."
+    ],
+    "slowIt": [
+      "Review options from today forward only.",
+      "Create explicit continuation criteria before the next round of investment.",
+      "Let a less invested reviewer make the retain-or-exit recommendation."
+    ],
+    "reframeIt": [
+      "Treat exit as conservation of future resources, not disrespect for past effort.",
+      "Ask what course would maximize value from this point onward.",
+      "Normalize stopping as evidence of governance rather than weakness."
+    ],
+    "related": ["status-quo-bias", "overconfidence-effect", "outcome-bias"]
+  },
+  {
+    "name": "Status quo bias",
+    "slug": "status-quo-bias",
+    "aliases": ["default bias"],
+    "category": "choice-commitment",
+    "domains": ["Personal decisions", "Teams & management"],
+    "effort": "Structured process",
+    "summary": "The tendency to prefer the current option, default, or inherited arrangement simply because it is the current option, default, or inherited arrangement.",
+    "mechanism": "Change carries cognitive cost, anticipated regret, and responsibility. The existing state feels safer because its risks are already normalized.",
+    "distortion": "It disguises omission as neutrality and can make inferior defaults look prudent.",
+    "defaultMove": "Keep the current arrangement unless the alternative looks overwhelmingly better.",
+    "commonTrigger": "Complex choices, uncertain outcomes, and systems with sticky defaults.",
+    "firstCountermove": "Reframe the current default as just another option that needs to earn its place.",
+    "signals": [
+      "The defense of the current setup is mostly that it is familiar.",
+      "Changing the default is treated as riskier than leaving it untouched without equal scrutiny.",
+      "Opportunity costs of inaction barely enter the conversation."
+    ],
+    "spotIt": [
+      "Ask whether the current state is being evaluated or merely inherited.",
+      "Check whether inaction is being mistaken for a cost-free move.",
+      "Look for asymmetry in how regrets are imagined."
+    ],
+    "slowIt": [
+      "Compare the default against a fresh outside option side by side.",
+      "Make the costs of staying visible, not just the costs of changing.",
+      "Rotate who is responsible for defending the default."
+    ],
+    "reframeIt": [
+      "Treat defaults as hypotheses, not verdicts.",
+      "Ask what you would choose if no option were currently installed.",
+      "Remember that untouched systems also create winners, losers, and risks."
+    ],
+    "related": ["sunk-cost-effect", "anchoring-effect", "motivated-reasoning"]
+  },
+  {
+    "name": "Fundamental attribution error",
+    "slug": "fundamental-attribution-error",
+    "aliases": ["correspondence bias"],
+    "category": "social-judgment",
+    "domains": ["Teams & management", "Media & politics"],
+    "effort": "Quick reset",
+    "summary": "The tendency to explain other people's behavior too quickly in terms of character while underweighting situational pressures and constraints.",
+    "mechanism": "Behavior is vivid; context is often hidden. The mind reaches for trait stories because they feel coherent and socially portable.",
+    "distortion": "It turns local behavior into overly global character judgments.",
+    "defaultMove": "Read the act as a window into the person more than into the situation.",
+    "commonTrigger": "Conflict, disappointment, public mistakes, and thin background knowledge.",
+    "firstCountermove": "List three situational explanations before settling on a trait explanation.",
+    "signals": [
+      "A single bad action quickly becomes a statement about what the person is like.",
+      "Context is treated as excuse-making only after the blame story is in place.",
+      "Your own behavior is explained situationally while others' behavior is explained dispositionally."
+    ],
+    "spotIt": [
+      "Ask what constraints, incentives, or missing information the person may have been under.",
+      "Check whether the explanation would change if the actor were yourself or an ally.",
+      "Notice whether the leap from act to trait is faster than the evidence allows."
+    ],
+    "slowIt": [
+      "Separate observed behavior, inferred motives, and character judgments into different columns.",
+      "Investigate situational pressures before discussing personality.",
+      "Look for repeated cross-situational patterns before making stable trait claims."
+    ],
+    "reframeIt": [
+      "Replace 'That shows who they are' with 'That is one behavior under one set of conditions.'",
+      "Treat context as causal information, not as automatic exoneration.",
+      "Remember that opaque situations create harsh person-level stories."
+    ],
+    "related": ["halo-effect", "negativity-bias", "motivated-reasoning"]
+  },
+  {
+    "name": "Halo effect",
+    "slug": "halo-effect",
+    "aliases": ["global impression bias"],
+    "category": "social-judgment",
+    "domains": ["Teams & management", "Personal decisions"],
+    "effort": "Quick reset",
+    "summary": "The tendency for one salient positive or negative impression to spill over into unrelated judgments about a person, product, or institution.",
+    "mechanism": "The mind likes coherence. Once something feels admirable, attractive, competent, or impressive, neighboring traits are inferred too easily.",
+    "distortion": "It makes broad evaluations look evidence-based when they are often driven by one glowing or tainted feature.",
+    "defaultMove": "Project one strong impression across multiple unrelated dimensions.",
+    "commonTrigger": "Charisma, prestige, beauty, eloquence, and one highly visible success or failure.",
+    "firstCountermove": "Score the relevant traits separately before giving any overall rating.",
+    "signals": [
+      "General praise or distrust arrives before trait-by-trait analysis.",
+      "One impressive quality is doing work in unrelated categories.",
+      "Weak evidence is accepted because the overall vibe feels strong."
+    ],
+    "spotIt": [
+      "Ask which exact trait is supported and which extra traits are being smuggled in.",
+      "Check whether performance in one domain is being generalized too far.",
+      "Notice whether the judgment survives once labels and prestige cues are hidden."
+    ],
+    "slowIt": [
+      "Separate criteria and rate them independently.",
+      "Use blind review when practical.",
+      "Force at least one disconfirming trait question before a global verdict."
+    ],
+    "reframeIt": [
+      "Treat admiration as a starting prompt for inspection, not as a substitute for it.",
+      "Ask what evidence would be needed for each trait separately.",
+      "Remember that impressive people and objects are still mixtures."
+    ],
+    "related": ["fundamental-attribution-error", "confirmation-bias", "negativity-bias"]
+  },
+  {
+    "name": "Survivorship bias",
+    "slug": "survivorship-bias",
+    "aliases": ["selection on success"],
+    "category": "evidence-sampling",
+    "domains": ["Research & evidence", "Forecasting & planning"],
+    "effort": "Team protocol",
+    "summary": "The tendency to learn from the visible winners while overlooking the invisible failures that dropped out of view.",
+    "mechanism": "Success stories are easier to observe, celebrate, and circulate. Failed cases disappear, leaving the remaining sample badly distorted.",
+    "distortion": "It makes risky paths look safer and strategies look stronger than they are.",
+    "defaultMove": "Infer quality from the surviving sample without asking who is missing.",
+    "commonTrigger": "Entrepreneurship stories, hiring narratives, investing, and institutional mythmaking.",
+    "firstCountermove": "Ask what relevant failures are absent from the observed sample and why they are absent.",
+    "signals": [
+      "The discussion focuses on people or projects that made it through the filter.",
+      "Failure data is unavailable, ignored, or treated as irrelevant.",
+      "Advice is drawn from admired outcomes without denominator information."
+    ],
+    "spotIt": [
+      "Ask who did the same thing and did not survive to be counted.",
+      "Check whether the sample was filtered by success before the analysis began.",
+      "Look for missing attrition, dropout, or failure rates."
+    ],
+    "slowIt": [
+      "Define the full reference population before analyzing the visible winners.",
+      "Search intentionally for failed comparators.",
+      "Report rates for entrants, not just for survivors."
+    ],
+    "reframeIt": [
+      "Treat success stories as incomplete evidence, not as complete lessons.",
+      "Ask what the invisible cemetery of similar attempts would say.",
+      "Remember that visibility is often the consequence of success, not proof of replicable quality."
+    ],
+    "related": ["base-rate-neglect", "availability-heuristic", "confirmation-bias"]
+  },
+  {
+    "name": "Base-rate neglect",
+    "slug": "base-rate-neglect",
+    "aliases": ["base-rate fallacy"],
+    "category": "evidence-sampling",
+    "domains": ["Research & evidence", "Forecasting & planning"],
+    "effort": "Structured process",
+    "summary": "The tendency to underweight general prevalence information when vivid case-specific details are available.",
+    "mechanism": "Concrete stories feel richer than abstract frequencies, so the mind overuses individuating detail and underuses prior probabilities.",
+    "distortion": "It makes rare outcomes seem too plausible and ordinary outcomes seem too negligible.",
+    "defaultMove": "Let the case description crowd out the prior odds.",
+    "commonTrigger": "Diagnostic reasoning, legal reasoning, medical testing, and forecast updates with vivid narratives.",
+    "firstCountermove": "Write down the outside-view base rate before discussing the specific case details.",
+    "signals": [
+      "People talk richly about the case but cannot state the prior probability.",
+      "A vivid detail is treated as decisive without checking how common the outcome is overall.",
+      "Probability judgments drift far from the background rate for weak reasons."
+    ],
+    "spotIt": [
+      "Ask what the base rate is for the outcome in the relevant reference class.",
+      "Check whether the case details are actually strong enough to swamp the prior.",
+      "Notice whether the narrative feels more informative than it really is."
+    ],
+    "slowIt": [
+      "State the prior explicitly before updating.",
+      "Use simple likelihood-ratio language if full Bayes is too heavy.",
+      "Compare the vivid case against several equally vivid alternatives with different base rates."
+    ],
+    "reframeIt": [
+      "Treat priors as part of the evidence, not as background wallpaper.",
+      "Ask how surprised you should be by this case if the base rate were true.",
+      "Remember that unusual stories happen inside ordinary distributions."
+    ],
+    "related": ["survivorship-bias", "availability-heuristic", "anchoring-effect"]
+  },
+  {
+    "name": "Hindsight bias",
+    "slug": "hindsight-bias",
+    "aliases": ["knew-it-all-along effect"],
+    "category": "memory-retrospection",
+    "domains": ["Postmortems & learning", "Forecasting & planning"],
+    "effort": "Structured process",
+    "summary": "The tendency, after an outcome is known, to see it as having been more obvious or predictable than it actually was beforehand.",
+    "mechanism": "Once the ending is in place, memory edits the uncertainty out of the original situation. The path to the outcome becomes narratively smoother than it was in real time.",
+    "distortion": "It destroys calibration and learning by making past uncertainty vanish.",
+    "defaultMove": "Rewrite the old decision problem as if the ending had always been visible.",
+    "commonTrigger": "Postmortems, political analysis, investing, sports talk, and any outcome with a strong public narrative.",
+    "firstCountermove": "Use a decision journal or timestamped notes to recover what was actually known at the time.",
+    "signals": [
+      "After the event, people claim the signs were obvious without having documented them earlier.",
+      "Original uncertainty is remembered as much narrower than it was.",
+      "Alternative outcomes stop feeling live once the actual one happens."
+    ],
+    "spotIt": [
+      "Ask what specific forecast was recorded before the outcome.",
+      "Check whether the person can distinguish 'makes sense now' from 'was predictable then'.",
+      "Look for timeline compression and certainty inflation."
+    ],
+    "slowIt": [
+      "Keep written forecasts and assumptions.",
+      "Review the information set as it existed then, not what is known now.",
+      "Include alternative outcomes that were genuinely plausible at the time."
+    ],
+    "reframeIt": [
+      "Treat past uncertainty as real even when the ending now feels tidy.",
+      "Ask what would have happened to your narrative if the outcome had gone differently.",
+      "Use hindsight as a prompt for model revision, not for self-flattering inevitability stories."
+    ],
+    "related": ["outcome-bias", "overconfidence-effect", "motivated-reasoning"]
+  },
+  {
+    "name": "Outcome bias",
+    "slug": "outcome-bias",
+    "aliases": ["resulting"],
+    "category": "memory-retrospection",
+    "domains": ["Postmortems & learning", "Teams & management"],
+    "effort": "Structured process",
+    "summary": "The tendency to judge the quality of a decision mainly by how things turned out rather than by the quality of the reasoning under the uncertainty that existed at the time.",
+    "mechanism": "Outcomes are concrete and emotionally loud, while process quality is abstract and harder to see. Success launders shaky reasoning; failure stains good reasoning.",
+    "distortion": "It confuses luck with judgment and makes postmortems misleading.",
+    "defaultMove": "Score the decision by the ending instead of by the information and reasoning available before the ending.",
+    "commonTrigger": "Performance reviews, investing, leadership evaluation, and public retrospective blame.",
+    "firstCountermove": "Separate process review from outcome review and ask whether the same decision would be endorsed if the result had flipped.",
+    "signals": [
+      "Good outcomes excuse bad process or bad outcomes eclipse solid process.",
+      "The review begins with the ending before reconstructing the decision context.",
+      "Luck is talked about only when it benefits the side we dislike."
+    ],
+    "spotIt": [
+      "Ask whether the same reasoning would be praised if the outcome were worse.",
+      "Check whether process quality has been independently inspected.",
+      "Look for decisions that seem wise only because the coin landed heads."
+    ],
+    "slowIt": [
+      "Run separate process and outcome scorecards.",
+      "Use premortems and decision journals to document the original reasoning.",
+      "Compare this case to others with similar process but different luck."
+    ],
+    "reframeIt": [
+      "Treat outcomes as noisy feedback, not as pure verdicts on judgment.",
+      "Ask whether the process was robust under the uncertainty that actually existed.",
+      "Remember that good bets can lose and bad bets can win."
+    ],
+    "related": ["hindsight-bias", "sunk-cost-effect", "overconfidence-effect"]
+  }
+]

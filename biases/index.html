@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Biases | BiasFall</title>
+    <meta name="description" content="Search and compare biases by category, domain, and countermove effort." />
+    <meta name="author" content="Phil Stilwell" />
+    <meta name="application-name" content="BiasFall" />
+    <meta name="theme-color" content="#111111" />
+    
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script defer src="../app.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <header class="masthead">
+        <div class="masthead-inner">
+          <div class="brand-row">
+            <div class="brand-lockup">
+              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">BF</div>
+              <div>
+                <p class="brand-kicker">Cognitive Biases</p>
+                <h1 class="brand-title">BiasFall</h1>
+                <p class="brand-subtitle">A practical cognitive-biases reference with clear explanations, decision patterns, and countermeasure tools.</p>
+              </div>
+            </div>
+            <form class="site-search-form" role="search" action="../biases/" method="get">
+              <input
+                class="site-search-input"
+                type="search"
+                name="q"
+                placeholder="Search biases..."
+                aria-label="Search biases"
+                data-site-search-input
+              />
+              <button class="site-search-button" type="submit">Search</button>
+            </form>
+          </div>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/" aria-current="page">All Biases</a><a href="../categories/">Categories</a><a href="../countermoves/">Countermoves</a><a href="../about/">About</a></nav>
+        </div>
+      </header>
+      <main class="page-wrap">
+        <div class="breadcrumbs"><a href="../">Home</a><span>/</span><strong>All Biases</strong></div>
+
+        <section class="detail-section">
+          <p class="eyebrow">Index</p>
+          <h2 class="detail-title">Searchable bias index</h2>
+          <p class="detail-deck">This starter index uses domain and countermove effort as filters because cognitive-bias work is often about where the distortion appears and how costly it is to correct.</p>
+          <div class="note-panel search-panel section-block">
+            <div class="search-row">
+              <input class="search-input" type="search" placeholder="Search biases, aliases, or mechanisms..." aria-label="Search biases" data-search-input />
+              <select class="search-select" data-category-filter aria-label="Filter by category">
+                <option value="">All categories</option>
+                <option value="attention-salience">Attention &amp; Salience</option><option value="belief-protection">Belief Protection</option><option value="estimation-prediction">Estimation &amp; Prediction</option><option value="choice-commitment">Choice &amp; Commitment</option><option value="social-judgment">Social Judgment</option><option value="evidence-sampling">Evidence &amp; Sampling</option><option value="memory-retrospection">Memory &amp; Retrospection</option>
+              </select>
+              <select class="search-select" data-domain-filter aria-label="Filter by domain">
+                <option value="">All domains</option>
+                <option value="Forecasting &amp; planning">Forecasting &amp; planning</option><option value="Media &amp; politics">Media &amp; politics</option><option value="Personal decisions">Personal decisions</option><option value="Postmortems &amp; learning">Postmortems &amp; learning</option><option value="Research &amp; evidence">Research &amp; evidence</option><option value="Teams &amp; management">Teams &amp; management</option>
+              </select>
+              <select class="search-select" data-effort-filter aria-label="Filter by effort">
+                <option value="">All countermove effort</option>
+                <option value="Quick reset">Quick reset</option><option value="Structured process">Structured process</option><option value="Team protocol">Team protocol</option>
+              </select>
+              <button class="search-reset" type="button" data-search-reset>Reset</button>
+            </div>
+            <div class="search-meta">
+              <span data-search-count data-search-unit-singular="bias" data-search-unit-plural="biases"></span>
+            </div>
+            <p class="search-empty hidden" data-search-empty>No matching biases yet. Try a broader term or remove one filter.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="entry-grid">
+            
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Confirmation bias"
+            data-aliases="myside bias, selective exposure"
+            data-category="belief-protection"
+            data-domains="Media &amp; politics||Research &amp; evidence"
+            data-effort="Structured process"
+            data-body="The tendency to notice, seek, and remember evidence that supports the story you already prefer more readily than evidence that threatens it. Once a hypothesis feels plausible, attention and memory become selective. Friendly evidence feels weighty while counterevidence feels weak, atypical, or unimportant. It makes the evidence stream look more one-sided than it really is. Protect the current belief by sampling supportive cases first. Identity-charged topics and early hunches formed under uncertainty. Belief Protection You can recall supporting examples much faster than disconfirming ones. Counterexamples are dismissed before they are investigated. Searching stops as soon as the preferred story fits. Media &amp; politics Research &amp; evidence"
+          >
+            <h3><a href="../biases/confirmation-bias/">Confirmation bias</a></h3>
+            <p class="card-copy">The tendency to notice, seek, and remember evidence that supports the story you already prefer more readily than evidence that threatens it.</p>
+            <div class="pill-row">
+              <span class="pill">Belief Protection</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Media &amp; politics</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Motivated reasoning"
+            data-aliases="identity-protective cognition"
+            data-category="belief-protection"
+            data-domains="Media &amp; politics||Personal decisions"
+            data-effort="Structured process"
+            data-body="The tendency to use reasoning as a defense lawyer for desired conclusions rather than as an impartial search for what is most likely true. Goals such as belonging, status, self-respect, or ideological loyalty steer which standards feel fair, which doubts feel urgent, and which explanations feel satisfying. It quietly changes the burden of proof depending on which conclusion you want. Scrutinize hostile claims hard while granting friendly claims easier passage. Topics tied to tribe, ego, moral identity, or prior public commitment. Belief Protection Standards tighten only for one side of the question. The emotional tone changes when one conclusion becomes personally costly. The strongest opposing evidence is described vaguely while friendly evidence is described concretely. Media &amp; politics Personal decisions"
+          >
+            <h3><a href="../biases/motivated-reasoning/">Motivated reasoning</a></h3>
+            <p class="card-copy">The tendency to use reasoning as a defense lawyer for desired conclusions rather than as an impartial search for what is most likely true.</p>
+            <div class="pill-row">
+              <span class="pill">Belief Protection</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Media &amp; politics</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Availability heuristic"
+            data-aliases="availability bias"
+            data-category="attention-salience"
+            data-domains="Media &amp; politics||Personal decisions"
+            data-effort="Quick reset"
+            data-body="The tendency to judge frequency, risk, or importance by how easily examples come to mind. Vivid, recent, repeated, or emotionally loaded cases are easier to retrieve, so they feel more common and more representative than they are. It turns memory accessibility into a mistaken proxy for prevalence or probability. Let the easiest recalled example stand in for the whole distribution. Recent news cycles, memorable anecdotes, dramatic failures, and repetition. Attention &amp; Salience One memorable case is doing most of the persuasive work. The perceived risk changes sharply after recent exposure. Examples are plentiful but representative data is thin. Media &amp; politics Personal decisions"
+          >
+            <h3><a href="../biases/availability-heuristic/">Availability heuristic</a></h3>
+            <p class="card-copy">The tendency to judge frequency, risk, or importance by how easily examples come to mind.</p>
+            <div class="pill-row">
+              <span class="pill">Attention &amp; Salience</span>
+              <span class="pill">Quick reset</span>
+              <span class="pill">Media &amp; politics</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Negativity bias"
+            data-aliases="negative weighting"
+            data-category="attention-salience"
+            data-domains="Media &amp; politics||Teams &amp; management"
+            data-effort="Quick reset"
+            data-body="The tendency to give bad news, threats, criticism, and losses more psychological weight than equally sized positives. Potential harms command attention quickly because organisms that miss threats pay steep costs. That makes negative information sticky, memorable, and behavior-shaping. It can make the whole environment look worse, riskier, or more hostile than the total evidence supports. Overweight what could go wrong and underweight quiet competence or improvement. Conflict, uncertainty, public criticism, and feedback environments that highlight errors. Attention &amp; Salience One bad interaction outweighs many ordinary or good ones. The discussion keeps circling around dangers without proportioning them. Neutral events are encoded as mildly negative by default. Media &amp; politics Teams &amp; management"
+          >
+            <h3><a href="../biases/negativity-bias/">Negativity bias</a></h3>
+            <p class="card-copy">The tendency to give bad news, threats, criticism, and losses more psychological weight than equally sized positives.</p>
+            <div class="pill-row">
+              <span class="pill">Attention &amp; Salience</span>
+              <span class="pill">Quick reset</span>
+              <span class="pill">Media &amp; politics</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Anchoring effect"
+            data-aliases="anchor bias"
+            data-category="estimation-prediction"
+            data-domains="Forecasting &amp; planning||Personal decisions"
+            data-effort="Structured process"
+            data-body="The tendency for the first salient number, frame, or option to pull later estimates toward itself even when it is arbitrary or weakly relevant. Initial values set a starting point, and later adjustment is usually too small. The mind mistakes a convenient first reference for an informative one. It biases negotiation, forecasting, pricing, and planning by shrinking the range of considered outcomes. Start from the first offered value and adjust insufficiently away from it. Opening offers, first forecasts, suggested budgets, and round numbers. Estimation &amp; Prediction Different opening numbers produce different &#39;reasonable&#39; endpoints. People defend estimates they generated only after seeing a suggested figure. The discussion keeps orbiting a first number that no one has justified. Forecasting &amp; planning Personal decisions"
+          >
+            <h3><a href="../biases/anchoring-effect/">Anchoring effect</a></h3>
+            <p class="card-copy">The tendency for the first salient number, frame, or option to pull later estimates toward itself even when it is arbitrary or weakly relevant.</p>
+            <div class="pill-row">
+              <span class="pill">Estimation &amp; Prediction</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Forecasting &amp; planning</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Overconfidence effect"
+            data-aliases="overprecision"
+            data-category="estimation-prediction"
+            data-domains="Forecasting &amp; planning||Teams &amp; management"
+            data-effort="Structured process"
+            data-body="The tendency to be more certain about judgments, forecasts, or abilities than the evidence warrants. Coherent stories feel informative, familiarity feels like mastery, and feedback is often too sparse or noisy to recalibrate confidence reliably. It produces narrow forecasts, premature closure, and risky commitments that look justified mainly because they feel fluent. Confuse clarity of feeling with strength of evidence. Fast intuitive judgment, expertise in adjacent domains, and weak feedback loops. Estimation &amp; Prediction Forecast ranges are too tight for the actual uncertainty. Questions are answered quickly with little discussion of downside cases. Past misses are remembered as near misses rather than calibration failures. Forecasting &amp; planning Teams &amp; management"
+          >
+            <h3><a href="../biases/overconfidence-effect/">Overconfidence effect</a></h3>
+            <p class="card-copy">The tendency to be more certain about judgments, forecasts, or abilities than the evidence warrants.</p>
+            <div class="pill-row">
+              <span class="pill">Estimation &amp; Prediction</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Forecasting &amp; planning</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Sunk cost effect"
+            data-aliases="escalation of commitment"
+            data-category="choice-commitment"
+            data-domains="Personal decisions||Teams &amp; management"
+            data-effort="Team protocol"
+            data-body="The tendency to keep investing in a losing path because of what has already been spent, even when the forward-looking case has weakened. People hate waste, identity loss, and public admission of error. Past investment becomes psychologically fused with current justification. It keeps projects, habits, and strategies alive for backward-looking reasons rather than forward-looking ones. Treat past spending as a reason to continue rather than as an unrecoverable cost. Public commitments, long-running projects, and high personal ownership. Choice &amp; Commitment The defense of the project begins with how much has already been spent. Exit feels like admitting humiliation rather than changing course. Stopping rules were never defined before the investment started. Personal decisions Teams &amp; management"
+          >
+            <h3><a href="../biases/sunk-cost-effect/">Sunk cost effect</a></h3>
+            <p class="card-copy">The tendency to keep investing in a losing path because of what has already been spent, even when the forward-looking case has weakened.</p>
+            <div class="pill-row">
+              <span class="pill">Choice &amp; Commitment</span>
+              <span class="pill">Team protocol</span>
+              <span class="pill">Personal decisions</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Status quo bias"
+            data-aliases="default bias"
+            data-category="choice-commitment"
+            data-domains="Personal decisions||Teams &amp; management"
+            data-effort="Structured process"
+            data-body="The tendency to prefer the current option, default, or inherited arrangement simply because it is the current option, default, or inherited arrangement. Change carries cognitive cost, anticipated regret, and responsibility. The existing state feels safer because its risks are already normalized. It disguises omission as neutrality and can make inferior defaults look prudent. Keep the current arrangement unless the alternative looks overwhelmingly better. Complex choices, uncertain outcomes, and systems with sticky defaults. Choice &amp; Commitment The defense of the current setup is mostly that it is familiar. Changing the default is treated as riskier than leaving it untouched without equal scrutiny. Opportunity costs of inaction barely enter the conversation. Personal decisions Teams &amp; management"
+          >
+            <h3><a href="../biases/status-quo-bias/">Status quo bias</a></h3>
+            <p class="card-copy">The tendency to prefer the current option, default, or inherited arrangement simply because it is the current option, default, or inherited arrangement.</p>
+            <div class="pill-row">
+              <span class="pill">Choice &amp; Commitment</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Personal decisions</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Fundamental attribution error"
+            data-aliases="correspondence bias"
+            data-category="social-judgment"
+            data-domains="Teams &amp; management||Media &amp; politics"
+            data-effort="Quick reset"
+            data-body="The tendency to explain other people&#39;s behavior too quickly in terms of character while underweighting situational pressures and constraints. Behavior is vivid; context is often hidden. The mind reaches for trait stories because they feel coherent and socially portable. It turns local behavior into overly global character judgments. Read the act as a window into the person more than into the situation. Conflict, disappointment, public mistakes, and thin background knowledge. Social Judgment A single bad action quickly becomes a statement about what the person is like. Context is treated as excuse-making only after the blame story is in place. Your own behavior is explained situationally while others&#39; behavior is explained dispositionally. Teams &amp; management Media &amp; politics"
+          >
+            <h3><a href="../biases/fundamental-attribution-error/">Fundamental attribution error</a></h3>
+            <p class="card-copy">The tendency to explain other people&#39;s behavior too quickly in terms of character while underweighting situational pressures and constraints.</p>
+            <div class="pill-row">
+              <span class="pill">Social Judgment</span>
+              <span class="pill">Quick reset</span>
+              <span class="pill">Teams &amp; management</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Halo effect"
+            data-aliases="global impression bias"
+            data-category="social-judgment"
+            data-domains="Teams &amp; management||Personal decisions"
+            data-effort="Quick reset"
+            data-body="The tendency for one salient positive or negative impression to spill over into unrelated judgments about a person, product, or institution. The mind likes coherence. Once something feels admirable, attractive, competent, or impressive, neighboring traits are inferred too easily. It makes broad evaluations look evidence-based when they are often driven by one glowing or tainted feature. Project one strong impression across multiple unrelated dimensions. Charisma, prestige, beauty, eloquence, and one highly visible success or failure. Social Judgment General praise or distrust arrives before trait-by-trait analysis. One impressive quality is doing work in unrelated categories. Weak evidence is accepted because the overall vibe feels strong. Teams &amp; management Personal decisions"
+          >
+            <h3><a href="../biases/halo-effect/">Halo effect</a></h3>
+            <p class="card-copy">The tendency for one salient positive or negative impression to spill over into unrelated judgments about a person, product, or institution.</p>
+            <div class="pill-row">
+              <span class="pill">Social Judgment</span>
+              <span class="pill">Quick reset</span>
+              <span class="pill">Teams &amp; management</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Survivorship bias"
+            data-aliases="selection on success"
+            data-category="evidence-sampling"
+            data-domains="Research &amp; evidence||Forecasting &amp; planning"
+            data-effort="Team protocol"
+            data-body="The tendency to learn from the visible winners while overlooking the invisible failures that dropped out of view. Success stories are easier to observe, celebrate, and circulate. Failed cases disappear, leaving the remaining sample badly distorted. It makes risky paths look safer and strategies look stronger than they are. Infer quality from the surviving sample without asking who is missing. Entrepreneurship stories, hiring narratives, investing, and institutional mythmaking. Evidence &amp; Sampling The discussion focuses on people or projects that made it through the filter. Failure data is unavailable, ignored, or treated as irrelevant. Advice is drawn from admired outcomes without denominator information. Research &amp; evidence Forecasting &amp; planning"
+          >
+            <h3><a href="../biases/survivorship-bias/">Survivorship bias</a></h3>
+            <p class="card-copy">The tendency to learn from the visible winners while overlooking the invisible failures that dropped out of view.</p>
+            <div class="pill-row">
+              <span class="pill">Evidence &amp; Sampling</span>
+              <span class="pill">Team protocol</span>
+              <span class="pill">Research &amp; evidence</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Base-rate neglect"
+            data-aliases="base-rate fallacy"
+            data-category="evidence-sampling"
+            data-domains="Research &amp; evidence||Forecasting &amp; planning"
+            data-effort="Structured process"
+            data-body="The tendency to underweight general prevalence information when vivid case-specific details are available. Concrete stories feel richer than abstract frequencies, so the mind overuses individuating detail and underuses prior probabilities. It makes rare outcomes seem too plausible and ordinary outcomes seem too negligible. Let the case description crowd out the prior odds. Diagnostic reasoning, legal reasoning, medical testing, and forecast updates with vivid narratives. Evidence &amp; Sampling People talk richly about the case but cannot state the prior probability. A vivid detail is treated as decisive without checking how common the outcome is overall. Probability judgments drift far from the background rate for weak reasons. Research &amp; evidence Forecasting &amp; planning"
+          >
+            <h3><a href="../biases/base-rate-neglect/">Base-rate neglect</a></h3>
+            <p class="card-copy">The tendency to underweight general prevalence information when vivid case-specific details are available.</p>
+            <div class="pill-row">
+              <span class="pill">Evidence &amp; Sampling</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Research &amp; evidence</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Hindsight bias"
+            data-aliases="knew-it-all-along effect"
+            data-category="memory-retrospection"
+            data-domains="Postmortems &amp; learning||Forecasting &amp; planning"
+            data-effort="Structured process"
+            data-body="The tendency, after an outcome is known, to see it as having been more obvious or predictable than it actually was beforehand. Once the ending is in place, memory edits the uncertainty out of the original situation. The path to the outcome becomes narratively smoother than it was in real time. It destroys calibration and learning by making past uncertainty vanish. Rewrite the old decision problem as if the ending had always been visible. Postmortems, political analysis, investing, sports talk, and any outcome with a strong public narrative. Memory &amp; Retrospection After the event, people claim the signs were obvious without having documented them earlier. Original uncertainty is remembered as much narrower than it was. Alternative outcomes stop feeling live once the actual one happens. Postmortems &amp; learning Forecasting &amp; planning"
+          >
+            <h3><a href="../biases/hindsight-bias/">Hindsight bias</a></h3>
+            <p class="card-copy">The tendency, after an outcome is known, to see it as having been more obvious or predictable than it actually was beforehand.</p>
+            <div class="pill-row">
+              <span class="pill">Memory &amp; Retrospection</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Postmortems &amp; learning</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Outcome bias"
+            data-aliases="resulting"
+            data-category="memory-retrospection"
+            data-domains="Postmortems &amp; learning||Teams &amp; management"
+            data-effort="Structured process"
+            data-body="The tendency to judge the quality of a decision mainly by how things turned out rather than by the quality of the reasoning under the uncertainty that existed at the time. Outcomes are concrete and emotionally loud, while process quality is abstract and harder to see. Success launders shaky reasoning; failure stains good reasoning. It confuses luck with judgment and makes postmortems misleading. Score the decision by the ending instead of by the information and reasoning available before the ending. Performance reviews, investing, leadership evaluation, and public retrospective blame. Memory &amp; Retrospection Good outcomes excuse bad process or bad outcomes eclipse solid process. The review begins with the ending before reconstructing the decision context. Luck is talked about only when it benefits the side we dislike. Postmortems &amp; learning Teams &amp; management"
+          >
+            <h3><a href="../biases/outcome-bias/">Outcome bias</a></h3>
+            <p class="card-copy">The tendency to judge the quality of a decision mainly by how things turned out rather than by the quality of the reasoning under the uncertainty that existed at the time.</p>
+            <div class="pill-row">
+              <span class="pill">Memory &amp; Retrospection</span>
+              <span class="pill">Structured process</span>
+              <span class="pill">Postmortems &amp; learning</span>
+            </div>
+          </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-note">BiasFall starter scaffold for a cognitive-biases GitHub Pages site.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code> and <code>data/biases.json</code>. Last build: 2026-05-23.</p>
+          <p class="footer-note">Copyright © Phil Stilwell</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

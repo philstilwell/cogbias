@@ -1,0 +1,185 @@
+{
+  "siteName": "BiasFall",
+  "siteUrl": "",
+  "author": "Phil Stilwell",
+  "copyrightNotice": "Copyright © Phil Stilwell",
+  "entryLabelSingular": "bias",
+  "entryLabelPlural": "biases",
+  "sectionSlug": "biases",
+  "brandKicker": "Cognitive Biases",
+  "brandTitle": "BiasFall",
+  "brandMonogram": "BF",
+  "brandSubtitle": "A practical cognitive-biases reference with clear explanations, decision patterns, and countermeasure tools.",
+  "heroTitle": "Cognitive biases made clearer, more teachable, and easier to counter.",
+  "heroLead": "BiasFall is a static reference for spotting recurring distortions in judgment before they harden into bad bets, bad hiring calls, bad postmortems, or bad collective decisions. Each entry centers on the mental shortcut, the situation that triggers it, and the process move most likely to neutralize it.",
+  "featured": [
+    "confirmation-bias",
+    "availability-heuristic",
+    "anchoring-effect",
+    "sunk-cost-effect",
+    "fundamental-attribution-error",
+    "hindsight-bias"
+  ],
+  "categories": [
+    {
+      "name": "Attention & Salience",
+      "slug": "attention-salience",
+      "description": "Biases in this cluster overweight what is vivid, recent, threatening, or easy to recall.",
+      "guidingQuestion": "What is grabbing attention here that may not deserve this much weight?"
+    },
+    {
+      "name": "Belief Protection",
+      "slug": "belief-protection",
+      "description": "These biases stabilize the stories we already prefer, especially when identity or commitment is involved.",
+      "guidingQuestion": "What would this person have to see before they would seriously revise the current view?"
+    },
+    {
+      "name": "Estimation & Prediction",
+      "slug": "estimation-prediction",
+      "description": "These biases distort numerical judgment, forecasting, calibration, and first-pass estimates.",
+      "guidingQuestion": "What anchor, confidence level, or forecast frame is quietly steering the estimate?"
+    },
+    {
+      "name": "Choice & Commitment",
+      "slug": "choice-commitment",
+      "description": "Biases here make us cling to defaults, past investments, and emotionally protected options.",
+      "guidingQuestion": "Which option feels safer merely because it is familiar, costly to exit, or already underway?"
+    },
+    {
+      "name": "Social Judgment",
+      "slug": "social-judgment",
+      "description": "These biases simplify people too quickly by overreading character, traits, or first impressions.",
+      "guidingQuestion": "What situational explanation or hidden context might this snap judgment be ignoring?"
+    },
+    {
+      "name": "Evidence & Sampling",
+      "slug": "evidence-sampling",
+      "description": "These biases distort what counts as representative evidence and which cases even make it into view.",
+      "guidingQuestion": "What base rates, missing cases, or unobserved failures are absent from the sample?"
+    },
+    {
+      "name": "Memory & Retrospection",
+      "slug": "memory-retrospection",
+      "description": "These biases rewrite the past after outcomes arrive, making learning look cleaner than it was.",
+      "guidingQuestion": "Are we remembering the decision process fairly, or only remembering the ending?"
+    }
+  ],
+  "countermeasures": [
+    {
+      "title": "Generate Rival Hypotheses",
+      "slug": "rival-hypotheses",
+      "summary": "Before gathering more evidence, force yourself to name at least two live alternatives to the story you already like.",
+      "steps": [
+        "Write the favored explanation in one sentence.",
+        "Write two rival explanations that would fit the same facts.",
+        "List one observation that would favor each rival."
+      ],
+      "relatedBiases": [
+        "confirmation-bias",
+        "motivated-reasoning",
+        "hindsight-bias"
+      ]
+    },
+    {
+      "title": "Estimate Before Exposure",
+      "slug": "estimate-before-exposure",
+      "summary": "Put down an independent estimate before seeing the first quoted number, forecast, or recommendation.",
+      "steps": [
+        "Record your own guess first.",
+        "Only then reveal the offered anchor or outside estimate.",
+        "Compare the difference and explain why you moved."
+      ],
+      "relatedBiases": [
+        "anchoring-effect",
+        "overconfidence-effect",
+        "status-quo-bias"
+      ]
+    },
+    {
+      "title": "Use Base Rates And Reference Classes",
+      "slug": "base-rates-reference-classes",
+      "summary": "Anchor judgments to how often similar events happen in the wider world before focusing on the vivid local story.",
+      "steps": [
+        "Identify the broad reference class first.",
+        "Write down the outside-view frequency or base rate.",
+        "Only then adjust for special local evidence."
+      ],
+      "relatedBiases": [
+        "availability-heuristic",
+        "base-rate-neglect",
+        "survivorship-bias"
+      ]
+    },
+    {
+      "title": "Separate Person From Situation",
+      "slug": "person-versus-situation",
+      "summary": "Treat traits, incentives, constraints, and local pressures as separate variables rather than one fused impression.",
+      "steps": [
+        "Name the behavior you observed.",
+        "List three situational pressures that could also explain it.",
+        "Delay any trait verdict until the pressures are examined."
+      ],
+      "relatedBiases": [
+        "fundamental-attribution-error",
+        "halo-effect",
+        "negativity-bias"
+      ]
+    },
+    {
+      "title": "Treat Sunk Costs As Sunk",
+      "slug": "treat-sunk-costs-as-sunk",
+      "summary": "Ask what you would do if the time, money, and pride already spent could not be recovered because in reality they cannot.",
+      "steps": [
+        "Ignore prior investment for one pass of the decision.",
+        "Re-evaluate the options from today forward only.",
+        "Create an explicit stopping rule before continuing."
+      ],
+      "relatedBiases": [
+        "sunk-cost-effect",
+        "status-quo-bias",
+        "overconfidence-effect"
+      ]
+    },
+    {
+      "title": "Use Decision Journals And Premortems",
+      "slug": "decision-journals-premortems",
+      "summary": "Capture what you believed before the outcome, then imagine in advance how the plan could fail.",
+      "steps": [
+        "Write the current forecast, assumptions, and confidence level.",
+        "Run a premortem: imagine the plan failed and list why.",
+        "Review the notes later before narrating the outcome."
+      ],
+      "relatedBiases": [
+        "hindsight-bias",
+        "outcome-bias",
+        "overconfidence-effect"
+      ]
+    }
+  ],
+  "roadmap": {
+    "keep": [
+      "Static GitHub Pages architecture",
+      "Single structured data source",
+      "Searchable index and category pages",
+      "Simple client-side filtering"
+    ],
+    "rewrite": [
+      "Replace fallacy definitions with bias mechanisms and triggers",
+      "Shift from argument diagnosis to decision distortion",
+      "Rebuild related-entry logic around shared countermeasures",
+      "Rework classroom framing around reflection and process"
+    ],
+    "add": [
+      "Debiasing and countermove pages",
+      "Process-level tools like decision journals and premortems",
+      "Bias-specific domain contexts such as hiring, forecasting, and postmortems",
+      "Notes on when a bias is likely to feel subjectively reasonable"
+    ],
+    "defer": [
+      "Illustration pipeline",
+      "Printable worksheets",
+      "Large-scale cross-linking",
+      "Assessment or quiz systems until the core taxonomy settles"
+    ]
+  }
+}
