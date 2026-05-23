@@ -116,5 +116,111 @@
       "Passage to analyze:",
       "[PASTE PASSAGE OR LINK CONTEXT HERE]"
     ]
+  },
+  {
+    "slug": "groupthink-meeting-scan",
+    "title": "Groupthink Meeting Scan",
+    "intro": "Use this when a team discussion seems to be converging fast and you want help separating real agreement from status pressure, premature harmony, or hidden dissent.",
+    "requirements": "Paste the decision under discussion, who is in the room, the current lean, and any objections that have surfaced so far.",
+    "relatedBiases": [
+      "groupthink",
+      "authority-bias",
+      "social-desirability-bias",
+      "false-consensus-effect"
+    ],
+    "promptLines": [
+      "Analyze the situation below as a groupthink and meeting-pressure scan.",
+      "",
+      "Your tasks:",
+      "1. Restate the current decision and the room's apparent consensus.",
+      "2. Identify which voices, roles, or incentives may be shaping what people are willing to say.",
+      "3. Flag any signs of groupthink, authority bias, social desirability pressure, or false-consensus assumptions.",
+      "4. List the objections or alternatives that most need airtime before the discussion closes.",
+      "5. End with a cleaner meeting protocol for the next 15 minutes of discussion.",
+      "",
+      "Output format:",
+      "◉ Apparent consensus",
+      "◉ Social pressure risks",
+      "◉ Missing objections",
+      "◉ Better next-step meeting structure",
+      "",
+      "Situation:",
+      "[PASTE THE MEETING CASE HERE]"
+    ]
+  },
+  {
+    "slug": "framing-and-default-audit",
+    "title": "Framing And Default Audit",
+    "intro": "Use this when a decision may be getting steered by wording, preselection, loss framing, or the moral comfort of doing nothing.",
+    "requirements": "Paste the choice, the current wording or interface, and the default option if one exists.",
+    "relatedBiases": [
+      "framing-effect",
+      "default-effect",
+      "loss-aversion",
+      "omission-bias"
+    ],
+    "promptLines": [
+      "Analyze the decision below as a framing and default audit.",
+      "",
+      "Do the following:",
+      "1. Restate the decision in neutral language.",
+      "2. Identify the current frame, emotional emphasis, and default path.",
+      "3. Explain how framing effect, default effect, loss aversion, or omission bias may be steering judgment.",
+      "4. Rewrite the choice in at least two alternative frames, including one that removes the default's privilege.",
+      "5. End with a cleaner comparison of the options on their actual merits.",
+      "",
+      "Decision or interface to analyze:",
+      "[PASTE THE DECISION, FORM, OR MESSAGE HERE]"
+    ]
+  },
+  {
+    "slug": "explanation-depth-probe",
+    "title": "Explanation Depth Probe",
+    "intro": "Use this when someone seems highly confident or fluent and you want to test whether the underlying understanding is genuinely robust.",
+    "requirements": "Paste the claim, explanation, lesson, or proposed plan that needs to be pressure-tested.",
+    "relatedBiases": [
+      "illusion-of-explanatory-depth",
+      "dunning-kruger-effect",
+      "overconfidence-effect",
+      "curse-of-knowledge"
+    ],
+    "promptLines": [
+      "Analyze the material below as an explanation-depth probe rather than as a style critique.",
+      "",
+      "Your tasks:",
+      "1. Restate the core explanation or claim in plain language.",
+      "2. Identify where the explanation relies on labels, vague transitions, or hidden steps.",
+      "3. Flag signs of illusion of explanatory depth, overconfidence, or curse-of-knowledge communication.",
+      "4. Generate three challenge questions that would test whether the understanding is robust.",
+      "5. Rewrite the explanation so a thoughtful novice could follow the mechanism.",
+      "",
+      "Material to probe:",
+      "[PASTE THE EXPLANATION, CLAIM, OR PLAN HERE]"
+    ]
+  },
+  {
+    "slug": "conflict-interpretation-reset",
+    "title": "Conflict Interpretation Reset",
+    "intro": "Use this when a disagreement is starting to harden into a story about bad motives, threat, or tribal hostility.",
+    "requirements": "Paste the disputed behavior, the surrounding context, and the hostile or character-level interpretation currently on the table.",
+    "relatedBiases": [
+      "hostile-attribution-bias",
+      "naive-realism",
+      "ingroup-bias",
+      "fundamental-attribution-error"
+    ],
+    "promptLines": [
+      "Analyze the situation below as a conflict-interpretation reset.",
+      "",
+      "Do the following:",
+      "1. Separate the observable behavior from the current hostile interpretation.",
+      "2. List plausible non-hostile or less-loaded explanations that still fit the facts.",
+      "3. Identify which biases may be intensifying threat, tribal reading, or motive certainty.",
+      "4. Show what additional evidence would be needed before endorsing the harsher interpretation.",
+      "5. End with a lower-heat way to continue the conversation or investigation.",
+      "",
+      "Situation:",
+      "[PASTE THE CONFLICT CASE HERE]"
+    ]
   }
 ]

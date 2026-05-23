@@ -43,5 +43,65 @@
       "The most reliable repair is often structural, not merely motivational.",
       "A good teaching site should therefore help readers change procedure, not just vocabulary."
     ]
+  },
+  {
+    "slug": "familiarity-is-not-understanding",
+    "title": "Familiarity, fluency, and understanding are not the same thing",
+    "summary": "Many bias problems begin when a person mistakes recognition, smooth explanation, or comfortable vocabulary for real depth of understanding.",
+    "paragraphs": [
+      "This matters for both learning and leadership. A person can sound increasingly competent as the language becomes more familiar while still lacking the ability to explain the mechanism, spot edge cases, or perform the task under pressure.",
+      "That is why CogBias gives serious space to overconfidence, the Dunning-Kruger effect, the illusion of explanatory depth, and the curse of knowledge. Together they explain why confidence and comprehension drift apart so easily.",
+      "A strong teaching site should therefore help readers test understanding, not merely rehearse labels. Good prompts ask for mechanism, contrast cases, challenge questions, and task-level demonstration."
+    ],
+    "bullets": [
+      "Recognition is weaker than explanation.",
+      "Explanation is weaker than performance.",
+      "Fluency without feedback is one of the easiest routes to false confidence."
+    ]
+  },
+  {
+    "slug": "social-pressure-distorts-the-record",
+    "title": "Groups distort judgment before they distort the minutes",
+    "summary": "In group settings, social cost can bend what people notice, what they report, and what they are willing to challenge long before a formal decision is recorded.",
+    "paragraphs": [
+      "One reason groupthink is so dangerous is that it does not only affect the final vote. It changes who speaks, how objections are phrased, how much friction a dominant view faces, and even what later feels like the room's genuine consensus.",
+      "Authority bias, social desirability bias, false-consensus effect, and ingroup pressure often work together. The visible decision can therefore look tidy even while private judgment inside the group is far more uneven.",
+      "This is why CogBias leans on independent first passes, dissent rounds, and meeting protocols. If the social environment is doing hidden cognitive work, the repair has to change the room, not just remind people to be brave."
+    ],
+    "bullets": [
+      "Consensus quality depends on the cost of dissent.",
+      "The meeting process is part of the cognitive environment.",
+      "Silence is often socially produced before it is evidentially meaningful."
+    ]
+  },
+  {
+    "slug": "the-default-is-a-decision-too",
+    "title": "The default is not neutral just because it is quiet",
+    "summary": "Defaults, omissions, and inherited arrangements can carry as much decision weight as active choices, even when they feel administratively invisible.",
+    "paragraphs": [
+      "People often reserve moral and analytical scrutiny for active intervention while treating defaults as background. But in practice, a default can encode priorities, shape incentives, and steer outcomes at scale.",
+      "That is why loss aversion, omission bias, default effect, and status quo bias belong together pedagogically. They explain how the mind overprotects what is already selected, already owned, or already underway.",
+      "A practical bias site should help readers expose the hidden choice architecture around them. The question is not only 'What did I choose?' but also 'What quietly chose for me because it arrived preloaded?'"
+    ],
+    "bullets": [
+      "The absence of action is not the absence of causation.",
+      "Preselection often smuggles in endorsement.",
+      "Good decision hygiene compares the default against the alternatives explicitly."
+    ]
+  },
+  {
+    "slug": "good-teaching-separates-confidence-from-competence",
+    "title": "Good teaching separates confidence from competence",
+    "summary": "A useful site does not merely warn against overconfidence. It shows how to tell calibrated understanding, shallow fluency, and social confidence apart.",
+    "paragraphs": [
+      "That distinction matters because people often reach for confidence as a practical proxy. In classrooms, interviews, meetings, and public discourse, certainty is easier to observe than actual reasoning depth. But it is often a poor stand-in.",
+      "CogBias therefore tries to teach with comparison tools instead of just slogans. Readers need concrete checks: explain it plainly, compare it to a rival case, recover the base rate, or state what would falsify the current view.",
+      "When the site works well, the user leaves with a better diagnostic habit, not just a sharper vocabulary. That is the same teaching ambition LogFall has, translated into the terrain of distorted judgment."
+    ],
+    "bullets": [
+      "Confidence is observable, but observability is not validity.",
+      "Competence usually reveals itself under comparison, constraint, or challenge.",
+      "Teaching improves when the test for understanding is built into the workflow."
+    ]
   }
 ]

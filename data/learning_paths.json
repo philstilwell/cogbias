@@ -80,5 +80,71 @@
       "fundamental-attribution-error",
       "survivorship-bias"
     ]
+  },
+  {
+    "slug": "social-pressure-and-belonging",
+    "title": "Social Pressure And Belonging",
+    "summary": "A path for the distortions that show up when agreement, status, loyalty, and fear of standing apart start doing cognitive work.",
+    "audience": "Best for teams, classrooms, leadership groups, and politically charged conversations.",
+    "whenToUse": "Use this path when a room feels aligned too quickly or when private judgment is likely being bent by social cost.",
+    "guidingQuestion": "What changes in the reasoning once dissent becomes socially expensive?",
+    "biasSlugs": [
+      "groupthink",
+      "authority-bias",
+      "social-desirability-bias",
+      "false-consensus-effect",
+      "ingroup-bias",
+      "reactance"
+    ]
+  },
+  {
+    "slug": "loss-ownership-and-omission",
+    "title": "Loss, Ownership, And Omission",
+    "summary": "A decision path for the biases that make change feel costly, surrender feel painful, and inaction feel cleaner than it is.",
+    "audience": "Best for managers, household decisions, policy tradeoffs, pricing, and resource allocation.",
+    "whenToUse": "Use this path when the real pull seems to be preserving what is already in hand rather than comparing options cleanly.",
+    "guidingQuestion": "How do defaults, ownership, and downside language quietly decide the choice before the merits are weighed?",
+    "biasSlugs": [
+      "loss-aversion",
+      "endowment-effect",
+      "default-effect",
+      "omission-bias",
+      "status-quo-bias",
+      "sunk-cost-effect",
+      "ambiguity-effect"
+    ]
+  },
+  {
+    "slug": "confidence-and-understanding",
+    "title": "Confidence And Understanding",
+    "summary": "A path for the places where confidence, familiarity, explanation, and genuine competence come apart.",
+    "audience": "Best for educators, coaches, interviewers, managers, and anyone teaching or evaluating understanding.",
+    "whenToUse": "Use this path when someone sounds sure, fluent, or experienced and you need to know whether the underlying understanding is actually there.",
+    "guidingQuestion": "What makes exposure or fluency feel like mastery long before it deserves to?",
+    "biasSlugs": [
+      "overconfidence-effect",
+      "dunning-kruger-effect",
+      "illusion-of-explanatory-depth",
+      "planning-fallacy",
+      "curse-of-knowledge",
+      "spotlight-effect"
+    ]
+  },
+  {
+    "slug": "conflict-threat-and-tribe",
+    "title": "Conflict, Threat, And Tribe",
+    "summary": "A path for the biases that make disagreement feel hostile, tribal, or morally diagnostic faster than the facts support.",
+    "audience": "Best for dialogue, mediation, team conflict, moderation, and political reasoning.",
+    "whenToUse": "Use this path when ambiguous behavior is being read through threat, bad faith, or us-versus-them interpretation.",
+    "guidingQuestion": "How does conflict become a story about enemies before it becomes a careful account of what happened?",
+    "biasSlugs": [
+      "naive-realism",
+      "hostile-attribution-bias",
+      "ingroup-bias",
+      "negativity-bias",
+      "fundamental-attribution-error",
+      "reactance",
+      "confirmation-bias"
+    ]
   }
 ]

@@ -622,5 +622,1301 @@
       "system": "Score decision quality against precommitted criteria instead of against luck-adjusted headlines."
     },
     "teachingNote": "This page is crucial for helping readers distinguish learning from scoreboard worship."
+  },
+  {
+    "slug": "dunning-kruger-effect",
+    "summary": "The tendency for low skill or shallow understanding to produce overestimation of one's own competence, while higher-skill people may underestimate how unusual their competence really is.",
+    "mechanism": "When someone lacks the underlying skill, they often also lack the feedback sensitivity needed to recognize the gap. The same missing competence that harms performance can also distort self-evaluation.",
+    "distortion": "It bends self-assessment, calibration, and judgments about who is ready, credible, or already understands enough.",
+    "defaultMove": "Use the feeling of fluency or familiarity as evidence of mastery.",
+    "commonTrigger": "Early learning, thin feedback loops, public confidence displays, and domains where mistakes are not immediately corrected.",
+    "firstCountermove": "Ask what task would genuinely test the claimed understanding rather than trusting confidence or recognition alone.",
+    "domains": ["Learning & expertise", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["overconfidence-effect", "illusion-of-explanatory-depth", "authority-bias"],
+    "whatItFeelsLike": "It often feels like you have already crossed from exposure into understanding just because the terms, moves, or explanations now sound familiar.",
+    "examples": {
+      "everyday": "Someone watches a few videos on a topic and quickly starts speaking as though they could teach the subject, because the vocabulary now feels natural.",
+      "workplace": "A new manager overestimates readiness to make a strategic call in a complex domain because early successes produced confidence faster than judgment.",
+      "public": "Confident public commentary gets mistaken for competence because fluent explanation sounds like depth even when the model underneath is thin."
+    },
+    "redFlags": [
+      "Confidence rises faster than the number of serious corrective encounters.",
+      "The person cannot yet distinguish surface familiarity from robust understanding.",
+      "A difficult challenge question is treated as pedantry rather than as a calibration test."
+    ],
+    "reflectionQuestions": [
+      "What task would actually falsify my claim to understand this?",
+      "Can I explain the mechanism cleanly without relying on jargon placeholders?",
+      "Where am I getting correction from people or environments that can really expose my errors?"
+    ],
+    "confusions": [
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence is the broader tendency toward excessive certainty; the Dunning-Kruger effect is specifically about low competence distorting self-assessment."
+      },
+      {
+        "slug": "illusion-of-explanatory-depth",
+        "note": "The illusion of explanatory depth is about believing you understand a mechanism more deeply than you do; the Dunning-Kruger effect is about miscalibrating your own competence more generally."
+      },
+      {
+        "slug": "authority-bias",
+        "note": "Authority bias overweights other people's status; Dunning-Kruger concerns your own skill estimate and your ability to recognize its limits."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Shift from 'I get it' to a concrete test of whether you can perform, explain, compare, or troubleshoot the thing in question.",
+      "team": "Use demonstrations, peer review, or challenge questions instead of self-rated confidence alone.",
+      "system": "Build environments where feedback arrives quickly enough to expose the difference between familiarity and competence."
+    },
+    "teachingNote": "This page pairs well with illusion of explanatory depth because together they explain why people can sound informed long before they are well-calibrated."
+  },
+  {
+    "slug": "loss-aversion",
+    "summary": "The tendency for potential losses to weigh more heavily than equivalent gains when choices are being evaluated.",
+    "mechanism": "Losses feel like removal, pain, or forfeiture, while gains often feel less urgent by comparison. That asymmetry bends choice even when the objective tradeoff is balanced.",
+    "distortion": "It skews risk-taking, negotiation, retention, investment, and policy evaluation by making downside avoidance feel more diagnostic than upside opportunity.",
+    "defaultMove": "Treat avoiding the loss as more important than securing the equivalent gain.",
+    "commonTrigger": "Tradeoffs framed in terms of surrender, cutbacks, exits, missed upside, or visible sacrifice.",
+    "firstCountermove": "Restate the same choice from both the gain frame and the loss frame before deciding which reaction is actually evidence-sensitive.",
+    "domains": ["Personal decisions", "Forecasting & planning"],
+    "effort": "Structured process",
+    "related": ["endowment-effect", "omission-bias", "status-quo-bias"],
+    "whatItFeelsLike": "The painful option seems obviously more serious than the rewarding option, even when the two are structurally equivalent.",
+    "examples": {
+      "everyday": "Someone keeps an expensive membership because canceling feels like losing a benefit, even though keeping it mostly preserves an underused cost.",
+      "workplace": "A team rejects a strong but disruptive improvement because the visible short-term loss looms larger than the longer-term gain.",
+      "public": "Policy debates get organized around what people might lose, and the fear of removal dominates discussion more than the value of future benefits."
+    },
+    "redFlags": [
+      "The downside language is vivid while the upside language is treated as abstract.",
+      "Equivalent options feel asymmetric only because one is cast as a forfeiture.",
+      "Short-term pain is overweighted relative to long-term net value."
+    ],
+    "reflectionQuestions": [
+      "Would this look different if I restated it as an equivalent gain rather than a loss?",
+      "Am I protecting against a genuine asymmetry or just against the emotional force of surrender?",
+      "What long-term value is getting underweighted because the short-term loss is more vivid?"
+    ],
+    "confusions": [
+      {
+        "slug": "endowment-effect",
+        "note": "Loss aversion is the broader asymmetry between losses and gains; the endowment effect is one way that asymmetry becomes inflated around things already possessed."
+      },
+      {
+        "slug": "omission-bias",
+        "note": "Omission bias prefers inaction when action could cause harm; loss aversion is the wider overweighting of negative change itself."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current state; loss aversion helps explain why changing the current state can feel more threatening than it should."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write the equivalent gain version of the choice next to the loss version and compare whether your judgment changes.",
+      "team": "Force the discussion to include the cost of staying put, not only the cost of changing.",
+      "system": "Present major tradeoffs with symmetric gain and loss frames so one emotional register does not own the entire decision."
+    },
+    "teachingNote": "This entry is a practical bridge between simple choice architecture and the larger family of bias around defaults, ownership, and omission."
+  },
+  {
+    "slug": "framing-effect",
+    "summary": "The tendency for the same underlying information to produce different judgments depending on how the options or outcomes are described.",
+    "mechanism": "Presentation changes what feels central, normal, risky, or morally salient. The structure of the choice may stay fixed while the felt meaning of the choice shifts.",
+    "distortion": "It bends decisions by making wording, context, and presentation style look like evidence rather than like packaging.",
+    "defaultMove": "Treat the current wording as if it reveals the natural structure of the problem.",
+    "commonTrigger": "Risk communication, health choices, policy messaging, negotiations, dashboards, and emotionally loaded labels.",
+    "firstCountermove": "Rewrite the decision in at least one alternative frame before trusting your first reaction to it.",
+    "domains": ["Media & politics", "Personal decisions"],
+    "effort": "Quick reset",
+    "related": ["default-effect", "loss-aversion", "neglect-of-probability"],
+    "whatItFeelsLike": "The framed version feels like the thing itself, so it is easy to forget that a different wording could have shifted your judgment sharply.",
+    "examples": {
+      "everyday": "A medical choice looks safer or scarier depending on whether the description highlights survival rates or mortality rates.",
+      "workplace": "A proposal gains support when described as protecting what the team already has, but loses support when described as a new risk-heavy initiative, even though the substance is unchanged.",
+      "public": "Political language wins support by casting the same policy as relief, protection, burden, or threat depending on which reaction the speaker wants to activate."
+    },
+    "redFlags": [
+      "A change in wording produces a change in judgment without a change in underlying facts.",
+      "One label seems to settle the evaluation before the tradeoff has actually been unpacked.",
+      "The person has not yet seen the equivalent alternative phrasing."
+    ],
+    "reflectionQuestions": [
+      "What would this same option sound like if it were described in the opposite frame?",
+      "What has changed here besides the wording or emotional emphasis?",
+      "Am I responding to the substance of the tradeoff or to how the tradeoff has been staged?"
+    ],
+    "confusions": [
+      {
+        "slug": "default-effect",
+        "note": "Default effect privileges the preselected option; framing effect changes how the options feel before any default is even chosen."
+      },
+      {
+        "slug": "loss-aversion",
+        "note": "Loss aversion overweights downside; framing effect helps determine whether the same choice is experienced as downside or upside in the first place."
+      },
+      {
+        "slug": "neglect-of-probability",
+        "note": "Neglect of probability underweights the numbers; framing effect can distort the reaction even when the numbers are present."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Translate the choice into a second and third wording before treating your first reaction as informed.",
+      "team": "Require one person to restate major options in neutral language and one person to restate them in the opposite emotional frame.",
+      "system": "Design forms, dashboards, and policy explanations so equivalent options are presented symmetrically."
+    },
+    "teachingNote": "This page is especially useful for media literacy because it shows how persuasion can happen long before any explicit factual dispute."
+  },
+  {
+    "slug": "endowment-effect",
+    "summary": "The tendency to value something more highly once it is already owned, possessed, or treated as part of the current arrangement.",
+    "mechanism": "Ownership changes the emotional baseline. Giving something up starts to feel like a loss rather than like an even exchange, which inflates the price of parting with it.",
+    "distortion": "It skews negotiation, valuation, retention, and policy design by making what is already held feel uniquely worth preserving.",
+    "defaultMove": "Inflate the value of what is already mine relative to what I would pay to acquire it fresh.",
+    "commonTrigger": "Ownership, incumbency, institutional inheritance, and choices where surrender is more vivid than acquisition.",
+    "firstCountermove": "Ask what you would pay to acquire the thing if you did not already have it.",
+    "domains": ["Personal decisions", "Markets & valuation"],
+    "effort": "Structured process",
+    "related": ["loss-aversion", "status-quo-bias", "sunk-cost-effect"],
+    "whatItFeelsLike": "Once something becomes yours, its value seems self-evident, and the burden of parting with it starts to look far steeper than the burden of acquiring it ever did.",
+    "examples": {
+      "everyday": "A person prices an item they own far above what they would ever have paid for the same item if it had belonged to someone else.",
+      "workplace": "A department treats its current tool, budget line, or process as uniquely precious because it is already embedded in the local environment.",
+      "public": "Benefits, subsidies, exemptions, or symbolic protections become politically expensive to change once they are treated as already possessed."
+    },
+    "redFlags": [
+      "The ownership status of the object is doing more work than its current utility.",
+      "Giving something up feels much harder than acquiring the equivalent thing would have felt.",
+      "The price of surrender rises once the thing has been psychologically incorporated into the status quo."
+    ],
+    "reflectionQuestions": [
+      "What would I pay for this if I did not already own it?",
+      "Am I protecting utility or protecting possession?",
+      "Would this still feel this valuable if it were someone else's default rather than mine?"
+    ],
+    "confusions": [
+      {
+        "slug": "loss-aversion",
+        "note": "Loss aversion is the broader overweighting of losses; the endowment effect is a specific inflation that emerges once an item is already treated as yours."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current arrangement broadly; the endowment effect specifically inflates the value of owned or inherited components of that arrangement."
+      },
+      {
+        "slug": "sunk-cost-effect",
+        "note": "Sunk cost effect protects prior investment; endowment effect protects what is already possessed even when no large sunk investment is involved."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Run one valuation pass as if the item belonged to someone else and you were deciding whether to buy in.",
+      "team": "Ask a less invested outsider to estimate the value before the owners anchor the discussion.",
+      "system": "Make periodic re-justification normal for owned resources, benefits, and inherited structures."
+    },
+    "teachingNote": "This page helps readers see how ownership quietly changes valuation without ever announcing itself as a distortion."
+  },
+  {
+    "slug": "omission-bias",
+    "summary": "The tendency to judge harmful inaction as more acceptable, or less blameworthy, than equally harmful action.",
+    "mechanism": "When harm comes through action, agency is vivid; when harm comes through inaction, the causal line feels psychologically softer even when the outcome is equivalent.",
+    "distortion": "It bends moral judgment, policy choice, and risk management by making omission look more neutral than it really is.",
+    "defaultMove": "Treat doing nothing as less morally or practically loaded than taking the action that would lead to the same net outcome.",
+    "commonTrigger": "Medical choices, safety policy, parenting decisions, leadership calls, and any situation where action would make responsibility feel more explicit.",
+    "firstCountermove": "Compare the outcomes of action and omission side by side before deciding that inaction is ethically cleaner.",
+    "domains": ["Personal decisions", "Public policy"],
+    "effort": "Structured process",
+    "related": ["loss-aversion", "default-effect", "status-quo-bias"],
+    "whatItFeelsLike": "Not acting feels like staying clean, even when the decision to abstain is itself shaping the outcome just as much.",
+    "examples": {
+      "everyday": "A parent feels more comfortable not intervening than taking an action with the same risk profile because omission feels less blameworthy.",
+      "workplace": "A leader tolerates ongoing harm from an inherited process because changing it would create visible responsibility if the transition goes poorly.",
+      "public": "Policy debates treat harmful inaction as less charged than equally harmful intervention because omission sounds like restraint or neutrality."
+    },
+    "redFlags": [
+      "Inaction is being treated as if it were outside the moral or causal field.",
+      "The burden of responsibility attaches mainly to action, not to the consequences of not acting.",
+      "The same outcome feels different depending on whether it arrived by commission or omission."
+    ],
+    "reflectionQuestions": [
+      "What outcome does doing nothing actively preserve here?",
+      "Am I evaluating the causal result or just the felt cleanliness of inaction?",
+      "Would I describe omission as neutral if someone else were choosing it?"
+    ],
+    "confusions": [
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias prefers the existing arrangement; omission bias specifically treats inaction as less blameworthy even when the outcome is equally bad."
+      },
+      {
+        "slug": "default-effect",
+        "note": "Default effect favors the preselected option; omission bias moralizes the difference between doing and not doing."
+      },
+      {
+        "slug": "loss-aversion",
+        "note": "Loss aversion makes active downside loom large; omission bias makes non-action feel more innocent than action with the same consequence."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Rewrite the case as two causal paths with explicit outcomes, one through action and one through omission.",
+      "team": "Ask who is being protected by the comfort of inaction and who bears its hidden cost.",
+      "system": "Require decision reviews to document the consequences of choosing the default or doing nothing."
+    },
+    "teachingNote": "This is a strong bias for showing that omission can be an active policy choice rather than a neutral backdrop."
+  },
+  {
+    "slug": "optimism-bias",
+    "summary": "The tendency to overestimate favorable outcomes and underestimate the probability or impact of unfavorable ones, especially for oneself or one's own plans.",
+    "mechanism": "Self-protective imagination, selective scenario generation, and emotionally attractive future stories make positive outcomes feel more natural than the full distribution supports.",
+    "distortion": "It bends forecasting, preparedness, budgeting, and personal risk judgment by turning hope into hidden evidence.",
+    "defaultMove": "Model the upside in detail while keeping downside cases vague or compressed.",
+    "commonTrigger": "Personal planning, entrepreneurial projects, health risks, investing, and situations where hope itself has motivational value.",
+    "firstCountermove": "Force one concrete downside scenario into the forecast before locking in the optimistic range.",
+    "domains": ["Forecasting & planning", "Personal decisions"],
+    "effort": "Structured process",
+    "related": ["overconfidence-effect", "planning-fallacy", "neglect-of-probability"],
+    "whatItFeelsLike": "The good outcome feels not only preferable but also more normal, more likely, and more representative of what will probably happen.",
+    "examples": {
+      "everyday": "Someone assumes the future will include the benefits of the plan without much of the friction, delay, or loss that usually accompanies similar efforts.",
+      "workplace": "A team imagines adoption, growth, or launch success in concrete terms while keeping the failure modes abstract and socially awkward to discuss.",
+      "public": "People underweight disaster, maintenance, or downside planning because dwelling on them feels overly negative or unproductive."
+    },
+    "redFlags": [
+      "Upside cases are richly imagined while downside cases are thin or generic.",
+      "The probability of trouble is described as small mainly because it is emotionally unwelcome.",
+      "Plans are defended partly on the grounds that confidence itself is energizing."
+    ],
+    "reflectionQuestions": [
+      "Which undesirable outcome am I least motivated to model in detail?",
+      "Would I assign the same probability if this were someone else's project rather than mine?",
+      "How much of this forecast is evidence and how much is hopeful identification with the result?"
+    ],
+    "confusions": [
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence is excessive certainty in general; optimism bias specifically leans the forecast toward favorable outcomes."
+      },
+      {
+        "slug": "planning-fallacy",
+        "note": "Planning fallacy is one practical expression of optimism bias in schedules, budgets, and project estimates."
+      },
+      {
+        "slug": "neglect-of-probability",
+        "note": "Neglect of probability underweights the numbers altogether; optimism bias selectively tilts the forecast toward the pleasant side."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write a probability range that includes one realistic bad outcome you would rather not think about.",
+      "team": "Assign someone to own the downside scenarios explicitly rather than treating them as mood-killing objections.",
+      "system": "Use historical base rates and postmortem records to counter purely aspirational forecasting."
+    },
+    "teachingNote": "This page gives the site a more human complement to overconfidence: not just certainty, but certainty biased in a direction the mind wants."
+  },
+  {
+    "slug": "groupthink",
+    "summary": "The tendency for groups to preserve harmony, cohesion, or momentum at the cost of critical evaluation and live dissent.",
+    "mechanism": "Belonging pressures, shared identity, perceived urgency, and the discomfort of open disagreement can make consensus feel safer than scrutiny, even when the scrutiny is exactly what the decision needs.",
+    "distortion": "It bends collective judgment by turning agreement into a proxy for soundness and dissent into a threat to the group itself.",
+    "defaultMove": "Protect cohesion by suppressing awkward objections and moving the conversation toward a neat consensus.",
+    "commonTrigger": "High-pressure meetings, prestigious leaders, identity-charged teams, fast strategic choices, and environments where dissent is socially costly.",
+    "firstCountermove": "Ask explicitly which live objections have not yet had equal time in the room.",
+    "domains": ["Teams & management", "Politics & institutions"],
+    "effort": "Team protocol",
+    "related": ["social-desirability-bias", "authority-bias", "ingroup-bias"],
+    "whatItFeelsLike": "It feels like the team is finally aligned, when in fact the conversation has become too socially expensive to challenge honestly.",
+    "examples": {
+      "everyday": "A friend group slides toward one plan because nobody wants to be the awkward holdout, even though several people privately have major doubts.",
+      "workplace": "A meeting converges quickly around the senior person's preferred option while objections get softened, delayed, or turned into tone problems.",
+      "public": "Institutions repeat a shared story because breaking from it would mark the speaker as disloyal or disruptive rather than as responsibly critical."
+    },
+    "redFlags": [
+      "Agreement arrives suspiciously fast for the complexity of the decision.",
+      "Dissent is interpreted as disloyalty, negativity, or failure to be a team player.",
+      "The room can state the consensus clearly but cannot state the strongest live objection with equal clarity."
+    ],
+    "reflectionQuestions": [
+      "Which objections would be socially hardest to voice in this room?",
+      "Can the group articulate the best opposing case as strongly as the preferred one?",
+      "Would the same discussion look different if the highest-status person had spoken last?"
+    ],
+    "confusions": [
+      {
+        "slug": "social-desirability-bias",
+        "note": "Social desirability bias distorts what people report about themselves or their views; groupthink is the larger group-level suppression of real dissent and evaluation."
+      },
+      {
+        "slug": "authority-bias",
+        "note": "Authority bias gives excess weight to high-status voices; groupthink includes that force but also the wider social pressure to preserve harmony."
+      },
+      {
+        "slug": "ingroup-bias",
+        "note": "Ingroup bias favors one's own side over outsiders; groupthink describes how the inside of the group stops testing itself honestly."
+      }
+    ],
+    "repairMoves": {
+      "solo": "If you are the potential dissenter, write the objection concretely before the room's momentum makes you edit it down.",
+      "team": "Assign a real dissenter role and make the strongest countercase part of the official agenda.",
+      "system": "Structure major decisions so status, sequence, and social cost do not all push toward premature consensus."
+    },
+    "teachingNote": "This is one of the most important editorial additions because it lets CogBias speak directly to organizational failure rather than only to individual misjudgment."
+  },
+  {
+    "slug": "illusion-of-explanatory-depth",
+    "summary": "The tendency to believe you understand how something works more deeply than you actually do, especially until you are forced to explain the mechanism step by step.",
+    "mechanism": "Recognition, familiarity, and partial narrative fluency can masquerade as causal understanding. The gap only becomes visible when the person has to produce the mechanism in detail.",
+    "distortion": "It bends self-assessment, learning, debate, and policy discussion by letting shallow grasp present itself as robust explanation.",
+    "defaultMove": "Mistake surface familiarity for real mechanism-level understanding.",
+    "commonTrigger": "Complex systems, everyday technologies, public policy debates, and topics where the broad outline is easier to remember than the workings.",
+    "firstCountermove": "Try to explain the mechanism step by step without handwaving over the crucial joins.",
+    "domains": ["Learning & expertise", "Public reasoning"],
+    "effort": "Structured process",
+    "related": ["dunning-kruger-effect", "overconfidence-effect", "naive-realism"],
+    "whatItFeelsLike": "The topic feels understood right up until someone asks you to cash the understanding out in detail.",
+    "examples": {
+      "everyday": "A person is sure they understand how a common object or policy works until they have to explain the actual chain of operations or incentives.",
+      "workplace": "A team feels aligned around a system design or process change because everyone recognizes the top-line story, but deeper questioning reveals major gaps in mechanism.",
+      "public": "People debate institutional or economic systems confidently using slogans, labels, and surface narratives that collapse when detailed explanation is required."
+    },
+    "redFlags": [
+      "The explanation works best at the slogan level and weakens as detail is requested.",
+      "There is confidence in the conclusion without a matching ability to trace the mechanism.",
+      "Key transitions are smoothed over with labels that sound explanatory but are not."
+    ],
+    "reflectionQuestions": [
+      "Can I explain the mechanism in ordinary language without skipping the crucial link?",
+      "Which step in the process am I currently covering with a label instead of an explanation?",
+      "Would my confidence survive having to teach this to someone who asks practical follow-up questions?"
+    ],
+    "confusions": [
+      {
+        "slug": "dunning-kruger-effect",
+        "note": "Dunning-Kruger is about broader miscalibration of one's own competence; the illusion of explanatory depth is specifically about overstating causal or mechanistic understanding."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence is excessive certainty in many domains; this illusion is the special case where understanding is shallower than it feels."
+      },
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism assumes one's perception is just the facts; the illusion of explanatory depth assumes one's explanation is already deep enough when it may only feel coherent."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Explain the mechanism on paper from start to finish until you hit the first handwave, then mark that gap as the real state of your understanding.",
+      "team": "Use teach-back or whiteboard reconstruction instead of nodding along to high-level consensus.",
+      "system": "Build review norms that reward mechanism tracing and not just fluent top-line agreement."
+    },
+    "teachingNote": "This is a superb page for education because students often discover the bias live when they try to explain rather than merely recognize."
+  },
+  {
+    "slug": "social-desirability-bias",
+    "summary": "The tendency to over-report socially approved attitudes or behaviors and under-report the ones likely to invite embarrassment, judgment, or sanction.",
+    "mechanism": "Self-presentation pressure changes what feels sayable. The reported belief becomes partly a response to the audience, not just a report of the underlying state.",
+    "distortion": "It bends surveys, interviews, workplace reporting, classroom discussion, and self-description by making public answers look cleaner than private reality.",
+    "defaultMove": "Give the answer that sounds responsible, loyal, fair, disciplined, or compassionate enough for the setting.",
+    "commonTrigger": "Interviews, sensitive topics, authority presence, public reporting, moralized environments, and any context where judgment feels nearby.",
+    "firstCountermove": "Ask what answer would feel easiest to say publicly, then ask whether it is also the most truthful one.",
+    "domains": ["Surveys & interviews", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["groupthink", "ingroup-bias", "naive-realism"],
+    "whatItFeelsLike": "The polished answer feels like the right answer, which can make it hard to notice how much of it is audience management.",
+    "examples": {
+      "everyday": "Someone reports healthier habits, kinder motives, or more principled consistency than their behavior would support because the social script is already in the room.",
+      "workplace": "Team members give the response that sounds aligned, ethical, or diligent when they know the real answer may read as careless, skeptical, or disloyal.",
+      "public": "Polling, institutional reporting, or classroom discussion overstates approved positions because the social cost of deviation changes what gets said."
+    },
+    "redFlags": [
+      "Answers cluster suspiciously around the socially approved response.",
+      "The person sounds more like they are performing a norm than describing a reality.",
+      "Anonymous and public responses differ sharply."
+    ],
+    "reflectionQuestions": [
+      "What answer is easiest to say in this setting regardless of whether it is fully accurate?",
+      "How much audience management is mixed into the report I am giving?",
+      "What would I say differently if embarrassment or sanction were off the table?"
+    ],
+    "confusions": [
+      {
+        "slug": "groupthink",
+        "note": "Groupthink suppresses dissent at the group level; social desirability bias distorts the individual's reported answer under social pressure."
+      },
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism assumes one's view is simply the facts; social desirability bias concerns how reported views shift in response to the audience."
+      },
+      {
+        "slug": "ingroup-bias",
+        "note": "Ingroup bias favors one's own side; social desirability bias shapes what one says in front of that side."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Notice the answer that would make you look good here, then ask whether it is also the most accurate answer.",
+      "team": "Separate idea collection from public attribution when the topic is socially expensive.",
+      "system": "Use anonymity, indirect questioning, and low-sanction reporting channels when accuracy matters more than public signaling."
+    },
+    "teachingNote": "This page is crucial for helping readers understand why self-report is often a reconstruction shaped by audience, not a transparent window into belief."
+  },
+  {
+    "slug": "default-effect",
+    "summary": "The tendency to favor the preselected or default option simply because it is already positioned as the path of least resistance.",
+    "mechanism": "Preselection carries an implicit endorsement and reduces the effort required to stay put. The default begins to feel normal, safe, and institutionally validated.",
+    "distortion": "It bends choice architecture by letting the setup of options determine outcomes more strongly than the underlying merits would justify.",
+    "defaultMove": "Treat the preselected option as the natural one and ask more of the alternatives than of the default itself.",
+    "commonTrigger": "Forms, settings, subscriptions, benefits enrollment, institutional procedures, and multi-step choices with friction.",
+    "firstCountermove": "Evaluate the default as though it were just another proposed option rather than the background setting.",
+    "domains": ["Choice architecture", "Personal decisions"],
+    "effort": "Quick reset",
+    "related": ["status-quo-bias", "omission-bias", "framing-effect"],
+    "whatItFeelsLike": "The default feels invisible. It does not announce itself as a recommendation, even though that is often exactly how it functions.",
+    "examples": {
+      "everyday": "A person stays enrolled, subscribed, or selected because the default requires no attention and therefore feels like neutrality.",
+      "workplace": "An institutional form or process quietly channels people into one option because changing the preselection requires extra steps or justification.",
+      "public": "Policy outcomes are shaped heavily by what gets set as automatic, opt-out, or administratively normal long before citizens feel they are making an active choice."
+    },
+    "redFlags": [
+      "The current option is being accepted without having to make its case.",
+      "Alternatives require extra energy or friction while the default is treated as background.",
+      "People explain their choice mainly by saying they just left things as they were set."
+    ],
+    "reflectionQuestions": [
+      "If this were not the preselected option, would I still choose it?",
+      "What friction is protecting the default from real comparison?",
+      "Is the default carrying an implicit endorsement I have not yet examined?"
+    ],
+    "confusions": [
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current arrangement broadly; default effect is the narrower pull exerted by the preselected option in the architecture itself."
+      },
+      {
+        "slug": "omission-bias",
+        "note": "Omission bias moralizes inaction; default effect channels behavior through option setup even when morality is not the explicit issue."
+      },
+      {
+        "slug": "framing-effect",
+        "note": "Framing effect changes how options are described; default effect changes which option starts out administratively privileged."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Rewrite the preselected option into the same comparison list as the alternatives and judge it afresh.",
+      "team": "Check whether the design of the menu is deciding more than the merits of the options.",
+      "system": "Audit defaults periodically because they can steer large behavior patterns quietly and at scale."
+    },
+    "teachingNote": "This page helps show how institutions can shape judgment without ever needing strong argument or overt pressure."
+  },
+  {
+    "slug": "neglect-of-probability",
+    "summary": "The tendency to ignore or drastically underuse probability information when making decisions under uncertainty.",
+    "mechanism": "Vivid scenarios, emotional reactions, and categorical thinking crowd out the quieter work of numeracy. The possibility itself feels like enough to drive the choice.",
+    "distortion": "It bends risk judgment by making the imagination of an outcome more decisive than the likelihood of the outcome.",
+    "defaultMove": "Let the intensity of the possible scenario outweigh the actual chance that it will occur.",
+    "commonTrigger": "Fearful risks, low-probability disasters, dramatic upside stories, and choices where precise probability feels cognitively inconvenient.",
+    "firstCountermove": "Write the probability information in plain view before arguing about the scenario itself.",
+    "domains": ["Risk judgment", "Public policy"],
+    "effort": "Structured process",
+    "related": ["loss-aversion", "framing-effect", "optimism-bias"],
+    "whatItFeelsLike": "Once the scenario is vivid enough, the mind starts treating possibility as if it were nearly the same thing as plausibility.",
+    "examples": {
+      "everyday": "A person makes a major choice around a dramatic but very unlikely outcome while barely weighting the much more probable ordinary outcomes.",
+      "workplace": "A team spends heavily to protect against a sensational but low-probability event while underinvesting in routine but frequent losses.",
+      "public": "Political debate gets dominated by extreme scenarios whose vividness outruns their actual probability."
+    },
+    "redFlags": [
+      "The conversation contains a vivid scenario but almost no honest probability weighting.",
+      "The possibility of the event is being treated as sufficient reason to act as though it were likely.",
+      "Low-probability high-intensity cases are pulling more than the broader risk distribution."
+    ],
+    "reflectionQuestions": [
+      "What is the actual probability range, not just the memorable scenario?",
+      "Am I reacting to possibility, or to probability-weighted consequence?",
+      "Which common but less dramatic outcomes are being crowded out by the vivid one?"
+    ],
+    "confusions": [
+      {
+        "slug": "loss-aversion",
+        "note": "Loss aversion overweights downside; neglect of probability underweights the likelihood information that should shape how seriously the downside is taken."
+      },
+      {
+        "slug": "framing-effect",
+        "note": "Framing changes how a choice feels; neglect of probability can persist even when the framing is held constant if the numbers themselves are ignored."
+      },
+      {
+        "slug": "optimism-bias",
+        "note": "Optimism bias tilts forecasts toward desirable outcomes; neglect of probability often drops the quantitative structure entirely."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Force yourself to write the probability range before discussing how frightening or attractive the scenario is.",
+      "team": "Separate the probability estimate from the consequence discussion so vividness cannot do all the work at once.",
+      "system": "Design risk reviews that surface both frequency and severity instead of allowing only one to dominate attention."
+    },
+    "teachingNote": "This is a high-value page for showing how risk talk becomes distorted when imagination outruns quantitative discipline."
+  },
+  {
+    "slug": "authority-bias",
+    "summary": "The tendency to give excess weight to the opinion of a high-status or authoritative source independent of whether the source has earned that weight on the specific issue.",
+    "mechanism": "Status compresses evaluation. The mind uses prestige, hierarchy, or symbolic authority as a shortcut for credibility, often before the content has been properly inspected.",
+    "distortion": "It bends belief, compliance, and collective decision-making by letting position or aura substitute for issue-specific evidence.",
+    "defaultMove": "Treat the source's status as evidence of the claim's truth or soundness.",
+    "commonTrigger": "Hierarchies, experts speaking outside their domain, charismatic leaders, branded institutions, and urgent situations where independent evaluation feels costly.",
+    "firstCountermove": "Ask what the content would sound like if it came from someone without the same status marker.",
+    "domains": ["Teams & management", "Media & politics"],
+    "effort": "Quick reset",
+    "related": ["groupthink", "social-desirability-bias", "halo-effect"],
+    "whatItFeelsLike": "The argument seems almost pre-evaluated by who delivered it, so the content arrives wearing borrowed credibility.",
+    "examples": {
+      "everyday": "A person defers to a confident authority figure on a topic where the authority's status is only loosely related to the actual question.",
+      "workplace": "A senior leader's preferred interpretation gains traction before the evidence is examined because people treat role rank as substantive validation.",
+      "public": "Celebrities, founders, officials, or prestigious commentators move belief not mainly through argument but through symbolic authority."
+    },
+    "redFlags": [
+      "The source's status is being offered as implicit support even when domain fit is weak.",
+      "People respond to the title or prestige faster than to the reasons.",
+      "Disagreement feels like insubordination rather than like content-level evaluation."
+    ],
+    "reflectionQuestions": [
+      "What would I think of this claim if it came from a low-status source with the same evidence?",
+      "Is the authority relevant to this specific issue or merely impressive in general?",
+      "Am I borrowing certainty from rank because evaluating the content directly feels harder?"
+    ],
+    "confusions": [
+      {
+        "slug": "groupthink",
+        "note": "Groupthink suppresses dissent across the room; authority bias is the specific overweighting of the high-status voice inside that room."
+      },
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect spreads one admired trait across many judgments; authority bias is the special case where status itself is doing the spreading."
+      },
+      {
+        "slug": "social-desirability-bias",
+        "note": "Social desirability shapes what people say under evaluation; authority bias shapes what they are willing to believe or endorse because of the evaluator's status."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Restate the claim without the source label and evaluate the reasons on their own.",
+      "team": "Ask lower-status voices to speak first or independently before the senior view sets the frame.",
+      "system": "Separate evidence review from hierarchy whenever the decision quality matters more than ritual deference."
+    },
+    "teachingNote": "This page becomes especially powerful when paired with groupthink because it shows how social structure distorts judgment without needing overt coercion."
+  },
+  {
+    "slug": "naive-realism",
+    "summary": "The tendency to experience one's own perception of reality as the obvious, objective view and to treat disagreement as evidence that others are uninformed, irrational, or biased.",
+    "mechanism": "Because one's own interpretation arrives without visible effort, it feels like direct access to the facts rather than like one perspective among several.",
+    "distortion": "It bends political argument, conflict, and self-assessment by hiding the role of interpretation in one's own judgments while locating interpretation only in other people.",
+    "defaultMove": "Treat my own view as simply the facts and competing views as motivated departures from those facts.",
+    "commonTrigger": "Identity-charged issues, moralized conflicts, in-group discourse, and settings where disagreement feels like a verdict on character or sanity.",
+    "firstCountermove": "State how an intelligent, informed opponent might reconstruct the same facts differently before dismissing the disagreement.",
+    "domains": ["Media & politics", "Conflict & dialogue"],
+    "effort": "Structured process",
+    "related": ["confirmation-bias", "motivated-reasoning", "ingroup-bias"],
+    "whatItFeelsLike": "The view does not feel like a view. It feels like the plain reading of reality, which makes competing interpretations look suspicious before they are heard out.",
+    "examples": {
+      "everyday": "Two people draw different lessons from the same interaction, and each experiences the difference not as perspective but as the other person's distortion.",
+      "workplace": "A team conflict escalates because each side treats its own interpretation of events as the obvious one and reads disagreement as bad faith or incompetence.",
+      "public": "Political polarization hardens when citizens experience their own framing as neutral reality and rival framings as propaganda, bias, or delusion."
+    },
+    "redFlags": [
+      "Disagreement is being explained mainly by defect in the other side rather than by ambiguity in the world.",
+      "The person can state their own view clearly but cannot reconstruct the strongest rival perspective fairly.",
+      "The interpretive work in one's own position has become invisible."
+    ],
+    "reflectionQuestions": [
+      "How would an intelligent opponent describe the same facts without sounding absurd?",
+      "Which interpretive step in my own position am I currently treating as if it were raw reality?",
+      "If I were wrong here, what kind of wrongness would still feel to me like obviousness?"
+    ],
+    "confusions": [
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias selectively protects a favored conclusion; naive realism makes the favored conclusion feel like the unfiltered facts to begin with."
+      },
+      {
+        "slug": "motivated-reasoning",
+        "note": "Motivated reasoning bends standards in service of desired conclusions; naive realism hides the fact that your own conclusion is an interpretation at all."
+      },
+      {
+        "slug": "ingroup-bias",
+        "note": "Ingroup bias favors your own side; naive realism helps your side's perspective feel like the neutral baseline."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Try to write the strongest rival interpretation without mockery, then identify the interpretive fork where your own reading diverges.",
+      "team": "Use steelmanning norms before evaluating whether the disagreement is about facts, values, incentives, or framing.",
+      "system": "Build deliberative processes that surface competing interpretations explicitly instead of treating one as the default reality."
+    },
+    "teachingNote": "This page matters because it explains why even intelligent people can be sincerely convinced they are simply seeing the world as it is."
+  },
+  {
+    "slug": "ingroup-bias",
+    "summary": "The tendency to favor, trust, defend, or positively interpret people and claims associated with one's own group more readily than comparable outsiders.",
+    "mechanism": "Group identity changes both emotional warmth and interpretive charity. Similar evidence gets processed through different standards depending on whether the person feels like one of us or one of them.",
+    "distortion": "It bends judgment about persons, evidence, blame, loyalty, and risk by making group membership itself a hidden evidential factor.",
+    "defaultMove": "Extend more trust, warmth, and excuse-making to the in-group than to an equivalent out-group.",
+    "commonTrigger": "Political identity, teams, departments, nationality, religion, fandom, and any setting where belonging organizes status and trust.",
+    "firstCountermove": "Ask what standard you are applying here and whether the same standard would survive a group-label swap.",
+    "domains": ["Media & politics", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["implicit-bias", "groupthink", "naive-realism"],
+    "whatItFeelsLike": "Your own side feels more reasonable, more nuanced, and more basically trustworthy before the comparison has been earned.",
+    "examples": {
+      "everyday": "A person forgives a mistake from their own group as understandable while reading a similar mistake from outsiders as revealing.",
+      "workplace": "Departments judge familiar allies more charitably than unfamiliar teams even when the actual evidence is comparable.",
+      "public": "Identical rhetoric, scandals, or policy failures are treated very differently depending on which side produced them."
+    },
+    "redFlags": [
+      "The same behavior receives different interpretive charity depending on who did it.",
+      "One side gets context and nuance while the other gets character verdicts.",
+      "Trust begins with belonging rather than with issue-specific evidence."
+    ],
+    "reflectionQuestions": [
+      "What would I think if the exact same behavior came from the out-group?",
+      "Where am I extending charity to insiders that I refuse to extend elsewhere?",
+      "How much of my confidence here is really confidence in the tribe?"
+    ],
+    "confusions": [
+      {
+        "slug": "implicit-bias",
+        "note": "Implicit bias can shape impressions across many group categories; ingroup bias is the more explicit tilt toward those experienced as one's own side."
+      },
+      {
+        "slug": "groupthink",
+        "note": "Groupthink suppresses internal dissent; ingroup bias changes how the group judges insiders and outsiders more broadly."
+      },
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism makes your side's interpretation feel like plain reality; ingroup bias makes your side itself feel more trustworthy and fair."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Run the group-label swap and see whether your standard survives it.",
+      "team": "Have mixed reviewers or cross-group evaluation when the stakes are high and the group boundary is salient.",
+      "system": "Track whether similar conduct receives different treatment depending on the actor's affiliation."
+    },
+    "teachingNote": "This entry gives CogBias a direct route into tribal reasoning, loyalty, and double standards without collapsing everything into explicit animus."
+  },
+  {
+    "slug": "reactance",
+    "summary": "The tendency to push back against a perceived attempt to limit one's freedom of choice, sometimes by moving toward the very option one was being steered away from.",
+    "mechanism": "When autonomy feels threatened, the restoration of freedom can become the hidden goal. The content of the choice becomes secondary to resisting the feeling of control.",
+    "distortion": "It bends decision-making by making resistance itself feel evidential or principled even when the underlying issue has not been re-evaluated carefully.",
+    "defaultMove": "Judge the pressure first and the merits of the proposal second.",
+    "commonTrigger": "Commands, paternalistic messaging, manipulative persuasion, heavy-handed leadership, and public attempts to shame compliance.",
+    "firstCountermove": "Separate the question 'Do I resent the pressure?' from the question 'What is the best underlying choice?'",
+    "domains": ["Personal decisions", "Conflict & persuasion"],
+    "effort": "Quick reset",
+    "related": ["authority-bias", "framing-effect", "motivated-reasoning"],
+    "whatItFeelsLike": "The pressure itself becomes so salient that resisting it starts to feel like independence, even if the resisted option may still be the best one.",
+    "examples": {
+      "everyday": "A person rejects sound advice partly because it arrived with too much push, guilt, or control wrapped around it.",
+      "workplace": "A team resists a sensible change because the rollout was experienced as imposed rather than as examined together.",
+      "public": "People move toward symbolic defiance not because the position is well-supported but because rejecting perceived coercion becomes the point."
+    },
+    "redFlags": [
+      "The emotional energy is focused more on resisting the pressure than on assessing the merits.",
+      "The same option would likely feel different if introduced with less control or condescension.",
+      "Defiance starts to masquerade as evidence of independence or truth."
+    ],
+    "reflectionQuestions": [
+      "If the pressure vanished, what would I think of the underlying choice itself?",
+      "Am I judging the proposal or mainly trying to restore a feeling of autonomy?",
+      "What part of my reaction is a response to tone, status, or manipulation rather than to substance?"
+    ],
+    "confusions": [
+      {
+        "slug": "authority-bias",
+        "note": "Authority bias overweights high-status guidance; reactance resists it because the guidance feels autonomy-threatening."
+      },
+      {
+        "slug": "framing-effect",
+        "note": "Framing changes how the option is presented; reactance is the specific backlash when the presentation feels controlling."
+      },
+      {
+        "slug": "motivated-reasoning",
+        "note": "Motivated reasoning protects desired conclusions broadly; reactance is the narrower pushback triggered by felt constraint on choice."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Acknowledge the autonomy threat directly, then re-evaluate the underlying choice as if no one were pressing you.",
+      "team": "Lower the controlling tone and invite independent reasoning before expecting buy-in.",
+      "system": "Design persuasion and policy messaging to preserve agency cues rather than provoking defensive resistance."
+    },
+    "teachingNote": "This page helps the site speak to persuasion failures where people become more committed to a bad option because the pressure against it was mishandled."
+  },
+  {
+    "slug": "self-serving-bias",
+    "summary": "The tendency to take disproportionate credit for successes while locating failures in bad luck, unfair circumstances, or other people.",
+    "mechanism": "Protecting self-image changes the standard of explanation. Evidence that flatters the self gets read as diagnostic of character or skill, while evidence that threatens the self gets reframed as exceptional or externally caused.",
+    "distortion": "It bends accountability, learning, blame, and retrospective explanation by making the self a special case in causal judgment.",
+    "defaultMove": "Read success as evidence of my qualities and failure as evidence of the environment's defects.",
+    "commonTrigger": "Performance reviews, conflicts, public wins and losses, identity-charged feedback, and any situation where responsibility carries ego cost.",
+    "firstCountermove": "Compare the explanatory standard you are using for the success case with the one you are using for the failure case.",
+    "domains": ["Teams & management", "Conflict & dialogue"],
+    "effort": "Structured process",
+    "related": ["fundamental-attribution-error", "overconfidence-effect", "ingroup-bias"],
+    "whatItFeelsLike": "Your interpretation feels fair because the flattering explanation seems more obvious and the threatening explanation seems to require more context.",
+    "examples": {
+      "everyday": "Someone treats a good result as proof of their judgment but treats a bad result as mainly the fault of timing, weather, or other people's behavior.",
+      "workplace": "A manager credits strategic skill when a project succeeds but blames weak execution or impossible constraints when a similar project goes badly.",
+      "public": "Political actors treat their own side's wins as earned and their losses as products of bias, sabotage, or unusual conditions."
+    },
+    "redFlags": [
+      "Success is explained with internal traits while failure is explained with external obstacles.",
+      "The standard for evidence shifts depending on whether the conclusion flatters the self.",
+      "Learning stalls because the most self-threatening explanation never gets equal airtime."
+    ],
+    "reflectionQuestions": [
+      "Would I tell the same causal story if someone else had produced this outcome?",
+      "What part of the failure am I least motivated to own directly?",
+      "Where am I using different evidential standards for credit and blame?"
+    ],
+    "confusions": [
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error overweights traits when judging other people; self-serving bias is the asymmetry that protects the self when responsibility is at stake."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence exaggerates certainty before or during judgment; self-serving bias rewrites responsibility after the outcome threatens or flatters the self."
+      },
+      {
+        "slug": "ingroup-bias",
+        "note": "Ingroup bias extends extra charity to one's side broadly; self-serving bias is the narrower self-protective version centered on one's own outcomes."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write one explanation that credits your own role and one that critiques it, then ask which would feel more natural if another person were the subject.",
+      "team": "Separate the lessons-learned discussion from the status discussion so owning mistakes does not immediately feel like self-demotion.",
+      "system": "Use shared review rubrics that require the same questions after wins and losses instead of letting the outcome decide the explanatory standard."
+    },
+    "teachingNote": "This page is especially useful after projects, conflicts, and evaluations because it explains how people protect identity while still sounding causal and reasonable."
+  },
+  {
+    "slug": "false-consensus-effect",
+    "summary": "The tendency to overestimate how many other people share one's own beliefs, preferences, habits, or reactions.",
+    "mechanism": "The self becomes the easiest available sample. Because one's own view is highly accessible and often socially reinforced by local circles, it starts to feel more typical than it really is.",
+    "distortion": "It bends social estimation, public judgment, and strategy by making one's own position feel closer to the common sense center than the evidence supports.",
+    "defaultMove": "Treat my own reaction as a reasonable stand-in for what most people probably think.",
+    "commonTrigger": "Homogeneous social circles, partisan media, strong local cultures, online feedback loops, and situations where the broader sample is mostly imagined.",
+    "firstCountermove": "Ask what real sample, not just your own intuition, supports the claim that most people think this way.",
+    "domains": ["Media & politics", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["naive-realism", "social-desirability-bias", "ingroup-bias"],
+    "whatItFeelsLike": "Your view feels not only correct but normal, so disagreement starts to look fringe, performative, or less common than it is.",
+    "examples": {
+      "everyday": "A person assumes their preferences are basically universal and is genuinely surprised when others do not share them.",
+      "workplace": "A team member speaks as though the room already agrees because their immediate peers do, even though the wider organization does not.",
+      "public": "Partisans misread the country because their own coalition, feed, or local environment makes their view feel like the obvious majority."
+    },
+    "redFlags": [
+      "Claims about what most people think are made without any real sample behind them.",
+      "The local circle is being mistaken for the broader public.",
+      "Unexpected disagreement is treated as surprising because consensus was quietly assumed in advance."
+    ],
+    "reflectionQuestions": [
+      "What actual evidence do I have about how common this view is?",
+      "Am I sampling the public, or just sampling my own environment?",
+      "How different would my estimate look if I started from outside my circle rather than from myself?"
+    ],
+    "confusions": [
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism makes your own interpretation feel like the facts; false-consensus effect additionally makes that interpretation feel more widely shared than it is."
+      },
+      {
+        "slug": "social-desirability-bias",
+        "note": "Social desirability bias changes what people say under evaluation; false-consensus effect changes what you estimate other people genuinely think."
+      },
+      {
+        "slug": "ingroup-bias",
+        "note": "Ingroup bias grants extra trust to your side; false-consensus effect misjudges how representative that side is."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Replace vague majority language with a smaller, testable claim about the audience you actually know.",
+      "team": "Ask whose reactions have been sampled and whose have merely been presumed.",
+      "system": "Use anonymous surveys, broader sampling, or cross-group feedback before claiming that a view is normal, mainstream, or obvious."
+    },
+    "teachingNote": "This entry matters for polarization and team drift because it shows how people can sincerely mistake local reinforcement for broad social reality."
+  },
+  {
+    "slug": "mere-exposure-effect",
+    "summary": "The tendency to like, trust, or feel more comfortable with something simply because it has become familiar.",
+    "mechanism": "Repeated exposure lowers friction. What is easier to process starts to feel safer, smoother, and more acceptable, even when the underlying merits have not changed.",
+    "distortion": "It bends preference, trust, branding, and repetition effects by letting familiarity masquerade as evidence of quality.",
+    "defaultMove": "Treat the familiar option as better, warmer, or less risky because it is easier to process.",
+    "commonTrigger": "Repeated messaging, recurring brands, inherited tools, familiar faces, and situations where comfort is easier to notice than quality.",
+    "firstCountermove": "Ask what exactly improved besides your familiarity with the thing.",
+    "domains": ["Media & politics", "Personal decisions"],
+    "effort": "Quick reset",
+    "related": ["status-quo-bias", "default-effect", "halo-effect"],
+    "whatItFeelsLike": "The familiar option does not feel biased. It simply feels more reasonable, less abrasive, and easier to trust.",
+    "examples": {
+      "everyday": "A song, product, or phrase grows on someone mainly because repeated exposure makes it feel more natural.",
+      "workplace": "A team keeps preferring a familiar vendor or workflow even when alternatives might perform better, because the known option feels less cognitively costly.",
+      "public": "A slogan or public figure gains warmth through repeated presence alone, long before the underlying claims have been evaluated carefully."
+    },
+    "redFlags": [
+      "Comfort with the option is increasing faster than the evidence for it.",
+      "Repeated exposure is being mistaken for improvement in quality.",
+      "The familiar choice feels easier to defend even when nothing new has been learned."
+    ],
+    "reflectionQuestions": [
+      "What would I think of this if it were new to me today?",
+      "Am I reacting to quality, or to the ease of processing something familiar?",
+      "Which unfamiliar option is being penalized simply for not having had repeated exposure?"
+    ],
+    "confusions": [
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current arrangement broadly; mere exposure effect explains why repeated contact itself can make that arrangement feel more appealing."
+      },
+      {
+        "slug": "default-effect",
+        "note": "Default effect privileges the preselected option; mere exposure effect privileges the repeatedly encountered option even without formal preselection."
+      },
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect spreads one admired trait across judgment; mere exposure effect generates warmth through familiarity even when no admired trait is doing the work."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Compare the familiar option against a blind description of the alternatives before treating comfort as evidence.",
+      "team": "Ask whether the preferred option won because it performed best or because it has been in front of the group the longest.",
+      "system": "Design reviews that periodically reset inherited choices so repetition alone does not become a hidden selection criterion."
+    },
+    "teachingNote": "This page helps readers see how repetition can persuade without argument, especially in branding, politics, and institutional drift."
+  },
+  {
+    "slug": "spotlight-effect",
+    "summary": "The tendency to overestimate how much other people notice, remember, or care about one's appearance, mistakes, or behavior.",
+    "mechanism": "Your own experience is centered on you, so the event feels disproportionately salient. It is hard to discount the fact that what is vivid in your mind is usually peripheral in everyone else's.",
+    "distortion": "It bends self-consciousness, social prediction, and embarrassment by making your own visible moments feel more publicly central than they are.",
+    "defaultMove": "Treat my misstep, awkwardness, or appearance change as if it occupies other people's attention the way it occupies mine.",
+    "commonTrigger": "Embarrassment, public speaking, social anxiety, novelty in appearance, and moments when personal salience is especially high.",
+    "firstCountermove": "Estimate what else the other people in the scene were probably focused on besides you.",
+    "domains": ["Personal decisions", "Conflict & dialogue"],
+    "effort": "Quick reset",
+    "related": ["social-desirability-bias", "false-consensus-effect", "negativity-bias"],
+    "whatItFeelsLike": "The moment seems glaringly public because it is huge from your angle, even though it may barely register from everyone else's.",
+    "examples": {
+      "everyday": "Someone replays a small social mistake for hours because it feels like everyone must have noticed it and kept tracking it.",
+      "workplace": "A person avoids speaking up after one clumsy moment because they assume the room is far more focused on that slip than it really is.",
+      "public": "People overestimate how much observers are noticing their awkwardness, appearance, or small deviations in visible behavior."
+    },
+    "redFlags": [
+      "Embarrassment is being treated as evidence that public attention must also be high.",
+      "The person cannot easily imagine how little bandwidth others may have had for the event.",
+      "A small deviation is being remembered as socially central because it felt central from the inside."
+    ],
+    "reflectionQuestions": [
+      "What else were the other people probably attending to besides me?",
+      "If someone else had done this, how long would I actually have dwelled on it?",
+      "Am I measuring public attention, or just private salience?"
+    ],
+    "confusions": [
+      {
+        "slug": "social-desirability-bias",
+        "note": "Social desirability bias changes what people report under social evaluation; spotlight effect exaggerates how much that evaluation is happening in the first place."
+      },
+      {
+        "slug": "false-consensus-effect",
+        "note": "False-consensus effect overestimates how widely others share your view; spotlight effect overestimates how much others are noticing you at all."
+      },
+      {
+        "slug": "negativity-bias",
+        "note": "Negativity bias makes adverse moments feel weightier; spotlight effect makes those moments feel more publicly observed than they really are."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Run the perspective swap: ask how long you would realistically remember the same moment if it happened to someone else.",
+      "team": "Normalize small mistakes openly so individuals stop treating ordinary slips as identity-defining public events.",
+      "system": "Design feedback cultures where evaluation is specific and bounded rather than leaving people to imagine constant diffuse scrutiny."
+    },
+    "teachingNote": "This entry gives the site a useful bridge into self-consciousness, performance anxiety, and the distortions created by egocentric salience."
+  },
+  {
+    "slug": "hostile-attribution-bias",
+    "summary": "The tendency to read ambiguous behavior as hostile, threatening, or intentionally disrespectful even when the evidence is underdetermined.",
+    "mechanism": "When threat or grievance is salient, ambiguous cues get interpreted through a defensive lens. The mind closes the causal gap by supplying harmful intent faster than the facts justify.",
+    "distortion": "It bends conflict interpretation by turning ambiguity into motive certainty and by escalating situations that might have other explanations.",
+    "defaultMove": "Assume the behavior points to bad intent before slower interpretations get equal consideration.",
+    "commonTrigger": "Conflict, stress, prior betrayal, tribal tension, online exchanges, and settings where identity or status feels vulnerable.",
+    "firstCountermove": "List at least two non-hostile explanations that still fit the observed behavior before endorsing the hostile one.",
+    "domains": ["Conflict & dialogue", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["negativity-bias", "fundamental-attribution-error", "naive-realism"],
+    "whatItFeelsLike": "The hostile reading can feel like realism rather than interpretation because the alternative explanations seem too charitable or too naive by comparison.",
+    "examples": {
+      "everyday": "Someone interprets a late reply or terse message as deliberate disrespect even though there are several mundane explanations available.",
+      "workplace": "A team reads an awkward comment from another department as a power move or insult before clarifying the local context around it.",
+      "public": "Citizens interpret ambiguous acts by the other side as proof of malicious intent because conflict already primed the threat lens."
+    },
+    "redFlags": [
+      "Ambiguous behavior is being translated into motive certainty unusually fast.",
+      "Alternative explanations are treated as excuses before they are examined.",
+      "The emotional force of the event is doing more work than the actual evidence of intent."
+    ],
+    "reflectionQuestions": [
+      "What else could explain this besides contempt or aggression?",
+      "What evidence would I require if the same behavior came from someone on my side?",
+      "How much of my certainty is coming from prior tension rather than from this incident itself?"
+    ],
+    "confusions": [
+      {
+        "slug": "negativity-bias",
+        "note": "Negativity bias overweights adverse cues broadly; hostile-attribution bias specifically turns ambiguity into a story of harmful intent."
+      },
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error overweights stable traits; hostile-attribution bias adds the specific leap toward threat or malice."
+      },
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism makes your interpretation feel like the facts; hostile-attribution bias supplies the hostile content of that interpretation."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write the hostile interpretation and two less-loaded interpretations side by side before deciding which one is actually earned.",
+      "team": "Require teams in conflict to separate observation from inferred motive during incident review.",
+      "system": "Build clarification steps into escalations so ambiguous conduct is not processed as proof of bad faith by default."
+    },
+    "teachingNote": "This page is valuable for dialogue and moderation because it explains how conflict can intensify itself through interpretation before new facts even arrive."
+  },
+  {
+    "slug": "belief-bias",
+    "summary": "The tendency to judge an argument as stronger when its conclusion seems believable and weaker when its conclusion seems unbelievable, even if the reasoning structure is unchanged.",
+    "mechanism": "Conclusion fit crowds out structural evaluation. When the endpoint already feels true or false, the mind starts grading the reasoning through the lens of that felt plausibility.",
+    "distortion": "It bends reasoning assessment by letting agreement with the conclusion substitute for inspection of the inferential steps.",
+    "defaultMove": "Treat a believable conclusion as evidence that the argument supporting it must be stronger.",
+    "commonTrigger": "Identity-charged claims, moralized topics, familiar narratives, and arguments where the conclusion arrives before the structure has been consciously checked.",
+    "firstCountermove": "Evaluate whether the premises actually support the conclusion before asking whether the conclusion sounds true.",
+    "domains": ["Learning & expertise", "Media & politics"],
+    "effort": "Structured process",
+    "related": ["confirmation-bias", "motivated-reasoning", "outcome-bias"],
+    "whatItFeelsLike": "The argument seems fine because the conclusion already lands in the right place, which makes the reasoning defects harder to notice.",
+    "examples": {
+      "everyday": "A person accepts a weak argument because it supports a view they already find obviously plausible.",
+      "workplace": "A proposal gets an easier logical pass because the team likes the strategic destination and stops checking whether the supporting case really reaches it.",
+      "public": "People grade arguments differently based on whose conclusion they endorse, even when the inferential structure is equally poor."
+    },
+    "redFlags": [
+      "The conclusion is being discussed more than the chain of support that is supposed to justify it.",
+      "An argument feels stronger mainly because you already wanted its endpoint to be true.",
+      "A structurally similar argument would likely be judged differently if the conclusion were disliked."
+    ],
+    "reflectionQuestions": [
+      "Would I still call this reasoning strong if it led to a conclusion I disliked?",
+      "What exactly is the inferential step from premise to conclusion here?",
+      "Am I evaluating the argument, or merely recognizing agreement with the endpoint?"
+    ],
+    "confusions": [
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias selectively favors supporting evidence; belief bias specifically misjudges the quality of the reasoning because the conclusion feels believable."
+      },
+      {
+        "slug": "motivated-reasoning",
+        "note": "Motivated reasoning bends standards in service of desired conclusions more broadly; belief bias is the narrower logic-evaluation failure driven by conclusion plausibility."
+      },
+      {
+        "slug": "outcome-bias",
+        "note": "Outcome bias judges a process by how it ended; belief bias judges an argument by whether the ending conclusion already seems right."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Rewrite the argument in abstract form or swap the conclusion label to see whether your logic judgment changes.",
+      "team": "Ask one person to test the reasoning structure independently of whether the group likes the endpoint.",
+      "system": "Teach argument review as a separate step from agreement review so conclusion appeal cannot do both jobs at once."
+    },
+    "teachingNote": "This entry forms a direct conceptual bridge back to LogFall because it shows how cognitive bias can corrupt logical evaluation before a formal fallacy label is ever applied."
+  },
+  {
+    "slug": "curse-of-knowledge",
+    "summary": "The tendency for informed people to underestimate how hard it is for less-informed people to follow, predict, or reconstruct the same material.",
+    "mechanism": "Once knowledge is internalized, it becomes difficult to simulate ignorance accurately. The informed mind loses access to how many steps, definitions, and hidden assumptions used to be non-obvious.",
+    "distortion": "It bends teaching, communication, onboarding, and forecasting about what others can understand or notice.",
+    "defaultMove": "Assume that because the idea is now clear to me, the path to clarity is also obvious to other people.",
+    "commonTrigger": "Expert explanation, onboarding, product design, writing for novices, and any situation where perspective-taking has to cross a large knowledge gap.",
+    "firstCountermove": "Ask what a thoughtful novice would still be missing at each step of the explanation.",
+    "domains": ["Learning & expertise", "Teams & management"],
+    "effort": "Structured process",
+    "related": ["illusion-of-explanatory-depth", "dunning-kruger-effect", "false-consensus-effect"],
+    "whatItFeelsLike": "The explanation feels straightforward, so the other person's confusion can start to look like inattention rather than like a real perspective gap.",
+    "examples": {
+      "everyday": "Someone explains a process in a way that sounds clear to them but quietly skips the very steps a newcomer would need.",
+      "workplace": "An expert team ships instructions, dashboards, or documentation that presume far more shared context than new users actually have.",
+      "public": "Well-informed commentators speak as though the missing background is trivial, which makes less-informed audiences appear more unreasonable than they really are."
+    },
+    "redFlags": [
+      "Key terms or steps are being skipped because they no longer feel like steps to the expert.",
+      "Other people's confusion is being attributed to laziness more quickly than to missing context.",
+      "The explainer cannot easily reconstruct what the novice perspective still lacks."
+    ],
+    "reflectionQuestions": [
+      "What do I now take for granted that a novice would still need spelled out?",
+      "Which step in my explanation would have confused me before I learned this?",
+      "Am I judging the audience's attention fairly, or am I underestimating the knowledge gap?"
+    ],
+    "confusions": [
+      {
+        "slug": "illusion-of-explanatory-depth",
+        "note": "Illusion of explanatory depth is about overestimating how deeply you understand something; curse of knowledge is about underestimating how hard it is for others to understand it."
+      },
+      {
+        "slug": "dunning-kruger-effect",
+        "note": "Dunning-Kruger concerns miscalibration from low skill; curse of knowledge concerns perspective-taking failures once knowledge is already present."
+      },
+      {
+        "slug": "false-consensus-effect",
+        "note": "False-consensus effect overestimates shared beliefs or reactions; curse of knowledge overestimates shared background and ease of comprehension."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Pressure-test your explanation on someone with less context or rewrite it for a thoughtful beginner.",
+      "team": "Have newcomers or adjacent teams review documentation before assuming it is clear enough.",
+      "system": "Build novice checks into education, onboarding, and product writing instead of treating expert fluency as the default audience."
+    },
+    "teachingNote": "This page gives CogBias a strong instructional voice because it explains why experts so often communicate badly without intending to."
+  },
+  {
+    "slug": "ambiguity-effect",
+    "summary": "The tendency to avoid options when their probabilities are unclear, even if the unclear option may not actually be worse than the familiar one.",
+    "mechanism": "Unknown probabilities feel like uncontrolled risk. The discomfort of not knowing the odds becomes a hidden negative attribute attached to the option itself.",
+    "distortion": "It bends choice under uncertainty by making uncertainty about the probabilities feel like evidence against the option.",
+    "defaultMove": "Prefer the option with known odds even when the known option may have weaker overall value.",
+    "commonTrigger": "Investing, policy tradeoffs, innovation, career moves, new products, and decisions where probability ambiguity is more vivid than expected value.",
+    "firstCountermove": "Separate uncertainty about the odds from evidence that the option is actually worse.",
+    "domains": ["Forecasting & planning", "Personal decisions"],
+    "effort": "Structured process",
+    "related": ["loss-aversion", "omission-bias", "neglect-of-probability"],
+    "whatItFeelsLike": "The unknown option seems irresponsible almost by definition, even when the known option's weaknesses are just as real.",
+    "examples": {
+      "everyday": "A person rejects a potentially good opportunity mainly because the odds are hard to pin down, while giving the familiar option a pass because its risks feel easier to name.",
+      "workplace": "A team favors a mediocre but legible strategy over a possibly stronger one because the uncertainty around the new path feels harder to defend.",
+      "public": "Institutions prefer legacy approaches with known limitations to less familiar approaches whose payoff distributions are harder to quantify cleanly."
+    },
+    "redFlags": [
+      "The mere fact that the probabilities are unclear is being treated as decisive evidence against the option.",
+      "The known option is escaping equivalent scrutiny because its risks feel easier to narrate.",
+      "Discomfort with ambiguity is being mistaken for comparative analysis."
+    ],
+    "reflectionQuestions": [
+      "What is actually worse about this option besides the fact that its odds are harder to estimate?",
+      "Am I comparing expected value, or just comparing comfort levels about uncertainty?",
+      "How much uncertainty is attached to the familiar option that I am quietly overlooking?"
+    ],
+    "confusions": [
+      {
+        "slug": "loss-aversion",
+        "note": "Loss aversion overweights downside; ambiguity effect specifically penalizes the option whose probabilities are murkier."
+      },
+      {
+        "slug": "omission-bias",
+        "note": "Omission bias morally prefers inaction; ambiguity effect analytically prefers the option with clearer odds even when action and omission are not the central contrast."
+      },
+      {
+        "slug": "neglect-of-probability",
+        "note": "Neglect of probability ignores numerical likelihood; ambiguity effect is hypersensitive to whether the likelihood can be specified at all."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write what is unknown, what is knowable, and what evidence actually bears on value instead of bundling all uncertainty into one aversive feeling.",
+      "team": "Discuss the downside of the familiar option with the same rigor used to criticize the ambiguous one.",
+      "system": "Use scenario ranges and explicit uncertainty categories so unknown odds do not automatically become vetoes."
+    },
+    "teachingNote": "This entry helps the site speak more clearly about innovation aversion, policy caution, and the hidden psychology of preferring the merely legible."
+  },
+  {
+    "slug": "present-bias",
+    "summary": "The tendency to give disproportionate weight to immediate costs and payoffs relative to later ones, even when the later consequences are larger.",
+    "mechanism": "Near-term experience feels more concrete, more urgent, and more behaviorally real than distant consequences. The timing difference itself starts to masquerade as a difference in importance.",
+    "distortion": "It bends planning, self-control, savings, health behavior, and project discipline by making now dominate later beyond what the long-term case justifies.",
+    "defaultMove": "Overprotect the present self from discomfort while underprotecting the future self from accumulation of cost.",
+    "commonTrigger": "Habit change, budgeting, deadlines, dieting, investing, procrastination, and any tradeoff between immediate friction and delayed value.",
+    "firstCountermove": "Ask what the future version of you would want the current version not to discount so heavily.",
+    "domains": ["Personal decisions", "Forecasting & planning"],
+    "effort": "Structured process",
+    "related": ["projection-bias", "planning-fallacy", "sunk-cost-effect"],
+    "whatItFeelsLike": "The immediate discomfort seems unusually diagnostic of what matters, while the future consequence feels vague enough to bargain away.",
+    "examples": {
+      "everyday": "A person trades away long-run value repeatedly because the short-term inconvenience feels more real than the later cost.",
+      "workplace": "A team underinvests in documentation, maintenance, or prevention because the immediate time cost is vivid and the later savings are not.",
+      "public": "Institutions defer costly preparation even when future damage will be larger, because the present burden is the part people feel directly."
+    },
+    "redFlags": [
+      "Short-term friction is being weighted more heavily than long-term consequence without explicit justification.",
+      "The future cost is acknowledged verbally but not allowed to shape the choice proportionally.",
+      "Repeated temporary exceptions are quietly becoming a stable pattern."
+    ],
+    "reflectionQuestions": [
+      "What is my future self likely to wish I had weighted more seriously today?",
+      "Which immediate discomfort is crowding out a larger downstream cost?",
+      "Would I endorse this tradeoff if the long-term consequence arrived tomorrow instead of later?"
+    ],
+    "confusions": [
+      {
+        "slug": "projection-bias",
+        "note": "Projection bias assumes future preferences will resemble current ones; present bias simply overweights the immediate moment in the tradeoff."
+      },
+      {
+        "slug": "planning-fallacy",
+        "note": "Planning fallacy underestimates time, cost, or complexity; present bias overweights the appeal of immediate relief or payoff while choosing."
+      },
+      {
+        "slug": "sunk-cost-effect",
+        "note": "Sunk-cost effect protects past investment; present bias privileges the present payoff or pain point over future consequences."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Make the future consequence concrete enough to compete with the present feeling by writing the delayed cost in specific terms.",
+      "team": "Assign one voice in planning discussions to represent the future user, customer, or team burden explicitly.",
+      "system": "Use commitment devices, scheduled reviews, and default structures that protect long-term interests from momentary preference drift."
+    },
+    "teachingNote": "This page gives the site stronger traction on habit formation, procrastination, and the recurring gap between what people endorse and what they actually choose."
+  },
+  {
+    "slug": "projection-bias",
+    "summary": "The tendency to overestimate how much your future preferences, values, and reactions will resemble whatever you feel strongly right now.",
+    "mechanism": "The current state anchors the imagination of the future self. Because present preferences are vivid and available, they are overprojected into later circumstances where they may not survive intact.",
+    "distortion": "It bends planning and consumption by making today's mood, appetite, urgency, or identity feel more stable across time than it really is.",
+    "defaultMove": "Assume the future me will want roughly what the current me wants.",
+    "commonTrigger": "Shopping, scheduling, food decisions, time commitments, emotional states, and any situation where a present preference is being used to plan for a later self.",
+    "firstCountermove": "Ask how often your preferences have actually shifted across similar situations in the past.",
+    "domains": ["Personal decisions", "Forecasting & planning"],
+    "effort": "Structured process",
+    "related": ["present-bias", "optimism-bias", "status-quo-bias"],
+    "whatItFeelsLike": "The current preference feels stable enough to build around, even though it may belong more to the moment than to the future self you are planning for.",
+    "examples": {
+      "everyday": "Someone makes a future-oriented decision while hungry, tired, excited, or upset and assumes the later self will endorse the same preference structure.",
+      "workplace": "A team commits future capacity based on today's enthusiasm without accounting for how priorities and energy levels will shift.",
+      "public": "People support plans built around their current emotional weather and later discover that the assumed future appetite for sacrifice or restraint did not hold."
+    },
+    "redFlags": [
+      "A current feeling is being used as though it were a stable trait of the future self.",
+      "The plan assumes later motivation will match present motivation without evidence.",
+      "Temporary urgency or appetite is being mistaken for durable preference."
+    ],
+    "reflectionQuestions": [
+      "How often has my preference shifted in comparable situations before?",
+      "What part of this plan is built on a feeling that may not survive the context change?",
+      "What would this choice look like if I planned for a more ordinary future mood instead of today's state?"
+    ],
+    "confusions": [
+      {
+        "slug": "present-bias",
+        "note": "Present bias overweights immediate payoffs and costs; projection bias additionally assumes the future self will share the present self's tastes and priorities."
+      },
+      {
+        "slug": "optimism-bias",
+        "note": "Optimism bias expects favorable outcomes; projection bias expects future preferences to mirror current ones."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias protects the current arrangement; projection bias protects the current preference state by extending it too far into the future."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Make the decision from a calmer, more typical state or revisit it when the present feeling is less dominant.",
+      "team": "Review future commitments in a second meeting after the initial emotional peak has passed.",
+      "system": "Build delayed confirmation, cooling-off periods, or staged commitments into plans that depend heavily on future motivation."
+    },
+    "teachingNote": "This entry helps readers distinguish immediate temptation from the subtler mistake of assuming the future self will be psychologically continuous with the present moment."
+  },
+  {
+    "slug": "normalcy-bias",
+    "summary": "The tendency to assume that things will keep functioning more or less normally, which leads people to underprepare for unprecedented or fast-moving disruption.",
+    "mechanism": "The recent past acts like a powerful baseline. When a threat departs from familiar patterns, people often preserve the old frame longer than the evidence deserves because normality is easier to imagine than rupture.",
+    "distortion": "It bends risk response and preparation by making the absence of past disruption feel like evidence against future disruption.",
+    "defaultMove": "Treat the current pattern as likely to continue until overwhelming evidence forces revision.",
+    "commonTrigger": "Disaster planning, institutional risk, infrastructure stress, health threats, financial shocks, and situations where acting early would be costly or embarrassing if the threat does not materialize.",
+    "firstCountermove": "Ask what evidence would justify action before the disruption becomes undeniable, not after.",
+    "domains": ["Risk judgment", "Public policy"],
+    "effort": "Structured process",
+    "related": ["optimism-bias", "status-quo-bias", "omission-bias"],
+    "whatItFeelsLike": "Preparation can seem alarmist because the familiar baseline still feels more real than the unusual threat scenario.",
+    "examples": {
+      "everyday": "A household delays practical preparation because a serious disruption still feels too unreal compared with ordinary routines.",
+      "workplace": "An organization underreacts to an emerging risk because the current system has held together so far and early intervention looks premature.",
+      "public": "Communities keep behaving as though conditions are normal long after warning signs suggest that waiting will make the eventual response costlier."
+    },
+    "redFlags": [
+      "The recent past is being treated as stronger evidence than the current warning signals.",
+      "Early preparation is being dismissed mainly because the threat feels unfamiliar.",
+      "Action thresholds are being set so high that response becomes likely only after preventable damage."
+    ],
+    "reflectionQuestions": [
+      "What am I treating as impossible mainly because it has not happened here before?",
+      "Which preparations would still be sensible even if the worst case did not arrive?",
+      "Am I requiring too much certainty before allowing the disruption scenario to count?"
+    ],
+    "confusions": [
+      {
+        "slug": "optimism-bias",
+        "note": "Optimism bias expects favorable outcomes broadly; normalcy bias specifically expects continuity with the familiar baseline."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias prefers the current arrangement; normalcy bias assumes the surrounding world itself will keep resembling the current arrangement."
+      },
+      {
+        "slug": "omission-bias",
+        "note": "Omission bias favors inaction because it feels cleaner; normalcy bias favors inaction because disruption still feels too unreal to prioritize."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Define a few concrete tripwires that would trigger preparation before the situation feels undeniable.",
+      "team": "Run scenario exercises that make low-frequency disruption cognitively legible before the real event arrives.",
+      "system": "Build preparedness thresholds around leading indicators rather than around whether the disruption already feels normal to respond to."
+    },
+    "teachingNote": "This page helps CogBias address preparedness, risk communication, and institutional underreaction without reducing everything to simple optimism."
+  },
+  {
+    "slug": "just-world-fallacy",
+    "summary": "The tendency to assume that people usually get what they deserve, which encourages reinterpretation of suffering, injustice, or bad luck as somehow earned.",
+    "mechanism": "A fair world feels psychologically safer and more coherent than an arbitrary one. When reality threatens that picture, the mind often protects the fairness story by adjusting its interpretation of the victim instead of the world.",
+    "distortion": "It bends moral judgment and causal explanation by laundering bad outcomes into signs of deservingness.",
+    "defaultMove": "Treat the harmful outcome as evidence that the person must have done something to merit it.",
+    "commonTrigger": "Victim-blaming, inequality, crime narratives, social distance from the harmed person, and situations where randomness or structural injustice feels destabilizing.",
+    "firstCountermove": "Separate the question of what happened from the question of what the person deserves before you start filling in motive or blame.",
+    "domains": ["Media & politics", "Conflict & dialogue"],
+    "effort": "Structured process",
+    "related": ["fundamental-attribution-error", "hostile-attribution-bias", "self-serving-bias"],
+    "whatItFeelsLike": "The deservedness story can feel like hard moral realism because the alternative is admitting that serious harm can arrive without moral balance.",
+    "examples": {
+      "everyday": "A person hears about misfortune and instinctively looks for what the victim must have done wrong before asking whether the event was simply unfair.",
+      "workplace": "People explain someone else's setback as a reflection of their character rather than of the structural pressures or bad luck that also mattered.",
+      "public": "Victims of poverty, violence, or disaster are judged through a lens of deservedness because a random or unjust world feels harder to tolerate."
+    },
+    "redFlags": [
+      "The moral verdict arrives faster than the evidential reconstruction.",
+      "Structural or stochastic explanations are underweighted because they make the world feel less fair.",
+      "Victim behavior is being scrutinized more than the system or event that produced the harm."
+    ],
+    "reflectionQuestions": [
+      "What part of this interpretation is trying to protect my belief that the world is basically fair?",
+      "If the same harm struck someone I loved, would I tell the same deservedness story?",
+      "What structural or random factors am I shrinking because they make the case harder to morally organize?"
+    ],
+    "confusions": [
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error overweights personal traits; just-world fallacy adds the moral assumption that the person's outcome therefore makes sense as deserved."
+      },
+      {
+        "slug": "hostile-attribution-bias",
+        "note": "Hostile-attribution bias reads bad intent into ambiguous behavior; just-world fallacy reads deservedness into harmful outcomes."
+      },
+      {
+        "slug": "self-serving-bias",
+        "note": "Self-serving bias protects the self's image in explaining outcomes; just-world fallacy protects a belief in moral order when explaining others' suffering."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Force yourself to name the non-deserved pathways by which the same outcome could have happened.",
+      "team": "In debriefs or public discussions, ask explicitly which structural, random, or situational factors are being crowded out by moral storytelling.",
+      "system": "Use review and reporting formats that separate causal analysis from moral evaluation so bad outcomes are not automatically recoded as deserved ones."
+    },
+    "teachingNote": "This page gives the site moral and political depth because it shows how people protect a worldview of fairness by distorting their reading of harm."
   }
 ]

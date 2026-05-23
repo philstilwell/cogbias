@@ -106,5 +106,77 @@
       "availability-heuristic",
       "planning-fallacy"
     ]
+  },
+  {
+    "slug": "before-you-go-with-the-room",
+    "title": "Before You Go With The Room",
+    "summary": "A meeting and conformity check for consensus that may be social before it is evidential.",
+    "question": "Would I still hold this view if I had to write it down alone before hearing the room?",
+    "steps": [
+      "Write your own initial judgment before the most senior or confident person speaks.",
+      "Ask which live objection has not yet been given equal airtime.",
+      "Separate agreement pressure from evidence pressure.",
+      "Check whether silence is being mistaken for support."
+    ],
+    "relatedBiases": [
+      "groupthink",
+      "authority-bias",
+      "social-desirability-bias",
+      "false-consensus-effect"
+    ]
+  },
+  {
+    "slug": "before-you-call-it-obvious",
+    "title": "Before You Call It Obvious",
+    "summary": "A confidence and explanation check for moments when familiarity starts masquerading as mastery.",
+    "question": "Do I really understand this, or has fluency outrun competence?",
+    "steps": [
+      "Explain the mechanism in plain language without leaning on jargon.",
+      "Name the specific task that would test whether you actually understand it.",
+      "Ask what a novice would still find confusing that you may no longer notice.",
+      "Distinguish recognition, explanation, and performance instead of treating them as the same."
+    ],
+    "relatedBiases": [
+      "dunning-kruger-effect",
+      "illusion-of-explanatory-depth",
+      "curse-of-knowledge",
+      "overconfidence-effect"
+    ]
+  },
+  {
+    "slug": "before-you-treat-the-default-as-neutral",
+    "title": "Before You Treat The Default As Neutral",
+    "summary": "A choice-architecture check for the moments when the preselected option starts feeling invisible, safe, or morally cleaner.",
+    "question": "Is the default genuinely best, or just easiest to leave in place?",
+    "steps": [
+      "Rewrite the default as one explicit option on the list.",
+      "Name the friction or emotional cost attached to changing it.",
+      "Compare the cost of acting with the cost of preserving the current path.",
+      "Ask what you would choose if no option had been preselected."
+    ],
+    "relatedBiases": [
+      "default-effect",
+      "omission-bias",
+      "loss-aversion",
+      "status-quo-bias"
+    ]
+  },
+  {
+    "slug": "before-you-read-hostility-into-it",
+    "title": "Before You Read Hostility Into It",
+    "summary": "A conflict check for ambiguous behavior that is starting to look more malicious than the evidence actually shows.",
+    "question": "What else could explain this besides threat, contempt, or bad faith?",
+    "steps": [
+      "Describe the behavior first without mind-reading intent into it.",
+      "List at least two non-hostile explanations that still fit the facts.",
+      "Notice whether group identity is shaping whose motives you trust.",
+      "Ask what additional observation would really justify the hostile interpretation."
+    ],
+    "relatedBiases": [
+      "hostile-attribution-bias",
+      "negativity-bias",
+      "naive-realism",
+      "ingroup-bias"
+    ]
   }
 ]

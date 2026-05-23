@@ -27,13 +27,19 @@
     "anchoring-effect",
     "base-rate-neglect",
     "overconfidence-effect",
+    "dunning-kruger-effect",
+    "loss-aversion",
+    "framing-effect",
+    "groupthink",
     "planning-fallacy",
     "sunk-cost-effect",
     "status-quo-bias",
+    "default-effect",
     "fundamental-attribution-error",
     "halo-effect",
     "implicit-bias",
     "negativity-bias",
+    "naive-realism",
     "hindsight-bias",
     "survivorship-bias"
   ],
@@ -196,6 +202,66 @@
         "hindsight-bias",
         "outcome-bias",
         "overconfidence-effect"
+      ]
+    },
+    {
+      "title": "Run Independent First Passes",
+      "slug": "independent-first-passes",
+      "summary": "Have people write their judgment privately before discussion so the room cannot manufacture agreement too early.",
+      "steps": [
+        "Collect short independent judgments before open discussion begins.",
+        "Compare where views diverge before anyone starts converging rhetorically.",
+        "Use the differences to structure the discussion rather than to erase them."
+      ],
+      "relatedBiases": [
+        "groupthink",
+        "authority-bias",
+        "social-desirability-bias"
+      ]
+    },
+    {
+      "title": "Flip The Frame",
+      "slug": "flip-the-frame",
+      "summary": "Restate the same decision in an alternative wording so packaging does not masquerade as evidence.",
+      "steps": [
+        "Rewrite the choice in neutral language.",
+        "Restate it again from the opposite emotional frame.",
+        "Check whether your preference survived the translation."
+      ],
+      "relatedBiases": [
+        "framing-effect",
+        "loss-aversion",
+        "default-effect"
+      ]
+    },
+    {
+      "title": "Test Explanation Depth",
+      "slug": "test-explanation-depth",
+      "summary": "Ask for a plain-language mechanism, a challenge case, and a performance test before treating fluency as understanding.",
+      "steps": [
+        "Explain the idea without jargon.",
+        "Name one edge case or contrast case that would stress the explanation.",
+        "Identify the task that would demonstrate actual competence."
+      ],
+      "relatedBiases": [
+        "illusion-of-explanatory-depth",
+        "dunning-kruger-effect",
+        "curse-of-knowledge"
+      ]
+    },
+    {
+      "title": "Separate Threat From Ambiguity",
+      "slug": "separate-threat-from-ambiguity",
+      "summary": "When motives are unclear, require evidence for hostile intent instead of letting ambiguity collapse directly into threat.",
+      "steps": [
+        "Describe the observed behavior without loading intent into the wording.",
+        "List at least two non-hostile explanations that still fit.",
+        "State what additional evidence would justify the harsher interpretation."
+      ],
+      "relatedBiases": [
+        "hostile-attribution-bias",
+        "naive-realism",
+        "ingroup-bias"
       ]
     }
   ],
