@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CogBias</title>
-    <meta name="description" content="A practical cognitive-biases reference with clear definitions, pattern groupings, and debiasing countermoves." />
+    <meta name="description" content="A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools." />
     <meta name="author" content="Phil Stilwell" />
     <meta name="application-name" content="CogBias" />
     <meta name="theme-color" content="#0e2339" />
@@ -24,7 +24,7 @@
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
                 <h1 class="brand-title">CogBias</h1>
-                <p class="brand-subtitle">A practical cognitive-biases reference with clear definitions, pattern groupings, and debiasing countermoves.</p>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="patterns/">Patterns</a><a href="countermoves/">Countermoves</a><a href="about/">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="paths/">Paths</a><a href="countermoves/">Countermoves</a><a href="check-yourself/">Check Yourself</a><a href="prompts/">Prompts</a><a href="theory/">Theory</a><a href="about/">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -48,11 +48,11 @@
         <section class="hero">
           <div class="hero-panel">
             <h2 class="hero-title">Cognitive biases made clearer, more comparable, and easier to interrupt.</h2>
-            <p class="hero-lead">CogBias is a static reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the practical teaching feel of LogFall, but the content model is tuned for private judgment, social perception, and debiasing process design.</p>
+            <p class="hero-lead">CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, and debiasing process design.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="biases/">Browse All Biases</a>
-              <a class="button button-secondary" href="categories/">Browse Categories</a>
-              <a class="button button-secondary" href="patterns/">Browse Patterns</a>
+              <a class="button button-secondary" href="paths/">Browse Paths</a>
+              <a class="button button-secondary" href="check-yourself/">Run A Self-Check</a>
             </div>
           </div>
           <aside class="hero-panel hero-side">
@@ -63,17 +63,25 @@
                 <span class="stat-label">Bias Entries</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">6</span>
-                <span class="stat-label">Categories</span>
+                <span class="stat-value">5</span>
+                <span class="stat-label">Learning Paths</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">5</span>
-                <span class="stat-label">Patterns</span>
+                <span class="stat-value">6</span>
+                <span class="stat-label">Self-Audits</span>
               </div>
             </div>
-            <div class="source-callout section-block">
-              <h4>Source Note</h4>
-              <p class="muted">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, with editorial reshaping for teaching use.</p>
+            <div class="note-panel">
+              <h4>1. Start with a path</h4>
+              <p class="muted">Use a curated path when you know the context but not the label: decision-making, people judgment, evidence review, or postmortems.</p>
+            </div>
+            <div class="note-panel" style="margin-top:12px;">
+              <h4>2. Jump to the bias page</h4>
+              <p class="muted">Core entries now include examples, nearby confusions, reflection questions, and repair moves at the solo, team, and system levels.</p>
+            </div>
+            <div class="note-panel" style="margin-top:12px;">
+              <h4>3. Change the process</h4>
+              <p class="muted">Use the self-checks, countermoves, and prompt kits to modify the workflow that keeps reproducing the distortion.</p>
             </div>
           </aside>
         </section>
@@ -91,6 +99,110 @@
               <h4>Images are planned</h4>
               <p class="muted">Illustration slots are already reserved on the detail pages so a future image set can be added without disturbing the layout.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Learning paths</h2>
+              <p class="section-copy">These curated routes are the closest analogue to LogFall's teaching paths: smaller, more purposeful sequences for a specific job of thinking.</p>
+            </div>
+            <a class="inline-link" href="paths/">Open all paths</a>
+          </div>
+          <div class="category-grid">
+            
+          <article class="category-card">
+            <h3><a href="paths/start-here/">Start Here</a></h3>
+            <p class="card-copy">A first pass through the biases that most often distort everyday judgment, news consumption, and basic decision-making.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">9 biases</span>
+              <span class="teaching-pill">Best for general readers, classrooms, and first-time visitors.</span>
+            </div>
+            <p class="muted">Which recurring distortions show up most often before people can even name what went wrong?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="paths/decision-under-uncertainty/">Decision Under Uncertainty</a></h3>
+            <p class="card-copy">Biases that quietly bend choice, forecasting, escalation, and project planning when the future is still unresolved.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">7 biases</span>
+              <span class="teaching-pill">Best for managers, founders, operators, and anyone who makes plans under pressure.</span>
+            </div>
+            <p class="muted">What makes a plan feel decisive before it is actually well-calibrated?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="paths/people-judgment/">People Judgment</a></h3>
+            <p class="card-copy">A path for social perception, hiring, leadership, conflict, and the fast trait inferences people make about one another.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">5 biases</span>
+              <span class="teaching-pill">Best for teams, educators, interviewers, and anyone doing evaluation of persons rather than objects.</span>
+            </div>
+            <p class="muted">How do snap impressions about people become stronger than the evidence available?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="paths/evidence-and-explanation/">Evidence And Explanation</a></h3>
+            <p class="card-copy">Biases that corrupt sampling, explanation, and the interpretation of evidence before a confident belief hardens.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">6 biases</span>
+              <span class="teaching-pill">Best for research, diagnostics, policy, media literacy, and analytical work.</span>
+            </div>
+            <p class="muted">What makes a weak sample or flattering story feel like a strong explanation?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="paths/after-the-outcome/">After The Outcome</a></h3>
+            <p class="card-copy">A postmortem path for keeping the known result from rewriting memory, distorting blame, or laundering bad process through luck.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">5 biases</span>
+              <span class="teaching-pill">Best for retrospectives, debriefs, coaching, investing, and performance review.</span>
+            </div>
+            <p class="muted">How does the known ending bend memory of what was knowable beforehand?</p>
+          </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Check yourself</h2>
+              <p class="section-copy">Short self-audits for the moments when bias is most likely to slide past you: before a decision, before a forecast, before a people judgment, and after a surprising outcome.</p>
+            </div>
+            <a class="inline-link" href="check-yourself/">Open the field guide</a>
+          </div>
+          <div class="category-grid">
+            
+          <article class="category-card">
+            <h3>Before You Decide</h3>
+            <p class="card-copy">A quick pre-choice audit for defaults, sunk costs, anchors, and false certainty.</p>
+            <p class="muted"><strong>Question:</strong> Am I choosing the best forward-looking option, or the most comfortable inherited one?</p>
+            <ul class="muted">
+              <li>Write the current default as just one option on the list.</li><li>Ignore past sunk costs for one clean pass through the decision.</li><li>Ask whether the first number or frame is still pulling the choice.</li><li>State what would have to be true for the current favorite to fail.</li>
+            </ul>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/anchoring-effect/">Anchoring effect</a><a class="path-link-chip" href="biases/status-quo-bias/">Status quo bias</a><a class="path-link-chip" href="biases/sunk-cost-effect/">Sunk cost effect</a><a class="path-link-chip" href="biases/overconfidence-effect/">Overconfidence effect</a>
+            </div>
+          </article>
+          <article class="category-card">
+            <h3>Before You Predict</h3>
+            <p class="card-copy">A forecasting check for base rates, uncertainty ranges, and planning optimism.</p>
+            <p class="muted"><strong>Question:</strong> What would the outside view say before the inside story takes over?</p>
+            <ul class="muted">
+              <li>Name the reference class before you describe the special features of the case.</li><li>Write a range, not just a point estimate.</li><li>Compare your forecast with historical cycle times or base rates.</li><li>List one concrete failure path that would widen the range.</li>
+            </ul>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/base-rate-neglect/">Base-rate neglect</a><a class="path-link-chip" href="biases/overconfidence-effect/">Overconfidence effect</a><a class="path-link-chip" href="biases/planning-fallacy/">Planning fallacy</a><a class="path-link-chip" href="biases/anchoring-effect/">Anchoring effect</a>
+            </div>
+          </article>
+          <article class="category-card">
+            <h3>Before You Judge A Person</h3>
+            <p class="card-copy">A social-perception check for trait inflation, first impressions, and hidden asymmetry.</p>
+            <p class="muted"><strong>Question:</strong> Am I reacting to the person, to the situation, or to my own first-pass impression of the person?</p>
+            <ul class="muted">
+              <li>Describe the behavior before you explain it.</li><li>List three situational pressures that could also account for it.</li><li>Separate overall impression from the specific trait you think you observed.</li><li>Ask whether the same behavior would read differently from someone else.</li>
+            </ul>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/fundamental-attribution-error/">Fundamental attribution error</a><a class="path-link-chip" href="biases/halo-effect/">Halo effect</a><a class="path-link-chip" href="biases/implicit-bias/">Implicit bias</a><a class="path-link-chip" href="biases/negativity-bias/">Negativity bias</a>
+            </div>
+          </article>
           </div>
         </section>
 
@@ -117,6 +229,21 @@
             <p class="card-copy">The tendency to notice, seek, and remember evidence that supports the story you already prefer more readily than evidence that threatens it.</p>
             <div class="pill-row">
               <span class="pill pill-task">Hypothesis Assessment</span><span class="pill pill-pattern">Outcome</span><span class="pill">Media &amp; politics</span><span class="pill">Research &amp; evidence</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Motivated reasoning"
+            data-aliases="identity-protective cognition"
+            data-categories="Hypothesis Assessment"
+            data-patterns="Self-Perspective"
+            data-body="The tendency to use reasoning as a defense lawyer for desired conclusions rather than as an impartial search for what is most likely true. Goals such as belonging, status, self-respect, or ideological loyalty steer which standards feel fair, which doubts feel urgent, and which explanations feel satisfying. It quietly changes the burden of proof depending on which conclusion you want. Topics tied to tribe, ego, moral identity, or prior public commitment. Hypothesis Assessment Self-Perspective"
+          >
+            <h3><a href="biases/motivated-reasoning/">Motivated reasoning</a></h3>
+            <p class="card-copy">The tendency to use reasoning as a defense lawyer for desired conclusions rather than as an impartial search for what is most likely true.</p>
+            <div class="pill-row">
+              <span class="pill pill-task">Hypothesis Assessment</span><span class="pill pill-pattern">Self-Perspective</span><span class="pill">Media &amp; politics</span><span class="pill">Personal decisions</span>
             </div>
           </article>
           <article
@@ -167,16 +294,31 @@
           <article
             class="entry-card"
             data-entry-card
-            data-name="Dunning-Kruger effect"
-            data-aliases="Dunning–Kruger effect"
-            data-categories="Estimation"
-            data-patterns="Baseline"
-            data-body="Dunning–Kruger effect, the tendency for unskilled individuals to overestimate their own ability and the tendency for experts to underestimate their own ability Wikipedia groups this bias under estimation and the baseline pattern, which suggests a distortion driven by judgment is pulled by the wrong starting point, default expectation, or prior frame. Biases that distort numerical judgment, risk perception, calibration, and first-pass estimates. Situations where estimation is already difficult and the baseline cue feels easier to trust than a fuller review. Estimation Baseline"
+            data-name="Overconfidence effect"
+            data-aliases="overprecision"
+            data-categories="Hypothesis Assessment"
+            data-patterns="Outcome"
+            data-body="The tendency to be more certain about judgments, forecasts, or abilities than the evidence warrants. Coherent stories feel informative, familiarity feels like mastery, and feedback is often too sparse or noisy to recalibrate confidence reliably. It produces narrow forecasts, premature closure, and risky commitments that look justified mainly because they feel fluent. Fast intuitive judgment, expertise in adjacent domains, and weak feedback loops. Hypothesis Assessment Outcome"
           >
-            <h3><a href="biases/dunning-kruger-effect/">Dunning-Kruger effect</a></h3>
-            <p class="card-copy">Dunning–Kruger effect, the tendency for unskilled individuals to overestimate their own ability and the tendency for experts to underestimate their own ability</p>
+            <h3><a href="biases/overconfidence-effect/">Overconfidence effect</a></h3>
+            <p class="card-copy">The tendency to be more certain about judgments, forecasts, or abilities than the evidence warrants.</p>
             <div class="pill-row">
-              <span class="pill pill-task">Estimation</span><span class="pill pill-pattern">Baseline</span>
+              <span class="pill pill-task">Hypothesis Assessment</span><span class="pill pill-pattern">Outcome</span><span class="pill">Forecasting &amp; planning</span><span class="pill">Teams &amp; management</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Planning fallacy"
+            data-aliases=""
+            data-categories="Estimation"
+            data-patterns="Outcome"
+            data-body="The tendency for people to underestimate the time it will take them to complete a given task Wikipedia groups this bias under estimation and the outcome pattern, which suggests a distortion driven by the result of an event bends how the process, evidence, or alternatives are interpreted. Biases that distort numerical judgment, risk perception, calibration, and first-pass estimates. Situations where estimation is already difficult and the outcome cue feels easier to trust than a fuller review. Estimation Outcome"
+          >
+            <h3><a href="biases/planning-fallacy/">Planning fallacy</a></h3>
+            <p class="card-copy">The tendency for people to underestimate the time it will take them to complete a given task</p>
+            <div class="pill-row">
+              <span class="pill pill-task">Estimation</span><span class="pill pill-pattern">Outcome</span>
             </div>
           </article>
           <article
@@ -282,6 +424,21 @@
             <p class="card-copy">The tendency, after an outcome is known, to see it as having been more obvious or predictable than it actually was beforehand.</p>
             <div class="pill-row">
               <span class="pill pill-task">Recall</span><span class="pill pill-pattern">Outcome</span><span class="pill">Postmortems &amp; learning</span><span class="pill">Forecasting &amp; planning</span>
+            </div>
+          </article>
+          <article
+            class="entry-card"
+            data-entry-card
+            data-name="Survivorship bias"
+            data-aliases="selection on success"
+            data-categories="Hypothesis Assessment"
+            data-patterns="Outcome"
+            data-body="The tendency to learn from the visible winners while overlooking the invisible failures that dropped out of view. Success stories are easier to observe, celebrate, and circulate. Failed cases disappear, leaving the remaining sample badly distorted. It makes risky paths look safer and strategies look stronger than they are. Entrepreneurship stories, hiring narratives, investing, and institutional mythmaking. Hypothesis Assessment Outcome"
+          >
+            <h3><a href="biases/survivorship-bias/">Survivorship bias</a></h3>
+            <p class="card-copy">The tendency to learn from the visible winners while overlooking the invisible failures that dropped out of view.</p>
+            <div class="pill-row">
+              <span class="pill pill-task">Hypothesis Assessment</span><span class="pill pill-pattern">Outcome</span><span class="pill">Research &amp; evidence</span><span class="pill">Forecasting &amp; planning</span>
             </div>
           </article>
           </div>
@@ -404,6 +561,99 @@
         <section class="section-block">
           <div class="section-header">
             <div>
+              <h2 class="section-title">Prompt kits</h2>
+              <p class="section-copy">Bias-aware AI prompts modeled on the practical spirit of LogFall's prompt section, but tuned for decisions, forecasting, people judgment, and media calibration.</p>
+            </div>
+            <a class="inline-link" href="prompts/">Open prompt kits</a>
+          </div>
+          <div class="category-grid">
+            
+          <article class="category-card prompt-card">
+            <h3>Decision Debias Brief</h3>
+            <p class="card-copy">Use this when a live decision feels urgent and you want the model to slow the structure of the judgment rather than merely justify a preferred option.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the current decision, the options under consideration, and any real constraints or deadlines.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/anchoring-effect/">Anchoring effect</a><a class="path-link-chip" href="biases/status-quo-bias/">Status quo bias</a><a class="path-link-chip" href="biases/sunk-cost-effect/">Sunk cost effect</a><a class="path-link-chip" href="biases/overconfidence-effect/">Overconfidence effect</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Analyze the decision below as a debiasing brief rather than as a recommendation memo.
+
+Your tasks:
+1. Restate the decision in one sentence.
+2. Identify which options are being compared, including the default or do-nothing option.
+3. Flag any likely cognitive biases that may be distorting the choice.
+4. For each flagged bias, explain exactly how it may be shaping the current judgment.
+5. Provide a cleaner forward-looking evaluation of the options that ignores sunk costs and separates evidence from comfort.
+6. End with three concrete questions the decision-maker should answer before committing.
+
+Output format:
+◉ Decision restatement
+◉ Likely biases at work
+◉ Clean forward-looking comparison
+◉ Questions before commitment
+
+Decision to analyze:
+[PASTE DECISION HERE]</pre>
+            </details>
+          </article>
+          <article class="category-card prompt-card">
+            <h3>Forecast And Postmortem Pair</h3>
+            <p class="card-copy">Use this when you want one prompt that first produces a calibrated forecast and then sets up a cleaner later postmortem.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the upcoming event, decision, project, or forecast target and include any historical comparison cases if available.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/overconfidence-effect/">Overconfidence effect</a><a class="path-link-chip" href="biases/planning-fallacy/">Planning fallacy</a><a class="path-link-chip" href="biases/hindsight-bias/">Hindsight bias</a><a class="path-link-chip" href="biases/outcome-bias/">Outcome bias</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Build a two-part forecasting and postmortem aid for the situation below.
+
+Part A: Forecast now
+- Give a probability range or outcome range rather than a single-point answer.
+- Name the reference class or outside view.
+- List the main assumptions carrying the forecast.
+- Run a short premortem: imagine the forecast failed and list why.
+
+Part B: Preserve the record for later learning
+- Rewrite the forecast as a timestamped note that could be reviewed after the outcome.
+- List three things that should be judged as process quality later rather than judged by the final result alone.
+- End with a short reminder against hindsight bias and outcome bias.
+
+Situation:
+[PASTE PROJECT, EVENT, OR FORECAST TARGET HERE]</pre>
+            </details>
+          </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Theory</h2>
+              <p class="section-copy">Short essays on why a bias site needs different teaching primitives from a fallacy site and why debiasing works better as design than as exhortation.</p>
+            </div>
+            <a class="inline-link" href="theory/">Read the theory page</a>
+          </div>
+          <div class="category-grid">
+            
+                  <article class="category-card">
+                    <h3><a href="theory/#biases-before-arguments">Biases usually fire before arguments become polished</a></h3>
+                    <p class="card-copy">Logical fallacies often show up in public-facing argument structure. Cognitive biases often distort what feels plausible even earlier, in private judgment, attention, memory, and interpretation.</p>
+                  </article>
+                  <article class="category-card">
+                    <h3><a href="theory/#why-two-taxonomies">Why CogBias uses both categories and patterns</a></h3>
+                    <p class="card-copy">One taxonomy groups biases by the kind of judgment that is failing. The other groups them by the shape of the distortion that keeps recurring across contexts.</p>
+                  </article>
+                  <article class="category-card">
+                    <h3><a href="theory/#debiasing-as-design">Debiasing works better as process design than as moral exhortation</a></h3>
+                    <p class="card-copy">Knowing the label is useful, but recognition alone rarely fixes the bias. Good debiasing usually changes the decision environment itself.</p>
+                  </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
               <h2 class="section-title">Countermoves</h2>
               <p class="section-copy">The point is not just to name a distortion, but to change the decision process that keeps reproducing it.</p>
             </div>
@@ -447,8 +697,8 @@
 
       <footer class="footer">
         <div class="footer-inner">
-          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, with editorial reshaping for teaching use.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>

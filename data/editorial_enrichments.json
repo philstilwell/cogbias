@@ -1,0 +1,626 @@
+[
+  {
+    "slug": "confirmation-bias",
+    "whatItFeelsLike": "It rarely feels like cherry-picking. It feels like the evidence is finally lining up, while the awkward cases merely look low-quality or beside the point.",
+    "examples": {
+      "everyday": "A parent becomes convinced a school policy is harmful, then mainly notices stories and screenshots that reinforce that conclusion while skimming past the counterexamples.",
+      "workplace": "A hiring manager forms an early impression in the first ten minutes of an interview and spends the rest of the conversation collecting reasons that the first impression was right.",
+      "public": "A commentator starts with a fixed political story, then treats each new event as another exhibit for the preferred narrative rather than as a fresh test of it."
+    },
+    "redFlags": [
+      "Counterexamples are acknowledged briefly and then treated as non-diagnostic.",
+      "The search ends as soon as the favored story feels coherent enough.",
+      "Evidence standards quietly tighten only when the facts threaten the preferred view."
+    ],
+    "reflectionQuestions": [
+      "What result would most seriously lower confidence in the current story?",
+      "Which rival explanation has been actively tested rather than merely mentioned?",
+      "Am I sampling evidence to learn, or to defend an identity-laden conclusion?"
+    ],
+    "confusions": [
+      {
+        "slug": "motivated-reasoning",
+        "note": "Confirmation bias is selective noticing and memory; motivated reasoning is the broader asymmetry in how standards get applied."
+      },
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability is about what comes to mind most easily; confirmation bias is about preferentially searching for and retaining supporting material."
+      },
+      {
+        "slug": "survivorship-bias",
+        "note": "Survivorship bias is one way a distorted sample gets created; confirmation bias is the larger habit of treating the distorted sample as enough."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write down what evidence would change your mind before reading one more source.",
+      "team": "Assign someone to build the strongest live countercase using the same standards the favored case receives.",
+      "system": "Use review templates that require rival explanations and explicit disconfirmation criteria."
+    },
+    "teachingNote": "This is often the gateway bias for the rest of the site because it explains why many other distortions can survive in plain view."
+  },
+  {
+    "slug": "motivated-reasoning",
+    "whatItFeelsLike": "It feels like rigor for the claims you dislike and common sense for the claims you want to be true.",
+    "examples": {
+      "everyday": "Someone demands exhaustive proof when a conclusion is threatening, then accepts much thinner evidence when the same style of claim points the preferred way.",
+      "workplace": "A leader subjects a critic's forecast to line-by-line skepticism but waves through a loyal ally's optimistic plan with minimal scrutiny.",
+      "public": "People dismiss hostile fact-checks as biased while circulating friendly factoids that would never survive the same scrutiny if the partisan direction were reversed."
+    },
+    "redFlags": [
+      "The burden of proof moves with the conclusion rather than with the evidence.",
+      "Emotion spikes when one explanation becomes identity-threatening.",
+      "Friendly evidence is described concretely while hostile evidence stays vague."
+    ],
+    "reflectionQuestions": [
+      "What standard am I applying here, and would I still accept it if my out-group used it?",
+      "Which conclusion feels personally expensive for me to accept?",
+      "If I swapped the names and tribes involved, would my confidence move?"
+    ],
+    "confusions": [
+      {
+        "slug": "confirmation-bias",
+        "note": "Motivated reasoning includes confirmation bias but extends to selective standards, selective doubt, and identity protection."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current arrangement; motivated reasoning rationalizes whichever arrangement the person already wants to preserve."
+      },
+      {
+        "slug": "hindsight-bias",
+        "note": "Hindsight bias edits memory after the fact; motivated reasoning can shape the whole argument both before and after the fact."
+      }
+    ],
+    "repairMoves": {
+      "solo": "State the least welcome conclusion in plain language, then list what evidence would nevertheless make it the most likely one.",
+      "team": "Separate discussion of evidence quality from discussion of whose proposal it is.",
+      "system": "Adopt precommitted evidence thresholds before the answer is politically or personally known."
+    },
+    "teachingNote": "This is the bridge between individual bias and tribal or institutional distortion."
+  },
+  {
+    "slug": "availability-heuristic",
+    "whatItFeelsLike": "If you can picture it vividly, it starts to feel common, urgent, and representative.",
+    "examples": {
+      "everyday": "After hearing about one burglary on the block, a family sharply overestimates how likely a break-in is this week.",
+      "workplace": "A team redesigns an entire process around the most recent embarrassing outage while underweighting quieter, more frequent sources of loss.",
+      "public": "A dramatic airplane incident dominates attention and makes routine but deadlier risks seem comparatively trivial."
+    },
+    "redFlags": [
+      "One vivid anecdote is doing more work than any denominator.",
+      "The estimate shifts sharply after recent exposure or repetition.",
+      "The examples are memorable, but the reference class is fuzzy or absent."
+    ],
+    "reflectionQuestions": [
+      "What would the boring spreadsheet say here?",
+      "Am I tracking frequency, or just ease of recall?",
+      "Which quiet cases are missing because they never became memorable?"
+    ],
+    "confusions": [
+      {
+        "slug": "negativity-bias",
+        "note": "Negativity bias explains why threats and losses become especially memorable; availability explains how that memorability becomes a faulty estimate."
+      },
+      {
+        "slug": "base-rate-neglect",
+        "note": "Base-rate neglect is the failure to anchor on prior odds; availability is one reason vivid cases displace those odds."
+      },
+      {
+        "slug": "survivorship-bias",
+        "note": "Survivorship bias distorts which cases are visible; availability describes how the visible cases then dominate judgment."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Pause before the anecdote and write down the reference class you actually need.",
+      "team": "Make people bring denominator data when they bring a vivid story.",
+      "system": "Design dashboards around rates and trend lines instead of exceptional incidents alone."
+    },
+    "teachingNote": "This bias is especially useful for media literacy because it shows how attention is not the same thing as prevalence."
+  },
+  {
+    "slug": "anchoring-effect",
+    "whatItFeelsLike": "The first number does not feel like a trap. It feels like the natural place the conversation started.",
+    "examples": {
+      "everyday": "A buyer sees an inflated list price first, then treats the later discount as reasonable even though the first number was arbitrary.",
+      "workplace": "The opening forecast for a launch becomes the gravitational center of later discussion even after new information should have widened the range.",
+      "public": "Early polling, first casualty counts, or first inflation headlines set the mental baseline that later coverage struggles to escape."
+    },
+    "redFlags": [
+      "Different opening numbers generate different versions of what now feels reasonable.",
+      "People argue over adjustments while leaving the original starting point unchallenged.",
+      "The anchor was merely first, not actually well-supported."
+    ],
+    "reflectionQuestions": [
+      "What would my estimate have been if a different first number had appeared?",
+      "Is this opening value evidence or just sequence?",
+      "What outside-view range should have been built before the negotiation began?"
+    ],
+    "confusions": [
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence concerns unjustified certainty; anchoring concerns excessive pull from the initial frame or number."
+      },
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias sticks to the inherited option; anchoring sticks to the inherited reference point even when the option set changes."
+      },
+      {
+        "slug": "base-rate-neglect",
+        "note": "Base-rate neglect forgets the broader distribution; anchoring can happen even when the broader distribution is known but the first number still exerts pull."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write an independent estimate before hearing the offer or suggested forecast.",
+      "team": "Collect private first-pass ranges before the group sees the loudest estimate.",
+      "system": "Require forecasts to show outside-view reference classes next to the inside-view narrative."
+    },
+    "teachingNote": "This is one of the cleanest demonstrations that judgment can be skewed even when people know the anchor is weak."
+  },
+  {
+    "slug": "base-rate-neglect",
+    "whatItFeelsLike": "The detailed story feels smarter than the abstract percentage, so the story wins even when the rate is the real anchor.",
+    "examples": {
+      "everyday": "A parent reads a symptom list online and starts reasoning from the vivid description of a rare disease rather than from how common ordinary explanations are.",
+      "workplace": "A company sees one charismatic founder story and treats a risky strategy as normal while ignoring how few similar firms survive.",
+      "public": "A crime report with dramatic specifics displaces the broader rate information that would make the event look less representative."
+    },
+    "redFlags": [
+      "The story gets richer as the prior odds disappear.",
+      "People talk about this case as if no reference class exists.",
+      "Rare explanations feel strangely normal once the narrative becomes vivid enough."
+    ],
+    "reflectionQuestions": [
+      "What is the outside-view prevalence before I personalize the case?",
+      "Am I mistaking detail for diagnostic value?",
+      "How different would my judgment be if I saw only the rate table first?"
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability makes vivid cases easy to retrieve; base-rate neglect is the specific failure to let the prior odds restrain those vivid cases."
+      },
+      {
+        "slug": "survivorship-bias",
+        "note": "Survivorship bias corrupts the sample of cases you see; base-rate neglect ignores the broader frequency even when it is available."
+      },
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring pulls estimates toward the first number offered; base-rate neglect bypasses the correct rate information in favor of individuating detail."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write the prior odds down before discussing the particulars of the present case.",
+      "team": "Start case reviews with the base rate slide, not the vivid anecdote slide.",
+      "system": "Present diagnostic tools, hiring rubrics, and forecasts with reference-class benchmarks built in."
+    },
+    "teachingNote": "This is one of the best pages for showing why numeracy is not enough; people can know the concept and still let the vivid story take over."
+  },
+  {
+    "slug": "overconfidence-effect",
+    "whatItFeelsLike": "The forecast feels clear, and that feeling of clarity gets mistaken for evidence of reliability.",
+    "examples": {
+      "everyday": "Someone gives a tight arrival-time estimate for a complicated trip even though nearly every similar trip has produced surprises.",
+      "workplace": "A founder treats a single launch date or revenue target as precise even though the underlying assumptions remain fragile and correlated.",
+      "public": "Pundits deliver narrow confident predictions about elections or markets and later narrate the miss as a small timing error rather than as miscalibration."
+    },
+    "redFlags": [
+      "Point estimates appear where ranges or probabilities should be doing the work.",
+      "Confidence sounds stable even though the evidence base is thin.",
+      "Past misses are remembered as near misses rather than as calibration failures."
+    ],
+    "reflectionQuestions": [
+      "What range would honestly capture the uncertainty here?",
+      "How often has this level of confidence been right in similar cases?",
+      "Which failure mode is easiest for me not to model because it is embarrassing?"
+    ],
+    "confusions": [
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring distorts the starting point; overconfidence distorts the width of the final range and the felt certainty around it."
+      },
+      {
+        "slug": "hindsight-bias",
+        "note": "Hindsight bias makes past misses seem more predictable afterward; overconfidence is the overly narrow certainty before the outcome arrives."
+      },
+      {
+        "slug": "planning-fallacy",
+        "note": "Planning fallacy is a special forecasting pattern; overconfidence is the broader habit of overstating precision and accuracy."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Translate confidence into a probabilistic range and record it before the outcome is known.",
+      "team": "Run a premortem that forces concrete downside scenarios into the conversation.",
+      "system": "Track forecast scores over time so confidence claims meet accountability."
+    },
+    "teachingNote": "This entry pairs naturally with hindsight bias because one inflates confidence before the event and the other edits memory after it."
+  },
+  {
+    "slug": "sunk-cost-effect",
+    "whatItFeelsLike": "Continuing feels responsible and quitting feels like disrespecting the sacrifice that already happened.",
+    "examples": {
+      "everyday": "A person keeps reading a terrible book or staying through a bad event because so much time has already been invested.",
+      "workplace": "A team doubles down on a failing project because too much money and prestige have already been spent to walk away now.",
+      "public": "A policy remains in force because leaders cannot bear the symbolism of admitting the original judgment was weak."
+    },
+    "redFlags": [
+      "The defense of the choice begins with how much has already been spent.",
+      "Stopping is described as humiliation rather than as reallocation.",
+      "No forward-looking success criterion is stronger than the backward-looking sacrifice."
+    ],
+    "reflectionQuestions": [
+      "If someone else had incurred the past cost, would I still recommend continuing?",
+      "What forward-looking reason survives once prior investment is ignored?",
+      "What stopping rule should have been written before this commitment grew?"
+    ],
+    "confusions": [
+      {
+        "slug": "status-quo-bias",
+        "note": "Status quo bias favors the current arrangement because change feels risky; sunk cost effect favors continuation because abandoning past investment feels wasteful."
+      },
+      {
+        "slug": "outcome-bias",
+        "note": "Outcome bias judges the decision quality by the result; sunk cost effect keeps the decision path alive because of past expenditure."
+      },
+      {
+        "slug": "endowment-effect",
+        "note": "Endowment effect inflates what is already owned; sunk cost effect inflates what should now be done because of what has already been paid."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Run one clean pass where every prior cost is treated as unrecoverable because it is.",
+      "team": "Let a less invested reviewer make the retain-or-exit recommendation.",
+      "system": "Attach written continuation criteria and sunset points to projects before they become identity-laden."
+    },
+    "teachingNote": "This is a strong bridge bias for moving from personal habits to organizational governance."
+  },
+  {
+    "slug": "status-quo-bias",
+    "whatItFeelsLike": "Doing nothing feels neutral even when doing nothing is actually a very active choice with its own risks.",
+    "examples": {
+      "everyday": "Someone keeps an overpriced subscription or outdated routine because revisiting the default feels like unnecessary hassle.",
+      "workplace": "A team retains an inherited tool or process because switching would create visible transition pain even though the current workflow quietly bleeds time.",
+      "public": "A harmful rule survives because reformers must prove perfection while defenders of the default are treated as mere custodians of normality."
+    },
+    "redFlags": [
+      "The current option is framed as neutral while alternatives must carry the full burden of justification.",
+      "Change costs are vivid, but ongoing default costs are treated as background noise.",
+      "Risk is assigned mainly to action rather than to omission."
+    ],
+    "reflectionQuestions": [
+      "If the current default were proposed fresh today, would I choose it?",
+      "What hidden costs of inaction have been normalized into invisibility?",
+      "Am I comparing one vivid transition cost against many quiet recurring losses?"
+    ],
+    "confusions": [
+      {
+        "slug": "sunk-cost-effect",
+        "note": "Status quo bias can persist even without major past investment; sunk cost effect specifically treats prior investment as a reason to continue."
+      },
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring sticks to an initial reference point; status quo bias sticks to the current arrangement as the option that feels safest."
+      },
+      {
+        "slug": "endowment-effect",
+        "note": "Endowment effect inflates the value of what is already owned; status quo bias makes the existing arrangement feel entitled to remain."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write the current default on paper as one option among peers instead of as the background.",
+      "team": "Ask someone to argue for the best alternative before the group re-approves the inherited choice.",
+      "system": "Use sunset reviews so defaults must periodically earn renewal."
+    },
+    "teachingNote": "This page helps students see that omission can be just as biased as action."
+  },
+  {
+    "slug": "fundamental-attribution-error",
+    "whatItFeelsLike": "The behavior looks so personal and vivid that the unseen situational pressures almost disappear.",
+    "examples": {
+      "everyday": "A driver gets cut off and instantly concludes the other driver is selfish or reckless without considering confusion, urgency, or poor signage.",
+      "workplace": "A manager sees a missed deadline as proof of laziness before checking workload bottlenecks, conflicting priorities, or missing information.",
+      "public": "Commentary about poverty, crime, or protest frames the behavior as character revelation while downplaying incentives, history, and constraint."
+    },
+    "redFlags": [
+      "The trait story arrives faster than any situational inventory.",
+      "Context gets treated as excuse rather than as causal information.",
+      "The same kind of behavior would be narrated more charitably if I had done it."
+    ],
+    "reflectionQuestions": [
+      "What situational pressures could produce this same behavior?",
+      "Would I tell the same story if the actor were me or my ally?",
+      "How much of the surrounding context is currently invisible to me?"
+    ],
+    "confusions": [
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect spreads one impression across many judgments; fundamental attribution error converts specific behavior into global trait explanation."
+      },
+      {
+        "slug": "implicit-bias",
+        "note": "Implicit bias can influence which trait attributions come fastest; fundamental attribution error is the general overuse of trait explanation itself."
+      },
+      {
+        "slug": "negativity-bias",
+        "note": "Negativity bias makes bad acts especially weighty; fundamental attribution error turns those acts into stable character verdicts."
+      }
+    ],
+    "repairMoves": {
+      "solo": "List three situational explanations before settling on one trait-based story.",
+      "team": "Separate description of the behavior from explanation of the cause during reviews.",
+      "system": "Build incident templates that require context, incentive, and constraint fields."
+    },
+    "teachingNote": "This page is especially important because it connects cognitive bias to moral and political judgment without turning every bias discussion into ideology."
+  },
+  {
+    "slug": "halo-effect",
+    "whatItFeelsLike": "One good or bad impression makes the rest of the object feel as if it has already been explained.",
+    "examples": {
+      "everyday": "A charismatic speaker is assumed to be well-informed in domains that were never actually demonstrated.",
+      "workplace": "A top performer in one visible area gets rated as strong across unrelated competencies without separate evidence.",
+      "public": "A celebrity, founder, or institution receives trust on complex claims because one admired trait spills across the rest of the judgment."
+    },
+    "redFlags": [
+      "A single salient trait is carrying more than one evaluative dimension.",
+      "The overall impression appears before the dimension-by-dimension scoring.",
+      "Prestige, attractiveness, or eloquence is doing hidden evidential work."
+    ],
+    "reflectionQuestions": [
+      "Which separate trait am I actually trying to rate here?",
+      "What evidence supports that trait specifically rather than my whole impression?",
+      "If the same content came from a less prestigious source, would I score it the same way?"
+    ],
+    "confusions": [
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error explains behavior through character too quickly; halo effect lets one impression wash over many later judgments."
+      },
+      {
+        "slug": "implicit-bias",
+        "note": "Implicit bias can shape who gets the halo or horn in the first place; halo effect describes the spillover once the first impression exists."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias later protects the first impression; halo effect is the initial cross-contamination of evaluation."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Score the relevant dimensions separately before writing an overall judgment.",
+      "team": "Use structured rubrics that prevent one glowing trait from settling every category.",
+      "system": "Blind irrelevant prestige cues where possible in screening, review, and evaluation."
+    },
+    "teachingNote": "The halo effect is often the easiest path into explaining why hiring, grading, and media trust can all drift in parallel."
+  },
+  {
+    "slug": "implicit-bias",
+    "whatItFeelsLike": "Nothing in the moment feels like a deliberate prejudice. The skew shows up in who feels normal, risky, polished, or suspect without explanation.",
+    "examples": {
+      "everyday": "A person reacts differently to identical behavior depending on the social category of the person performing it, then later supplies a neutral-sounding explanation.",
+      "workplace": "Equivalent resumes or meeting contributions get different warmth, interruption rates, or assumptions of competence because the evaluator's first-pass impression is already tilted.",
+      "public": "Media audiences and institutions interpret the same tone, clothing, or emotional display differently depending on who is being seen."
+    },
+    "redFlags": [
+      "The evaluator struggles to explain why one person simply feels more professional, safe, or credible.",
+      "Standards sound neutral in wording but land unevenly in practice.",
+      "Similar behavior receives different attributions depending on the social identity involved."
+    ],
+    "reflectionQuestions": [
+      "Would this same behavior strike me differently if a different person had done it?",
+      "What standard am I invoking, and how consistently do I apply it across groups?",
+      "Which impressions appeared before I had gathered much actual evidence?"
+    ],
+    "confusions": [
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect spreads one salient impression broadly; implicit bias helps determine which impressions form quickly and unevenly across people."
+      },
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error overuses trait explanation in general; implicit bias can tilt which traits get imputed to which people."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias later protects the first impression; implicit bias can skew the first impression before conscious reasoning begins."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Slow down the first-pass impression and ask what evidence actually supports it.",
+      "team": "Use structured criteria and independent scoring before open discussion.",
+      "system": "Audit outcomes for pattern-level disparities instead of relying on individual sincerity."
+    },
+    "teachingNote": "This page needs care because the topic is emotionally charged; the tone should stay practical, diagnostic, and evidence-oriented."
+  },
+  {
+    "slug": "negativity-bias",
+    "whatItFeelsLike": "The bad event seems more revealing, more serious, and more memorable than the total pattern warrants.",
+    "examples": {
+      "everyday": "One harsh comment outweighs a week of ordinary or positive interactions.",
+      "workplace": "A team defines the quarter by the most visible failure even when the trend line was mostly competence and improvement.",
+      "public": "Feeds dominated by conflict, crime, and scandal make the larger environment feel worse than broader measures support."
+    },
+    "redFlags": [
+      "A single loss or criticism is treated as more diagnostic than many quiet successes.",
+      "The emotional weight of the event outruns its actual prevalence.",
+      "Neutral evidence slowly drifts into the negative column."
+    ],
+    "reflectionQuestions": [
+      "If I counted positives, negatives, and neutral cases separately, what would the actual ratio look like?",
+      "Is this event serious because it is representative or because it is emotionally loud?",
+      "What would a neutral observer say the trend has been?"
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "note": "Negativity bias makes bad events extra sticky; availability heuristic explains how that stickiness then distorts estimates of frequency and risk."
+      },
+      {
+        "slug": "fundamental-attribution-error",
+        "note": "Fundamental attribution error turns bad behavior into character verdicts; negativity bias is the overweighting of the bad signal itself."
+      },
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect generalizes one impression across multiple traits; negativity bias explains why the negative impression often dominates."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Force an explicit count of what is ordinary, improving, and still concerning.",
+      "team": "Review trend lines before reacting to the worst single case.",
+      "system": "Design reporting so gains, stability, and failure all remain visible together."
+    },
+    "teachingNote": "This entry pairs especially well with media analysis because much of modern attention is a market for negative salience."
+  },
+  {
+    "slug": "hindsight-bias",
+    "whatItFeelsLike": "Once the ending is known, the earlier uncertainty feels strangely incompetent, as if the path had been obvious all along.",
+    "examples": {
+      "everyday": "After a breakup, job loss, or market move, people start retelling the prior situation as if the signs had pointed clearly in one direction from the start.",
+      "workplace": "A postmortem turns into subtle blame because the team forgets how much uncertainty was live before the result arrived.",
+      "public": "Commentary after elections, crises, or sporting outcomes treats the ending as self-evident and rewrites what decision-makers supposedly should have seen."
+    },
+    "redFlags": [
+      "Memory for the earlier uncertainty shrinks once the result is known.",
+      "Forecasts get judged by the ending rather than by the information available at the time.",
+      "People remember themselves as having been less surprised than they really were."
+    ],
+    "reflectionQuestions": [
+      "What was actually known before the outcome arrived?",
+      "Which plausible alternatives were live at the time?",
+      "Do I have timestamped notes, or am I trusting reconstructed memory?"
+    ],
+    "confusions": [
+      {
+        "slug": "outcome-bias",
+        "note": "Hindsight bias rewrites what was predictable; outcome bias judges the decision process by whether the result turned out well."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence inflates certainty before the fact; hindsight bias edits memory after the fact."
+      },
+      {
+        "slug": "motivated-reasoning",
+        "note": "Motivated reasoning can shape the post-hoc story, but hindsight bias is the specific compression of past uncertainty once the ending is known."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Keep decision journals or timestamped forecast notes before the result is known.",
+      "team": "Read the pre-outcome assumptions aloud at the start of the postmortem.",
+      "system": "Score decisions on process quality and calibration, not just on whether the final result looks good."
+    },
+    "teachingNote": "This page is central for any site that wants to help people learn rather than merely blame."
+  },
+  {
+    "slug": "survivorship-bias",
+    "whatItFeelsLike": "The visible winners look like the whole story because the missing failures never stand in front of you asking to be counted.",
+    "examples": {
+      "everyday": "Someone notices only the friends whose risky decisions paid off and forgets the many comparable attempts that quietly disappeared.",
+      "workplace": "A company copies the habits of successful firms without examining the larger pile of firms that behaved similarly and still failed.",
+      "public": "Entrepreneurship, investing, and self-help culture celebrate the visible success cases while hiding the graveyard that made the sample look impressive."
+    },
+    "redFlags": [
+      "The success cases are vivid, while the failure set is invisible or unnamed.",
+      "Lessons are being drawn from a sample that has already filtered out the losers.",
+      "The strategy sounds stronger mainly because the missing cases are not in the room."
+    ],
+    "reflectionQuestions": [
+      "Who is absent from this sample, and why are they absent?",
+      "What would the full denominator look like, not just the winners?",
+      "Am I learning from outcomes or from the filters that determined which outcomes stayed visible?"
+    ],
+    "confusions": [
+      {
+        "slug": "base-rate-neglect",
+        "note": "Survivorship bias distorts the sample you are looking at; base-rate neglect underuses the broader prevalence information even if it is available."
+      },
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability explains why the visible winners feel diagnostic; survivorship bias explains why those winners were overrepresented in the first place."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias protects the winner story once you prefer it; survivorship bias makes the sample itself too flattering before that protection starts."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Ask what invisible failures would have to be counted to interpret the visible winners honestly.",
+      "team": "Include the missing-case question in every success-story review.",
+      "system": "Track attrition, dropout, and dead-end cases as first-class data rather than as footnotes."
+    },
+    "teachingNote": "This page is especially effective when paired with startup culture, investing, and war-story institutional memory."
+  },
+  {
+    "slug": "planning-fallacy",
+    "whatItFeelsLike": "This time feels cleaner, clearer, and more controllable than the last five similar projects that also slipped.",
+    "examples": {
+      "everyday": "Someone blocks two hours for a messy household task because the best-case sequence feels more vivid than the actual history of interruptions and friction.",
+      "workplace": "A team estimates a launch based on the happy-path task list while underweighting dependencies, review cycles, and waiting time.",
+      "public": "Large public works and reforms are sold on optimistic timelines that assume exception rather than reference-class drag."
+    },
+    "redFlags": [
+      "The estimate reflects the ideal sequence rather than the historical one.",
+      "Waiting time and coordination costs are treated as minor noise.",
+      "The project is narrated as special enough to escape the usual slippage."
+    ],
+    "reflectionQuestions": [
+      "What happened in the last five comparable cases, not just in the clean internal plan?",
+      "Which delays are not in the happy path because they feel mundane or embarrassing?",
+      "What would a base-rate schedule suggest before the project-specific story begins?"
+    ],
+    "confusions": [
+      {
+        "slug": "overconfidence-effect",
+        "note": "Planning fallacy is a forecasting subtype in which timelines and resource needs are systematically too optimistic."
+      },
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring may lock teams onto the first date suggested; planning fallacy is the deeper optimism in the plan itself."
+      },
+      {
+        "slug": "hindsight-bias",
+        "note": "Hindsight bias edits memory after the miss; planning fallacy is the optimistic underestimation before the miss."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Start from a reference-class timeline before refining the project-specific plan.",
+      "team": "Ask one person to model coordination, review, and waiting costs explicitly.",
+      "system": "Store historical cycle times and require them in planning docs."
+    },
+    "teachingNote": "This page gives the site a strong practical anchor for project work, forecasting, and operations."
+  },
+  {
+    "slug": "outcome-bias",
+    "whatItFeelsLike": "If the ending was good, the decision feels wise; if the ending was bad, the decision feels foolish, even when the process quality stayed constant.",
+    "examples": {
+      "everyday": "A risky but lucky choice gets remembered as smart judgment, while a careful choice with a bad result gets remembered as poor judgment.",
+      "workplace": "A manager praises a reckless shortcut because the quarter happened to land well, then condemns a sound process because one uncontrollable variable moved against it.",
+      "public": "Policies, coaches, traders, and leaders are judged mainly by the headline result instead of by how reasonable the decision looked ex ante."
+    },
+    "redFlags": [
+      "The known result is being treated as direct evidence about the original decision quality.",
+      "Equivalent decisions receive opposite evaluations because luck broke differently.",
+      "Process review happens only after the scoreboard is already carrying the verdict."
+    ],
+    "reflectionQuestions": [
+      "What did the choice look like before the result was known?",
+      "Would I grade the same process differently if luck had broken the other way?",
+      "Am I rewarding outcomes or decision quality?"
+    ],
+    "confusions": [
+      {
+        "slug": "hindsight-bias",
+        "note": "Hindsight bias makes the outcome seem predictable after the fact; outcome bias uses the outcome itself as the main judge of whether the decision was good."
+      },
+      {
+        "slug": "sunk-cost-effect",
+        "note": "Sunk cost effect distorts whether to continue; outcome bias distorts how the prior decision process gets evaluated."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence inflates certainty before the choice; outcome bias misgrades the quality of the choice once the result appears."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Reconstruct the decision from the information available at the time before discussing the result.",
+      "team": "Separate process review from results review in the postmortem agenda.",
+      "system": "Score decision quality against precommitted criteria instead of against luck-adjusted headlines."
+    },
+    "teachingNote": "This page is crucial for helping readers distinguish learning from scoreboard worship."
+  }
+]

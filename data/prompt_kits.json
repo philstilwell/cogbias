@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "decision-debias-brief",
+    "title": "Decision Debias Brief",
+    "intro": "Use this when a live decision feels urgent and you want the model to slow the structure of the judgment rather than merely justify a preferred option.",
+    "requirements": "Paste the current decision, the options under consideration, and any real constraints or deadlines.",
+    "relatedBiases": [
+      "anchoring-effect",
+      "status-quo-bias",
+      "sunk-cost-effect",
+      "overconfidence-effect"
+    ],
+    "promptLines": [
+      "Analyze the decision below as a debiasing brief rather than as a recommendation memo.",
+      "",
+      "Your tasks:",
+      "1. Restate the decision in one sentence.",
+      "2. Identify which options are being compared, including the default or do-nothing option.",
+      "3. Flag any likely cognitive biases that may be distorting the choice.",
+      "4. For each flagged bias, explain exactly how it may be shaping the current judgment.",
+      "5. Provide a cleaner forward-looking evaluation of the options that ignores sunk costs and separates evidence from comfort.",
+      "6. End with three concrete questions the decision-maker should answer before committing.",
+      "",
+      "Output format:",
+      "◉ Decision restatement",
+      "◉ Likely biases at work",
+      "◉ Clean forward-looking comparison",
+      "◉ Questions before commitment",
+      "",
+      "Decision to analyze:",
+      "[PASTE DECISION HERE]"
+    ]
+  },
+  {
+    "slug": "forecast-and-postmortem-pair",
+    "title": "Forecast And Postmortem Pair",
+    "intro": "Use this when you want one prompt that first produces a calibrated forecast and then sets up a cleaner later postmortem.",
+    "requirements": "Paste the upcoming event, decision, project, or forecast target and include any historical comparison cases if available.",
+    "relatedBiases": [
+      "overconfidence-effect",
+      "planning-fallacy",
+      "hindsight-bias",
+      "outcome-bias"
+    ],
+    "promptLines": [
+      "Build a two-part forecasting and postmortem aid for the situation below.",
+      "",
+      "Part A: Forecast now",
+      "- Give a probability range or outcome range rather than a single-point answer.",
+      "- Name the reference class or outside view.",
+      "- List the main assumptions carrying the forecast.",
+      "- Run a short premortem: imagine the forecast failed and list why.",
+      "",
+      "Part B: Preserve the record for later learning",
+      "- Rewrite the forecast as a timestamped note that could be reviewed after the outcome.",
+      "- List three things that should be judged as process quality later rather than judged by the final result alone.",
+      "- End with a short reminder against hindsight bias and outcome bias.",
+      "",
+      "Situation:",
+      "[PASTE PROJECT, EVENT, OR FORECAST TARGET HERE]"
+    ]
+  },
+  {
+    "slug": "people-judgment-scan",
+    "title": "People Judgment Scan",
+    "intro": "Use this when a person is being evaluated and you want the model to separate behavior, context, impression, and trait inference more carefully.",
+    "requirements": "Paste the behavior, the context you know, and the judgment you are tempted to make about the person.",
+    "relatedBiases": [
+      "fundamental-attribution-error",
+      "halo-effect",
+      "implicit-bias",
+      "confirmation-bias"
+    ],
+    "promptLines": [
+      "Analyze the situation below as a people-judgment scan.",
+      "",
+      "Do the following:",
+      "1. Describe the observable behavior without interpretation.",
+      "2. List plausible situational explanations before any trait explanation.",
+      "3. Identify which cognitive biases could be distorting the current evaluation.",
+      "4. Separate what is actually evidenced from what is merely inferred.",
+      "5. Suggest a fairer next step for gathering information before making a high-confidence judgment.",
+      "",
+      "Use this output structure:",
+      "◉ Observable behavior",
+      "◉ Situational explanations",
+      "◉ Bias risks",
+      "◉ What is known vs inferred",
+      "◉ Fairer next step",
+      "",
+      "Situation:",
+      "[PASTE THE PERSON-JUDGMENT CASE HERE]"
+    ]
+  },
+  {
+    "slug": "media-narrative-bias-scan",
+    "title": "Media Narrative Bias Scan",
+    "intro": "Use this when you want help separating vividness, repetition, and narrative fit from actual representativeness in an article, thread, or speech.",
+    "requirements": "Paste the relevant excerpt or provide a link and enough context for the model to quote the key passage accurately.",
+    "relatedBiases": [
+      "availability-heuristic",
+      "negativity-bias",
+      "survivorship-bias",
+      "base-rate-neglect"
+    ],
+    "promptLines": [
+      "Analyze the passage below for cognitive-bias pressure rather than for partisan agreement or disagreement.",
+      "",
+      "Your tasks:",
+      "1. Quote the most vivid or emotionally loaded claims.",
+      "2. Identify which cognitive biases the passage may be exploiting or triggering in readers.",
+      "3. Explain whether the passage substitutes anecdote, salience, repetition, or winner-story logic for representative evidence.",
+      "4. List what denominator, base rate, missing sample, or comparison would be needed to evaluate the claim more responsibly.",
+      "5. End with three discussion questions for a reader who wants to stay calibrated.",
+      "",
+      "Passage to analyze:",
+      "[PASTE PASSAGE OR LINK CONTEXT HERE]"
+    ]
+  }
+]

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt Kits | CogBias</title>
+    <meta name="description" content="Bias-aware AI prompts for decisions, forecasts, postmortems, people judgment, and media review." />
+    <meta name="author" content="Phil Stilwell" />
+    <meta name="application-name" content="CogBias" />
+    <meta name="theme-color" content="#0e2339" />
+    
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script defer src="../app.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <header class="masthead">
+        <div class="masthead-inner">
+          <div class="brand-row">
+            <div class="brand-lockup">
+              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">CB</div>
+              <div>
+                <p class="brand-kicker">Cognitive Biases</p>
+                <h1 class="brand-title">CogBias</h1>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
+              </div>
+            </div>
+            <form class="site-search-form" role="search" action="../biases/" method="get">
+              <input
+                class="site-search-input"
+                type="search"
+                name="q"
+                placeholder="Search biases..."
+                aria-label="Search biases"
+                data-site-search-input
+              />
+              <button class="site-search-button" type="submit">Search</button>
+            </form>
+          </div>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../paths/">Paths</a><a href="../countermoves/">Countermoves</a><a href="../check-yourself/">Check Yourself</a><a href="../prompts/" aria-current="page">Prompts</a><a href="../theory/">Theory</a><a href="../about/">About</a></nav>
+        </div>
+      </header>
+      <main class="page-wrap">
+        <div class="breadcrumbs"><a href="../">Home</a><span>/</span><strong>Prompt Kits</strong></div>
+
+        <section class="detail-section">
+          <p class="eyebrow">Prompts</p>
+          <h2 class="detail-title">Prompt kits for catching bias without outsourcing your judgment</h2>
+          <p class="detail-deck">These are designed to make an AI model slow the structure of the reasoning process. The goal is not to let the model decide for you. The goal is to expose what your current process may be skipping.</p>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Best use</h4>
+            <p class="muted">Use these after you have written the live decision, forecast, or case as concretely as possible. Vague prompts produce flattering but low-value outputs.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Important limit</h4>
+            <p class="muted">A model can help surface missing comparisons, hidden defaults, or softened alternatives, but it can also confidently mirror your framing. The prompt should therefore widen the lens, not merely request a verdict.</p>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="category-grid">
+            <div id="decision-debias-brief">
+          <article class="category-card prompt-card">
+            <h3>Decision Debias Brief</h3>
+            <p class="card-copy">Use this when a live decision feels urgent and you want the model to slow the structure of the judgment rather than merely justify a preferred option.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the current decision, the options under consideration, and any real constraints or deadlines.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="../biases/anchoring-effect/">Anchoring effect</a><a class="path-link-chip" href="../biases/status-quo-bias/">Status quo bias</a><a class="path-link-chip" href="../biases/sunk-cost-effect/">Sunk cost effect</a><a class="path-link-chip" href="../biases/overconfidence-effect/">Overconfidence effect</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Analyze the decision below as a debiasing brief rather than as a recommendation memo.
+
+Your tasks:
+1. Restate the decision in one sentence.
+2. Identify which options are being compared, including the default or do-nothing option.
+3. Flag any likely cognitive biases that may be distorting the choice.
+4. For each flagged bias, explain exactly how it may be shaping the current judgment.
+5. Provide a cleaner forward-looking evaluation of the options that ignores sunk costs and separates evidence from comfort.
+6. End with three concrete questions the decision-maker should answer before committing.
+
+Output format:
+◉ Decision restatement
+◉ Likely biases at work
+◉ Clean forward-looking comparison
+◉ Questions before commitment
+
+Decision to analyze:
+[PASTE DECISION HERE]</pre>
+            </details>
+          </article></div><div id="forecast-and-postmortem-pair">
+          <article class="category-card prompt-card">
+            <h3>Forecast And Postmortem Pair</h3>
+            <p class="card-copy">Use this when you want one prompt that first produces a calibrated forecast and then sets up a cleaner later postmortem.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the upcoming event, decision, project, or forecast target and include any historical comparison cases if available.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="../biases/overconfidence-effect/">Overconfidence effect</a><a class="path-link-chip" href="../biases/planning-fallacy/">Planning fallacy</a><a class="path-link-chip" href="../biases/hindsight-bias/">Hindsight bias</a><a class="path-link-chip" href="../biases/outcome-bias/">Outcome bias</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Build a two-part forecasting and postmortem aid for the situation below.
+
+Part A: Forecast now
+- Give a probability range or outcome range rather than a single-point answer.
+- Name the reference class or outside view.
+- List the main assumptions carrying the forecast.
+- Run a short premortem: imagine the forecast failed and list why.
+
+Part B: Preserve the record for later learning
+- Rewrite the forecast as a timestamped note that could be reviewed after the outcome.
+- List three things that should be judged as process quality later rather than judged by the final result alone.
+- End with a short reminder against hindsight bias and outcome bias.
+
+Situation:
+[PASTE PROJECT, EVENT, OR FORECAST TARGET HERE]</pre>
+            </details>
+          </article></div><div id="people-judgment-scan">
+          <article class="category-card prompt-card">
+            <h3>People Judgment Scan</h3>
+            <p class="card-copy">Use this when a person is being evaluated and you want the model to separate behavior, context, impression, and trait inference more carefully.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the behavior, the context you know, and the judgment you are tempted to make about the person.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="../biases/fundamental-attribution-error/">Fundamental attribution error</a><a class="path-link-chip" href="../biases/halo-effect/">Halo effect</a><a class="path-link-chip" href="../biases/implicit-bias/">Implicit bias</a><a class="path-link-chip" href="../biases/confirmation-bias/">Confirmation bias</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Analyze the situation below as a people-judgment scan.
+
+Do the following:
+1. Describe the observable behavior without interpretation.
+2. List plausible situational explanations before any trait explanation.
+3. Identify which cognitive biases could be distorting the current evaluation.
+4. Separate what is actually evidenced from what is merely inferred.
+5. Suggest a fairer next step for gathering information before making a high-confidence judgment.
+
+Use this output structure:
+◉ Observable behavior
+◉ Situational explanations
+◉ Bias risks
+◉ What is known vs inferred
+◉ Fairer next step
+
+Situation:
+[PASTE THE PERSON-JUDGMENT CASE HERE]</pre>
+            </details>
+          </article></div><div id="media-narrative-bias-scan">
+          <article class="category-card prompt-card">
+            <h3>Media Narrative Bias Scan</h3>
+            <p class="card-copy">Use this when you want help separating vividness, repetition, and narrative fit from actual representativeness in an article, thread, or speech.</p>
+            <p class="muted"><strong>Use when:</strong> Paste the relevant excerpt or provide a link and enough context for the model to quote the key passage accurately.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="../biases/availability-heuristic/">Availability heuristic</a><a class="path-link-chip" href="../biases/negativity-bias/">Negativity bias</a><a class="path-link-chip" href="../biases/survivorship-bias/">Survivorship bias</a><a class="path-link-chip" href="../biases/base-rate-neglect/">Base-rate neglect</a>
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">Analyze the passage below for cognitive-bias pressure rather than for partisan agreement or disagreement.
+
+Your tasks:
+1. Quote the most vivid or emotionally loaded claims.
+2. Identify which cognitive biases the passage may be exploiting or triggering in readers.
+3. Explain whether the passage substitutes anecdote, salience, repetition, or winner-story logic for representative evidence.
+4. List what denominator, base rate, missing sample, or comparison would be needed to evaluate the claim more responsibly.
+5. End with three discussion questions for a reader who wants to stay calibrated.
+
+Passage to analyze:
+[PASTE PASSAGE OR LINK CONTEXT HERE]</pre>
+            </details>
+          </article></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

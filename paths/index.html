@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Paths | CogBias</title>
+    <meta name="description" content="Curated routes through the bias catalog for common thinking jobs." />
+    <meta name="author" content="Phil Stilwell" />
+    <meta name="application-name" content="CogBias" />
+    <meta name="theme-color" content="#0e2339" />
+    
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script defer src="../app.js"></script>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <header class="masthead">
+        <div class="masthead-inner">
+          <div class="brand-row">
+            <div class="brand-lockup">
+              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">CB</div>
+              <div>
+                <p class="brand-kicker">Cognitive Biases</p>
+                <h1 class="brand-title">CogBias</h1>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
+              </div>
+            </div>
+            <form class="site-search-form" role="search" action="../biases/" method="get">
+              <input
+                class="site-search-input"
+                type="search"
+                name="q"
+                placeholder="Search biases..."
+                aria-label="Search biases"
+                data-site-search-input
+              />
+              <button class="site-search-button" type="submit">Search</button>
+            </form>
+          </div>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../paths/" aria-current="page">Paths</a><a href="../countermoves/">Countermoves</a><a href="../check-yourself/">Check Yourself</a><a href="../prompts/">Prompts</a><a href="../theory/">Theory</a><a href="../about/">About</a></nav>
+        </div>
+      </header>
+      <main class="page-wrap">
+        <div class="breadcrumbs"><a href="../">Home</a><span>/</span><strong>Learning Paths</strong></div>
+
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Paths</p>
+            <h2 class="detail-title">Smaller routes through a large catalog</h2>
+            <p class="detail-deck">The alphabetical list is useful once you know the label. The path pages are for the earlier moment when you know the context, the failure mode, or the teaching goal, but not yet the exact bias name.</p>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">How To Use Them</p>
+            <p class="muted">Choose the path that fits the job: better decisions, better forecasting, fairer people judgment, cleaner evidence review, or more honest postmortems.</p>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="category-grid">
+            
+          <article class="category-card">
+            <h3><a href="../paths/start-here/">Start Here</a></h3>
+            <p class="card-copy">A first pass through the biases that most often distort everyday judgment, news consumption, and basic decision-making.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">9 biases</span>
+              <span class="teaching-pill">Best for general readers, classrooms, and first-time visitors.</span>
+            </div>
+            <p class="muted">Which recurring distortions show up most often before people can even name what went wrong?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="../paths/decision-under-uncertainty/">Decision Under Uncertainty</a></h3>
+            <p class="card-copy">Biases that quietly bend choice, forecasting, escalation, and project planning when the future is still unresolved.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">7 biases</span>
+              <span class="teaching-pill">Best for managers, founders, operators, and anyone who makes plans under pressure.</span>
+            </div>
+            <p class="muted">What makes a plan feel decisive before it is actually well-calibrated?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="../paths/people-judgment/">People Judgment</a></h3>
+            <p class="card-copy">A path for social perception, hiring, leadership, conflict, and the fast trait inferences people make about one another.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">5 biases</span>
+              <span class="teaching-pill">Best for teams, educators, interviewers, and anyone doing evaluation of persons rather than objects.</span>
+            </div>
+            <p class="muted">How do snap impressions about people become stronger than the evidence available?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="../paths/evidence-and-explanation/">Evidence And Explanation</a></h3>
+            <p class="card-copy">Biases that corrupt sampling, explanation, and the interpretation of evidence before a confident belief hardens.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">6 biases</span>
+              <span class="teaching-pill">Best for research, diagnostics, policy, media literacy, and analytical work.</span>
+            </div>
+            <p class="muted">What makes a weak sample or flattering story feel like a strong explanation?</p>
+          </article>
+          <article class="category-card">
+            <h3><a href="../paths/after-the-outcome/">After The Outcome</a></h3>
+            <p class="card-copy">A postmortem path for keeping the known result from rewriting memory, distorting blame, or laundering bad process through luck.</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">5 biases</span>
+              <span class="teaching-pill">Best for retrospectives, debriefs, coaching, investing, and performance review.</span>
+            </div>
+            <p class="muted">How does the known ending bend memory of what was knowable beforehand?</p>
+          </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

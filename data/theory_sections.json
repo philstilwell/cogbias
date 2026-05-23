@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "biases-before-arguments",
+    "title": "Biases usually fire before arguments become polished",
+    "summary": "Logical fallacies often show up in public-facing argument structure. Cognitive biases often distort what feels plausible even earlier, in private judgment, attention, memory, and interpretation.",
+    "paragraphs": [
+      "That difference matters because people often arrive at the argument already bent toward one interpretation. By the time a clean verbal fallacy appears, attention, retrieval, emotional salience, and identity-protective filtering may have done most of the work.",
+      "A bias site therefore needs different teaching primitives. The useful questions are not only 'What argument form failed?' but also 'What felt easy, normal, vivid, or self-protective before the person ever stated a conclusion out loud?'",
+      "This is why CogBias keeps the practical teaching feel of LogFall while shifting the center of gravity toward distorted judgment, cross-situational comparison, and procedural repair."
+    ],
+    "bullets": [
+      "Fallacies are often easiest to observe in public discourse.",
+      "Biases often explain how the discourse got tilted before the public exchange began.",
+      "Debiasing therefore requires process changes, not just better labels."
+    ]
+  },
+  {
+    "slug": "why-two-taxonomies",
+    "title": "Why CogBias uses both categories and patterns",
+    "summary": "One taxonomy groups biases by the kind of judgment that is failing. The other groups them by the shape of the distortion that keeps recurring across contexts.",
+    "paragraphs": [
+      "The category layer answers a practical diagnostic question: is this mainly a failure of estimation, decision, evidence assessment, causal attribution, memory, or reported opinion? That is often the fastest way to narrow the field.",
+      "The pattern layer answers a different question: what kind of pull is doing the hidden work? Is the judgment being bent by vivid association, by an inherited baseline, by inertia, by the known outcome, or by self-protective perspective?",
+      "Using both layers makes the site more teachable. It helps readers see why two biases can live far apart alphabetically but still feel psychologically similar in use."
+    ],
+    "bullets": [
+      "Categories are about the task being distorted.",
+      "Patterns are about the mechanism of distortion.",
+      "Together they make comparison easier than a flat alphabetical list."
+    ]
+  },
+  {
+    "slug": "debiasing-as-design",
+    "title": "Debiasing works better as process design than as moral exhortation",
+    "summary": "Knowing the label is useful, but recognition alone rarely fixes the bias. Good debiasing usually changes the decision environment itself.",
+    "paragraphs": [
+      "People often imagine that once a bias is named, it can simply be willed away. In practice, many distortions are sticky precisely because they feel like ordinary good judgment from the inside. Awareness helps, but structure helps more.",
+      "That is why CogBias emphasizes countermoves, self-audits, and path-based study. The practical question is not whether someone can recite a definition. It is whether the workflow now contains a pause, comparison, reference class, rubric, or postmortem habit that interrupts the old drift.",
+      "At the individual level this may look like a written forecast, a reference-class check, or a rival-hypothesis note. At the team level it may look like independent scoring, premortems, or explicit role assignment. At the system level it means defaults, dashboards, and review rules that make the bias harder to reproduce."
+    ],
+    "bullets": [
+      "Recognition is necessary but rarely sufficient.",
+      "The most reliable repair is often structural, not merely motivational.",
+      "A good teaching site should therefore help readers change procedure, not just vocabulary."
+    ]
+  }
+]

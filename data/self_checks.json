@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "before-you-decide",
+    "title": "Before You Decide",
+    "summary": "A quick pre-choice audit for defaults, sunk costs, anchors, and false certainty.",
+    "question": "Am I choosing the best forward-looking option, or the most comfortable inherited one?",
+    "steps": [
+      "Write the current default as just one option on the list.",
+      "Ignore past sunk costs for one clean pass through the decision.",
+      "Ask whether the first number or frame is still pulling the choice.",
+      "State what would have to be true for the current favorite to fail."
+    ],
+    "relatedBiases": [
+      "anchoring-effect",
+      "status-quo-bias",
+      "sunk-cost-effect",
+      "overconfidence-effect"
+    ]
+  },
+  {
+    "slug": "before-you-predict",
+    "title": "Before You Predict",
+    "summary": "A forecasting check for base rates, uncertainty ranges, and planning optimism.",
+    "question": "What would the outside view say before the inside story takes over?",
+    "steps": [
+      "Name the reference class before you describe the special features of the case.",
+      "Write a range, not just a point estimate.",
+      "Compare your forecast with historical cycle times or base rates.",
+      "List one concrete failure path that would widen the range."
+    ],
+    "relatedBiases": [
+      "base-rate-neglect",
+      "overconfidence-effect",
+      "planning-fallacy",
+      "anchoring-effect"
+    ]
+  },
+  {
+    "slug": "before-you-judge-a-person",
+    "title": "Before You Judge A Person",
+    "summary": "A social-perception check for trait inflation, first impressions, and hidden asymmetry.",
+    "question": "Am I reacting to the person, to the situation, or to my own first-pass impression of the person?",
+    "steps": [
+      "Describe the behavior before you explain it.",
+      "List three situational pressures that could also account for it.",
+      "Separate overall impression from the specific trait you think you observed.",
+      "Ask whether the same behavior would read differently from someone else."
+    ],
+    "relatedBiases": [
+      "fundamental-attribution-error",
+      "halo-effect",
+      "implicit-bias",
+      "negativity-bias"
+    ]
+  },
+  {
+    "slug": "before-you-share-the-story",
+    "title": "Before You Share The Story",
+    "summary": "A media and discourse check for salience, repetition, and flattering narrative compression.",
+    "question": "Is this memorable because it is representative, or because it is dramatic and easy to circulate?",
+    "steps": [
+      "Ask what denominator or rate is missing from the anecdote.",
+      "Check whether repetition has made the story feel truer than the evidence warrants.",
+      "Look for the missing non-dramatic cases.",
+      "Separate what is vivid from what is prevalent."
+    ],
+    "relatedBiases": [
+      "availability-heuristic",
+      "negativity-bias",
+      "survivorship-bias",
+      "confirmation-bias"
+    ]
+  },
+  {
+    "slug": "before-you-explain-what-happened",
+    "title": "Before You Explain What Happened",
+    "summary": "A causation and evidence check for premature stories about why the outcome occurred.",
+    "question": "What part of this explanation is genuinely shown, and what part merely feels satisfying now that the ending is known?",
+    "steps": [
+      "Recover what was known before the result arrived.",
+      "List at least two rival explanations that still fit the facts.",
+      "Separate judgment of the process from judgment of the result.",
+      "Ask which causal links are being assumed rather than demonstrated."
+    ],
+    "relatedBiases": [
+      "hindsight-bias",
+      "outcome-bias",
+      "motivated-reasoning",
+      "fundamental-attribution-error"
+    ]
+  },
+  {
+    "slug": "after-you-were-surprised",
+    "title": "After You Were Surprised",
+    "summary": "A short post-surprise drill for protecting calibration when a result feels obvious only afterward.",
+    "question": "What did the surprise reveal about the world, and what did it reveal about my forecasting habits?",
+    "steps": [
+      "Write what you actually expected before you revise the story.",
+      "Note which uncertainty you compressed too aggressively.",
+      "Identify one missing base rate, missing scenario, or missing situational factor.",
+      "Turn the surprise into one rule change for the next forecast."
+    ],
+    "relatedBiases": [
+      "hindsight-bias",
+      "overconfidence-effect",
+      "availability-heuristic",
+      "planning-fallacy"
+    ]
+  }
+]

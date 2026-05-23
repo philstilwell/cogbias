@@ -2093,6 +2093,46 @@ img {
   margin: 12px 0 0;
 }
 
+.path-link-row:empty {
+  display: none;
+}
+
+.path-link-row-spaced {
+  margin-top: 16px;
+}
+
+.prompt-card details {
+  margin-top: 16px;
+}
+
+.prompt-details summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.prompt-details summary:hover,
+.prompt-details summary:focus-visible {
+  color: #1d6da8;
+}
+
+.prompt-block {
+  margin: 14px 0 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f8fafc;
+  color: var(--ink);
+  white-space: pre-wrap;
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.theory-section {
+  scroll-margin-top: 110px;
+}
+
 .related-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

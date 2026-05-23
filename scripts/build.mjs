@@ -9,7 +9,34 @@ const dataDir = path.join(projectRoot, "data");
 const siteDir = path.join(projectRoot, "site");
 
 const siteConfig = JSON.parse(await fs.readFile(path.join(dataDir, "site.json"), "utf8"));
-const entries = JSON.parse(await fs.readFile(path.join(dataDir, "biases.json"), "utf8"));
+const rawEntries = JSON.parse(await fs.readFile(path.join(dataDir, "biases.json"), "utf8"));
+const editorialEnrichments = JSON.parse(
+  await fs.readFile(path.join(dataDir, "editorial_enrichments.json"), "utf8"),
+);
+const learningPathData = JSON.parse(await fs.readFile(path.join(dataDir, "learning_paths.json"), "utf8"));
+const selfCheckData = JSON.parse(await fs.readFile(path.join(dataDir, "self_checks.json"), "utf8"));
+const promptKitData = JSON.parse(await fs.readFile(path.join(dataDir, "prompt_kits.json"), "utf8"));
+const theorySections = JSON.parse(await fs.readFile(path.join(dataDir, "theory_sections.json"), "utf8"));
+
+function mergeUniqueStrings(values = []) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function mergeEntryData(baseEntries, enrichments) {
+  const enrichmentsBySlug = new Map(enrichments.map((entry) => [entry.slug, entry]));
+  return baseEntries.map((entry) => {
+    const enrichment = enrichmentsBySlug.get(entry.slug);
+    if (!enrichment) return entry;
+    return {
+      ...entry,
+      ...enrichment,
+      aliases: mergeUniqueStrings([...(entry.aliases || []), ...(enrichment.aliases || [])]),
+      related: mergeUniqueStrings([...(entry.related || []), ...(enrichment.related || [])]),
+    };
+  });
+}
+
+const entries = mergeEntryData(rawEntries, editorialEnrichments);
 
 const siteUrl = String(siteConfig.siteUrl || "").trim();
 const siteUrlWithSlash = siteUrl ? `${siteUrl.replace(/\/+$/, "")}/` : "";
@@ -39,6 +66,11 @@ const patterns = siteConfig.patterns
   }))
   .filter((pattern) => pattern.members.length > 0);
 
+const learningPaths = learningPathData.map((path) => ({
+  ...path,
+  members: (path.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+}));
+
 for (const entry of entries) {
   for (const taskName of entry.tasks || []) {
     if (!taskByName.has(taskName)) {
@@ -57,6 +89,12 @@ for (const entry of entries) {
       throw new Error(`Unknown related slug "${relatedSlug}" on entry "${entry.slug}".`);
     }
   }
+
+  for (const confusion of entry.confusions || []) {
+    if (!entryBySlug.has(confusion.slug)) {
+      throw new Error(`Unknown confusion slug "${confusion.slug}" on entry "${entry.slug}".`);
+    }
+  }
 }
 
 for (const slug of siteConfig.featured || []) {
@@ -69,6 +107,30 @@ for (const countermove of siteConfig.countermeasures || []) {
   for (const relatedSlug of countermove.relatedBiases || []) {
     if (!entryBySlug.has(relatedSlug)) {
       throw new Error(`Unknown countermove related slug "${relatedSlug}" on "${countermove.slug}".`);
+    }
+  }
+}
+
+for (const path of learningPaths) {
+  for (const slug of path.biasSlugs || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown learning path slug "${slug}" on path "${path.slug}".`);
+    }
+  }
+}
+
+for (const check of selfCheckData) {
+  for (const slug of check.relatedBiases || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown self-check related slug "${slug}" on "${check.slug}".`);
+    }
+  }
+}
+
+for (const promptKit of promptKitData) {
+  for (const slug of promptKit.relatedBiases || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown prompt related slug "${slug}" on "${promptKit.slug}".`);
     }
   }
 }
@@ -129,8 +191,11 @@ function renderNav(prefix, currentId) {
     { id: "home", label: "Home", href: `${prefix}` || "./" },
     { id: "biases", label: "All Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
     { id: "categories", label: "Categories", href: `${prefix}categories/` },
-    { id: "patterns", label: "Patterns", href: `${prefix}${siteConfig.patternSlug}/` },
+    { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
+    { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
+    { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
+    { id: "theory", label: "Theory", href: `${prefix}${siteConfig.theorySlug}/` },
     { id: "about", label: "About", href: `${prefix}about/` },
   ];
 
@@ -180,7 +245,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -289,6 +354,117 @@ function fallbackReframeIt(entry) {
   ];
 }
 
+function sentenceCase(value = "") {
+  if (!value) return "";
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function pathObjectsForEntry(entry) {
+  return learningPaths.filter((path) => (path.biasSlugs || []).includes(entry.slug));
+}
+
+function selfChecksForEntry(entry) {
+  return selfCheckData.filter((check) => (check.relatedBiases || []).includes(entry.slug));
+}
+
+function promptKitsForEntry(entry) {
+  return promptKitData.filter((promptKit) => (promptKit.relatedBiases || []).includes(entry.slug));
+}
+
+function examplesFor(entry) {
+  if (entry.examples) return entry.examples;
+
+  return {
+    everyday: `In everyday life, this often looks like people ${sentenceCase(
+      entry.defaultMove || "leaning on the easiest first interpretation",
+    )} when ${sentenceCase(entry.commonTrigger || "uncertainty is high")}.`,
+    workplace: `At work, this often appears when teams ${sentenceCase(
+      entry.defaultMove || "treat the first coherent story as sufficient",
+    )} instead of slowing the process long enough to compare alternatives.`,
+    public: `In public discourse, it often surfaces when commentators ${sentenceCase(
+      entry.defaultMove || "move too quickly from salience to conclusion",
+    )} while the underlying evidence remains thinner than it sounds.`,
+  };
+}
+
+function redFlagsFor(entry) {
+  if (entry.redFlags?.length) return entry.redFlags;
+  if (entry.signals?.length) return entry.signals;
+
+  return [
+    `The default move is to ${sentenceCase(entry.defaultMove || "trust the first plausible interpretation")}.`,
+    `The bias is easiest to trigger when ${sentenceCase(entry.commonTrigger || "the situation feels rushed or vivid")}.`,
+    "The judgment starts to feel settled before competing interpretations have had equal time.",
+  ];
+}
+
+function reflectionQuestionsFor(entry) {
+  if (entry.reflectionQuestions?.length) return entry.reflectionQuestions;
+
+  const task = entryTaskObjects(entry)[0];
+  const pattern = entryPatternObjects(entry)[0];
+  return [
+    task?.guidingQuestion || "What kind of judgment is failing here?",
+    pattern?.guidingQuestion || "What kind of hidden pull is bending this judgment?",
+    "What evidence or comparison would most seriously change the current call?",
+  ];
+}
+
+function repairMovesFor(entry) {
+  if (entry.repairMoves) return entry.repairMoves;
+
+  const linked = (siteConfig.countermeasures || []).find((countermove) =>
+    (countermove.relatedBiases || []).includes(entry.slug),
+  );
+
+  return {
+    solo: entry.firstCountermove || "Slow the judgment down long enough to name the live alternatives.",
+    team:
+      linked?.steps?.[1] ||
+      "Ask someone else to restate the case from a genuinely different starting point before committing.",
+    system:
+      linked?.summary ||
+      "Change the workflow so this distortion becomes harder to repeat by default next time.",
+  };
+}
+
+function confusionsFor(entry) {
+  if (entry.confusions?.length) {
+    return entry.confusions
+      .map((item) => ({
+        ...item,
+        entry: entryBySlug.get(item.slug),
+      }))
+      .filter((item) => item.entry);
+  }
+
+  return relatedEntriesFor(entry, 3).map((candidate) => ({
+    slug: candidate.slug,
+    entry: candidate,
+    note: "A nearby label worth comparing before settling the diagnosis.",
+  }));
+}
+
+function teachingNoteFor(entry) {
+  if (entry.teachingNote) return entry.teachingNote;
+  const task = entryTaskObjects(entry)[0];
+  const pattern = entryPatternObjects(entry)[0];
+  return `Start with the ${sentenceCase(
+    task?.name || "judgment",
+  )} problem, then show how the ${sentenceCase(pattern?.name || "current")} pattern makes the distortion feel natural from the inside.`;
+}
+
+function renderEntryLinkChips(slugs = [], prefix = "") {
+  return slugs
+    .map((slug) => entryBySlug.get(slug))
+    .filter(Boolean)
+    .map(
+      (entry) =>
+        `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+    )
+    .join("");
+}
+
 function renderPills(entry) {
   const taskPills = entryTaskObjects(entry)
     .map((task) => `<span class="pill pill-task">${escapeHtml(task.name)}</span>`)
@@ -378,6 +554,51 @@ function renderCountermoveCard(countermove, prefix = "") {
           </article>`;
 }
 
+function renderPathCard(path, prefix = "") {
+  return `
+          <article class="category-card">
+            <h3><a href="${prefix}${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a></h3>
+            <p class="card-copy">${escapeHtml(path.summary)}</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${path.members.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
+              <span class="teaching-pill">${escapeHtml(path.audience)}</span>
+            </div>
+            <p class="muted">${escapeHtml(path.guidingQuestion)}</p>
+          </article>`;
+}
+
+function renderSelfCheckCard(check, prefix = "") {
+  return `
+          <article class="category-card">
+            <h3>${escapeHtml(check.title)}</h3>
+            <p class="card-copy">${escapeHtml(check.summary)}</p>
+            <p class="muted"><strong>Question:</strong> ${escapeHtml(check.question)}</p>
+            <ul class="muted">
+              ${check.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
+            </ul>
+            <div class="path-link-row">
+              ${renderEntryLinkChips(check.relatedBiases || [], prefix)}
+            </div>
+          </article>`;
+}
+
+function renderPromptCard(promptKit, prefix = "") {
+  const promptText = (promptKit.promptLines || []).join("\n");
+  return `
+          <article class="category-card prompt-card">
+            <h3>${escapeHtml(promptKit.title)}</h3>
+            <p class="card-copy">${escapeHtml(promptKit.intro)}</p>
+            <p class="muted"><strong>Use when:</strong> ${escapeHtml(promptKit.requirements)}</p>
+            <div class="path-link-row">
+              ${renderEntryLinkChips(promptKit.relatedBiases || [], prefix)}
+            </div>
+            <details class="prompt-details">
+              <summary>Open prompt</summary>
+              <pre class="prompt-block">${escapeHtml(promptText)}</pre>
+            </details>
+          </article>`;
+}
+
 function renderHomePage() {
   return renderPage({
     title: siteConfig.brandTitle,
@@ -392,8 +613,8 @@ function renderHomePage() {
             <p class="hero-lead">${escapeHtml(siteConfig.heroLead)}</p>
             <div class="hero-actions">
               <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
-              <a class="button button-secondary" href="categories/">Browse Categories</a>
-              <a class="button button-secondary" href="${siteConfig.patternSlug}/">Browse Patterns</a>
+              <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
+              <a class="button button-secondary" href="${siteConfig.checkSlug}/">Run A Self-Check</a>
             </div>
           </div>
           <aside class="hero-panel hero-side">
@@ -404,17 +625,25 @@ function renderHomePage() {
                 <span class="stat-label">Bias Entries</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">${tasks.length}</span>
-                <span class="stat-label">Categories</span>
+                <span class="stat-value">${learningPaths.length}</span>
+                <span class="stat-label">Learning Paths</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">${patterns.length}</span>
-                <span class="stat-label">Patterns</span>
+                <span class="stat-value">${selfCheckData.length}</span>
+                <span class="stat-label">Self-Audits</span>
               </div>
             </div>
-            <div class="source-callout section-block">
-              <h4>Source Note</h4>
-              <p class="muted">${escapeHtml(siteConfig.sourceAttribution)}</p>
+            <div class="note-panel">
+              <h4>1. Start with a path</h4>
+              <p class="muted">Use a curated path when you know the context but not the label: decision-making, people judgment, evidence review, or postmortems.</p>
+            </div>
+            <div class="note-panel" style="margin-top:12px;">
+              <h4>2. Jump to the bias page</h4>
+              <p class="muted">Core entries now include examples, nearby confusions, reflection questions, and repair moves at the solo, team, and system levels.</p>
+            </div>
+            <div class="note-panel" style="margin-top:12px;">
+              <h4>3. Change the process</h4>
+              <p class="muted">Use the self-checks, countermoves, and prompt kits to modify the workflow that keeps reproducing the distortion.</p>
             </div>
           </aside>
         </section>
@@ -432,6 +661,32 @@ function renderHomePage() {
               <h4>Images are planned</h4>
               <p class="muted">Illustration slots are already reserved on the detail pages so a future image set can be added without disturbing the layout.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Learning paths</h2>
+              <p class="section-copy">These curated routes are the closest analogue to LogFall's teaching paths: smaller, more purposeful sequences for a specific job of thinking.</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.pathSlug}/">Open all paths</a>
+          </div>
+          <div class="category-grid">
+            ${learningPaths.map((path) => renderPathCard(path)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Check yourself</h2>
+              <p class="section-copy">Short self-audits for the moments when bias is most likely to slide past you: before a decision, before a forecast, before a people judgment, and after a surprising outcome.</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.checkSlug}/">Open the field guide</a>
+          </div>
+          <div class="category-grid">
+            ${selfCheckData.slice(0, 3).map((check) => renderSelfCheckCard(check)).join("")}
           </div>
         </section>
 
@@ -471,6 +726,40 @@ function renderHomePage() {
           </div>
           <div class="category-grid">
             ${patterns.map((pattern) => renderPatternCard(pattern)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Prompt kits</h2>
+              <p class="section-copy">Bias-aware AI prompts modeled on the practical spirit of LogFall's prompt section, but tuned for decisions, forecasting, people judgment, and media calibration.</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.promptSlug}/">Open prompt kits</a>
+          </div>
+          <div class="category-grid">
+            ${promptKitData.slice(0, 2).map((promptKit) => renderPromptCard(promptKit)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Theory</h2>
+              <p class="section-copy">Short essays on why a bias site needs different teaching primitives from a fallacy site and why debiasing works better as design than as exhortation.</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.theorySlug}/">Read the theory page</a>
+          </div>
+          <div class="category-grid">
+            ${theorySections
+              .map(
+                (section) => `
+                  <article class="category-card">
+                    <h3><a href="${siteConfig.theorySlug}/#${section.slug}">${escapeHtml(section.title)}</a></h3>
+                    <p class="card-copy">${escapeHtml(section.summary)}</p>
+                  </article>`,
+              )
+              .join("")}
           </div>
         </section>
 
@@ -597,6 +886,206 @@ function renderPatternIndexPage() {
   });
 }
 
+function renderPathsIndexPage() {
+  return renderPage({
+    title: "Learning Paths",
+    description: "Curated routes through the bias catalog for common thinking jobs.",
+    prefix: "../",
+    currentId: "paths",
+    routePath: `/${siteConfig.pathSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Learning Paths" },
+    ],
+    body: `
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Paths</p>
+            <h2 class="detail-title">Smaller routes through a large catalog</h2>
+            <p class="detail-deck">The alphabetical list is useful once you know the label. The path pages are for the earlier moment when you know the context, the failure mode, or the teaching goal, but not yet the exact bias name.</p>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">How To Use Them</p>
+            <p class="muted">Choose the path that fits the job: better decisions, better forecasting, fairer people judgment, cleaner evidence review, or more honest postmortems.</p>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="category-grid">
+            ${learningPaths.map((path) => renderPathCard(path, "../")).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderPathDetailPage(path) {
+  return renderPage({
+    title: path.title,
+    description: path.summary,
+    prefix: "../../",
+    currentId: "paths",
+    routePath: `/${siteConfig.pathSlug}/${path.slug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Paths", href: "../" },
+      { label: path.title },
+    ],
+    body: `
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Learning Path</p>
+            <h2 class="detail-title">${escapeHtml(path.title)}</h2>
+            <p class="detail-deck">${escapeHtml(path.summary)}</p>
+            <div class="pill-row">
+              <span class="pill pill-task">${path.members.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
+              <span class="pill">${escapeHtml(path.audience)}</span>
+            </div>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">Use It When</p>
+            <p class="muted">${escapeHtml(path.whenToUse)}</p>
+            <p class="eyebrow" style="margin-top:14px;">Guiding Question</p>
+            <p class="muted">${escapeHtml(path.guidingQuestion)}</p>
+          </aside>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>What this path is trying to prevent</h4>
+            <p class="muted">These entries belong together because they often appear in the same practical sequence. One bias sets the stage, another narrows the options, and a third edits the memory afterward.</p>
+          </div>
+          <div class="note-panel">
+            <h4>How to study it</h4>
+            <p class="muted">Work the pages in order, then loop back and compare which distortions happened earliest, which ones protected the first impression, and which ones interfered with later learning.</p>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Biases in this path</h2>
+              <p class="section-copy">This is a deliberate sequence, not just a themed pile. Start at the top if the context is new to you.</p>
+            </div>
+          </div>
+          <div class="entry-grid">
+            ${path.members.map((entry) => renderBiasCard(entry, "../../")).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderCheckYourselfPage() {
+  return renderPage({
+    title: "Check Yourself",
+    description: "Bias self-audits for real decisions, forecasts, people judgment, and postmortems.",
+    prefix: "../",
+    currentId: "check",
+    routePath: `/${siteConfig.checkSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Check Yourself" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Check Yourself</p>
+          <h2 class="detail-title">Short audits for the moments bias is most likely to slip through</h2>
+          <p class="detail-deck">These are not quizzes. They are small procedural checkpoints you can run before a choice, before a forecast, before a people judgment, and after a result when memory is already trying to smooth the story.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="category-grid">
+            ${selfCheckData.map((check) => `<div id="${check.slug}">${renderSelfCheckCard(check, "../")}</div>`).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderPromptsPage() {
+  return renderPage({
+    title: "Prompt Kits",
+    description: "Bias-aware AI prompts for decisions, forecasts, postmortems, people judgment, and media review.",
+    prefix: "../",
+    currentId: "prompts",
+    routePath: `/${siteConfig.promptSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Prompt Kits" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Prompts</p>
+          <h2 class="detail-title">Prompt kits for catching bias without outsourcing your judgment</h2>
+          <p class="detail-deck">These are designed to make an AI model slow the structure of the reasoning process. The goal is not to let the model decide for you. The goal is to expose what your current process may be skipping.</p>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Best use</h4>
+            <p class="muted">Use these after you have written the live decision, forecast, or case as concretely as possible. Vague prompts produce flattering but low-value outputs.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Important limit</h4>
+            <p class="muted">A model can help surface missing comparisons, hidden defaults, or softened alternatives, but it can also confidently mirror your framing. The prompt should therefore widen the lens, not merely request a verdict.</p>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="category-grid">
+            ${promptKitData.map((promptKit) => `<div id="${promptKit.slug}">${renderPromptCard(promptKit, "../")}</div>`).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderTheoryPage() {
+  return renderPage({
+    title: "Theory",
+    description: "Short theory notes on why a cognitive-bias site needs different teaching primitives from a fallacy site.",
+    prefix: "../",
+    currentId: "theory",
+    routePath: `/${siteConfig.theorySlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Theory" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Theory</p>
+          <h2 class="detail-title">Why the site is organized this way</h2>
+          <p class="detail-deck">CogBias borrows LogFall's practical teaching instinct, but the underlying object is different. These short sections explain why a bias reference needs categories, patterns, self-audits, and procedural repairs rather than only labels and examples.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="category-grid">
+            ${theorySections
+              .map(
+                (section) => `
+                  <article class="category-card">
+                    <h3><a href="#${section.slug}">${escapeHtml(section.title)}</a></h3>
+                    <p class="card-copy">${escapeHtml(section.summary)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        ${theorySections
+          .map(
+            (section) => `
+              <section class="detail-section section-block theory-section" id="${section.slug}">
+                <p class="eyebrow">Theory Section</p>
+                <h2 class="section-title">${escapeHtml(section.title)}</h2>
+                <p class="section-copy">${escapeHtml(section.summary)}</p>
+                ${section.paragraphs.map((paragraph) => `<p class="muted">${escapeHtml(paragraph)}</p>`).join("")}
+                <ul class="muted">
+                  ${(section.bullets || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+                </ul>
+              </section>`,
+          )
+          .join("")}`,
+  });
+}
+
 function renderCategoryDetailPage(task) {
   return renderPage({
     title: task.name,
@@ -688,6 +1177,14 @@ function renderBiasDetailPage(entry) {
   const spotIt = entry.spotIt || fallbackSpotIt(entry);
   const slowIt = entry.slowIt || fallbackSlowIt(entry);
   const reframeIt = entry.reframeIt || fallbackReframeIt(entry);
+  const examples = examplesFor(entry);
+  const redFlags = redFlagsFor(entry);
+  const reflectionQuestions = reflectionQuestionsFor(entry);
+  const repairMoves = repairMovesFor(entry);
+  const confusions = confusionsFor(entry);
+  const paths = pathObjectsForEntry(entry);
+  const checks = selfChecksForEntry(entry);
+  const promptKits = promptKitsForEntry(entry);
 
   return renderPage({
     title: entry.name,
@@ -727,6 +1224,14 @@ function renderBiasDetailPage(entry) {
                 <p class="detail-card-value">${escapeHtml(entryPromptEffort(entry))}</p>
               </div>
             </div>
+            <div class="path-link-row path-link-row-spaced">
+              ${paths
+                .map(
+                  (path) =>
+                    `<a class="path-link-chip" href="../../${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a>`,
+                )
+                .join("")}
+            </div>
           </div>
           <aside class="hero-panel hero-side detail-side-stack">
             <div class="illustration-placeholder">
@@ -763,6 +1268,69 @@ function renderBiasDetailPage(entry) {
           </div>
         </div>
 
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Bias in the wild</h2>
+              <p class="section-copy">Each example changes the surface context while keeping the same hidden distortion in place.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>Everyday life</h3>
+              <p class="card-copy">${escapeHtml(examples.everyday)}</p>
+            </article>
+            <article class="category-card">
+              <h3>Work and teams</h3>
+              <p class="card-copy">${escapeHtml(examples.workplace)}</p>
+            </article>
+            <article class="category-card">
+              <h3>Public discourse</h3>
+              <p class="card-copy">${escapeHtml(examples.public)}</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>What it feels like from inside</h4>
+            <p class="muted">${escapeHtml(
+              entry.whatItFeelsLike ||
+                "The distortion usually feels like ordinary good judgment from the inside, which is why procedural repairs matter more than mere recognition.",
+            )}</p>
+            <p class="muted"><strong>Teaching note:</strong> ${escapeHtml(teachingNoteFor(entry))}</p>
+          </div>
+          <div class="note-panel">
+            <h4>Telltale signs</h4>
+            <ul class="muted">
+              ${redFlags.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Repair at three levels</h2>
+              <p class="section-copy">The strongest debiasing moves change the process, not just the label.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>Solo move</h3>
+              <p class="card-copy">${escapeHtml(repairMoves.solo)}</p>
+            </article>
+            <article class="category-card">
+              <h3>Team move</h3>
+              <p class="card-copy">${escapeHtml(repairMoves.team)}</p>
+            </article>
+            <article class="category-card">
+              <h3>System move</h3>
+              <p class="card-copy">${escapeHtml(repairMoves.system)}</p>
+            </article>
+          </div>
+        </section>
+
         <section class="detail-section section-block">
           <p class="eyebrow">Counter It</p>
           <h2 class="section-title">From naming to interruption</h2>
@@ -785,6 +1353,92 @@ function renderBiasDetailPage(entry) {
               <p class="lab-panel-kicker">Reframe It</p>
               <ul class="muted">${reframeIt.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Often confused with</h2>
+              <p class="section-copy">These are nearby labels that can look similar on first pass but deserve a cleaner distinction.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${confusions
+              .map(
+                (item) => `
+                  <article class="category-card">
+                    <h3><a href="../../${siteConfig.sectionSlug}/${item.entry.slug}/">${escapeHtml(item.entry.name)}</a></h3>
+                    <p class="card-copy">${escapeHtml(item.note)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Reflection questions</h2>
+              <p class="section-copy">These are useful when the label seems roughly right but the process change still feels underspecified.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${reflectionQuestions
+              .map(
+                (question) => `
+                  <article class="category-card">
+                    <p class="card-copy">${escapeHtml(question)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Use it in context</h2>
+              <p class="section-copy">Once you know the bias, these nearby tools help you use the page in a real workflow rather than as a static definition.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>Learning paths</h3>
+              <p class="card-copy">Curated sequences where this bias commonly appears alongside a few predictable neighbors.</p>
+              <div class="path-link-row">
+                ${paths
+                  .map(
+                    (path) =>
+                      `<a class="path-link-chip" href="../../${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a>`,
+                  )
+                  .join("")}
+              </div>
+            </article>
+            <article class="category-card">
+              <h3>Self-checks</h3>
+              <p class="card-copy">Short audits you can run before the distortion hardens into a decision, a verdict, or a post-hoc story.</p>
+              <div class="path-link-row">
+                ${checks
+                  .map(
+                    (check) =>
+                      `<a class="path-link-chip" href="../../${siteConfig.checkSlug}/#${check.slug}">${escapeHtml(check.title)}</a>`,
+                  )
+                  .join("")}
+              </div>
+            </article>
+            <article class="category-card">
+              <h3>Prompt kits</h3>
+              <p class="card-copy">Bias-aware AI prompts that widen the frame instead of simply endorsing the first preferred conclusion.</p>
+              <div class="path-link-row">
+                ${promptKits
+                  .map(
+                    (promptKit) =>
+                      `<a class="path-link-chip" href="../../${siteConfig.promptSlug}/#${promptKit.slug}">${escapeHtml(promptKit.title)}</a>`,
+                  )
+                  .join("")}
+              </div>
+            </article>
           </div>
         </section>
 
@@ -832,7 +1486,7 @@ function renderAboutPage() {
   const roadmap = siteConfig.roadmap;
   return renderPage({
     title: "About This Starter",
-    description: "How CogBias uses a Wikipedia seed taxonomy while keeping a LogFall-like teaching feel.",
+    description: "How CogBias uses a Wikipedia seed taxonomy while growing into a fuller teaching resource.",
     prefix: "../",
     currentId: "about",
     routePath: "/about/",
@@ -843,21 +1497,22 @@ function renderAboutPage() {
     body: `
         <section class="detail-section">
           <p class="eyebrow">About</p>
-          <h2 class="detail-title">Wide taxonomy first, richer editorial depth next</h2>
-          <p class="detail-deck">This repo now uses the Wikipedia cognitive-bias list as a structured seed, then reshapes it into a static teaching site with the same practical feel as LogFall. The current version prioritizes broad navigable coverage, dual taxonomies, and future-ready illustration slots.</p>
+          <h2 class="detail-title">Wide taxonomy first, then richer guided use</h2>
+          <p class="detail-deck">CogBias begins with the Wikipedia cognitive-bias list as a wide seed taxonomy, then reshapes that material into a teaching-first site with paths, self-audits, prompt kits, theory notes, and deeper editorial treatment of especially important bias pages.</p>
         </section>
 
         <div class="two-column section-block">
           <div class="note-panel">
             <h4>Why this architecture works</h4>
-            <p class="muted">The site can grow in two directions at once: broader coverage through the imported catalog, and deeper coverage through hand-authored upgrades to especially important entries.</p>
+            <p class="muted">The site can now grow in three directions at once: broader coverage through the imported catalog, deeper coverage through hand-authored upgrades, and stronger usability through path pages and procedural tools.</p>
           </div>
           <div class="note-panel">
             <h4>Files to edit first</h4>
             <ul class="muted">
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
-              <li><code>data/deep_biases_overrides.json</code> for richer hand-authored entry overrides.</li>
+              <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
+              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_sections.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
@@ -933,6 +1588,10 @@ async function cleanOwnedOutput() {
     "biases",
     "categories",
     "countermoves",
+    siteConfig.pathSlug,
+    siteConfig.checkSlug,
+    siteConfig.promptSlug,
+    siteConfig.theorySlug,
     siteConfig.patternSlug,
     "robots.txt",
     "site.webmanifest",
@@ -952,6 +1611,10 @@ async function writeSiteFiles() {
   await writeTextFile(`${siteConfig.sectionSlug}/index.html`, renderBiasIndexPage());
   await writeTextFile("categories/index.html", renderCategoryIndexPage());
   await writeTextFile(`${siteConfig.patternSlug}/index.html`, renderPatternIndexPage());
+  await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
+  await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
+  await writeTextFile(`${siteConfig.promptSlug}/index.html`, renderPromptsPage());
+  await writeTextFile(`${siteConfig.theorySlug}/index.html`, renderTheoryPage());
   await writeTextFile("countermoves/index.html", renderCountermovesPage());
   await writeTextFile("about/index.html", renderAboutPage());
   await writeTextFile("404.html", renderNotFoundPage());
@@ -966,6 +1629,10 @@ async function writeSiteFiles() {
 
   for (const pattern of patterns) {
     await writeTextFile(`${siteConfig.patternSlug}/${pattern.slug}/index.html`, renderPatternDetailPage(pattern));
+  }
+
+  for (const path of learningPaths) {
+    await writeTextFile(`${siteConfig.pathSlug}/${path.slug}/index.html`, renderPathDetailPage(path));
   }
 
   await writeTextFile(
@@ -994,11 +1661,16 @@ async function writeSiteFiles() {
       `/${siteConfig.sectionSlug}/`,
       "/categories/",
       `/${siteConfig.patternSlug}/`,
+      `/${siteConfig.pathSlug}/`,
+      `/${siteConfig.checkSlug}/`,
+      `/${siteConfig.promptSlug}/`,
+      `/${siteConfig.theorySlug}/`,
       "/countermoves/",
       "/about/",
       ...entries.map((entry) => `/${siteConfig.sectionSlug}/${entry.slug}/`),
       ...tasks.map((task) => `/categories/${task.slug}/`),
       ...patterns.map((pattern) => `/${siteConfig.patternSlug}/${pattern.slug}/`),
+      ...learningPaths.map((path) => `/${siteConfig.pathSlug}/${path.slug}/`),
     ];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

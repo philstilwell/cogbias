@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About This Starter | CogBias</title>
-    <meta name="description" content="How CogBias uses a Wikipedia seed taxonomy while keeping a LogFall-like teaching feel." />
+    <meta name="description" content="How CogBias uses a Wikipedia seed taxonomy while growing into a fuller teaching resource." />
     <meta name="author" content="Phil Stilwell" />
     <meta name="application-name" content="CogBias" />
     <meta name="theme-color" content="#0e2339" />
@@ -24,7 +24,7 @@
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
                 <h1 class="brand-title">CogBias</h1>
-                <p class="brand-subtitle">A practical cognitive-biases reference with clear definitions, pattern groupings, and debiasing countermoves.</p>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="../biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../patterns/">Patterns</a><a href="../countermoves/">Countermoves</a><a href="../about/" aria-current="page">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../paths/">Paths</a><a href="../countermoves/">Countermoves</a><a href="../check-yourself/">Check Yourself</a><a href="../prompts/">Prompts</a><a href="../theory/">Theory</a><a href="../about/" aria-current="page">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -47,21 +47,22 @@
 
         <section class="detail-section">
           <p class="eyebrow">About</p>
-          <h2 class="detail-title">Wide taxonomy first, richer editorial depth next</h2>
-          <p class="detail-deck">This repo now uses the Wikipedia cognitive-bias list as a structured seed, then reshapes it into a static teaching site with the same practical feel as LogFall. The current version prioritizes broad navigable coverage, dual taxonomies, and future-ready illustration slots.</p>
+          <h2 class="detail-title">Wide taxonomy first, then richer guided use</h2>
+          <p class="detail-deck">CogBias begins with the Wikipedia cognitive-bias list as a wide seed taxonomy, then reshapes that material into a teaching-first site with paths, self-audits, prompt kits, theory notes, and deeper editorial treatment of especially important bias pages.</p>
         </section>
 
         <div class="two-column section-block">
           <div class="note-panel">
             <h4>Why this architecture works</h4>
-            <p class="muted">The site can grow in two directions at once: broader coverage through the imported catalog, and deeper coverage through hand-authored upgrades to especially important entries.</p>
+            <p class="muted">The site can now grow in three directions at once: broader coverage through the imported catalog, deeper coverage through hand-authored upgrades, and stronger usability through path pages and procedural tools.</p>
           </div>
           <div class="note-panel">
             <h4>Files to edit first</h4>
             <ul class="muted">
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
-              <li><code>data/deep_biases_overrides.json</code> for richer hand-authored entry overrides.</li>
+              <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
+              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_sections.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
@@ -97,8 +98,8 @@
 
       <footer class="footer">
         <div class="footer-inner">
-          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, with editorial reshaping for teaching use.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>
