@@ -1,46 +1,50 @@
-# BiasFall
+# CogBias
 
-Static GitHub Pages starter for a cognitive-biases sister site to LogFall.
+Static GitHub Pages site generator for a cognitive-biases sister site to LogFall.
 
-## What This Starter Keeps
+## Current Model
 
-- A static, generator-driven architecture that publishes plain HTML/CSS/JS at the repo root.
-- One structured content source for the site rather than hand-editing dozens of pages.
-- Searchable index pages, category pages, and entry detail pages.
-- Lightweight client-side filtering that works on GitHub Pages without a framework.
-
-## What This Starter Changes
-
-- The content model is bias-first rather than fallacy-first.
-- Each bias page focuses on the mental shortcut, common triggers, decision distortion, and countermeasures.
-- The site adds a bias-specific `countermoves/` section and removes fallacy-specific teaching flows such as dialogue assessment and argument repair.
-- Branding, metadata, and navigation are now configurable from local JSON instead of being hardwired to LogFall.
+- LogFall-like visual and navigational feel, rebuilt around cognitive biases instead of fallacies.
+- Broad catalog seeded from Wikipedia's `List of cognitive biases`.
+- Two organizing layers:
+  - `categories/` for broad judgment tasks such as estimation, recall, and causal attribution.
+  - `patterns/` for cross-cutting distortion shapes such as association, inertia, and outcome.
+- Illustration placeholders already reserved on bias detail pages for future image production.
 
 ## Source Of Truth
 
-- Site metadata: `data/site.json`
-- Bias entries: `data/biases.json`
-- Build script: `scripts/build.mjs`
-- Shared front-end assets: `site/styles.css`, `site/app.js`
+- Site metadata, taxonomy copy, featured entries, and countermoves:
+  - `data/site.json`
+- Generated bias catalog:
+  - `data/biases.json`
+- Richer hand-authored overrides for selected core entries:
+  - `data/deep_biases_overrides.json`
+- Wikipedia import script:
+  - `scripts/import_wikipedia_biases.py`
+- Static site builder:
+  - `scripts/build.mjs`
+- Shared front-end assets:
+  - `site/styles.css`
+  - `site/app.js`
 
 ## Build
 
-1. Run:
+1. Refresh the imported catalog when needed:
+   - `python3 scripts/import_wikipedia_biases.py`
+2. Rebuild the site:
    - `node scripts/build.mjs`
-2. Open the generated site at:
-   - `index.html`
 
-No external packages are required for the current starter build.
+The published GitHub Pages output lives at the repo root.
 
-## Architecture Notes
+## Editorial Strategy
 
-- Repo root is the published output for GitHub Pages.
-- `site/` contains reusable front-end assets copied into the published root at build time.
-- `data/` is designed to stay small and hand-editable while the taxonomy is still evolving.
+- Use the imported catalog for wide coverage.
+- Use `data/deep_biases_overrides.json` to deepen especially important entries without losing the broad index.
+- Keep the image placeholder layout intact until the illustration set is ready.
 
-## Suggested Next Steps
+## Next Likely Steps
 
-1. Finalize the public name, domain, and visual identity.
-2. Expand `data/biases.json` from the starter set into the real catalog.
-3. Decide whether to add original illustrations, printable handouts, or worksheets.
-4. Add richer cross-links once the category system stabilizes.
+1. Replace placeholder branding copy if a stronger public-facing name emerges.
+2. Deepen the most important bias pages with richer original explanations and examples.
+3. Add custom image assets into the reserved illustration slots.
+4. Set `siteUrl` in `data/site.json` before shipping sitemap and canonical URLs.

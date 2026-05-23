@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>About This Starter | BiasFall</title>
-    <meta name="description" content="Why the cognitive-bias site should live in its own repo and how this starter differs from LogFall." />
+    <title>About This Starter | CogBias</title>
+    <meta name="description" content="How CogBias uses a Wikipedia seed taxonomy while keeping a LogFall-like teaching feel." />
     <meta name="author" content="Phil Stilwell" />
-    <meta name="application-name" content="BiasFall" />
-    <meta name="theme-color" content="#111111" />
+    <meta name="application-name" content="CogBias" />
+    <meta name="theme-color" content="#0e2339" />
     
     <link rel="manifest" href="../site.webmanifest" />
     <link rel="stylesheet" href="../styles.css" />
@@ -20,11 +20,11 @@
         <div class="masthead-inner">
           <div class="brand-row">
             <div class="brand-lockup">
-              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">BF</div>
+              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">CB</div>
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
-                <h1 class="brand-title">BiasFall</h1>
-                <p class="brand-subtitle">A practical cognitive-biases reference with clear explanations, decision patterns, and countermeasure tools.</p>
+                <h1 class="brand-title">CogBias</h1>
+                <p class="brand-subtitle">A practical cognitive-biases reference with clear definitions, pattern groupings, and debiasing countermoves.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="../biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../countermoves/">Countermoves</a><a href="../about/" aria-current="page">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../patterns/">Patterns</a><a href="../countermoves/">Countermoves</a><a href="../about/" aria-current="page">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -47,22 +47,22 @@
 
         <section class="detail-section">
           <p class="eyebrow">About</p>
-          <h2 class="detail-title">A separate repo on purpose</h2>
-          <p class="detail-deck">This starter was forked from LogFall structurally, but it now assumes that cognitive biases deserve their own content model, navigation, and repair logic. The overlap is real, but the teaching unit is different.</p>
+          <h2 class="detail-title">Wide taxonomy first, richer editorial depth next</h2>
+          <p class="detail-deck">This repo now uses the Wikipedia cognitive-bias list as a structured seed, then reshapes it into a static teaching site with the same practical feel as LogFall. The current version prioritizes broad navigable coverage, dual taxonomies, and future-ready illustration slots.</p>
         </section>
 
         <div class="two-column section-block">
           <div class="note-panel">
-            <h4>Why not keep one repo?</h4>
-            <p class="muted">Because bias pages will drift toward triggers, domains, classic distortions, and process interventions, while fallacy pages remain centered on argument structure and public reasoning mistakes. Shared code can be extracted later if the two sites stabilize.</p>
+            <h4>Why this architecture works</h4>
+            <p class="muted">The site can grow in two directions at once: broader coverage through the imported catalog, and deeper coverage through hand-authored upgrades to especially important entries.</p>
           </div>
           <div class="note-panel">
             <h4>Files to edit first</h4>
             <ul class="muted">
-              <li><code>data/site.json</code> for name, sections, categories, and roadmap.</li>
-              <li><code>data/biases.json</code> for the actual catalog.</li>
-              <li><code>site/styles.css</code> for the visual system.</li>
-              <li><code>scripts/build.mjs</code> for page architecture.</li>
+              <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
+              <li><code>data/biases.json</code> for generated coverage.</li>
+              <li><code>data/deep_biases_overrides.json</code> for richer hand-authored entry overrides.</li>
+              <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
         </div>
@@ -71,7 +71,7 @@
           <div class="section-header">
             <div>
               <h2 class="section-title">What stayed, what changed</h2>
-              <p class="section-copy">These lists are deliberately practical so the next build phase has a clear bias-first direction.</p>
+              <p class="section-copy">The point was to keep the feel of LogFall while changing the intellectual center of gravity.</p>
             </div>
           </div>
           <div class="two-column">
@@ -81,15 +81,15 @@
             </div>
             <div class="note-panel">
               <h4>Rewrite</h4>
-              <ul class="muted"><li>Replace fallacy definitions with bias mechanisms and triggers</li><li>Shift from argument diagnosis to decision distortion</li><li>Rebuild related-entry logic around shared countermeasures</li><li>Rework classroom framing around reflection and process</li></ul>
+              <ul class="muted"><li>Shift the taxonomy from fallacy families to Wikipedia-seeded bias categories and patterns</li><li>Tune page framing around distorted judgment instead of public argument structure</li><li>Reserve illustration slots now so the later image set lands cleanly</li><li>Use generic fallbacks for broad coverage while keeping richer hand-authored pages for core biases</li></ul>
             </div>
             <div class="note-panel">
               <h4>Add</h4>
-              <ul class="muted"><li>Debiasing and countermove pages</li><li>Process-level tools like decision journals and premortems</li><li>Bias-specific domain contexts such as hiring, forecasting, and postmortems</li><li>Notes on when a bias is likely to feel subjectively reasonable</li></ul>
+              <ul class="muted"><li>Pattern pages alongside category pages</li><li>Source links back to the Wikipedia seed taxonomy</li><li>Image placeholders on detail pages</li><li>A more extensive imported catalog with future editorial layering</li></ul>
             </div>
             <div class="note-panel">
               <h4>Defer</h4>
-              <ul class="muted"><li>Illustration pipeline</li><li>Printable worksheets</li><li>Large-scale cross-linking</li><li>Assessment or quiz systems until the core taxonomy settles</li></ul>
+              <ul class="muted"><li>Original illustration production</li><li>Printable worksheets and classroom packets</li><li>Long-form theory essays</li><li>Assessment workflows until the core catalog is more settled</li></ul>
             </div>
           </div>
         </section>
@@ -97,9 +97,9 @@
 
       <footer class="footer">
         <div class="footer-inner">
-          <p class="footer-note">BiasFall starter scaffold for a cognitive-biases GitHub Pages site.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code> and <code>data/biases.json</code>. Last build: 2026-05-23.</p>
-          <p class="footer-note">Copyright © Phil Stilwell</p>
+          <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, with editorial reshaping for teaching use.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>
     </div>

@@ -1,78 +1,114 @@
 {
-  "siteName": "BiasFall",
+  "siteName": "CogBias",
   "siteUrl": "",
   "author": "Phil Stilwell",
   "copyrightNotice": "Copyright © Phil Stilwell",
   "entryLabelSingular": "bias",
   "entryLabelPlural": "biases",
   "sectionSlug": "biases",
+  "patternSlug": "patterns",
   "brandKicker": "Cognitive Biases",
-  "brandTitle": "BiasFall",
-  "brandMonogram": "BF",
-  "brandSubtitle": "A practical cognitive-biases reference with clear explanations, decision patterns, and countermeasure tools.",
-  "heroTitle": "Cognitive biases made clearer, more teachable, and easier to counter.",
-  "heroLead": "BiasFall is a static reference for spotting recurring distortions in judgment before they harden into bad bets, bad hiring calls, bad postmortems, or bad collective decisions. Each entry centers on the mental shortcut, the situation that triggers it, and the process move most likely to neutralize it.",
+  "brandTitle": "CogBias",
+  "brandMonogram": "CB",
+  "brandSubtitle": "A practical cognitive-biases reference with clear definitions, pattern groupings, and debiasing countermoves.",
+  "heroTitle": "Cognitive biases made clearer, more comparable, and easier to interrupt.",
+  "heroLead": "CogBias is a static reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the practical teaching feel of LogFall, but the content model is tuned for private judgment, social perception, and debiasing process design.",
+  "sourceAttribution": "Seed taxonomy and broad coverage are drawn from Wikipedia's List of cognitive biases, with editorial reshaping for teaching use.",
+  "illustrationPlaceholderTitle": "Illustration Placeholder",
+  "illustrationPlaceholderBody": "A custom visual plate will live here once the image set is produced. The layout is already reserved so future images can drop in without reshaping the page.",
   "featured": [
     "confirmation-bias",
     "availability-heuristic",
     "anchoring-effect",
+    "base-rate-neglect",
+    "dunning-kruger-effect",
     "sunk-cost-effect",
+    "status-quo-bias",
     "fundamental-attribution-error",
+    "halo-effect",
+    "implicit-bias",
+    "negativity-bias",
     "hindsight-bias"
   ],
   "categories": [
     {
-      "name": "Attention & Salience",
-      "slug": "attention-salience",
-      "description": "Biases in this cluster overweight what is vivid, recent, threatening, or easy to recall.",
-      "guidingQuestion": "What is grabbing attention here that may not deserve this much weight?"
+      "name": "Estimation",
+      "slug": "estimation",
+      "description": "Biases here distort numerical judgment, probability, calibration, and first-pass estimation.",
+      "guidingQuestion": "What number, rate, sample, or magnitude is being misread because the mind grabbed an easier proxy?"
     },
     {
-      "name": "Belief Protection",
-      "slug": "belief-protection",
-      "description": "These biases stabilize the stories we already prefer, especially when identity or commitment is involved.",
-      "guidingQuestion": "What would this person have to see before they would seriously revise the current view?"
+      "name": "Decision",
+      "slug": "decision",
+      "description": "These biases bend choice, commitment, action, avoidance, and preference under uncertainty.",
+      "guidingQuestion": "What default, fear, sunk cost, or convenience cue is steering the choice more than the forward-looking case?"
     },
     {
-      "name": "Estimation & Prediction",
-      "slug": "estimation-prediction",
-      "description": "These biases distort numerical judgment, forecasting, calibration, and first-pass estimates.",
-      "guidingQuestion": "What anchor, confidence level, or forecast frame is quietly steering the estimate?"
+      "name": "Hypothesis Assessment",
+      "slug": "hypothesis-assessment",
+      "description": "Biases in this cluster distort how evidence is interpreted, how rival explanations are tested, and how claims are evaluated.",
+      "guidingQuestion": "Is the evidence being used to test the hypothesis, or mainly to protect it?"
     },
     {
-      "name": "Choice & Commitment",
-      "slug": "choice-commitment",
-      "description": "Biases here make us cling to defaults, past investments, and emotionally protected options.",
-      "guidingQuestion": "Which option feels safer merely because it is familiar, costly to exit, or already underway?"
+      "name": "Causal Attribution",
+      "slug": "causal-attribution",
+      "description": "These biases bend explanations about why events happened and who or what caused them.",
+      "guidingQuestion": "What story about cause, blame, or intention feels satisfying here that may be outpacing the evidence?"
     },
     {
-      "name": "Social Judgment",
-      "slug": "social-judgment",
-      "description": "These biases simplify people too quickly by overreading character, traits, or first impressions.",
-      "guidingQuestion": "What situational explanation or hidden context might this snap judgment be ignoring?"
+      "name": "Recall",
+      "slug": "recall",
+      "description": "This group reshapes memory, retrieval, salience, and retrospective interpretation.",
+      "guidingQuestion": "Are we remembering the original event, or a later reconstruction that now feels cleaner than reality?"
     },
     {
-      "name": "Evidence & Sampling",
-      "slug": "evidence-sampling",
-      "description": "These biases distort what counts as representative evidence and which cases even make it into view.",
-      "guidingQuestion": "What base rates, missing cases, or unobserved failures are absent from the sample?"
+      "name": "Opinion Reporting",
+      "slug": "opinion-reporting",
+      "description": "Biases here distort what people say they believe, prefer, remember preferring, or think they observed.",
+      "guidingQuestion": "How much of the reported opinion is direct access, and how much is post-hoc reconstruction or self-presentation?"
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Association",
+      "slug": "association",
+      "description": "The mind overweights resemblance, vividness, proximity, or intuitive linkage.",
+      "guidingQuestion": "What feels connected here mainly because it is salient, familiar, or easy to pair mentally?"
     },
     {
-      "name": "Memory & Retrospection",
-      "slug": "memory-retrospection",
-      "description": "These biases rewrite the past after outcomes arrive, making learning look cleaner than it was.",
-      "guidingQuestion": "Are we remembering the decision process fairly, or only remembering the ending?"
+      "name": "Baseline",
+      "slug": "baseline",
+      "description": "Judgment is pulled by the wrong starting point, default frame, or prior expectation.",
+      "guidingQuestion": "What baseline, anchor, or prior frame is steering this judgment before the evidence is even assessed?"
+    },
+    {
+      "name": "Inertia",
+      "slug": "inertia",
+      "description": "Beliefs, habits, or commitments resist updating even when better movement is available.",
+      "guidingQuestion": "What is staying in place mainly because movement is costly, awkward, or identity-threatening?"
+    },
+    {
+      "name": "Outcome",
+      "slug": "outcome",
+      "description": "The result of an event bends how the process, evidence, memory, or explanation is interpreted afterward.",
+      "guidingQuestion": "How is the known result warping the way the earlier judgment or evidence now feels?"
+    },
+    {
+      "name": "Self-Perspective",
+      "slug": "self-perspective",
+      "description": "The bias intensifies when ego, identity, ownership, or asymmetry between self and others enters the picture.",
+      "guidingQuestion": "What changes in this judgment when the person involved is me, my group, or someone I already identify with?"
     }
   ],
   "countermeasures": [
     {
       "title": "Generate Rival Hypotheses",
       "slug": "rival-hypotheses",
-      "summary": "Before gathering more evidence, force yourself to name at least two live alternatives to the story you already like.",
+      "summary": "Before gathering more evidence, force yourself to name at least two live alternatives to the explanation you currently favor.",
       "steps": [
         "Write the favored explanation in one sentence.",
-        "Write two rival explanations that would fit the same facts.",
-        "List one observation that would favor each rival."
+        "Write two rival explanations that could also fit the current facts.",
+        "List one observation that would make each rival stronger."
       ],
       "relatedBiases": [
         "confirmation-bias",
@@ -83,26 +119,26 @@
     {
       "title": "Estimate Before Exposure",
       "slug": "estimate-before-exposure",
-      "summary": "Put down an independent estimate before seeing the first quoted number, forecast, or recommendation.",
+      "summary": "Record an independent estimate before seeing the first quoted number, forecast, or recommendation.",
       "steps": [
-        "Record your own guess first.",
-        "Only then reveal the offered anchor or outside estimate.",
-        "Compare the difference and explain why you moved."
+        "Write your own range first.",
+        "Only then reveal the anchor or outside estimate.",
+        "Explain why any later movement away from your range is justified."
       ],
       "relatedBiases": [
         "anchoring-effect",
         "overconfidence-effect",
-        "status-quo-bias"
+        "base-rate-neglect"
       ]
     },
     {
       "title": "Use Base Rates And Reference Classes",
       "slug": "base-rates-reference-classes",
-      "summary": "Anchor judgments to how often similar events happen in the wider world before focusing on the vivid local story.",
+      "summary": "Anchor vivid cases to wider frequencies before letting the story determine the probability.",
       "steps": [
         "Identify the broad reference class first.",
-        "Write down the outside-view frequency or base rate.",
-        "Only then adjust for special local evidence."
+        "Write the outside-view rate or prevalence.",
+        "Adjust only after naming what makes the current case unusually diagnostic."
       ],
       "relatedBiases": [
         "availability-heuristic",
@@ -113,16 +149,16 @@
     {
       "title": "Separate Person From Situation",
       "slug": "person-versus-situation",
-      "summary": "Treat traits, incentives, constraints, and local pressures as separate variables rather than one fused impression.",
+      "summary": "Treat traits, pressures, incentives, and local constraints as distinct variables rather than one fused impression.",
       "steps": [
-        "Name the behavior you observed.",
+        "Describe the behavior without interpreting it yet.",
         "List three situational pressures that could also explain it.",
-        "Delay any trait verdict until the pressures are examined."
+        "Delay any trait verdict until those pressures are inspected."
       ],
       "relatedBiases": [
         "fundamental-attribution-error",
         "halo-effect",
-        "negativity-bias"
+        "implicit-bias"
       ]
     },
     {
@@ -130,14 +166,14 @@
       "slug": "treat-sunk-costs-as-sunk",
       "summary": "Ask what you would do if the time, money, and pride already spent could not be recovered because in reality they cannot.",
       "steps": [
-        "Ignore prior investment for one pass of the decision.",
+        "Ignore prior investment for one clean pass of the decision.",
         "Re-evaluate the options from today forward only.",
         "Create an explicit stopping rule before continuing."
       ],
       "relatedBiases": [
         "sunk-cost-effect",
         "status-quo-bias",
-        "overconfidence-effect"
+        "endowment-effect"
       ]
     },
     {
@@ -164,22 +200,22 @@
       "Simple client-side filtering"
     ],
     "rewrite": [
-      "Replace fallacy definitions with bias mechanisms and triggers",
-      "Shift from argument diagnosis to decision distortion",
-      "Rebuild related-entry logic around shared countermeasures",
-      "Rework classroom framing around reflection and process"
+      "Shift the taxonomy from fallacy families to Wikipedia-seeded bias categories and patterns",
+      "Tune page framing around distorted judgment instead of public argument structure",
+      "Reserve illustration slots now so the later image set lands cleanly",
+      "Use generic fallbacks for broad coverage while keeping richer hand-authored pages for core biases"
     ],
     "add": [
-      "Debiasing and countermove pages",
-      "Process-level tools like decision journals and premortems",
-      "Bias-specific domain contexts such as hiring, forecasting, and postmortems",
-      "Notes on when a bias is likely to feel subjectively reasonable"
+      "Pattern pages alongside category pages",
+      "Source links back to the Wikipedia seed taxonomy",
+      "Image placeholders on detail pages",
+      "A more extensive imported catalog with future editorial layering"
     ],
     "defer": [
-      "Illustration pipeline",
-      "Printable worksheets",
-      "Large-scale cross-linking",
-      "Assessment or quiz systems until the core taxonomy settles"
+      "Original illustration production",
+      "Printable worksheets and classroom packets",
+      "Long-form theory essays",
+      "Assessment workflows until the core catalog is more settled"
     ]
   }
 }

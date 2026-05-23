@@ -1,7 +1,6 @@
 const searchInput = document.querySelector("[data-search-input]");
 const categoryFilter = document.querySelector("[data-category-filter]");
-const domainFilter = document.querySelector("[data-domain-filter]");
-const effortFilter = document.querySelector("[data-effort-filter]");
+const patternFilter = document.querySelector("[data-pattern-filter]");
 const resetButton = document.querySelector("[data-search-reset]");
 const cards = Array.from(document.querySelectorAll("[data-entry-card]"));
 const countNode = document.querySelector("[data-search-count]");
@@ -11,8 +10,8 @@ const totalCount = cards.length;
 const countSingular = countNode?.dataset.searchUnitSingular || "entry";
 const countPlural = countNode?.dataset.searchUnitPlural || "entries";
 
-function syncFilterUrl(query, category, domain, effort) {
-  if (!searchInput && !categoryFilter && !domainFilter && !effortFilter) return;
+function syncFilterUrl(query, category, pattern) {
+  if (!searchInput && !categoryFilter && !patternFilter) return;
 
   const url = new URL(window.location.href);
   if (query) {
@@ -27,16 +26,10 @@ function syncFilterUrl(query, category, domain, effort) {
     url.searchParams.delete("category");
   }
 
-  if (domain) {
-    url.searchParams.set("domain", domain);
+  if (pattern) {
+    url.searchParams.set("pattern", pattern);
   } else {
-    url.searchParams.delete("domain");
-  }
-
-  if (effort) {
-    url.searchParams.set("effort", effort);
-  } else {
-    url.searchParams.delete("effort");
+    url.searchParams.delete("pattern");
   }
 
   window.history.replaceState({}, "", url);
@@ -46,13 +39,11 @@ function hydrateFiltersFromUrl() {
   const url = new URL(window.location.href);
   const query = url.searchParams.get("q") || "";
   const category = url.searchParams.get("category") || "";
-  const domain = url.searchParams.get("domain") || "";
-  const effort = url.searchParams.get("effort") || "";
+  const pattern = url.searchParams.get("pattern") || "";
 
   if (searchInput) searchInput.value = query;
   if (categoryFilter) categoryFilter.value = category;
-  if (domainFilter) domainFilter.value = domain;
-  if (effortFilter) effortFilter.value = effort;
+  if (patternFilter) patternFilter.value = pattern;
 
   if (query) {
     siteSearchInputs.forEach((input) => {
@@ -68,8 +59,7 @@ function applyFilters() {
 
   const query = (searchInput?.value || "").trim().toLowerCase();
   const category = categoryFilter?.value || "";
-  const domain = domainFilter?.value || "";
-  const effort = effortFilter?.value || "";
+  const pattern = patternFilter?.value || "";
   let visible = 0;
 
   for (const card of cards) {
@@ -81,12 +71,12 @@ function applyFilters() {
       .join(" ")
       .toLowerCase();
 
-    const cardDomains = (card.dataset.domains || "").split("||").filter(Boolean);
+    const cardCategories = (card.dataset.categories || "").split("||").filter(Boolean);
+    const cardPatterns = (card.dataset.patterns || "").split("||").filter(Boolean);
     const matchesQuery = !query || haystack.includes(query);
-    const matchesCategory = !category || (card.dataset.category || "") === category;
-    const matchesDomain = !domain || cardDomains.includes(domain);
-    const matchesEffort = !effort || (card.dataset.effort || "") === effort;
-    const show = matchesQuery && matchesCategory && matchesDomain && matchesEffort;
+    const matchesCategory = !category || cardCategories.includes(category);
+    const matchesPattern = !pattern || cardPatterns.includes(pattern);
+    const show = matchesQuery && matchesCategory && matchesPattern;
 
     card.classList.toggle("hidden", !show);
     if (show) visible += 1;
@@ -102,7 +92,7 @@ function applyFilters() {
     emptyState.classList.toggle("hidden", visible !== 0);
   }
 
-  syncFilterUrl(query, category, domain, effort);
+  syncFilterUrl(query, category, pattern);
 }
 
 if (searchInput) {
@@ -113,20 +103,15 @@ if (categoryFilter) {
   categoryFilter.addEventListener("change", applyFilters);
 }
 
-if (domainFilter) {
-  domainFilter.addEventListener("change", applyFilters);
-}
-
-if (effortFilter) {
-  effortFilter.addEventListener("change", applyFilters);
+if (patternFilter) {
+  patternFilter.addEventListener("change", applyFilters);
 }
 
 if (resetButton) {
   resetButton.addEventListener("click", () => {
     if (searchInput) searchInput.value = "";
     if (categoryFilter) categoryFilter.value = "";
-    if (domainFilter) domainFilter.value = "";
-    if (effortFilter) effortFilter.value = "";
+    if (patternFilter) patternFilter.value = "";
     applyFilters();
     searchInput?.focus();
   });
