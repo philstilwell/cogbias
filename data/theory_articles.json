@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "biases-before-arguments",
+    "title": "Biases usually bend judgment before arguments become polished",
+    "summary": "A practical article on why cognitive biases often shape what feels plausible before anyone states a neat argument aloud.",
+    "intro": "Logical fallacies often become easiest to observe once a claim is already being defended in public form. Cognitive biases usually begin earlier, in attention, memory, salience, attribution, and self-protective interpretation. That earlier timing changes what a teaching site has to do.",
+    "sections": [
+      {
+        "heading": "Why the sequence matters",
+        "paragraphs": [
+          "By the time a public argument arrives, much of the cognitive steering may already be over. A person may have retrieved only one class of examples, flattened the uncertainty around an outcome, or interpreted a social cue through a threat lens before the reasoning is ever verbalized cleanly.",
+          "That is one reason a bias site cannot simply imitate a fallacy list. It has to ask different diagnostic questions. What felt normal? What was easiest to remember? What perspective quietly became invisible because it was my own?"
+        ]
+      },
+      {
+        "heading": "What teaching has to target instead",
+        "paragraphs": [
+          "If biases act early, then a site has to teach earlier interventions. The useful move is often not a label shouted at the end of a conversation. It is a pause, a comparison, a rival hypothesis, a reference class, or a better meeting rule inserted before the judgment hardens.",
+          "This is why CogBias gives so much space to paths, self-checks, and process repair. The label matters, but the timing of the label matters even more."
+        ],
+        "bullets": [
+          "Fallacies often explain what went wrong in visible argument structure.",
+          "Biases often explain why a visible argument was tilted before it was fully built.",
+          "Debiasing therefore has to change workflow as much as vocabulary."
+        ]
+      },
+      {
+        "heading": "How this shapes the site",
+        "paragraphs": [
+          "A strong bias page should not merely say what the distortion is. It should show the trigger, the felt certainty, the resulting warp, and the interruption point. That teaching sequence is more faithful to the object being taught.",
+          "In that sense, CogBias is not a mere sister site to LogFall. It is the earlier stage of the same general educational project: helping people see where thought first begins to drift."
+        ]
+      }
+    ],
+    "relatedBiases": ["confirmation-bias", "availability-heuristic", "naive-realism", "hindsight-bias"]
+  },
+  {
+    "slug": "why-two-taxonomies",
+    "title": "Why CogBias uses both categories and patterns",
+    "summary": "An article on why one taxonomy tracks the judgment task being distorted while another tracks the recurring shape of the distortion itself.",
+    "intro": "Flat alphabetical lists are useful only after the reader already knows roughly what they are looking at. Categories and patterns solve a harder problem: getting readers to the right neighborhood before the exact label is clear.",
+    "sections": [
+      {
+        "heading": "Categories answer the task question",
+        "paragraphs": [
+          "Categories tell you what kind of judgment is failing. Is the problem mainly estimation, decision, hypothesis testing, causal explanation, memory, or reported opinion? That is often the fastest way to shrink the search space responsibly.",
+          "For teaching, this matters because students and readers often know the job of thinking that failed before they know the label of the bias involved."
+        ]
+      },
+      {
+        "heading": "Patterns answer the hidden-pull question",
+        "paragraphs": [
+          "Patterns answer a different question: what kind of pull is doing the bending? Is the distortion coming from vivid association, a privileged baseline, inertia, the known outcome, or the asymmetry of self and other?",
+          "Two biases can be far apart alphabetically and still belong together pedagogically because the same hidden pull keeps showing up beneath them."
+        ],
+        "bullets": [
+          "Categories organize by the task being distorted.",
+          "Patterns organize by the recurring mechanism of distortion.",
+          "Together they make comparison easier than a single axis can."
+        ]
+      },
+      {
+        "heading": "Why comparison gets better",
+        "paragraphs": [
+          "When both layers are visible, readers can compare more responsibly. A bias that looks superficially similar may actually belong to a different task family. A bias that looks unrelated may become obviously connected once the pattern layer appears.",
+          "That dual view is one of the most important ways CogBias becomes more than a catalog. It becomes a map."
+        ]
+      }
+    ],
+    "relatedBiases": ["anchoring-effect", "default-effect", "confirmation-bias", "status-quo-bias"]
+  },
+  {
+    "slug": "debiasing-as-design",
+    "title": "Debiasing works better as process design than as moral exhortation",
+    "summary": "A practical essay on why awareness is helpful but rarely sufficient, and why durable repair usually arrives through workflow, not willpower alone.",
+    "intro": "People like to imagine that naming a bias is halfway to solving it. In practice, many distortions feel like ordinary good judgment from the inside. That is why the strongest fixes usually live in process design rather than in motivational speeches about thinking better.",
+    "sections": [
+      {
+        "heading": "Why labels are not enough",
+        "paragraphs": [
+          "Recognition matters, but it is unstable. Under pressure, people revert to the procedure they actually have, not the vocabulary they wish they had remembered to use.",
+          "A person can know what anchoring is and still negotiate inside the first number. A team can know what groupthink is and still close too quickly because dissent remains socially expensive."
+        ]
+      },
+      {
+        "heading": "What structural repair looks like",
+        "paragraphs": [
+          "At the individual level, structural repair may mean writing the forecast down before the outcome arrives, estimating before exposure, or listing a rival hypothesis before reading further. At the team level, it may mean independent scoring, premortems, or protected objection rounds.",
+          "At the system level, the repair may live in defaults, forms, dashboards, review thresholds, or escalation rules. In every case, the common thread is the same: the process is changed so the old drift becomes harder to reproduce."
+        ],
+        "bullets": [
+          "Awareness is useful but fragile.",
+          "Workflow changes outlast mood and good intentions.",
+          "The best repair often lives before the final judgment point."
+        ]
+      },
+      {
+        "heading": "What the site should therefore teach",
+        "paragraphs": [
+          "A good site should not stop at definitions. It should help readers standardize better habits. That is why CogBias keeps adding countermoves, self-audits, and practice labs. The goal is not merely to recognize the bias after it fires. The goal is to fire a different process instead.",
+          "That design ambition is what makes the site educational rather than merely classificatory."
+        ]
+      }
+    ],
+    "relatedBiases": ["groupthink", "anchoring-effect", "hindsight-bias", "default-effect"]
+  },
+  {
+    "slug": "familiarity-is-not-understanding",
+    "title": "Familiarity, fluency, and understanding are not the same thing",
+    "summary": "An article on how recognition and smooth explanation often get mistaken for depth long before the underlying competence is there.",
+    "intro": "One of the easiest mistakes in learning is to confuse the relief of familiarity with the achievement of understanding. Once the terms no longer feel strange, people start talking as though the mechanism itself is secure.",
+    "sections": [
+      {
+        "heading": "Why fluency is such a convincing counterfeit",
+        "paragraphs": [
+          "Fluency reduces friction, and reduced friction feels like mastery. A concept that once looked opaque now sounds natural, and that psychological shift can be mistaken for a deeper epistemic shift than has actually occurred.",
+          "That is why overconfidence, the Dunning-Kruger effect, and the illusion of explanatory depth often cluster together in classrooms, interviews, and public commentary."
+        ]
+      },
+      {
+        "heading": "The ladder that should stay visible",
+        "paragraphs": [
+          "Recognition is weaker than explanation. Explanation is weaker than application. Application is weaker than troubleshooting under constraint. Good teaching keeps that ladder visible instead of treating the first rung as if it were the top.",
+          "The moment a learner can say the phrase is not the moment the learner can compare, predict, diagnose, or repair with it."
+        ],
+        "bullets": [
+          "Recognition is not explanation.",
+          "Explanation is not performance.",
+          "Performance without calibration can still be fragile."
+        ]
+      },
+      {
+        "heading": "How CogBias should respond",
+        "paragraphs": [
+          "That is why flagship bias pages need quick checks, analogies, challenge questions, and practice labs. The site should constantly ask for one more move than mere verbal familiarity.",
+          "If the site succeeds, users leave not merely with labels, but with a stronger sense of what genuine understanding would have to cash out into."
+        ]
+      }
+    ],
+    "relatedBiases": ["dunning-kruger-effect", "illusion-of-explanatory-depth", "overconfidence-effect", "curse-of-knowledge"]
+  },
+  {
+    "slug": "social-pressure-distorts-the-record",
+    "title": "Groups distort judgment before they distort the minutes",
+    "summary": "An essay on how social cost changes what gets noticed, said, and challenged long before a formal group decision is written down.",
+    "intro": "One reason social bias is dangerous is that it does not wait for the vote. It reshapes the cognitive environment while the room is still deciding what counts as a live option and what sounds sayable out loud.",
+    "sections": [
+      {
+        "heading": "The room is part of the reasoning process",
+        "paragraphs": [
+          "A meeting is not just a place where reasoning gets reported. It is part of the environment in which reasoning happens. Who speaks first, whose status is salient, and what dissent costs all affect what finally looks like the strongest case.",
+          "That is why groupthink, authority bias, social desirability bias, and false-consensus effect often appear together rather than separately."
+        ]
+      },
+      {
+        "heading": "Why silence is not neutral",
+        "paragraphs": [
+          "Silence can be evidence of agreement, but it can also be evidence of pressure, fatigue, hierarchy, or anticipated futility. Good teams learn to distinguish those possibilities before treating convergence as truth-tracking.",
+          "The later record of the meeting often hides this. The minutes can look calm even when the cognition in the room was socially bent."
+        ],
+        "bullets": [
+          "Consensus quality depends on dissent cost.",
+          "Status can decide what gets challenged before evidence does.",
+          "Independent first passes are cognitive tools, not mere etiquette."
+        ]
+      },
+      {
+        "heading": "What a site should teach about this",
+        "paragraphs": [
+          "A bias site should therefore teach meeting structures, not just labels. Protected objection, silent first-pass notes, and explicit role rotation are not management niceties. They are debiasing devices.",
+          "If we only teach the word groupthink and never teach the room design that reduces it, we have taught the easier half of the lesson."
+        ]
+      }
+    ],
+    "relatedBiases": ["groupthink", "authority-bias", "social-desirability-bias", "false-consensus-effect", "ingroup-bias"]
+  },
+  {
+    "slug": "the-default-is-a-decision-too",
+    "title": "The default is not neutral just because it is quiet",
+    "summary": "An article on why defaults, omissions, and inherited arrangements often steer judgment and outcome as strongly as explicit choices do.",
+    "intro": "People often reserve scrutiny for active decisions while letting the default path travel under the radar. But a preselected option, an inherited policy, or a do-nothing posture can shape outcomes just as decisively as a loud intervention.",
+    "sections": [
+      {
+        "heading": "Why quiet paths feel innocent",
+        "paragraphs": [
+          "Defaults arrive without fanfare. They feel like background rather than choice. Inaction can feel cleaner than action because it hides its causation behind continuity.",
+          "That is one reason default effect, omission bias, status quo bias, and loss aversion fit so well together pedagogically."
+        ]
+      },
+      {
+        "heading": "The hidden architecture of choice",
+        "paragraphs": [
+          "A form, a dashboard, a renewal flow, or an inherited procedure can all encode a recommendation without ever speaking in argumentative language. The architecture does the steering quietly.",
+          "Once the current path has that administrative legitimacy, alternatives start carrying extra friction that is not part of their actual merits."
+        ],
+        "bullets": [
+          "Preselection often functions like endorsement.",
+          "Omission can preserve harmful outcomes just as actively as intervention can create them.",
+          "The cost of staying put belongs in the comparison too."
+        ]
+      },
+      {
+        "heading": "What readers should learn to do",
+        "paragraphs": [
+          "The first move is exposure: rewrite the default as one explicit option among others. The second is symmetry: compare the cost of preserving the current path as explicitly as the cost of changing it.",
+          "Once that becomes routine, quiet steering loses much of its invisible power."
+        ]
+      }
+    ],
+    "relatedBiases": ["default-effect", "omission-bias", "loss-aversion", "status-quo-bias"]
+  },
+  {
+    "slug": "good-teaching-separates-confidence-from-competence",
+    "title": "Good teaching separates confidence from competence",
+    "summary": "A guide to building instruction around calibration, comparison, and challenge rather than around confidence displays alone.",
+    "intro": "Confidence is easy to observe, which is why classrooms, meetings, and hiring processes are always tempted to use it as a proxy. But easy observability is a terrible reason to confuse a trait with a valid measure.",
+    "sections": [
+      {
+        "heading": "Why confidence seduces teachers and evaluators",
+        "paragraphs": [
+          "Confidence is visible in real time. Competence often reveals itself only under comparison, challenge, or constraint. That lag makes confidence a very tempting shortcut in educational and organizational settings.",
+          "The shortcut gets worse when the audience shares the same blind spots as the speaker. Then fluency and social assurance can substitute for depth on both sides of the exchange."
+        ]
+      },
+      {
+        "heading": "What better teaching checks look like",
+        "paragraphs": [
+          "Better teaching asks for one move beyond recital. Explain the mechanism in plain language. Contrast it with a near neighbor. State what would falsify the current view. Apply it to a case where the surface cues are different.",
+          "These checks do not merely punish bluffing. They help serious learners discover the exact contour of what they still do not understand."
+        ],
+        "bullets": [
+          "Confidence can be socially useful and still epistemically unreliable.",
+          "Comparison and challenge reveal structure better than recital does.",
+          "Calibration is a skill that has to be taught, not just admired."
+        ]
+      },
+      {
+        "heading": "How that affects CogBias",
+        "paragraphs": [
+          "This is why CogBias should keep investing in near-neighbor contrasts, quick checks, and repair questions. The site works best when it behaves like a good teacher rather than like a glossary.",
+          "Readers should leave not just knowing what a bias is called, but knowing what would actually count as using the concept well."
+        ]
+      }
+    ],
+    "relatedBiases": ["overconfidence-effect", "dunning-kruger-effect", "illusion-of-explanatory-depth", "belief-bias"]
+  }
+]

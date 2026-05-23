@@ -1,0 +1,938 @@
+[
+  {
+    "slug": "confirmation-bias",
+    "quickCheck": "Am I testing my current view, or just feeding it better-looking support?",
+    "analogyClaim": "This is like grading a debate by writing down only the points your favorite side landed cleanly.",
+    "analogyResponse": "You might end up with a neat notebook and a distorted verdict. A real test has to give disconfirming evidence equal rights at the table.",
+    "misuseWarning": "Do not use this label for every disagreement with your conclusion. The issue is not that someone ended up on one side. The issue is that the search, weighting, or interpretation of evidence is being tilted toward preserving that side.",
+    "useLabelWhen": "Use this label when a person is selectively searching for, noticing, or retaining confirming material while giving weaker treatment to live disconfirmation.",
+    "teachingGauges": [
+      {
+        "label": "Common in live reasoning",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 92,
+        "note": "Shows up wherever people already care which answer wins."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 44,
+        "note": "Often easier to diagnose after the search process is reconstructed."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 88,
+        "note": "Feels like ordinary curiosity unless the missing search path is named."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 46,
+        "note": "Simple to define, but much harder to self-diagnose honestly."
+      }
+    ],
+    "practiceLab": {
+      "intro": "This bias does not usually arrive wearing a label. It arrives as a respectable search process that quietly keeps giving one side home-field advantage.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A person already has a favored answer, identity investment, or emotionally attractive explanation before the evidence review is complete."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Confirming evidence feels naturally diagnostic, while disconfirming material feels exceptional, weak, or somehow less relevant."
+        },
+        {
+          "title": "Distortion",
+          "text": "The evidence base itself becomes skewed, so the final confidence can look earned even though the test was tilted."
+        },
+        {
+          "title": "Reset",
+          "text": "Force the rival hypothesis onto the page and ask what evidence would make it stronger before collecting one more supportive detail."
+        }
+      ],
+      "repairQuestion": "What result would count against my current view strongly enough that I would have to revise it?"
+    },
+    "caseStudies": [
+      {
+        "title": "Wason's card-selection task",
+        "source": "Wikipedia",
+        "year": "1966 onward",
+        "url": "https://en.wikipedia.org/wiki/Wason_selection_task",
+        "summary": "Participants often preferred cards that could confirm the rule they had in mind rather than the cards that could genuinely falsify it.",
+        "whyItFits": "The task is a compact classroom model of how people confuse confirmation with testing."
+      },
+      {
+        "title": "Biased assimilation in polarized evidence review",
+        "source": "Wikipedia",
+        "year": "1979",
+        "url": "https://en.wikipedia.org/wiki/Biased_assimilation",
+        "summary": "People exposed to the same mixed evidence about a disputed topic often came away more convinced of the side they already favored.",
+        "whyItFits": "The evidence did not merely persuade differently. It was interpreted through a preserving filter."
+      }
+    ]
+  },
+  {
+    "slug": "availability-heuristic",
+    "quickCheck": "Does this feel common because it is frequent, or because it is vivid and easy to retrieve?",
+    "analogyClaim": "This is like estimating a city's climate by remembering only the days dramatic enough to photograph.",
+    "analogyResponse": "What comes to mind fastest is not always what happens most often. Easy recall can be a salience measure rather than a prevalence measure.",
+    "misuseWarning": "Do not use this label whenever an example is mentioned. Examples are often useful. The problem begins when vivid recall is allowed to stand in for a wider frequency check.",
+    "useLabelWhen": "Use this label when a memorable anecdote, headline, or recent event starts doing the work that rates, denominators, or broader sampling should have done.",
+    "teachingGauges": [
+      {
+        "label": "Common in media environments",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 89,
+        "note": "Especially strong where repetition and vivid storytelling dominate attention."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 58,
+        "note": "Often visible once the missing denominator is named."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 84,
+        "note": "The most available example usually feels like the responsible place to begin."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 34,
+        "note": "Very teachable once examples are contrasted with base rates."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The drift here is from vividness to representativeness. The mind does not announce that shift. It just makes the memorable case feel like the normal case.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A dramatic, recent, emotionally loaded, or repeated example enters attention faster than the wider distribution."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Because the example comes to mind quickly, it starts to feel like the most relevant evidence for how common or likely the event is."
+        },
+        {
+          "title": "Distortion",
+          "text": "Judgment about prevalence, risk, or importance gets organized around recall strength rather than sampling quality."
+        },
+        {
+          "title": "Reset",
+          "text": "Write the vivid case down, then place a rate, denominator, or reference class next to it before drawing the broader conclusion."
+        }
+      ],
+      "repairQuestion": "What evidence would tell me how common this really is rather than how easy it is to remember?"
+    },
+    "caseStudies": [
+      {
+        "title": "Letter-frequency judgments in classic availability research",
+        "source": "Wikipedia",
+        "year": "1973",
+        "url": "https://en.wikipedia.org/wiki/Availability_heuristic",
+        "summary": "People often judge letters to be more common in the first position of words than in later positions because first-position examples are easier to retrieve.",
+        "whyItFits": "Retrievability quietly substitutes for actual frequency."
+      },
+      {
+        "title": "Risk perception after vivid disasters",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Availability_heuristic",
+        "summary": "Highly publicized disasters can make rare risks feel more representative than routine but deadlier alternatives.",
+        "whyItFits": "Salience changes felt risk faster than the underlying distribution changes."
+      }
+    ]
+  },
+  {
+    "slug": "anchoring-effect",
+    "quickCheck": "What starting number or frame is still pulling this judgment even after better evidence arrived?",
+    "analogyClaim": "This is like setting a thermostat with the first random temperature you hear and only making tiny adjustments from there.",
+    "analogyResponse": "The final setting may look deliberate, but the random opener still shaped the whole range of movement.",
+    "misuseWarning": "Do not use anchoring for every decision that begins somewhere. The issue is not that a starting point existed. The issue is that the starting point exerts more influence than its evidential quality deserves.",
+    "useLabelWhen": "Use this label when the first number, estimate, or frame quietly owns the later judgment even after stronger comparisons are available.",
+    "teachingGauges": [
+      {
+        "label": "Common in estimates and negotiation",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 87,
+        "note": "Shows up anywhere a first number arrives before an independent estimate."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 63,
+        "note": "Visible once the sequence of exposure is reconstructed."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 82,
+        "note": "Adjustment feels rational even while the opener keeps owning the frame."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 32,
+        "note": "Easy to demonstrate with side-by-side estimate exercises."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Anchoring often looks like careful adjustment. That is what makes it persuasive. The later reasoning is real, but it is happening inside a range the opener set too cheaply.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A first number, forecast, price, or framing baseline arrives before an independent estimate has been written."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Later movement away from the anchor feels like correction, so the resulting number can seem balanced and thoughtful."
+        },
+        {
+          "title": "Distortion",
+          "text": "The judgment remains centered on the opener's gravity rather than on the best available comparison class."
+        },
+        {
+          "title": "Reset",
+          "text": "Generate a clean estimate from scratch or from the outside view, then compare it to the anchor instead of reasoning inside it."
+        }
+      ],
+      "repairQuestion": "What number would I have written down first if the anchor had never been shown to me?"
+    },
+    "caseStudies": [
+      {
+        "title": "The wheel-of-fortune anchoring experiment",
+        "source": "Wikipedia",
+        "year": "1974",
+        "url": "https://en.wikipedia.org/wiki/Anchoring_effect",
+        "summary": "Participants exposed to a random number from a wheel later gave higher or lower estimates in line with that arbitrary anchor.",
+        "whyItFits": "A plainly irrelevant opener still dragged later quantitative judgment."
+      },
+      {
+        "title": "List prices and opening offers in ordinary valuation",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Anchoring_effect",
+        "summary": "People routinely treat asking prices and initial offers as if they reveal more about value than they really do.",
+        "whyItFits": "The starting number becomes the invisible center of the negotiation."
+      }
+    ]
+  },
+  {
+    "slug": "base-rate-neglect",
+    "quickCheck": "What background rate belongs next to this vivid case before I say how likely it is?",
+    "analogyClaim": "This is like diagnosing the whole lake from one fish because the fish looks especially distinctive.",
+    "analogyResponse": "The individual case can matter, but it has to be judged against the population it came from or the probability story will drift.",
+    "misuseWarning": "Do not use this label whenever people discuss a concrete case. Case-specific evidence can matter a great deal. The error is failing to weigh that evidence against the background frequency it is supposed to update.",
+    "useLabelWhen": "Use this label when a vivid profile, anecdote, or test result gets interpreted without the relevant prevalence, reference class, or prior probability beside it.",
+    "teachingGauges": [
+      {
+        "label": "Common in probabilistic judgment",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 79,
+        "note": "Especially common in medicine, hiring, forecasting, and media interpretation."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 41,
+        "note": "Many people do not notice the missing rate until it is explicitly supplied."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 81,
+        "note": "A rich case description feels more useful than a thin-looking percentage."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 57,
+        "note": "Usually requires some probability literacy to become durable."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The core temptation is to let the case in front of you swallow the population behind it. Once that happens, plausibility starts replacing probability.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A specific profile, clue, or test result feels highly diagnostic before the broader prevalence picture is consulted."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The case description feels rich, while the base rate feels abstract, so the mind starts treating the richer source as the more serious one."
+        },
+        {
+          "title": "Distortion",
+          "text": "Likelihood judgments become too extreme because the background frequency never gets its rightful vote."
+        },
+        {
+          "title": "Reset",
+          "text": "Name the reference class first, write the base rate beside the case evidence, and only then ask how much the case should move the estimate."
+        }
+      ],
+      "repairQuestion": "What is the prior probability here before this specific clue gets to revise it?"
+    },
+    "caseStudies": [
+      {
+        "title": "The engineer-lawyer description problem",
+        "source": "Wikipedia",
+        "year": "Classic judgment task",
+        "url": "https://en.wikipedia.org/wiki/Base_rate_fallacy",
+        "summary": "Participants often ignored the known proportion of engineers and lawyers when a personality sketch sounded engineer-like.",
+        "whyItFits": "The vivid description outran the population it was supposed to update."
+      },
+      {
+        "title": "Medical false positives and screening confusion",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Base_rate_fallacy",
+        "summary": "People often treat a positive test as if it meant near-certainty without checking prevalence and false-positive rates.",
+        "whyItFits": "The case-specific signal gets interpreted without its probabilistic backdrop."
+      }
+    ]
+  },
+  {
+    "slug": "overconfidence-effect",
+    "quickCheck": "Have I recorded uncertainty honestly, or only rehearsed the story that makes the answer sound crisp?",
+    "analogyClaim": "This is like drawing a very narrow target around the part of the field you happen to feel most familiar with.",
+    "analogyResponse": "The shot can still miss badly even though your confidence in the chosen zone feels earned from the inside.",
+    "misuseWarning": "Do not use this label for every confident person or every wrong prediction. The issue is not tone alone. The issue is a mismatch between certainty and the amount of uncertainty the evidence still leaves open.",
+    "useLabelWhen": "Use this label when confidence intervals, forecasts, or judgments are tighter and more certain than the evidence justifies.",
+    "teachingGauges": [
+      {
+        "label": "Common in forecasting",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 86,
+        "note": "Especially common when pressure rewards decisiveness more than calibration."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 36,
+        "note": "Can look admirable until the range is compared with the uncertainty actually present."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 83,
+        "note": "Clear stories and early success make narrowing the range feel responsible."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 48,
+        "note": "Sticks best when learners have to write and later revisit their own forecasts."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Overconfidence rarely feels reckless. It feels like the moment when enough uncertainty has been shaved away to justify decisiveness, even when too much uncertainty is still alive.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A person is asked for a clear call, a tight range, or a public level of certainty before the uncertainty has been fully mapped."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The story now sounds coherent enough that widening the range starts to feel like weakness rather than accuracy."
+        },
+        {
+          "title": "Distortion",
+          "text": "Forecasts, confidence claims, and commitment levels become too tight for the evidence base that produced them."
+        },
+        {
+          "title": "Reset",
+          "text": "Name the outside view, widen the range once for uncertainty you have not modeled well, and preserve the forecast for later review."
+        }
+      ],
+      "repairQuestion": "What uncertainty am I currently compressing because a decisive answer feels socially cleaner?"
+    },
+    "caseStudies": [
+      {
+        "title": "Confidence intervals that miss far too often",
+        "source": "Wikipedia",
+        "year": "Ongoing research line",
+        "url": "https://en.wikipedia.org/wiki/Overconfidence_effect",
+        "summary": "People asked to give 90 percent confidence intervals routinely provide ranges that miss much more often than 10 percent of the time.",
+        "whyItFits": "Their expressed certainty outruns their actual calibration."
+      },
+      {
+        "title": "Executive and project forecasting under uncertainty",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Overconfidence_effect",
+        "summary": "Decision-makers often report narrower downside ranges than later outcomes support.",
+        "whyItFits": "The desire for decisiveness keeps eating uncertainty faster than evidence warrants."
+      }
+    ]
+  },
+  {
+    "slug": "dunning-kruger-effect",
+    "quickCheck": "What actual task would test this confidence instead of merely rewarding fluency?",
+    "analogyClaim": "This is like mistaking your ability to recognize the moves in a chess game for your ability to play the game well.",
+    "analogyResponse": "Familiarity with the surface can arrive early. Calibration about competence usually arrives later and only after real error correction.",
+    "misuseWarning": "Do not use this as a general insult for confident people you think are wrong. The useful point is narrower: low competence can damage self-assessment because the same missing skill also weakens error detection.",
+    "useLabelWhen": "Use this label when shallow understanding or low competence is making self-evaluation systematically too generous.",
+    "teachingGauges": [
+      {
+        "label": "Common in early learning",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 77,
+        "note": "Especially visible where jargon and surface familiarity arrive quickly."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 52,
+        "note": "Others may notice the mismatch sooner than the learner does."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 73,
+        "note": "The slide from exposure to felt mastery is remarkably ordinary."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 52,
+        "note": "Best taught through task-level tests rather than slogans about humility."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The central move is not just being wrong. It is taking the feeling of familiarity as evidence that a deeper level of competence has already arrived.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A learner gains enough exposure to speak fluently before they have encountered enough correction to calibrate accurately."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Recognition and explanation feel so much easier than they used to that they start to look like mastery."
+        },
+        {
+          "title": "Distortion",
+          "text": "Self-assessment stays too high because the person lacks the error-detection habits that would reveal the gap."
+        },
+        {
+          "title": "Reset",
+          "text": "Switch from self-rated understanding to a concrete demonstration, challenge question, or troubleshooting task."
+        }
+      ],
+      "repairQuestion": "What would count as real performance evidence here rather than evidence of familiarity alone?"
+    },
+    "caseStudies": [
+      {
+        "title": "The original humor, grammar, and logic studies",
+        "source": "Wikipedia",
+        "year": "1999",
+        "url": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect",
+        "summary": "Lower-performing participants often overestimated their relative standing, while stronger performers were less aware of how unusual their competence was.",
+        "whyItFits": "The skills needed for performance and self-evaluation were partly the same skills."
+      },
+      {
+        "title": "Fast confidence in thin-feedback domains",
+        "source": "Wikipedia",
+        "year": "Modern discussion",
+        "url": "https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect",
+        "summary": "Domains with weak correction loops let confidence outrun competence for longer stretches.",
+        "whyItFits": "Without robust feedback, fluency keeps masquerading as understanding."
+      }
+    ]
+  },
+  {
+    "slug": "loss-aversion",
+    "quickCheck": "Would this still feel like the better choice if I rewrote the same tradeoff as an equivalent gain?",
+    "analogyClaim": "This is like valuing the door you would have to close more than the equally good door you could open.",
+    "analogyResponse": "The closing feels like pain, so the two doors stop looking equivalent even when the long-run value says they should.",
+    "misuseWarning": "Do not use this label whenever someone dislikes downside. Some losses really are more serious than equal gains are valuable. The bias claim is about an exaggerated asymmetry, not about the mere existence of tradeoffs.",
+    "useLabelWhen": "Use this label when equivalent or near-equivalent losses are being weighted more heavily than gains because surrender, removal, or forfeiture feels especially punishing.",
+    "teachingGauges": [
+      {
+        "label": "Common in choice under change",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 84,
+        "note": "Especially strong where change feels like giving something up."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 49,
+        "note": "Often becomes clear only after the gain-frame rewrite is attempted."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 86,
+        "note": "Loss language is emotionally forceful even when the structure is symmetric."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 41,
+        "note": "The frame-flip exercise usually makes the lesson concrete quickly."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The drift is from a structural tradeoff to an emotionally privileged downside. Once the downside owns the scene, the rest of the comparison starts shrinking.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A choice is experienced as surrender, removal, cancellation, exit, or giving up something already partly treated as yours."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Avoiding the loss feels more urgent and more obviously rational than pursuing the comparable gain."
+        },
+        {
+          "title": "Distortion",
+          "text": "The downside gets overweighted relative to long-run net value, which can make staying put feel wiser than it is."
+        },
+        {
+          "title": "Reset",
+          "text": "Rewrite the tradeoff in a gain frame and then compare the cost of staying exactly as explicitly as the cost of changing."
+        }
+      ],
+      "repairQuestion": "Which part of this judgment is protecting real asymmetry, and which part is protecting me from the feeling of surrender?"
+    },
+    "caseStudies": [
+      {
+        "title": "The endowment and mug-pricing experiments",
+        "source": "Wikipedia",
+        "year": "Classic behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Endowment_effect",
+        "summary": "People often demand much more to give up an item they already possess than they would have paid to acquire it in the first place.",
+        "whyItFits": "Parting with the item is encoded as a loss rather than as a neutral exchange."
+      },
+      {
+        "title": "The disposition effect in investing",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Disposition_effect",
+        "summary": "Investors often hold losing positions too long while selling winners too quickly.",
+        "whyItFits": "Realizing a loss feels worse than delaying it, even when delay harms forward-looking judgment."
+      }
+    ]
+  },
+  {
+    "slug": "framing-effect",
+    "quickCheck": "What changed here besides the wording, emphasis, or emotional staging of the same choice?",
+    "analogyClaim": "This is like choosing the wine by the lighting in the room before you have tasted it.",
+    "analogyResponse": "Presentation matters, but when the atmosphere starts substituting for the underlying comparison, the choice is no longer being made on the merits alone.",
+    "misuseWarning": "Do not use this label for every persuasive description. Framing is not just rhetoric in general. It is the specific case where equivalent information produces meaningfully different judgment because of presentation alone.",
+    "useLabelWhen": "Use this label when two equivalent or near-equivalent descriptions pull judgment in different directions without new evidence entering the scene.",
+    "teachingGauges": [
+      {
+        "label": "Common in public communication",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 90,
+        "note": "Language design is often where the steering happens before argument begins."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 65,
+        "note": "Fairly visible once the alternative wording is supplied side by side."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 78,
+        "note": "People often think they are just describing the option naturally."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 29,
+        "note": "One of the easiest biases to demonstrate with paired wording exercises."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Framing becomes teachable when people see that the option did not change, only the staging around it. That is the moment the packaging stops impersonating the substance.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A choice is described through emotionally selective wording, survival versus mortality language, or a setup that makes one dimension feel primary."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The current wording feels like the natural shape of the problem rather than one presentational angle among several."
+        },
+        {
+          "title": "Distortion",
+          "text": "A reaction to wording or emphasis gets mistaken for a reaction to the underlying evidence or structure."
+        },
+        {
+          "title": "Reset",
+          "text": "Translate the choice into a neutral version and an opposite-valence version before trusting the first reaction."
+        }
+      ],
+      "repairQuestion": "If this same option were described with the emotional polarity reversed, what would happen to my judgment?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Asian disease problem",
+        "source": "Wikipedia",
+        "year": "1981",
+        "url": "https://en.wikipedia.org/wiki/Asian_disease_problem",
+        "summary": "People often reverse risk preferences depending on whether identical outcomes are framed in terms of lives saved or lives lost.",
+        "whyItFits": "The choice structure stays constant while the description changes the felt meaning of the choice."
+      },
+      {
+        "title": "Default wording and organ-donation uptake",
+        "source": "Wikipedia",
+        "year": "Modern policy examples",
+        "url": "https://en.wikipedia.org/wiki/Organ_donation",
+        "summary": "How the choice is presented and preselected can substantially affect participation rates.",
+        "whyItFits": "The presentation changes the path people experience as normal or safe."
+      }
+    ]
+  },
+  {
+    "slug": "groupthink",
+    "quickCheck": "Did the room converge because the case got stronger, or because dissent got more expensive?",
+    "analogyClaim": "This is like calling the water calm because everyone in the boat stopped rocking it.",
+    "analogyResponse": "Stillness can mean stability, but it can also mean people no longer feel free to move. Consensus quality depends on which kind of stillness you have.",
+    "misuseWarning": "Do not use this label for every group agreement. Healthy convergence happens. Groupthink is the special case where harmony, loyalty, or pressure begins crowding out genuine critical testing.",
+    "useLabelWhen": "Use this label when a group's need for cohesion or momentum suppresses objection, independent judgment, or fair processing of alternatives.",
+    "teachingGauges": [
+      {
+        "label": "Common in status-heavy rooms",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 74,
+        "note": "Most likely when identity, urgency, or hierarchy raises the social cost of dissent."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 47,
+        "note": "The room often experiences the same moment as alignment rather than suppression."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 76,
+        "note": "Good people often confuse unity with soundness under pressure."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 53,
+        "note": "Best taught with meeting design and role-structure examples, not definition alone."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The key diagnostic is not simple agreement. It is whether the room still has enough oxygen for live challenge after a preferred direction begins to emerge.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A high-status room faces time pressure, identity pressure, or leadership gravity while a preferred answer is already taking shape."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Alignment starts feeling like progress, and objections begin to look like delay, disloyalty, or needless difficulty."
+        },
+        {
+          "title": "Distortion",
+          "text": "The group mistakes social convergence for evidential convergence and closes too early around a tidy consensus."
+        },
+        {
+          "title": "Reset",
+          "text": "Get independent first passes, invite the strongest objection first, and make dissent a required input rather than a personality trait."
+        }
+      ],
+      "repairQuestion": "Which objection in this room is currently hardest to say out loud, and what does that tell me?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Bay of Pigs planning failure",
+        "source": "Wikipedia",
+        "year": "1961",
+        "url": "https://en.wikipedia.org/wiki/Bay_of_Pigs_Invasion",
+        "summary": "The event is often used in teaching as a case where group cohesion and leadership dynamics muted the scrutiny the plan needed.",
+        "whyItFits": "The room's social dynamics appear to have narrowed its willingness to test the preferred story seriously."
+      },
+      {
+        "title": "The Challenger launch decision",
+        "source": "Wikipedia",
+        "year": "1986",
+        "url": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster",
+        "summary": "The Challenger disaster is frequently studied for how organizational pressure and normalized risk can overwhelm dissenting technical concerns.",
+        "whyItFits": "A socially and administratively charged context can make challenge feel harder precisely when it is most needed."
+      }
+    ]
+  },
+  {
+    "slug": "planning-fallacy",
+    "quickCheck": "What does the outside view say before the inside story talks me into a tighter schedule again?",
+    "analogyClaim": "This is like budgeting a long trip by imagining only the parts where the highway is clear.",
+    "analogyResponse": "The map is not false, but it becomes false in use when all the friction points are treated as special cases that probably will not happen this time.",
+    "misuseWarning": "Do not use this label for every delay or blown budget. The useful claim is about systematic underestimation despite knowing that similar plans have run late before.",
+    "useLabelWhen": "Use this label when people forecast duration, cost, or complexity from the inside story alone while underweighting the historical record of comparable cases.",
+    "teachingGauges": [
+      {
+        "label": "Common in projects",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 91,
+        "note": "One of the most reliable distortions in planning under ambition."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 57,
+        "note": "Often obvious to people carrying the outside view, less obvious inside the project story."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 89,
+        "note": "Optimism plus detail can masquerade as rigor."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 37,
+        "note": "Becomes durable once learners compare forecasts with real completion histories."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The seduction of the planning fallacy is that it rewards detail. The more vivid the task list becomes, the easier it is to forget that similar detail-rich plans have missed before.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A team starts forecasting from the specific steps of the current project before consulting the track record of comparable projects."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Because the plan now has detail and visible effort behind it, the short timeline starts to feel disciplined rather than thin."
+        },
+        {
+          "title": "Distortion",
+          "text": "Known friction, coordination, and rework risks are treated as exceptions instead of normal features of the work."
+        },
+        {
+          "title": "Reset",
+          "text": "Pull in the outside view, widen the range using historical cycle times, and run a premortem before locking the estimate."
+        }
+      ],
+      "repairQuestion": "What usually happens in projects like this even when the current plan feels unusually organized?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Sydney Opera House build",
+        "source": "Wikipedia",
+        "year": "1959 to 1973",
+        "url": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
+        "summary": "The project is a classic large-scale example of costs and timelines outrunning early expectations by a wide margin.",
+        "whyItFits": "Ambition, complexity, and revision made the inside story far more optimistic than the eventual path."
+      },
+      {
+        "title": "The Scottish Parliament Building",
+        "source": "Wikipedia",
+        "year": "1999 to 2004",
+        "url": "https://en.wikipedia.org/wiki/Scottish_Parliament_Building",
+        "summary": "The building's schedule and cost grew far beyond initial forecasts, making it a routine planning-fallacy teaching case.",
+        "whyItFits": "The project shows how detail and commitment do not automatically produce calibrated estimates."
+      }
+    ]
+  },
+  {
+    "slug": "fundamental-attribution-error",
+    "quickCheck": "What situational pressure could explain this before I turn it into a character verdict?",
+    "analogyClaim": "This is like judging the driver entirely by the car's swerve without looking at the road surface.",
+    "analogyResponse": "Sometimes the driver really is the problem. But unless the road conditions get inspected too, trait judgment arrives too cheaply.",
+    "misuseWarning": "Do not use this label whenever traits are mentioned. People do have traits. The error is overweighting traits while underweighting the situational pressures that also shaped the behavior.",
+    "useLabelWhen": "Use this label when a person's action is explained too heavily by stable character or disposition without a fair inspection of context, constraint, or incentive.",
+    "teachingGauges": [
+      {
+        "label": "Common in people judgment",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 90,
+        "note": "One of the central distortions in hiring, conflict, and moral interpretation."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 43,
+        "note": "The situational blind spot often disappears only after alternatives are forced onto the page."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 87,
+        "note": "Behavior is right there in front of you, while pressures and incentives are often not."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 43,
+        "note": "Easy to define, but applying it fairly requires disciplined situational imagination."
+      }
+    ],
+    "practiceLab": {
+      "intro": "The error begins the moment behavior is treated as if it already came with its explanation attached. That is where the person's character starts swallowing the scene.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A visible action or tone invites immediate interpretation before the relevant incentives, constraints, or pressures are explored."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The behavior seems to reveal who the person is, so situational inquiry starts to feel like excuse-making."
+        },
+        {
+          "title": "Distortion",
+          "text": "Trait and motive judgments outrun the evidence while context remains underdescribed."
+        },
+        {
+          "title": "Reset",
+          "text": "Describe the behavior first, then list serious situational alternatives before allowing a character-level conclusion."
+        }
+      ],
+      "repairQuestion": "If I were determined to explain this without using character first, what situational pressures would I have to consider?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Jones-Harris Castro essay experiment",
+        "source": "Wikipedia",
+        "year": "1967",
+        "url": "https://en.wikipedia.org/wiki/Jones%E2%80%93Harris_experiment",
+        "summary": "Participants often inferred sincere beliefs from pro- or anti-Castro essays even when they knew the writers had been assigned their positions.",
+        "whyItFits": "The visible statement outweighed the situational fact that the speaker's role had constrained the content."
+      },
+      {
+        "title": "Everyday workplace trait inflation",
+        "source": "Wikipedia",
+        "year": "Overview source",
+        "url": "https://en.wikipedia.org/wiki/Fundamental_attribution_error",
+        "summary": "Ordinary judgments about lateness, bluntness, or hesitation often drift from local pressures into character verdicts very quickly.",
+        "whyItFits": "The person gets treated as the whole explanation before the setting gets its share."
+      }
+    ]
+  },
+  {
+    "slug": "hindsight-bias",
+    "quickCheck": "What did I actually think before the outcome arrived, not what the ending now makes it tempting to remember?",
+    "analogyClaim": "This is like redrawing yesterday's weather map after you already know where the storm landed.",
+    "analogyResponse": "The finished map can look cleaner and more predictive than the actual uncertainty anyone had to work with in real time.",
+    "misuseWarning": "Do not use this label every time someone recognizes clues after the fact. Postmortem learning matters. The bias claim is that the known outcome is rewriting what seemed knowable beforehand.",
+    "useLabelWhen": "Use this label when the final result makes the earlier uncertainty look flatter, more obvious, or more foreseeable than it really was at the time.",
+    "teachingGauges": [
+      {
+        "label": "Common after outcomes",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 93,
+        "note": "Almost any retrospective can drift toward it without explicit safeguards."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 39,
+        "note": "Usually visible only when forecasts, notes, or prior ranges were preserved."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 90,
+        "note": "Memory naturally wants the earlier story to fit the ending more smoothly."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 44,
+        "note": "Best taught with decision journals and timestamped forecasts."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Hindsight bias does not just change the verdict. It changes the remembered shape of the path leading to the verdict, which is why so many weak postmortems still feel wise.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "An outcome arrives and immediately becomes the lens through which the earlier evidence and uncertainty are revisited."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Clues that were noisy in real time now line up neatly enough that the ending starts to look predictable all along."
+        },
+        {
+          "title": "Distortion",
+          "text": "Memory compresses prior uncertainty and inflates how foreseeable the result was before it happened."
+        },
+        {
+          "title": "Reset",
+          "text": "Recover the original forecast, assumptions, and range before telling the story of what should have been obvious."
+        }
+      ],
+      "repairQuestion": "What did the pre-outcome record actually say before my current story started smoothing it?"
+    },
+    "caseStudies": [
+      {
+        "title": "Fischhoff's knew-it-all-along experiments",
+        "source": "Wikipedia",
+        "year": "1975",
+        "url": "https://en.wikipedia.org/wiki/Hindsight_bias",
+        "summary": "Once people learn an outcome, they often recall having seen it as more likely than they really did beforehand.",
+        "whyItFits": "The known ending alters memory of the earlier uncertainty."
+      },
+      {
+        "title": "Retrospectives that inflate predictability",
+        "source": "Wikipedia",
+        "year": "Overview source",
+        "url": "https://en.wikipedia.org/wiki/Hindsight_bias",
+        "summary": "Business, policy, and investing postmortems often overstate how clearly the warning signs pointed to the eventual result.",
+        "whyItFits": "The outcome changes not just the lesson, but the remembered evidence path."
+      }
+    ]
+  }
+]

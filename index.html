@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CogBias</title>
-    <meta name="description" content="A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools." />
+    <meta name="description" content="A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools." />
     <meta name="author" content="Phil Stilwell" />
     <meta name="application-name" content="CogBias" />
     <meta name="theme-color" content="#0e2339" />
@@ -24,7 +24,7 @@
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
                 <h1 class="brand-title">CogBias</h1>
-                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="paths/">Paths</a><a href="countermoves/">Countermoves</a><a href="check-yourself/">Check Yourself</a><a href="prompts/">Prompts</a><a href="theory/">Theory</a><a href="about/">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="paths/">Paths</a><a href="countermoves/">Countermoves</a><a href="check-yourself/">Check Yourself</a><a href="assessment/">Assessment</a><a href="prompts/">Prompts</a><a href="theory/">Theory</a><a href="about/">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -47,12 +47,12 @@
 
         <section class="hero">
           <div class="hero-panel">
-            <h2 class="hero-title">Cognitive biases made clearer, more comparable, and easier to interrupt.</h2>
-            <p class="hero-lead">CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, and debiasing process design.</p>
+            <h2 class="hero-title">Cognitive biases made clearer, more teachable, and easier to interrupt.</h2>
+            <p class="hero-lead">CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, scenario assessment, and debiasing process design.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="biases/">Browse All Biases</a>
               <a class="button button-secondary" href="paths/">Browse Paths</a>
-              <a class="button button-secondary" href="check-yourself/">Run A Self-Check</a>
+              <a class="button button-secondary" href="assessment/">Take Assessment</a>
             </div>
           </div>
           <aside class="hero-panel hero-side">
@@ -69,6 +69,10 @@
               <div class="stat-card">
                 <span class="stat-value">10</span>
                 <span class="stat-label">Self-Audits</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">18</span>
+                <span class="stat-label">Assessment Scenarios</span>
               </div>
             </div>
             <div class="note-panel">
@@ -239,6 +243,26 @@
               <a class="path-link-chip" href="biases/fundamental-attribution-error/">Fundamental attribution error</a><a class="path-link-chip" href="biases/halo-effect/">Halo effect</a><a class="path-link-chip" href="biases/implicit-bias/">Implicit bias</a><a class="path-link-chip" href="biases/negativity-bias/">Negativity bias</a>
             </div>
           </article>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Assessment</h2>
+              <p class="section-copy">A mixed scenario runner that asks two questions at once: which bias is most likely shaping the judgment, and what is the strongest next debiasing move?</p>
+            </div>
+            <a class="inline-link" href="assessment/">Open assessment</a>
+          </div>
+          <div class="two-column">
+            <div class="note-panel">
+              <h4>What it tests</h4>
+              <p class="muted">The assessment is not just label recall. Each item asks you to diagnose the likely bias pressure and choose the repair that would most improve the process.</p>
+            </div>
+            <div class="note-panel">
+              <h4>How it differs from self-checks</h4>
+              <p class="muted">Self-checks are preventive field tools you run on yourself. The assessment is a mixed set for practice, calibration, and classroom comparison.</p>
+            </div>
           </div>
         </section>
 
@@ -756,40 +780,33 @@ Situation:
           <div class="section-header">
             <div>
               <h2 class="section-title">Theory</h2>
-              <p class="section-copy">Short essays on why a bias site needs different teaching primitives from a fallacy site and why debiasing works better as design than as exhortation.</p>
+              <p class="section-copy">Stand-alone essays on taxonomy, teaching, social pressure, calibration, and why bias work has to change process rather than merely sharpen vocabulary.</p>
             </div>
             <a class="inline-link" href="theory/">Read the theory page</a>
           </div>
-          <div class="category-grid">
+          <div class="category-grid theory-article-grid">
             
-                  <article class="category-card">
-                    <h3><a href="theory/#biases-before-arguments">Biases usually fire before arguments become polished</a></h3>
-                    <p class="card-copy">Logical fallacies often show up in public-facing argument structure. Cognitive biases often distort what feels plausible even earlier, in private judgment, attention, memory, and interpretation.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#why-two-taxonomies">Why CogBias uses both categories and patterns</a></h3>
-                    <p class="card-copy">One taxonomy groups biases by the kind of judgment that is failing. The other groups them by the shape of the distortion that keeps recurring across contexts.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#debiasing-as-design">Debiasing works better as process design than as moral exhortation</a></h3>
-                    <p class="card-copy">Knowing the label is useful, but recognition alone rarely fixes the bias. Good debiasing usually changes the decision environment itself.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#familiarity-is-not-understanding">Familiarity, fluency, and understanding are not the same thing</a></h3>
-                    <p class="card-copy">Many bias problems begin when a person mistakes recognition, smooth explanation, or comfortable vocabulary for real depth of understanding.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#social-pressure-distorts-the-record">Groups distort judgment before they distort the minutes</a></h3>
-                    <p class="card-copy">In group settings, social cost can bend what people notice, what they report, and what they are willing to challenge long before a formal decision is recorded.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#the-default-is-a-decision-too">The default is not neutral just because it is quiet</a></h3>
-                    <p class="card-copy">Defaults, omissions, and inherited arrangements can carry as much decision weight as active choices, even when they feel administratively invisible.</p>
-                  </article>
-                  <article class="category-card">
-                    <h3><a href="theory/#good-teaching-separates-confidence-from-competence">Good teaching separates confidence from competence</a></h3>
-                    <p class="card-copy">A useful site does not merely warn against overconfidence. It shows how to tell calibrated understanding, shallow fluency, and social confidence apart.</p>
-                  </article>
+          <article class="category-card theory-article-card">
+            <h3><a href="theory/biases-before-arguments/">Biases usually bend judgment before arguments become polished</a></h3>
+            <p class="card-copy">A practical article on why cognitive biases often shape what feels plausible before anyone states a neat argument aloud.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/confirmation-bias/">Confirmation bias</a><a class="path-link-chip" href="biases/availability-heuristic/">Availability heuristic</a><a class="path-link-chip" href="biases/naive-realism/">Naïve realism</a>
+            </div>
+          </article>
+          <article class="category-card theory-article-card">
+            <h3><a href="theory/why-two-taxonomies/">Why CogBias uses both categories and patterns</a></h3>
+            <p class="card-copy">An article on why one taxonomy tracks the judgment task being distorted while another tracks the recurring shape of the distortion itself.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/anchoring-effect/">Anchoring effect</a><a class="path-link-chip" href="biases/default-effect/">Default effect</a><a class="path-link-chip" href="biases/confirmation-bias/">Confirmation bias</a>
+            </div>
+          </article>
+          <article class="category-card theory-article-card">
+            <h3><a href="theory/debiasing-as-design/">Debiasing works better as process design than as moral exhortation</a></h3>
+            <p class="card-copy">A practical essay on why awareness is helpful but rarely sufficient, and why durable repair usually arrives through workflow, not willpower alone.</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/groupthink/">Groupthink</a><a class="path-link-chip" href="biases/anchoring-effect/">Anchoring effect</a><a class="path-link-chip" href="biases/hindsight-bias/">Hindsight bias</a>
+            </div>
+          </article>
           </div>
         </section>
 
@@ -840,7 +857,7 @@ Situation:
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>

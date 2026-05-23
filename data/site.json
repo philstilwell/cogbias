@@ -9,14 +9,15 @@
   "patternSlug": "patterns",
   "pathSlug": "paths",
   "checkSlug": "check-yourself",
+  "assessmentSlug": "assessment",
   "promptSlug": "prompts",
   "theorySlug": "theory",
   "brandKicker": "Cognitive Biases",
   "brandTitle": "CogBias",
   "brandMonogram": "CB",
-  "brandSubtitle": "A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.",
-  "heroTitle": "Cognitive biases made clearer, more comparable, and easier to interrupt.",
-  "heroLead": "CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, and debiasing process design.",
+  "brandSubtitle": "A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.",
+  "heroTitle": "Cognitive biases made clearer, more teachable, and easier to interrupt.",
+  "heroLead": "CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, scenario assessment, and debiasing process design.",
   "sourceAttribution": "Seed taxonomy and broad coverage are drawn from Wikipedia's List of cognitive biases, then editorially reshaped into a teaching-first reference.",
   "illustrationPlaceholderTitle": "Illustration Placeholder",
   "illustrationPlaceholderBody": "A custom visual plate will live here once the image set is produced. The layout is already reserved so future images can drop in without reshaping the page.",
@@ -282,7 +283,8 @@
       "Pattern pages alongside category pages",
       "Source links back to the Wikipedia seed taxonomy",
       "Image placeholders on detail pages",
-      "A more extensive imported catalog with future editorial layering"
+      "A more extensive imported catalog with future editorial layering",
+      "Mixed scenario assessment and flagship-page teaching modules"
     ],
     "defer": [
       "Original illustration production",

@@ -13,10 +13,14 @@ const rawEntries = JSON.parse(await fs.readFile(path.join(dataDir, "biases.json"
 const editorialEnrichments = JSON.parse(
   await fs.readFile(path.join(dataDir, "editorial_enrichments.json"), "utf8"),
 );
+const teachingModules = JSON.parse(
+  await fs.readFile(path.join(dataDir, "entry_teaching_modules.json"), "utf8"),
+);
 const learningPathData = JSON.parse(await fs.readFile(path.join(dataDir, "learning_paths.json"), "utf8"));
 const selfCheckData = JSON.parse(await fs.readFile(path.join(dataDir, "self_checks.json"), "utf8"));
+const assessmentBankData = JSON.parse(await fs.readFile(path.join(dataDir, "assessment_bank.json"), "utf8"));
 const promptKitData = JSON.parse(await fs.readFile(path.join(dataDir, "prompt_kits.json"), "utf8"));
-const theorySections = JSON.parse(await fs.readFile(path.join(dataDir, "theory_sections.json"), "utf8"));
+const theoryArticleData = JSON.parse(await fs.readFile(path.join(dataDir, "theory_articles.json"), "utf8"));
 
 function mergeUniqueStrings(values = []) {
   return [...new Set(values.filter(Boolean))];
@@ -36,7 +40,7 @@ function mergeEntryData(baseEntries, enrichments) {
   });
 }
 
-const entries = mergeEntryData(rawEntries, editorialEnrichments);
+const entries = mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules);
 
 const siteUrl = String(siteConfig.siteUrl || "").trim();
 const siteUrlWithSlash = siteUrl ? `${siteUrl.replace(/\/+$/, "")}/` : "";
@@ -69,6 +73,11 @@ const patterns = siteConfig.patterns
 const learningPaths = learningPathData.map((path) => ({
   ...path,
   members: (path.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+}));
+
+const theoryArticles = theoryArticleData.map((article) => ({
+  ...article,
+  relatedEntries: (article.relatedBiases || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
 }));
 
 for (const entry of entries) {
@@ -135,6 +144,34 @@ for (const promptKit of promptKitData) {
   }
 }
 
+for (const article of theoryArticles) {
+  for (const slug of article.relatedBiases || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown theory related slug "${slug}" on "${article.slug}".`);
+    }
+  }
+}
+
+for (const item of assessmentBankData) {
+  if (!entryBySlug.has(item.correctBias)) {
+    throw new Error(`Unknown assessment correct bias "${item.correctBias}" on "${item.id}".`);
+  }
+
+  for (const slug of item.biasOptions || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown assessment option slug "${slug}" on "${item.id}".`);
+    }
+  }
+
+  if (!(item.biasOptions || []).includes(item.correctBias)) {
+    throw new Error(`Assessment item "${item.id}" must include the correct bias in its options.`);
+  }
+
+  if (!(item.moveOptions || []).includes(item.correctMove)) {
+    throw new Error(`Assessment item "${item.id}" must include the correct move in its options.`);
+  }
+}
+
 const featuredEntries = (siteConfig.featured || []).map((slug) => entryBySlug.get(slug)).filter(Boolean);
 
 function escapeHtml(value = "") {
@@ -144,6 +181,13 @@ function escapeHtml(value = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function safeJsonForScript(value) {
+  return JSON.stringify(value)
+    .replaceAll("<", "\\u003C")
+    .replaceAll("-->", "--\\u003E")
+    .replaceAll("</script", "<\\/script");
 }
 
 function pageTitle(title) {
@@ -194,6 +238,7 @@ function renderNav(prefix, currentId) {
     { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
     { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
+    { id: "assessment", label: "Assessment", href: `${prefix}${siteConfig.assessmentSlug}/` },
     { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
     { id: "theory", label: "Theory", href: `${prefix}${siteConfig.theorySlug}/` },
     { id: "about", label: "About", href: `${prefix}about/` },
@@ -245,7 +290,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -371,6 +416,10 @@ function promptKitsForEntry(entry) {
   return promptKitData.filter((promptKit) => (promptKit.relatedBiases || []).includes(entry.slug));
 }
 
+function theoryArticlesForEntry(entry, limit = 3) {
+  return theoryArticles.filter((article) => (article.relatedBiases || []).includes(entry.slug)).slice(0, limit);
+}
+
 function examplesFor(entry) {
   if (entry.examples) return entry.examples;
 
@@ -452,6 +501,74 @@ function teachingNoteFor(entry) {
   return `Start with the ${sentenceCase(
     task?.name || "judgment",
   )} problem, then show how the ${sentenceCase(pattern?.name || "current")} pattern makes the distortion feel natural from the inside.`;
+}
+
+function quickCheckFor(entry) {
+  if (entry.quickCheck) return entry.quickCheck;
+  return reflectionQuestionsFor(entry)[0] || entry.firstCountermove || "What comparison would most improve this judgment?";
+}
+
+function practiceLabFor(entry) {
+  if (entry.practiceLab) return entry.practiceLab;
+
+  return {
+    intro:
+      "Follow the moment where the bias first becomes attractive, then track how that attraction turns into a distorted judgment before jumping straight to the label.",
+    stages: [
+      {
+        title: "Trigger",
+        text:
+          entry.commonTrigger ||
+          "A fast interpretation begins to feel easier than a fuller comparison of the alternatives.",
+      },
+      {
+        title: "Felt certainty",
+        text:
+          entry.whatItFeelsLike ||
+          "The first coherent reading starts to feel like ordinary good judgment from the inside.",
+      },
+      {
+        title: "Distortion",
+        text: entry.distortion || "Judgment under uncertainty becomes warped before the process is inspected fairly.",
+      },
+      {
+        title: "Reset",
+        text:
+          entry.firstCountermove ||
+          "Slow the process down long enough to compare live alternatives before the label hardens.",
+      },
+    ],
+    repairQuestion: quickCheckFor(entry),
+  };
+}
+
+function caseStudiesFor(entry) {
+  return entry.caseStudies || [];
+}
+
+function companionReadingFor(entry) {
+  if (!(entry.caseStudies || []).length) {
+    return [];
+  }
+
+  const items = [];
+  const relatedTheory = theoryArticlesForEntry(entry, 2).map((article) => ({
+    title: article.title,
+    source: "CogBias theory",
+    href: `../../${siteConfig.theorySlug}/${article.slug}/`,
+    why: article.summary,
+  }));
+
+  if (entry.sourceUrl) {
+    items.push({
+      title: `${entry.name} seed reference`,
+      source: "Wikipedia seed",
+      href: entry.sourceUrl,
+      why: "Use the broader source article for additional definitions, examples, and historical notes.",
+    });
+  }
+
+  return [...relatedTheory, ...items];
 }
 
 function renderEntryLinkChips(slugs = [], prefix = "") {
@@ -599,6 +716,42 @@ function renderPromptCard(promptKit, prefix = "") {
           </article>`;
 }
 
+function renderGaugeCard(gauge) {
+  return `
+          <article class="gauge-card" style="--value:${Number(gauge.value) || 0};">
+            <div class="gauge-card-top">
+              <p class="gauge-kicker">${escapeHtml(gauge.label)}</p>
+              <p class="gauge-score">${escapeHtml(gauge.value)}</p>
+            </div>
+            <p class="gauge-summary muted">${escapeHtml(gauge.note || "")}</p>
+            <div class="gauge-meter" style="--value:${Number(gauge.value) || 0};">
+              <div class="gauge-meter-fill"></div>
+              <div class="gauge-meter-marker"></div>
+            </div>
+            <div class="gauge-scale">
+              <span>${escapeHtml(gauge.low || "Low")}</span>
+              <span>${escapeHtml(gauge.high || "High")}</span>
+            </div>
+          </article>`;
+}
+
+function renderTheoryArticleCard(article, prefix = "") {
+  return `
+          <article class="category-card theory-article-card">
+            <h3><a href="${prefix}${siteConfig.theorySlug}/${article.slug}/">${escapeHtml(article.title)}</a></h3>
+            <p class="card-copy">${escapeHtml(article.summary)}</p>
+            <div class="path-link-row">
+              ${article.relatedEntries
+                .slice(0, 3)
+                .map(
+                  (entry) =>
+                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+                )
+                .join("")}
+            </div>
+          </article>`;
+}
+
 function renderHomePage() {
   return renderPage({
     title: siteConfig.brandTitle,
@@ -614,7 +767,7 @@ function renderHomePage() {
             <div class="hero-actions">
               <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
               <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
-              <a class="button button-secondary" href="${siteConfig.checkSlug}/">Run A Self-Check</a>
+              <a class="button button-secondary" href="${siteConfig.assessmentSlug}/">Take Assessment</a>
             </div>
           </div>
           <aside class="hero-panel hero-side">
@@ -631,6 +784,10 @@ function renderHomePage() {
               <div class="stat-card">
                 <span class="stat-value">${selfCheckData.length}</span>
                 <span class="stat-label">Self-Audits</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${assessmentBankData.length}</span>
+                <span class="stat-label">Assessment Scenarios</span>
               </div>
             </div>
             <div class="note-panel">
@@ -693,6 +850,26 @@ function renderHomePage() {
         <section class="section-block">
           <div class="section-header">
             <div>
+              <h2 class="section-title">Assessment</h2>
+              <p class="section-copy">A mixed scenario runner that asks two questions at once: which bias is most likely shaping the judgment, and what is the strongest next debiasing move?</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.assessmentSlug}/">Open assessment</a>
+          </div>
+          <div class="two-column">
+            <div class="note-panel">
+              <h4>What it tests</h4>
+              <p class="muted">The assessment is not just label recall. Each item asks you to diagnose the likely bias pressure and choose the repair that would most improve the process.</p>
+            </div>
+            <div class="note-panel">
+              <h4>How it differs from self-checks</h4>
+              <p class="muted">Self-checks are preventive field tools you run on yourself. The assessment is a mixed set for practice, calibration, and classroom comparison.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
               <h2 class="section-title">Featured biases</h2>
               <p class="section-copy">A teaching-first starter selection drawn from the larger imported catalog.</p>
             </div>
@@ -746,20 +923,12 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Theory</h2>
-              <p class="section-copy">Short essays on why a bias site needs different teaching primitives from a fallacy site and why debiasing works better as design than as exhortation.</p>
+              <p class="section-copy">Stand-alone essays on taxonomy, teaching, social pressure, calibration, and why bias work has to change process rather than merely sharpen vocabulary.</p>
             </div>
             <a class="inline-link" href="${siteConfig.theorySlug}/">Read the theory page</a>
           </div>
-          <div class="category-grid">
-            ${theorySections
-              .map(
-                (section) => `
-                  <article class="category-card">
-                    <h3><a href="${siteConfig.theorySlug}/#${section.slug}">${escapeHtml(section.title)}</a></h3>
-                    <p class="card-copy">${escapeHtml(section.summary)}</p>
-                  </article>`,
-              )
-              .join("")}
+          <div class="category-grid theory-article-grid">
+            ${theoryArticles.slice(0, 3).map((article) => renderTheoryArticleCard(article)).join("")}
           </div>
         </section>
 
@@ -1000,6 +1169,73 @@ function renderCheckYourselfPage() {
   });
 }
 
+function renderAssessmentPage() {
+  const payload = assessmentBankData.map((item) => ({
+    ...item,
+    correctBiasName: entryBySlug.get(item.correctBias)?.name || item.correctBias,
+    correctBiasHref: `../${siteConfig.sectionSlug}/${item.correctBias}/`,
+    biasOptions: item.biasOptions.map((slug) => ({
+      slug,
+      name: entryBySlug.get(slug)?.name || slug,
+      href: `../${siteConfig.sectionSlug}/${slug}/`,
+    })),
+  }));
+
+  return renderPage({
+    title: "Assessment",
+    description: "A mixed scenario assessment for naming likely bias pressure and choosing the best next debiasing move.",
+    prefix: "../",
+    currentId: "assessment",
+    routePath: `/${siteConfig.assessmentSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Assessment" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Assessment</p>
+          <h2 class="detail-title">A mixed scenario test of what is bending the judgment and what would interrupt it best</h2>
+          <p class="detail-deck">Each run draws from a bank of short bias scenarios. For every item, choose the bias that most likely explains the drift and then choose the best next move for improving the process.</p>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>What it is for</h4>
+            <p class="muted">Use this for classroom comparison, self-calibration, or team practice when you want something more demanding than a definition quiz. The second answer matters as much as the first.</p>
+          </div>
+          <div class="note-panel">
+            <h4>How it differs from self-checks</h4>
+            <p class="muted">Self-checks are preventive field tools. This page is a mixed assessment built for diagnosis plus repair: name the likely pressure, then choose the best intervention.</p>
+          </div>
+        </div>
+
+        <section class="panel search-panel assessment-runner-panel" data-bias-assessment-shell data-assessment-size="10">
+          <div class="section-header">
+            <div>
+              <h3 class="section-title">Take the mixed scenario assessment</h3>
+              <p class="section-copy">Each set uses real decision, forecasting, conflict, and meeting situations rather than bare definitions.</p>
+            </div>
+          </div>
+          <div class="assessment-toolbar">
+            <button class="button button-primary button-compact" type="button" data-bias-assessment-new>Load another set</button>
+            <a class="button button-secondary button-compact" href="../${siteConfig.sectionSlug}/">Study the full reference</a>
+          </div>
+          <div class="assessment-items" data-bias-assessment-items></div>
+          <div class="assessment-actions">
+            <button class="button button-primary" type="button" data-bias-assessment-grade>Grade this assessment</button>
+          </div>
+          <div class="detail-section assessment-results hidden" data-bias-assessment-results role="status" aria-live="polite"></div>
+          <script id="bias-assessment-bank" type="application/json">${safeJsonForScript(payload)}</script>
+          <noscript>
+            <div class="note-panel" style="margin-top: 18px;">
+              <h4>JavaScript is required for this assessment</h4>
+              <p class="muted">This page builds a mixed scenario set in the browser. If scripting is disabled, you can still study the full reference in <a class="text-link" href="../${siteConfig.sectionSlug}/">All Biases</a>.</p>
+            </div>
+          </noscript>
+        </section>`,
+  });
+}
+
 function renderPromptsPage() {
   return renderPage({
     title: "Prompt Kits",
@@ -1040,7 +1276,7 @@ function renderPromptsPage() {
 function renderTheoryPage() {
   return renderPage({
     title: "Theory",
-    description: "Short theory notes on why a cognitive-bias site needs different teaching primitives from a fallacy site.",
+    description: "Theory articles on taxonomy, pedagogy, calibration, and debiasing design for cognitive bias work.",
     prefix: "../",
     currentId: "theory",
     routePath: `/${siteConfig.theorySlug}/`,
@@ -1051,38 +1287,64 @@ function renderTheoryPage() {
     body: `
         <section class="detail-section">
           <p class="eyebrow">Theory</p>
-          <h2 class="detail-title">Why the site is organized this way</h2>
-          <p class="detail-deck">CogBias borrows LogFall's practical teaching instinct, but the underlying object is different. These short sections explain why a bias reference needs categories, patterns, self-audits, and procedural repairs rather than only labels and examples.</p>
+          <h2 class="detail-title">Related articles on how to teach, compare, and interrupt biases well</h2>
+          <p class="detail-deck">CogBias borrows LogFall's practical teaching instinct, but the underlying object is different. These articles explain how bias work differs from fallacy work, why debiasing is mainly a design problem, and how to teach calibration without turning the topic into jargon theater.</p>
         </section>
 
         <section class="section-block">
-          <div class="category-grid">
-            ${theorySections
-              .map(
-                (section) => `
-                  <article class="category-card">
-                    <h3><a href="#${section.slug}">${escapeHtml(section.title)}</a></h3>
-                    <p class="card-copy">${escapeHtml(section.summary)}</p>
-                  </article>`,
-              )
-              .join("")}
+          <div class="category-grid theory-article-grid">
+            ${theoryArticles.map((article) => renderTheoryArticleCard(article, "../")).join("")}
           </div>
+        </section>`,
+  });
+}
+
+function renderTheoryArticlePage(article) {
+  return renderPage({
+    title: article.title,
+    description: article.summary,
+    prefix: "../../",
+    currentId: "theory",
+    routePath: `/${siteConfig.theorySlug}/${article.slug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Theory", href: "../" },
+      { label: article.title },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Theory Article</p>
+          <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+          <p class="detail-deck">${escapeHtml(article.summary)}</p>
+          <p class="theory-article-intro">${escapeHtml(article.intro)}</p>
         </section>
 
-        ${theorySections
+        ${article.sections
           .map(
             (section) => `
-              <section class="detail-section section-block theory-section" id="${section.slug}">
-                <p class="eyebrow">Theory Section</p>
-                <h2 class="section-title">${escapeHtml(section.title)}</h2>
-                <p class="section-copy">${escapeHtml(section.summary)}</p>
+              <section class="detail-section section-block theory-section">
+                <h3 class="section-title">${escapeHtml(section.heading)}</h3>
                 ${section.paragraphs.map((paragraph) => `<p class="muted">${escapeHtml(paragraph)}</p>`).join("")}
-                <ul class="muted">
-                  ${(section.bullets || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-                </ul>
+                ${
+                  section.bullets?.length
+                    ? `<ul class="muted">${section.bullets.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+                    : ""
+                }
               </section>`,
           )
-          .join("")}`,
+          .join("")}
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Related biases</h2>
+              <p class="section-copy">Use these entry pages after the article if you want the same theory translated into more concrete diagnostic and repair tools.</p>
+            </div>
+          </div>
+          <div class="entry-grid">
+            ${article.relatedEntries.map((entry) => renderBiasCard(entry, "../../")).join("")}
+          </div>
+        </section>`,
   });
 }
 
@@ -1174,6 +1436,8 @@ function renderBiasDetailPage(entry) {
   const related = relatedEntriesFor(entry, 6);
   const taskObjects = entryTaskObjects(entry);
   const patternObjects = entryPatternObjects(entry);
+  const quickCheck = quickCheckFor(entry);
+  const practiceLab = practiceLabFor(entry);
   const spotIt = entry.spotIt || fallbackSpotIt(entry);
   const slowIt = entry.slowIt || fallbackSlowIt(entry);
   const reframeIt = entry.reframeIt || fallbackReframeIt(entry);
@@ -1182,8 +1446,11 @@ function renderBiasDetailPage(entry) {
   const reflectionQuestions = reflectionQuestionsFor(entry);
   const repairMoves = repairMovesFor(entry);
   const confusions = confusionsFor(entry);
+  const caseStudies = caseStudiesFor(entry);
+  const companionReading = companionReadingFor(entry);
   const paths = pathObjectsForEntry(entry);
   const checks = selfChecksForEntry(entry);
+  const gauges = entry.teachingGauges || [];
   const promptKits = promptKitsForEntry(entry);
 
   return renderPage({
@@ -1252,6 +1519,67 @@ function renderBiasDetailPage(entry) {
 
         <div class="two-column section-block">
           <div class="note-panel">
+            <h4>Quick check</h4>
+            <p class="muted">${escapeHtml(quickCheck)}</p>
+          </div>
+          <div class="note-panel">
+            <h4>Mechanism snapshot</h4>
+            <p class="muted">${escapeHtml(entry.mechanism || "This bias changes what feels most plausible before the full evidence or decision process has been fairly inspected.")}</p>
+          </div>
+        </div>
+
+        ${
+          gauges.length
+            ? `
+        <section class="section-block gauge-section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Teaching gauges</h2>
+              <p class="section-copy">These are classroom-facing editorial estimates for comparing how the bias behaves in use. They are teaching aids, not measured statistics.</p>
+            </div>
+          </div>
+          <div class="gauge-grid">
+            ${gauges.map((gauge) => renderGaugeCard(gauge)).join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
+        ${
+          entry.analogyClaim && entry.analogyResponse
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">That's like saying...</h2>
+              <p class="section-copy">Analogies make the hidden shape of the distortion visible before the technical label has to do all the work.</p>
+            </div>
+          </div>
+          <div class="analogy-grid">
+            <article class="note-panel analogy-card analogy-claim-card">
+              <p class="analogy-label">Biased move</p>
+              <p class="analogy-text">${escapeHtml(entry.analogyClaim)}</p>
+            </article>
+            <article class="note-panel analogy-card analogy-response-card">
+              <p class="analogy-label">Clearer comparison</p>
+              <p class="analogy-text">${escapeHtml(entry.analogyResponse)}</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Caveat</h4>
+            <p class="muted">${escapeHtml(entry.misuseWarning)}</p>
+          </div>
+          <div class="note-panel">
+            <h4>Use the label only when...</h4>
+            <p class="muted">${escapeHtml(entry.useLabelWhen)}</p>
+          </div>
+        </div>`
+            : `
+        <div class="two-column section-block">
+          <div class="note-panel">
             <h4>How this entry is classified</h4>
             <ul class="muted">
               ${taskObjects
@@ -1263,10 +1591,34 @@ function renderBiasDetailPage(entry) {
             </ul>
           </div>
           <div class="note-panel">
-            <h4>Mechanism snapshot</h4>
-            <p class="muted">${escapeHtml(entry.mechanism || "This bias changes what feels most plausible before the full evidence or decision process has been fairly inspected.")}</p>
+            <h4>Reference use</h4>
+            <p class="muted">Use the quick check and reflection questions before locking the label. Nearby entries often share the same outer appearance while differing in what actually drives the distortion.</p>
           </div>
-        </div>
+        </div>`
+        }
+
+        ${
+          entry.analogyClaim && entry.analogyResponse
+            ? `
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>How this entry is classified</h4>
+            <ul class="muted">
+              ${taskObjects
+                .map((task) => `<li><strong>${escapeHtml(task.name)}:</strong> ${escapeHtml(task.description)}</li>`)
+                .join("")}
+              ${patternObjects
+                .map((pattern) => `<li><strong>${escapeHtml(pattern.name)}:</strong> ${escapeHtml(pattern.description)}</li>`)
+                .join("")}
+            </ul>
+          </div>
+          <div class="note-panel">
+            <h4>Reference use</h4>
+            <p class="muted">Use the quick check, caveat, and nearby confusions together. The fastest diagnosis is often the noisiest one.</p>
+          </div>
+        </div>`
+            : ""
+        }
 
         <section class="section-block">
           <div class="section-header">
@@ -1332,9 +1684,24 @@ function renderBiasDetailPage(entry) {
         </section>
 
         <section class="detail-section section-block">
-          <p class="eyebrow">Counter It</p>
-          <h2 class="section-title">From naming to interruption</h2>
-          <p class="section-copy">The goal is not just to recognize the label, but to change what happens next in the reasoning process.</p>
+          <p class="eyebrow">Practice And Repair</p>
+          <h2 class="section-title">Follow the drift, then interrupt it</h2>
+          <p class="section-copy">${escapeHtml(practiceLab.intro)}</p>
+          <div class="category-grid">
+            ${practiceLab.stages
+              .map(
+                (stage) => `
+                  <article class="category-card">
+                    <h3>${escapeHtml(stage.title)}</h3>
+                    <p class="card-copy">${escapeHtml(stage.text)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+          <div class="note-panel" style="margin-top: 18px;">
+            <h4>Repair question</h4>
+            <p class="muted">${escapeHtml(practiceLab.repairQuestion)}</p>
+          </div>
           <div class="lab-tab-shell" data-tab-group>
             <div class="lab-tablist" role="tablist" aria-label="Bias practice tabs">
               <button class="lab-tab" type="button" data-tab-button>Spot It</button>
@@ -1395,6 +1762,33 @@ function renderBiasDetailPage(entry) {
           </div>
         </section>
 
+        ${
+          caseStudies.length
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Case studies</h2>
+              <p class="section-copy">These sourced cases do not prove what was in someone's head with perfect certainty. They are teaching cases for showing where the bias pressure becomes visible in practice.</p>
+            </div>
+          </div>
+          <div class="case-list">
+            ${caseStudies
+              .map(
+                (item) => `
+                  <article class="case-item">
+                    <p class="case-title"><a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a></p>
+                    <p class="case-summary">${escapeHtml(item.summary)}</p>
+                    <p class="case-summary muted"><strong>Why it fits:</strong> ${escapeHtml(item.whyItFits)}</p>
+                    <p class="case-source">${escapeHtml(item.source)}${item.year ? ` · ${escapeHtml(item.year)}` : ""}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -1439,8 +1833,41 @@ function renderBiasDetailPage(entry) {
                   .join("")}
               </div>
             </article>
+            <article class="category-card">
+              <h3>Assessment</h3>
+              <p class="card-copy">A mixed scenario set that can quietly pull this bias into the question bank without announcing the answer in the title first.</p>
+              <div class="path-link-row">
+                <a class="path-link-chip" href="../../${siteConfig.assessmentSlug}/?focus=${entry.slug}">Open a mixed assessment set that includes this bias</a>
+              </div>
+            </article>
           </div>
         </section>
+
+        ${
+          companionReading.length
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Companion reading</h2>
+              <p class="section-copy">These links widen the frame around the bias without interrupting the core lesson on this page.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${companionReading
+              .map(
+                (item) => `
+                  <article class="category-card">
+                    <h3><a href="${escapeHtml(item.href)}">${escapeHtml(item.title)}</a></h3>
+                    <p class="card-copy">${escapeHtml(item.why)}</p>
+                    <p class="muted">${escapeHtml(item.source)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>`
+            : ""
+        }
 
         <section class="section-block">
           <div class="section-header">
@@ -1512,7 +1939,8 @@ function renderAboutPage() {
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_sections.json</code> for the guided layers.</li>
+              <li><code>data/entry_teaching_modules.json</code> and <code>data/assessment_bank.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
+              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_articles.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
@@ -1590,6 +2018,7 @@ async function cleanOwnedOutput() {
     "countermoves",
     siteConfig.pathSlug,
     siteConfig.checkSlug,
+    siteConfig.assessmentSlug,
     siteConfig.promptSlug,
     siteConfig.theorySlug,
     siteConfig.patternSlug,
@@ -1613,6 +2042,7 @@ async function writeSiteFiles() {
   await writeTextFile(`${siteConfig.patternSlug}/index.html`, renderPatternIndexPage());
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
+  await writeTextFile(`${siteConfig.assessmentSlug}/index.html`, renderAssessmentPage());
   await writeTextFile(`${siteConfig.promptSlug}/index.html`, renderPromptsPage());
   await writeTextFile(`${siteConfig.theorySlug}/index.html`, renderTheoryPage());
   await writeTextFile("countermoves/index.html", renderCountermovesPage());
@@ -1633,6 +2063,10 @@ async function writeSiteFiles() {
 
   for (const path of learningPaths) {
     await writeTextFile(`${siteConfig.pathSlug}/${path.slug}/index.html`, renderPathDetailPage(path));
+  }
+
+  for (const article of theoryArticles) {
+    await writeTextFile(`${siteConfig.theorySlug}/${article.slug}/index.html`, renderTheoryArticlePage(article));
   }
 
   await writeTextFile(
@@ -1663,6 +2097,7 @@ async function writeSiteFiles() {
       `/${siteConfig.patternSlug}/`,
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
+      `/${siteConfig.assessmentSlug}/`,
       `/${siteConfig.promptSlug}/`,
       `/${siteConfig.theorySlug}/`,
       "/countermoves/",
@@ -1671,6 +2106,7 @@ async function writeSiteFiles() {
       ...tasks.map((task) => `/categories/${task.slug}/`),
       ...patterns.map((pattern) => `/${siteConfig.patternSlug}/${pattern.slug}/`),
       ...learningPaths.map((path) => `/${siteConfig.pathSlug}/${path.slug}/`),
+      ...theoryArticles.map((article) => `/${siteConfig.theorySlug}/${article.slug}/`),
     ];
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

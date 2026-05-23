@@ -148,3 +148,185 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
 
   activateTab(0);
 }
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function shuffle(values = []) {
+  const copy = [...values];
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]];
+  }
+  return copy;
+}
+
+const biasAssessmentShell = document.querySelector("[data-bias-assessment-shell]");
+const assessmentBankNode = document.querySelector("#bias-assessment-bank");
+
+if (biasAssessmentShell && assessmentBankNode) {
+  const assessmentItemsNode = biasAssessmentShell.querySelector("[data-bias-assessment-items]");
+  const assessmentResultsNode = biasAssessmentShell.querySelector("[data-bias-assessment-results]");
+  const assessmentGradeButton = biasAssessmentShell.querySelector("[data-bias-assessment-grade]");
+  const assessmentNewButton = biasAssessmentShell.querySelector("[data-bias-assessment-new]");
+  const assessmentSize = Number(biasAssessmentShell.dataset.assessmentSize || "10");
+  const assessmentBank = JSON.parse(assessmentBankNode.textContent || "[]");
+  const focusBias = new URL(window.location.href).searchParams.get("focus") || "";
+  let currentAssessmentSet = [];
+
+  function pickAssessmentSet() {
+    const chosen = [];
+    const available = shuffle(assessmentBank);
+
+    if (focusBias) {
+      const focusedItem = shuffle(assessmentBank.filter((item) => item.correctBias === focusBias))[0];
+      if (focusedItem) {
+        chosen.push(focusedItem);
+      }
+    }
+
+    for (const item of available) {
+      if (chosen.length >= assessmentSize) break;
+      if (chosen.some((selected) => selected.id === item.id)) continue;
+      chosen.push(item);
+    }
+
+    return shuffle(chosen).slice(0, assessmentSize);
+  }
+
+  function optionLabelHtml(name, value, content) {
+    return `<label class="quiz-option"><input type="radio" name="${name}" value="${escapeHtml(value)}" /> <span>${content}</span></label>`;
+  }
+
+  function renderAssessmentItem(item, index) {
+    const biasOptions = shuffle(item.biasOptions || []);
+    const moveOptions = shuffle(item.moveOptions || []);
+
+    return `
+      <article class="category-card assessment-question-card" data-assessment-question>
+        <p class="eyebrow">Scenario ${index + 1}</p>
+        <h3 class="assessment-question-title">${escapeHtml(item.title)}</h3>
+        <p class="card-copy">${escapeHtml(item.scenario)}</p>
+        <p class="dialogue-prompt">Which bias is most likely doing the hidden work?</p>
+        <div class="quiz-options">
+          ${biasOptions
+            .map((option) =>
+              optionLabelHtml(
+                `assessment-bias-${index}`,
+                option.slug,
+                `<strong>${escapeHtml(option.name)}</strong>`,
+              ),
+            )
+            .join("")}
+        </div>
+        <p class="dialogue-prompt">Which next move would improve the process most?</p>
+        <div class="quiz-options">
+          ${moveOptions
+            .map((option) => optionLabelHtml(`assessment-move-${index}`, option, escapeHtml(option)))
+            .join("")}
+        </div>
+      </article>`;
+  }
+
+  function loadAssessmentSet() {
+    currentAssessmentSet = pickAssessmentSet();
+    if (assessmentItemsNode) {
+      assessmentItemsNode.innerHTML = currentAssessmentSet
+        .map((item, index) => renderAssessmentItem(item, index))
+        .join("");
+    }
+    if (assessmentResultsNode) {
+      assessmentResultsNode.innerHTML = "";
+      assessmentResultsNode.classList.add("hidden");
+    }
+  }
+
+  function gradeAssessmentSet() {
+    let biasScore = 0;
+    let moveScore = 0;
+    let perfectCount = 0;
+    const questionCards = Array.from(
+      biasAssessmentShell.querySelectorAll("[data-assessment-question]"),
+    );
+
+    const reviewCards = currentAssessmentSet.map((item, index) => {
+      const chosenBias = document.querySelector(
+        `input[name="assessment-bias-${index}"]:checked`,
+      )?.value;
+      const chosenMove = document.querySelector(
+        `input[name="assessment-move-${index}"]:checked`,
+      )?.value;
+      const biasCorrect = chosenBias === item.correctBias;
+      const moveCorrect = chosenMove === item.correctMove;
+      const optionName =
+        item.biasOptions.find((option) => option.slug === chosenBias)?.name || "No bias selected";
+
+      if (biasCorrect) biasScore += 1;
+      if (moveCorrect) moveScore += 1;
+      if (biasCorrect && moveCorrect) perfectCount += 1;
+
+      const card = questionCards[index];
+      if (card) {
+        card.classList.toggle("assessment-question-correct", biasCorrect && moveCorrect);
+        card.classList.toggle("assessment-question-incorrect", !(biasCorrect && moveCorrect));
+      }
+
+      return `
+        <article class="category-card">
+          <h3>Scenario ${index + 1}: ${escapeHtml(item.title)}</h3>
+          <p class="card-copy">${escapeHtml(item.scenario)}</p>
+          <p class="muted"><strong>Your bias call:</strong> ${escapeHtml(optionName)}</p>
+          <p class="muted"><strong>Correct bias:</strong> <a class="text-link" href="${escapeHtml(item.correctBiasHref)}">${escapeHtml(item.correctBiasName)}</a></p>
+          <p class="muted"><strong>Best move:</strong> ${escapeHtml(item.correctMove)}</p>
+          <p class="muted"><strong>Why that bias fits:</strong> ${escapeHtml(item.biasExplanation)}</p>
+          <p class="muted"><strong>Why that move helps:</strong> ${escapeHtml(item.moveExplanation)}</p>
+        </article>`;
+    });
+
+    if (assessmentResultsNode) {
+      assessmentResultsNode.innerHTML = `
+        <p class="eyebrow">Results</p>
+        <h3 class="section-title">Score the diagnosis and the repair separately</h3>
+        <p class="section-copy">A correct label matters, but a correct next move matters too. The strongest judgment work does both.</p>
+        <div class="assessment-outcome-summary">
+          <div class="assessment-outcome-group">
+            <h4>Bias diagnosis</h4>
+            <div class="assessment-outcome-row">
+              <span class="assessment-outcome-chip assessment-outcome-chip-correct">${biasScore}/${currentAssessmentSet.length}</span>
+            </div>
+          </div>
+          <div class="assessment-outcome-group">
+            <h4>Best next move</h4>
+            <div class="assessment-outcome-row">
+              <span class="assessment-outcome-chip assessment-outcome-chip-correct">${moveScore}/${currentAssessmentSet.length}</span>
+            </div>
+          </div>
+          <div class="assessment-outcome-group">
+            <h4>Perfect scenarios</h4>
+            <div class="assessment-outcome-row">
+              <span class="assessment-outcome-chip assessment-outcome-chip-correct">${perfectCount}/${currentAssessmentSet.length}</span>
+            </div>
+          </div>
+          <div class="assessment-outcome-group">
+            <h4>What to do next</h4>
+            <p class="muted">Review the misses for patterns. If the label is right but the move is weak, the site section you need is usually practice or countermoves rather than definitions.</p>
+          </div>
+        </div>
+        <div class="category-grid" style="margin-top: 18px;">
+          ${reviewCards.join("")}
+        </div>`;
+      assessmentResultsNode.classList.remove("hidden");
+      assessmentResultsNode.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  assessmentNewButton?.addEventListener("click", loadAssessmentSet);
+  assessmentGradeButton?.addEventListener("click", gradeAssessmentSet);
+  loadAssessmentSet();
+}

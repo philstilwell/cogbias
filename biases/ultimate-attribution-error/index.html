@@ -24,7 +24,7 @@
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
                 <h1 class="brand-title">CogBias</h1>
-                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="../../biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="../../">Home</a><a href="../../biases/" aria-current="page">All Biases</a><a href="../../categories/">Categories</a><a href="../../paths/">Paths</a><a href="../../countermoves/">Countermoves</a><a href="../../check-yourself/">Check Yourself</a><a href="../../prompts/">Prompts</a><a href="../../theory/">Theory</a><a href="../../about/">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="../../">Home</a><a href="../../biases/" aria-current="page">All Biases</a><a href="../../categories/">Categories</a><a href="../../paths/">Paths</a><a href="../../countermoves/">Countermoves</a><a href="../../check-yourself/">Check Yourself</a><a href="../../assessment/">Assessment</a><a href="../../prompts/">Prompts</a><a href="../../theory/">Theory</a><a href="../../about/">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -94,6 +94,20 @@
 
         <div class="two-column section-block">
           <div class="note-panel">
+            <h4>Quick check</h4>
+            <p class="muted">What story about cause, blame, or intention feels satisfying here that may be outpacing the evidence?</p>
+          </div>
+          <div class="note-panel">
+            <h4>Mechanism snapshot</h4>
+            <p class="muted">Wikipedia groups this bias under causal attribution and the self-perspective pattern, which suggests a distortion driven by the bias is intensified by self-protection, ego, identity, or asymmetry between self and others.</p>
+          </div>
+        </div>
+
+        
+
+        
+        <div class="two-column section-block">
+          <div class="note-panel">
             <h4>How this entry is classified</h4>
             <ul class="muted">
               <li><strong>Causal Attribution:</strong> These biases bend explanations about why events happened and who or what caused them.</li>
@@ -101,10 +115,12 @@
             </ul>
           </div>
           <div class="note-panel">
-            <h4>Mechanism snapshot</h4>
-            <p class="muted">Wikipedia groups this bias under causal attribution and the self-perspective pattern, which suggests a distortion driven by the bias is intensified by self-protection, ego, identity, or asymmetry between self and others.</p>
+            <h4>Reference use</h4>
+            <p class="muted">Use the quick check and reflection questions before locking the label. Nearby entries often share the same outer appearance while differing in what actually drives the distortion.</p>
           </div>
         </div>
+
+        
 
         <section class="section-block">
           <div class="section-header">
@@ -167,9 +183,32 @@
         </section>
 
         <section class="detail-section section-block">
-          <p class="eyebrow">Counter It</p>
-          <h2 class="section-title">From naming to interruption</h2>
-          <p class="section-copy">The goal is not just to recognize the label, but to change what happens next in the reasoning process.</p>
+          <p class="eyebrow">Practice And Repair</p>
+          <h2 class="section-title">Follow the drift, then interrupt it</h2>
+          <p class="section-copy">Follow the moment where the bias first becomes attractive, then track how that attraction turns into a distorted judgment before jumping straight to the label.</p>
+          <div class="category-grid">
+            
+                  <article class="category-card">
+                    <h3>Trigger</h3>
+                    <p class="card-copy">Situations where causal attribution is already difficult and the self-perspective cue feels easier to trust than a fuller review.</p>
+                  </article>
+                  <article class="category-card">
+                    <h3>Felt certainty</h3>
+                    <p class="card-copy">The first coherent reading starts to feel like ordinary good judgment from the inside.</p>
+                  </article>
+                  <article class="category-card">
+                    <h3>Distortion</h3>
+                    <p class="card-copy">Biases that bend explanations about why events happened and who or what caused them.</p>
+                  </article>
+                  <article class="category-card">
+                    <h3>Reset</h3>
+                    <p class="card-copy">Start with the causal attribution question instead of the first intuitive answer, then check whether the self-perspective pattern is doing invisible work.</p>
+                  </article>
+          </div>
+          <div class="note-panel" style="margin-top: 18px;">
+            <h4>Repair question</h4>
+            <p class="muted">What story about cause, blame, or intention feels satisfying here that may be outpacing the evidence?</p>
+          </div>
           <div class="lab-tab-shell" data-tab-group>
             <div class="lab-tablist" role="tablist" aria-label="Bias practice tabs">
               <button class="lab-tab" type="button" data-tab-button>Spot It</button>
@@ -236,6 +275,8 @@
           </div>
         </section>
 
+        
+
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -265,8 +306,17 @@
                 
               </div>
             </article>
+            <article class="category-card">
+              <h3>Assessment</h3>
+              <p class="card-copy">A mixed scenario set that can quietly pull this bias into the question bank without announcing the answer in the title first.</p>
+              <div class="path-link-row">
+                <a class="path-link-chip" href="../../assessment/?focus=ultimate-attribution-error">Open a mixed assessment set that includes this bias</a>
+              </div>
+            </article>
           </div>
         </section>
+
+        
 
         <section class="section-block">
           <div class="section-header">
@@ -374,7 +424,7 @@
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>

@@ -24,7 +24,7 @@
               <div>
                 <p class="brand-kicker">Cognitive Biases</p>
                 <h1 class="brand-title">CogBias</h1>
-                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, self-audits, and debiasing tools.</p>
+                <p class="brand-subtitle">A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.</p>
               </div>
             </div>
             <form class="site-search-form" role="search" action="../biases/" method="get">
@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../paths/">Paths</a><a href="../countermoves/">Countermoves</a><a href="../check-yourself/">Check Yourself</a><a href="../prompts/">Prompts</a><a href="../theory/">Theory</a><a href="../about/" aria-current="page">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="../">Home</a><a href="../biases/">All Biases</a><a href="../categories/">Categories</a><a href="../paths/">Paths</a><a href="../countermoves/">Countermoves</a><a href="../check-yourself/">Check Yourself</a><a href="../assessment/">Assessment</a><a href="../prompts/">Prompts</a><a href="../theory/">Theory</a><a href="../about/" aria-current="page">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -62,7 +62,8 @@
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_sections.json</code> for the guided layers.</li>
+              <li><code>data/entry_teaching_modules.json</code> and <code>data/assessment_bank.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
+              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_articles.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
@@ -86,7 +87,7 @@
             </div>
             <div class="note-panel">
               <h4>Add</h4>
-              <ul class="muted"><li>Pattern pages alongside category pages</li><li>Source links back to the Wikipedia seed taxonomy</li><li>Image placeholders on detail pages</li><li>A more extensive imported catalog with future editorial layering</li></ul>
+              <ul class="muted"><li>Pattern pages alongside category pages</li><li>Source links back to the Wikipedia seed taxonomy</li><li>Image placeholders on detail pages</li><li>A more extensive imported catalog with future editorial layering</li><li>Mixed scenario assessment and flagship-page teaching modules</li></ul>
             </div>
             <div class="note-panel">
               <h4>Defer</h4>
@@ -99,7 +100,7 @@
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_sections.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>

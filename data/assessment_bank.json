@@ -1,0 +1,290 @@
+[
+  {
+    "id": "assessment-001",
+    "title": "The first number in the room",
+    "scenario": "A product team sees one early retention number from a tiny pilot and keeps comparing every later forecast to that first number, even after much larger cohorts come in.",
+    "biasOptions": ["anchoring-effect", "availability-heuristic", "base-rate-neglect", "confirmation-bias"],
+    "correctBias": "anchoring-effect",
+    "moveOptions": [
+      "Write an independent estimate from the larger cohorts before looking back at the first number.",
+      "Collect only the most memorable customer stories from the pilot.",
+      "Leave the original dashboard untouched so the team stays consistent.",
+      "Judge the pilot by whether the founders still like the concept."
+    ],
+    "correctMove": "Write an independent estimate from the larger cohorts before looking back at the first number.",
+    "biasExplanation": "The opening retention figure is acting as the anchor for later judgment even after better evidence arrives.",
+    "moveExplanation": "A fresh estimate breaks the first number's grip and forces the team to re-center on the stronger dataset."
+  },
+  {
+    "id": "assessment-002",
+    "title": "The vivid customer profile",
+    "scenario": "A hiring panel hears a candidate described as reflective, bookish, and methodical and starts treating that profile as strong evidence that the person is more likely to be a data analyst than a salesperson, even though far more applicants in the pool are salespeople.",
+    "biasOptions": ["base-rate-neglect", "framing-effect", "fundamental-attribution-error", "status-quo-bias"],
+    "correctBias": "base-rate-neglect",
+    "moveOptions": [
+      "Start with the population proportions and then ask how much the profile should actually update them.",
+      "Ignore the applicant's background entirely and decide at random.",
+      "Use the first impression because it feels more human than the statistics.",
+      "Treat the job title as the only meaningful information."
+    ],
+    "correctMove": "Start with the population proportions and then ask how much the profile should actually update them.",
+    "biasExplanation": "The rich case description is being allowed to swallow the background rate that should frame the inference.",
+    "moveExplanation": "The right repair is to restore the prior distribution before letting the case-specific evidence move it."
+  },
+  {
+    "id": "assessment-003",
+    "title": "Research with a favorite answer",
+    "scenario": "A manager asks for evidence about remote work, opens five articles supporting the policy she already prefers, and stops there because the picture now feels clear enough.",
+    "biasOptions": ["confirmation-bias", "availability-heuristic", "loss-aversion", "groupthink"],
+    "correctBias": "confirmation-bias",
+    "moveOptions": [
+      "Require at least one serious disconfirming search path before the review is considered complete.",
+      "Choose the articles that were published most recently and stop there.",
+      "Invite only people who already agree with the policy to comment.",
+      "Assume the first five links are representative because search engines are neutral."
+    ],
+    "correctMove": "Require at least one serious disconfirming search path before the review is considered complete.",
+    "biasExplanation": "The search process is protecting a favored answer rather than testing it against live alternatives.",
+    "moveExplanation": "A disconfirming search path changes the exercise from evidence collection in favor of a view to an actual test of that view."
+  },
+  {
+    "id": "assessment-004",
+    "title": "The headline that feels like the trend",
+    "scenario": "After two heavily covered shark attacks, a family starts talking as if beach vacations have become unusually dangerous in general, even though they have not looked at any broader rate information.",
+    "biasOptions": ["availability-heuristic", "overconfidence-effect", "default-effect", "self-serving-bias"],
+    "correctBias": "availability-heuristic",
+    "moveOptions": [
+      "Put the vivid incidents next to actual risk rates before treating recall strength as prevalence.",
+      "Use the most emotionally powerful example because it is probably the safest guide.",
+      "Cancel the vacation and then search for reasons afterward.",
+      "Keep discussing only the stories that were easiest to remember."
+    ],
+    "correctMove": "Put the vivid incidents next to actual risk rates before treating recall strength as prevalence.",
+    "biasExplanation": "Memorable cases are being mistaken for evidence that the broader risk environment has shifted dramatically.",
+    "moveExplanation": "A prevalence check prevents vivid recall from impersonating representative evidence."
+  },
+  {
+    "id": "assessment-005",
+    "title": "The brave launch date",
+    "scenario": "A team estimates a new feature can ship in three weeks because the current task list looks manageable, even though the last four comparable projects all ran for at least seven weeks.",
+    "biasOptions": ["planning-fallacy", "hindsight-bias", "default-effect", "implicit-bias"],
+    "correctBias": "planning-fallacy",
+    "moveOptions": [
+      "Bring in the historical cycle time for similar work before endorsing the inside-story estimate.",
+      "Ignore the past projects because this team feels unusually motivated.",
+      "Keep the short date because longer estimates reduce morale.",
+      "Ask only the engineers closest to the feature because they know the details best."
+    ],
+    "correctMove": "Bring in the historical cycle time for similar work before endorsing the inside-story estimate.",
+    "biasExplanation": "The estimate is being driven by the internal plan rather than by the outside view of similar projects.",
+    "moveExplanation": "Reference-class evidence is the cleanest first correction for an inside-story schedule that looks too tidy."
+  },
+  {
+    "id": "assessment-006",
+    "title": "The option that sounds like surrender",
+    "scenario": "A team rejects a strong software migration because the discussion keeps circling around what the team would lose by giving up the old workflow, while barely discussing the gains from the new one.",
+    "biasOptions": ["loss-aversion", "reactance", "false-consensus-effect", "spotlight-effect"],
+    "correctBias": "loss-aversion",
+    "moveOptions": [
+      "Rewrite the same decision as both a gain frame and a loss frame before choosing.",
+      "Describe the old tool in even more nostalgic language.",
+      "Ask who first suggested the migration and then judge the idea by that person.",
+      "Treat every short-term disruption as proof that the migration is a bad idea."
+    ],
+    "correctMove": "Rewrite the same decision as both a gain frame and a loss frame before choosing.",
+    "biasExplanation": "The downside language is owning the comparison, which makes equivalent long-run gains look less serious than the felt forfeiture.",
+    "moveExplanation": "A frame flip exposes whether the judgment is tracking actual asymmetry or just the emotional force of loss."
+  },
+  {
+    "id": "assessment-007",
+    "title": "Lives saved versus lives lost",
+    "scenario": "The same medical policy gets much stronger support when it is described as saving 90 of 100 patients than when it is described as allowing 10 of 100 patients to die.",
+    "biasOptions": ["framing-effect", "authority-bias", "dunning-kruger-effect", "normalcy-bias"],
+    "correctBias": "framing-effect",
+    "moveOptions": [
+      "Restate the policy in neutral language and in the opposite frame before trusting the reaction.",
+      "Keep the more emotionally effective wording because persuasion is the same as evidence.",
+      "Avoid all numerical language and rely on intuition instead.",
+      "Let the hospital's most senior doctor decide which description sounds right."
+    ],
+    "correctMove": "Restate the policy in neutral language and in the opposite frame before trusting the reaction.",
+    "biasExplanation": "The underlying option is the same, but wording alone is pulling judgment in different directions.",
+    "moveExplanation": "Alternative framings make it easier to tell whether the response belongs to the substance or the staging."
+  },
+  {
+    "id": "assessment-008",
+    "title": "A room that converges too quickly",
+    "scenario": "A strategy meeting seems settled within ten minutes after the founder speaks. Several people privately have doubts, but no one wants to be the person who slows the room down.",
+    "biasOptions": ["groupthink", "availability-heuristic", "mere-exposure-effect", "projection-bias"],
+    "correctBias": "groupthink",
+    "moveOptions": [
+      "Collect private first-pass judgments and give the strongest objection a protected turn before closing discussion.",
+      "Speed the decision up so hesitation does not damage team energy.",
+      "Treat silence as evidence that the case has been answered.",
+      "Ask the founder to restate the position more forcefully."
+    ],
+    "correctMove": "Collect private first-pass judgments and give the strongest objection a protected turn before closing discussion.",
+    "biasExplanation": "The group is drifting toward social convergence before it has earned evidential convergence.",
+    "moveExplanation": "Independent first passes and protected dissent make it harder for harmony to impersonate soundness."
+  },
+  {
+    "id": "assessment-009",
+    "title": "The title settles it",
+    "scenario": "A board member starts accepting a recommendation mainly because it came from a famous consultant, even though the consultant's real expertise is only loosely connected to the issue at hand.",
+    "biasOptions": ["authority-bias", "ingroup-bias", "present-bias", "framing-effect"],
+    "correctBias": "authority-bias",
+    "moveOptions": [
+      "Strip the source label from the recommendation and evaluate the reasons on their own merits.",
+      "Ask whether the consultant sounds confident enough to justify the conclusion.",
+      "Give even more weight to prestige because time is limited.",
+      "Assume disagreement would be disrespectful."
+    ],
+    "correctMove": "Strip the source label from the recommendation and evaluate the reasons on their own merits.",
+    "biasExplanation": "Status is being treated like issue-specific evidence even though domain fit is weak.",
+    "moveExplanation": "Removing the prestige marker helps the board separate borrowed credibility from actual support."
+  },
+  {
+    "id": "assessment-010",
+    "title": "The preselected box",
+    "scenario": "Most employees stay enrolled in an expensive benefit package they rarely use because it arrives preselected in the annual renewal form.",
+    "biasOptions": ["default-effect", "confirmation-bias", "optimism-bias", "belief-bias"],
+    "correctBias": "default-effect",
+    "moveOptions": [
+      "Rewrite the default as one explicit option and compare it directly against the alternatives.",
+      "Keep the current setup because preselection usually means the best option was chosen already.",
+      "Make the form longer so switching feels even more deliberate.",
+      "Assume that nonresponse is the same as informed consent."
+    ],
+    "correctMove": "Rewrite the default as one explicit option and compare it directly against the alternatives.",
+    "biasExplanation": "The preselected option is receiving extra legitimacy simply because the architecture put it there first.",
+    "moveExplanation": "Treating the default as just another option exposes whether it is actually best or merely easiest."
+  },
+  {
+    "id": "assessment-011",
+    "title": "Doing nothing feels cleaner",
+    "scenario": "A committee knows an old process is causing regular low-level harm, but members still prefer leaving it untouched because changing it would make them feel more directly responsible if anything went wrong during the transition.",
+    "biasOptions": ["omission-bias", "mere-exposure-effect", "halo-effect", "curse-of-knowledge"],
+    "correctBias": "omission-bias",
+    "moveOptions": [
+      "Compare the consequences of action and inaction side by side instead of treating inaction as neutral.",
+      "Assume the existing process is morally safer because no new motion is being introduced.",
+      "Look for a more vivid example of the harm and then stop there.",
+      "Ask only whether the transition would be embarrassing."
+    ],
+    "correctMove": "Compare the consequences of action and inaction side by side instead of treating inaction as neutral.",
+    "biasExplanation": "Inaction is being granted moral and causal innocence it does not deserve.",
+    "moveExplanation": "Putting both paths on the page forces the committee to own what the do-nothing option actively preserves."
+  },
+  {
+    "id": "assessment-012",
+    "title": "It was obvious all along",
+    "scenario": "After a vendor fails badly, people in the postmortem begin talking as if the warning signs made the collapse easy to foresee, even though no one had written those concerns down before the failure.",
+    "biasOptions": ["hindsight-bias", "groupthink", "self-serving-bias", "mere-exposure-effect"],
+    "correctBias": "hindsight-bias",
+    "moveOptions": [
+      "Recover the original forecasts and assumptions before retelling the story of what should have been obvious.",
+      "Trust the clearest current narrative because the outcome proved which details mattered.",
+      "Treat the final result as the best measure of how good the earlier judgment was.",
+      "Let the loudest critic reconstruct the whole timeline."
+    ],
+    "correctMove": "Recover the original forecasts and assumptions before retelling the story of what should have been obvious.",
+    "biasExplanation": "The known outcome is flattening how much uncertainty the group actually had beforehand.",
+    "moveExplanation": "A timestamped record is the cleanest defense against retrospective memory smoothing."
+  },
+  {
+    "id": "assessment-013",
+    "title": "He is just that kind of person",
+    "scenario": "A manager sees a normally reliable employee snap in a meeting and immediately starts describing the person as unstable and disrespectful without asking what pressures or constraints may have been in play that day.",
+    "biasOptions": ["fundamental-attribution-error", "availability-heuristic", "loss-aversion", "projection-bias"],
+    "correctBias": "fundamental-attribution-error",
+    "moveOptions": [
+      "Describe the behavior first and then list serious situational explanations before moving to trait judgment.",
+      "Treat the visible behavior as the most honest window into character.",
+      "Ask whether other team members also dislike the employee.",
+      "Use the most recent meeting as the whole basis for judgment."
+    ],
+    "correctMove": "Describe the behavior first and then list serious situational explanations before moving to trait judgment.",
+    "biasExplanation": "The manager is turning a behavior into a character explanation before the situational field has been inspected.",
+    "moveExplanation": "Separating behavior from inference is the first protection against premature trait inflation."
+  },
+  {
+    "id": "assessment-014",
+    "title": "The range is too neat",
+    "scenario": "A forecaster says she is 95 percent sure quarterly sales will land between two numbers that are only a few percentage points apart, even though the market is highly unstable and several major assumptions are unresolved.",
+    "biasOptions": ["overconfidence-effect", "naive-realism", "mere-exposure-effect", "spotlight-effect"],
+    "correctBias": "overconfidence-effect",
+    "moveOptions": [
+      "Widen the range once for unmodeled uncertainty and compare it with historical forecast miss rates.",
+      "Keep the narrow range because precise numbers sound more professional.",
+      "Replace the range with a single-point estimate.",
+      "Judge the forecast by how fluent the explanation sounds."
+    ],
+    "correctMove": "Widen the range once for unmodeled uncertainty and compare it with historical forecast miss rates.",
+    "biasExplanation": "The certainty being expressed is tighter than the uncertainty in the evidence base justifies.",
+    "moveExplanation": "Calibration improves when forecasters confront how often similar ranges have actually contained the result."
+  },
+  {
+    "id": "assessment-015",
+    "title": "The other side is just biased",
+    "scenario": "Two teams read the same incident report and each one experiences its own interpretation as simply the facts, while treating the other team's interpretation as evidence of bad faith or obvious bias.",
+    "biasOptions": ["naive-realism", "planning-fallacy", "default-effect", "present-bias"],
+    "correctBias": "naive-realism",
+    "moveOptions": [
+      "Ask each side to state the strongest intelligent version of the rival interpretation before judging motives.",
+      "Pick the interpretation held by the larger team because it is probably more objective.",
+      "Focus only on which side sounds more annoyed.",
+      "Assume that disagreement itself proves bad faith."
+    ],
+    "correctMove": "Ask each side to state the strongest intelligent version of the rival interpretation before judging motives.",
+    "biasExplanation": "Each group is experiencing its own reading as reality itself rather than as one interpretation among several.",
+    "moveExplanation": "Steelmanning the rival reading is the quickest way to make interpretation visible again."
+  },
+  {
+    "id": "assessment-016",
+    "title": "We have already invested too much",
+    "scenario": "A department keeps a failing internal tool because abandoning it now would make earlier budget and prestige commitments feel wasted, even though a cleaner replacement is available.",
+    "biasOptions": ["sunk-cost-effect", "hostile-attribution-bias", "social-desirability-bias", "belief-bias"],
+    "correctBias": "sunk-cost-effect",
+    "moveOptions": [
+      "Re-evaluate the choice from today forward and ask what you would do if the past investment could not be recovered.",
+      "Increase the investment so the earlier spending looks more justified.",
+      "Keep the tool because changing course would send the wrong signal.",
+      "Judge the replacement mainly by how new and unfamiliar it feels."
+    ],
+    "correctMove": "Re-evaluate the choice from today forward and ask what you would do if the past investment could not be recovered.",
+    "biasExplanation": "Past cost is being treated as a reason to continue even though it cannot be recovered by continuing.",
+    "moveExplanation": "A forward-looking reframe helps separate commitment from value."
+  },
+  {
+    "id": "assessment-017",
+    "title": "The team will still feel this way next quarter",
+    "scenario": "Leaders approve an intense volunteer initiative while enthusiasm is high and assume the same energy will still be present months later when the difficult maintenance work begins.",
+    "biasOptions": ["projection-bias", "default-effect", "groupthink", "hindsight-bias"],
+    "correctBias": "projection-bias",
+    "moveOptions": [
+      "Revisit the commitment after the emotional peak passes and ask what a more ordinary future mood will sustain.",
+      "Lock the decision immediately so the current excitement cannot fade.",
+      "Treat present motivation as the best guide to all future motivation.",
+      "Ask only the most enthusiastic volunteers how long the energy will last."
+    ],
+    "correctMove": "Revisit the commitment after the emotional peak passes and ask what a more ordinary future mood will sustain.",
+    "biasExplanation": "Current enthusiasm is being projected onto a future self and future team state that may not share it.",
+    "moveExplanation": "A second-pass decision protects against building long commitments on temporary psychological weather."
+  },
+  {
+    "id": "assessment-018",
+    "title": "Nothing this disruptive ever happens here",
+    "scenario": "A local organization delays emergency planning because the imagined disruption still feels too unreal compared with its ordinary routines, even though several leading indicators are worsening.",
+    "biasOptions": ["normalcy-bias", "false-consensus-effect", "dunning-kruger-effect", "halo-effect"],
+    "correctBias": "normalcy-bias",
+    "moveOptions": [
+      "Set concrete tripwires for action before the disruption feels normal enough to respond to.",
+      "Wait for the situation to become undeniable before discussing preparation.",
+      "Treat the recent past as the best evidence that the future will be similar.",
+      "Focus only on the most reassuring interpretation of the warning signals."
+    ],
+    "correctMove": "Set concrete tripwires for action before the disruption feels normal enough to respond to.",
+    "biasExplanation": "The familiar baseline is being protected against the evidence of disruption because continuity still feels more real.",
+    "moveExplanation": "Tripwires shift action thresholds from felt normality to explicit indicators."
+  }
+]
