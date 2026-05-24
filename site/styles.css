@@ -2389,6 +2389,19 @@ img {
   line-height: 1.1;
 }
 
+.bias-map-detail h4 a {
+  color: inherit;
+  text-decoration-color: rgba(47, 130, 194, 0.35);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+.bias-map-detail h4 a:hover,
+.bias-map-detail h4 a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration-color: currentColor;
+}
+
 .bias-map-detail-category {
   display: inline-flex;
   align-items: center;

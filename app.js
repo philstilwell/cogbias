@@ -330,7 +330,7 @@ if (biasMapShell && biasMapDataNode) {
 
     biasMapDetail.innerHTML = `
       <p class="eyebrow">Selected bias</p>
-      <h4>${escapeHtml(point.name)}</h4>
+      <h4><a href="../${escapeHtml(point.href)}">${escapeHtml(point.name)}</a></h4>
       <p class="bias-map-detail-category">
         <span class="bias-map-swatch" style="--map-color:${escapeHtml(point.color)};"></span>
         ${escapeHtml(point.category)}
