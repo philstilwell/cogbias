@@ -2225,8 +2225,8 @@ function renderBiasDetailPage(entry) {
         <section class="section-block">
           <div class="section-header">
             <div>
-              <h2 class="section-title">That's like saying...</h2>
-              <p class="section-copy">Analogies make the hidden shape of the distortion visible before the technical label has to do all the work.</p>
+              <h2 class="section-title">What's happening here.</h2>
+              <p class="section-copy">This comparison makes the hidden pull easier to see before the technical label has to do all the work.</p>
             </div>
           </div>
           <div class="analogy-grid">
