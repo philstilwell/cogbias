@@ -4,6 +4,7 @@
   <url><loc>https://cogbias.site/biases/</loc></url>
   <url><loc>https://cogbias.site/categories/</loc></url>
   <url><loc>https://cogbias.site/patterns/</loc></url>
+  <url><loc>https://cogbias.site/contexts/</loc></url>
   <url><loc>https://cogbias.site/paths/</loc></url>
   <url><loc>https://cogbias.site/check-yourself/</loc></url>
   <url><loc>https://cogbias.site/assessment/</loc></url>
@@ -264,6 +265,11 @@
   <url><loc>https://cogbias.site/patterns/inertia/</loc></url>
   <url><loc>https://cogbias.site/patterns/outcome/</loc></url>
   <url><loc>https://cogbias.site/patterns/self-perspective/</loc></url>
+  <url><loc>https://cogbias.site/contexts/news-reading/</loc></url>
+  <url><loc>https://cogbias.site/contexts/teams-and-meetings/</loc></url>
+  <url><loc>https://cogbias.site/contexts/teaching-and-learning/</loc></url>
+  <url><loc>https://cogbias.site/contexts/relationships/</loc></url>
+  <url><loc>https://cogbias.site/contexts/product-ux/</loc></url>
   <url><loc>https://cogbias.site/paths/start-here/</loc></url>
   <url><loc>https://cogbias.site/paths/decision-under-uncertainty/</loc></url>
   <url><loc>https://cogbias.site/paths/evidence-and-explanation/</loc></url>

@@ -437,6 +437,20 @@ img {
     #fff;
 }
 
+.domain-hub-card,
+.domain-workflow-card {
+  background:
+    linear-gradient(180deg, rgba(211, 161, 38, 0.12), transparent 54%),
+    #fff;
+}
+
+.domain-hub-hero {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(211, 161, 38, 0.14), transparent 24%),
+    radial-gradient(circle at 12% 82%, rgba(130, 210, 255, 0.16), transparent 26%),
+    #fff;
+}
+
 .source-card {
   background:
     linear-gradient(180deg, rgba(47, 130, 194, 0.08), transparent 48%),

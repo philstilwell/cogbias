@@ -1,0 +1,257 @@
+[
+  {
+    "slug": "news-reading",
+    "title": "Biases In News Reading",
+    "summary": "A domain hub for reading headlines, breaking stories, threads, commentary, and corrections without letting vividness or repetition become evidence.",
+    "audience": "Readers, students, moderators, journalists, teachers, and anyone who wants better media-literacy habits.",
+    "guidingQuestion": "Is this story changing what I know, or mostly changing what feels available, repeated, tribal, or urgent?",
+    "scenario": "Use this hub when a claim is moving quickly, emotionally, or repeatedly and you need to slow the jump from exposure to belief.",
+    "biasSlugs": [
+      "availability-heuristic",
+      "availability-cascade",
+      "continued-influence-effect",
+      "illusory-truth-effect",
+      "confirmation-bias",
+      "motivated-reasoning",
+      "base-rate-neglect",
+      "survivorship-bias",
+      "negativity-bias",
+      "apophenia",
+      "frequency-illusion",
+      "clustering-illusion"
+    ],
+    "pathSlugs": ["evidence-and-explanation", "misinformation-memory-and-crowds", "conflict-threat-and-tribe"],
+    "selfCheckSlugs": ["before-you-share-the-story", "before-you-trust-the-repeat", "before-you-read-hostility-into-it"],
+    "promptSlugs": ["media-narrative-bias-scan", "misinformation-residue-scan"],
+    "workflow": [
+      {
+        "label": "Separate exposure from evidence",
+        "text": "Write what you actually learned from the item, then write what merely became more vivid or easier to recall."
+      },
+      {
+        "label": "Restore the denominator",
+        "text": "Ask what base rate, comparison group, missing sample, or non-newsworthy background rate would change the interpretation."
+      },
+      {
+        "label": "Track correction quality",
+        "text": "If a correction appears, check whether it replaces the old causal story or only subtracts the false claim."
+      }
+    ],
+    "watchFor": [
+      "Anecdotes that feel like trends before the denominator appears.",
+      "Corrections that leave the original explanatory frame intact.",
+      "Claims that feel stronger because many outlets are repeating the same weak source.",
+      "Stories that make an opponent's motives feel obvious faster than the facts justify."
+    ],
+    "starterProtocol": [
+      "Read the headline and write the implied causal story in one sentence.",
+      "Name the strongest missing denominator or comparison class.",
+      "Search for one disconfirming or context-widening source before sharing.",
+      "Use the media-narrative prompt only after you have pasted the exact claim or passage."
+    ]
+  },
+  {
+    "slug": "teams-and-meetings",
+    "title": "Biases In Teams And Meetings",
+    "summary": "A hub for rooms where agreement, hierarchy, speed, and social comfort can quietly replace independent judgment.",
+    "audience": "Managers, facilitators, leadership teams, boards, classrooms, and project groups.",
+    "guidingQuestion": "Is the room converging because the case is strong, or because dissent has become socially expensive?",
+    "scenario": "Use this hub before decisions, retrospectives, hiring discussions, strategy reviews, or any meeting where the group feels settled too quickly.",
+    "biasSlugs": [
+      "groupthink",
+      "authority-bias",
+      "social-desirability-bias",
+      "false-consensus-effect",
+      "shared-information-bias",
+      "bandwagon-effect",
+      "status-quo-bias",
+      "action-bias",
+      "self-serving-bias",
+      "outcome-bias",
+      "fundamental-attribution-error",
+      "halo-effect"
+    ],
+    "pathSlugs": ["social-pressure-and-belonging", "decision-under-uncertainty", "after-the-outcome", "people-judgment"],
+    "selfCheckSlugs": ["before-you-go-with-the-room", "before-you-decide", "before-you-explain-what-happened", "before-you-judge-a-person"],
+    "promptSlugs": ["groupthink-meeting-scan", "decision-debias-brief", "forecast-and-postmortem-pair"],
+    "workflow": [
+      {
+        "label": "Collect independent first passes",
+        "text": "Have people write forecasts, concerns, and preferred options before the highest-status voice frames the room."
+      },
+      {
+        "label": "Protect the strongest objection",
+        "text": "Give the most plausible dissenting case a scheduled turn even when the room already feels aligned."
+      },
+      {
+        "label": "Separate outcome from process",
+        "text": "In reviews, ask whether the decision process was good before deciding whether the result made it look good."
+      }
+    ],
+    "watchFor": [
+      "Silence being counted as agreement.",
+      "A senior person's early view becoming the comparison point for every later comment.",
+      "Visible action being rewarded before diagnosis is finished.",
+      "Postmortems that explain wins as skill and losses as circumstance."
+    ],
+    "starterProtocol": [
+      "Open with private written judgments, not discussion.",
+      "Ask for the best reason the current plan could fail.",
+      "Assign someone to track unshared information and missing alternatives.",
+      "Close by recording the decision rule, not just the decision."
+    ]
+  },
+  {
+    "slug": "teaching-and-learning",
+    "title": "Biases In Teaching And Learning",
+    "summary": "A hub for classrooms, coaching, tutoring, and curriculum design where fluency, familiarity, and confidence can impersonate understanding.",
+    "audience": "Teachers, professors, tutors, instructional designers, coaches, parents, and learners.",
+    "guidingQuestion": "Can the learner use the idea in a new case, or only recognize it when the surrounding cues are familiar?",
+    "scenario": "Use this hub when a lesson feels clear, a student sounds confident, or a group seems to understand before transfer has been tested.",
+    "biasSlugs": [
+      "illusion-of-explanatory-depth",
+      "dunning-kruger-effect",
+      "overconfidence-effect",
+      "curse-of-knowledge",
+      "fluency-heuristic",
+      "illusion-of-learning",
+      "testing-effect",
+      "spacing-effect",
+      "hindsight-bias",
+      "spotlight-effect",
+      "social-desirability-bias",
+      "confirmation-bias"
+    ],
+    "pathSlugs": ["confidence-and-understanding", "start-here", "self-justification-and-meta-bias"],
+    "selfCheckSlugs": ["before-you-call-it-obvious", "before-you-predict", "before-you-go-with-the-room"],
+    "promptSlugs": ["explanation-depth-probe", "people-judgment-scan"],
+    "workflow": [
+      {
+        "label": "Test explanation, not recognition",
+        "text": "Ask for a step-by-step mechanism and a transfer case before counting fluency as mastery."
+      },
+      {
+        "label": "Make expert blind spots visible",
+        "text": "Force yourself to name the missing bridge a novice would need, not the shortcut an expert can safely take."
+      },
+      {
+        "label": "Use retrieval as evidence",
+        "text": "Prefer low-stakes retrieval, spacing, and application over the feeling that rereading made the concept familiar."
+      }
+    ],
+    "watchFor": [
+      "Students nodding because the example is familiar, not because the structure is understood.",
+      "Teachers skipping steps that feel too obvious from the expert side.",
+      "Confidence rising after exposure but before retrieval or transfer.",
+      "Learners reporting understanding because admitting confusion is socially costly."
+    ],
+    "starterProtocol": [
+      "Ask the learner to explain the mechanism without the original example.",
+      "Give one near-transfer and one far-transfer question.",
+      "Have the teacher list assumptions hidden in the explanation.",
+      "End with a short retrieval prompt scheduled for later."
+    ]
+  },
+  {
+    "slug": "relationships",
+    "title": "Biases In Relationships",
+    "summary": "A hub for friendships, families, couples, workplaces, and communities where self-protection, motive reading, and memory repair can bend interpretation.",
+    "audience": "People handling conflict, trust repair, family decisions, mentoring, coaching, or emotionally loaded conversations.",
+    "guidingQuestion": "Am I reading the other person, the situation, or my own need for the story to protect me?",
+    "scenario": "Use this hub when a disagreement is becoming a character verdict, when old memories are getting recruited, or when one person's motives suddenly feel obvious.",
+    "biasSlugs": [
+      "fundamental-attribution-error",
+      "hostile-attribution-bias",
+      "naive-realism",
+      "egocentric-bias",
+      "self-serving-bias",
+      "false-consensus-effect",
+      "projection-bias",
+      "halo-effect",
+      "negativity-bias",
+      "spotlight-effect",
+      "cognitive-dissonance",
+      "choice-supportive-bias"
+    ],
+    "pathSlugs": ["people-judgment", "conflict-threat-and-tribe", "self-justification-and-meta-bias", "after-the-outcome"],
+    "selfCheckSlugs": ["before-you-judge-a-person", "before-you-read-hostility-into-it", "before-you-tidy-the-story"],
+    "promptSlugs": ["conflict-interpretation-reset", "people-judgment-scan", "self-justification-conflict-probe"],
+    "workflow": [
+      {
+        "label": "Separate behavior from motive",
+        "text": "Describe what happened in observable terms before choosing a motive, trait, or moral story."
+      },
+      {
+        "label": "Run the situation pass",
+        "text": "List pressures, misunderstandings, incentives, fatigue, and constraints before treating the behavior as character."
+      },
+      {
+        "label": "Check self-protection",
+        "text": "Ask what the current story lets you avoid admitting about your own role, need, or uncertainty."
+      }
+    ],
+    "watchFor": [
+      "A single behavior becoming a global trait verdict.",
+      "Your own preference being treated as what any reasonable person would feel.",
+      "Bad intent feeling obvious before situational explanations have been tested.",
+      "Memory becoming cleaner and more self-protective with each retelling."
+    ],
+    "starterProtocol": [
+      "Write the observable behavior without motive language.",
+      "Generate three plausible non-hostile explanations.",
+      "Name one fact that would change your interpretation.",
+      "Choose a next question that lowers heat rather than wins the story."
+    ]
+  },
+  {
+    "slug": "product-ux",
+    "title": "Biases In Product And UX",
+    "summary": "A hub for product decisions, interfaces, pricing, defaults, metrics, and AI-assisted workflows where choice architecture can quietly manufacture preference.",
+    "audience": "Product managers, designers, researchers, founders, growth teams, policy designers, and anyone building decision environments.",
+    "guidingQuestion": "Is the interface helping users express a preference, or shaping the preference before they notice?",
+    "scenario": "Use this hub when the menu, default, metric, recommendation, or comparison structure might be steering users more than informing them.",
+    "biasSlugs": [
+      "default-effect",
+      "framing-effect",
+      "decoy-effect",
+      "anchoring-effect",
+      "contrast-effect",
+      "attribute-substitution",
+      "automation-bias",
+      "surrogation",
+      "action-bias",
+      "loss-aversion",
+      "status-quo-bias",
+      "less-is-better-effect"
+    ],
+    "pathSlugs": ["comparison-traps-and-choice-architecture", "loss-ownership-and-omission", "decision-under-uncertainty"],
+    "selfCheckSlugs": ["before-you-let-the-menu-decide", "before-you-treat-the-default-as-neutral", "before-you-decide"],
+    "promptSlugs": ["choice-architecture-audit-plus", "framing-and-default-audit", "decision-debias-brief"],
+    "workflow": [
+      {
+        "label": "Audit the default",
+        "text": "Treat the current default as one explicit option and ask what case it would need to win without preselection."
+      },
+      {
+        "label": "Strip the decoy and anchor",
+        "text": "Re-run the comparison after removing irrelevant reference prices, dominated options, and first numbers."
+      },
+      {
+        "label": "Protect the target metric",
+        "text": "Ask whether the proxy metric is improving the real user outcome or becoming the thing the team now optimizes."
+      }
+    ],
+    "watchFor": [
+      "A default option being treated as consent or recommendation.",
+      "A third option making one of two main options look better without changing its real value.",
+      "Automation outputs becoming the baseline users stop checking.",
+      "Teams optimizing a visible metric after losing contact with the underlying experience."
+    ],
+    "starterProtocol": [
+      "Name the user's actual decision, not the interface event.",
+      "List every cue that makes one option feel easier, safer, or more normal.",
+      "Remove one cue and ask whether the preference still holds.",
+      "Test the cleaner frame with a user who has not seen the original version."
+    ]
+  }
+]

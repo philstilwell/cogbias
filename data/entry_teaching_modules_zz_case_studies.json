@@ -649,5 +649,239 @@
         "whyItFits": "Internal salience is being misread as public salience."
       }
     ]
+  },
+  {
+    "slug": "availability-heuristic",
+    "caseStudies": [
+      {
+        "title": "Dramatic causes of death feel more common than statistical causes",
+        "source": "Availability heuristic research",
+        "year": "1973",
+        "url": "https://doi.org/10.1016/0010-0285(73)90033-9",
+        "summary": "Tversky and Kahneman's availability work helps explain why dramatic, memorable causes can feel more frequent than quieter statistical causes.",
+        "whyItFits": "Ease of recall is being used as a proxy for real-world prevalence."
+      }
+    ]
+  },
+  {
+    "slug": "continued-influence-effect",
+    "caseStudies": [
+      {
+        "title": "Retractions that subtract the claim but leave the explanation empty",
+        "source": "Psychological Science in the Public Interest",
+        "year": "2012",
+        "url": "https://online225.psych.wisc.edu/wp-content/uploads/225-Master/225-UnitPages/Unit-02/Lewandowsky_PSPI_2012.pdf",
+        "summary": "Misinformation-correction research shows that people may continue using a false causal explanation after a correction, especially when no replacement explanation is supplied.",
+        "whyItFits": "The old frame keeps doing explanatory work after the factual claim has been challenged."
+      }
+    ]
+  },
+  {
+    "slug": "groupthink",
+    "caseStudies": [
+      {
+        "title": "Bay of Pigs planning as a groupthink teaching case",
+        "source": "Victims of Groupthink",
+        "year": "1972",
+        "url": "https://openlibrary.org/books/OL21279371M/Victims_of_groupthink",
+        "summary": "Janis used the Bay of Pigs decision process as a major example of cohesive groups suppressing dissent and overvaluing apparent consensus.",
+        "whyItFits": "Group harmony and leadership pressure can make a plan feel more settled than the evidence warrants."
+      }
+    ]
+  },
+  {
+    "slug": "authority-bias",
+    "caseStudies": [
+      {
+        "title": "Milgram's obedience experiments",
+        "source": "Journal of Abnormal and Social Psychology",
+        "year": "1963",
+        "url": "https://doi.org/10.1037/h0040525",
+        "summary": "Participants often continued administering what they believed were painful shocks when prompted by an experimenter in an authoritative setting.",
+        "whyItFits": "The authority cue changed what participants treated as permissible, expected, and evidentially settled."
+      }
+    ]
+  },
+  {
+    "slug": "social-desirability-bias",
+    "caseStudies": [
+      {
+        "title": "Social-desirability scales in survey measurement",
+        "source": "Journal of Consulting Psychology",
+        "year": "1960",
+        "url": "https://doi.org/10.1037/h0047358",
+        "summary": "The Crowne-Marlowe scale operationalized the tendency to answer in culturally approved ways rather than merely reporting private reality.",
+        "whyItFits": "The answer is partly shaped by the audience and the desire to look acceptable."
+      }
+    ]
+  },
+  {
+    "slug": "false-consensus-effect",
+    "caseStudies": [
+      {
+        "title": "The sandwich-board choice experiment",
+        "source": "Journal of Experimental Social Psychology",
+        "year": "1977",
+        "url": "https://doi.org/10.1016/0022-1031(77)90049-X",
+        "summary": "Participants who agreed or refused to wear a sandwich-board sign each tended to overestimate how many other people would make the same choice.",
+        "whyItFits": "One's own response became a poor estimate of the broader distribution."
+      }
+    ]
+  },
+  {
+    "slug": "curse-of-knowledge",
+    "caseStudies": [
+      {
+        "title": "Informed sellers struggle to model uninformed buyers",
+        "source": "Journal of Political Economy",
+        "year": "1989",
+        "url": "https://doi.org/10.1086/261651",
+        "summary": "Camerer, Loewenstein, and Weber showed that people with privileged information often fail to adjust enough when predicting what less-informed others will infer.",
+        "whyItFits": "Knowing the answer makes the ignorant perspective harder to reconstruct."
+      }
+    ]
+  },
+  {
+    "slug": "illusion-of-explanatory-depth",
+    "caseStudies": [
+      {
+        "title": "Everyday devices seem understood until explanation is required",
+        "source": "Cognitive Science",
+        "year": "2002",
+        "url": "https://doi.org/10.1207/S15516709COG2605_1",
+        "summary": "Participants often rated their understanding of ordinary mechanisms highly until they had to explain how those mechanisms actually worked.",
+        "whyItFits": "Familiarity with the object was mistaken for mechanism-level understanding."
+      }
+    ]
+  },
+  {
+    "slug": "default-effect",
+    "caseStudies": [
+      {
+        "title": "Organ donation defaults and consent rates",
+        "source": "Science",
+        "year": "2003",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14631022/",
+        "summary": "Countries with opt-out organ donation defaults often showed much higher consent rates than opt-in systems, despite the same underlying decision being available.",
+        "whyItFits": "Preselection changes behavior by making one option feel normal, endorsed, or frictionless."
+      }
+    ]
+  },
+  {
+    "slug": "decoy-effect",
+    "caseStudies": [
+      {
+        "title": "Asymmetrically dominated alternatives shift preference",
+        "source": "Journal of Consumer Research",
+        "year": "1982",
+        "url": "https://doi.org/10.1086/208899",
+        "summary": "Adding an inferior option that is close to one target option can increase preference for the target, even when the target itself has not improved.",
+        "whyItFits": "The choice set manufactures preference by changing relative comparison."
+      }
+    ]
+  },
+  {
+    "slug": "automation-bias",
+    "caseStudies": [
+      {
+        "title": "Cockpit decision aids produce omission and commission errors",
+        "source": "International Journal of Aviation Psychology",
+        "year": "1998",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11540946/",
+        "summary": "Automation-bias studies in aviation contexts found that people could miss problems or follow faulty recommendations when automated aids appeared to have the situation covered.",
+        "whyItFits": "The system output became too much of the evidential baseline."
+      }
+    ]
+  },
+  {
+    "slug": "framing-effect",
+    "caseStudies": [
+      {
+        "title": "The Asian disease framing problem",
+        "source": "Science",
+        "year": "1981",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/7455683/",
+        "summary": "Equivalent public-health outcomes produced different preferences when described in lives-saved versus lives-lost language.",
+        "whyItFits": "The wording changed risk preference while the underlying outcome structure stayed equivalent."
+      }
+    ]
+  },
+  {
+    "slug": "hostile-attribution-bias",
+    "caseStudies": [
+      {
+        "title": "Ambiguous peer behavior read as hostile intent",
+        "source": "Child Development",
+        "year": "1980",
+        "url": "https://doi.org/10.2307/1129603",
+        "summary": "Dodge's work on children's social cognition showed how ambiguous provocations can be interpreted as hostile, especially among aggressive children.",
+        "whyItFits": "Uncertain behavior gets filled in with threat before the evidence can support that conclusion."
+      }
+    ]
+  },
+  {
+    "slug": "self-serving-bias",
+    "caseStudies": [
+      {
+        "title": "Success and failure explained through different standards",
+        "source": "Psychological Bulletin",
+        "year": "1975",
+        "url": "https://doi.org/10.1037/h0076486",
+        "summary": "Research on self-serving attribution shows a tendency to claim more internal credit for success while locating failure more heavily in external circumstances.",
+        "whyItFits": "The explanatory standard changes in the direction that protects self-regard."
+      }
+    ]
+  },
+  {
+    "slug": "outcome-bias",
+    "caseStudies": [
+      {
+        "title": "Decisions judged differently after good or bad results",
+        "source": "Journal of Personality and Social Psychology",
+        "year": "1988",
+        "url": "https://doi.org/10.1037/0022-3514.54.4.569",
+        "summary": "Baron and Hershey showed that people rated the quality of decisions differently depending on the known outcome, even when the decision process was held constant.",
+        "whyItFits": "The result contaminates evaluation of the process that produced it."
+      }
+    ]
+  },
+  {
+    "slug": "omission-bias",
+    "caseStudies": [
+      {
+        "title": "Vaccination decisions and harmful inaction",
+        "source": "Journal of Behavioral Decision Making",
+        "year": "1990",
+        "url": "https://doi.org/10.1002/bdm.3960030404",
+        "summary": "Ritov and Baron studied reluctance to vaccinate when harm caused by action felt more blameworthy than comparable harm allowed by inaction.",
+        "whyItFits": "Inaction is treated as psychologically cleaner even when its consequences belong in the same comparison."
+      }
+    ]
+  },
+  {
+    "slug": "normalcy-bias",
+    "caseStudies": [
+      {
+        "title": "Disaster warnings normalized before action",
+        "source": "Social Problems",
+        "year": "1992",
+        "url": "https://doi.org/10.2307/3096912",
+        "summary": "Disaster-warning research shows that people often reinterpret warnings through familiar routines and prior expectations before treating them as urgent.",
+        "whyItFits": "The ordinary frame keeps absorbing evidence that the situation is no longer ordinary."
+      }
+    ]
+  },
+  {
+    "slug": "reactance",
+    "caseStudies": [
+      {
+        "title": "Autonomy threats make the restricted option more motivationally charged",
+        "source": "A Theory of Psychological Reactance",
+        "year": "1966",
+        "url": "https://psycnet.apa.org/record/1967-08061-000",
+        "summary": "Brehm's reactance theory explains why pressure, restriction, or controlling language can increase motivation to reject the message or restore freedom.",
+        "whyItFits": "The feeling of threatened choice becomes part of the decision itself."
+      }
+    ]
   }
 ]

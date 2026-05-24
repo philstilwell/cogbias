@@ -7,6 +7,7 @@
   "entryLabelPlural": "biases",
   "sectionSlug": "biases",
   "patternSlug": "patterns",
+  "domainHubSlug": "contexts",
   "pathSlug": "paths",
   "checkSlug": "check-yourself",
   "assessmentSlug": "assessment",

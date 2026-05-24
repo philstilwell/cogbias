@@ -105,6 +105,7 @@ const learningPathData = await readJsonArraySeries("learning_paths");
 const pathCurriculumData = await readJsonArraySeries("path_curriculum");
 const selfCheckData = await readJsonArraySeries("self_checks");
 const selfCheckCurriculumData = await readJsonArraySeries("self_check_curriculum");
+const domainHubData = await readJsonArraySeries("domain_hubs");
 const assessmentBankData = await readJsonArraySeries("assessment_bank");
 const assessmentMetadataData = await readJsonArraySeries("assessment_metadata");
 const promptKitData = await readJsonArraySeries("prompt_kits");
@@ -198,6 +199,7 @@ const entries = mergeEntryData(
   entrySourceData,
 );
 const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
+const domainHubSlug = siteConfig.domainHubSlug || "contexts";
 const pathCurriculumBySlug = new Map(pathCurriculumData.map((item) => [item.slug, item]));
 const selfCheckCurriculumBySlug = new Map(selfCheckCurriculumData.map((item) => [item.slug, item]));
 const assessmentMetadataById = new Map(assessmentMetadataData.map((item) => [item.id, item]));
@@ -255,6 +257,16 @@ const selfChecks = selfCheckData
 
 const pathBySlug = new Map(learningPaths.map((path) => [path.slug, path]));
 const selfCheckBySlug = new Map(selfChecks.map((check) => [check.slug, check]));
+const promptKitBySlug = new Map(promptKitData.map((promptKit) => [promptKit.slug, promptKit]));
+
+const domainHubs = domainHubData.map((hub) => ({
+  ...hub,
+  entries: (hub.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+  paths: (hub.pathSlugs || []).map((slug) => pathBySlug.get(slug)).filter(Boolean),
+  selfChecks: (hub.selfCheckSlugs || []).map((slug) => selfCheckBySlug.get(slug)).filter(Boolean),
+  promptKits: (hub.promptSlugs || []).map((slug) => promptKitBySlug.get(slug)).filter(Boolean),
+}));
+const domainHubBySlug = new Map(domainHubs.map((hub) => [hub.slug, hub]));
 
 const assessmentBank = assessmentBankData.map((item) => {
   const metadata = assessmentMetadataById.get(item.id) || {};
@@ -448,6 +460,38 @@ for (const promptKit of promptKitData) {
   }
 }
 
+const seenDomainHubSlugs = new Set();
+for (const hub of domainHubs) {
+  if (seenDomainHubSlugs.has(hub.slug)) {
+    throw new Error(`Duplicate domain hub slug "${hub.slug}".`);
+  }
+  seenDomainHubSlugs.add(hub.slug);
+
+  for (const slug of hub.biasSlugs || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown domain hub bias slug "${slug}" on "${hub.slug}".`);
+    }
+  }
+
+  for (const slug of hub.pathSlugs || []) {
+    if (!pathBySlug.has(slug)) {
+      throw new Error(`Unknown domain hub path slug "${slug}" on "${hub.slug}".`);
+    }
+  }
+
+  for (const slug of hub.selfCheckSlugs || []) {
+    if (!selfCheckBySlug.has(slug)) {
+      throw new Error(`Unknown domain hub self-check slug "${slug}" on "${hub.slug}".`);
+    }
+  }
+
+  for (const slug of hub.promptSlugs || []) {
+    if (!promptKitBySlug.has(slug)) {
+      throw new Error(`Unknown domain hub prompt slug "${slug}" on "${hub.slug}".`);
+    }
+  }
+}
+
 const seenTheorySlugs = new Set();
 for (const article of theoryArticles) {
   if (seenTheorySlugs.has(article.slug)) {
@@ -560,6 +604,7 @@ function renderNav(prefix, currentId) {
     { id: "home", label: "Home", href: `${prefix}` || "./" },
     { id: "biases", label: "All Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
     { id: "categories", label: "Categories", href: `${prefix}categories/` },
+    { id: "contexts", label: "Contexts", href: `${prefix}${domainHubSlug}/` },
     { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
     { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
@@ -616,7 +661,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/domain_hubs*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -1071,6 +1116,21 @@ function renderPathCard(path, prefix = "") {
           </article>`;
 }
 
+function renderDomainHubCard(hub, prefix = "") {
+  return `
+          <article class="category-card domain-hub-card">
+            <h3><a href="${prefix}${domainHubSlug}/${hub.slug}/">${escapeHtml(hub.title)}</a></h3>
+            <p class="card-copy">${escapeHtml(hub.summary)}</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${hub.entries.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
+              <span class="teaching-pill">${hub.paths.length} paths</span>
+              <span class="teaching-pill">${hub.promptKits.length} prompts</span>
+            </div>
+            <p class="muted">${escapeHtml(hub.guidingQuestion)}</p>
+            <p class="muted">${escapeHtml(hub.audience)}</p>
+          </article>`;
+}
+
 function renderSelfCheckCard(check, prefix = "") {
   const estimatedTime = check.estimatedMinutes ? `${check.estimatedMinutes} min` : "";
   return `
@@ -1233,6 +1293,7 @@ function renderHomePage() {
             <p class="hero-lead">${escapeHtml(siteConfig.heroLead)}</p>
             <div class="hero-actions">
               <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
+              <a class="button button-secondary" href="${domainHubSlug}/">Browse Contexts</a>
               <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
               <a class="button button-secondary" href="${siteConfig.assessmentSlug}/">Take Assessment</a>
             </div>
@@ -1247,6 +1308,10 @@ function renderHomePage() {
               <div class="stat-card">
                 <span class="stat-value">${learningPaths.length}</span>
                 <span class="stat-label">Learning Paths</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${domainHubs.length}</span>
+                <span class="stat-label">Domain Hubs</span>
               </div>
               <div class="stat-card">
                 <span class="stat-value">${selfChecks.length}</span>
@@ -1274,6 +1339,19 @@ function renderHomePage() {
               <p class="muted">Use the self-checks, countermoves, and prompt kits to modify the workflow that keeps reproducing the distortion.</p>
             </div>
           </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Domain hubs</h2>
+              <p class="section-copy">Start here when the real problem is not the name of the bias but the setting where judgment is getting bent: news, meetings, teaching, relationships, or product design.</p>
+            </div>
+            <a class="inline-link" href="${domainHubSlug}/">Open all contexts</a>
+          </div>
+          <div class="category-grid">
+            ${domainHubs.map((hub) => renderDomainHubCard(hub)).join("")}
+          </div>
         </section>
 
         <section class="detail-section section-block">
@@ -1624,6 +1702,203 @@ function renderPathsIndexPage() {
         </section>`;
           })
           .join("")}`,
+  });
+}
+
+function domainCaseStudiesFor(hub, limit = 6) {
+  const hubSlugs = new Set(hub.biasSlugs || []);
+  return caseStudyLibrary
+    .filter((item) => item.entries.some((entry) => hubSlugs.has(entry.slug)))
+    .slice(0, limit);
+}
+
+function domainSourceTrailFor(hub, limit = 6) {
+  const curated = [];
+  const seen = new Set();
+
+  for (const entry of hub.entries || []) {
+    for (const source of sourceTrailFor(entry, { includeSeed: false })) {
+      const key = `${String(source.href || "").trim().toLowerCase()}::${String(source.title || "").trim().toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      curated.push({
+        ...source,
+        relatedEntry: entry,
+      });
+    }
+  }
+
+  return curated.slice(0, limit);
+}
+
+function renderDomainHubsIndexPage() {
+  return renderPage({
+    title: "Contexts",
+    description: "Applied CogBias hubs for news reading, teams and meetings, teaching, relationships, and product or UX work.",
+    prefix: "../",
+    currentId: "contexts",
+    routePath: `/${domainHubSlug}/`,
+    breadcrumbs: [{ label: "Home", href: "../" }, { label: "Contexts" }],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Applied Contexts</p>
+          <h2 class="detail-title">Start with the situation, then choose the bias tools.</h2>
+          <p class="detail-deck">These hubs are not new bias entries. They are practical workbenches that combine existing bias pages, paths, self-checks, prompts, and case studies around recurring domains of judgment.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Domain-specific hubs</h2>
+              <p class="section-copy">Use these when you know the setting before you know the label.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${domainHubs.map((hub) => renderDomainHubCard(hub, "../")).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderDomainHubDetailPage(hub) {
+  const prefix = "../../";
+  const hubCaseStudies = domainCaseStudiesFor(hub);
+  const hubSources = domainSourceTrailFor(hub);
+
+  return renderPage({
+    title: hub.title,
+    description: hub.summary,
+    prefix,
+    currentId: "contexts",
+    routePath: `/${domainHubSlug}/${hub.slug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Contexts", href: "../" },
+      { label: hub.title },
+    ],
+    body: `
+        <section class="detail-section domain-hub-hero">
+          <p class="eyebrow">Applied Context</p>
+          <h2 class="detail-title">${escapeHtml(hub.title)}</h2>
+          <p class="detail-deck">${escapeHtml(hub.summary)}</p>
+          <div class="two-column section-block">
+            <div class="note-panel">
+              <h4>Use this when</h4>
+              <p class="muted">${escapeHtml(hub.scenario)}</p>
+            </div>
+            <div class="note-panel">
+              <h4>Guiding question</h4>
+              <p class="muted">${escapeHtml(hub.guidingQuestion)}</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Bias cluster</h2>
+              <p class="section-copy">These are the entries most likely to matter in this domain. Use the cluster to compare nearby pulls before choosing a label.</p>
+            </div>
+          </div>
+          <div class="entry-grid">
+            ${hub.entries.map((entry) => renderBiasCard(entry, prefix)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Workflow</h2>
+              <p class="section-copy">The hub is meant to change the process, not just supply labels.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${(hub.workflow || [])
+              .map(
+                (step) => `
+            <article class="category-card domain-workflow-card">
+              <h3>${escapeHtml(step.label)}</h3>
+              <p class="card-copy">${escapeHtml(step.text)}</p>
+            </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="two-column">
+            <div class="note-panel">
+              <h4>Watch for</h4>
+              <ul class="muted">
+                ${(hub.watchFor || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+              </ul>
+            </div>
+            <div class="note-panel">
+              <h4>Starter protocol</h4>
+              <ol class="muted">
+                ${(hub.starterProtocol || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Use the existing curriculum</h2>
+              <p class="section-copy">These are the closest learning paths and short self-checks for this context.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${hub.paths.map((path) => renderPathCard(path, prefix)).join("")}
+            ${hub.selfChecks.map((check) => renderSelfCheckCard(check, prefix)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Prompt kits for this domain</h2>
+              <p class="section-copy">Use these after you have written the concrete case clearly enough for a model to help widen the frame.</p>
+            </div>
+          </div>
+          <div class="category-grid prompt-grid">
+            ${hub.promptKits.map((promptKit) => renderPromptCard(promptKit, prefix)).join("")}
+          </div>
+        </section>
+
+        ${
+          hubCaseStudies.length
+            ? `<section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Case studies in the neighborhood</h2>
+              <p class="section-copy">These cases are pulled from the linked bias pages so the hub stays connected to concrete examples.</p>
+            </div>
+            <a class="inline-link" href="../../${caseStudySlug}/">Open case study library</a>
+          </div>
+          <div class="category-grid">
+            ${hubCaseStudies.map((item) => renderCaseStudyCard(item, prefix)).join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
+        ${
+          hubSources.length
+            ? `<section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Source anchors</h2>
+              <p class="section-copy">A short trail into the research behind the most central bias pages in this domain.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${hubSources.map((item) => renderSourceCard(item, prefix)).join("")}
+          </div>
+        </section>`
+            : ""
+        }`,
   });
 }
 
@@ -2773,6 +3048,7 @@ async function cleanOwnedOutput() {
     "biases",
     "categories",
     "countermoves",
+    domainHubSlug,
     siteConfig.pathSlug,
     siteConfig.checkSlug,
     siteConfig.assessmentSlug,
@@ -2798,6 +3074,7 @@ async function writeSiteFiles() {
   await writeTextFile(`${siteConfig.sectionSlug}/index.html`, renderBiasIndexPage());
   await writeTextFile("categories/index.html", renderCategoryIndexPage());
   await writeTextFile(`${siteConfig.patternSlug}/index.html`, renderPatternIndexPage());
+  await writeTextFile(`${domainHubSlug}/index.html`, renderDomainHubsIndexPage());
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
   await writeTextFile(`${siteConfig.assessmentSlug}/index.html`, renderAssessmentPage());
@@ -2818,6 +3095,10 @@ async function writeSiteFiles() {
 
   for (const pattern of patterns) {
     await writeTextFile(`${siteConfig.patternSlug}/${pattern.slug}/index.html`, renderPatternDetailPage(pattern));
+  }
+
+  for (const hub of domainHubs) {
+    await writeTextFile(`${domainHubSlug}/${hub.slug}/index.html`, renderDomainHubDetailPage(hub));
   }
 
   for (const path of learningPaths) {
@@ -2866,6 +3147,7 @@ async function writeSiteFiles() {
       `/${siteConfig.sectionSlug}/`,
       "/categories/",
       `/${siteConfig.patternSlug}/`,
+      `/${domainHubSlug}/`,
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
       `/${siteConfig.assessmentSlug}/`,
@@ -2877,6 +3159,7 @@ async function writeSiteFiles() {
       ...entries.map((entry) => `/${siteConfig.sectionSlug}/${entry.slug}/`),
       ...tasks.map((task) => `/categories/${task.slug}/`),
       ...patterns.map((pattern) => `/${siteConfig.patternSlug}/${pattern.slug}/`),
+      ...domainHubs.map((hub) => `/${domainHubSlug}/${hub.slug}/`),
       ...learningPaths.map((path) => `/${siteConfig.pathSlug}/${path.slug}/`),
       ...theoryArticles.map((article) => `/${siteConfig.theorySlug}/${article.slug}/`),
     ];
