@@ -7,6 +7,15 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataDir = path.join(projectRoot, "data");
 const siteDir = path.join(projectRoot, "site");
+const brandDirName = "brand";
+const brandMarkPath = `${brandDirName}/cogbias-mark.svg`;
+const faviconSvgPath = brandMarkPath;
+const faviconIcoPath = `${brandDirName}/favicon.ico`;
+const favicon16Path = `${brandDirName}/favicon-16x16.png`;
+const favicon32Path = `${brandDirName}/favicon-32x32.png`;
+const appleTouchIconPath = `${brandDirName}/apple-touch-icon.png`;
+const androidChrome192Path = `${brandDirName}/android-chrome-192x192.png`;
+const androidChrome512Path = `${brandDirName}/android-chrome-512x512.png`;
 
 const curriculumTracks = [
   {
@@ -486,6 +495,11 @@ function renderHead({ title, description, prefix, routePath }) {
     <meta name="application-name" content="${escapeHtml(siteConfig.siteName)}" />
     <meta name="theme-color" content="#0e2339" />
     ${canonical}
+    <link rel="icon" href="${prefix}${faviconIcoPath}" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="${prefix}${faviconSvgPath}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="${prefix}${favicon32Path}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="${prefix}${favicon16Path}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="${prefix}${appleTouchIconPath}" />
     <link rel="manifest" href="${prefix}site.webmanifest" />
     <link rel="stylesheet" href="${prefix}styles.css" />
     <script defer src="${prefix}app.js"></script>`;
@@ -523,7 +537,7 @@ function renderMasthead(prefix, currentId) {
         <div class="masthead-inner">
           <div class="brand-row">
             <div class="brand-lockup">
-              <div class="brand-logo brand-logo-placeholder" aria-hidden="true">${escapeHtml(siteConfig.brandMonogram)}</div>
+              <img class="brand-logo" src="${prefix}${brandMarkPath}" alt="" width="78" height="78" />
               <div>
                 <p class="brand-kicker">${escapeHtml(siteConfig.brandKicker)}</p>
                 <h1 class="brand-title">${escapeHtml(siteConfig.brandTitle)}</h1>
@@ -2676,6 +2690,10 @@ function renderNotFoundPage() {
 async function copySiteAssets() {
   await fs.copyFile(path.join(siteDir, "styles.css"), path.join(projectRoot, "styles.css"));
   await fs.copyFile(path.join(siteDir, "app.js"), path.join(projectRoot, "app.js"));
+  await fs.cp(path.join(siteDir, brandDirName), path.join(projectRoot, brandDirName), {
+    recursive: true,
+    force: true,
+  });
 }
 
 async function writeTextFile(relPath, contents) {
@@ -2690,6 +2708,7 @@ async function cleanOwnedOutput() {
     "404.html",
     "styles.css",
     "app.js",
+    brandDirName,
     "about",
     "biases",
     "categories",
@@ -2763,6 +2782,18 @@ async function writeSiteFiles() {
         display: "standalone",
         background_color: "#eaf6ff",
         theme_color: "#0e2339",
+        icons: [
+          {
+            src: `/${androidChrome192Path}`,
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: `/${androidChrome512Path}`,
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
       },
       null,
       2,
