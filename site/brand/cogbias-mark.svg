@@ -5,13 +5,13 @@
   <rect x="4" y="4" width="120" height="120" rx="5" fill="#070c12"/>
 
   <rect x="9" y="9" width="50" height="50" fill="#1698cd"/>
-  <rect x="69" y="9" width="50" height="50" fill="#d3a126"/>
-  <rect x="9" y="69" width="50" height="50" fill="#d3a126"/>
+  <rect x="69" y="9" width="50" height="50" fill="#f5b700"/>
+  <rect x="9" y="69" width="50" height="50" fill="#f5b700"/>
   <rect x="69" y="69" width="50" height="50" fill="#1698cd"/>
 
   <rect x="9" y="9" width="50" height="10" fill="#55c7ee" opacity="0.35"/>
-  <rect x="69" y="9" width="50" height="10" fill="#ffe08a" opacity="0.38"/>
-  <rect x="9" y="69" width="50" height="10" fill="#ffe08a" opacity="0.38"/>
+  <rect x="69" y="9" width="50" height="10" fill="#ffea8a" opacity="0.42"/>
+  <rect x="9" y="69" width="50" height="10" fill="#ffea8a" opacity="0.42"/>
   <rect x="69" y="69" width="50" height="10" fill="#55c7ee" opacity="0.35"/>
 
   <rect x="59" y="9" width="10" height="110" fill="#04070b"/>
