@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "before-you-decide",
+    "track": "foundational",
+    "sequence": 1,
+    "stageLabel": "Before a choice",
+    "estimatedMinutes": 3,
+    "pathSlugs": ["start-here", "decision-under-uncertainty", "loss-ownership-and-omission"]
+  },
+  {
+    "slug": "before-you-predict",
+    "track": "foundational",
+    "sequence": 2,
+    "stageLabel": "Before a forecast",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["decision-under-uncertainty", "confidence-and-understanding"]
+  },
+  {
+    "slug": "before-you-judge-a-person",
+    "track": "foundational",
+    "sequence": 3,
+    "stageLabel": "Before a people judgment",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["people-judgment", "conflict-threat-and-tribe"]
+  },
+  {
+    "slug": "before-you-share-the-story",
+    "track": "foundational",
+    "sequence": 4,
+    "stageLabel": "Before sharing a claim",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["evidence-and-explanation", "misinformation-memory-and-crowds"]
+  },
+  {
+    "slug": "before-you-explain-what-happened",
+    "track": "foundational",
+    "sequence": 5,
+    "stageLabel": "Before a postmortem story",
+    "estimatedMinutes": 5,
+    "pathSlugs": ["after-the-outcome", "evidence-and-explanation"]
+  },
+  {
+    "slug": "after-you-were-surprised",
+    "track": "applied",
+    "sequence": 1,
+    "stageLabel": "After a surprise",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["after-the-outcome", "decision-under-uncertainty"]
+  },
+  {
+    "slug": "before-you-treat-the-default-as-neutral",
+    "track": "applied",
+    "sequence": 2,
+    "stageLabel": "Before accepting the current path",
+    "estimatedMinutes": 3,
+    "pathSlugs": ["loss-ownership-and-omission", "comparison-traps-and-choice-architecture"]
+  },
+  {
+    "slug": "before-you-read-hostility-into-it",
+    "track": "applied",
+    "sequence": 3,
+    "stageLabel": "Before assigning hostile intent",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["conflict-threat-and-tribe", "people-judgment"]
+  },
+  {
+    "slug": "before-you-call-it-obvious",
+    "track": "applied",
+    "sequence": 4,
+    "stageLabel": "Before mistaking fluency for mastery",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["confidence-and-understanding", "self-justification-and-meta-bias"]
+  },
+  {
+    "slug": "before-you-trust-the-repeat",
+    "track": "applied",
+    "sequence": 5,
+    "stageLabel": "Before treating circulation as proof",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["misinformation-memory-and-crowds", "evidence-and-explanation"]
+  },
+  {
+    "slug": "before-you-let-the-menu-decide",
+    "track": "applied",
+    "sequence": 6,
+    "stageLabel": "Before a framed comparison",
+    "estimatedMinutes": 4,
+    "pathSlugs": ["comparison-traps-and-choice-architecture", "decision-under-uncertainty"]
+  },
+  {
+    "slug": "before-you-go-with-the-room",
+    "track": "teaching",
+    "sequence": 1,
+    "stageLabel": "Before group convergence",
+    "estimatedMinutes": 5,
+    "pathSlugs": ["social-pressure-and-belonging", "self-justification-and-meta-bias"]
+  },
+  {
+    "slug": "before-you-tidy-the-story",
+    "track": "teaching",
+    "sequence": 2,
+    "stageLabel": "Before self-justifying a choice",
+    "estimatedMinutes": 5,
+    "pathSlugs": ["self-justification-and-meta-bias", "after-the-outcome"]
+  }
+]

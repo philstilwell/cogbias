@@ -289,6 +289,13 @@ img {
   box-shadow: 0 12px 24px rgba(18, 18, 18, 0.1);
 }
 
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .button-primary {
   background: #113458;
   color: #fff;
@@ -420,6 +427,27 @@ img {
 .entry-card h3 a:hover,
 .entry-card h3 a:focus-visible {
   color: var(--cyan);
+}
+
+.curriculum-track-card {
+  background:
+    linear-gradient(180deg, rgba(130, 210, 255, 0.14), transparent 52%),
+    #fff;
+}
+
+.source-card {
+  background:
+    linear-gradient(180deg, rgba(47, 130, 194, 0.08), transparent 48%),
+    #fff;
+}
+
+.source-meta {
+  margin: 0 0 10px;
+  color: #0e4672;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .card-copy {
@@ -1488,6 +1516,30 @@ img {
   margin-top: 18px;
 }
 
+.assessment-filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.assessment-filter {
+  display: grid;
+  gap: 8px;
+}
+
+.assessment-filter span {
+  color: #0e4672;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.assessment-current-run {
+  margin: 14px 0 0;
+}
+
 @media (max-width: 860px) {
   .assessment-primer-grid {
     grid-template-columns: 1fr;
@@ -1506,6 +1558,10 @@ img {
 
 .assessment-question-title {
   margin: 0 0 12px;
+}
+
+.assessment-empty-state {
+  margin-top: 18px;
 }
 
 .assessment-actions {

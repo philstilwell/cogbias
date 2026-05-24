@@ -8,6 +8,48 @@ const projectRoot = path.resolve(__dirname, "..");
 const dataDir = path.join(projectRoot, "data");
 const siteDir = path.join(projectRoot, "site");
 
+const curriculumTracks = [
+  {
+    slug: "foundational",
+    order: 1,
+    name: "Foundational",
+    summary: "Start here if you want the core labels, the most reusable distinctions, and the first debiasing moves.",
+  },
+  {
+    slug: "applied",
+    order: 2,
+    name: "Applied",
+    summary: "Use these when the real job is forecasting, postmortems, moderation, or other live judgment work.",
+  },
+  {
+    slug: "teaching",
+    order: 3,
+    name: "Teaching And Team Use",
+    summary: "Best for facilitation, workflow design, coaching, and group decision settings where room structure matters.",
+  },
+];
+
+const assessmentDifficulties = [
+  {
+    slug: "foundational",
+    order: 1,
+    name: "Foundational",
+    summary: "Clearer first-pass cases for learning the major families and repair moves.",
+  },
+  {
+    slug: "applied",
+    order: 2,
+    name: "Applied",
+    summary: "Messier real-world cases where the right label and the right repair can come apart.",
+  },
+  {
+    slug: "advanced",
+    order: 3,
+    name: "Advanced",
+    summary: "Meta-bias, overlap, and interpretation-heavy scenarios for stronger readers and classrooms.",
+  },
+];
+
 async function readJsonFile(fileName) {
   return JSON.parse(await fs.readFile(path.join(dataDir, fileName), "utf8"));
 }
@@ -49,14 +91,33 @@ const siteConfig = await readJsonFile("site.json");
 const rawEntries = await readJsonFile("biases.json");
 const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
+const entrySourceData = await readJsonArraySeries("entry_sources");
 const learningPathData = await readJsonArraySeries("learning_paths");
+const pathCurriculumData = await readJsonArraySeries("path_curriculum");
 const selfCheckData = await readJsonArraySeries("self_checks");
+const selfCheckCurriculumData = await readJsonArraySeries("self_check_curriculum");
 const assessmentBankData = await readJsonArraySeries("assessment_bank");
+const assessmentMetadataData = await readJsonArraySeries("assessment_metadata");
 const promptKitData = await readJsonArraySeries("prompt_kits");
 const theoryArticleData = await readJsonArraySeries("theory_articles");
 
+const curriculumTrackBySlug = new Map(curriculumTracks.map((track) => [track.slug, track]));
+const assessmentDifficultyBySlug = new Map(
+  assessmentDifficulties.map((difficulty) => [difficulty.slug, difficulty]),
+);
+
 function mergeUniqueStrings(values = []) {
   return [...new Set(values.filter(Boolean))];
+}
+
+function sortByTrackAndSequence(left, right) {
+  const leftTrack = curriculumTrackBySlug.get(left.track || "")?.order || Number.POSITIVE_INFINITY;
+  const rightTrack = curriculumTrackBySlug.get(right.track || "")?.order || Number.POSITIVE_INFINITY;
+  return (
+    leftTrack - rightTrack ||
+    Number(left.sequence || Number.POSITIVE_INFINITY) - Number(right.sequence || Number.POSITIVE_INFINITY) ||
+    String(left.title || left.slug || "").localeCompare(String(right.title || right.slug || ""))
+  );
 }
 
 function mergeEntryData(baseEntries, enrichments) {
@@ -73,8 +134,14 @@ function mergeEntryData(baseEntries, enrichments) {
   });
 }
 
-const entries = mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules);
+const entries = mergeEntryData(
+  mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules),
+  entrySourceData,
+);
 const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
+const pathCurriculumBySlug = new Map(pathCurriculumData.map((item) => [item.slug, item]));
+const selfCheckCurriculumBySlug = new Map(selfCheckCurriculumData.map((item) => [item.slug, item]));
+const assessmentMetadataById = new Map(assessmentMetadataData.map((item) => [item.id, item]));
 
 const siteUrl = String(siteConfig.siteUrl || "").trim();
 const siteUrlWithSlash = siteUrl ? `${siteUrl.replace(/\/+$/, "")}/` : "";
@@ -104,10 +171,45 @@ const patterns = siteConfig.patterns
   }))
   .filter((pattern) => pattern.members.length > 0);
 
-const learningPaths = learningPathData.map((path) => ({
-  ...path,
-  members: (path.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
-}));
+const learningPaths = learningPathData
+  .map((path) => {
+    const curriculum = pathCurriculumBySlug.get(path.slug) || {};
+    return {
+      ...path,
+      ...curriculum,
+      trackMeta: curriculumTrackBySlug.get(curriculum.track || "applied") || curriculumTracks[1],
+      members: (path.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+    };
+  })
+  .sort(sortByTrackAndSequence);
+
+const selfChecks = selfCheckData
+  .map((check) => {
+    const curriculum = selfCheckCurriculumBySlug.get(check.slug) || {};
+    return {
+      ...check,
+      ...curriculum,
+      trackMeta: curriculumTrackBySlug.get(curriculum.track || "applied") || curriculumTracks[1],
+    };
+  })
+  .sort(sortByTrackAndSequence);
+
+const pathBySlug = new Map(learningPaths.map((path) => [path.slug, path]));
+const selfCheckBySlug = new Map(selfChecks.map((check) => [check.slug, check]));
+
+const assessmentBank = assessmentBankData.map((item) => {
+  const metadata = assessmentMetadataById.get(item.id) || {};
+  const correctEntry = entryBySlug.get(item.correctBias);
+  const difficulty = metadata.difficulty || "applied";
+  return {
+    ...item,
+    ...metadata,
+    difficulty,
+    difficultyMeta: assessmentDifficultyBySlug.get(difficulty) || assessmentDifficulties[1],
+    categories: [...(correctEntry?.tasks || [])],
+    patterns: [...(correctEntry?.patterns || [])],
+  };
+});
 
 const theoryArticles = theoryArticleData.map((article) => ({
   ...article,
@@ -154,6 +256,30 @@ function buildCaseStudyLibrary(entryList) {
 }
 
 const caseStudyLibrary = buildCaseStudyLibrary(entries);
+
+for (const item of entrySourceData) {
+  if (!entryBySlug.has(item.slug)) {
+    throw new Error(`Unknown entry source slug "${item.slug}".`);
+  }
+}
+
+for (const item of pathCurriculumData) {
+  if (!(learningPathData || []).some((path) => path.slug === item.slug)) {
+    throw new Error(`Unknown path curriculum slug "${item.slug}".`);
+  }
+}
+
+for (const item of selfCheckCurriculumData) {
+  if (!(selfCheckData || []).some((check) => check.slug === item.slug)) {
+    throw new Error(`Unknown self-check curriculum slug "${item.slug}".`);
+  }
+}
+
+for (const item of assessmentMetadataData) {
+  if (!(assessmentBankData || []).some((question) => question.id === item.id)) {
+    throw new Error(`Unknown assessment metadata id "${item.id}".`);
+  }
+}
 
 for (const entry of entries) {
   for (const taskName of entry.tasks || []) {
@@ -207,10 +333,26 @@ for (const path of learningPaths) {
       throw new Error(`Unknown learning path slug "${slug}" on path "${path.slug}".`);
     }
   }
+
+  if (path.track && !curriculumTrackBySlug.has(path.track)) {
+    throw new Error(`Unknown curriculum track "${path.track}" on path "${path.slug}".`);
+  }
+
+  for (const slug of path.recommendedCheckSlugs || []) {
+    if (!selfCheckBySlug.has(slug)) {
+      throw new Error(`Unknown recommended self-check slug "${slug}" on path "${path.slug}".`);
+    }
+  }
+
+  for (const slug of path.nextPathSlugs || []) {
+    if (!pathBySlug.has(slug)) {
+      throw new Error(`Unknown next path slug "${slug}" on path "${path.slug}".`);
+    }
+  }
 }
 
 const seenCheckSlugs = new Set();
-for (const check of selfCheckData) {
+for (const check of selfChecks) {
   if (seenCheckSlugs.has(check.slug)) {
     throw new Error(`Duplicate self-check slug "${check.slug}".`);
   }
@@ -219,6 +361,16 @@ for (const check of selfCheckData) {
   for (const slug of check.relatedBiases || []) {
     if (!entryBySlug.has(slug)) {
       throw new Error(`Unknown self-check related slug "${slug}" on "${check.slug}".`);
+    }
+  }
+
+  if (check.track && !curriculumTrackBySlug.has(check.track)) {
+    throw new Error(`Unknown curriculum track "${check.track}" on self-check "${check.slug}".`);
+  }
+
+  for (const slug of check.pathSlugs || []) {
+    if (!pathBySlug.has(slug)) {
+      throw new Error(`Unknown path slug "${slug}" on self-check "${check.slug}".`);
     }
   }
 }
@@ -252,7 +404,7 @@ for (const article of theoryArticles) {
 }
 
 const seenAssessmentIds = new Set();
-for (const item of assessmentBankData) {
+for (const item of assessmentBank) {
   if (seenAssessmentIds.has(item.id)) {
     throw new Error(`Duplicate assessment item id "${item.id}".`);
   }
@@ -274,6 +426,10 @@ for (const item of assessmentBankData) {
 
   if (!(item.moveOptions || []).includes(item.correctMove)) {
     throw new Error(`Assessment item "${item.id}" must include the correct move in its options.`);
+  }
+
+  if (item.difficulty && !assessmentDifficultyBySlug.has(item.difficulty)) {
+    throw new Error(`Unknown assessment difficulty "${item.difficulty}" on "${item.id}".`);
   }
 }
 
@@ -396,7 +552,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/learning_paths*.json</code>, <code>data/self_checks*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -515,7 +671,7 @@ function pathObjectsForEntry(entry) {
 }
 
 function selfChecksForEntry(entry) {
-  return selfCheckData.filter((check) => (check.relatedBiases || []).includes(entry.slug));
+  return selfChecks.filter((check) => (check.relatedBiases || []).includes(entry.slug));
 }
 
 function promptKitsForEntry(entry) {
@@ -652,8 +808,68 @@ function caseStudiesFor(entry) {
   return entry.caseStudies || [];
 }
 
+function sourceTrailFor(entry, { includeSeed = true } = {}) {
+  const sources = [...(entry.sourceTrail || [])];
+
+  if (includeSeed) {
+    sources.push({
+      kind: "Seed taxonomy",
+      title: `${entry.name} reference article`,
+      source: entry.sourceLabel || "Wikipedia",
+      year: "",
+      href: entry.sourceUrl || "https://en.wikipedia.org/wiki/List_of_cognitive_biases",
+      note:
+        siteConfig.sourceAttribution ||
+        "Seed taxonomy and broad coverage are drawn from Wikipedia's List of cognitive biases.",
+    });
+  }
+
+  const seen = new Set();
+  return sources.filter((item) => {
+    const key = `${String(item.href || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function theorySourceTrailFor(article) {
+  const curated = [];
+  const seen = new Set();
+
+  for (const entry of article.relatedEntries || []) {
+    for (const source of sourceTrailFor(entry, { includeSeed: false })) {
+      const key = `${String(source.href || "").trim().toLowerCase()}::${String(source.title || "").trim().toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      curated.push({
+        ...source,
+        relatedEntry: entry,
+        note:
+          source.note ||
+          `Companion empirical anchor pulled in from the ${entry.name} entry page.`,
+      });
+    }
+  }
+
+  if (curated.length) return curated.slice(0, 6);
+
+  for (const entry of article.relatedEntries || []) {
+    for (const source of sourceTrailFor(entry)) {
+      const key = `${String(source.href || "").trim().toLowerCase()}::${String(source.title || "").trim().toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      curated.push({
+        ...source,
+        relatedEntry: entry,
+      });
+    }
+  }
+
+  return curated.slice(0, 6);
+}
+
 function companionReadingFor(entry) {
-  const items = [];
   const relatedTheory = theoryArticlesForEntry(entry, 2).map((article) => ({
     title: article.title,
     source: "CogBias theory",
@@ -661,16 +877,7 @@ function companionReadingFor(entry) {
     why: article.summary,
   }));
 
-  if (entry.sourceUrl) {
-    items.push({
-      title: `${entry.name} seed reference`,
-      source: "Wikipedia seed",
-      href: entry.sourceUrl,
-      why: "Use the broader source article for additional definitions, examples, and historical notes.",
-    });
-  }
-
-  return [...relatedTheory, ...items];
+  return relatedTheory;
 }
 
 function renderEntryLinkChips(slugs = [], prefix = "") {
@@ -680,6 +887,17 @@ function renderEntryLinkChips(slugs = [], prefix = "") {
     .map(
       (entry) =>
         `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+    )
+    .join("");
+}
+
+function renderPathLinkChips(slugs = [], prefix = "") {
+  return slugs
+    .map((slug) => pathBySlug.get(slug))
+    .filter(Boolean)
+    .map(
+      (path) =>
+        `<a class="path-link-chip" href="${prefix}${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a>`,
     )
     .join("");
 }
@@ -774,23 +992,32 @@ function renderCountermoveCard(countermove, prefix = "") {
 }
 
 function renderPathCard(path, prefix = "") {
+  const estimatedTime = path.estimatedMinutes ? `${path.estimatedMinutes} min` : "";
   return `
           <article class="category-card">
             <h3><a href="${prefix}${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a></h3>
             <p class="card-copy">${escapeHtml(path.summary)}</p>
             <div class="teaching-pill-row">
               <span class="teaching-pill">${path.members.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
-              <span class="teaching-pill">${escapeHtml(path.audience)}</span>
+              <span class="teaching-pill">${escapeHtml(path.trackMeta?.name || "Applied")}</span>
+              ${estimatedTime ? `<span class="teaching-pill">${escapeHtml(estimatedTime)}</span>` : ""}
             </div>
             <p class="muted">${escapeHtml(path.guidingQuestion)}</p>
+            <p class="muted">${escapeHtml(path.audience)}</p>
           </article>`;
 }
 
 function renderSelfCheckCard(check, prefix = "") {
+  const estimatedTime = check.estimatedMinutes ? `${check.estimatedMinutes} min` : "";
   return `
           <article class="category-card">
             <h3>${escapeHtml(check.title)}</h3>
             <p class="card-copy">${escapeHtml(check.summary)}</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${escapeHtml(check.trackMeta?.name || "Applied")}</span>
+              ${check.stageLabel ? `<span class="teaching-pill">${escapeHtml(check.stageLabel)}</span>` : ""}
+              ${estimatedTime ? `<span class="teaching-pill">${escapeHtml(estimatedTime)}</span>` : ""}
+            </div>
             <p class="muted"><strong>Question:</strong> ${escapeHtml(check.question)}</p>
             <ul class="muted">
               ${check.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
@@ -798,6 +1025,11 @@ function renderSelfCheckCard(check, prefix = "") {
             <div class="path-link-row">
               ${renderEntryLinkChips(check.relatedBiases || [], prefix)}
             </div>
+            ${
+              (check.pathSlugs || []).length
+                ? `<div class="path-link-row">${renderPathLinkChips(check.pathSlugs || [], prefix)}</div>`
+                : ""
+            }
           </article>`;
 }
 
@@ -897,6 +1129,32 @@ function renderCaseStudyCard(item, prefix = "") {
           </article>`;
 }
 
+function renderSourceCard(item, prefix = "") {
+  const metaLine = [item.kind, item.source, item.year].filter(Boolean).join(" · ");
+  return `
+          <article class="category-card source-card">
+            <h3><a href="${escapeHtml(item.href)}">${escapeHtml(item.title)}</a></h3>
+            ${metaLine ? `<p class="source-meta">${escapeHtml(metaLine)}</p>` : ""}
+            <p class="card-copy">${escapeHtml(item.note || "")}</p>
+            ${
+              item.relatedEntry
+                ? `<div class="path-link-row"><a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${item.relatedEntry.slug}/">${escapeHtml(item.relatedEntry.name)}</a></div>`
+                : ""
+            }
+          </article>`;
+}
+
+function renderCurriculumTrackCard(track, itemCount, label, href) {
+  return `
+          <article class="category-card curriculum-track-card">
+            <h3><a href="${href}">${escapeHtml(track.name)}</a></h3>
+            <p class="card-copy">${escapeHtml(track.summary)}</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${escapeHtml(String(itemCount))} ${escapeHtml(label)}</span>
+            </div>
+          </article>`;
+}
+
 function renderHomePage() {
   return renderPage({
     title: siteConfig.brandTitle,
@@ -927,11 +1185,11 @@ function renderHomePage() {
                 <span class="stat-label">Learning Paths</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">${selfCheckData.length}</span>
+                <span class="stat-value">${selfChecks.length}</span>
                 <span class="stat-label">Self-Audits</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">${assessmentBankData.length}</span>
+                <span class="stat-value">${assessmentBank.length}</span>
                 <span class="stat-label">Assessment Scenarios</span>
               </div>
               <div class="stat-card">
@@ -973,8 +1231,30 @@ function renderHomePage() {
         <section class="section-block">
           <div class="section-header">
             <div>
+              <h2 class="section-title">Curriculum ladder</h2>
+              <p class="section-copy">The site now has a clearer progression: start with foundations, move into applied judgment work, then use the teaching-and-team layer when the real challenge is room design or workflow design.</p>
+            </div>
+            <a class="inline-link" href="${siteConfig.pathSlug}/">See the full progression</a>
+          </div>
+          <div class="category-grid">
+            ${curriculumTracks
+              .map((track) =>
+                renderCurriculumTrackCard(
+                  track,
+                  learningPaths.filter((path) => path.track === track.slug).length,
+                  "paths",
+                  `${siteConfig.pathSlug}/`,
+                ),
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
               <h2 class="section-title">Learning paths</h2>
-              <p class="section-copy">These curated routes are the closest analogue to LogFall's teaching paths: smaller, more purposeful sequences for a specific job of thinking.</p>
+              <p class="section-copy">These curated routes are the closest analogue to LogFall's teaching paths: smaller, more purposeful sequences for a specific job of thinking, now grouped into foundational, applied, and teaching tiers.</p>
             </div>
             <a class="inline-link" href="${siteConfig.pathSlug}/">Open all paths</a>
           </div>
@@ -987,12 +1267,12 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Check yourself</h2>
-              <p class="section-copy">Short self-audits for the moments when bias is most likely to slide past you: before a decision, before a forecast, before a people judgment, and after a surprising outcome.</p>
+              <p class="section-copy">Short self-audits for the moments when bias is most likely to slide past you: before a decision, before a forecast, before a people judgment, after a surprising outcome, or while facilitating a room.</p>
             </div>
             <a class="inline-link" href="${siteConfig.checkSlug}/">Open the field guide</a>
           </div>
           <div class="category-grid">
-            ${selfCheckData.slice(0, 3).map((check) => renderSelfCheckCard(check)).join("")}
+            ${selfChecks.slice(0, 3).map((check) => renderSelfCheckCard(check)).join("")}
           </div>
         </section>
 
@@ -1237,15 +1517,49 @@ function renderPathsIndexPage() {
           </div>
           <aside class="hero-panel hero-side">
             <p class="eyebrow">How To Use Them</p>
-            <p class="muted">Choose the path that fits the job: better decisions, better forecasting, fairer people judgment, cleaner evidence review, or more honest postmortems.</p>
+            <p class="muted">Start with the foundational track if the site is new to you, move into applied paths when the labels are familiar, and use the teaching track when the real work is room design or workflow design.</p>
           </aside>
         </section>
 
         <section class="section-block">
-          <div class="category-grid">
-            ${learningPaths.map((path) => renderPathCard(path, "../")).join("")}
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Curriculum progression</h2>
+              <p class="section-copy">The same catalog can be used three different ways: to learn the basic map, to practice on live judgment problems, and to teach or redesign group process.</p>
+            </div>
           </div>
-        </section>`,
+          <div class="category-grid">
+            ${curriculumTracks
+              .map((track) =>
+                renderCurriculumTrackCard(
+                  track,
+                  learningPaths.filter((path) => path.track === track.slug).length,
+                  "paths",
+                  "./",
+                ),
+              )
+              .join("")}
+          </div>
+        </section>
+
+        ${curriculumTracks
+          .map((track) => {
+            const trackPaths = learningPaths.filter((path) => path.track === track.slug);
+            if (!trackPaths.length) return "";
+            return `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">${escapeHtml(track.name)}</h2>
+              <p class="section-copy">${escapeHtml(track.summary)}</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${trackPaths.map((path) => renderPathCard(path, "../")).join("")}
+          </div>
+        </section>`;
+          })
+          .join("")}`,
   });
 }
 
@@ -1269,12 +1583,15 @@ function renderPathDetailPage(path) {
             <p class="detail-deck">${escapeHtml(path.summary)}</p>
             <div class="pill-row">
               <span class="pill pill-task">${path.members.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
-              <span class="pill">${escapeHtml(path.audience)}</span>
+              <span class="pill">${escapeHtml(path.trackMeta?.name || "Applied")}</span>
+              ${path.estimatedMinutes ? `<span class="pill">${escapeHtml(`${path.estimatedMinutes} min`)}</span>` : ""}
             </div>
           </div>
           <aside class="hero-panel hero-side">
             <p class="eyebrow">Use It When</p>
             <p class="muted">${escapeHtml(path.whenToUse)}</p>
+            <p class="eyebrow" style="margin-top:14px;">Track</p>
+            <p class="muted">${escapeHtml(path.trackMeta?.summary || "A focused route through the catalog.")}</p>
             <p class="eyebrow" style="margin-top:14px;">Guiding Question</p>
             <p class="muted">${escapeHtml(path.guidingQuestion)}</p>
           </aside>
@@ -1282,12 +1599,31 @@ function renderPathDetailPage(path) {
 
         <div class="two-column section-block">
           <div class="note-panel">
-            <h4>What this path is trying to prevent</h4>
-            <p class="muted">These entries belong together because they often appear in the same practical sequence. One bias sets the stage, another narrows the options, and a third edits the memory afterward.</p>
+            <h4>By the end of this path</h4>
+            <ul class="muted">
+              ${(path.outcomes || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
           </div>
           <div class="note-panel">
             <h4>How to study it</h4>
             <p class="muted">Work the pages in order, then loop back and compare which distortions happened earliest, which ones protected the first impression, and which ones interfered with later learning.</p>
+            ${
+              (path.recommendedCheckSlugs || []).length
+                ? `<div class="path-link-row">${(path.recommendedCheckSlugs || [])
+                    .map((slug) => selfCheckBySlug.get(slug))
+                    .filter(Boolean)
+                    .map(
+                      (check) =>
+                        `<a class="path-link-chip" href="../../${siteConfig.checkSlug}/#${check.slug}">${escapeHtml(check.title)}</a>`,
+                    )
+                    .join("")}</div>`
+                : ""
+            }
+            ${
+              (path.nextPathSlugs || []).length
+                ? `<p class="muted"><strong>Next:</strong></p><div class="path-link-row">${renderPathLinkChips(path.nextPathSlugs || [], "../../")}</div>`
+                : ""
+            }
           </div>
         </div>
 
@@ -1320,20 +1656,55 @@ function renderCheckYourselfPage() {
         <section class="detail-section">
           <p class="eyebrow">Check Yourself</p>
           <h2 class="detail-title">Short audits for the moments bias is most likely to slip through</h2>
-          <p class="detail-deck">These are not quizzes. They are small procedural checkpoints you can run before a choice, before a forecast, before a people judgment, and after a result when memory is already trying to smooth the story.</p>
+          <p class="detail-deck">These are not quizzes. They are small procedural checkpoints you can run before a choice, before a forecast, before a people judgment, after a result when memory is already trying to smooth the story, or while you are facilitating a room that is converging too quickly.</p>
         </section>
 
         <section class="section-block">
-          <div class="category-grid">
-            ${selfCheckData.map((check) => `<div id="${check.slug}">${renderSelfCheckCard(check, "../")}</div>`).join("")}
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Use the checks as a progression</h2>
+              <p class="section-copy">The field guide now mirrors the path ladder: learn the basic moves first, practice them in live decisions, and then use the facilitation checks when the social structure itself needs repair.</p>
+            </div>
           </div>
-        </section>`,
+          <div class="category-grid">
+            ${curriculumTracks
+              .map((track) =>
+                renderCurriculumTrackCard(
+                  track,
+                  selfChecks.filter((check) => check.track === track.slug).length,
+                  "checks",
+                  "./",
+                ),
+              )
+              .join("")}
+          </div>
+        </section>
+
+        ${curriculumTracks
+          .map((track) => {
+            const trackChecks = selfChecks.filter((check) => check.track === track.slug);
+            if (!trackChecks.length) return "";
+            return `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">${escapeHtml(track.name)}</h2>
+              <p class="section-copy">${escapeHtml(track.summary)}</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${trackChecks.map((check) => `<div id="${check.slug}">${renderSelfCheckCard(check, "../")}</div>`).join("")}
+          </div>
+        </section>`;
+          })
+          .join("")}`,
   });
 }
 
 function renderAssessmentPage() {
-  const payload = assessmentBankData.map((item) => ({
+  const payload = assessmentBank.map((item) => ({
     ...item,
+    difficultyLabel: item.difficultyMeta?.name || "Applied",
     correctBiasName: entryBySlug.get(item.correctBias)?.name || item.correctBias,
     correctBiasHref: `../${siteConfig.sectionSlug}/${item.correctBias}/`,
     biasOptions: item.biasOptions.map((slug) => ({
@@ -1357,7 +1728,7 @@ function renderAssessmentPage() {
         <section class="detail-section">
           <p class="eyebrow">Assessment</p>
           <h2 class="detail-title">A mixed scenario test of what is bending the judgment and what would interrupt it best</h2>
-          <p class="detail-deck">Each run draws from a bank of short bias scenarios. For every item, choose the bias that most likely explains the drift and then choose the best next move for improving the process.</p>
+          <p class="detail-deck">Each run draws from a bank of short bias scenarios. For every item, choose the bias that most likely explains the drift and then choose the best next move for improving the process. You can now run the bank by difficulty and by bias category instead of taking one undifferentiated quiz.</p>
         </section>
 
         <div class="two-column section-block">
@@ -1371,6 +1742,23 @@ function renderAssessmentPage() {
           </div>
         </div>
 
+        <section class="section-block">
+          <div class="category-grid">
+            ${assessmentDifficulties
+              .map(
+                (difficulty) => `
+                  <article class="category-card">
+                    <h3>${escapeHtml(difficulty.name)}</h3>
+                    <p class="card-copy">${escapeHtml(difficulty.summary)}</p>
+                    <div class="teaching-pill-row">
+                      <span class="teaching-pill">${assessmentBank.filter((item) => item.difficulty === difficulty.slug).length} scenarios</span>
+                    </div>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
         <section class="panel search-panel assessment-runner-panel" data-bias-assessment-shell data-assessment-size="10">
           <div class="section-header">
             <div>
@@ -1378,11 +1766,34 @@ function renderAssessmentPage() {
               <p class="section-copy">Each set uses real decision, forecasting, conflict, and meeting situations rather than bare definitions.</p>
             </div>
           </div>
+          <div class="assessment-filter-row">
+            <label class="assessment-filter">
+              <span>Difficulty</span>
+              <select class="search-select" data-assessment-difficulty>
+                <option value="">Mixed levels</option>
+                ${assessmentDifficulties
+                  .map((difficulty) => `<option value="${escapeHtml(difficulty.slug)}">${escapeHtml(difficulty.name)}</option>`)
+                  .join("")}
+              </select>
+            </label>
+            <label class="assessment-filter">
+              <span>Category</span>
+              <select class="search-select" data-assessment-category>
+                <option value="">All categories</option>
+                ${tasks.map((task) => `<option value="${escapeHtml(task.name)}">${escapeHtml(task.name)}</option>`).join("")}
+              </select>
+            </label>
+          </div>
+          <p class="muted assessment-current-run" data-assessment-summary></p>
           <div class="assessment-toolbar">
             <button class="button button-primary button-compact" type="button" data-bias-assessment-new>Load another set</button>
             <a class="button button-secondary button-compact" href="../${siteConfig.sectionSlug}/">Study the full reference</a>
           </div>
           <div class="assessment-items" data-bias-assessment-items></div>
+          <div class="note-panel hidden assessment-empty-state" data-assessment-empty>
+            <h4>No scenarios matched this filter</h4>
+            <p class="muted">Try a broader difficulty level or switch back to all categories.</p>
+          </div>
           <div class="assessment-actions">
             <button class="button button-primary" type="button" data-bias-assessment-grade>Grade this assessment</button>
           </div>
@@ -1523,6 +1934,7 @@ function renderTheoryPage() {
 }
 
 function renderTheoryArticlePage(article) {
+  const empiricalAnchors = theorySourceTrailFor(article);
   return renderPage({
     title: article.title,
     description: article.summary,
@@ -1556,6 +1968,23 @@ function renderTheoryArticlePage(article) {
               </section>`,
           )
           .join("")}
+
+        ${
+          empiricalAnchors.length
+            ? `
+        <section class="section-block" id="source-trail">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Empirical anchors</h2>
+              <p class="section-copy">Theory pages are editorial synthesis. These direct sources from the related bias pages keep the larger claims tied to the underlying literature.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${empiricalAnchors.map((item) => renderSourceCard(item, "../../")).join("")}
+          </div>
+        </section>`
+            : ""
+        }
 
         <section class="section-block">
           <div class="section-header">
@@ -1670,6 +2099,8 @@ function renderBiasDetailPage(entry) {
   const repairMoves = repairMovesFor(entry);
   const confusions = confusionsFor(entry);
   const caseStudies = caseStudiesFor(entry);
+  const sourceTrail = sourceTrailFor(entry);
+  const curatedSourceCount = sourceTrail.filter((item) => item.kind !== "Seed taxonomy").length;
   const companionReading = companionReadingFor(entry);
   const paths = pathObjectsForEntry(entry);
   const checks = selfChecksForEntry(entry);
@@ -1734,8 +2165,14 @@ function renderBiasDetailPage(entry) {
             </div>
             <div class="note-panel">
               <h4>Source Trail</h4>
-              <p class="muted">This entry is seeded from the Wikipedia cognitive-bias taxonomy.</p>
-              <p><a class="text-link" href="${escapeHtml(entry.sourceUrl || "https://en.wikipedia.org/wiki/List_of_cognitive_biases")}">Open source reference</a></p>
+              <p class="muted">
+                ${
+                  curatedSourceCount
+                    ? `This flagship page now carries ${curatedSourceCount} curated source${curatedSourceCount === 1 ? "" : "s"} plus the seed taxonomy reference.`
+                    : "This entry currently relies on the seed taxonomy reference while deeper sourcing is added."
+                }
+              </p>
+              <p><a class="text-link" href="#source-trail">Open the source trail</a></p>
             </div>
           </aside>
         </section>
@@ -2013,6 +2450,23 @@ function renderBiasDetailPage(entry) {
             : ""
         }
 
+        ${
+          sourceTrail.length
+            ? `
+        <section class="section-block" id="source-trail">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Source trail</h2>
+              <p class="section-copy">Use these sources to move from the teaching page into the underlying literature and seed reference material. The site is still written for clarity first, but the stronger pages should also be traceable.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${sourceTrail.map((item) => renderSourceCard(item)).join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -2163,8 +2617,8 @@ function renderAboutPage() {
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments*.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/entry_teaching_modules*.json</code> and <code>data/assessment_bank*.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
-              <li><code>data/learning_paths*.json</code>, <code>data/self_checks*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
+              <li><code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/assessment_bank*.json</code>, and <code>data/assessment_metadata*.json</code> for flagship-page pedagogy, source trails, and the mixed assessment runner.</li>
+              <li><code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>

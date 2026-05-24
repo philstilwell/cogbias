@@ -1,0 +1,158 @@
+[
+  {
+    "slug": "start-here",
+    "track": "foundational",
+    "sequence": 1,
+    "estimatedMinutes": 45,
+    "outcomes": [
+      "Name the core biases that recur across everyday judgment, news intake, and low-stakes decision making.",
+      "Recognize the difference between a vivid example, a distorted sample, and a socially sticky first impression.",
+      "Leave with a reliable first map of the site before moving into narrower paths."
+    ],
+    "recommendedCheckSlugs": ["before-you-decide", "before-you-share-the-story"],
+    "nextPathSlugs": ["decision-under-uncertainty", "evidence-and-explanation", "people-judgment"]
+  },
+  {
+    "slug": "decision-under-uncertainty",
+    "track": "foundational",
+    "sequence": 2,
+    "estimatedMinutes": 50,
+    "outcomes": [
+      "See how anchors, overconfidence, and inside-view planning bend forecasts before execution begins.",
+      "Practice switching from the inside story to the outside view.",
+      "Build better habits for ranges, reference classes, and stopping rules."
+    ],
+    "recommendedCheckSlugs": ["before-you-decide", "before-you-predict", "after-you-were-surprised"],
+    "nextPathSlugs": ["loss-ownership-and-omission", "confidence-and-understanding"]
+  },
+  {
+    "slug": "evidence-and-explanation",
+    "track": "foundational",
+    "sequence": 3,
+    "estimatedMinutes": 50,
+    "outcomes": [
+      "Differentiate selective evidence handling from genuinely stronger explanation.",
+      "Notice when rates, denominators, and missing cases have been displaced by a cleaner story.",
+      "Get comfortable generating rival hypotheses before reading further."
+    ],
+    "recommendedCheckSlugs": ["before-you-share-the-story", "before-you-explain-what-happened"],
+    "nextPathSlugs": ["misinformation-memory-and-crowds", "after-the-outcome"]
+  },
+  {
+    "slug": "people-judgment",
+    "track": "foundational",
+    "sequence": 4,
+    "estimatedMinutes": 45,
+    "outcomes": [
+      "Catch the fastest routes from behavior to trait verdict.",
+      "Separate social impression from evidence about motive, character, or capacity.",
+      "Build a stronger baseline before entering harder conflict and identity-heavy cases."
+    ],
+    "recommendedCheckSlugs": ["before-you-judge-a-person", "before-you-read-hostility-into-it"],
+    "nextPathSlugs": ["conflict-threat-and-tribe", "social-pressure-and-belonging"]
+  },
+  {
+    "slug": "loss-ownership-and-omission",
+    "track": "applied",
+    "sequence": 1,
+    "estimatedMinutes": 45,
+    "outcomes": [
+      "Spot when defaults, ownership, and loss language are doing hidden work in a choice.",
+      "Reframe decisions so staying put and changing course both receive symmetrical scrutiny.",
+      "Improve live choices about policy, spending, and inherited workflows."
+    ],
+    "recommendedCheckSlugs": ["before-you-treat-the-default-as-neutral", "before-you-decide"],
+    "nextPathSlugs": ["comparison-traps-and-choice-architecture"]
+  },
+  {
+    "slug": "confidence-and-understanding",
+    "track": "applied",
+    "sequence": 2,
+    "estimatedMinutes": 40,
+    "outcomes": [
+      "Distinguish fluency from real understanding.",
+      "Notice where precision, familiarity, and explanatory confidence have outrun competence.",
+      "Use tests of explanation and performance instead of trusting verbal smoothness alone."
+    ],
+    "recommendedCheckSlugs": ["before-you-call-it-obvious", "before-you-predict"],
+    "nextPathSlugs": ["self-justification-and-meta-bias"]
+  },
+  {
+    "slug": "after-the-outcome",
+    "track": "applied",
+    "sequence": 3,
+    "estimatedMinutes": 45,
+    "outcomes": [
+      "Keep the known result from rewriting what seemed knowable beforehand.",
+      "Separate process quality from luck, blame, and retrospective storytelling.",
+      "Run postmortems that actually improve calibration."
+    ],
+    "recommendedCheckSlugs": ["before-you-explain-what-happened", "after-you-were-surprised"],
+    "nextPathSlugs": ["self-justification-and-meta-bias"]
+  },
+  {
+    "slug": "conflict-threat-and-tribe",
+    "track": "applied",
+    "sequence": 4,
+    "estimatedMinutes": 45,
+    "outcomes": [
+      "Recognize when disagreement is turning into threat perception too quickly.",
+      "Slow hostile interpretation and in-group filtering before they harden.",
+      "Improve moderation, mediation, and politically charged discussion."
+    ],
+    "recommendedCheckSlugs": ["before-you-read-hostility-into-it", "before-you-judge-a-person"],
+    "nextPathSlugs": ["social-pressure-and-belonging"]
+  },
+  {
+    "slug": "misinformation-memory-and-crowds",
+    "track": "applied",
+    "sequence": 5,
+    "estimatedMinutes": 50,
+    "outcomes": [
+      "See how repetition, correction failure, and uptake pressure combine in information-rich environments.",
+      "Trace claims back to source quality instead of circulation quality.",
+      "Teach a clearer difference between retrieval, popularity, and verification."
+    ],
+    "recommendedCheckSlugs": ["before-you-trust-the-repeat", "before-you-share-the-story"],
+    "nextPathSlugs": ["social-pressure-and-belonging"]
+  },
+  {
+    "slug": "comparison-traps-and-choice-architecture",
+    "track": "teaching",
+    "sequence": 1,
+    "estimatedMinutes": 55,
+    "outcomes": [
+      "Notice when the menu, proxy, or system recommendation is manufacturing preference.",
+      "Teach product, policy, and purchasing teams to test the frame as well as the options.",
+      "Translate bias vocabulary into interface and workflow design decisions."
+    ],
+    "recommendedCheckSlugs": ["before-you-let-the-menu-decide", "before-you-treat-the-default-as-neutral"],
+    "nextPathSlugs": ["social-pressure-and-belonging"]
+  },
+  {
+    "slug": "social-pressure-and-belonging",
+    "track": "teaching",
+    "sequence": 2,
+    "estimatedMinutes": 50,
+    "outcomes": [
+      "Identify where agreement pressure is arriving before evidential convergence.",
+      "Use dissent-friendly meeting design as a debiasing tool rather than a management accessory.",
+      "Improve how classrooms, teams, and leadership groups surface independent judgment."
+    ],
+    "recommendedCheckSlugs": ["before-you-go-with-the-room", "before-you-trust-the-repeat"],
+    "nextPathSlugs": ["self-justification-and-meta-bias"]
+  },
+  {
+    "slug": "self-justification-and-meta-bias",
+    "track": "teaching",
+    "sequence": 3,
+    "estimatedMinutes": 55,
+    "outcomes": [
+      "Catch the self-protective layer that keeps a bias site from becoming merely other-directed.",
+      "Teach people to separate honest explanation from story repair.",
+      "Use the site for coaching, debriefing, and intellectual self-discipline rather than only classification."
+    ],
+    "recommendedCheckSlugs": ["before-you-tidy-the-story", "before-you-call-it-obvious"],
+    "nextPathSlugs": []
+  }
+]

@@ -1,0 +1,330 @@
+[
+  {
+    "slug": "confirmation-bias",
+    "sourceTrail": [
+      {
+        "kind": "Review",
+        "title": "Confirmation Bias: A Ubiquitous Phenomenon in Many Guises",
+        "source": "Review of General Psychology",
+        "year": "1998",
+        "href": "https://psy2.ucsd.edu/~mckenzie/nickersonConfirmationBias.pdf",
+        "note": "A broad review that helps distinguish selective search, selective weighting, and memory distortion."
+      }
+    ]
+  },
+  {
+    "slug": "motivated-reasoning",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "The Case for Motivated Reasoning",
+        "source": "Psychological Bulletin",
+        "year": "1990",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/2270237/",
+        "note": "A foundational statement of how directional goals can bend the evaluation of evidence."
+      }
+    ]
+  },
+  {
+    "slug": "availability-heuristic",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Availability: A Heuristic for Judging Frequency and Probability",
+        "source": "Cognitive Psychology",
+        "year": "1973",
+        "href": "https://doi.org/10.1016/0010-0285(73)90033-9",
+        "note": "The original paper introducing availability as a shortcut for probability and frequency judgment."
+      }
+    ]
+  },
+  {
+    "slug": "anchoring-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Judgment under Uncertainty: Heuristics and Biases",
+        "source": "Science",
+        "year": "1974",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/17835457/",
+        "note": "The classic heuristics paper that includes the anchoring-and-adjustment idea in its canonical form."
+      }
+    ]
+  },
+  {
+    "slug": "base-rate-neglect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Judgment under Uncertainty: Heuristics and Biases",
+        "source": "Science",
+        "year": "1974",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/17835457/",
+        "note": "A strong starting point for the larger heuristics program that made base-rate neglect a core teaching case."
+      }
+    ]
+  },
+  {
+    "slug": "overconfidence-effect",
+    "sourceTrail": [
+      {
+        "kind": "Review",
+        "title": "The Trouble with Overconfidence",
+        "source": "Psychological Review",
+        "year": "2008",
+        "href": "https://healy.econ.ohio-state.edu/papers/Moore_Healy-TroubleWithOverconfidence.pdf",
+        "note": "Useful for separating overestimation, overplacement, and overprecision instead of treating overconfidence as a single thing."
+      }
+    ]
+  },
+  {
+    "slug": "dunning-kruger-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Unskilled and Unaware of It: How Difficulties in Recognizing One's Own Incompetence Lead to Inflated Self-Assessments",
+        "source": "Journal of Personality and Social Psychology",
+        "year": "1999",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/10626367/",
+        "note": "The flagship paper behind the now-famous competence-and-self-assessment effect."
+      }
+    ]
+  },
+  {
+    "slug": "loss-aversion",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Prospect Theory: An Analysis of Decision under Risk",
+        "source": "Econometrica",
+        "year": "1979",
+        "href": "https://www.econometricsociety.org/publications/econometrica/browse/1979/03/01/prospect-theory-analysis-decision-under-risk",
+        "note": "The canonical source for the asymmetric weighting of gains and losses in risky choice."
+      }
+    ]
+  },
+  {
+    "slug": "framing-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "The Framing of Decisions and the Psychology of Choice",
+        "source": "Science",
+        "year": "1981",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/7455683/",
+        "note": "The standard source for preference reversals caused by equivalent but differently described options."
+      }
+    ]
+  },
+  {
+    "slug": "groupthink",
+    "sourceTrail": [
+      {
+        "kind": "Foundational book",
+        "title": "Victims of Groupthink",
+        "source": "Houghton Mifflin / Open Library",
+        "year": "1972",
+        "href": "https://openlibrary.org/books/OL21279371M/Victims_of_groupthink",
+        "note": "Janis's original formulation of the concept, its symptoms, and the policy fiasco examples that made it durable."
+      }
+    ]
+  },
+  {
+    "slug": "planning-fallacy",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Exploring the Planning Fallacy: Why People Underestimate Their Task Completion Times",
+        "source": "Journal of Personality and Social Psychology",
+        "year": "1994",
+        "href": "https://cir.nii.ac.jp/crid/1360011145398314240?lang=en",
+        "note": "The best single starting point for optimistic time prediction and inside-view planning errors."
+      }
+    ]
+  },
+  {
+    "slug": "sunk-cost-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "The Psychology of Sunk Cost",
+        "source": "Organizational Behavior and Human Decision Processes",
+        "year": "1985",
+        "href": "https://doi.org/10.1016/0749-5978(85)90049-4",
+        "note": "The classic experiments on staying committed because previous investment feels too painful to abandon."
+      }
+    ]
+  },
+  {
+    "slug": "status-quo-bias",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Status Quo Bias in Decision Making",
+        "source": "Journal of Risk and Uncertainty",
+        "year": "1988",
+        "href": "https://cir.nii.ac.jp/crid/1361418519127121920?lang=en",
+        "note": "The flagship demonstrations of how inherited options gain extra pull simply by already being in place."
+      }
+    ]
+  },
+  {
+    "slug": "default-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Do Defaults Save Lives?",
+        "source": "Science",
+        "year": "2003",
+        "href": "https://pubmed.ncbi.nlm.nih.gov/14631022/",
+        "note": "A widely taught demonstration of how preselection can quietly steer consequential decisions."
+      }
+    ]
+  },
+  {
+    "slug": "fundamental-attribution-error",
+    "sourceTrail": [
+      {
+        "kind": "Classic chapter",
+        "title": "The Intuitive Psychologist and His Shortcomings: Distortions in the Attribution Process",
+        "source": "Advances in Experimental Social Psychology",
+        "year": "1977",
+        "href": "https://www.sciencedirect.com/science/article/pii/S0065260108603573",
+        "note": "The chapter most commonly cited as the conceptual home of the fundamental attribution error."
+      }
+    ]
+  },
+  {
+    "slug": "halo-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "A Constant Error in Psychological Ratings",
+        "source": "Journal of Applied Psychology",
+        "year": "1920",
+        "href": "https://doi.org/10.1037/h0071663",
+        "note": "Thorndike's original paper naming the halo effect and showing cross-trait spillover in ratings."
+      }
+    ]
+  },
+  {
+    "slug": "implicit-bias",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Implicit Social Cognition: Attitudes, Self-Esteem, and Stereotypes",
+        "source": "Psychological Review",
+        "year": "1995",
+        "href": "https://banaji.sites.fas.harvard.edu/research/publications/articles/1995_Greenwald_PR.pdf",
+        "note": "The landmark paper that helped define implicit social cognition as a research program."
+      },
+      {
+        "kind": "Review",
+        "title": "Implicit Social Cognition",
+        "source": "Annual Review of Psychology",
+        "year": "2020",
+        "href": "https://www.annualreviews.org/doi/10.1146/annurev-psych-010419-050837",
+        "note": "A modern review that is useful for scope, methods, and caution around overclaiming what implicit measures can show."
+      }
+    ]
+  },
+  {
+    "slug": "negativity-bias",
+    "sourceTrail": [
+      {
+        "kind": "Review",
+        "title": "Bad Is Stronger Than Good",
+        "source": "Review of General Psychology",
+        "year": "2001",
+        "href": "https://research.vu.nl/en/publications/bad-is-stronger-than-good-2",
+        "note": "A widely cited review on why negative events and cues so often dominate attention, learning, and memory."
+      }
+    ]
+  },
+  {
+    "slug": "naive-realism",
+    "sourceTrail": [
+      {
+        "kind": "Classic chapter",
+        "title": "Naive Realism in Everyday Life: Implications for Social Conflict and Misunderstanding",
+        "source": "Values and Knowledge",
+        "year": "1996",
+        "href": "https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Negotiation_and_Conflict_Management/required_reading/2Ross_Ward_Naive_Realism.pdf",
+        "note": "The clearest source for the social-psychological version of naive realism used in conflict and disagreement work."
+      }
+    ]
+  },
+  {
+    "slug": "hindsight-bias",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Hindsight Does Not Equal Foresight: The Effect of Outcome Knowledge on Judgment under Uncertainty",
+        "source": "Journal of Experimental Psychology: Human Perception and Performance",
+        "year": "1975",
+        "href": "https://www.cmu.edu/epp/people/faculty/faculty-images-and-files/jep-hpp-hindsight-foresight-1975.pdf",
+        "note": "The original outcome-knowledge paper behind the hindsight effect."
+      }
+    ]
+  },
+  {
+    "slug": "survivorship-bias",
+    "sourceTrail": [
+      {
+        "kind": "Applied illustration",
+        "title": "Survivorship Bias and Mutual Fund Performance",
+        "source": "NYU Archive",
+        "year": "1992",
+        "href": "https://archive.nyu.edu/jspui/handle/2451/27234",
+        "note": "A concrete domain example of how winner-only samples can make a process look much stronger than it really was."
+      }
+    ]
+  },
+  {
+    "slug": "bias-blind-spot",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "The Bias Blind Spot: Perceptions of Bias in Self Versus Others",
+        "source": "Personality and Social Psychology Bulletin",
+        "year": "2002",
+        "href": "https://journals.sagepub.com/doi/pdf/10.1177/0146167202286008",
+        "note": "The defining paper on why people spot bias more readily in others than in themselves."
+      }
+    ]
+  },
+  {
+    "slug": "conjunction-fallacy",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Extensional Versus Intuitive Reasoning: The Conjunction Fallacy in Probability Judgment",
+        "source": "Psychological Review",
+        "year": "1983",
+        "href": "https://doi.org/10.1037/0033-295X.90.4.293",
+        "note": "The classic Linda-style demonstrations that made the conjunction fallacy central to judgment research."
+      }
+    ]
+  },
+  {
+    "slug": "continued-influence-effect",
+    "sourceTrail": [
+      {
+        "kind": "Review",
+        "title": "Misinformation and Its Correction: Continued Influence and Successful Debiasing",
+        "source": "Psychological Science in the Public Interest",
+        "year": "2012",
+        "href": "https://online225.psych.wisc.edu/wp-content/uploads/225-Master/225-UnitPages/Unit-02/Lewandowsky_PSPI_2012.pdf",
+        "note": "A strong review of why retracted information keeps shaping later reasoning and what kinds of corrections help."
+      },
+      {
+        "kind": "Review chapter",
+        "title": "The Continued Influence of Misinformation in Memory: What Makes a Correction Effective?",
+        "source": "The Psychology of Learning and Motivation",
+        "year": "2002",
+        "href": "https://sites.lsa.umich.edu/wp-content/uploads/sites/224/2015/01/seifert2002.pdf",
+        "note": "A useful bridge from early experiments to later work on correction quality and explanation replacement."
+      }
+    ]
+  }
+]
