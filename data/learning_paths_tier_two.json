@@ -10,7 +10,10 @@
       "availability-cascade",
       "bandwagon-effect",
       "continued-influence-effect",
+      "frequency-illusion",
+      "false-memory",
       "availability-heuristic",
+      "apophenia",
       "confirmation-bias",
       "bias-blind-spot"
     ]
@@ -24,6 +27,7 @@
     "guidingQuestion": "What in the frame or comparison structure is deciding the choice before the merits are cleanly weighed?",
     "biasSlugs": [
       "attribute-substitution",
+      "contrast-effect",
       "decoy-effect",
       "default-effect",
       "action-bias",
@@ -41,6 +45,8 @@
     "biasSlugs": [
       "cognitive-dissonance",
       "choice-supportive-bias",
+      "consistency-bias",
+      "egocentric-bias",
       "bias-blind-spot",
       "self-serving-bias",
       "motivated-reasoning",

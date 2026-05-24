@@ -1,0 +1,434 @@
+[
+  {
+    "slug": "apophenia",
+    "quickCheck": "Am I detecting a real signal, or rescuing coincidence from meaninglessness because the pattern feels too evocative to leave alone?",
+    "analogyClaim": "This is like pinning strings between scattered pushpins until the corkboard starts to feel more like a plot than a pile of dots.",
+    "analogyResponse": "Some connections are real, but connection density is not evidence by itself. A meaningful pattern still needs an independent check that survives outside the board.",
+    "misuseWarning": "Do not use this label every time someone notices a pattern. Pattern detection is often exactly what intelligence is for. The issue is that weak coincidence is being promoted into significance before discriminating tests have been done.",
+    "useLabelWhen": "Use this label when sparse correspondences, coincidences, or symbolic echoes start carrying more explanatory weight than the evidence can actually bear.",
+    "teachingGauges": [
+      { "label": "Common in uncertainty", "low": "Rare", "high": "Frequent", "value": 73, "note": "Strong where randomness, fear, or emotionally loaded material makes pattern hunger more active." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 48, "note": "Outsiders often see the jump from coincidence to meaning earlier than insiders do." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 88, "note": "A meaningful-seeming pattern often feels like insight rather than like interpretation." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 55, "note": "Best taught with noisy examples where the need for a discriminating test becomes visible." }
+    ],
+    "practiceLab": {
+      "intro": "Apophenia is not just seeing a pattern. It is treating a pattern-feel as if it already came with evidential credentials.",
+      "stages": [
+        { "title": "Trigger", "text": "Several details rhyme in a way that feels too pointed, too thematic, or too improbable to ignore." },
+        { "title": "Felt certainty", "text": "The pattern begins to feel discovered rather than constructed, so skepticism starts looking unimaginative." },
+        { "title": "Distortion", "text": "Weak connection gets upgraded into hidden design, causal structure, or intentional signaling before competing baselines are tested." },
+        { "title": "Reset", "text": "Ask what observation would still separate a real pattern from a vivid coincidence if the emotional charge were removed." }
+      ],
+      "repairQuestion": "What independent test would tell me that this pattern is doing more than satisfying my need for coherence?"
+    },
+    "caseStudies": [
+      {
+        "title": "Conspiracy-board style pattern hunting",
+        "source": "Wikipedia",
+        "year": "Overview case",
+        "url": "https://en.wikipedia.org/wiki/Apophenia",
+        "summary": "Apophenia is often illustrated through situations where unrelated signals, names, dates, or events are woven into a hidden-order story that feels too meaningful to dismiss as coincidence.",
+        "whyItFits": "The persuasive force comes from the pattern-feel itself long before the links have survived independent testing."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "clustering-illusion",
+        "looksSimilarBecause": "Both make noisy data feel more structured than it really is.",
+        "note": "Clustering illusion overreads a local run or pocket in the data. Apophenia is broader and can spin significance out of scattered correspondences that do not even need to form one tight cluster.",
+        "diagnosticQuestion": "Am I overreading one local streak, or am I building a larger web of meaning out of scattered coincidences?"
+      },
+      {
+        "slug": "availability-heuristic",
+        "looksSimilarBecause": "In both cases a few vivid examples become disproportionately influential.",
+        "note": "Availability makes certain examples easier to retrieve. Apophenia goes further and treats the retrieved coincidences as evidence of hidden structure or design.",
+        "diagnosticQuestion": "Would this still feel significant if the examples stayed vivid but lost their aura of meaningful linkage?"
+      },
+      {
+        "slug": "confirmation-bias",
+        "looksSimilarBecause": "Both can end with a person confidently seeing support everywhere they look.",
+        "note": "Confirmation bias selectively protects or gathers evidence for a view already on the table. Apophenia is often what supplies the tantalizing pattern candidate in the first place.",
+        "diagnosticQuestion": "Am I mainly defending an existing pattern, or am I first inventing the pattern from loose correspondences?"
+      }
+    ]
+  },
+  {
+    "slug": "clustering-illusion",
+    "quickCheck": "How surprising would this cluster look if the underlying process were random but uneven in the short run?",
+    "analogyClaim": "This is like circling a few adjacent raindrops on a window and deciding the weather was trying to draw a route.",
+    "analogyResponse": "Randomness routinely produces pockets and streaks. A cluster becomes evidence only after it clears a baseline for how much clumping chance alone can generate.",
+    "misuseWarning": "Do not use this label whenever someone notices a genuine hotspot. Some clusters are real signals. The issue is that visual concentration is being mistaken for evidential surprise before the random baseline has been consulted.",
+    "useLabelWhen": "Use this label when a local streak, pocket, or concentration is being treated as self-explanatory even though no one has asked whether random sampling could have produced it.",
+    "teachingGauges": [
+      { "label": "Common in data storytelling", "low": "Rare", "high": "Frequent", "value": 77, "note": "Strong in maps, dashboards, sports runs, and public-risk narratives." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 54, "note": "Often visible as soon as the missing baseline question is named aloud." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 84, "note": "The eye treats visible concentration as if it were already an explanation." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 38, "note": "Very teachable with simple streak and map examples." }
+    ],
+    "practiceLab": {
+      "intro": "Clustering illusion is a reminder that randomness is allowed to look streaky, lopsided, and narratively tempting in the short run.",
+      "stages": [
+        { "title": "Trigger", "text": "A short run, visual pocket, or repeated local feature jumps out against a noisy background." },
+        { "title": "Felt certainty", "text": "Because the cluster is easy to point at, it begins to feel too orderly to be accidental." },
+        { "title": "Distortion", "text": "Pattern visibility gets substituted for statistical surprise, and explanation starts before comparison." },
+        { "title": "Reset", "text": "Ask what the same process would be expected to look like under chance and whether the observed cluster meaningfully exceeds that expectation." }
+      ],
+      "repairQuestion": "What baseline or simulation would tell me whether this cluster is actually unusual rather than merely easy to notice?"
+    },
+    "caseStudies": [
+      {
+        "title": "Disease maps and apparent hotspots",
+        "source": "Wikipedia",
+        "year": "Overview case",
+        "url": "https://en.wikipedia.org/wiki/Clustering_illusion",
+        "summary": "Clustering illusion is often taught through maps of disease, crime, or defects where visually concentrated points are treated as obvious causal hotspots before chance clustering has been compared.",
+        "whyItFits": "The local concentration feels explanatory on sight even though randomness can produce pockets that invite overconfident stories."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "apophenia",
+        "looksSimilarBecause": "Both reward the mind for finding structure in noise.",
+        "note": "Clustering illusion is narrower. It overreads local runs or pockets in the observed data. Apophenia is the broader habit of discovering significance in much looser coincidence and connection.",
+        "diagnosticQuestion": "Am I reacting to one suspicious-looking cluster, or to a much wider web of meaning that extends beyond the cluster itself?"
+      },
+      {
+        "slug": "gamblers-fallacy",
+        "looksSimilarBecause": "Both begin with a streak or lopsided short run that feels psychologically loaded.",
+        "note": "Clustering illusion overstates what the observed run means. Gambler's fallacy adds a mistaken forecast that the next event must compensate for it.",
+        "diagnosticQuestion": "Am I only overreading the run I already saw, or am I also predicting a balancing correction in what comes next?"
+      },
+      {
+        "slug": "conjunction-fallacy",
+        "looksSimilarBecause": "Both can make a richer, more story-like pattern feel more convincing than the bare statistics deserve.",
+        "note": "Conjunction fallacy mistakes descriptive richness for probability. Clustering illusion mistakes visible local pattern for statistical significance.",
+        "diagnosticQuestion": "Is the error coming from the attractiveness of the story, or from treating a concentrated run as stronger evidence than it is?"
+      }
+    ]
+  },
+  {
+    "slug": "consistency-bias",
+    "quickCheck": "Am I recalling the past, or editing it so my earlier self looks smoother and more continuous with who I am now?",
+    "analogyClaim": "This is like repainting old diary entries in the color of today's convictions.",
+    "analogyResponse": "Continuity is comforting, but real memory also includes reversals, ambivalence, and genuine change. A tidy arc is not the same thing as an accurate one.",
+    "misuseWarning": "Do not use this label whenever someone has remained stable over time. Some people really were consistent. The issue is retrospective editing that makes the past look more aligned with the present than the dated record supports.",
+    "useLabelWhen": "Use this label when earlier beliefs, tastes, or stances are being remembered as if they already closely resembled the current self, despite evidence that the earlier position was messier or different.",
+    "teachingGauges": [
+      { "label": "Common in self-narration", "low": "Rare", "high": "Frequent", "value": 81, "note": "Strong whenever people need their personal history to look coherent and legible." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 39, "note": "Often only visible after old notes, votes, messages, or journals are recovered." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 87, "note": "The present self feels like the natural narrator of the past self." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 46, "note": "A memory-bias concept that becomes vivid once dated records are compared to recollection." }
+    ],
+    "practiceLab": {
+      "intro": "Consistency bias protects autobiographical coherence. The past gets trimmed until it better fits the person you now believe yourself to be.",
+      "stages": [
+        { "title": "Trigger", "text": "A present belief, identity, or emotional stance becomes important to explain or defend." },
+        { "title": "Felt certainty", "text": "The current self feels authoritative enough that the earlier self is recalled through its lens almost automatically." },
+        { "title": "Distortion", "text": "Old ambivalence, experiment, or disagreement is flattened so the timeline looks cleaner than it was." },
+        { "title": "Reset", "text": "Compare the present recollection with something genuinely dated before treating the smoother story as memory rather than reconstruction." }
+      ],
+      "repairQuestion": "What dated trace of my earlier view would most likely complicate the elegant version I am now telling?"
+    },
+    "caseStudies": [
+      {
+        "title": "Retrospective reports of past opinions",
+        "source": "The Seven Sins of Memory review",
+        "year": "2021",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8285452/",
+        "summary": "Consistency bias is often discussed through cases where people remember their past beliefs, tastes, or political positions as having been more similar to their current views than contemporaneous records suggest.",
+        "whyItFits": "The memory error preserves a coherent self-narrative by pulling the past toward the present."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "hindsight-bias",
+        "looksSimilarBecause": "Both clean up the past after later knowledge becomes available.",
+        "note": "Hindsight bias rewrites what seemed predictable before an outcome. Consistency bias rewrites who you remember yourself to have been before the present stance solidified.",
+        "diagnosticQuestion": "Am I revising what I thought would happen, or revising what kind of person I remember myself as being?"
+      },
+      {
+        "slug": "self-serving-bias",
+        "looksSimilarBecause": "Both protect the self from a less flattering or less stable story.",
+        "note": "Self-serving bias mainly reallocates credit and blame. Consistency bias mainly reallocates continuity, making the self look more stable across time.",
+        "diagnosticQuestion": "Is the distortion about looking better, or about looking more continuous than I really was?"
+      },
+      {
+        "slug": "choice-supportive-bias",
+        "looksSimilarBecause": "Both beautify the past after commitment has already happened.",
+        "note": "Choice-supportive bias polishes the remembered quality of a decision and its options. Consistency bias polishes the remembered continuity of your past attitudes and identity.",
+        "diagnosticQuestion": "Am I editing the choice itself, or am I editing the earlier self who made it?"
+      }
+    ]
+  },
+  {
+    "slug": "contrast-effect",
+    "quickCheck": "Would this seem as strong or weak if I judged it alone rather than right after the comparison case?",
+    "analogyClaim": "This is like calling lukewarm water hot because your hand just left the ice bucket.",
+    "analogyResponse": "Relative difference can sharpen perception, but it can also hijack evaluation. A good judgment still needs a stable standard, not only a recent neighbor.",
+    "misuseWarning": "Do not use this label whenever comparison matters. Comparison is often informative. The issue is that sequence or juxtaposition is dragging the verdict more than the target's own merits justify.",
+    "useLabelWhen": "Use this label when a target looks better or worse mainly because of what it was placed beside, before, or after.",
+    "teachingGauges": [
+      { "label": "Common in evaluation sequences", "low": "Rare", "high": "Frequent", "value": 79, "note": "Shows up in interviews, grading, pricing, hiring, and product comparison." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 57, "note": "Often becomes visible once the order of presentation is changed." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 85, "note": "The mind naturally uses nearby cases as a standard unless told not to." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 34, "note": "Simple demonstrations make the point quickly." }
+    ],
+    "practiceLab": {
+      "intro": "Contrast effect is a sequence trap. The current target inherits part of its value from the standard just created by the previous target.",
+      "stages": [
+        { "title": "Trigger", "text": "A judgment happens in a sequence where one item is evaluated after a noticeably stronger or weaker comparison case." },
+        { "title": "Felt certainty", "text": "The relative difference feels like the target's actual quality rather than as a context effect on perception." },
+        { "title": "Distortion", "text": "The standard shifts under the evaluator's feet, so the same target could receive a different verdict in a different order." },
+        { "title": "Reset", "text": "Pause to restate the fixed criterion and judge the target once with the comparison hidden and once with it visible." }
+      ],
+      "repairQuestion": "What stable standard would I use here if I were forced to judge this case without the immediately surrounding comparison?"
+    },
+    "caseStudies": [
+      {
+        "title": "Interview and product-sequence judgments",
+        "source": "Wikipedia",
+        "year": "Overview case",
+        "url": "https://en.wikipedia.org/wiki/Contrast_effect",
+        "summary": "Contrast effect is commonly illustrated when an average candidate looks excellent after a weak one, or mediocre after a very strong one, despite the target not changing at all.",
+        "whyItFits": "The verdict is being pulled by sequence and juxtaposition rather than by a fixed standard alone."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "anchoring-effect",
+        "looksSimilarBecause": "Both make earlier context linger in later judgment.",
+        "note": "Anchoring leaves too much pull with an initial number or frame. Contrast effect changes the target's appearance relative to a nearby comparison standard.",
+        "diagnosticQuestion": "Is the earlier input acting like a sticky starting value, or is it acting like a comparison backdrop that makes the current target look larger or smaller?"
+      },
+      {
+        "slug": "halo-effect",
+        "looksSimilarBecause": "Both can distort evaluation without the evaluator noticing the transfer.",
+        "note": "Halo effect spreads one positive or negative trait across other traits of the same target. Contrast effect changes the evaluation because the target is being judged beside another case.",
+        "diagnosticQuestion": "Is one trait spilling into another, or is one comparison object warping the whole rating?"
+      },
+      {
+        "slug": "decoy-effect",
+        "looksSimilarBecause": "Both can make a nearby option reshape preference for the focal option.",
+        "note": "Decoy effect is a structured choice-architecture move inside a menu. Contrast effect is the broader phenomenon where neighboring cases alter perceived quality even outside formal menu design.",
+        "diagnosticQuestion": "Is this a menu engineered to steer preference, or a simpler sequence/juxtaposition effect on perception?"
+      }
+    ]
+  },
+  {
+    "slug": "egocentric-bias",
+    "quickCheck": "How much smaller would my role, burden, or objectivity look if I had to estimate it from someone else's seat?",
+    "analogyClaim": "This is like measuring the group's workload with a ruler whose zero point starts at your own effort.",
+    "analogyResponse": "Your contribution is the easiest one to feel directly, but ease of access is not the same thing as objective scale. Good perspective-taking recalibrates the ruler.",
+    "misuseWarning": "Do not use this label every time someone notices their own hardship or contribution. Sometimes their contribution really is larger. The issue is overweighting one's own share, perspective, or memory because it is more cognitively available from the inside.",
+    "useLabelWhen": "Use this label when your own contribution, suffering, objectivity, or perspective is being treated as more central than a fair outside comparison would support.",
+    "teachingGauges": [
+      { "label": "Common in shared work", "low": "Rare", "high": "Frequent", "value": 84, "note": "Especially visible in households, teams, collaboration, and conflict." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 44, "note": "Often clear when each person's estimate of the same joint task is compared." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 90, "note": "Your own effort and perception are naturally more available than everyone else's." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 42, "note": "Concrete contribution-estimation examples usually make it land fast." }
+    ],
+    "practiceLab": {
+      "intro": "Egocentric bias grows wherever lived access is asymmetrical. What you did, felt, intended, or endured is easier for you to retrieve than what everyone else did, felt, intended, or endured.",
+      "stages": [
+        { "title": "Trigger", "text": "A shared outcome, conflict, or memory has to be apportioned across multiple people or perspectives." },
+        { "title": "Felt certainty", "text": "Your own contribution and perspective feel unusually vivid, detailed, and therefore proportionate." },
+        { "title": "Distortion", "text": "Availability gets mistaken for scale, so your own role or objectivity quietly expands." },
+        { "title": "Reset", "text": "Estimate the same event from at least one rival vantage point and compare whether the totals can all be true at once." }
+      ],
+      "repairQuestion": "What part of this estimate is inflated simply because my own effort, memory, or point of view is easier for me to access?"
+    },
+    "caseStudies": [
+      {
+        "title": "Household and group-task contribution estimates",
+        "source": "Cambridge chapter",
+        "year": "1982",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EB2AB8EAB64D9806F27158695919B84B/9780511809477c12_p179-189_CBO.pdf/egocentric-biases-in-availability-and-attribution.pdf",
+        "summary": "Egocentric bias is classically taught through joint projects and household labor, where each participant recalls their own contribution more readily and therefore estimates it as larger than others do.",
+        "whyItFits": "Availability from the first-person seat is being mistaken for objective proportion."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "self-serving-bias",
+        "looksSimilarBecause": "Both can make the self look larger, cleaner, or more justified than an outside account would.",
+        "note": "Self-serving bias mainly reallocates credit and blame in self-protective directions. Egocentric bias is broader and can inflate your share or perspective even before overt praise or excuse enters the picture.",
+        "diagnosticQuestion": "Is the distortion mostly about protecting my image, or simply about overweighting my own role because it is easiest for me to access?"
+      },
+      {
+        "slug": "false-consensus-effect",
+        "looksSimilarBecause": "Both project something from the self outward onto a wider social field.",
+        "note": "False consensus projects your view onto the group. Egocentric bias overweights your own standpoint or contribution before the projection step even happens.",
+        "diagnosticQuestion": "Am I assuming others agree with me, or am I first assuming my own role or perspective deserves more central weight?"
+      },
+      {
+        "slug": "naive-realism",
+        "looksSimilarBecause": "Both make the self's own viewpoint feel like the least biased starting point.",
+        "note": "Naive realism says your perception feels like direct contact with reality. Egocentric bias says your own role, memory, or perspective gets overweighted because it is yours.",
+        "diagnosticQuestion": "Is the problem that my view feels objective, or that my own contribution and vantage point feel proportionately larger than they are?"
+      }
+    ]
+  },
+  {
+    "slug": "false-memory",
+    "quickCheck": "What record supports this memory besides how vivid or familiar it feels right now?",
+    "analogyClaim": "This is like mistaking the polished retelling for the original footage.",
+    "analogyResponse": "A memory can feel sincere and detailed while still being reconstructed, contaminated, or partly imported from later suggestion. Vividness is not a timestamp.",
+    "misuseWarning": "Do not use this label whenever someone remembers something differently from you. Memory disagreement alone is not proof of false memory. The issue is that later suggestion, imagination, reconstruction, or source confusion may have installed details the present mind now experiences as recollection.",
+    "useLabelWhen": "Use this label when a remembered detail, event, or sequence is being trusted mainly because it feels vivid or familiar despite weak independent support.",
+    "teachingGauges": [
+      { "label": "Common in reconstruction", "low": "Rare", "high": "Frequent", "value": 82, "note": "Memory is routinely rebuilt from pieces, not replayed from a neutral archive." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 31, "note": "Hard to detect from inside because the memory often arrives with real conviction." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 91, "note": "The feeling of remembering is a poor guarantee that the remembered content was actually there." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 53, "note": "Needs careful framing so healthy caution does not become total memory nihilism." }
+    ],
+    "practiceLab": {
+      "intro": "False memory matters because memory confidence and memory accuracy can come apart while still feeling psychologically unified from the inside.",
+      "stages": [
+        { "title": "Trigger", "text": "An event is later revisited through imagination, retelling, cueing, or suggestion." },
+        { "title": "Felt certainty", "text": "The reconstructed detail gains familiarity, vividness, or emotional fit and starts to feel like direct recall." },
+        { "title": "Distortion", "text": "Source confusion lets later material pass as if it were part of the original event." },
+        { "title": "Reset", "text": "Treat confidence as one clue among others and check it against a contemporaneous record or a more neutral retrieval process." }
+      ],
+      "repairQuestion": "What part of this memory comes from the event itself, and what part may have been supplied later by retelling, suggestion, or imagination?"
+    },
+    "caseStudies": [
+      {
+        "title": "Deese-Roediger-McDermott false-memory experiments",
+        "source": "Roediger and McDermott",
+        "year": "1995",
+        "url": "https://psych.hanover.edu/classes/Cognition/Papers/RoedigerMcDermott%201996%20DRM%20False.pdf",
+        "summary": "Participants exposed to lists of related words often confidently recalled or recognized a closely associated lure word that had never actually been presented.",
+        "whyItFits": "The mind experiences the lure as remembered because semantic fit and familiarity are standing in for genuine occurrence."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "hindsight-bias",
+        "looksSimilarBecause": "Both alter the remembered past after later information becomes available.",
+        "note": "Hindsight bias changes how obvious or foreseeable the past now seems. False memory can change whether the remembered detail or event was there at all.",
+        "diagnosticQuestion": "Am I revising how obvious the past felt, or am I revising what I think actually happened in the first place?"
+      },
+      {
+        "slug": "consistency-bias",
+        "looksSimilarBecause": "Both pull recollection toward what fits the present self more neatly.",
+        "note": "Consistency bias specifically edits old attitudes so they resemble current ones. False memory is broader and can insert, distort, or relocate details of the remembered event itself.",
+        "diagnosticQuestion": "Is the present self bending the remembered attitude, or is the event memory itself becoming partly fabricated or imported?"
+      },
+      {
+        "slug": "choice-supportive-bias",
+        "looksSimilarBecause": "Both can make the past feel cleaner and more justified after commitment.",
+        "note": "Choice-supportive bias selectively beautifies remembered options and reasons around a choice. False memory reaches further by altering what the person takes themselves to have actually seen, heard, or recalled.",
+        "diagnosticQuestion": "Am I merely flattering the remembered decision, or am I trusting details that may never have been part of the original event?"
+      }
+    ]
+  },
+  {
+    "slug": "frequency-illusion",
+    "quickCheck": "Did this thing become more common, or did it simply become easier for me to notice?",
+    "analogyClaim": "This is like buying a blue car and then mistaking your new antenna for a citywide repainting campaign.",
+    "analogyResponse": "Attention can make the world feel newly saturated without the world having changed very much at all. Noticing more is not the same as there being more.",
+    "misuseWarning": "Do not use this label whenever a trend really does exist. Sometimes a thing actually is becoming more common. The issue is that the rise is being inferred from heightened noticing without a stable baseline count.",
+    "useLabelWhen": "Use this label when recent salience starts masquerading as evidence of recent prevalence.",
+    "teachingGauges": [
+      { "label": "Common in attention shifts", "low": "Rare", "high": "Frequent", "value": 86, "note": "Very common with words, products, social topics, and new anxieties." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 46, "note": "Usually becomes visible once the baseline question is posed directly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 92, "note": "The noticing surge feels like environmental change rather than attentional change." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 29, "note": "Everyday examples make it one of the easiest biases to demonstrate." }
+    ],
+    "practiceLab": {
+      "intro": "Frequency illusion is what happens when attentional tuning gets mistaken for a change in the world being attended to.",
+      "stages": [
+        { "title": "Trigger", "text": "A word, category, feature, or risk becomes newly salient because of recent exposure." },
+        { "title": "Felt certainty", "text": "The mind begins catching many more instances and experiences the jump as evidence of a real-world increase." },
+        { "title": "Distortion", "text": "Selective attention and selective memory get read as changing frequency rather than as changing detection." },
+        { "title": "Reset", "text": "Separate the date you started noticing the thing from the date you think it genuinely became more common, then look for a count that could arbitrate the difference." }
+      ],
+      "repairQuestion": "What baseline record would tell me whether the surge is in the world itself or in my current noticing habits?"
+    },
+    "caseStudies": [
+      {
+        "title": "New word or new car suddenly appearing everywhere",
+        "source": "Language Log / overview cases",
+        "year": "2005 onward",
+        "url": "https://languagelog.ldc.upenn.edu/myl/languagelog/archives/002386.html",
+        "summary": "The classic teaching case is learning a new word, buying a car, or noticing a new category and then immediately feeling surrounded by examples that supposedly were not there before.",
+        "whyItFits": "Attention has changed sharply, and the mind is reading the attentional shift as if it were direct evidence of prevalence."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "looksSimilarBecause": "Both make what is easy to retrieve feel more important or more probable than it should.",
+        "note": "Availability is the wider shortcut from ease of recall to judgment. Frequency illusion is the narrower feeling that recent noticing proves recent prevalence.",
+        "diagnosticQuestion": "Is an example merely easy to recall, or am I specifically inferring that the world now contains more of it than before?"
+      },
+      {
+        "slug": "mere-exposure-effect",
+        "looksSimilarBecause": "Both involve repeated encounters with the same thing after it gets onto your radar.",
+        "note": "Mere exposure changes liking or comfort through repetition. Frequency illusion changes perceived commonness through attention.",
+        "diagnosticQuestion": "Has repetition changed how much I like or trust it, or has repetition changed how common I think it is?"
+      },
+      {
+        "slug": "confirmation-bias",
+        "looksSimilarBecause": "Both can end with a person noticing exactly the cases that fit what they now expect to find.",
+        "note": "Confirmation bias selectively gathers support for an established view. Frequency illusion can happen earlier, when sheer new salience is enough to make the world seem crowded with matching cases.",
+        "diagnosticQuestion": "Am I actively protecting a view, or am I simply mistaking a new noticing pattern for a new population pattern?"
+      }
+    ]
+  },
+  {
+    "slug": "gamblers-fallacy",
+    "quickCheck": "What about the next event is actually different, apart from the streak feeling lopsided or overdue for correction?",
+    "analogyClaim": "This is like thinking the coin keeps a ledger it is now morally obliged to balance.",
+    "analogyResponse": "Long-run balance does not mean short-run repayment. Independent events do not remember the aesthetic discomfort of the previous sequence.",
+    "misuseWarning": "Do not use this label whenever someone predicts reversal. Some streaks end for real reasons. The issue is that the prediction is being driven mainly by the felt need for short-run balance in an otherwise independent process.",
+    "useLabelWhen": "Use this label when the next event is judged as if recent outcomes have changed its probability even though the underlying process remains independent.",
+    "teachingGauges": [
+      { "label": "Common in repeated events", "low": "Rare", "high": "Frequent", "value": 78, "note": "Shows up in gambling, sports talk, forecasting, and any judgment about runs." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 58, "note": "Usually clear once independence is restated and the recent sequence is hidden." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 86, "note": "The short-run imbalance feels like a problem the process itself should fix." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 26, "note": "One of the easiest biases to demonstrate with coin flips and roulette." }
+    ],
+    "practiceLab": {
+      "intro": "Gambler's fallacy mistakes the law of large numbers for a short-run promise of symmetry.",
+      "stages": [
+        { "title": "Trigger", "text": "A repeated independent process produces a visibly lopsided short run." },
+        { "title": "Felt certainty", "text": "The imbalance starts feeling too ugly to persist, so reversal seems somehow owed." },
+        { "title": "Distortion", "text": "Aesthetic discomfort with the streak quietly replaces the actual probability structure of the next event." },
+        { "title": "Reset", "text": "State the probability of the next event as if the recent run were hidden from you, then ask whether any real causal factor remains." }
+      ],
+      "repairQuestion": "If I covered the previous outcomes with my hand, what genuine reason would I still have for moving the probability of the next one?"
+    },
+    "caseStudies": [
+      {
+        "title": "Roulette and coin-flip reversal expectations",
+        "source": "Wikipedia",
+        "year": "Overview case",
+        "url": "https://en.wikipedia.org/wiki/Gambler%27s_fallacy",
+        "summary": "The classic case is expecting tails to be especially due after a run of heads, even though the next flip's probability has not changed.",
+        "whyItFits": "The streak's imbalance is being treated as if it imposes a correcting pressure on the next independent event."
+      }
+    ],
+    "confusions": [
+      {
+        "slug": "hot-hand-fallacy",
+        "looksSimilarBecause": "Both let a recent streak distort the next prediction.",
+        "note": "Gambler's fallacy expects reversal after the streak. Hot-hand thinking expects the streak itself to continue because the run is treated as momentum.",
+        "diagnosticQuestion": "Does the streak make the next event feel due for correction, or does it make the streak feel self-reinforcing?"
+      },
+      {
+        "slug": "clustering-illusion",
+        "looksSimilarBecause": "Both start with a short run that feels too patterned to ignore.",
+        "note": "Clustering illusion overreads the significance of the observed run. Gambler's fallacy adds a separate error by projecting a balancing correction into the next event.",
+        "diagnosticQuestion": "Am I only overvaluing the run I already saw, or am I also changing the probability of the next event because the run feels lopsided?"
+      },
+      {
+        "slug": "base-rate-neglect",
+        "looksSimilarBecause": "Both can displace the broader odds with a more immediate story.",
+        "note": "Base-rate neglect ignores the larger reference rate in favor of vivid particulars. Gambler's fallacy specifically lets the immediate run distort the perceived probability of the next independent case.",
+        "diagnosticQuestion": "Am I neglecting the broader rate generally, or am I specifically treating the recent sequence as if it altered the next trial?"
+      }
+    ]
+  }
+]

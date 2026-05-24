@@ -2400,8 +2400,8 @@ function renderBiasDetailPage(entry) {
         <section class="section-block">
           <div class="section-header">
             <div>
-              <h2 class="section-title">Often confused with</h2>
-              <p class="section-copy">These are nearby labels that can look similar on first pass but deserve a cleaner distinction.</p>
+              <h2 class="section-title">Similar biases and easy confusions</h2>
+              <p class="section-copy">These are nearby labels that can share the same outer appearance while differing in what actually drives the distortion. Use the overlap, the distinction, and the diagnostic question together before settling the call.</p>
             </div>
           </div>
           <div class="category-grid">
@@ -2410,7 +2410,17 @@ function renderBiasDetailPage(entry) {
                 (item) => `
                   <article class="category-card">
                     <h3><a href="../../${siteConfig.sectionSlug}/${item.entry.slug}/">${escapeHtml(item.entry.name)}</a></h3>
-                    <p class="card-copy">${escapeHtml(item.note)}</p>
+                    ${
+                      item.looksSimilarBecause
+                        ? `<p class="card-copy"><strong>Why it looks similar:</strong> ${escapeHtml(item.looksSimilarBecause)}</p>`
+                        : ""
+                    }
+                    <p class="card-copy"><strong>${item.looksSimilarBecause ? "Key distinction:" : "Why compare it:"}</strong> ${escapeHtml(item.note)}</p>
+                    ${
+                      item.diagnosticQuestion
+                        ? `<p class="muted"><strong>Ask:</strong> ${escapeHtml(item.diagnosticQuestion)}</p>`
+                        : ""
+                    }
                   </article>`,
               )
               .join("")}

@@ -28,6 +28,8 @@
     "biasSlugs": [
       "anchoring-effect",
       "overconfidence-effect",
+      "gamblers-fallacy",
+      "clustering-illusion",
       "planning-fallacy",
       "status-quo-bias",
       "sunk-cost-effect",
@@ -43,6 +45,7 @@
     "whenToUse": "Use this path when a discussion is drifting from behavior into identity, motive, or character verdict.",
     "guidingQuestion": "How do snap impressions about people become stronger than the evidence available?",
     "biasSlugs": [
+      "egocentric-bias",
       "fundamental-attribution-error",
       "halo-effect",
       "implicit-bias",
@@ -58,6 +61,8 @@
     "whenToUse": "Use this path when you suspect that the apparent evidential picture is itself distorted.",
     "guidingQuestion": "What makes a weak sample or flattering story feel like a strong explanation?",
     "biasSlugs": [
+      "apophenia",
+      "clustering-illusion",
       "confirmation-bias",
       "motivated-reasoning",
       "availability-heuristic",
@@ -76,6 +81,8 @@
     "biasSlugs": [
       "hindsight-bias",
       "outcome-bias",
+      "consistency-bias",
+      "false-memory",
       "overconfidence-effect",
       "fundamental-attribution-error",
       "survivorship-bias"
@@ -125,6 +132,7 @@
       "overconfidence-effect",
       "dunning-kruger-effect",
       "illusion-of-explanatory-depth",
+      "contrast-effect",
       "planning-fallacy",
       "curse-of-knowledge",
       "spotlight-effect"

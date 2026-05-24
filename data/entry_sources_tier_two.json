@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "apophenia",
+    "sourceTrail": [
+      {
+        "kind": "Conceptual paper",
+        "title": "Apophenia as the Disposition to False Positives: A Unifying Framework for Openness and Psychoticism",
+        "source": "Personality Neuroscience",
+        "year": "2020",
+        "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7112154/",
+        "note": "Useful for treating apophenia as over-detection of signal rather than as mere oddity or superstition."
+      }
+    ]
+  },
+  {
+    "slug": "clustering-illusion",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Belief in the Law of Small Numbers",
+        "source": "Psychological Bulletin",
+        "year": "1971",
+        "href": "https://www.causeweb.org/cause/resources/library/r486",
+        "note": "A classic starting point for why people expect small samples and short runs to look too representative."
+      }
+    ]
+  },
+  {
+    "slug": "consistency-bias",
+    "sourceTrail": [
+      {
+        "kind": "Review",
+        "title": "The Seven Sins of Memory: An Update",
+        "source": "Journal of Applied Research in Memory and Cognition",
+        "year": "2021",
+        "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8285452/",
+        "note": "A clear review source that situates consistency bias within the broader family of reconstructive memory errors."
+      }
+    ]
+  },
+  {
+    "slug": "contrast-effect",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Assimilation and Contrast Effects in Reactions to Communication and Attitude Change",
+        "source": "Journal of Abnormal and Social Psychology",
+        "year": "1957",
+        "href": "https://cir.nii.ac.jp/crid/1362544418979055488",
+        "note": "A classic early anchor for context-driven shifts in judgment where nearby comparisons bend evaluation."
+      }
+    ]
+  },
+  {
+    "slug": "egocentric-bias",
+    "sourceTrail": [
+      {
+        "kind": "Classic chapter",
+        "title": "Egocentric Biases in Availability and Attribution",
+        "source": "Judgment under Uncertainty",
+        "year": "1982",
+        "href": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EB2AB8EAB64D9806F27158695919B84B/9780511809477c12_p179-189_CBO.pdf/egocentric-biases-in-availability-and-attribution.pdf",
+        "note": "The classic source behind contribution overestimation and first-person availability effects in shared outcomes."
+      }
+    ]
+  },
+  {
+    "slug": "false-memory",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Creating False Memories: Remembering Words Not Presented in Lists",
+        "source": "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+        "year": "1995",
+        "href": "https://psych.hanover.edu/classes/Cognition/Papers/RoedigerMcDermott%201996%20DRM%20False.pdf",
+        "note": "One of the most widely taught experimental demonstrations that confident recollection can be manufactured by structure and suggestion."
+      }
+    ]
+  },
+  {
+    "slug": "frequency-illusion",
+    "sourceTrail": [
+      {
+        "kind": "Term origin",
+        "title": "Just between Dr. Language and I",
+        "source": "Language Log",
+        "year": "2005",
+        "href": "https://languagelog.ldc.upenn.edu/myl/languagelog/archives/002386.html",
+        "note": "Arnold Zwicky's original coining of the term is still the clearest short statement of why noticing surges can masquerade as prevalence."
+      }
+    ]
+  },
+  {
+    "slug": "gamblers-fallacy",
+    "sourceTrail": [
+      {
+        "kind": "Classic paper",
+        "title": "Belief in the Law of Small Numbers",
+        "source": "Psychological Bulletin",
+        "year": "1971",
+        "href": "https://www.causeweb.org/cause/resources/library/r486",
+        "note": "The classic law-of-small-numbers framing helps explain why short-run imbalance gets treated as if it must soon self-correct."
+      }
+    ]
+  }
+]

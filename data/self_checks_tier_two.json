@@ -14,7 +14,8 @@
       "availability-cascade",
       "continued-influence-effect",
       "bandwagon-effect",
-      "availability-heuristic"
+      "availability-heuristic",
+      "frequency-illusion"
     ]
   },
   {
@@ -31,6 +32,7 @@
     "relatedBiases": [
       "attribute-substitution",
       "decoy-effect",
+      "contrast-effect",
       "action-bias",
       "automation-bias"
     ]
@@ -50,7 +52,9 @@
       "cognitive-dissonance",
       "choice-supportive-bias",
       "bias-blind-spot",
-      "self-serving-bias"
+      "self-serving-bias",
+      "consistency-bias",
+      "egocentric-bias"
     ]
   }
 ]

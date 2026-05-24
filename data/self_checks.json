@@ -32,7 +32,9 @@
       "base-rate-neglect",
       "overconfidence-effect",
       "planning-fallacy",
-      "anchoring-effect"
+      "anchoring-effect",
+      "clustering-illusion",
+      "gamblers-fallacy"
     ]
   },
   {
@@ -47,6 +49,7 @@
       "Ask whether the same behavior would read differently from someone else."
     ],
     "relatedBiases": [
+      "egocentric-bias",
       "fundamental-attribution-error",
       "halo-effect",
       "implicit-bias",
@@ -68,7 +71,9 @@
       "availability-heuristic",
       "negativity-bias",
       "survivorship-bias",
-      "confirmation-bias"
+      "confirmation-bias",
+      "apophenia",
+      "frequency-illusion"
     ]
   },
   {
@@ -86,7 +91,9 @@
       "hindsight-bias",
       "outcome-bias",
       "motivated-reasoning",
-      "fundamental-attribution-error"
+      "fundamental-attribution-error",
+      "consistency-bias",
+      "false-memory"
     ]
   },
   {
