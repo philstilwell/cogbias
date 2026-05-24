@@ -33,18 +33,27 @@ async function readJsonArrayFiles(fileNames) {
   return merged;
 }
 
+async function readJsonArraySeries(prefix) {
+  const fileNames = (await fs.readdir(dataDir))
+    .filter((fileName) => fileName === `${prefix}.json` || (fileName.startsWith(`${prefix}_`) && fileName.endsWith(".json")))
+    .sort((left, right) => {
+      if (left === `${prefix}.json`) return -1;
+      if (right === `${prefix}.json`) return 1;
+      return left.localeCompare(right);
+    });
+
+  return readJsonArrayFiles(fileNames);
+}
+
 const siteConfig = await readJsonFile("site.json");
 const rawEntries = await readJsonFile("biases.json");
 const editorialEnrichments = await readJsonFile("editorial_enrichments.json");
-const teachingModules = await readJsonArrayFiles([
-  "entry_teaching_modules.json",
-  "entry_teaching_modules_tier_two.json",
-]);
+const teachingModules = await readJsonArraySeries("entry_teaching_modules");
 const learningPathData = await readJsonFile("learning_paths.json");
 const selfCheckData = await readJsonFile("self_checks.json");
-const assessmentBankData = await readJsonArrayFiles(["assessment_bank.json", "assessment_bank_tier_two.json"]);
+const assessmentBankData = await readJsonArraySeries("assessment_bank");
 const promptKitData = await readJsonFile("prompt_kits.json");
-const theoryArticleData = await readJsonArrayFiles(["theory_articles.json", "theory_articles_tier_two.json"]);
+const theoryArticleData = await readJsonArraySeries("theory_articles");
 
 function mergeUniqueStrings(values = []) {
   return [...new Set(values.filter(Boolean))];

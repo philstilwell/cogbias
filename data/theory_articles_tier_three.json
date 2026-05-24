@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "uncertainty-feels-worse-than-the-numbers-justify",
+    "title": "Uncertainty often feels worse than the numbers justify",
+    "summary": "A theory article on how ambiguity, vivid possibility, and normal baselines can distort risk judgment before explicit calculation ever gets a fair chance.",
+    "intro": "People do not approach uncertainty with a clean calculator and then merely add feelings afterward. Often the feelings arrive first and decide which parts of the calculation will seem serious enough to deserve attention at all.",
+    "sections": [
+      {
+        "heading": "Different kinds of uncertainty bend judgment differently",
+        "paragraphs": [
+          "Unknown probabilities, vivid low-probability threats, and rare disruptive scenarios do not feel the same. Ambiguity effect pushes people away from the less-specified option. Neglect of probability lets the vivid scenario overpower the percentage. Normalcy bias keeps the familiar baseline feeling more real than the unusual warning.",
+          "These are not interchangeable errors. But they do share a family resemblance: subjective comfort with uncertainty starts steering the judgment before comparative reasoning is finished."
+        ]
+      },
+      {
+        "heading": "Why the arithmetic arrives late",
+        "paragraphs": [
+          "Explicit comparison is effortful and emotionally weaker than imagination. A vivid story, a neat probability column, or an ordinary-looking day can seize the frame before the mind asks the more disciplined questions.",
+          "That is why debiasing here has to be procedural. If the probability table is not required, or if escalation thresholds are not precommitted, subjective feel will keep outrunning explicit comparison."
+        ],
+        "bullets": [
+          "The unknown can feel worse than the known even when the known is worse.",
+          "Possibility can crowd out probability when the image is loud enough.",
+          "Familiar baselines can make genuine breaks in the pattern feel less real than they are."
+        ]
+      },
+      {
+        "heading": "What a better site should teach",
+        "paragraphs": [
+          "A bias site should therefore teach readers to put risks on a common surface. Known and unknown risks, magnitude and probability, baseline and disruption all need symmetrical description before judgment hardens.",
+          "The educational target is not fearlessness. It is disciplined comparison."
+        ]
+      }
+    ],
+    "relatedBiases": ["ambiguity-effect", "neglect-of-probability", "normalcy-bias", "optimism-bias", "availability-heuristic"]
+  },
+  {
+    "slug": "familiarity-ownership-and-belonging-tilt-value",
+    "title": "Familiarity, ownership, and belonging can quietly tilt value",
+    "summary": "An article on how repeated exposure, possession, and group identity can all make an option feel more worthy before explicit reasons have earned the difference.",
+    "intro": "Value does not arrive in the mind as a clean independent measure. It is often bent by proximity effects. The familiar thing feels safer, the owned thing feels more valuable, and the in-group thing feels more trustworthy.",
+    "sections": [
+      {
+        "heading": "Three different closeness effects",
+        "paragraphs": [
+          "Mere exposure effect turns repetition into liking. Endowment effect turns possession into valuation. Ingroup bias turns social belonging into preferential treatment and interpretive generosity.",
+          "Each one uses a different route, but all three show how a form of closeness can start impersonating merit."
+        ]
+      },
+      {
+        "heading": "Why these tilts feel respectable",
+        "paragraphs": [
+          "None of these biases have to feel irrational. The familiar option may feel easier to process, the owned option may feel meaningfully connected to the self, and the in-group option may feel more legible because it comes with shared context.",
+          "That is what makes them durable. They do not look like distortions. They look like sensible comfort with the known and the near."
+        ],
+        "bullets": [
+          "Processing fluency can masquerade as quality.",
+          "Possession can masquerade as proof of value.",
+          "Belonging can masquerade as evidence of trustworthiness."
+        ]
+      },
+      {
+        "heading": "How comparison gets cleaner",
+        "paragraphs": [
+          "The repair is not to become detached from everything near to you. It is to ask what the verdict would be if the closeness variable were reduced or hidden. Would the same option still win if it were unfamiliar, unowned, or out-group?",
+          "That question often reveals how much value judgment has already been preloaded by context."
+        ]
+      }
+    ],
+    "relatedBiases": ["mere-exposure-effect", "endowment-effect", "ingroup-bias", "halo-effect", "default-effect", "status-quo-bias"]
+  },
+  {
+    "slug": "good-endings-can-launder-bad-process",
+    "title": "Good endings can launder bad process",
+    "summary": "A theory essay on why favorable outcomes and tidy moral stories often make weak reasoning look stronger after the fact than it was under uncertainty.",
+    "intro": "Once the ending is known, evaluation gets easier to fake. A good result can make the original process feel wiser than it was, while a neat moral narrative can make an unfair event feel more deserved than the evidence warrants.",
+    "sections": [
+      {
+        "heading": "The ending is cognitively loud",
+        "paragraphs": [
+          "Outcome bias shows how endings overpower process review. Belief bias shows how pleasing conclusions can flatter the path that led there. Just-world thinking shows how explanatory comfort can restore moral order even when the facts are less tidy.",
+          "In each case, the later story starts grading the earlier reasoning."
+        ]
+      },
+      {
+        "heading": "Why post hoc stories feel so convincing",
+        "paragraphs": [
+          "Concrete endings, coherent morals, and believable conclusions all reduce ambiguity. They make the world feel easier to read. That reduction in ambiguity is emotionally rewarding, which is why people so readily mistake it for evidence of explanatory strength.",
+          "The danger is not only academic. Postmortems, blame assignment, and institutional learning all get corrupted when endings are allowed to rewrite how the earlier judgment is remembered."
+        ],
+        "bullets": [
+          "A good result does not prove a good decision process.",
+          "A believable conclusion does not validate a weak inferential route.",
+          "A morally tidy story does not prove that injustice was deserved."
+        ]
+      },
+      {
+        "heading": "What better review requires",
+        "paragraphs": [
+          "Good review keeps process and ending visible as distinct objects. It asks what was reasonable before the result, what evidence structure actually supported the claim, and which parts of the later story are serving comfort more than truth.",
+          "That discipline is one of the clearest ways a teaching site can help institutions think better rather than merely narrate better."
+        ]
+      }
+    ],
+    "relatedBiases": ["outcome-bias", "belief-bias", "just-world-fallacy", "hindsight-bias", "overconfidence-effect"]
+  },
+  {
+    "slug": "audience-pressure-changes-self-report",
+    "title": "Audience pressure changes what people say about themselves",
+    "summary": "An article on how self-report shifts under observation, embarrassment, and audience cost long before anyone intentionally decides to lie.",
+    "intro": "People often imagine dishonest self-report as a conscious choice between truth and deception. In many everyday cases the shift is subtler. The audience changes what answer feels appropriate, survivable, or socially coherent to give.",
+    "sections": [
+      {
+        "heading": "Why audience cost matters",
+        "paragraphs": [
+          "Social desirability bias bends self-report toward what sounds admirable. Spotlight effect exaggerates how much others are noticing. Reactance can make pressure itself part of what is being resisted. Together they show that self-report and public behavior are rarely untouched by the social scene around them.",
+          "That is why the same person can give different answers under anonymity, under evaluation, and under coercive framing without experiencing all three answers as equally dishonest."
+        ]
+      },
+      {
+        "heading": "The social scene is part of the measurement tool",
+        "paragraphs": [
+          "A survey, interview, or public question is not a neutral pipe that merely extracts truth. It is an environment with incentives, visibility, and threat cues. Change the environment and the answer can move even when the underlying person has changed very little.",
+          "Measurement design therefore becomes a cognitive-bias problem, not just a statistics problem."
+        ],
+        "bullets": [
+          "People often answer partly for the audience that is present or imagined.",
+          "Embarrassment and admiration are both measurement variables when self-report is involved.",
+          "Anonymity and indirect formats are not conveniences; they are cognitive tools."
+        ]
+      },
+      {
+        "heading": "What readers should learn to do",
+        "paragraphs": [
+          "Readers should treat polished public answers as data about two things at once: the underlying belief and the audience cost structure around expressing it plainly.",
+          "Once that becomes habitual, self-report gets interpreted more carefully and measured more intelligently."
+        ]
+      }
+    ],
+    "relatedBiases": ["social-desirability-bias", "spotlight-effect", "reactance", "false-consensus-effect", "implicit-bias"]
+  }
+]

@@ -1,0 +1,648 @@
+[
+  {
+    "slug": "ambiguity-effect",
+    "quickCheck": "Am I rejecting this option because it is truly worse, or because the uncertainty around it is harder to name neatly?",
+    "analogyClaim": "This is like refusing to enter a dim room while ignoring the loose floorboards in the bright room next door.",
+    "analogyResponse": "Unknowns deserve inspection, but visibility alone is not safety. A named risk can still be larger than an unnamed one.",
+    "misuseWarning": "Do not use this label whenever someone dislikes uncertainty. Sometimes the ambiguous option really is worse. The issue is that ambiguity itself is being treated like enough reason to avoid the option without comparing expected value carefully.",
+    "useLabelWhen": "Use this label when the absence of clean probability numbers becomes more decisive than the underlying stakes or plausible payoffs should justify.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 68, "note": "Strong in finance, medicine, and planning under incomplete information." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 46, "note": "Usually visible once the known and unknown risks are listed side by side." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 79, "note": "The neat option often feels more responsible even when it is not." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 41, "note": "Best taught with paired choices rather than abstract definition alone." }
+    ],
+    "practiceLab": {
+      "intro": "Ambiguity effect turns the discomfort of not knowing into a decision rule. The unknown starts feeling disqualifying before expected value has been compared honestly.",
+      "stages": [
+        { "title": "Trigger", "text": "A decision includes one option with unclear probabilities and another with cleaner-looking numbers." },
+        { "title": "Felt certainty", "text": "The better-specified option feels safer and more rational simply because its uncertainty is easier to describe." },
+        { "title": "Distortion", "text": "Ambiguity itself starts doing the work that risk comparison should have done." },
+        { "title": "Reset", "text": "List the known risks, unknown risks, and plausible payoffs for each option before letting the cleaner presentation decide the verdict." }
+      ],
+      "repairQuestion": "What would this choice look like if both options had their uncertainties described with equal honesty?"
+    },
+    "caseStudies": [
+      {
+        "title": "Ellsberg's urn-choice experiments",
+        "source": "Wikipedia",
+        "year": "1961",
+        "url": "https://en.wikipedia.org/wiki/Ellsberg_paradox",
+        "summary": "People often preferred gambles with known probabilities over comparable gambles with unknown probabilities even when the expected structure gave no clean reason for the strong preference.",
+        "whyItFits": "The missing probability detail becomes aversive in its own right and starts overpowering the underlying comparison."
+      }
+    ]
+  },
+  {
+    "slug": "belief-bias",
+    "quickCheck": "Am I treating this reasoning as sound because the conclusion already feels true?",
+    "analogyClaim": "This is like praising a map for accuracy because it happens to end at the city you wanted to reach.",
+    "analogyResponse": "A welcome destination does not rescue a bad route. Good reasoning has to be judged by structure, not by whether the ending feels sensible.",
+    "misuseWarning": "Do not use this label whenever someone agrees with a conclusion. The issue is that believability is masking defects in the inferential structure itself.",
+    "useLabelWhen": "Use this label when a plausible or ideologically welcome conclusion makes a weak argument feel stronger than it would if the exact same structure pointed somewhere less agreeable.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 74, "note": "Especially common when argument evaluation gets fused with worldview defense." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 38, "note": "Easier to diagnose after the conclusion is swapped while the structure stays the same." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 84, "note": "Believable endings naturally make the reasoning feel more orderly." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 49, "note": "Needs side-by-side form comparisons to become vivid." }
+    ],
+    "practiceLab": {
+      "intro": "Belief bias is a good reminder that argument evaluation is not the same thing as conclusion approval. A pleasing conclusion can launder weak structure without anyone noticing the switch.",
+      "stages": [
+        { "title": "Trigger", "text": "An argument ends at a conclusion that already sounds plausible, moral, or familiar." },
+        { "title": "Felt certainty", "text": "Because the conclusion lands well, the inferential path also starts to feel cleaner than it is." },
+        { "title": "Distortion", "text": "Conclusion quality begins substituting for logical quality." },
+        { "title": "Reset", "text": "Test the structure with the conclusion emotionally neutralized or reversed before deciding whether the argument itself works." }
+      ],
+      "repairQuestion": "If the same reasoning produced an unwelcome conclusion, would I still call the argument strong?"
+    },
+    "caseStudies": [
+      {
+        "title": "Belief-bias syllogism studies",
+        "source": "Wikipedia",
+        "year": "Modern reasoning research",
+        "url": "https://en.wikipedia.org/wiki/Belief_bias",
+        "summary": "People often judge invalid syllogisms as valid when the conclusion seems believable, and valid ones as weaker when the conclusion seems implausible.",
+        "whyItFits": "Believability is quietly grading the argument instead of merely following it."
+      }
+    ]
+  },
+  {
+    "slug": "curse-of-knowledge",
+    "quickCheck": "What feels obvious to me only because I already know it?",
+    "analogyClaim": "This is like reading the answer key first and then forgetting what the question looked like before the answer was visible.",
+    "analogyResponse": "Once the solution is in view, the path to it compresses. Good explanation work has to reconstruct what the world looked like before the knowledge arrived.",
+    "misuseWarning": "Do not use this label every time an expert explains badly. Sometimes the explanation really is careless. The issue here is the perspective gap created by knowing too much to simulate not knowing well.",
+    "useLabelWhen": "Use this label when informed people underestimate how much context, sequence, or translation less-informed people still need in order to follow the explanation.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 88, "note": "Very common in teaching, onboarding, writing, and product design." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 44, "note": "Most visible when experts think they were clearer than their audience experienced them." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 91, "note": "Knowing the answer makes the missing steps hard to feel from inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 47, "note": "Simple to define, but deeply sticky in practice." }
+    ],
+    "practiceLab": {
+      "intro": "The curse of knowledge compresses explanation. Once the structure is visible to you, it is hard to remember which parts were once invisible, counterintuitive, or expensive to infer.",
+      "stages": [
+        { "title": "Trigger", "text": "A knowledgeable person has to explain, predict, or design for someone who lacks the same background." },
+        { "title": "Felt certainty", "text": "The explanation feels straightforward because the person can no longer feel the original uncertainty or missing links." },
+        { "title": "Distortion", "text": "Critical context, sequence, or translation steps get dropped, and the audience's confusion looks more like inattention than like a real perspective gap." },
+        { "title": "Reset", "text": "Reconstruct the first missing step, not just the finished concept, and test the explanation on someone who does not already share the map." }
+      ],
+      "repairQuestion": "What does the listener need to know one step earlier than I am currently assuming?"
+    },
+    "caseStudies": [
+      {
+        "title": "The tappers-and-listeners demonstration",
+        "source": "Wikipedia",
+        "year": "Modern communication research",
+        "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
+        "summary": "People tapping out a tune often wildly overestimate how recognizable it will be to listeners because the melody is vivid in the tapper's own head.",
+        "whyItFits": "Knowing the answer collapses how large the listener's perspective gap seems."
+      }
+    ]
+  },
+  {
+    "slug": "endowment-effect",
+    "quickCheck": "Would I value this the same way if it were not already mine?",
+    "analogyClaim": "This is like treating the chair in your house as more special the day after delivery than it looked in the store the day before.",
+    "analogyResponse": "Ownership can add meaning, but it can also add unearned valuation gravity. Good comparison asks what changed besides possession itself.",
+    "misuseWarning": "Do not use this label whenever attachment is real. Sometimes owning something genuinely reveals its use or meaning. The issue is that possession alone is inflating valuation beyond what the same item would command before ownership.",
+    "useLabelWhen": "Use this label when giving something up feels far more costly than acquiring the same thing ever felt, even though the object itself has not changed much.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 76, "note": "Shows up in pricing, policy preferences, and identity-laden possessions." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 63, "note": "Often easy to hear once willingness-to-pay and willingness-to-accept are compared directly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 81, "note": "Ownership makes value feel self-evident from the inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 34, "note": "Concrete trading examples make it teachable quickly." }
+    ],
+    "practiceLab": {
+      "intro": "Endowment effect adds valuation through possession. Once something is 'mine,' losing it feels like a different kind of event than not gaining it ever did.",
+      "stages": [
+        { "title": "Trigger", "text": "A person owns, has chosen, or has been assigned an object, option, or arrangement." },
+        { "title": "Felt certainty", "text": "The owned item feels more naturally valuable, and parting with it feels like a sharper loss than acquiring it once felt like a gain." },
+        { "title": "Distortion", "text": "Ownership itself becomes part of the valuation rather than a separate fact about possession." },
+        { "title": "Reset", "text": "Run the comparison from the outside: what would you pay for it if you did not already have it, and what would you recommend if it belonged to someone else?" }
+      ],
+      "repairQuestion": "What price or policy verdict would I give here if I encountered the same object before it became mine?"
+    },
+    "caseStudies": [
+      {
+        "title": "Mug-trading experiments",
+        "source": "Wikipedia",
+        "year": "1980s onward",
+        "url": "https://en.wikipedia.org/wiki/Endowment_effect",
+        "summary": "People randomly given mugs often demand more to give them up than others are willing to pay to acquire equivalent mugs.",
+        "whyItFits": "Possession itself is changing the valuation, not just the object's objective features."
+      }
+    ]
+  },
+  {
+    "slug": "hostile-attribution-bias",
+    "quickCheck": "What else could explain this ambiguous behavior besides hostility?",
+    "analogyClaim": "This is like hearing static on the line and deciding the other person must be shouting.",
+    "analogyResponse": "Threat is one live interpretation, but it is not the only one. Ambiguity deserves comparison before motive gets locked in.",
+    "misuseWarning": "Do not use this label every time someone detects real hostility. Sometimes the hostile reading is correct. The issue is premature hostile interpretation under ambiguity when benign or mixed explanations have not been given fair weight.",
+    "useLabelWhen": "Use this label when unclear actions, tone, or omissions are rapidly interpreted as attacks, disrespect, or malice before the situational field is seriously inspected.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 71, "note": "Especially active under stress, prior conflict, or perceived social threat." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 40, "note": "Often easier to diagnose after the alternative explanations are stated aloud." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 83, "note": "The hostile reading can feel like realism rather than interpretation." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 52, "note": "Needs careful handling because genuine threat cases also exist." }
+    ],
+    "practiceLab": {
+      "intro": "Hostile attribution bias narrows motive space too fast. Ambiguous behavior arrives, but the mind experiences one reading as defensive clarity rather than as one interpretation among several.",
+      "stages": [
+        { "title": "Trigger", "text": "Someone else's behavior is ambiguous, abrupt, incomplete, or context-poor." },
+        { "title": "Felt certainty", "text": "The hostile explanation feels prudent and more realistic than the softer alternatives." },
+        { "title": "Distortion", "text": "Threat interpretation becomes the default, shaping retaliation, memory, and later explanation." },
+        { "title": "Reset", "text": "Name at least two non-hostile or mixed explanations before deciding what level of defensive response is actually warranted." }
+      ],
+      "repairQuestion": "If I had to explain this same behavior without using intent language, what situational story could still fit?"
+    },
+    "caseStudies": [
+      {
+        "title": "Ambiguous-intent attribution studies",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Hostile_attribution_bias",
+        "summary": "Research on hostile attribution bias shows that some people systematically interpret ambiguous actions as hostile more often than warranted by the available cues.",
+        "whyItFits": "The hostile reading gets promoted from one possibility to the leading explanation before ambiguity has been treated fairly."
+      }
+    ]
+  },
+  {
+    "slug": "illusion-of-explanatory-depth",
+    "quickCheck": "Can I actually explain the mechanism here step by step without leaning on slogans?",
+    "analogyClaim": "This is like thinking you understand a clock because you recognize it instantly and can name its parts.",
+    "analogyResponse": "Recognition is not mechanism. Real understanding shows up when the smooth label has to cash out into working structure.",
+    "misuseWarning": "Do not use this label whenever someone lacks expertise. The issue is not ignorance alone. The issue is overestimating explanatory understanding because familiarity and fluent summary are doing the work.",
+    "useLabelWhen": "Use this label when people feel they understand a system deeply until they are asked to specify how it actually works in detail.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 82, "note": "Common in policy, science communication, and everyday concept learning." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 51, "note": "Becomes visible quickly once a mechanism explanation is requested." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 89, "note": "Familiarity and verbal fluency feel like understanding from inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 39, "note": "Very teachable with explanation-before-and-after exercises." }
+    ],
+    "practiceLab": {
+      "intro": "Illusion of explanatory depth thrives on fluency. If the concept feels familiar enough, the mind rounds that familiarity up into deeper understanding than the mechanism can actually support.",
+      "stages": [
+        { "title": "Trigger", "text": "A familiar topic can be named, recognized, and summarized in broad strokes." },
+        { "title": "Felt certainty", "text": "Because the topic feels smooth and known, it also starts to feel structurally understood." },
+        { "title": "Distortion", "text": "Confidence outruns actual mechanism knowledge, which weakens prediction, transfer, and diagnosis." },
+        { "title": "Reset", "text": "Explain the mechanism step by step, then apply it to a new case that differs in surface cues from the original example." }
+      ],
+      "repairQuestion": "Where does my explanation first turn from mechanism into hand-waving?"
+    },
+    "caseStudies": [
+      {
+        "title": "Everyday-mechanism explanation studies",
+        "source": "Wikipedia",
+        "year": "Modern cognition research",
+        "url": "https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth",
+        "summary": "People often rate their understanding of familiar mechanisms highly until they are asked to explain in detail how those mechanisms actually work.",
+        "whyItFits": "The explanatory confidence collapses once the smooth surface summary has to become structure."
+      }
+    ]
+  },
+  {
+    "slug": "ingroup-bias",
+    "quickCheck": "What extra trust or benefit am I giving here because this person or view feels like part of my side?",
+    "analogyClaim": "This is like grading two essays with the name removed from one and your team logo on the other.",
+    "analogyResponse": "Belonging can make nuance easier to see on one side and flaws easier to excuse. Good judgment asks what the verdict would be if the group markers were hidden.",
+    "misuseWarning": "Do not use this label whenever loyalty exists. Loyalty can be legitimate. The distortion begins when group membership starts substituting for evidence or fairness in treatment.",
+    "useLabelWhen": "Use this label when members of one's own group receive softer interpretation, quicker trust, or better treatment than comparable outsiders would have received.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 87, "note": "Very common in politics, teams, fandoms, and moral communities." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 47, "note": "Usually clearest when cases are swapped across group boundaries." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 88, "note": "The in-group simply feels more legible and trustworthy from inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 48, "note": "Easy to see abstractly, harder to self-detect under identity pressure." }
+    ],
+    "practiceLab": {
+      "intro": "Ingroup bias often feels like realism plus shared context. Your side seems more nuanced, more forgivable, and more basically trustworthy before the comparison has actually earned those upgrades.",
+      "stages": [
+        { "title": "Trigger", "text": "A person, idea, or action is marked as belonging to your side, team, tribe, or moral community." },
+        { "title": "Felt certainty", "text": "The in-group case feels more understandable and more worthy of benefit of the doubt than the comparable out-group case." },
+        { "title": "Distortion", "text": "Evidence thresholds, trait readings, and fairness norms begin shifting with group membership." },
+        { "title": "Reset", "text": "Swap the group labels mentally or anonymize them where possible, then ask whether the same behavior would still get the same interpretation." }
+      ],
+      "repairQuestion": "What standard would I apply if the same act came from the rival group rather than from mine?"
+    },
+    "caseStudies": [
+      {
+        "title": "Minimal-group favoritism studies",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Minimal_group_paradigm",
+        "summary": "Even trivial and arbitrary group assignments can produce preferential treatment toward one's own group and harsher distribution toward outsiders.",
+        "whyItFits": "Group membership begins influencing fairness judgments before substantive merit has earned the difference."
+      }
+    ]
+  },
+  {
+    "slug": "just-world-fallacy",
+    "quickCheck": "Am I explaining this harm in a way that restores moral balance more neatly than reality may deserve?",
+    "analogyClaim": "This is like forcing every broken vase into a story where someone must have secretly deserved the cut from the shards.",
+    "analogyResponse": "A tidy moral story can feel stabilizing, but unfair events do not need hidden justice in order to have happened.",
+    "misuseWarning": "Do not use this label every time responsibility is discussed. Sometimes victims and harmed parties really did make relevant choices. The issue is insisting on deservedness mainly because randomness or structural unfairness feels intolerable.",
+    "useLabelWhen": "Use this label when people bend explanations toward victim fault or moral balance in order to make an injustice feel less arbitrary than it really is.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 66, "note": "Often appears in public moral commentary and reactions to suffering." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 58, "note": "Usually visible once the moral balancing need is named explicitly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 75, "note": "A deservedness story can feel steadier than admitting unfairness." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 53, "note": "Needs nuance because responsibility and bias can coexist in messy real cases." }
+    ],
+    "practiceLab": {
+      "intro": "Just-world thinking turns moral discomfort into explanation. The mind reaches for a deservedness story because a world where bad things happen without balance feels unnerving and hard to house emotionally.",
+      "stages": [
+        { "title": "Trigger", "text": "A serious harm, inequality, or injustice appears with no satisfying moral symmetry built into it." },
+        { "title": "Felt certainty", "text": "A story about how the harmed person somehow invited, deserved, or could easily have prevented the outcome feels grounding." },
+        { "title": "Distortion", "text": "Victim-blaming or system-excusing explanations gain traction because they restore moral order, not because they best fit the evidence." },
+        { "title": "Reset", "text": "Separate causal explanation from moral comfort and ask what the evidence would support if you were not trying to make the world feel fairer." }
+      ],
+      "repairQuestion": "What explanation would remain if I stopped trying to protect the belief that serious harm usually arrives in proportion to merit?"
+    },
+    "caseStudies": [
+      {
+        "title": "Lerner's victim-derogation studies",
+        "source": "Wikipedia",
+        "year": "1960s onward",
+        "url": "https://en.wikipedia.org/wiki/Just-world_hypothesis",
+        "summary": "Research tied to the just-world hypothesis found that observers often shift toward blaming or devaluing victims when they cannot stop the injustice they are witnessing.",
+        "whyItFits": "The deservedness story helps restore moral balance even when the evidence for it is thin."
+      }
+    ]
+  },
+  {
+    "slug": "mere-exposure-effect",
+    "quickCheck": "Does this option feel better because it is better, or because it is already familiar?",
+    "analogyClaim": "This is like trusting the song on the radio more after the fifth play, even before you could say what is actually strong about it.",
+    "analogyResponse": "Familiarity can reduce friction without improving merit. Good evaluation asks what changed besides repetition itself.",
+    "misuseWarning": "Do not use this label whenever familiarity matters. Sometimes repeated contact really does reveal quality. The issue is when repetition alone starts creating liking or trust disproportionate to the underlying merits.",
+    "useLabelWhen": "Use this label when repeated exposure makes an option feel more attractive, safer, or more reasonable even though the evaluative evidence has barely changed.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 84, "note": "Strong in branding, aesthetics, social trust, and repeated messaging." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 42, "note": "Easier to see after repetition schedules are compared." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 90, "note": "The familiar option simply feels smoother and less risky." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 28, "note": "Very teachable because the underlying pattern is intuitive once named." }
+    ],
+    "practiceLab": {
+      "intro": "Mere exposure effect quietly turns repetition into liking. What has become easy to process starts to feel better, safer, or more trustworthy even before explicit reasons have carried the weight.",
+      "stages": [
+        { "title": "Trigger", "text": "An idea, face, design, slogan, or option is encountered repeatedly." },
+        { "title": "Felt certainty", "text": "The repeated item feels smoother and therefore more acceptable or more naturally preferable." },
+        { "title": "Distortion", "text": "Processing fluency begins impersonating merit, fit, or trustworthiness." },
+        { "title": "Reset", "text": "Ask what reasons would remain for preferring the option if it were no more familiar than its nearest alternatives." }
+      ],
+      "repairQuestion": "Which part of my preference here is coming from repeated contact rather than from comparative merit?"
+    },
+    "caseStudies": [
+      {
+        "title": "Zajonc's repeated-exposure studies",
+        "source": "Wikipedia",
+        "year": "1968 onward",
+        "url": "https://en.wikipedia.org/wiki/Mere-exposure_effect",
+        "summary": "Repeated exposure to words, symbols, and other stimuli can increase liking even when people have little substantive reason for the stronger preference.",
+        "whyItFits": "Familiarity itself is doing evaluative work before the reasons catch up."
+      }
+    ]
+  },
+  {
+    "slug": "neglect-of-probability",
+    "quickCheck": "Am I treating this vivid possibility as if its probability barely mattered?",
+    "analogyClaim": "This is like planning for a lightning strike with the urgency of a daily weather pattern just because the image is frightening enough.",
+    "analogyResponse": "Serious scenarios deserve attention, but seriousness is not the same thing as likelihood. Good judgment keeps probability on the page even when the image is loud.",
+    "misuseWarning": "Do not use this label whenever rare risks are taken seriously. Some low-probability events deserve enormous weight because the stakes are huge. The issue is when probability is being ignored rather than consciously traded off against magnitude.",
+    "useLabelWhen": "Use this label when vivid or dreaded possibilities dominate judgment so strongly that their actual probability receives almost no restraining influence.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 69, "note": "Common in fear, safety, and policy discussion where vivid scenarios dominate." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 49, "note": "Becomes clear when the missing probability estimate is requested directly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 82, "note": "A potent scenario can make possibility feel close to plausibility." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 45, "note": "Needs careful teaching so low-probability high-stakes cases are not flattened." }
+    ],
+    "practiceLab": {
+      "intro": "Neglect of probability happens when imagination outruns calibration. Once the scenario is vivid enough, the question of how likely it is starts shrinking in practical importance.",
+      "stages": [
+        { "title": "Trigger", "text": "A vivid, frightening, or emotionally costly possibility enters the comparison." },
+        { "title": "Felt certainty", "text": "The scenario feels so important that its low probability begins to seem like a technicality rather than a core input." },
+        { "title": "Distortion", "text": "Decision weight is assigned mainly by image and stakes, with probability doing too little corrective work." },
+        { "title": "Reset", "text": "Write down both magnitude and probability, then ask what the decision would look like if the same outcome were described without the vivid narrative coating." }
+      ],
+      "repairQuestion": "What explicit probability estimate is my current reaction refusing to let matter?"
+    },
+    "caseStudies": [
+      {
+        "title": "Risk judgments dominated by vivid low-probability threats",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Neglect_of_probability",
+        "summary": "Research summarized under neglect of probability shows that once a feared outcome is vivid enough, people often respond similarly across quite different probability levels.",
+        "whyItFits": "The scenario's psychological force overwhelms the probability information that should have differentiated the choices."
+      }
+    ]
+  },
+  {
+    "slug": "normalcy-bias",
+    "quickCheck": "What threat am I treating as too unreal simply because it has not happened here before?",
+    "analogyClaim": "This is like watching smoke gather in the hallway and deciding it probably means another ordinary kitchen mistake because a serious fire would feel too strange.",
+    "analogyResponse": "Familiar baselines help us function, but they can also slow recognition when the pattern really is breaking. Unusual does not mean impossible enough to ignore.",
+    "misuseWarning": "Do not use this label whenever caution about alarmism exists. False alarms are real. The issue is when the familiar baseline receives so much psychological privilege that emerging disaster evidence is discounted mainly for being abnormal.",
+    "useLabelWhen": "Use this label when people underreact to serious warning signs because the disruptive scenario feels too unlike ordinary life to take fully on board.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 61, "note": "Especially important in safety, climate, public health, and crisis response." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 54, "note": "Often obvious after the event, which can itself invite hindsight bias." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 77, "note": "The ordinary baseline feels more real than the disruptive scenario." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 46, "note": "Needs distinction from sensible skepticism about panic." }
+    ],
+    "practiceLab": {
+      "intro": "Normalcy bias protects continuity. The familiar world keeps feeling more solid than the warning signs pointing toward a break in that world, which slows both preparation and reaction.",
+      "stages": [
+        { "title": "Trigger", "text": "Warning signs point toward a rare, disruptive, or unprecedented event." },
+        { "title": "Felt certainty", "text": "The normal baseline still feels more real and more representative than the unusual scenario." },
+        { "title": "Distortion", "text": "Preparation and response lag because the extraordinary threat never fully becomes cognitively real in time." },
+        { "title": "Reset", "text": "Run the warning signs through a precommitted escalation rule instead of asking how normal the threat feels in the moment." }
+      ],
+      "repairQuestion": "What action threshold would I want in place if I knew this abnormal scenario were the one unfolding?"
+    },
+    "caseStudies": [
+      {
+        "title": "Disaster underreaction and evacuation delay",
+        "source": "Wikipedia",
+        "year": "Modern disaster research",
+        "url": "https://en.wikipedia.org/wiki/Normalcy_bias",
+        "summary": "Normalcy bias is often used to explain why people delay evacuation or preparation when early warning signs still feel too inconsistent with ordinary life to take fully seriously.",
+        "whyItFits": "The familiar baseline keeps outranking the disturbing evidence until the cost of delay has already grown."
+      }
+    ]
+  },
+  {
+    "slug": "omission-bias",
+    "quickCheck": "Why does doing nothing feel morally cleaner here than choosing the equally harmful path by action?",
+    "analogyClaim": "This is like treating the untouched steering wheel as morally neutral while the car keeps drifting toward the ditch on its own momentum.",
+    "analogyResponse": "Inaction can preserve harm just as actively as action can create it. Quiet causation is still causation.",
+    "misuseWarning": "Do not use this label whenever restraint is prudent. Sometimes not intervening really is better. The issue is that omission is being granted extra moral innocence simply because it is omission.",
+    "useLabelWhen": "Use this label when equally harmful outcomes are judged differently mainly because one came through action and the other through failure to act.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 73, "note": "Common in medicine, policy, parenting, and institutional maintenance." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 61, "note": "Usually visible once both causal paths are placed on one consequence table." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 85, "note": "Inaction often feels cleaner because agency feels less vivid." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 36, "note": "Very teachable with paired action-versus-inaction examples." }
+    ],
+    "practiceLab": {
+      "intro": "Omission bias hides agency inside passivity. When nothing new is done, the resulting harm can feel morally lighter even though the choice to leave things alone is still shaping what happens next.",
+      "stages": [
+        { "title": "Trigger", "text": "A choice exists between acting and not acting, with both paths carrying risk or harm." },
+        { "title": "Felt certainty", "text": "The action path feels more morally charged because the causal motion is easier to see and to blame." },
+        { "title": "Distortion", "text": "Inaction receives unearned moral discount simply because its causation is quieter." },
+        { "title": "Reset", "text": "Describe the consequences of action and inaction in the same causal language before assigning moral weight." }
+      ],
+      "repairQuestion": "If I wrote the harms of action and inaction in the same format, would one still feel obviously cleaner?"
+    },
+    "caseStudies": [
+      {
+        "title": "Vaccination and omission-bias scenarios",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Omission_bias",
+        "summary": "People often judge harms caused by intervention more harshly than comparable harms caused by abstaining, including in vaccine-related moral scenarios.",
+        "whyItFits": "The active pathway feels more blameworthy even when the preserved omission path can be just as harmful."
+      }
+    ]
+  },
+  {
+    "slug": "optimism-bias",
+    "quickCheck": "What downside am I treating as less likely for me or for us than the base rates justify?",
+    "analogyClaim": "This is like assuming your umbrella is less necessary than everyone else's because your own walk feels like it should be one of the lucky ones.",
+    "analogyResponse": "Hope can energize action, but it is not a forecasting method. A favorable future does not become more probable just because it feels more livable.",
+    "misuseWarning": "Do not use this label whenever someone is hopeful. Hope is not the problem. The problem is probability inflation in a positive direction that survives weak evidence and poor base-rate support.",
+    "useLabelWhen": "Use this label when people systematically underrate their chances of bad outcomes or overrate their chances of good ones compared with relevant comparators.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 80, "note": "Strong in health, finance, entrepreneurship, and personal planning." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 45, "note": "Easier to notice once reference classes and comparable miss rates are shown." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 86, "note": "Preferred futures feel strangely normal from inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 38, "note": "Clear once personal forecasts are compared against outside-view data." }
+    ],
+    "practiceLab": {
+      "intro": "Optimism bias is not mere cheerfulness. It is a skew in expectation that makes favorable outcomes feel more representative of what will happen than the evidence deserves.",
+      "stages": [
+        { "title": "Trigger", "text": "A forecast touches goals, identity, or emotionally attractive possibilities." },
+        { "title": "Felt certainty", "text": "The positive outcome feels not only desirable but somehow more natural or more likely for this case." },
+        { "title": "Distortion", "text": "Downside scenarios and base rates get underweighted, making preparation and calibration weaker than they should be." },
+        { "title": "Reset", "text": "Use an outside-view range drawn from similar cases before allowing the inside story to move the forecast upward." }
+      ],
+      "repairQuestion": "What would my forecast be if I had to anchor it to the historical rate before telling myself why this case is special?"
+    },
+    "caseStudies": [
+      {
+        "title": "Comparative-risk optimism studies",
+        "source": "Wikipedia",
+        "year": "Modern psychology research",
+        "url": "https://en.wikipedia.org/wiki/Optimism_bias",
+        "summary": "People often rate themselves as less likely than comparable others to experience negative events and more likely to experience positive ones.",
+        "whyItFits": "The desirable future becomes overrepresented in personal expectation relative to relevant comparators."
+      }
+    ]
+  },
+  {
+    "slug": "outcome-bias",
+    "quickCheck": "Would I judge this decision the same way if the exact same process had produced the opposite result?",
+    "analogyClaim": "This is like grading the quality of a coin toss by whether the coin landed on the side you called.",
+    "analogyResponse": "Results matter, but they do not retroactively tell you whether the process under uncertainty was good. Luck can flatter or stain a decision after the fact.",
+    "misuseWarning": "Do not use this label whenever outcomes are mentioned. Outcomes obviously matter. The distortion begins when process quality is judged mainly by the ending rather than by what was knowable and reasonable before the ending arrived.",
+    "useLabelWhen": "Use this label when a good result launders weak reasoning or a bad result condemns strong reasoning under uncertainty.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 78, "note": "Common in leadership review, investing, medicine, and sports analysis." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 52, "note": "Usually visible once the outcome is flipped while the process is held constant." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 83, "note": "Concrete endings are louder than abstract process quality." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 37, "note": "Works well with counterfactual process-review exercises." }
+    ],
+    "practiceLab": {
+      "intro": "Outcome bias is what happens when the ending colonizes the evaluation. The final result becomes so cognitively loud that the original uncertainty and decision quality shrink out of view.",
+      "stages": [
+        { "title": "Trigger", "text": "A choice under uncertainty produces a clearly good or clearly bad result." },
+        { "title": "Felt certainty", "text": "The result feels like the cleanest evidence of whether the decision was smart." },
+        { "title": "Distortion", "text": "Process review gets replaced by retrospective reward or blame, which confuses luck with judgment." },
+        { "title": "Reset", "text": "Separate process review from outcome review and ask whether the same choice would deserve the same rating if the result had flipped." }
+      ],
+      "repairQuestion": "What was the quality of the reasoning before the outcome arrived, not after the ending made one story easier to tell?"
+    },
+    "caseStudies": [
+      {
+        "title": "Same-decision different-outcome evaluations",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Outcome_bias",
+        "summary": "People often rate identical decisions differently when they are told different outcomes, even though the decision quality under uncertainty was held constant.",
+        "whyItFits": "The ending is quietly grading the process instead of merely following it."
+      }
+    ]
+  },
+  {
+    "slug": "present-bias",
+    "quickCheck": "What immediate discomfort or reward is getting too much say over the longer comparison?",
+    "analogyClaim": "This is like letting the first cold step into the pool decide your entire opinion of the swim.",
+    "analogyResponse": "The first sensation is real, but it is not the whole timeline. Good choice compares now-plus-later, not just the felt bite of the present moment.",
+    "misuseWarning": "Do not use this label whenever short-term needs matter. Sometimes the present really should dominate. The distortion appears when near-term costs or rewards get extra weight simply because they are near.",
+    "useLabelWhen": "Use this label when a smaller sooner payoff or relief wins over a better longer-run option mainly because immediacy is doing too much of the persuasive work.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 88, "note": "Strong in saving, health, study habits, and routine self-control problems." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 57, "note": "Often visible once the time horizon is explicitly redrawn." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 92, "note": "Immediate experience feels unusually diagnostic of what matters." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 29, "note": "Concrete trade-off examples make the pattern easy to grasp." }
+    ],
+    "practiceLab": {
+      "intro": "Present bias narrows the comparison window. The immediate cost or reward swells in felt importance while the later consequences stay abstract enough to bargain away.",
+      "stages": [
+        { "title": "Trigger", "text": "A decision trades immediate payoff or discomfort against a larger later gain or loss." },
+        { "title": "Felt certainty", "text": "The present moment feels more real, more vivid, and more urgent than the later part of the timeline." },
+        { "title": "Distortion", "text": "Temporal distance rather than true value begins steering the decision." },
+        { "title": "Reset", "text": "Rewrite the trade-off as a full timeline and compare the options from the standpoint of the future self who will live with the later consequences." }
+      ],
+      "repairQuestion": "How much of my preference here disappears once the immediate moment is no longer allowed to dominate the whole timeline?"
+    },
+    "caseStudies": [
+      {
+        "title": "Smaller-sooner versus larger-later choice studies",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Hyperbolic_discounting",
+        "summary": "People often reverse preferences in favor of smaller sooner rewards once the immediate option moves close enough to the present, even when they previously preferred the larger later reward.",
+        "whyItFits": "The temporal closeness itself changes the weighting rather than the underlying values alone."
+      }
+    ]
+  },
+  {
+    "slug": "projection-bias",
+    "quickCheck": "How much am I assuming my future self will want what my current self wants right now?",
+    "analogyClaim": "This is like grocery shopping while starving and planning the whole week as if every future version of you will stay that hungry.",
+    "analogyResponse": "Current states are informative, but they are not permanent. Good planning keeps today's appetite from impersonating tomorrow's preferences.",
+    "misuseWarning": "Do not use this label whenever plans reflect current values. The issue is overprojecting a temporary present state into future selves who will not share it as strongly as imagined.",
+    "useLabelWhen": "Use this label when current mood, appetite, desire, or discomfort is being treated as if it will stay stable enough to guide future choice reliably.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 75, "note": "Common in shopping, scheduling, lifestyle planning, and self-control design." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 50, "note": "Often obvious after the temporary state has passed." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 87, "note": "The current preference feels stable while it is being experienced." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 33, "note": "Easy to teach with appetite, mood, and convenience examples." }
+    ],
+    "practiceLab": {
+      "intro": "Projection bias mistakes the present self for the future baseline. What you feel now seems like the natural planning anchor even when it is unusually temporary and state-dependent.",
+      "stages": [
+        { "title": "Trigger", "text": "A current state such as hunger, fatigue, urgency, desire, or irritation is active while future planning is happening." },
+        { "title": "Felt certainty", "text": "The current state feels stable enough that building around it seems sensible." },
+        { "title": "Distortion", "text": "Plans fit the present self unusually well and future selves poorly." },
+        { "title": "Reset", "text": "Ask what you usually want in the cooler baseline state, then compare that answer with what the current state is requesting." }
+      ],
+      "repairQuestion": "What does my calmer or more ordinary self usually prefer when this temporary state is not steering the plan?"
+    },
+    "caseStudies": [
+      {
+        "title": "Hungry-shopper and state-dependent planning examples",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Projection_bias",
+        "summary": "Projection bias is often illustrated by cases where current hunger, heat, mood, or desire leads people to make plans and purchases that their future selves do not actually endorse.",
+        "whyItFits": "The present state is being mistaken for a stable future preference structure."
+      }
+    ]
+  },
+  {
+    "slug": "reactance",
+    "quickCheck": "Am I resisting this mainly because the pressure itself is now driving the choice?",
+    "analogyClaim": "This is like refusing to open an umbrella because being told to open it becomes more important than staying dry.",
+    "analogyResponse": "Autonomy matters, but defiance is not automatically good judgment. A pressured option can still be the better option on the merits.",
+    "misuseWarning": "Do not use this label whenever someone disagrees under pressure. Sometimes resistance is justified. The issue is that the threat to freedom becomes so salient that opposition itself starts feeling intrinsically correct.",
+    "useLabelWhen": "Use this label when people move against a recommendation, rule, or request mainly because it feels coercive, controlling, or identity-threatening.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 72, "note": "Strong in parenting, politics, public health, and identity-laden persuasion." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 55, "note": "Often visible once the style of pressure changes and the resistance changes with it." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 82, "note": "Resistance can feel like self-respect and independence." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 43, "note": "Needs distinction from principled dissent, which can be valid." }
+    ],
+    "practiceLab": {
+      "intro": "Reactance makes pressure part of the decision object. Instead of weighing only the merits of the option, the mind starts weighing what complying or yielding would say about autonomy and control.",
+      "stages": [
+        { "title": "Trigger", "text": "A request, rule, recommendation, or restriction feels controlling, presumptuous, or freedom-limiting." },
+        { "title": "Felt certainty", "text": "Resisting begins to feel like the clearest way to protect independence or self-direction." },
+        { "title": "Distortion", "text": "Opposition gains emotional force that may exceed the merits of the underlying choice." },
+        { "title": "Reset", "text": "Separate the style of pressure from the substance of the option and ask what you would choose if the same recommendation had arrived without the coercive wrapper." }
+      ],
+      "repairQuestion": "What would I think about this option if the person delivering it had left my autonomy visibly intact?"
+    },
+    "caseStudies": [
+      {
+        "title": "Psychological reactance in persuasion and restriction",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Reactance_(psychology)",
+        "summary": "Research on reactance shows that overt pressure or perceived restriction can create a motivation to restore threatened freedom, including by rejecting the very message being pushed.",
+        "whyItFits": "The push itself becomes part of what the person is now deciding against."
+      }
+    ]
+  },
+  {
+    "slug": "social-desirability-bias",
+    "quickCheck": "How much of this answer is a self-report, and how much of it is audience management?",
+    "analogyClaim": "This is like answering a mirror as if it were a camera on stage.",
+    "analogyResponse": "The polished answer may contain truth, but visibility changes what people are willing to say plainly. Good measurement has to account for that pressure.",
+    "misuseWarning": "Do not use this label whenever someone gives a socially acceptable answer. Sometimes the acceptable answer is also the honest one. The issue is systematic overreporting of desirable traits or underreporting of undesirable ones because the audience is present.",
+    "useLabelWhen": "Use this label when self-report shifts toward what sounds admirable, disciplined, tolerant, generous, or conventional in ways that likely exceed the person's private beliefs or behavior.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 85, "note": "Very common in surveys, interviews, moral self-description, and group settings." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 31, "note": "Hard to see from one answer; easier through anonymity comparisons." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 88, "note": "People often experience the polished answer as the answer they should give." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 51, "note": "Needs nuance because self-presentation can be subtle rather than fully conscious." }
+    ],
+    "practiceLab": {
+      "intro": "Social desirability bias bends reported judgment toward audience acceptability. The answer starts optimizing not only for truth but for how the self will appear if the truth is spoken plainly.",
+      "stages": [
+        { "title": "Trigger", "text": "A person is asked to report attitudes, habits, motives, or behavior under social observation or anticipated evaluation." },
+        { "title": "Felt certainty", "text": "The polished or admirable answer feels safer, kinder, or more appropriate to give than the messier one." },
+        { "title": "Distortion", "text": "Self-report begins to overstate virtue, discipline, or social conformity and understate the less flattering reality." },
+        { "title": "Reset", "text": "Use anonymity, indirect questioning, or behavior-based measures when the topic makes image management likely." }
+      ],
+      "repairQuestion": "What would this answer look like if there were no audience cost for saying the less flattering version aloud?"
+    },
+    "caseStudies": [
+      {
+        "title": "Survey answers that shift under anonymity",
+        "source": "Wikipedia",
+        "year": "Modern measurement research",
+        "url": "https://en.wikipedia.org/wiki/Social-desirability_bias",
+        "summary": "Self-reports on sensitive topics often move when anonymity or indirect questioning changes, suggesting that some of the original answer was shaped by audience pressure rather than by private truth alone.",
+        "whyItFits": "The reporting environment is influencing what gets said, not just what gets believed."
+      }
+    ]
+  },
+  {
+    "slug": "spotlight-effect",
+    "quickCheck": "How much of this feels publicly glaring only because I am experiencing it from the center?",
+    "analogyClaim": "This is like assuming the whole room is staring at the coffee stain because it fills your own visual field every time you look down.",
+    "analogyResponse": "Your own angle magnifies the event. Other people often have weaker attention, weaker memory, and many competing concerns of their own.",
+    "misuseWarning": "Do not use this label whenever social embarrassment exists. Sometimes people really are watching. The issue is systematic overestimation of how much others notice or retain about one's appearance or behavior.",
+    "useLabelWhen": "Use this label when a personal misstep, appearance detail, or awkward moment feels far more publicly central than the surrounding audience actually experiences it.",
+    "teachingGauges": [
+      { "label": "Common in live judgment", "low": "Rare", "high": "Frequent", "value": 81, "note": "Common in adolescence, performance, social anxiety, and public speaking." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 64, "note": "Often clear to observers who are barely tracking the focal person's worry." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 90, "note": "Your own event is necessarily huge from your own point of view." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 22, "note": "Very teachable because the intuition lands quickly." }
+    ],
+    "practiceLab": {
+      "intro": "Spotlight effect is a perspective problem. Because the moment is unusually large in your own field of awareness, it becomes easy to imagine it occupying the same central place in everyone else's awareness too.",
+      "stages": [
+        { "title": "Trigger", "text": "A person notices an appearance issue, mistake, awkward comment, or small social failure." },
+        { "title": "Felt certainty", "text": "The event feels glaringly visible and memorable because it is so salient from the actor's own position." },
+        { "title": "Distortion", "text": "Other people's attention and memory are overestimated, which amplifies shame, self-consciousness, and avoidance." },
+        { "title": "Reset", "text": "Estimate how many details from other people's embarrassing moments you actually noticed and retained, then use that number as a corrective perspective check." }
+      ],
+      "repairQuestion": "If someone else had done this instead of me, how much attention would I realistically still be giving it an hour from now?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Barry Manilow T-shirt experiment",
+        "source": "Wikipedia",
+        "year": "2000",
+        "url": "https://en.wikipedia.org/wiki/Spotlight_effect",
+        "summary": "People wearing an embarrassing T-shirt often greatly overestimate how many others noticed it, illustrating how personal salience gets mistaken for public salience.",
+        "whyItFits": "The focal person's own awareness of the cue becomes a bad estimate of the audience's attention."
+      }
+    ]
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "assessment-031",
+    "title": "The tidy spreadsheet versus the unknown vendor",
+    "scenario": "A committee quickly rejects a new vendor mainly because its performance range is less well specified, even though the incumbent vendor's documented failure rate is high and the committee barely compares the expected upside.",
+    "biasOptions": ["ambiguity-effect", "loss-aversion", "status-quo-bias", "default-effect"],
+    "correctBias": "ambiguity-effect",
+    "moveOptions": [
+      "List the known risks, unknown risks, and plausible payoffs for both vendors before the cleaner-looking option gets privileged.",
+      "Keep the incumbent because ambiguous options are automatically more dangerous.",
+      "Ignore the uncertainty question and decide by who spoke most confidently in the meeting.",
+      "Choose whichever option has the longer slide deck."
+    ],
+    "correctMove": "List the known risks, unknown risks, and plausible payoffs for both vendors before the cleaner-looking option gets privileged.",
+    "biasExplanation": "The weaker-specified option is being penalized mainly for ambiguity itself rather than for a balanced comparison of expected value.",
+    "moveExplanation": "Symmetric comparison is the first repair because the cleaner presentation should not be allowed to impersonate the better option."
+  },
+  {
+    "id": "assessment-032",
+    "title": "The conclusion sounds right, so the argument must be fine",
+    "scenario": "A student nods along with a weak argument because the conclusion matches what she already thinks is obviously true, and only later notices that the premises did not actually support it well.",
+    "biasOptions": ["belief-bias", "confirmation-bias", "naive-realism", "authority-bias"],
+    "correctBias": "belief-bias",
+    "moveOptions": [
+      "Hold the conclusion fixed for a moment and evaluate whether the inferential structure would still look strong if the ending were unwelcome.",
+      "Trust the argument because true conclusions usually come from solid reasoning.",
+      "Grade the argument by how morally attractive the conclusion feels.",
+      "Ignore the premises because the main point has already landed."
+    ],
+    "correctMove": "Hold the conclusion fixed for a moment and evaluate whether the inferential structure would still look strong if the ending were unwelcome.",
+    "biasExplanation": "The believability of the conclusion is inflating the perceived quality of the reasoning.",
+    "moveExplanation": "The clean repair is to separate structure from conclusion approval and see whether the same form still persuades when the ending loses its emotional advantage."
+  },
+  {
+    "id": "assessment-033",
+    "title": "The expert skipped the missing steps",
+    "scenario": "A senior engineer explains a workflow to new teammates, then gets irritated when they still look lost because the explanation felt perfectly obvious to him as he gave it.",
+    "biasOptions": ["curse-of-knowledge", "illusion-of-explanatory-depth", "overconfidence-effect", "hostile-attribution-bias"],
+    "correctBias": "curse-of-knowledge",
+    "moveOptions": [
+      "Rebuild the explanation from the first missing step the new teammates do not yet have rather than from the expert's finished map.",
+      "Tell the team to pay closer attention because the explanation was already simple enough.",
+      "Add more jargon so the explanation sounds more precise.",
+      "Judge the explanation by whether it felt smooth to the speaker."
+    ],
+    "correctMove": "Rebuild the explanation from the first missing step the new teammates do not yet have rather than from the expert's finished map.",
+    "biasExplanation": "The engineer is underestimating the audience's perspective gap because his own completed understanding makes the sequence feel shorter than it is.",
+    "moveExplanation": "Restarting from the audience's missing context is the most direct correction for a knowledge-compressed explanation."
+  },
+  {
+    "id": "assessment-034",
+    "title": "Now that it is ours, it feels worth much more",
+    "scenario": "A team receives a tool through a merger and quickly starts demanding a much higher price to give it up than they ever would have proposed paying to acquire it from scratch.",
+    "biasOptions": ["endowment-effect", "sunk-cost-effect", "status-quo-bias", "loss-aversion"],
+    "correctBias": "endowment-effect",
+    "moveOptions": [
+      "Ask what the team would honestly pay for the same tool if it were not already in their possession.",
+      "Treat current ownership as proof that the tool has already earned a premium.",
+      "Ignore price and decide by which team feels more attached.",
+      "Assume inherited assets are always undervalued by outsiders."
+    ],
+    "correctMove": "Ask what the team would honestly pay for the same tool if it were not already in their possession.",
+    "biasExplanation": "Possession itself is inflating valuation, not just the tool's underlying utility.",
+    "moveExplanation": "An outside-view willingness-to-pay question strips away some of the valuation boost created by ownership alone."
+  },
+  {
+    "id": "assessment-035",
+    "title": "He must have meant that as a slight",
+    "scenario": "A colleague sends a short reply with no greeting, and another teammate immediately starts interpreting the message as deliberate disrespect without seriously considering time pressure or tone-loss in text.",
+    "biasOptions": ["hostile-attribution-bias", "fundamental-attribution-error", "negativity-bias", "projection-bias"],
+    "correctBias": "hostile-attribution-bias",
+    "moveOptions": [
+      "List at least two non-hostile explanations for the same message before deciding what level of response is warranted.",
+      "Assume the most threatening motive because it is safer never to be naive.",
+      "Reply with matching hostility so the other person learns the boundary quickly.",
+      "Use the shortest possible message as evidence of hidden aggression by default."
+    ],
+    "correctMove": "List at least two non-hostile explanations for the same message before deciding what level of response is warranted.",
+    "biasExplanation": "An ambiguous act is being promoted too quickly into a hostile-intent reading.",
+    "moveExplanation": "The fastest repair is to reopen motive space before retaliation hardens around the first threatening interpretation."
+  },
+  {
+    "id": "assessment-036",
+    "title": "It just feels more trustworthy now",
+    "scenario": "A proposal begins winning support after people have seen the slogan and design treatment repeatedly for weeks, even though the substantive arguments have not improved much.",
+    "biasOptions": ["mere-exposure-effect", "availability-heuristic", "halo-effect", "authority-bias"],
+    "correctBias": "mere-exposure-effect",
+    "moveOptions": [
+      "Ask what reasons for preferring the proposal remain if its familiarity advantage is mentally removed from the comparison.",
+      "Treat repetition as proof that the proposal has earned its support on the merits.",
+      "Increase the repetition even more because familiarity and quality are basically the same thing.",
+      "Ignore all newer alternatives because the known option now feels smoother."
+    ],
+    "correctMove": "Ask what reasons for preferring the proposal remain if its familiarity advantage is mentally removed from the comparison.",
+    "biasExplanation": "Repeated exposure is increasing liking and trust beyond what the evidential change alone would justify.",
+    "moveExplanation": "Removing the repetition advantage conceptually helps test whether the proposal is winning on reasons or on fluency."
+  },
+  {
+    "id": "assessment-037",
+    "title": "The possibility is so scary that the percentage barely matters",
+    "scenario": "A parent treats two very different low-probability risks almost the same because once the feared outcome is imagined vividly enough, the exact probabilities stop changing the reaction much.",
+    "biasOptions": ["neglect-of-probability", "availability-heuristic", "ambiguity-effect", "normalcy-bias"],
+    "correctBias": "neglect-of-probability",
+    "moveOptions": [
+      "Write down both the magnitude and the explicit probability for each risk before deciding how much weight each one deserves.",
+      "Ignore the percentages because emotionally serious possibilities should all receive the same response.",
+      "Judge the risks only by which image is hardest to shake.",
+      "Assume the most vivid danger is also the most likely one."
+    ],
+    "correctMove": "Write down both the magnitude and the explicit probability for each risk before deciding how much weight each one deserves.",
+    "biasExplanation": "The vivid scenario is overwhelming the probability information that should differentiate the choices.",
+    "moveExplanation": "Putting magnitude and probability back on the same table is the first correction when possibility has started impersonating plausibility."
+  },
+  {
+    "id": "assessment-038",
+    "title": "That only happens to other teams",
+    "scenario": "A leadership group keeps delaying contingency planning because the disruptive scenario feels too exceptional and too unlikely to happen in their own case, despite similar failures in comparable organizations.",
+    "biasOptions": ["normalcy-bias", "optimism-bias", "planning-fallacy", "status-quo-bias"],
+    "correctBias": "normalcy-bias",
+    "moveOptions": [
+      "Use a precommitted escalation threshold based on warning signs instead of waiting for the threat to feel normal enough to plan around.",
+      "Wait until the unusual scenario feels more intuitive before acting on it.",
+      "Ignore the comparable failures because this organization has a stronger culture.",
+      "Treat contingency planning as alarmist unless the failure has already started."
+    ],
+    "correctMove": "Use a precommitted escalation threshold based on warning signs instead of waiting for the threat to feel normal enough to plan around.",
+    "biasExplanation": "The familiar baseline is outranking the warning signs because the disruptive scenario still feels too unlike ordinary life.",
+    "moveExplanation": "Precommitted thresholds reduce reliance on whether the unusual threat feels emotionally real in time."
+  },
+  {
+    "id": "assessment-039",
+    "title": "Now I want the opposite just because you pushed",
+    "scenario": "A teenager becomes more determined to reject a reasonable curfew after the parent frames the demand in a highly controlling way, even though the curfew itself did not initially seem unreasonable.",
+    "biasOptions": ["reactance", "present-bias", "hostile-attribution-bias", "self-serving-bias"],
+    "correctBias": "reactance",
+    "moveOptions": [
+      "Separate the style of pressure from the substance of the curfew and ask what verdict you would reach if the same rule were proposed without the coercive tone.",
+      "Treat the urge to resist as proof that the rule must be bad.",
+      "Escalate the conflict so the autonomy issue fully overrides the practical issue.",
+      "Assume any externally imposed rule is automatically less rational than a self-chosen one."
+    ],
+    "correctMove": "Separate the style of pressure from the substance of the curfew and ask what verdict you would reach if the same rule were proposed without the coercive tone.",
+    "biasExplanation": "The perceived threat to freedom is now doing more motivational work than the underlying merits of the option.",
+    "moveExplanation": "Decoupling the pressure style from the option itself is the cleanest way to see whether the resistance is about autonomy signaling or about the rule's actual quality."
+  },
+  {
+    "id": "assessment-040",
+    "title": "The survey answer that sounds right in public",
+    "scenario": "Employees report near-perfect adherence to a policy in a non-anonymous survey, but later anonymous measures and observed behavior suggest the original answers were much cleaner than reality.",
+    "biasOptions": ["social-desirability-bias", "false-consensus-effect", "spotlight-effect", "self-serving-bias"],
+    "correctBias": "social-desirability-bias",
+    "moveOptions": [
+      "Use anonymous or behavior-based measurement before treating the polished self-reports as a reliable read of actual behavior.",
+      "Assume the public answers are more truthful because people are less likely to joke when names are attached.",
+      "Take the most flattering answer as the best estimate of team culture.",
+      "Ignore the behavioral evidence because the survey looked professional."
+    ],
+    "correctMove": "Use anonymous or behavior-based measurement before treating the polished self-reports as a reliable read of actual behavior.",
+    "biasExplanation": "Audience pressure is shaping what people report about themselves more than the underlying behavior alone would support.",
+    "moveExplanation": "Anonymity and behavior-based checks reduce image-management pressure and make the measurement less dependent on what sounds admirable in public."
+  }
+]
