@@ -815,7 +815,6 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/domain_hubs*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/comparison_guides*.json</code>, <code>data/teaching_kits*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
