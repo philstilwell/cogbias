@@ -205,6 +205,7 @@ const domainHubSlug = siteConfig.domainHubSlug || "contexts";
 const comparisonGuideSlug = siteConfig.comparisonGuideSlug || "compare";
 const teachingKitSlug = siteConfig.teachingKitSlug || "teaching-kits";
 const coverageSlug = siteConfig.coverageSlug || "coverage";
+const biasMapSlug = siteConfig.biasMapSlug || "map";
 const pathCurriculumBySlug = new Map(pathCurriculumData.map((item) => [item.slug, item]));
 const selfCheckCurriculumBySlug = new Map(selfCheckCurriculumData.map((item) => [item.slug, item]));
 const assessmentMetadataById = new Map(assessmentMetadataData.map((item) => [item.id, item]));
@@ -229,6 +230,44 @@ const tasks = siteConfig.categories
     members: entries.filter((entry) => (entry.tasks || []).includes(task.name)),
   }))
   .filter((task) => task.members.length > 0);
+
+const categoryPalette = ["#2f82c2", "#f5b700", "#178f70", "#df7b35", "#6f72d8", "#c64f7a", "#0f766e", "#a16207"];
+const categoryColors = new Map(tasks.map((task, index) => [task.name, categoryPalette[index % categoryPalette.length]]));
+
+function findTeachingGauge(entry, label) {
+  const normalizedLabel = String(label || "").trim().toLowerCase();
+  return (entry.teachingGauges || []).find((gauge) => String(gauge.label || "").trim().toLowerCase() === normalizedLabel);
+}
+
+function buildBiasMapPoints() {
+  return entries
+    .map((entry) => {
+      const spotGauge = findTeachingGauge(entry, "Easy to spot from outside");
+      const commitGauge = findTeachingGauge(entry, "Easy to innocently commit");
+      const category = (entry.tasks || [])[0] || "Uncategorized";
+      const categoryMeta = taskByName.get(category);
+      const x = Number(spotGauge?.value);
+      const y = Number(commitGauge?.value);
+
+      if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+
+      return {
+        slug: entry.slug,
+        name: entry.name,
+        href: `${siteConfig.sectionSlug}/${entry.slug}/`,
+        category,
+        categorySlug: categoryMeta?.slug || "",
+        color: categoryColors.get(category) || "#54728b",
+        x,
+        y,
+        summary: entry.summary || "",
+        xNote: spotGauge?.note || "",
+        yNote: commitGauge?.note || "",
+      };
+    })
+    .filter(Boolean)
+    .sort((left, right) => left.category.localeCompare(right.category) || left.name.localeCompare(right.name));
+}
 
 const patterns = siteConfig.patterns
   .map((pattern) => ({
@@ -688,6 +727,7 @@ function renderNav(prefix, currentId) {
     { id: "biases", label: "All Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
     { id: "categories", label: "Categories", href: `${prefix}categories/` },
     { id: "contexts", label: "Contexts", href: `${prefix}${domainHubSlug}/` },
+    { id: "map", label: "Map", href: `${prefix}${biasMapSlug}/` },
     { id: "compare", label: "Compare", href: `${prefix}${comparisonGuideSlug}/` },
     { id: "kits", label: "Kits", href: `${prefix}${teachingKitSlug}/` },
     { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
@@ -1418,6 +1458,7 @@ function renderHomePage() {
             <div class="hero-actions">
               <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
               <a class="button button-secondary" href="${domainHubSlug}/">Browse Contexts</a>
+              <a class="button button-secondary" href="${biasMapSlug}/">Open Bias Map</a>
               <a class="button button-secondary" href="${comparisonGuideSlug}/">Compare Biases</a>
               <a class="button button-secondary" href="${teachingKitSlug}/">Use Teaching Kits</a>
               <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
@@ -1686,6 +1727,112 @@ function renderHomePage() {
           </div>
           <div class="category-grid">
             ${(siteConfig.countermeasures || []).slice(0, 3).map((countermove) => renderCountermoveCard(countermove)).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderBiasMapPage() {
+  const points = buildBiasMapPoints();
+  const categories = tasks
+    .map((task) => ({
+      name: task.name,
+      slug: task.slug,
+      color: categoryColors.get(task.name) || "#54728b",
+      count: points.filter((point) => point.category === task.name).length,
+    }))
+    .filter((category) => category.count > 0);
+
+  const data = {
+    xLabel: "Easy to spot from outside",
+    xLow: "Hidden",
+    xHigh: "Obvious",
+    yLabel: "Easy to innocently commit",
+    yLow: "Low risk",
+    yHigh: "Easy slip",
+    points,
+    categories,
+  };
+
+  return renderPage({
+    title: "Bias Map",
+    description: "An interactive scatter plot of cognitive biases by visibility, temptation risk, and category.",
+    prefix: "../",
+    currentId: "map",
+    routePath: `/${biasMapSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Bias Map" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Bias Map</p>
+          <h2 class="detail-title">Where biases sit by visibility and temptation.</h2>
+          <p class="detail-deck">This map plots entries with both teaching-gauge estimates. The horizontal axis asks how easy the bias is to spot from the outside; the vertical axis asks how easy it is to innocently commit. Colors follow the site’s category layer.</p>
+        </section>
+
+        <section class="section-block bias-map-shell" data-bias-map-shell>
+          <script id="bias-map-data" type="application/json">${safeJsonForScript(data)}</script>
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Interactive bias map</h2>
+              <p class="section-copy">Hover, focus, or click a dot to inspect it. Use the controls to isolate one category or find a specific bias.</p>
+            </div>
+            <span class="teaching-pill">${points.length} plotted biases</span>
+          </div>
+
+          <div class="bias-map-controls">
+            <label>
+              <span>Search</span>
+              <input class="search-input" type="search" placeholder="Find a bias..." data-bias-map-search />
+            </label>
+            <label>
+              <span>Category</span>
+              <select class="search-select" data-bias-map-category>
+                <option value="">All categories</option>
+                ${categories
+                  .map((category) => `<option value="${escapeHtml(category.slug)}">${escapeHtml(category.name)}</option>`)
+                  .join("")}
+              </select>
+            </label>
+            <button class="button button-secondary button-compact" type="button" data-bias-map-reset>Reset map</button>
+          </div>
+
+          <div class="bias-map-layout">
+            <div class="bias-map-visual note-panel">
+              <svg class="bias-map-plot" data-bias-map-plot role="img" aria-label="Scatter plot of cognitive biases by outside visibility and innocent-commitment risk"></svg>
+              <p class="search-empty bias-map-empty hidden" data-bias-map-empty>No plotted biases match those filters.</p>
+            </div>
+            <aside class="bias-map-side">
+              <div class="note-panel bias-map-detail" data-bias-map-detail>
+                <h4>Choose a dot</h4>
+                <p class="muted">Each point is a bias page. Select one to see its category, score pair, notes, and a link into the full entry.</p>
+              </div>
+              <div class="note-panel bias-map-legend" data-bias-map-legend>
+                <h4>Categories</h4>
+                ${categories
+                  .map(
+                    (category) => `
+                <button class="bias-map-legend-item" type="button" data-bias-map-legend-category="${escapeHtml(category.slug)}" aria-pressed="false">
+                  <span class="bias-map-swatch" style="--map-color:${escapeHtml(category.color)};"></span>
+                  <span>${escapeHtml(category.name)}</span>
+                  <span class="bias-map-legend-count">${category.count}</span>
+                </button>`,
+                  )
+                  .join("")}
+              </div>
+            </aside>
+          </div>
+
+          <div class="two-column section-block">
+            <div class="note-panel">
+              <h4>How to read the upper-left</h4>
+              <p class="muted">High vertical and low horizontal scores mark biases that are easy to fall into but harder for outsiders to notice. These often need process checks before the judgment hardens.</p>
+            </div>
+            <div class="note-panel">
+              <h4>How to read the upper-right</h4>
+              <p class="muted">High scores on both axes mark familiar traps: people may recognize them in others and still slip into them without a deliberate countermeasure.</p>
+            </div>
           </div>
         </section>`,
   });
@@ -3767,6 +3914,7 @@ async function cleanOwnedOutput() {
     comparisonGuideSlug,
     teachingKitSlug,
     coverageSlug,
+    biasMapSlug,
     siteConfig.pathSlug,
     siteConfig.checkSlug,
     siteConfig.assessmentSlug,
@@ -3796,6 +3944,7 @@ async function writeSiteFiles() {
   await writeTextFile(`${comparisonGuideSlug}/index.html`, renderComparisonGuidesPage());
   await writeTextFile(`${teachingKitSlug}/index.html`, renderTeachingKitsPage());
   await writeTextFile(`${coverageSlug}/index.html`, renderCoveragePage());
+  await writeTextFile(`${biasMapSlug}/index.html`, renderBiasMapPage());
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
   await writeTextFile(`${siteConfig.assessmentSlug}/index.html`, renderAssessmentPage());
@@ -3880,6 +4029,7 @@ async function writeSiteFiles() {
       `/${comparisonGuideSlug}/`,
       `/${teachingKitSlug}/`,
       `/${coverageSlug}/`,
+      `/${biasMapSlug}/`,
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
       `/${siteConfig.assessmentSlug}/`,

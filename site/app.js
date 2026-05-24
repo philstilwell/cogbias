@@ -207,6 +207,260 @@ function shuffle(values = []) {
   return copy;
 }
 
+const biasMapShell = document.querySelector("[data-bias-map-shell]");
+const biasMapDataNode = document.querySelector("#bias-map-data");
+
+if (biasMapShell && biasMapDataNode) {
+  const biasMapPlot = biasMapShell.querySelector("[data-bias-map-plot]");
+  const biasMapSearch = biasMapShell.querySelector("[data-bias-map-search]");
+  const biasMapCategory = biasMapShell.querySelector("[data-bias-map-category]");
+  const biasMapReset = biasMapShell.querySelector("[data-bias-map-reset]");
+  const biasMapDetail = biasMapShell.querySelector("[data-bias-map-detail]");
+  const biasMapEmpty = biasMapShell.querySelector("[data-bias-map-empty]");
+  const legendButtons = Array.from(biasMapShell.querySelectorAll("[data-bias-map-legend-category]"));
+  const svgNamespace = "http://www.w3.org/2000/svg";
+  const mapData = JSON.parse(biasMapDataNode.textContent || "{}");
+  const points = Array.isArray(mapData.points) ? mapData.points : [];
+  const chart = {
+    width: 920,
+    height: 600,
+    margin: { top: 44, right: 34, bottom: 82, left: 88 },
+  };
+  const plotWidth = chart.width - chart.margin.left - chart.margin.right;
+  const plotHeight = chart.height - chart.margin.top - chart.margin.bottom;
+  let selectedSlug = points[0]?.slug || "";
+
+  function clampScore(value) {
+    return Math.max(0, Math.min(100, Number(value) || 0));
+  }
+
+  function hashString(value = "") {
+    let hash = 0;
+    for (let index = 0; index < value.length; index += 1) {
+      hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+    }
+    return hash;
+  }
+
+  function normalizeSearchText(value = "") {
+    return String(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  }
+
+  function xPosition(value) {
+    return chart.margin.left + (clampScore(value) / 100) * plotWidth;
+  }
+
+  function yPosition(value) {
+    return chart.margin.top + ((100 - clampScore(value)) / 100) * plotHeight;
+  }
+
+  function svgElement(name, attributes = {}) {
+    const element = document.createElementNS(svgNamespace, name);
+    for (const [key, value] of Object.entries(attributes)) {
+      element.setAttribute(key, String(value));
+    }
+    return element;
+  }
+
+  function renderDetail(point) {
+    if (!biasMapDetail || !point) return;
+
+    biasMapDetail.innerHTML = `
+      <p class="eyebrow">Selected bias</p>
+      <h4>${escapeHtml(point.name)}</h4>
+      <p class="bias-map-detail-category">
+        <span class="bias-map-swatch" style="--map-color:${escapeHtml(point.color)};"></span>
+        ${escapeHtml(point.category)}
+      </p>
+      <div class="bias-map-score-pair">
+        <div>
+          <span>${escapeHtml(mapData.xLabel)}</span>
+          <strong>${escapeHtml(point.x)}</strong>
+        </div>
+        <div>
+          <span>${escapeHtml(mapData.yLabel)}</span>
+          <strong>${escapeHtml(point.y)}</strong>
+        </div>
+      </div>
+      <p class="muted">${escapeHtml(point.summary)}</p>
+      <p class="muted"><strong>Visibility note:</strong> ${escapeHtml(point.xNote || "No note available.")}</p>
+      <p class="muted"><strong>Temptation note:</strong> ${escapeHtml(point.yNote || "No note available.")}</p>
+      <p><a class="inline-link" href="../${escapeHtml(point.href)}">Open bias page</a></p>`;
+  }
+
+  function currentFilteredPoints() {
+    const query = normalizeSearchText(biasMapSearch?.value || "");
+    const category = biasMapCategory?.value || "";
+
+    return points.filter((point) => {
+      const matchesCategory = !category || point.categorySlug === category;
+      const matchesQuery =
+        !query ||
+        [point.name, point.category, point.summary, point.xNote, point.yNote]
+          .join(" ")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, " ")
+          .includes(query);
+      return matchesCategory && matchesQuery;
+    });
+  }
+
+  function drawAxisLabel(text, x, y, options = {}) {
+    const label = svgElement("text", {
+      x,
+      y,
+      class: options.className || "bias-map-axis-label",
+      "text-anchor": options.anchor || "middle",
+    });
+    if (options.rotate) {
+      label.setAttribute("transform", `rotate(${options.rotate} ${x} ${y})`);
+    }
+    label.textContent = text;
+    biasMapPlot.append(label);
+  }
+
+  function drawBiasMap() {
+    if (!biasMapPlot) return;
+
+    const filteredPoints = currentFilteredPoints();
+    const selectedPoint =
+      filteredPoints.find((point) => point.slug === selectedSlug) || filteredPoints[0] || null;
+
+    selectedSlug = selectedPoint?.slug || "";
+    legendButtons.forEach((button) => {
+      const active = (button.dataset.biasMapLegendCategory || "") === (biasMapCategory?.value || "");
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+    biasMapPlot.replaceChildren();
+    biasMapPlot.setAttribute("viewBox", `0 0 ${chart.width} ${chart.height}`);
+    biasMapEmpty?.classList.toggle("hidden", filteredPoints.length !== 0);
+
+    const plotLeft = chart.margin.left;
+    const plotRight = chart.width - chart.margin.right;
+    const plotTop = chart.margin.top;
+    const plotBottom = chart.height - chart.margin.bottom;
+    const yEndLabelX = 10;
+
+    biasMapPlot.append(
+      svgElement("rect", {
+        x: plotLeft,
+        y: plotTop,
+        width: plotWidth,
+        height: plotHeight,
+        rx: 18,
+        class: "bias-map-plot-bg",
+      }),
+    );
+
+    for (let tick = 0; tick <= 100; tick += 20) {
+      const x = xPosition(tick);
+      const y = yPosition(tick);
+
+      biasMapPlot.append(svgElement("line", { x1: x, y1: plotTop, x2: x, y2: plotBottom, class: "bias-map-grid-line" }));
+      biasMapPlot.append(svgElement("line", { x1: plotLeft, y1: y, x2: plotRight, y2: y, class: "bias-map-grid-line" }));
+
+      const xTick = svgElement("text", { x, y: plotBottom + 26, class: "bias-map-tick", "text-anchor": "middle" });
+      xTick.textContent = tick;
+      biasMapPlot.append(xTick);
+
+      const yTick = svgElement("text", { x: plotLeft - 16, y: y + 5, class: "bias-map-tick", "text-anchor": "end" });
+      yTick.textContent = tick;
+      biasMapPlot.append(yTick);
+    }
+
+    biasMapPlot.append(svgElement("line", { x1: plotLeft, y1: plotBottom, x2: plotRight, y2: plotBottom, class: "bias-map-axis" }));
+    biasMapPlot.append(svgElement("line", { x1: plotLeft, y1: plotTop, x2: plotLeft, y2: plotBottom, class: "bias-map-axis" }));
+
+    drawAxisLabel(mapData.xLabel || "Easy to spot from outside", chart.width / 2, chart.height - 22);
+    drawAxisLabel(mapData.yLabel || "Easy to innocently commit", 32, chart.height / 2, { rotate: -90 });
+    drawAxisLabel(mapData.xLow || "Hidden", plotLeft, plotBottom + 54, { anchor: "start", className: "bias-map-end-label" });
+    drawAxisLabel(mapData.xHigh || "Obvious", plotRight, plotBottom + 54, { anchor: "end", className: "bias-map-end-label" });
+    drawAxisLabel(mapData.yLow || "Low risk", yEndLabelX, plotBottom + 34, { anchor: "start", className: "bias-map-end-label" });
+    drawAxisLabel(mapData.yHigh || "Easy slip", yEndLabelX, plotTop - 14, { anchor: "start", className: "bias-map-end-label" });
+
+    const quadrantLabels = [
+      { text: "Hidden + easy slip", x: plotLeft + 18, y: plotTop + 28, anchor: "start" },
+      { text: "Obvious + easy slip", x: plotRight - 18, y: plotTop + 28, anchor: "end" },
+      { text: "Hidden + lower risk", x: plotLeft + 18, y: plotBottom - 18, anchor: "start" },
+      { text: "Obvious + lower risk", x: plotRight - 18, y: plotBottom - 18, anchor: "end" },
+    ];
+
+    quadrantLabels.forEach((item) => {
+      const label = svgElement("text", {
+        x: item.x,
+        y: item.y,
+        class: "bias-map-quadrant-label",
+        "text-anchor": item.anchor,
+      });
+      label.textContent = item.text;
+      biasMapPlot.append(label);
+    });
+
+    filteredPoints.forEach((point) => {
+      const hash = hashString(point.slug);
+      const jitterX = ((hash % 9) - 4) * 0.75;
+      const jitterY = (((Math.floor(hash / 9) % 9) - 4) * 0.75);
+      const circle = svgElement("circle", {
+        cx: xPosition(point.x) + jitterX,
+        cy: yPosition(point.y) + jitterY,
+        r: point.slug === selectedSlug ? 8.5 : 6,
+        class: point.slug === selectedSlug ? "bias-map-point selected" : "bias-map-point",
+        fill: point.color,
+        tabindex: 0,
+        role: "button",
+        "data-slug": point.slug,
+        "data-category": point.categorySlug,
+        "aria-label": `${point.name}: ${mapData.xLabel} ${point.x}, ${mapData.yLabel} ${point.y}, ${point.category}`,
+      });
+      const title = svgElement("title");
+      title.textContent = `${point.name} (${point.category})`;
+      circle.append(title);
+
+      function selectPoint() {
+        selectedSlug = point.slug;
+        renderDetail(point);
+        drawBiasMap();
+      }
+
+      circle.addEventListener("click", selectPoint);
+      circle.addEventListener("focus", () => renderDetail(point));
+      circle.addEventListener("mouseenter", () => renderDetail(point));
+      circle.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          selectPoint();
+        }
+      });
+
+      biasMapPlot.append(circle);
+    });
+
+    renderDetail(selectedPoint);
+  }
+
+  biasMapSearch?.addEventListener("input", drawBiasMap);
+  biasMapCategory?.addEventListener("change", drawBiasMap);
+  biasMapReset?.addEventListener("click", () => {
+    if (biasMapSearch) biasMapSearch.value = "";
+    if (biasMapCategory) biasMapCategory.value = "";
+    selectedSlug = points[0]?.slug || "";
+    drawBiasMap();
+    biasMapSearch?.focus();
+  });
+
+  legendButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!biasMapCategory) return;
+      const category = button.dataset.biasMapLegendCategory || "";
+      biasMapCategory.value = biasMapCategory.value === category ? "" : category;
+      drawBiasMap();
+    });
+  });
+
+  drawBiasMap();
+}
+
 const biasAssessmentShell = document.querySelector("[data-bias-assessment-shell]");
 const assessmentBankNode = document.querySelector("#bias-assessment-bank");
 
