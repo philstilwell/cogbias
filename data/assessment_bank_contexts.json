@@ -1,0 +1,402 @@
+[
+  {
+    "id": "assessment-context-001",
+    "title": "The story that got familiar",
+    "scenario": "A reader sees the same weak claim about a public-health study repeated by accounts across several platforms. By the end of the week, the claim feels more plausible even though no new evidence has appeared.",
+    "biasOptions": ["illusory-truth-effect", "availability-cascade", "confirmation-bias", "continued-influence-effect"],
+    "correctBias": "illusory-truth-effect",
+    "moveOptions": [
+      "Separate repetition from independent evidence and trace the claim back to its strongest original source.",
+      "Count every repost as a new confirming source.",
+      "Trust the claim more because it now feels easier to remember.",
+      "Ask only whether the claim supports the reader's current political side."
+    ],
+    "correctMove": "Separate repetition from independent evidence and trace the claim back to its strongest original source.",
+    "biasExplanation": "Repeated exposure is being converted into felt truth even though evidential support has not improved.",
+    "moveExplanation": "Tracing source independence keeps familiarity from masquerading as corroboration."
+  },
+  {
+    "id": "assessment-context-002",
+    "title": "The correction that did not replace the story",
+    "scenario": "A breaking-news explanation is later corrected, but the original causal story keeps appearing in class discussion because it gave students a simple account of why the event happened.",
+    "biasOptions": ["continued-influence-effect", "hindsight-bias", "base-rate-neglect", "frequency-illusion"],
+    "correctBias": "continued-influence-effect",
+    "moveOptions": [
+      "Write the corrected account as a replacement explanation, not merely as a note that the first claim was wrong.",
+      "Repeat the correction without changing the old causal story.",
+      "Avoid discussing the event again so no one has to update.",
+      "Treat the first story as probably true because it arrived earliest."
+    ],
+    "correctMove": "Write the corrected account as a replacement explanation, not merely as a note that the first claim was wrong.",
+    "biasExplanation": "The original misinformation continues to shape understanding after it has been retracted.",
+    "moveExplanation": "A replacement explanation gives memory something coherent to use instead of falling back to the original frame."
+  },
+  {
+    "id": "assessment-context-003",
+    "title": "The clip that became the crime rate",
+    "scenario": "After several vivid subway-crime clips circulate, a group chat starts talking as if the entire transit system has become much more dangerous, although no one has checked trend data.",
+    "biasOptions": ["availability-heuristic", "negativity-bias", "base-rate-neglect", "apophenia"],
+    "correctBias": "availability-heuristic",
+    "moveOptions": [
+      "Place the clips beside recent rate data and comparison periods before inferring a trend.",
+      "Use the most frightening clip as the best proxy for the whole system.",
+      "Ask people to share more clips until the feeling becomes clearer.",
+      "Assume that fear itself is the most reliable measurement."
+    ],
+    "correctMove": "Place the clips beside recent rate data and comparison periods before inferring a trend.",
+    "biasExplanation": "Memorable examples are being treated as if they measure prevalence.",
+    "moveExplanation": "Rate data and comparison periods restore the denominator that vivid recall leaves out."
+  },
+  {
+    "id": "assessment-context-004",
+    "title": "The pile-on that looked like proof",
+    "scenario": "A claim about a school policy spreads quickly because thousands of people are reacting to one viral thread. Commenters start saying the volume of outrage proves the underlying claim must be solid.",
+    "biasOptions": ["availability-cascade", "illusory-truth-effect", "bandwagon-effect", "confirmation-bias"],
+    "correctBias": "availability-cascade",
+    "moveOptions": [
+      "Distinguish independent verification from repeated uptake of the same claim before judging credibility.",
+      "Treat volume and speed as stronger evidence than source quality.",
+      "Follow the reaction because many people cannot be wrong at once.",
+      "Search only for posts that repeat the most popular version."
+    ],
+    "correctMove": "Distinguish independent verification from repeated uptake of the same claim before judging credibility.",
+    "biasExplanation": "Social repetition is amplifying the claim until uptake itself starts looking like evidence.",
+    "moveExplanation": "Separating verification from circulation interrupts the cascade."
+  },
+  {
+    "id": "assessment-context-005",
+    "title": "The founders who made the method look safe",
+    "scenario": "An article profiles five founders who succeeded after quitting college and implies the path is broadly smart, while ignoring the much larger group who quit and disappeared from view.",
+    "biasOptions": ["survivorship-bias", "base-rate-neglect", "halo-effect", "availability-heuristic"],
+    "correctBias": "survivorship-bias",
+    "moveOptions": [
+      "Ask for the full cohort, including people who took the same path and failed quietly.",
+      "Study only the most famous winners because success reveals the true rule.",
+      "Infer that the method is safe because the profiled founders sound impressive.",
+      "Replace the article with a more exciting anecdote."
+    ],
+    "correctMove": "Ask for the full cohort, including people who took the same path and failed quietly.",
+    "biasExplanation": "Visible successes are being mistaken for the whole sample.",
+    "moveExplanation": "Restoring the missing failures makes the comparison class visible."
+  },
+  {
+    "id": "assessment-context-006",
+    "title": "The room after the vice president speaks",
+    "scenario": "In a planning meeting, the vice president favors one vendor early. Later comments keep bending toward that vendor even though several participants privately think another option has stronger evidence.",
+    "biasOptions": ["authority-bias", "groupthink", "shared-information-bias", "status-quo-bias"],
+    "correctBias": "authority-bias",
+    "moveOptions": [
+      "Collect private vendor rankings and reasons before discussing the executive's preference.",
+      "Let the vice president speak first again so everyone knows the safest answer.",
+      "Treat seniority as a substitute for vendor-specific evidence.",
+      "Close the discussion once no one publicly objects."
+    ],
+    "correctMove": "Collect private vendor rankings and reasons before discussing the executive's preference.",
+    "biasExplanation": "Status is giving one option extra weight before its reasons have been independently tested.",
+    "moveExplanation": "Private first passes reduce the pull of authority on later judgment."
+  },
+  {
+    "id": "assessment-context-007",
+    "title": "Everyone repeats the facts everyone already knows",
+    "scenario": "A hiring committee spends most of its meeting on resume details already shared in the packet. Two members have unique reference-call concerns, but those concerns receive little time because they are not common knowledge.",
+    "biasOptions": ["shared-information-bias", "groupthink", "false-consensus-effect", "social-desirability-bias"],
+    "correctBias": "shared-information-bias",
+    "moveOptions": [
+      "Create a round specifically for information only one or two people hold before taking a vote.",
+      "Spend more time on the resume because everyone can discuss it comfortably.",
+      "Assume unshared information is less important because fewer people mention it.",
+      "Vote immediately to preserve meeting momentum."
+    ],
+    "correctMove": "Create a round specifically for information only one or two people hold before taking a vote.",
+    "biasExplanation": "Common information is dominating the group discussion while uniquely held evidence gets underused.",
+    "moveExplanation": "A protected unshared-information round changes what the room is allowed to notice."
+  },
+  {
+    "id": "assessment-context-008",
+    "title": "The lucky launch became a good process",
+    "scenario": "A team skipped user research, launched quickly, and happened to get strong early numbers. In the retrospective, leaders praise the decision process mainly because the result was good.",
+    "biasOptions": ["outcome-bias", "hindsight-bias", "self-serving-bias", "action-bias"],
+    "correctBias": "outcome-bias",
+    "moveOptions": [
+      "Review the process against pre-launch evidence and decision standards before using the outcome as a grade.",
+      "Declare the process excellent because the result was excellent.",
+      "Ignore all process concerns because success has settled the question.",
+      "Ask only who deserves credit for the win."
+    ],
+    "correctMove": "Review the process against pre-launch evidence and decision standards before using the outcome as a grade.",
+    "biasExplanation": "The known result is being used to judge the quality of the earlier decision process.",
+    "moveExplanation": "Separating process review from outcome review preserves learning from both good luck and bad luck."
+  },
+  {
+    "id": "assessment-context-009",
+    "title": "The safe answer on the sticky notes",
+    "scenario": "During a workshop, people put anonymous sticky notes on the wall. Once a cluster of support for one idea appears, later notes start echoing that same idea rather than adding new concerns.",
+    "biasOptions": ["bandwagon-effect", "groupthink", "authority-bias", "false-consensus-effect"],
+    "correctBias": "bandwagon-effect",
+    "moveOptions": [
+      "Collect all first-pass notes before showing the emerging distribution.",
+      "Display the leading idea more prominently so late participants can align.",
+      "Treat the visible cluster as proof that the idea is best.",
+      "Ask only supporters of the leading idea to elaborate."
+    ],
+    "correctMove": "Collect all first-pass notes before showing the emerging distribution.",
+    "biasExplanation": "Visible popularity is making one option more attractive because it already appears popular.",
+    "moveExplanation": "Hiding the distribution until after independent input protects the signal from social copying."
+  },
+  {
+    "id": "assessment-context-010",
+    "title": "The survey nobody wanted to answer honestly",
+    "scenario": "Employees report that a mandatory training was useful while privately joking that it was not. The survey was not anonymous and was sent by the leader who designed the training.",
+    "biasOptions": ["social-desirability-bias", "authority-bias", "false-consensus-effect", "halo-effect"],
+    "correctBias": "social-desirability-bias",
+    "moveOptions": [
+      "Use anonymous feedback and ask for concrete behavior change rather than public approval.",
+      "Treat polite ratings as direct evidence that the training worked.",
+      "Ask the leader to read the results aloud before people respond.",
+      "Measure enthusiasm by how quickly people say yes."
+    ],
+    "correctMove": "Use anonymous feedback and ask for concrete behavior change rather than public approval.",
+    "biasExplanation": "People are reporting the socially safer opinion rather than their actual evaluation.",
+    "moveExplanation": "Anonymity and behavioral evidence reduce the incentive to perform approval."
+  },
+  {
+    "id": "assessment-context-011",
+    "title": "The concept that fell apart when explained",
+    "scenario": "A student says she understands how inflation works after watching a short video. When asked to explain the mechanism step by step without the video, she cannot connect the main parts.",
+    "biasOptions": ["illusion-of-explanatory-depth", "fluency-heuristic", "dunning-kruger-effect", "overconfidence-effect"],
+    "correctBias": "illusion-of-explanatory-depth",
+    "moveOptions": [
+      "Ask for a plain-language mechanism and then test it with a new example.",
+      "Count recognition of the video as proof of understanding.",
+      "Move on because the student feels confident.",
+      "Give the same video again and avoid retrieval."
+    ],
+    "correctMove": "Ask for a plain-language mechanism and then test it with a new example.",
+    "biasExplanation": "The student is overestimating explanatory understanding until asked to produce the mechanism.",
+    "moveExplanation": "Explanation plus transfer reveals whether the understanding is usable."
+  },
+  {
+    "id": "assessment-context-012",
+    "title": "The missing bridge in the expert explanation",
+    "scenario": "A teacher says a step in a proof is obvious and moves on, but several students are lost because the skipped step depends on background knowledge they do not yet have.",
+    "biasOptions": ["curse-of-knowledge", "illusion-of-learning", "halo-effect", "testing-effect"],
+    "correctBias": "curse-of-knowledge",
+    "moveOptions": [
+      "State the hidden prerequisite and ask students to reconstruct the skipped step.",
+      "Repeat that the step is obvious so students know it should be easy.",
+      "Assume confusion means the class did not pay attention.",
+      "Remove all examples because experts do not need them."
+    ],
+    "correctMove": "State the hidden prerequisite and ask students to reconstruct the skipped step.",
+    "biasExplanation": "The teacher's own expertise is making the novice bridge hard to see.",
+    "moveExplanation": "Naming the prerequisite restores the missing step from the learner's side."
+  },
+  {
+    "id": "assessment-context-013",
+    "title": "The notes that felt mastered",
+    "scenario": "A learner rereads highlighted notes until the page feels familiar, then assumes the topic is mastered. The next day, she cannot answer practice questions without looking.",
+    "biasOptions": ["illusion-of-learning", "fluency-heuristic", "spacing-effect", "testing-effect"],
+    "correctBias": "illusion-of-learning",
+    "moveOptions": [
+      "Switch from rereading to low-stakes retrieval practice without the notes open.",
+      "Reread the same highlights until they feel even smoother.",
+      "Measure mastery by how familiar the page looks.",
+      "Avoid practice questions because they lower confidence."
+    ],
+    "correctMove": "Switch from rereading to low-stakes retrieval practice without the notes open.",
+    "biasExplanation": "Familiarity with the material is being mistaken for retrievable knowledge.",
+    "moveExplanation": "Retrieval practice tests whether the learner can produce the idea, not merely recognize it."
+  },
+  {
+    "id": "assessment-context-014",
+    "title": "The beginner who stopped too early",
+    "scenario": "After one tutorial, a novice feels ready to teach the whole topic and dismisses feedback from more experienced classmates because the basics now seem simple.",
+    "biasOptions": ["dunning-kruger-effect", "overconfidence-effect", "illusion-of-explanatory-depth", "spotlight-effect"],
+    "correctBias": "dunning-kruger-effect",
+    "moveOptions": [
+      "Compare the novice's explanation against expert examples and targeted challenge problems.",
+      "Treat confidence after the first tutorial as proof of competence.",
+      "Ask only other beginners whether the explanation sounds good.",
+      "Avoid harder examples so motivation stays high."
+    ],
+    "correctMove": "Compare the novice's explanation against expert examples and targeted challenge problems.",
+    "biasExplanation": "Early limited competence is inflating self-assessment before the learner knows what is missing.",
+    "moveExplanation": "External standards and challenge problems expose the gap between fluency and mastery."
+  },
+  {
+    "id": "assessment-context-015",
+    "title": "The class that sounded ready",
+    "scenario": "A class nods along during a clear lecture, and the instructor assumes everyone understands. A short transfer problem shows many students cannot apply the concept outside the original example.",
+    "biasOptions": ["fluency-heuristic", "illusion-of-learning", "curse-of-knowledge", "social-desirability-bias"],
+    "correctBias": "fluency-heuristic",
+    "moveOptions": [
+      "Use a transfer problem before treating smooth presentation and nodding as evidence of learning.",
+      "Assume smooth delivery means smooth understanding.",
+      "Ask only whether the explanation sounded clear.",
+      "Repeat the same example until it feels even more familiar."
+    ],
+    "correctMove": "Use a transfer problem before treating smooth presentation and nodding as evidence of learning.",
+    "biasExplanation": "The ease of processing the lecture is being mistaken for durable understanding.",
+    "moveExplanation": "Transfer questions test learning directly instead of relying on felt fluency."
+  },
+  {
+    "id": "assessment-context-016",
+    "title": "The late text became a character verdict",
+    "scenario": "A friend replies a day late, and the first interpretation is that she is careless and self-centered. No one has asked whether travel, work, illness, or a missed notification was involved.",
+    "biasOptions": ["fundamental-attribution-error", "hostile-attribution-bias", "negativity-bias", "self-serving-bias"],
+    "correctBias": "fundamental-attribution-error",
+    "moveOptions": [
+      "Describe the behavior first and list plausible situational explanations before making a trait judgment.",
+      "Treat the delay as direct evidence of the friend's character.",
+      "Search memory for every prior annoyance to complete the pattern.",
+      "Assume the worst motive because it feels protective."
+    ],
+    "correctMove": "Describe the behavior first and list plausible situational explanations before making a trait judgment.",
+    "biasExplanation": "A single behavior is being inflated into a trait explanation before situational factors are checked.",
+    "moveExplanation": "Separating behavior from motive keeps character verdicts from arriving too early."
+  },
+  {
+    "id": "assessment-context-017",
+    "title": "The message that sounded hostile",
+    "scenario": "A short work chat message says, 'We need to talk about the draft.' The recipient immediately reads it as anger, even though the sender often writes brief messages when rushing between meetings.",
+    "biasOptions": ["hostile-attribution-bias", "naive-realism", "spotlight-effect", "projection-bias"],
+    "correctBias": "hostile-attribution-bias",
+    "moveOptions": [
+      "Generate non-hostile explanations and ask a clarifying question before responding defensively.",
+      "Reply as if hostility has been proven.",
+      "Assume brief wording always means contempt.",
+      "Ask friends who already dislike the sender to interpret it."
+    ],
+    "correctMove": "Generate non-hostile explanations and ask a clarifying question before responding defensively.",
+    "biasExplanation": "Ambiguity is collapsing directly into hostile intent.",
+    "moveExplanation": "Clarification and alternative explanations prevent threat interpretation from taking over."
+  },
+  {
+    "id": "assessment-context-018",
+    "title": "Everyone probably wants the same holiday",
+    "scenario": "One family member assumes everyone else wants a quiet holiday because that is what sounds obviously restorative to him. Later he learns others wanted a larger gathering but did not want to be difficult.",
+    "biasOptions": ["false-consensus-effect", "projection-bias", "egocentric-bias", "social-desirability-bias"],
+    "correctBias": "false-consensus-effect",
+    "moveOptions": [
+      "Ask for preferences privately before treating one person's default as the family norm.",
+      "Use the loudest person's preference as the obvious consensus.",
+      "Assume silence means everyone shares the same desire.",
+      "Treat disagreement as evidence that others are unreasonable."
+    ],
+    "correctMove": "Ask for preferences privately before treating one person's default as the family norm.",
+    "biasExplanation": "One person's preference is being projected outward as more common than it is.",
+    "moveExplanation": "Private preference collection distinguishes real agreement from assumed agreement."
+  },
+  {
+    "id": "assessment-context-019",
+    "title": "The argument where memory protected one side",
+    "scenario": "After a conflict, each retelling makes one person's choices look more reasonable and the other person's choices look more provocative. The narrator keeps dropping details that would complicate his own innocence.",
+    "biasOptions": ["self-serving-bias", "choice-supportive-bias", "cognitive-dissonance", "naive-realism"],
+    "correctBias": "self-serving-bias",
+    "moveOptions": [
+      "Write the strongest fair version of the other person's account and name one own-side contribution to the conflict.",
+      "Retell the story until the narrator's innocence feels complete.",
+      "Focus only on details that preserve self-respect.",
+      "Treat the cleanest memory as the most accurate one."
+    ],
+    "correctMove": "Write the strongest fair version of the other person's account and name one own-side contribution to the conflict.",
+    "biasExplanation": "The explanation is assigning credit and blame in a way that protects the self.",
+    "moveExplanation": "A fair rival account and own-side contribution interrupt self-protective reconstruction."
+  },
+  {
+    "id": "assessment-context-020",
+    "title": "The future weekend felt like the current mood",
+    "scenario": "After an exhausting week, someone cancels a future trip because she assumes she will still want isolation next month, even though her energy usually returns after rest.",
+    "biasOptions": ["projection-bias", "present-bias", "status-quo-bias", "negativity-bias"],
+    "correctBias": "projection-bias",
+    "moveOptions": [
+      "Ask how she usually feels after recovery before treating the current state as the future state.",
+      "Let today's fatigue fully define next month's preference.",
+      "Cancel everything that requires future energy.",
+      "Ask only what feels easiest right now."
+    ],
+    "correctMove": "Ask how she usually feels after recovery before treating the current state as the future state.",
+    "biasExplanation": "A current state is being projected onto a future self whose preferences may differ.",
+    "moveExplanation": "Using past state changes prevents the current mood from monopolizing the forecast."
+  },
+  {
+    "id": "assessment-context-021",
+    "title": "The plan everyone kept because it was checked",
+    "scenario": "A subscription page preselects an annual plan with add-ons. Most users keep it, and the product team describes that as proof users preferred the bundle.",
+    "biasOptions": ["default-effect", "status-quo-bias", "decoy-effect", "framing-effect"],
+    "correctBias": "default-effect",
+    "moveOptions": [
+      "Test the same choices with no preselected option before inferring preference.",
+      "Treat non-change as informed consent.",
+      "Make the default harder to notice so preference looks stronger.",
+      "Assume the bundle is best because it was selected by the interface."
+    ],
+    "correctMove": "Test the same choices with no preselected option before inferring preference.",
+    "biasExplanation": "The preselected option is shaping behavior before preference can be cleanly observed.",
+    "moveExplanation": "A no-default test separates chosen preference from architectural inertia."
+  },
+  {
+    "id": "assessment-context-022",
+    "title": "The first price that owned the conversation",
+    "scenario": "A pricing team opens a discussion with a very high enterprise price. Every later proposal is judged relative to that opening number, even after competitive data suggests a lower range.",
+    "biasOptions": ["anchoring-effect", "contrast-effect", "framing-effect", "loss-aversion"],
+    "correctBias": "anchoring-effect",
+    "moveOptions": [
+      "Have team members write independent price ranges from market data before seeing the proposed anchor.",
+      "Keep returning to the first number because it started the conversation.",
+      "Ignore competitor data because it makes the anchor uncomfortable.",
+      "Choose the number that feels boldest."
+    ],
+    "correctMove": "Have team members write independent price ranges from market data before seeing the proposed anchor.",
+    "biasExplanation": "The opening price is pulling later estimates toward itself.",
+    "moveExplanation": "Independent ranges anchored in market evidence weaken the first number's gravitational pull."
+  },
+  {
+    "id": "assessment-context-023",
+    "title": "The plan added only to make another plan shine",
+    "scenario": "A checkout page adds a third plan that is worse than the premium plan on every important dimension but close in price. Premium conversions rise even though the premium plan did not change.",
+    "biasOptions": ["decoy-effect", "contrast-effect", "default-effect", "less-is-better-effect"],
+    "correctBias": "decoy-effect",
+    "moveOptions": [
+      "Compare the core plans with and without the dominated third option.",
+      "Assume the premium plan became more valuable overnight.",
+      "Make the decoy even more confusing to push conversions.",
+      "Treat all comparisons as neutral because the options are visible."
+    ],
+    "correctMove": "Compare the core plans with and without the dominated third option.",
+    "biasExplanation": "A dominated option is changing the attractiveness of another option without changing its value.",
+    "moveExplanation": "Removing the decoy tests whether preference survives the cleaner choice set."
+  },
+  {
+    "id": "assessment-context-024",
+    "title": "The metric became the mission",
+    "scenario": "A UX team optimizes for time on page until users spend longer in the app, but research shows they are taking longer because the flow became more confusing.",
+    "biasOptions": ["surrogation", "automation-bias", "attribute-substitution", "action-bias"],
+    "correctBias": "surrogation",
+    "moveOptions": [
+      "Restate the real user outcome and test whether the metric still tracks it.",
+      "Keep optimizing the proxy because it is easy to measure.",
+      "Declare success because the dashboard moved upward.",
+      "Drop user research because it complicates the metric story."
+    ],
+    "correctMove": "Restate the real user outcome and test whether the metric still tracks it.",
+    "biasExplanation": "The proxy metric has replaced the underlying goal it was meant to represent.",
+    "moveExplanation": "Reconnecting the metric to the real outcome prevents the surrogate from becoming the mission."
+  },
+  {
+    "id": "assessment-context-025",
+    "title": "The recommendation nobody checked",
+    "scenario": "A design tool suggests a layout automatically. The team accepts it because it came from the system, even though the layout buries the most important user action.",
+    "biasOptions": ["automation-bias", "authority-bias", "default-effect", "attribute-substitution"],
+    "correctBias": "automation-bias",
+    "moveOptions": [
+      "Review the recommendation against the user's task and require a human reason for accepting it.",
+      "Accept the layout because automated suggestions are usually objective.",
+      "Avoid testing because the tool has already optimized the page.",
+      "Use the recommendation as the new default without documenting why."
+    ],
+    "correctMove": "Review the recommendation against the user's task and require a human reason for accepting it.",
+    "biasExplanation": "The automated suggestion is receiving unwarranted trust because it came from the system.",
+    "moveExplanation": "A human task-based review makes automation an input rather than a decision-maker."
+  }
+]

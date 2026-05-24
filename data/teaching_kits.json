@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "media-literacy-bias-lab",
+    "title": "Media Literacy Bias Lab",
+    "summary": "A 45-minute lesson for separating vivid stories, repeated claims, and missing denominators before a news item becomes belief.",
+    "audience": "High-school or college classes, media-literacy groups, moderators, and reading groups.",
+    "duration": "45-60 minutes",
+    "contextSlug": "news-reading",
+    "pathSlugs": ["evidence-and-explanation", "misinformation-memory-and-crowds"],
+    "selfCheckSlugs": ["before-you-share-the-story", "before-you-trust-the-repeat"],
+    "comparisonSlugs": ["availability-heuristic-vs-frequency-illusion", "survivorship-bias-vs-base-rate-neglect"],
+    "biasSlugs": ["availability-heuristic", "illusory-truth-effect", "continued-influence-effect", "base-rate-neglect", "survivorship-bias"],
+    "objectives": [
+      "Separate exposure, repetition, and emotional vividness from independent evidence.",
+      "Restore the denominator before treating an anecdote as a trend.",
+      "Practice replacing a corrected story rather than merely negating it."
+    ],
+    "materials": [
+      "One current headline, thread, or article excerpt with a vivid claim.",
+      "A blank denominator table: claim, source, sample, comparison class, missing cases.",
+      "The news-reading context hub and one comparison guide."
+    ],
+    "agenda": [
+      { "time": "0-8 min", "activity": "Students write the implied causal story in one sentence before discussion begins." },
+      { "time": "8-20 min", "activity": "Small groups identify what is vivid, what is repeated, and what is independently evidenced." },
+      { "time": "20-35 min", "activity": "Groups restore the denominator and compare availability against base-rate neglect or survivorship bias." },
+      { "time": "35-45 min", "activity": "Each group writes one cleaner version of the claim and one thing they would check before sharing." }
+    ],
+    "worksheetPrompts": [
+      "What did the item make easier to imagine, and what did it actually establish?",
+      "Which missing comparison class would most change the interpretation?",
+      "If this story were corrected tomorrow, what replacement explanation would prevent the first story from lingering?"
+    ],
+    "facilitatorNotes": [
+      "Keep the group from treating bias labels as accusations; the target is the reading process.",
+      "Reward better questions over faster labels.",
+      "Close with one sharing rule the group can reuse."
+    ],
+    "assessmentContext": "news-reading"
+  },
+  {
+    "slug": "meeting-dissent-reset",
+    "title": "Meeting Dissent Reset",
+    "summary": "A facilitation kit for rooms where agreement, hierarchy, and speed may be replacing independent judgment.",
+    "audience": "Managers, leadership teams, boards, project groups, and classroom discussion leaders.",
+    "duration": "50-75 minutes",
+    "contextSlug": "teams-and-meetings",
+    "pathSlugs": ["social-pressure-and-belonging", "decision-under-uncertainty"],
+    "selfCheckSlugs": ["before-you-go-with-the-room", "before-you-decide"],
+    "comparisonSlugs": ["groupthink-vs-social-desirability-bias", "hindsight-bias-vs-outcome-bias"],
+    "biasSlugs": ["groupthink", "authority-bias", "shared-information-bias", "social-desirability-bias", "outcome-bias"],
+    "objectives": [
+      "Distinguish real agreement from public compliance.",
+      "Make unshared information visible before a decision closes.",
+      "Protect dissent without turning the meeting into theater."
+    ],
+    "materials": [
+      "A real or simulated decision the group is considering.",
+      "Private first-pass slips or a shared anonymous form.",
+      "A decision record template: criteria, risks, dissent, decision rule."
+    ],
+    "agenda": [
+      { "time": "0-10 min", "activity": "Everyone writes a private first-pass judgment and confidence level." },
+      { "time": "10-25 min", "activity": "Facilitator collects strongest objections and unshared information before open advocacy." },
+      { "time": "25-45 min", "activity": "The group compares authority bias, groupthink, shared-information bias, and social desirability pressure." },
+      { "time": "45-60 min", "activity": "The room records the decision rule, unresolved risks, and what evidence would trigger revision." }
+    ],
+    "worksheetPrompts": [
+      "What would someone hesitate to say publicly in this room?",
+      "Which information is known by only one or two people?",
+      "How will we later judge the process separately from the outcome?"
+    ],
+    "facilitatorNotes": [
+      "Open with writing, not discussion.",
+      "Ask the highest-status person to speak after independent judgments are captured.",
+      "Treat silence as missing data, not agreement."
+    ],
+    "assessmentContext": "teams-and-meetings"
+  },
+  {
+    "slug": "confidence-vs-understanding-classroom",
+    "title": "Confidence vs Understanding Classroom Kit",
+    "summary": "A lesson for showing how fluency, confidence, and real transferable understanding come apart.",
+    "audience": "Teachers, tutors, professors, coaches, and learners doing metacognition work.",
+    "duration": "40-60 minutes",
+    "contextSlug": "teaching-and-learning",
+    "pathSlugs": ["confidence-and-understanding", "start-here"],
+    "selfCheckSlugs": ["before-you-call-it-obvious", "before-you-predict"],
+    "comparisonSlugs": ["illusion-of-explanatory-depth-vs-dunning-kruger-effect"],
+    "biasSlugs": ["illusion-of-explanatory-depth", "dunning-kruger-effect", "fluency-heuristic", "illusion-of-learning", "curse-of-knowledge"],
+    "objectives": [
+      "Show why recognition and explanation are different achievements.",
+      "Use transfer questions to test understanding without humiliation.",
+      "Help teachers notice expert blind spots before they become skipped steps."
+    ],
+    "materials": [
+      "One familiar everyday mechanism or course concept.",
+      "A near-transfer question and a far-transfer question.",
+      "A confidence-before and confidence-after reflection slip."
+    ],
+    "agenda": [
+      { "time": "0-8 min", "activity": "Learners rate confidence before explaining the mechanism." },
+      { "time": "8-20 min", "activity": "Learners attempt a step-by-step explanation without notes." },
+      { "time": "20-35 min", "activity": "Pairs test the explanation against transfer questions." },
+      { "time": "35-50 min", "activity": "The class compares illusion of explanatory depth, Dunning-Kruger, and fluency heuristic." }
+    ],
+    "worksheetPrompts": [
+      "Where did the explanation first become vague?",
+      "What did you recognize that you could not produce?",
+      "What bridge would an expert be tempted to skip?"
+    ],
+    "facilitatorNotes": [
+      "Normalize confidence drops as evidence of better calibration.",
+      "Make the mechanism task playful; the point is visibility, not embarrassment.",
+      "End with one retrieval prompt scheduled for later."
+    ],
+    "assessmentContext": "teaching-and-learning"
+  },
+  {
+    "slug": "relationship-conflict-attribution-reset",
+    "title": "Relationship Conflict Attribution Reset",
+    "summary": "A reflective kit for slowing motive-reading, character verdicts, and self-protective memory during conflict.",
+    "audience": "Coaches, peer mediators, families, teams, and anyone handling interpersonal disagreement.",
+    "duration": "35-55 minutes",
+    "contextSlug": "relationships",
+    "pathSlugs": ["people-judgment", "conflict-threat-and-tribe"],
+    "selfCheckSlugs": ["before-you-judge-a-person", "before-you-read-hostility-into-it", "before-you-tidy-the-story"],
+    "comparisonSlugs": ["halo-effect-vs-fundamental-attribution-error"],
+    "biasSlugs": ["fundamental-attribution-error", "hostile-attribution-bias", "self-serving-bias", "false-consensus-effect", "projection-bias"],
+    "objectives": [
+      "Separate observed behavior from inferred motive.",
+      "Generate serious non-hostile explanations before responding.",
+      "Notice how retelling can make memory cleaner and more self-protective."
+    ],
+    "materials": [
+      "A low-stakes conflict scenario or anonymized real situation.",
+      "Three-column worksheet: behavior, possible situation, possible motive.",
+      "One repair question the participant can actually ask."
+    ],
+    "agenda": [
+      { "time": "0-8 min", "activity": "Write the observable behavior without motive language." },
+      { "time": "8-20 min", "activity": "Generate three non-hostile explanations and one hostile explanation, then compare evidence quality." },
+      { "time": "20-35 min", "activity": "Name where self-serving bias or false consensus may be protecting the narrator." },
+      { "time": "35-50 min", "activity": "Choose a next question that lowers heat rather than wins the story." }
+    ],
+    "worksheetPrompts": [
+      "What did the person do, stated without motive words?",
+      "What situational pressure could explain the same behavior?",
+      "What fact would genuinely change your interpretation?"
+    ],
+    "facilitatorNotes": [
+      "Do not ask participants to excuse harmful behavior; ask them to separate evidence from inference.",
+      "Keep the exercise focused on next process, not moral victory.",
+      "Use smaller examples first so the method is available before high heat."
+    ],
+    "assessmentContext": "relationships"
+  },
+  {
+    "slug": "product-choice-architecture-audit",
+    "title": "Product Choice-Architecture Audit",
+    "summary": "A product and UX kit for testing whether defaults, decoys, metrics, and automation are helping users choose or quietly manufacturing preference.",
+    "audience": "Product managers, designers, researchers, founders, growth teams, and policy designers.",
+    "duration": "60-90 minutes",
+    "contextSlug": "product-ux",
+    "pathSlugs": ["comparison-traps-and-choice-architecture", "loss-ownership-and-omission"],
+    "selfCheckSlugs": ["before-you-let-the-menu-decide", "before-you-treat-the-default-as-neutral"],
+    "comparisonSlugs": ["default-effect-vs-status-quo-bias", "anchoring-effect-vs-framing-effect", "loss-aversion-vs-sunk-cost-effect"],
+    "biasSlugs": ["default-effect", "framing-effect", "decoy-effect", "anchoring-effect", "automation-bias", "surrogation"],
+    "objectives": [
+      "Make the choice architecture visible as part of the decision environment.",
+      "Test whether user preference survives without defaults, decoys, anchors, or proxy metrics.",
+      "Turn ethical UX concerns into concrete redesign experiments."
+    ],
+    "materials": [
+      "A screenshot or flow map of the current decision interface.",
+      "A cue inventory: default, order, price anchor, recommendation, metric, friction.",
+      "One alternate version that removes or neutralizes the strongest cue."
+    ],
+    "agenda": [
+      { "time": "0-15 min", "activity": "Name the user's actual decision and list every cue that makes one option easier or safer." },
+      { "time": "15-35 min", "activity": "Compare the current flow against default effect, framing effect, anchoring, decoy effect, automation bias, and surrogation." },
+      { "time": "35-60 min", "activity": "Design a cleaner test that removes one steering cue and preserves the user's real task." },
+      { "time": "60-75 min", "activity": "Choose the smallest experiment that would tell whether preference survives the cleaner frame." }
+    ],
+    "worksheetPrompts": [
+      "What is the user deciding, not merely clicking?",
+      "Which cue would be most embarrassing if we had to defend it as a recommendation?",
+      "What would the choice look like if no option were preselected, anchored, or boosted?"
+    ],
+    "facilitatorNotes": [
+      "Distinguish persuasion from evidence; conversion lift is not automatically user benefit.",
+      "Treat the current default as one contestant, not as neutral ground.",
+      "End with a testable redesign, not just a critique."
+    ],
+    "assessmentContext": "product-ux"
+  }
+]

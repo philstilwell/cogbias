@@ -120,6 +120,10 @@ if (resetButton) {
 hydrateFiltersFromUrl();
 applyFilters();
 
+for (const button of document.querySelectorAll("[data-print-page]")) {
+  button.addEventListener("click", () => window.print());
+}
+
 for (const group of document.querySelectorAll("[data-tab-group]")) {
   const buttons = Array.from(group.querySelectorAll("[data-tab-button]"));
   const panels = Array.from(group.querySelectorAll("[data-tab-panel]"));
@@ -213,18 +217,73 @@ if (biasAssessmentShell && assessmentBankNode) {
   const assessmentNewButton = biasAssessmentShell.querySelector("[data-bias-assessment-new]");
   const assessmentDifficultySelect = biasAssessmentShell.querySelector("[data-assessment-difficulty]");
   const assessmentCategorySelect = biasAssessmentShell.querySelector("[data-assessment-category]");
+  const assessmentContextSelect = biasAssessmentShell.querySelector("[data-assessment-context]");
   const assessmentSummaryNode = biasAssessmentShell.querySelector("[data-assessment-summary]");
   const assessmentEmptyNode = biasAssessmentShell.querySelector("[data-assessment-empty]");
+  const assessmentHistoryNode = document.querySelector("[data-assessment-history]");
   const assessmentSize = Number(biasAssessmentShell.dataset.assessmentSize || "10");
   const assessmentBank = JSON.parse(assessmentBankNode.textContent || "[]");
+  const assessmentStorageKey = "cogbias.assessmentHistory.v1";
   const focusBias = new URL(window.location.href).searchParams.get("focus") || "";
   const focusBiasName = assessmentBank.find((item) => item.correctBias === focusBias)?.correctBiasName || "";
   let currentAssessmentSet = [];
+
+  function readAssessmentHistory() {
+    try {
+      return JSON.parse(window.localStorage.getItem(assessmentStorageKey) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function writeAssessmentHistory(record) {
+    try {
+      const history = readAssessmentHistory();
+      history.unshift(record);
+      window.localStorage.setItem(assessmentStorageKey, JSON.stringify(history.slice(0, 5)));
+    } catch {
+      // Private browsing or storage restrictions should not block grading.
+    }
+  }
+
+  function filterLabelFor(selectNode, fallback) {
+    return selectNode?.selectedOptions?.[0]?.textContent || fallback;
+  }
+
+  function renderAssessmentHistory() {
+    if (!assessmentHistoryNode) return;
+
+    const latest = readAssessmentHistory()[0];
+    if (!latest) return;
+
+    const dateLabel = latest.date
+      ? new Intl.DateTimeFormat(undefined, {
+          dateStyle: "medium",
+          timeStyle: "short",
+        }).format(new Date(latest.date))
+      : "recently";
+
+    assessmentHistoryNode.innerHTML = `
+      <h4>Last saved assessment run</h4>
+      <p class="muted">${escapeHtml(dateLabel)} · Bias diagnosis ${escapeHtml(
+        `${latest.biasScore}/${latest.total}`,
+      )} · Best next move ${escapeHtml(`${latest.moveScore}/${latest.total}`)}</p>
+      <p class="muted"><strong>Mode:</strong> ${escapeHtml(latest.mode || "Mixed levels · All categories · All contexts")}</p>
+      ${
+        latest.priorityBiases?.length
+          ? `<p class="muted"><strong>Review next:</strong> ${latest.priorityBiases
+              .map((item) => escapeHtml(item.name))
+              .join(", ")}</p>`
+          : ""
+      }`;
+    assessmentHistoryNode.classList.remove("hidden");
+  }
 
   function currentAssessmentFilters() {
     return {
       difficulty: assessmentDifficultySelect?.value || "",
       category: assessmentCategorySelect?.value || "",
+      context: assessmentContextSelect?.value || "",
     };
   }
 
@@ -244,6 +303,12 @@ if (biasAssessmentShell && assessmentBankNode) {
       url.searchParams.delete("category");
     }
 
+    if (filters.context) {
+      url.searchParams.set("context", filters.context);
+    } else {
+      url.searchParams.delete("context");
+    }
+
     window.history.replaceState({}, "", url);
   }
 
@@ -251,6 +316,7 @@ if (biasAssessmentShell && assessmentBankNode) {
     const url = new URL(window.location.href);
     const difficulty = url.searchParams.get("difficulty") || "";
     const category = url.searchParams.get("category") || "";
+    const context = url.searchParams.get("context") || "";
 
     if (assessmentDifficultySelect) {
       assessmentDifficultySelect.value = difficulty;
@@ -265,30 +331,47 @@ if (biasAssessmentShell && assessmentBankNode) {
         assessmentCategorySelect.value = "";
       }
     }
+
+    if (assessmentContextSelect) {
+      assessmentContextSelect.value = context;
+      if (assessmentContextSelect.value !== context) {
+        assessmentContextSelect.value = "";
+      }
+    }
   }
 
   function filteredAssessmentBank() {
-    const { difficulty, category } = currentAssessmentFilters();
+    const { difficulty, category, context } = currentAssessmentFilters();
     return assessmentBank.filter((item) => {
       const matchesDifficulty = !difficulty || item.difficulty === difficulty;
       const matchesCategory = !category || (item.categories || []).includes(category);
-      return matchesDifficulty && matchesCategory;
+      const matchesContext = !context || (item.contexts || []).some((itemContext) => itemContext.slug === context);
+      return matchesDifficulty && matchesCategory && matchesContext;
     });
   }
 
   function updateAssessmentSummary(availableCount) {
     if (!assessmentSummaryNode) return;
 
-    const { difficulty, category } = currentAssessmentFilters();
+    const { category } = currentAssessmentFilters();
     const difficultyLabel =
       assessmentDifficultySelect?.selectedOptions?.[0]?.textContent || "Mixed levels";
     const categoryLabel = category || "All categories";
+    const contextLabel = assessmentContextSelect?.selectedOptions?.[0]?.textContent || "All contexts";
     const questionCount = Math.min(assessmentSize, availableCount);
     const focusText = focusBiasName ? ` Includes ${focusBiasName} when possible.` : "";
 
     assessmentSummaryNode.textContent = availableCount
-      ? `${questionCount}-question run from ${availableCount} available scenarios. ${difficultyLabel} · ${categoryLabel}.${focusText}`
-      : `No scenarios are currently available for ${difficultyLabel} · ${categoryLabel}.${focusText}`;
+      ? `${questionCount}-question run from ${availableCount} available scenarios. ${difficultyLabel} · ${categoryLabel} · ${contextLabel}.${focusText}`
+      : `No scenarios are currently available for ${difficultyLabel} · ${categoryLabel} · ${contextLabel}.${focusText}`;
+  }
+
+  function currentAssessmentModeLabel() {
+    return [
+      filterLabelFor(assessmentDifficultySelect, "Mixed levels"),
+      assessmentCategorySelect?.value || "All categories",
+      filterLabelFor(assessmentContextSelect, "All contexts"),
+    ].join(" · ");
   }
 
   function pickAssessmentSet() {
@@ -322,6 +405,7 @@ if (biasAssessmentShell && assessmentBankNode) {
     const chips = [
       `<span class="teaching-pill">${escapeHtml(item.difficultyLabel || "Applied")}</span>`,
       ...(item.categories || []).slice(0, 2).map((categoryName) => `<span class="teaching-pill">${escapeHtml(categoryName)}</span>`),
+      ...(item.contexts || []).slice(0, 1).map((context) => `<span class="teaching-pill">${escapeHtml(context.title)}</span>`),
     ].join("");
 
     return `
@@ -446,12 +530,26 @@ if (biasAssessmentShell && assessmentBankNode) {
     return "Review the misses for patterns, then rerun the same difficulty once the weak spots are less mysterious.";
   }
 
+  function incrementCount(map, key, value) {
+    if (!key) return;
+    const prior = map.get(key) || { ...value, count: 0 };
+    prior.count += 1;
+    map.set(key, prior);
+  }
+
+  function sortedCountValues(map, limit = 5) {
+    return [...map.values()].sort((left, right) => right.count - left.count || left.name.localeCompare(right.name)).slice(0, limit);
+  }
+
   function gradeAssessmentSet() {
     if (!currentAssessmentSet.length) return;
 
     let biasScore = 0;
     let moveScore = 0;
     let perfectCount = 0;
+    const missedBiasMap = new Map();
+    const missedCategoryMap = new Map();
+    const missedContextMap = new Map();
     const questionCards = Array.from(
       biasAssessmentShell.querySelectorAll("[data-assessment-question]"),
     );
@@ -472,6 +570,19 @@ if (biasAssessmentShell && assessmentBankNode) {
       if (biasCorrect) biasScore += 1;
       if (moveCorrect) moveScore += 1;
       if (biasCorrect && moveCorrect) perfectCount += 1;
+      if (!biasCorrect || !moveCorrect) {
+        incrementCount(missedBiasMap, item.correctBias, {
+          slug: item.correctBias,
+          name: item.correctBiasName,
+          href: item.correctBiasHref,
+        });
+        for (const categoryName of item.categories || []) {
+          incrementCount(missedCategoryMap, categoryName, { name: categoryName });
+        }
+        for (const context of item.contexts || []) {
+          incrementCount(missedContextMap, context.slug, { slug: context.slug, name: context.title });
+        }
+      }
 
       const card = questionCards[index];
       if (card) {
@@ -488,6 +599,10 @@ if (biasAssessmentShell && assessmentBankNode) {
               .slice(0, 2)
               .map((categoryName) => `<span class="teaching-pill">${escapeHtml(categoryName)}</span>`)
               .join("")}
+            ${(item.contexts || [])
+              .slice(0, 1)
+              .map((context) => `<span class="teaching-pill">${escapeHtml(context.title)}</span>`)
+              .join("")}
           </div>
           <p class="card-copy">${escapeHtml(item.scenario)}</p>
           <p class="muted"><strong>Your bias call:</strong> ${escapeHtml(optionName)}</p>
@@ -501,6 +616,22 @@ if (biasAssessmentShell && assessmentBankNode) {
 
     const biasBand = performanceBand(biasScore, currentAssessmentSet.length, "bias");
     const moveBand = performanceBand(moveScore, currentAssessmentSet.length, "move");
+    const priorityBiases = sortedCountValues(missedBiasMap);
+    const priorityCategories = sortedCountValues(missedCategoryMap, 3);
+    const priorityContexts = sortedCountValues(missedContextMap, 3);
+    const modeLabel = currentAssessmentModeLabel();
+    const resultRecord = {
+      date: new Date().toISOString(),
+      mode: modeLabel,
+      biasScore,
+      moveScore,
+      perfectCount,
+      total: currentAssessmentSet.length,
+      priorityBiases: priorityBiases.map((item) => ({ slug: item.slug, name: item.name, count: item.count })),
+      priorityCategories: priorityCategories.map((item) => ({ name: item.name, count: item.count })),
+      priorityContexts: priorityContexts.map((item) => ({ slug: item.slug, name: item.name, count: item.count })),
+    };
+    writeAssessmentHistory(resultRecord);
 
     if (assessmentResultsNode) {
       assessmentResultsNode.innerHTML = `
@@ -533,10 +664,49 @@ if (biasAssessmentShell && assessmentBankNode) {
             <p class="muted">${escapeHtml(recommendationText(biasScore, moveScore, currentAssessmentSet.length))}</p>
           </div>
         </div>
+        ${
+          priorityBiases.length || priorityCategories.length || priorityContexts.length
+            ? `<div class="assessment-feedback-grid">
+          <div class="note-panel">
+            <h4>Review priorities</h4>
+            ${
+              priorityBiases.length
+                ? `<div class="path-link-row">${priorityBiases
+                    .map(
+                      (item) =>
+                        `<a class="path-link-chip" href="${escapeHtml(item.href)}">${escapeHtml(item.name)} · ${item.count}</a>`,
+                    )
+                    .join("")}</div>`
+                : `<p class="muted">No missed bias labels in this run.</p>`
+            }
+          </div>
+          <div class="note-panel">
+            <h4>Pattern in the misses</h4>
+            <p class="muted"><strong>Mode:</strong> ${escapeHtml(modeLabel)}</p>
+            ${
+              priorityCategories.length
+                ? `<p class="muted"><strong>Categories:</strong> ${priorityCategories
+                    .map((item) => `${escapeHtml(item.name)} (${item.count})`)
+                    .join(", ")}</p>`
+                : ""
+            }
+            ${
+              priorityContexts.length
+                ? `<p class="muted"><strong>Contexts:</strong> ${priorityContexts
+                    .map((item) => `${escapeHtml(item.name)} (${item.count})`)
+                    .join(", ")}</p>`
+                : ""
+            }
+            <p class="muted">This result has been saved locally in this browser so you can compare the next run against it.</p>
+          </div>
+        </div>`
+            : ""
+        }
         <div class="category-grid" style="margin-top: 18px;">
           ${reviewCards.join("")}
         </div>`;
       assessmentResultsNode.classList.remove("hidden");
+      renderAssessmentHistory();
       assessmentResultsNode.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
@@ -545,6 +715,8 @@ if (biasAssessmentShell && assessmentBankNode) {
   assessmentGradeButton?.addEventListener("click", gradeAssessmentSet);
   assessmentDifficultySelect?.addEventListener("change", loadAssessmentSet);
   assessmentCategorySelect?.addEventListener("change", loadAssessmentSet);
+  assessmentContextSelect?.addEventListener("change", loadAssessmentSet);
   hydrateAssessmentFiltersFromUrl();
+  renderAssessmentHistory();
   loadAssessmentSet();
 }

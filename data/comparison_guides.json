@@ -1,0 +1,362 @@
+[
+  {
+    "slug": "confirmation-bias-vs-motivated-reasoning",
+    "title": "Confirmation Bias vs Motivated Reasoning",
+    "summary": "Both protect a favored conclusion, but confirmation bias narrows the search and motivated reasoning bends the whole evaluation around what the person wants to be true.",
+    "biasSlugs": ["confirmation-bias", "motivated-reasoning"],
+    "commonConfusion": "The same case often has both: people search selectively because a preferred answer is emotionally or socially useful.",
+    "quickRule": "Ask whether the main failure is selective evidence intake or desire-driven evaluation after evidence arrives.",
+    "left": {
+      "label": "Confirmation bias",
+      "core": "The search, recall, or weighting process favors information that supports the existing belief.",
+      "ask": "What disconfirming search path has been avoided or underweighted?"
+    },
+    "right": {
+      "label": "Motivated reasoning",
+      "core": "The conclusion is defended because it serves identity, comfort, status, group belonging, or some other motive.",
+      "ask": "What would become costly, embarrassing, or identity-threatening if the conclusion changed?"
+    },
+    "diagnosticQuestions": [
+      "Would the same search pattern appear if the preferred answer had no personal or group value?",
+      "Is contrary evidence missing, or is it present but being explained away asymmetrically?",
+      "What neutral test would both sides accept before seeing the result?"
+    ],
+    "examples": [
+      {
+        "situation": "A manager reads only articles supporting a policy she already prefers.",
+        "betterLabel": "Confirmation bias",
+        "why": "The visible failure is selective evidence gathering."
+      },
+      {
+        "situation": "A fan accepts weak evidence for their team and invents elaborate reasons to reject stronger evidence against it.",
+        "betterLabel": "Motivated reasoning",
+        "why": "The evaluation standards shift to protect an identity-linked conclusion."
+      }
+    ],
+    "repairMove": "Require one serious disconfirming search path, then state in advance what evidence would change the conclusion."
+  },
+  {
+    "slug": "anchoring-effect-vs-framing-effect",
+    "title": "Anchoring Effect vs Framing Effect",
+    "summary": "Anchoring pulls judgment toward a starting value; framing changes judgment by changing how the same substance is described.",
+    "biasSlugs": ["anchoring-effect", "framing-effect"],
+    "commonConfusion": "A first number can also be a frame, especially when it makes later options feel cheap, expensive, risky, or safe.",
+    "quickRule": "Ask whether the distortion is caused by a starting point or by a presentation shift.",
+    "left": {
+      "label": "Anchoring effect",
+      "core": "An initial number, estimate, or reference point drags later judgments toward itself.",
+      "ask": "What estimate would people make before seeing the first number?"
+    },
+    "right": {
+      "label": "Framing effect",
+      "core": "Different descriptions of equivalent substance produce different judgments.",
+      "ask": "Would the preference survive a neutral wording or the opposite frame?"
+    },
+    "diagnosticQuestions": [
+      "Can you remove the first number and still reproduce the shift?",
+      "Can you restate the same facts in gain and loss language and watch the preference move?",
+      "Is the reference point numerical, narrative, emotional, or all three?"
+    ],
+    "examples": [
+      {
+        "situation": "A salary negotiation starts high and every counteroffer stays near that number.",
+        "betterLabel": "Anchoring effect",
+        "why": "The opening number is the active pull."
+      },
+      {
+        "situation": "A policy gains support as '90 lives saved' and loses support as '10 lives lost.'",
+        "betterLabel": "Framing effect",
+        "why": "The same outcome changes force when the description changes."
+      }
+    ],
+    "repairMove": "Make an independent estimate first, then restate the decision in at least two equivalent frames."
+  },
+  {
+    "slug": "halo-effect-vs-fundamental-attribution-error",
+    "title": "Halo Effect vs Fundamental Attribution Error",
+    "summary": "The halo effect lets one positive impression spill into unrelated judgments; fundamental attribution error overreads behavior as character while underreading situation.",
+    "biasSlugs": ["halo-effect", "fundamental-attribution-error"],
+    "commonConfusion": "Both can make a people judgment feel obvious before evidence is strong enough.",
+    "quickRule": "Ask whether one admired trait is spilling outward, or whether a behavior is being turned into a trait explanation too quickly.",
+    "left": {
+      "label": "Halo effect",
+      "core": "One salient good quality raises judgments about other qualities without independent evidence.",
+      "ask": "Which unrelated trait is being inferred from the admired feature?"
+    },
+    "right": {
+      "label": "Fundamental attribution error",
+      "core": "Behavior is explained by stable character while situational pressures are ignored.",
+      "ask": "What pressures, constraints, incentives, or accidents could explain the behavior?"
+    },
+    "diagnosticQuestions": [
+      "Is the judgment moving from one trait to another trait?",
+      "Is the judgment moving from one behavior to a character explanation?",
+      "What would you think if the same behavior came from a less admired person?"
+    ],
+    "examples": [
+      {
+        "situation": "A charismatic speaker is assumed to be technically competent.",
+        "betterLabel": "Halo effect",
+        "why": "Warmth and polish are spilling into competence."
+      },
+      {
+        "situation": "A person snaps once in a stressful meeting and is labeled disrespectful.",
+        "betterLabel": "Fundamental attribution error",
+        "why": "The behavior becomes character before the situation is inspected."
+      }
+    ],
+    "repairMove": "Separate observed behavior, inferred trait, and situational context into three explicit columns."
+  },
+  {
+    "slug": "hindsight-bias-vs-outcome-bias",
+    "title": "Hindsight Bias vs Outcome Bias",
+    "summary": "Hindsight bias makes the outcome feel predictable after the fact; outcome bias uses the result to grade the earlier decision process.",
+    "biasSlugs": ["hindsight-bias", "outcome-bias"],
+    "commonConfusion": "Postmortems often slide from 'we should have known' into 'therefore the decision was bad.'",
+    "quickRule": "Ask whether the claim is about prior predictability or decision quality.",
+    "left": {
+      "label": "Hindsight bias",
+      "core": "After knowing the result, people remember the earlier uncertainty as cleaner and more predictable.",
+      "ask": "What did we actually believe before the outcome was known?"
+    },
+    "right": {
+      "label": "Outcome bias",
+      "core": "The result is used as evidence that the decision process was good or bad.",
+      "ask": "Was the process sound by the evidence available at the time?"
+    },
+    "diagnosticQuestions": [
+      "Are people saying the result was obvious, or that the process was proven good or bad?",
+      "Do timestamped forecasts contradict the current story?",
+      "Would the process get the same grade if luck had gone the other way?"
+    ],
+    "examples": [
+      {
+        "situation": "After a vendor fails, people say the warning signs were obvious all along.",
+        "betterLabel": "Hindsight bias",
+        "why": "The known result is making prior uncertainty disappear."
+      },
+      {
+        "situation": "A risky launch is praised as smart because it happened to work.",
+        "betterLabel": "Outcome bias",
+        "why": "The result is being used to grade the process."
+      }
+    ],
+    "repairMove": "Use decision journals: recover prior forecasts first, then grade process separately from outcome."
+  },
+  {
+    "slug": "default-effect-vs-status-quo-bias",
+    "title": "Default Effect vs Status Quo Bias",
+    "summary": "The default effect is a choice-architecture pull toward the preselected option; status quo bias is a broader preference for leaving things as they are.",
+    "biasSlugs": ["default-effect", "status-quo-bias"],
+    "commonConfusion": "Defaults often create or reinforce the status quo, so behavior can look identical from the outside.",
+    "quickRule": "Ask whether people are staying because the option was preselected or because change itself feels costly, risky, or abnormal.",
+    "left": {
+      "label": "Default effect",
+      "core": "A preselected or no-action option receives extra uptake because the environment made it easiest.",
+      "ask": "What happens if no option is preselected?"
+    },
+    "right": {
+      "label": "Status quo bias",
+      "core": "People prefer the current state even when alternatives may be better.",
+      "ask": "What objections appear when the current arrangement is treated as one option among many?"
+    },
+    "diagnosticQuestions": [
+      "Is there an interface, form, policy, or enrollment architecture doing the steering?",
+      "Would active choice reduce the pattern?",
+      "Are people defending the current arrangement even when no default is present?"
+    ],
+    "examples": [
+      {
+        "situation": "Most users keep the preselected privacy setting.",
+        "betterLabel": "Default effect",
+        "why": "Preselection is the immediate cause."
+      },
+      {
+        "situation": "A committee resists replacing a familiar process despite evidence of better alternatives.",
+        "betterLabel": "Status quo bias",
+        "why": "The current arrangement feels safer because it is current."
+      }
+    ],
+    "repairMove": "Run an active-choice version and ask the current option to win on forward-looking merits."
+  },
+  {
+    "slug": "availability-heuristic-vs-frequency-illusion",
+    "title": "Availability Heuristic vs Frequency Illusion",
+    "summary": "Availability mistakes ease of recall for prevalence; frequency illusion makes newly noticed things seem suddenly common.",
+    "biasSlugs": ["availability-heuristic", "frequency-illusion"],
+    "commonConfusion": "Both make something feel common because it is mentally easy to notice or retrieve.",
+    "quickRule": "Ask whether the item is easy to recall because it is vivid, or newly salient because attention has been tuned to it.",
+    "left": {
+      "label": "Availability heuristic",
+      "core": "Judgment uses mental availability as a shortcut for likelihood or frequency.",
+      "ask": "Is the example memorable, recent, emotional, or heavily covered?"
+    },
+    "right": {
+      "label": "Frequency illusion",
+      "core": "After noticing something, people start detecting it everywhere and infer that it has become more frequent.",
+      "ask": "Did attention change before the perceived frequency changed?"
+    },
+    "diagnosticQuestions": [
+      "Was the case already salient because it was vivid or emotionally loaded?",
+      "Did a new label, purchase, diagnosis, or conversation tune attention to the pattern?",
+      "What baseline count would distinguish real increase from noticing increase?"
+    ],
+    "examples": [
+      {
+        "situation": "After dramatic plane-crash coverage, flying feels more dangerous.",
+        "betterLabel": "Availability heuristic",
+        "why": "Vivid recall is being used as a risk estimate."
+      },
+      {
+        "situation": "After learning a new term, a student starts seeing it everywhere.",
+        "betterLabel": "Frequency illusion",
+        "why": "Attention changed, making instances easier to notice."
+      }
+    ],
+    "repairMove": "Count occurrences against a baseline period before deciding whether prevalence changed."
+  },
+  {
+    "slug": "survivorship-bias-vs-base-rate-neglect",
+    "title": "Survivorship Bias vs Base Rate Neglect",
+    "summary": "Survivorship bias samples only visible winners; base-rate neglect ignores the background frequency needed to interpret a case.",
+    "biasSlugs": ["survivorship-bias", "base-rate-neglect"],
+    "commonConfusion": "Both lose the denominator, but they lose it differently.",
+    "quickRule": "Ask whether the missing information is failed cases from the sample or background rates for the whole inference.",
+    "left": {
+      "label": "Survivorship bias",
+      "core": "Visible successes dominate because failures are absent from the evidence set.",
+      "ask": "Who tried the same path and vanished from view?"
+    },
+    "right": {
+      "label": "Base rate neglect",
+      "core": "A vivid case description overwhelms the prior probability or population rate.",
+      "ask": "What is the rate before this specific evidence updates it?"
+    },
+    "diagnosticQuestions": [
+      "Are we studying only the winners?",
+      "Do we have the full starting cohort?",
+      "What prior probability should frame the case-specific evidence?"
+    ],
+    "examples": [
+      {
+        "situation": "Business advice is drawn only from companies that survived.",
+        "betterLabel": "Survivorship bias",
+        "why": "Failed companies are missing from the sample."
+      },
+      {
+        "situation": "A personality sketch overwhelms the fact that one role is far more common in the applicant pool.",
+        "betterLabel": "Base rate neglect",
+        "why": "The background frequency is ignored during inference."
+      }
+    ],
+    "repairMove": "Recover the full cohort first, then apply the relevant base rate before updating on case details."
+  },
+  {
+    "slug": "groupthink-vs-social-desirability-bias",
+    "title": "Groupthink vs Social Desirability Bias",
+    "summary": "Groupthink is a group decision dynamic that suppresses dissent; social desirability bias is distorted reporting caused by wanting to look acceptable.",
+    "biasSlugs": ["groupthink", "social-desirability-bias"],
+    "commonConfusion": "In meetings, people may privately disagree but publicly report agreement, so both can be active.",
+    "quickRule": "Ask whether the main distortion is convergence in group deliberation or self-presentational reporting.",
+    "left": {
+      "label": "Groupthink",
+      "core": "A group protects harmony, identity, or momentum at the expense of independent evaluation.",
+      "ask": "What dissent would be socially expensive to voice?"
+    },
+    "right": {
+      "label": "Social desirability bias",
+      "core": "People report what sounds acceptable, virtuous, loyal, or competent rather than what they actually think or do.",
+      "ask": "What answer is socially rewarded in this setting?"
+    },
+    "diagnosticQuestions": [
+      "Is the distortion happening during deliberation, measurement, or both?",
+      "Would anonymous responses differ from public comments?",
+      "Did the group protect agreement before reasons were tested?"
+    ],
+    "examples": [
+      {
+        "situation": "A team avoids raising objections after a founder endorses a plan.",
+        "betterLabel": "Groupthink",
+        "why": "Harmony is replacing independent evaluation."
+      },
+      {
+        "situation": "Employees rate a disliked training highly on a nonanonymous survey.",
+        "betterLabel": "Social desirability bias",
+        "why": "The reported opinion is shaped by acceptable self-presentation."
+      }
+    ],
+    "repairMove": "Use anonymous first-pass judgments, then give dissent an explicit protected role in the discussion."
+  },
+  {
+    "slug": "illusion-of-explanatory-depth-vs-dunning-kruger-effect",
+    "title": "Illusion Of Explanatory Depth vs Dunning-Kruger Effect",
+    "summary": "Illusion of explanatory depth is overestimating how well you understand a mechanism; Dunning-Kruger is miscalibrated self-assessment when limited skill hides what is missing.",
+    "biasSlugs": ["illusion-of-explanatory-depth", "dunning-kruger-effect"],
+    "commonConfusion": "Both can produce confident beginners, especially when the learner has not yet faced a real performance test.",
+    "quickRule": "Ask whether the missing piece is mechanism explanation or broader competence calibration.",
+    "left": {
+      "label": "Illusion of explanatory depth",
+      "core": "People feel they understand how something works until asked to explain the causal steps.",
+      "ask": "Can the person produce the mechanism without relying on recognition?"
+    },
+    "right": {
+      "label": "Dunning-Kruger effect",
+      "core": "Low skill can come with inflated self-assessment because the person lacks the skill needed to notice gaps.",
+      "ask": "How does self-rating compare with performance on representative tasks?"
+    },
+    "diagnosticQuestions": [
+      "Is the test an explanation of a mechanism or a performance benchmark?",
+      "Does confidence drop when the person must explain steps?",
+      "Does confidence remain high despite poor task performance?"
+    ],
+    "examples": [
+      {
+        "situation": "Someone cannot explain how a zipper works after saying it is simple.",
+        "betterLabel": "Illusion of explanatory depth",
+        "why": "The failure appears when mechanism detail is requested."
+      },
+      {
+        "situation": "A novice performs poorly but rates their skill near expert level.",
+        "betterLabel": "Dunning-Kruger effect",
+        "why": "Performance and self-assessment are miscalibrated."
+      }
+    ],
+    "repairMove": "Pair mechanism explanation with a representative task and compare confidence before and after feedback."
+  },
+  {
+    "slug": "loss-aversion-vs-sunk-cost-effect",
+    "title": "Loss Aversion vs Sunk Cost Effect",
+    "summary": "Loss aversion overweights losses relative to gains; the sunk cost effect keeps investment going because prior costs feel like they must be redeemed.",
+    "biasSlugs": ["loss-aversion", "sunk-cost-effect"],
+    "commonConfusion": "Continuing a bad project can feel like avoiding a loss, but the key question is whether past investment is doing the work.",
+    "quickRule": "Ask whether the pain comes from possible future loss or from refusing to accept an unrecoverable past cost.",
+    "left": {
+      "label": "Loss aversion",
+      "core": "Potential losses loom larger than comparable gains.",
+      "ask": "Is the choice being dominated by what could be lost from here?"
+    },
+    "right": {
+      "label": "Sunk cost effect",
+      "core": "Past investment keeps influencing a decision even though it cannot be recovered.",
+      "ask": "Would we choose this again today if the past investment belonged to someone else?"
+    },
+    "diagnosticQuestions": [
+      "Is the argument about future downside or past spending?",
+      "Would the decision change if previous costs were hidden?",
+      "What option has the best forward-looking expected value?"
+    ],
+    "examples": [
+      {
+        "situation": "A team avoids a migration because giving up the old workflow feels like losing comfort and control.",
+        "betterLabel": "Loss aversion",
+        "why": "The feared loss is forward-looking."
+      },
+      {
+        "situation": "A team funds a failing project because too much money has already been spent.",
+        "betterLabel": "Sunk cost effect",
+        "why": "Irrecoverable past investment is steering the decision."
+      }
+    ],
+    "repairMove": "Run one pass that ignores past costs, then compare future gains and losses symmetrically."
+  }
+]

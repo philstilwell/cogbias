@@ -444,10 +444,36 @@ img {
     #fff;
 }
 
+.comparison-guide-card,
+.comparison-side-card,
+.comparison-example-card,
+.assessment-context-card,
+.teaching-kit-card,
+.teaching-kit-mini-card,
+.coverage-card {
+  background:
+    linear-gradient(180deg, rgba(130, 210, 255, 0.14), transparent 52%),
+    #fff;
+}
+
 .domain-hub-hero {
   background:
     radial-gradient(circle at 88% 18%, rgba(211, 161, 38, 0.14), transparent 24%),
     radial-gradient(circle at 12% 82%, rgba(130, 210, 255, 0.16), transparent 26%),
+    #fff;
+}
+
+.comparison-guide-hero {
+  background:
+    radial-gradient(circle at 88% 20%, rgba(130, 210, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 12% 78%, rgba(211, 161, 38, 0.12), transparent 24%),
+    #fff;
+}
+
+.teaching-kit-hero {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(47, 130, 194, 0.16), transparent 25%),
+    radial-gradient(circle at 12% 82%, rgba(211, 161, 38, 0.12), transparent 25%),
     #fff;
 }
 
@@ -1453,8 +1479,41 @@ img {
   align-items: start;
 }
 
+.comparison-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 760px) {
+  .comparison-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .assessment-card-link {
   margin: 14px 0 0;
+}
+
+.teaching-agenda-list {
+  display: grid;
+  gap: 12px;
+}
+
+.coverage-meter {
+  height: 10px;
+  margin: 14px 0 4px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(17, 52, 88, 0.08);
+}
+
+.coverage-meter span {
+  display: block;
+  width: calc(var(--coverage, 0) * 1%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
 }
 
 .comparison-card h4,
@@ -1593,6 +1652,13 @@ img {
 .assessment-outcome-summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.assessment-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
 }
@@ -2247,6 +2313,10 @@ img {
   .assessment-outcome-summary {
     grid-template-columns: 1fr;
   }
+
+  .assessment-feedback-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -2306,5 +2376,58 @@ img {
 
   .dialogue-turn {
     max-width: 100%;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #111827;
+  }
+
+  .masthead,
+  .footer,
+  .breadcrumbs,
+  .hero-actions,
+  .site-search-form,
+  .top-nav,
+  .illustration-placeholder {
+    display: none !important;
+  }
+
+  .site-shell,
+  .page-wrap,
+  .footer-inner {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .page-wrap {
+    padding: 0;
+  }
+
+  .detail-section,
+  .category-card,
+  .entry-card,
+  .note-panel,
+  .case-item {
+    break-inside: avoid;
+    box-shadow: none;
+    border-color: #d1d5db;
+    background: #fff !important;
+  }
+
+  .section-block {
+    margin-top: 18px;
+  }
+
+  .print-keep-together {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #111827;
+    text-decoration: none;
   }
 }

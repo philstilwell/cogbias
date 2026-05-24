@@ -108,6 +108,8 @@ const selfCheckCurriculumData = await readJsonArraySeries("self_check_curriculum
 const domainHubData = await readJsonArraySeries("domain_hubs");
 const assessmentBankData = await readJsonArraySeries("assessment_bank");
 const assessmentMetadataData = await readJsonArraySeries("assessment_metadata");
+const comparisonGuideData = await readJsonArraySeries("comparison_guides");
+const teachingKitData = await readJsonArraySeries("teaching_kits");
 const promptKitData = await readJsonArraySeries("prompt_kits");
 const theoryArticleData = await readJsonArraySeries("theory_articles");
 
@@ -200,6 +202,9 @@ const entries = mergeEntryData(
 );
 const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
 const domainHubSlug = siteConfig.domainHubSlug || "contexts";
+const comparisonGuideSlug = siteConfig.comparisonGuideSlug || "compare";
+const teachingKitSlug = siteConfig.teachingKitSlug || "teaching-kits";
+const coverageSlug = siteConfig.coverageSlug || "coverage";
 const pathCurriculumBySlug = new Map(pathCurriculumData.map((item) => [item.slug, item]));
 const selfCheckCurriculumBySlug = new Map(selfCheckCurriculumData.map((item) => [item.slug, item]));
 const assessmentMetadataById = new Map(assessmentMetadataData.map((item) => [item.id, item]));
@@ -272,6 +277,9 @@ const assessmentBank = assessmentBankData.map((item) => {
   const metadata = assessmentMetadataById.get(item.id) || {};
   const correctEntry = entryBySlug.get(item.correctBias);
   const difficulty = metadata.difficulty || "applied";
+  const contextHubs = domainHubs
+    .filter((hub) => (hub.biasSlugs || []).includes(item.correctBias))
+    .map((hub) => ({ slug: hub.slug, title: hub.title }));
   return {
     ...item,
     ...metadata,
@@ -279,8 +287,25 @@ const assessmentBank = assessmentBankData.map((item) => {
     difficultyMeta: assessmentDifficultyBySlug.get(difficulty) || assessmentDifficulties[1],
     categories: [...(correctEntry?.tasks || [])],
     patterns: [...(correctEntry?.patterns || [])],
+    contexts: contextHubs,
   };
 });
+
+const comparisonGuides = comparisonGuideData.map((guide) => ({
+  ...guide,
+  entries: (guide.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+}));
+const comparisonGuideBySlug = new Map(comparisonGuides.map((guide) => [guide.slug, guide]));
+
+const teachingKits = teachingKitData.map((kit) => ({
+  ...kit,
+  hub: domainHubBySlug.get(kit.contextSlug),
+  entries: (kit.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+  paths: (kit.pathSlugs || []).map((slug) => pathBySlug.get(slug)).filter(Boolean),
+  selfChecks: (kit.selfCheckSlugs || []).map((slug) => selfCheckBySlug.get(slug)).filter(Boolean),
+  comparisons: (kit.comparisonSlugs || []).map((slug) => comparisonGuideBySlug.get(slug)).filter(Boolean),
+}));
+const teachingKitBySlug = new Map(teachingKits.map((kit) => [kit.slug, kit]));
 
 const theoryArticles = theoryArticleData.map((article) => ({
   ...article,
@@ -492,6 +517,64 @@ for (const hub of domainHubs) {
   }
 }
 
+const seenComparisonGuideSlugs = new Set();
+for (const guide of comparisonGuides) {
+  if (seenComparisonGuideSlugs.has(guide.slug)) {
+    throw new Error(`Duplicate comparison guide slug "${guide.slug}".`);
+  }
+  seenComparisonGuideSlugs.add(guide.slug);
+
+  if ((guide.biasSlugs || []).length < 2) {
+    throw new Error(`Comparison guide "${guide.slug}" must compare at least two biases.`);
+  }
+
+  for (const slug of guide.biasSlugs || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown comparison guide bias slug "${slug}" on "${guide.slug}".`);
+    }
+  }
+}
+
+const seenTeachingKitSlugs = new Set();
+for (const kit of teachingKits) {
+  if (seenTeachingKitSlugs.has(kit.slug)) {
+    throw new Error(`Duplicate teaching kit slug "${kit.slug}".`);
+  }
+  seenTeachingKitSlugs.add(kit.slug);
+
+  if (kit.contextSlug && !domainHubBySlug.has(kit.contextSlug)) {
+    throw new Error(`Unknown teaching kit context slug "${kit.contextSlug}" on "${kit.slug}".`);
+  }
+
+  for (const slug of kit.biasSlugs || []) {
+    if (!entryBySlug.has(slug)) {
+      throw new Error(`Unknown teaching kit bias slug "${slug}" on "${kit.slug}".`);
+    }
+  }
+
+  for (const slug of kit.pathSlugs || []) {
+    if (!pathBySlug.has(slug)) {
+      throw new Error(`Unknown teaching kit path slug "${slug}" on "${kit.slug}".`);
+    }
+  }
+
+  for (const slug of kit.selfCheckSlugs || []) {
+    if (!selfCheckBySlug.has(slug)) {
+      throw new Error(`Unknown teaching kit self-check slug "${slug}" on "${kit.slug}".`);
+    }
+  }
+
+  for (const slug of kit.comparisonSlugs || []) {
+    if (!comparisonGuideBySlug.has(slug)) {
+      throw new Error(`Unknown teaching kit comparison slug "${slug}" on "${kit.slug}".`);
+    }
+  }
+
+  if (kit.assessmentContext && !domainHubBySlug.has(kit.assessmentContext)) {
+    throw new Error(`Unknown teaching kit assessment context "${kit.assessmentContext}" on "${kit.slug}".`);
+  }
+}
+
 const seenTheorySlugs = new Set();
 for (const article of theoryArticles) {
   if (seenTheorySlugs.has(article.slug)) {
@@ -605,6 +688,8 @@ function renderNav(prefix, currentId) {
     { id: "biases", label: "All Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
     { id: "categories", label: "Categories", href: `${prefix}categories/` },
     { id: "contexts", label: "Contexts", href: `${prefix}${domainHubSlug}/` },
+    { id: "compare", label: "Compare", href: `${prefix}${comparisonGuideSlug}/` },
+    { id: "kits", label: "Kits", href: `${prefix}${teachingKitSlug}/` },
     { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
     { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
@@ -661,7 +746,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/domain_hubs*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/domain_hubs*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, <code>data/comparison_guides*.json</code>, <code>data/teaching_kits*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -789,6 +874,14 @@ function promptKitsForEntry(entry) {
 
 function theoryArticlesForEntry(entry, limit = 3) {
   return theoryArticles.filter((article) => (article.relatedBiases || []).includes(entry.slug)).slice(0, limit);
+}
+
+function comparisonGuidesForEntry(entry, limit = 3) {
+  return comparisonGuides.filter((guide) => (guide.biasSlugs || []).includes(entry.slug)).slice(0, limit);
+}
+
+function teachingKitsForEntry(entry, limit = 3) {
+  return teachingKits.filter((kit) => (kit.biasSlugs || []).includes(entry.slug)).slice(0, limit);
 }
 
 function examplesFor(entry) {
@@ -1131,6 +1224,37 @@ function renderDomainHubCard(hub, prefix = "") {
           </article>`;
 }
 
+function renderComparisonGuideCard(guide, prefix = "") {
+  return `
+          <article class="category-card comparison-guide-card">
+            <h3><a href="${prefix}${comparisonGuideSlug}/${guide.slug}/">${escapeHtml(guide.title)}</a></h3>
+            <p class="card-copy">${escapeHtml(guide.summary)}</p>
+            <p class="muted"><strong>Quick rule:</strong> ${escapeHtml(guide.quickRule)}</p>
+            <div class="path-link-row">
+              ${guide.entries
+                .map(
+                  (entry) =>
+                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+                )
+                .join("")}
+            </div>
+          </article>`;
+}
+
+function renderTeachingKitCard(kit, prefix = "") {
+  return `
+          <article class="category-card teaching-kit-card">
+            <h3><a href="${prefix}${teachingKitSlug}/${kit.slug}/">${escapeHtml(kit.title)}</a></h3>
+            <p class="card-copy">${escapeHtml(kit.summary)}</p>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${escapeHtml(kit.duration || "Flexible")}</span>
+              <span class="teaching-pill">${kit.entries.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
+              ${kit.hub ? `<span class="teaching-pill">${escapeHtml(kit.hub.title)}</span>` : ""}
+            </div>
+            <p class="muted">${escapeHtml(kit.audience || "")}</p>
+          </article>`;
+}
+
 function renderSelfCheckCard(check, prefix = "") {
   const estimatedTime = check.estimatedMinutes ? `${check.estimatedMinutes} min` : "";
   return `
@@ -1294,6 +1418,8 @@ function renderHomePage() {
             <div class="hero-actions">
               <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
               <a class="button button-secondary" href="${domainHubSlug}/">Browse Contexts</a>
+              <a class="button button-secondary" href="${comparisonGuideSlug}/">Compare Biases</a>
+              <a class="button button-secondary" href="${teachingKitSlug}/">Use Teaching Kits</a>
               <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
               <a class="button button-secondary" href="${siteConfig.assessmentSlug}/">Take Assessment</a>
             </div>
@@ -1312,6 +1438,14 @@ function renderHomePage() {
               <div class="stat-card">
                 <span class="stat-value">${domainHubs.length}</span>
                 <span class="stat-label">Domain Hubs</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${comparisonGuides.length}</span>
+                <span class="stat-label">Comparison Guides</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${teachingKits.length}</span>
+                <span class="stat-label">Teaching Kits</span>
               </div>
               <div class="stat-card">
                 <span class="stat-value">${selfChecks.length}</span>
@@ -1351,6 +1485,32 @@ function renderHomePage() {
           </div>
           <div class="category-grid">
             ${domainHubs.map((hub) => renderDomainHubCard(hub)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Compare nearby biases</h2>
+              <p class="section-copy">Some labels live close enough together that the distinction matters more than the definition. These guides give readers a fast rule, a diagnostic question set, and a repair move.</p>
+            </div>
+            <a class="inline-link" href="${comparisonGuideSlug}/">Open all comparisons</a>
+          </div>
+          <div class="category-grid">
+            ${comparisonGuides.slice(0, 4).map((guide) => renderComparisonGuideCard(guide)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Printable teaching kits</h2>
+              <p class="section-copy">These are ready-to-run lesson and workshop packets built from the site’s context hubs, comparison guides, self-checks, and assessment modes.</p>
+            </div>
+            <a class="inline-link" href="${teachingKitSlug}/">Open all kits</a>
+          </div>
+          <div class="category-grid">
+            ${teachingKits.slice(0, 3).map((kit) => renderTeachingKitCard(kit)).join("")}
           </div>
         </section>
 
@@ -1781,6 +1941,10 @@ function renderDomainHubDetailPage(hub) {
           <p class="eyebrow">Applied Context</p>
           <h2 class="detail-title">${escapeHtml(hub.title)}</h2>
           <p class="detail-deck">${escapeHtml(hub.summary)}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="../../${siteConfig.assessmentSlug}/?context=${encodeURIComponent(hub.slug)}">Practice this context</a>
+            <a class="button button-secondary" href="../">Browse all contexts</a>
+          </div>
           <div class="two-column section-block">
             <div class="note-panel">
               <h4>Use this when</h4>
@@ -1899,6 +2063,486 @@ function renderDomainHubDetailPage(hub) {
         </section>`
             : ""
         }`,
+  });
+}
+
+function renderComparisonGuidesPage() {
+  return renderPage({
+    title: "Compare Biases",
+    description: "Distinction guides for cognitive biases that are easy to confuse in live judgment work.",
+    prefix: "../",
+    currentId: "compare",
+    routePath: `/${comparisonGuideSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Compare Biases" },
+    ],
+    body: `
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Comparison Guides</p>
+            <h2 class="detail-title">When two labels both seem plausible, slow the distinction down.</h2>
+            <p class="detail-deck">Bias work gets sharper when readers can tell nearby patterns apart. These guides focus on high-confusion pairs, with quick rules, diagnostic questions, examples, and a repair move that works before the label hardens.</p>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">How To Use Them</p>
+            <p class="muted">Start with the quick rule, then use the diagnostic questions before reading the answer into the case. The goal is not taxonomic purity; it is better process selection.</p>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">High-confusion pairs</h2>
+              <p class="section-copy">Each guide links back to the underlying bias entries so comparison and deeper study stay connected.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${comparisonGuides.map((guide) => renderComparisonGuideCard(guide, "../")).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderComparisonGuideDetailPage(guide) {
+  const prefix = "../../";
+  const [leftEntry, rightEntry] = guide.entries;
+  const leftLabel = guide.left?.label || leftEntry?.name || "First bias";
+  const rightLabel = guide.right?.label || rightEntry?.name || "Second bias";
+
+  return renderPage({
+    title: guide.title,
+    description: guide.summary,
+    prefix,
+    currentId: "compare",
+    routePath: `/${comparisonGuideSlug}/${guide.slug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Compare Biases", href: "../" },
+      { label: guide.title },
+    ],
+    body: `
+        <section class="detail-section comparison-guide-hero">
+          <p class="eyebrow">Compare Biases</p>
+          <h2 class="detail-title">${escapeHtml(guide.title)}</h2>
+          <p class="detail-deck">${escapeHtml(guide.summary)}</p>
+          <div class="hero-actions">
+            ${guide.entries
+              .map(
+                (entry) =>
+                  `<a class="button button-secondary" href="../../${siteConfig.sectionSlug}/${entry.slug}/">Study ${escapeHtml(entry.name)}</a>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="comparison-split-grid">
+            <article class="category-card comparison-side-card">
+              <p class="eyebrow">${escapeHtml(leftLabel)}</p>
+              <h3>Core pattern</h3>
+              <p class="card-copy">${escapeHtml(guide.left?.core || "")}</p>
+              <p class="muted"><strong>Ask:</strong> ${escapeHtml(guide.left?.ask || "")}</p>
+            </article>
+            <article class="category-card comparison-side-card">
+              <p class="eyebrow">${escapeHtml(rightLabel)}</p>
+              <h3>Core pattern</h3>
+              <p class="card-copy">${escapeHtml(guide.right?.core || "")}</p>
+              <p class="muted"><strong>Ask:</strong> ${escapeHtml(guide.right?.ask || "")}</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Why people mix them up</h4>
+            <p class="muted">${escapeHtml(guide.commonConfusion)}</p>
+          </div>
+          <div class="note-panel">
+            <h4>Quick rule</h4>
+            <p class="muted">${escapeHtml(guide.quickRule)}</p>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Diagnostic questions</h2>
+              <p class="section-copy">Use these before deciding which label should carry the lesson.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${(guide.diagnosticQuestions || [])
+              .map(
+                (question) => `
+                  <article class="category-card">
+                    <p class="card-copy">${escapeHtml(question)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Mini cases</h2>
+              <p class="section-copy">The same surface area can point to different underlying mechanisms.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${(guide.examples || [])
+              .map(
+                (example) => `
+                  <article class="category-card comparison-example-card">
+                    <h3>${escapeHtml(example.betterLabel)}</h3>
+                    <p class="card-copy">${escapeHtml(example.situation)}</p>
+                    <p class="muted"><strong>Why:</strong> ${escapeHtml(example.why)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="detail-section section-block">
+          <p class="eyebrow">Repair Move</p>
+          <h2 class="section-title">Change the process, then choose the label.</h2>
+          <p class="section-copy">${escapeHtml(guide.repairMove)}</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Study the entries</h2>
+              <p class="section-copy">Use the comparison as a bridge into the fuller pages.</p>
+            </div>
+          </div>
+          <div class="entry-grid">
+            ${guide.entries.map((entry) => renderBiasCard(entry, prefix)).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderTeachingKitsPage() {
+  return renderPage({
+    title: "Teaching Kits",
+    description: "Printable CogBias lesson and workshop kits built from context hubs, comparison guides, and assessments.",
+    prefix: "../",
+    currentId: "kits",
+    routePath: `/${teachingKitSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Teaching Kits" },
+    ],
+    body: `
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Teaching Kits</p>
+            <h2 class="detail-title">Printable lesson packets for turning the catalog into a live activity.</h2>
+            <p class="detail-deck">Each kit combines a context hub, core bias pages, comparison guides, self-checks, and a matching assessment mode. They are designed to print cleanly now and absorb images later without changing the teaching sequence.</p>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">Print Friendly</p>
+            <p class="muted">Open a kit, use the print button, and the page will hide navigation chrome while preserving prompts, agenda, notes, and linked study targets.</p>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Ready-to-run kits</h2>
+              <p class="section-copy">Use these as classroom activities, team workshops, coaching sessions, or self-guided study packets.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${teachingKits.map((kit) => renderTeachingKitCard(kit, "../")).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function renderTeachingKitDetailPage(kit) {
+  const prefix = "../../";
+  return renderPage({
+    title: kit.title,
+    description: kit.summary,
+    prefix,
+    currentId: "kits",
+    routePath: `/${teachingKitSlug}/${kit.slug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../../" },
+      { label: "Teaching Kits", href: "../" },
+      { label: kit.title },
+    ],
+    body: `
+        <section class="detail-section teaching-kit-hero">
+          <p class="eyebrow">Teaching Kit</p>
+          <h2 class="detail-title">${escapeHtml(kit.title)}</h2>
+          <p class="detail-deck">${escapeHtml(kit.summary)}</p>
+          <div class="teaching-pill-row">
+            <span class="teaching-pill">${escapeHtml(kit.duration || "Flexible")}</span>
+            ${kit.hub ? `<span class="teaching-pill">${escapeHtml(kit.hub.title)}</span>` : ""}
+            <span class="teaching-pill">${kit.entries.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
+          </div>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-print-page>Print this kit</button>
+            ${kit.assessmentContext ? `<a class="button button-secondary" href="../../${siteConfig.assessmentSlug}/?context=${encodeURIComponent(kit.assessmentContext)}">Run assessment mode</a>` : ""}
+          </div>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>Audience</h4>
+            <p class="muted">${escapeHtml(kit.audience || "")}</p>
+          </div>
+          <div class="note-panel">
+            <h4>Objectives</h4>
+            <ul class="muted">
+              ${(kit.objectives || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+
+        <section class="section-block print-keep-together">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Materials</h2>
+              <p class="section-copy">Prep these before using the kit live.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${(kit.materials || [])
+              .map(
+                (item) => `
+                  <article class="category-card teaching-kit-mini-card">
+                    <p class="card-copy">${escapeHtml(item)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block print-keep-together">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Agenda</h2>
+              <p class="section-copy">A suggested run of show. Adjust timing to fit the group.</p>
+            </div>
+          </div>
+          <div class="case-list teaching-agenda-list">
+            ${(kit.agenda || [])
+              .map(
+                (step) => `
+                  <article class="case-item">
+                    <p class="case-title">${escapeHtml(step.time)}</p>
+                    <p class="case-summary">${escapeHtml(step.activity)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <div class="two-column section-block print-keep-together">
+          <div class="note-panel">
+            <h4>Worksheet prompts</h4>
+            <ol class="muted">
+              ${(kit.worksheetPrompts || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ol>
+          </div>
+          <div class="note-panel">
+            <h4>Facilitator notes</h4>
+            <ul class="muted">
+              ${(kit.facilitatorNotes || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Linked study tools</h2>
+              <p class="section-copy">These are the supporting pieces to open before or after the live activity.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${kit.hub ? renderDomainHubCard(kit.hub, prefix) : ""}
+            ${kit.paths.map((path) => renderPathCard(path, prefix)).join("")}
+            ${kit.selfChecks.map((check) => renderSelfCheckCard(check, prefix)).join("")}
+            ${kit.comparisons.map((guide) => renderComparisonGuideCard(guide, prefix)).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Bias pages in this kit</h2>
+              <p class="section-copy">Use these entries as the reference layer after the activity surfaces the problem.</p>
+            </div>
+          </div>
+          <div class="entry-grid">
+            ${kit.entries.map((entry) => renderBiasCard(entry, prefix)).join("")}
+          </div>
+        </section>`,
+  });
+}
+
+function coverageRecordsForEntries() {
+  return entries
+    .map((entry) => {
+      const sourceCount = sourceTrailFor(entry, { includeSeed: false }).length;
+      const caseCount = caseStudiesFor(entry).length;
+      const assessmentCount = assessmentBank.filter((item) => item.correctBias === entry.slug).length;
+      const pathCount = pathObjectsForEntry(entry).length;
+      const checkCount = selfChecksForEntry(entry).length;
+      const promptCount = promptKitsForEntry(entry).length;
+      const contextCount = domainHubs.filter((hub) => (hub.biasSlugs || []).includes(entry.slug)).length;
+      const comparisonCount = comparisonGuidesForEntry(entry, Number.POSITIVE_INFINITY).length;
+      const kitCount = teachingKitsForEntry(entry, Number.POSITIVE_INFINITY).length;
+      const editorialSignals = [
+        entry.analogyClaim,
+        entry.teachingGauges?.length,
+        entry.caseStudies?.length,
+        entry.sourceTrail?.length,
+        entry.practiceLab,
+        entry.useLabelWhen,
+      ].filter(Boolean).length;
+      const score = Math.min(
+        100,
+        sourceCount * 8 +
+          caseCount * 7 +
+          assessmentCount * 4 +
+          pathCount * 5 +
+          checkCount * 5 +
+          promptCount * 4 +
+          contextCount * 4 +
+          comparisonCount * 6 +
+          kitCount * 5 +
+          editorialSignals * 5,
+      );
+      const status =
+        score >= 70 ? "Flagship-ready" : score >= 40 ? "Strong scaffold" : score >= 20 ? "Needs enrichment" : "Catalog-only";
+      return {
+        entry,
+        sourceCount,
+        caseCount,
+        assessmentCount,
+        pathCount,
+        checkCount,
+        promptCount,
+        contextCount,
+        comparisonCount,
+        kitCount,
+        editorialSignals,
+        score,
+        status,
+      };
+    })
+    .sort((left, right) => left.score - right.score || left.entry.name.localeCompare(right.entry.name));
+}
+
+function renderCoverageRecordCard(record, prefix = "") {
+  return `
+          <article class="category-card coverage-card">
+            <h3><a href="${prefix}${siteConfig.sectionSlug}/${record.entry.slug}/">${escapeHtml(record.entry.name)}</a></h3>
+            <p class="card-copy">${escapeHtml(record.entry.summary)}</p>
+            <div class="coverage-meter" style="--coverage:${record.score};">
+              <span></span>
+            </div>
+            <div class="teaching-pill-row">
+              <span class="teaching-pill">${escapeHtml(record.status)}</span>
+              <span class="teaching-pill">${record.score}/100</span>
+              <span class="teaching-pill">${record.sourceCount} sources</span>
+              <span class="teaching-pill">${record.caseCount} cases</span>
+              <span class="teaching-pill">${record.assessmentCount} assessments</span>
+              <span class="teaching-pill">${record.comparisonCount} comparisons</span>
+            </div>
+          </article>`;
+}
+
+function renderCoveragePage() {
+  const records = coverageRecordsForEntries();
+  const flagshipRecords = records.filter((record) => record.score >= 70);
+  const needsWork = records.filter((record) => record.score < 40).slice(0, 18);
+  const featuredGaps = records
+    .filter((record) => (siteConfig.featured || []).includes(record.entry.slug) && record.score < 70)
+    .sort((left, right) => left.score - right.score || left.entry.name.localeCompare(right.entry.name))
+    .slice(0, 12);
+
+  return renderPage({
+    title: "Coverage Map",
+    description: "Editorial coverage dashboard for sources, cases, assessments, context hubs, kits, and comparison guides.",
+    prefix: "../",
+    currentId: "about",
+    routePath: `/${coverageSlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Coverage Map" },
+    ],
+    body: `
+        <section class="detail-hero">
+          <div class="detail-section">
+            <p class="eyebrow">Coverage Map</p>
+            <h2 class="detail-title">A living audit of how much editorial support each bias has.</h2>
+            <p class="detail-deck">The catalog is intentionally wide. This page makes the depth unevenness visible so future passes can target source trails, cases, assessments, comparisons, and teaching kits where they will matter most.</p>
+          </div>
+          <aside class="hero-panel hero-side">
+            <p class="eyebrow">Current Depth</p>
+            <div class="stat-grid">
+              <div class="stat-card">
+                <span class="stat-value">${flagshipRecords.length}</span>
+                <span class="stat-label">Flagship-ready</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${needsWork.length}</span>
+                <span class="stat-label">Priority Gaps Shown</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Featured entries needing the next pass</h2>
+              <p class="section-copy">These are important public-facing pages that still have room for more sourcing, cases, assessments, or comparison support.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${featuredGaps.map((record) => renderCoverageRecordCard(record, "../")).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Lowest-coverage entries</h2>
+              <p class="section-copy">These are the most useful targets when broad catalog depth becomes the next editorial priority.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${needsWork.map((record) => renderCoverageRecordCard(record, "../")).join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">How the score works</h2>
+              <p class="section-copy">This is an editorial planning heuristic, not a truth score. It rewards source trails, case studies, assessment items, path/check/prompt links, context hubs, comparison guides, kits, and hand-authored page modules.</p>
+            </div>
+          </div>
+          <div class="two-column">
+            <div class="note-panel">
+              <h4>Use it for</h4>
+              <p class="muted">Choosing the next enrichment pass, balancing flagship pages against long-tail coverage, and spotting pages that need concrete cases before they can teach well.</p>
+            </div>
+            <div class="note-panel">
+              <h4>Do not use it for</h4>
+              <p class="muted">Deciding whether a bias is important, valid, or settled. It only measures how richly this site currently supports the entry.</p>
+            </div>
+          </div>
+        </section>`,
   });
 }
 
@@ -2067,7 +2711,7 @@ function renderAssessmentPage() {
         <section class="detail-section">
           <p class="eyebrow">Assessment</p>
           <h2 class="detail-title">A mixed scenario test of what is bending the judgment and what would interrupt it best</h2>
-          <p class="detail-deck">Each run draws from a bank of short bias scenarios. For every item, choose the bias that most likely explains the drift and then choose the best next move for improving the process. You can now run the bank by difficulty and by bias category instead of taking one undifferentiated quiz.</p>
+          <p class="detail-deck">Each run draws from a bank of short bias scenarios. For every item, choose the bias that most likely explains the drift and then choose the best next move for improving the process. You can now run the bank by difficulty, bias category, and applied context instead of taking one undifferentiated quiz.</p>
         </section>
 
         <div class="two-column section-block">
@@ -2081,6 +2725,8 @@ function renderAssessmentPage() {
           </div>
         </div>
 
+        <div class="note-panel hidden assessment-history-panel" data-assessment-history></div>
+
         <section class="section-block">
           <div class="category-grid">
             ${assessmentDifficulties
@@ -2092,6 +2738,30 @@ function renderAssessmentPage() {
                     <div class="teaching-pill-row">
                       <span class="teaching-pill">${assessmentBank.filter((item) => item.difficulty === difficulty.slug).length} scenarios</span>
                     </div>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Practice by context</h2>
+              <p class="section-copy">These modes pull scenarios from the domain hubs, so a teacher, facilitator, product team, or media-literacy group can practice with examples closer to their actual work.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${domainHubs
+              .map(
+                (hub) => `
+                  <article class="category-card assessment-context-card">
+                    <h3><a href="../${domainHubSlug}/${hub.slug}/">${escapeHtml(hub.title)}</a></h3>
+                    <p class="card-copy">${escapeHtml(hub.guidingQuestion)}</p>
+                    <div class="teaching-pill-row">
+                      <span class="teaching-pill">${assessmentBank.filter((item) => (item.contexts || []).some((context) => context.slug === hub.slug)).length} scenarios</span>
+                    </div>
+                    <p><a class="path-link-chip" href="./?context=${encodeURIComponent(hub.slug)}">Run this mode</a></p>
                   </article>`,
               )
               .join("")}
@@ -2122,6 +2792,13 @@ function renderAssessmentPage() {
                 ${tasks.map((task) => `<option value="${escapeHtml(task.name)}">${escapeHtml(task.name)}</option>`).join("")}
               </select>
             </label>
+            <label class="assessment-filter">
+              <span>Context</span>
+              <select class="search-select" data-assessment-context>
+                <option value="">All contexts</option>
+                ${domainHubs.map((hub) => `<option value="${escapeHtml(hub.slug)}">${escapeHtml(hub.title)}</option>`).join("")}
+              </select>
+            </label>
           </div>
           <p class="muted assessment-current-run" data-assessment-summary></p>
           <div class="assessment-toolbar">
@@ -2131,7 +2808,7 @@ function renderAssessmentPage() {
           <div class="assessment-items" data-bias-assessment-items></div>
           <div class="note-panel hidden assessment-empty-state" data-assessment-empty>
             <h4>No scenarios matched this filter</h4>
-            <p class="muted">Try a broader difficulty level or switch back to all categories.</p>
+            <p class="muted">Try a broader difficulty level, switch back to all categories, or clear the context mode.</p>
           </div>
           <div class="assessment-actions">
             <button class="button button-primary" type="button" data-bias-assessment-grade>Grade this assessment</button>
@@ -2445,6 +3122,8 @@ function renderBiasDetailPage(entry) {
   const checks = selfChecksForEntry(entry);
   const gauges = entry.teachingGauges || [];
   const promptKits = promptKitsForEntry(entry);
+  const entryComparisonGuides = comparisonGuidesForEntry(entry);
+  const entryTeachingKits = teachingKitsForEntry(entry);
 
   return renderPage({
     title: entry.name,
@@ -2722,6 +3401,24 @@ function renderBiasDetailPage(entry) {
           </div>
         </section>
 
+        ${
+          entryComparisonGuides.length
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Compare this label</h2>
+              <p class="section-copy">These distinction guides slow down the most common nearby-label confusions before the diagnosis hardens.</p>
+            </div>
+            <a class="inline-link" href="../../${comparisonGuideSlug}/">Open comparison guides</a>
+          </div>
+          <div class="category-grid">
+            ${entryComparisonGuides.map((guide) => renderComparisonGuideCard(guide, "../../")).join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -2860,6 +3557,22 @@ function renderBiasDetailPage(entry) {
                   .join("")}
               </div>
             </article>
+            ${
+              entryTeachingKits.length
+                ? `<article class="category-card">
+              <h3>Teaching kits</h3>
+              <p class="card-copy">Printable lessons and workshop packets where this bias appears in context.</p>
+              <div class="path-link-row">
+                ${entryTeachingKits
+                  .map(
+                    (kit) =>
+                      `<a class="path-link-chip" href="../../${teachingKitSlug}/${kit.slug}/">${escapeHtml(kit.title)}</a>`,
+                  )
+                  .join("")}
+              </div>
+            </article>`
+                : ""
+            }
             <article class="category-card">
               <h3>Assessment</h3>
               <p class="card-copy">A mixed scenario set that can quietly pull this bias into the question bank without announcing the answer in the title first.</p>
@@ -2966,10 +3679,11 @@ function renderAboutPage() {
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments*.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/assessment_bank*.json</code>, and <code>data/assessment_metadata*.json</code> for flagship-page pedagogy, source trails, and the mixed assessment runner.</li>
-              <li><code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
+              <li><code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, and <code>data/comparison_guides*.json</code> for flagship-page pedagogy, source trails, scenario practice, and nearby-label distinctions.</li>
+              <li><code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/teaching_kits*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
+            <p><a class="text-link" href="../${coverageSlug}/">Open the editorial coverage map</a></p>
           </div>
         </div>
 
@@ -3034,7 +3748,8 @@ async function copySiteAssets() {
 async function writeTextFile(relPath, contents) {
   const outputPath = path.join(projectRoot, relPath);
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
-  await fs.writeFile(outputPath, contents, "utf8");
+  const normalizedContents = relPath.endsWith(".html") ? contents.replace(/[ \t]+$/gm, "") : contents;
+  await fs.writeFile(outputPath, normalizedContents, "utf8");
 }
 
 async function cleanOwnedOutput() {
@@ -3049,6 +3764,9 @@ async function cleanOwnedOutput() {
     "categories",
     "countermoves",
     domainHubSlug,
+    comparisonGuideSlug,
+    teachingKitSlug,
+    coverageSlug,
     siteConfig.pathSlug,
     siteConfig.checkSlug,
     siteConfig.assessmentSlug,
@@ -3075,6 +3793,9 @@ async function writeSiteFiles() {
   await writeTextFile("categories/index.html", renderCategoryIndexPage());
   await writeTextFile(`${siteConfig.patternSlug}/index.html`, renderPatternIndexPage());
   await writeTextFile(`${domainHubSlug}/index.html`, renderDomainHubsIndexPage());
+  await writeTextFile(`${comparisonGuideSlug}/index.html`, renderComparisonGuidesPage());
+  await writeTextFile(`${teachingKitSlug}/index.html`, renderTeachingKitsPage());
+  await writeTextFile(`${coverageSlug}/index.html`, renderCoveragePage());
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
   await writeTextFile(`${siteConfig.assessmentSlug}/index.html`, renderAssessmentPage());
@@ -3099,6 +3820,14 @@ async function writeSiteFiles() {
 
   for (const hub of domainHubs) {
     await writeTextFile(`${domainHubSlug}/${hub.slug}/index.html`, renderDomainHubDetailPage(hub));
+  }
+
+  for (const guide of comparisonGuides) {
+    await writeTextFile(`${comparisonGuideSlug}/${guide.slug}/index.html`, renderComparisonGuideDetailPage(guide));
+  }
+
+  for (const kit of teachingKits) {
+    await writeTextFile(`${teachingKitSlug}/${kit.slug}/index.html`, renderTeachingKitDetailPage(kit));
   }
 
   for (const path of learningPaths) {
@@ -3148,6 +3877,9 @@ async function writeSiteFiles() {
       "/categories/",
       `/${siteConfig.patternSlug}/`,
       `/${domainHubSlug}/`,
+      `/${comparisonGuideSlug}/`,
+      `/${teachingKitSlug}/`,
+      `/${coverageSlug}/`,
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
       `/${siteConfig.assessmentSlug}/`,
@@ -3160,6 +3892,8 @@ async function writeSiteFiles() {
       ...tasks.map((task) => `/categories/${task.slug}/`),
       ...patterns.map((pattern) => `/${siteConfig.patternSlug}/${pattern.slug}/`),
       ...domainHubs.map((hub) => `/${domainHubSlug}/${hub.slug}/`),
+      ...comparisonGuides.map((guide) => `/${comparisonGuideSlug}/${guide.slug}/`),
+      ...teachingKits.map((kit) => `/${teachingKitSlug}/${kit.slug}/`),
       ...learningPaths.map((path) => `/${siteConfig.pathSlug}/${path.slug}/`),
       ...theoryArticles.map((article) => `/${siteConfig.theorySlug}/${article.slug}/`),
     ];
