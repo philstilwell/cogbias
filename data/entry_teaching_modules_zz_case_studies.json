@@ -1,0 +1,653 @@
+[
+  {
+    "slug": "action-bias",
+    "caseStudies": [
+      {
+        "title": "Goalkeeper penalty-kick studies",
+        "source": "Wikipedia",
+        "year": "Modern sports research",
+        "url": "https://en.wikipedia.org/wiki/Action_bias",
+        "summary": "Goalkeepers often dive on penalty kicks even though staying centered can sometimes be statistically better, because visible action feels more defensible than stillness.",
+        "whyItFits": "The action is partly chosen because inaction feels harder to justify socially if the outcome goes badly."
+      },
+      {
+        "title": "Crisis interventions chosen for visible motion",
+        "source": "Wikipedia",
+        "year": "Modern decision contexts",
+        "url": "https://en.wikipedia.org/wiki/Action_bias",
+        "summary": "The action-bias literature is often used to explain why leaders, coaches, and managers prefer visibly doing something in crises even when restraint or more diagnosis would likely produce the better expected result.",
+        "whyItFits": "The defensibility of motion becomes part of the decision rule, independent of whether motion improves the outcome."
+      }
+    ]
+  },
+  {
+    "slug": "ambiguity-effect",
+    "caseStudies": [
+      {
+        "title": "Ellsberg's urn-choice experiments",
+        "source": "Wikipedia",
+        "year": "1961",
+        "url": "https://en.wikipedia.org/wiki/Ellsberg_paradox",
+        "summary": "People often preferred gambles with known probabilities over comparable gambles with unknown probabilities even when the expected structure gave no clean reason for the strong preference.",
+        "whyItFits": "The missing probability detail becomes aversive in its own right and starts overpowering the underlying comparison."
+      },
+      {
+        "title": "Unknown-odds choices penalized beyond the payoff gap",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Ambiguity_effect",
+        "summary": "In finance, medicine, and policy examples, people often avoid options with unclear probability distributions even when the ambiguity itself does not justify such a steep discount relative to the known-odds alternative.",
+        "whyItFits": "Uncertainty about the distribution becomes a disqualifier beyond the underlying payoff comparison."
+      }
+    ]
+  },
+  {
+    "slug": "attribute-substitution",
+    "caseStudies": [
+      {
+        "title": "Risk judged by affect",
+        "source": "Wikipedia",
+        "year": "Modern judgment research",
+        "url": "https://en.wikipedia.org/wiki/Attribute_substitution",
+        "summary": "People often answer how risky something is by answering how good or bad it feels, letting affect stand in for analytic risk judgment.",
+        "whyItFits": "An easier evaluative question replaces the harder target attribute while still feeling like the same judgment."
+      },
+      {
+        "title": "Affect heuristic in technology and environmental risk",
+        "source": "Wikipedia",
+        "year": "Modern judgment research",
+        "url": "https://en.wikipedia.org/wiki/Affect_heuristic",
+        "summary": "People frequently answer 'How risky is it?' by first answering 'How bad does this feel?' which lets a global like-or-dislike impression stand in for specific tradeoff analysis.",
+        "whyItFits": "An easier emotional question silently substitutes for the harder one that was actually asked."
+      }
+    ]
+  },
+  {
+    "slug": "automation-bias",
+    "caseStudies": [
+      {
+        "title": "Clinical and cockpit automation examples",
+        "source": "Wikipedia",
+        "year": "Modern human-factors research",
+        "url": "https://en.wikipedia.org/wiki/Automation_bias",
+        "summary": "Research on automation bias shows that people may miss errors of omission or commission because the system recommendation becomes the assumed baseline.",
+        "whyItFits": "The automation does not just assist. It begins shaping what the human treats as sufficiently checked."
+      },
+      {
+        "title": "Silent systems treated as all-clear signals",
+        "source": "Wikipedia",
+        "year": "Modern human-factors research",
+        "url": "https://en.wikipedia.org/wiki/Automation_bias",
+        "summary": "When automated monitors fail to flag a problem, operators can treat the silence itself as evidence that everything is fine and skip checks they would otherwise have performed.",
+        "whyItFits": "The absence of a machine warning becomes overtrusted even though it is just another fallible output."
+      }
+    ]
+  },
+  {
+    "slug": "availability-cascade",
+    "caseStudies": [
+      {
+        "title": "Public-risk scares amplified by repetition",
+        "source": "Wikipedia",
+        "year": "Modern public discourse",
+        "url": "https://en.wikipedia.org/wiki/Availability_cascade",
+        "summary": "Availability cascades describe how repeated public claims can gain plausibility and policy traction mainly through visibility and reinforcement.",
+        "whyItFits": "The claim's social uptake becomes part of why it feels increasingly true."
+      },
+      {
+        "title": "Satanic-panic rumor amplification",
+        "source": "Wikipedia",
+        "year": "1980s and 1990s",
+        "url": "https://en.wikipedia.org/wiki/Satanic_panic",
+        "summary": "The satanic-panic episode is a classic example of repeated, mutually reinforcing claims gaining social force through media attention, retelling, and institutional uptake faster than reliable evidence supported them.",
+        "whyItFits": "Repetition and circulation made the narrative feel increasingly self-validating."
+      }
+    ]
+  },
+  {
+    "slug": "bandwagon-effect",
+    "caseStudies": [
+      {
+        "title": "Electoral and consumer momentum examples",
+        "source": "Wikipedia",
+        "year": "Modern politics and markets",
+        "url": "https://en.wikipedia.org/wiki/Bandwagon_effect",
+        "summary": "Bandwagon effects are often discussed where visible growth in support creates more support simply because the growth is visible.",
+        "whyItFits": "The popularity signal itself becomes one of the main causal drivers of later preference."
+      },
+      {
+        "title": "Market bubbles fed by visible momentum",
+        "source": "Wikipedia",
+        "year": "Modern finance",
+        "url": "https://en.wikipedia.org/wiki/Bandwagon_effect",
+        "summary": "During manias and bubbles, visible adoption can attract more adopters who fear missing the move or assume the crowd has already vetted the opportunity.",
+        "whyItFits": "Popularity is operating as a cause of preference rather than merely a report of it."
+      }
+    ]
+  },
+  {
+    "slug": "belief-bias",
+    "caseStudies": [
+      {
+        "title": "Belief-bias syllogism studies",
+        "source": "Wikipedia",
+        "year": "Modern reasoning research",
+        "url": "https://en.wikipedia.org/wiki/Belief_bias",
+        "summary": "People often judge invalid syllogisms as valid when the conclusion seems believable, and valid ones as weaker when the conclusion seems implausible.",
+        "whyItFits": "Believability is quietly grading the argument instead of merely following it."
+      },
+      {
+        "title": "Valid arguments discounted when the conclusion sounds wrong",
+        "source": "Wikipedia",
+        "year": "Modern reasoning research",
+        "url": "https://en.wikipedia.org/wiki/Belief_bias",
+        "summary": "The same logical form can be rated differently depending on whether the conclusion fits prior belief, with valid structures discounted when their conclusions sound wrong to the participant.",
+        "whyItFits": "Perceived truth of the conclusion is standing in for assessment of validity."
+      }
+    ]
+  },
+  {
+    "slug": "bias-blind-spot",
+    "caseStudies": [
+      {
+        "title": "People rate themselves as less biased than others",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Bias_blind_spot",
+        "summary": "Research on bias blind spot finds that people often judge themselves as less susceptible to bias than other people even while endorsing the general reality of bias.",
+        "whyItFits": "The concept is accepted in the abstract but self-application lags far behind other-application."
+      },
+      {
+        "title": "Bias literacy that points outward more than inward",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Bias_blind_spot",
+        "summary": "People who can fluently identify many biases in other people may still assume that their own judgments are mainly evidence-driven and only minimally distorted.",
+        "whyItFits": "Bias knowledge becomes diagnostic ammunition rather than a mirror."
+      }
+    ]
+  },
+  {
+    "slug": "choice-supportive-bias",
+    "caseStudies": [
+      {
+        "title": "Post-choice reevaluation studies",
+        "source": "Wikipedia",
+        "year": "Modern memory research",
+        "url": "https://en.wikipedia.org/wiki/Choice-supportive_bias",
+        "summary": "People often remember selected options as better than they originally judged them and rejected options as worse after the fact.",
+        "whyItFits": "Commitment invites memory repair in favor of the chosen path."
+      },
+      {
+        "title": "Chosen products remembered as having clearer advantages",
+        "source": "Wikipedia",
+        "year": "Modern memory research",
+        "url": "https://en.wikipedia.org/wiki/Choice-supportive_bias",
+        "summary": "After picking a school, product, or candidate, people often recall the chosen option as having been more clearly superior than their original notes or tradeoffs actually showed.",
+        "whyItFits": "Post-choice memory gets reorganized to defend commitment."
+      }
+    ]
+  },
+  {
+    "slug": "cognitive-dissonance",
+    "caseStudies": [
+      {
+        "title": "Effort-justification and dissonance reduction research",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Cognitive_dissonance",
+        "summary": "Classic dissonance research shows that people often revise attitudes or rationales after costly effort or contradictory behavior in order to reduce inner inconsistency.",
+        "whyItFits": "The repair is aimed at restoring coherence, not merely at discovering a neutral truth."
+      },
+      {
+        "title": "When Prophecy Fails and doubled-down belief",
+        "source": "Wikipedia",
+        "year": "1956",
+        "url": "https://en.wikipedia.org/wiki/When_Prophecy_Fails",
+        "summary": "Festinger's famous case study described believers who responded to disconfirming prophecy not simply by abandoning it, but by reinterpreting events in ways that restored coherence and commitment.",
+        "whyItFits": "Contradiction created pressure for belief repair rather than straightforward revision."
+      }
+    ]
+  },
+  {
+    "slug": "compassion-fade",
+    "caseStudies": [
+      {
+        "title": "Identifiable-victim effect and large-scale helping",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Compassion_fade",
+        "summary": "Studies on compassion fade show that people can respond more strongly to one identifiable victim than to larger numbers of anonymous victims.",
+        "whyItFits": "Emotional salience fails to scale with total harm."
+      },
+      {
+        "title": "Identifiable-victim donations outpace large-group appeals",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Identifiable_victim_effect",
+        "summary": "People often give more readily to a single named victim than to a far larger but more statistical group, even when the larger need is objectively greater.",
+        "whyItFits": "Emotional uptake is being driven by vivid identifiability rather than scaling with total harm."
+      }
+    ]
+  },
+  {
+    "slug": "conjunction-fallacy",
+    "caseStudies": [
+      {
+        "title": "The Linda problem",
+        "source": "Wikipedia",
+        "year": "1983",
+        "url": "https://en.wikipedia.org/wiki/Conjunction_fallacy",
+        "summary": "In the famous Linda problem, many people judge a more specific description of Linda as more probable than the broader one that logically contains it.",
+        "whyItFits": "Representativeness and vivid fit defeat the simpler probability rule."
+      },
+      {
+        "title": "Detailed suspect profiles outrank broader categories",
+        "source": "Wikipedia",
+        "year": "Modern probability research",
+        "url": "https://en.wikipedia.org/wiki/Conjunction_fallacy",
+        "summary": "In case-style reasoning, richly detailed descriptions can make a narrow conjunction feel more probable than the simpler broader category that contains it.",
+        "whyItFits": "Coherence and narrative fit are doing the work that probability should be doing."
+      }
+    ]
+  },
+  {
+    "slug": "continued-influence-effect",
+    "caseStudies": [
+      {
+        "title": "Corrected fire-warehouse narratives",
+        "source": "Wikipedia",
+        "year": "Modern cognitive psychology",
+        "url": "https://en.wikipedia.org/wiki/Continued_influence_effect",
+        "summary": "People can continue citing corrected details from a fire story in later inferences when the correction does not provide a strong replacement explanation.",
+        "whyItFits": "The mind keeps using the first causal frame because the retraction alone did not rebuild the story."
+      },
+      {
+        "title": "Retractions that remove a claim without replacing the story",
+        "source": "Wikipedia",
+        "year": "Modern cognitive psychology",
+        "url": "https://en.wikipedia.org/wiki/Misinformation_effect",
+        "summary": "Corrections are less effective when they only say a claim was false but do not supply a sturdier alternative explanation for what happened.",
+        "whyItFits": "The initial story keeps guiding inference because the later correction leaves a causal vacuum."
+      }
+    ]
+  },
+  {
+    "slug": "curse-of-knowledge",
+    "caseStudies": [
+      {
+        "title": "The tappers-and-listeners demonstration",
+        "source": "Wikipedia",
+        "year": "Modern communication research",
+        "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
+        "summary": "People tapping out a tune often wildly overestimate how recognizable it will be to listeners because the melody is vivid in the tapper's own head.",
+        "whyItFits": "Knowing the answer collapses how large the listener's perspective gap seems."
+      },
+      {
+        "title": "Experts write for novices as if key steps were obvious",
+        "source": "Wikipedia",
+        "year": "Modern communication research",
+        "url": "https://en.wikipedia.org/wiki/Curse_of_knowledge",
+        "summary": "Teachers, product designers, and subject-matter experts often skip intermediate steps because once they know the structure, it becomes hard to imagine what it feels like not to know it.",
+        "whyItFits": "Possession of the knowledge compresses the apparent distance between expert and novice."
+      }
+    ]
+  },
+  {
+    "slug": "decoy-effect",
+    "caseStudies": [
+      {
+        "title": "Asymmetric-dominance marketing experiments",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Decoy_effect",
+        "summary": "Experiments on the decoy effect show that adding a dominated option can reliably shift choice toward the target it makes look stronger by contrast.",
+        "whyItFits": "The added option changes preference without adding genuine value."
+      },
+      {
+        "title": "Popcorn and subscription menus shifted by a dominated option",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Decoy_effect",
+        "summary": "Pricing menus can steer people toward a target option by including a strategically weaker alternative that makes the target look like the obviously sensible choice.",
+        "whyItFits": "The comparison set changes the preference even though the buyer's underlying needs have not."
+      }
+    ]
+  },
+  {
+    "slug": "endowment-effect",
+    "caseStudies": [
+      {
+        "title": "Mug-trading experiments",
+        "source": "Wikipedia",
+        "year": "1980s onward",
+        "url": "https://en.wikipedia.org/wiki/Endowment_effect",
+        "summary": "People randomly given mugs often demand more to give them up than others are willing to pay to acquire equivalent mugs.",
+        "whyItFits": "Possession itself is changing the valuation, not just the object's objective features."
+      },
+      {
+        "title": "Owners price their own holdings above market peers",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Endowment_effect",
+        "summary": "People often assign extra value to houses, collectibles, or equipment once those items are theirs, leading them to ask more to give them up than others would pay to acquire them.",
+        "whyItFits": "Ownership itself is inflating the valuation."
+      }
+    ]
+  },
+  {
+    "slug": "hostile-attribution-bias",
+    "caseStudies": [
+      {
+        "title": "Ambiguous-intent attribution studies",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Hostile_attribution_bias",
+        "summary": "Research on hostile attribution bias shows that some people systematically interpret ambiguous actions as hostile more often than warranted by the available cues.",
+        "whyItFits": "The hostile reading gets promoted from one possibility to the leading explanation before ambiguity has been treated fairly."
+      },
+      {
+        "title": "Schoolyard bumps read as deliberate slights",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Hostile_attribution_bias",
+        "summary": "In classic social-cognition examples, ambiguous behaviors like being bumped, excluded, or laughed near are interpreted as deliberately hostile more often than the cues warrant.",
+        "whyItFits": "Ambiguity is being resolved toward threat by default."
+      }
+    ]
+  },
+  {
+    "slug": "illusion-of-explanatory-depth",
+    "caseStudies": [
+      {
+        "title": "Everyday-mechanism explanation studies",
+        "source": "Wikipedia",
+        "year": "Modern cognition research",
+        "url": "https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth",
+        "summary": "People often rate their understanding of familiar mechanisms highly until they are asked to explain in detail how those mechanisms actually work.",
+        "whyItFits": "The explanatory confidence collapses once the smooth surface summary has to become structure."
+      },
+      {
+        "title": "Toilets, zippers, and bicycles seem explainable until detail is required",
+        "source": "Wikipedia",
+        "year": "Modern cognition research",
+        "url": "https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth",
+        "summary": "People feel they understand ordinary mechanisms quite well until they are asked to lay out the actual causal steps, at which point confidence drops sharply.",
+        "whyItFits": "A smooth sense of familiarity was mistaken for structured understanding."
+      }
+    ]
+  },
+  {
+    "slug": "ingroup-bias",
+    "caseStudies": [
+      {
+        "title": "Minimal-group favoritism studies",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Minimal_group_paradigm",
+        "summary": "Even trivial and arbitrary group assignments can produce preferential treatment toward one's own group and harsher distribution toward outsiders.",
+        "whyItFits": "Group membership begins influencing fairness judgments before substantive merit has earned the difference."
+      },
+      {
+        "title": "Identical conduct judged more charitably from one's own side",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/In-group_favoritism",
+        "summary": "People often evaluate identical behavior more generously when it comes from their own team, community, or coalition than when it comes from an outsider.",
+        "whyItFits": "Membership is changing the judgment standard before the evidence changes."
+      }
+    ]
+  },
+  {
+    "slug": "just-world-fallacy",
+    "caseStudies": [
+      {
+        "title": "Lerner's victim-derogation studies",
+        "source": "Wikipedia",
+        "year": "1960s onward",
+        "url": "https://en.wikipedia.org/wiki/Just-world_hypothesis",
+        "summary": "Research tied to the just-world hypothesis found that observers often shift toward blaming or devaluing victims when they cannot stop the injustice they are witnessing.",
+        "whyItFits": "The deservedness story helps restore moral balance even when the evidence for it is thin."
+      },
+      {
+        "title": "Victims recast as responsible so the world feels orderly",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Just-world_hypothesis",
+        "summary": "Observers may infer that targets of poverty, abuse, or misfortune must have invited some part of their fate because a morally legible world feels easier to hold than random unfairness.",
+        "whyItFits": "Blame is being recruited to protect the intuition that outcomes usually track deserts."
+      }
+    ]
+  },
+  {
+    "slug": "mere-exposure-effect",
+    "caseStudies": [
+      {
+        "title": "Zajonc's repeated-exposure studies",
+        "source": "Wikipedia",
+        "year": "1968 onward",
+        "url": "https://en.wikipedia.org/wiki/Mere-exposure_effect",
+        "summary": "Repeated exposure to words, symbols, and other stimuli can increase liking even when people have little substantive reason for the stronger preference.",
+        "whyItFits": "Familiarity itself is doing evaluative work before the reasons catch up."
+      },
+      {
+        "title": "Nonsense words grow on people through repetition alone",
+        "source": "Wikipedia",
+        "year": "Modern cognition research",
+        "url": "https://en.wikipedia.org/wiki/Mere-exposure_effect",
+        "summary": "Simply encountering neutral words or symbols repeatedly can increase liking for them, even when nothing substantive about them changes.",
+        "whyItFits": "Familiarity itself is raising the evaluation."
+      }
+    ]
+  },
+  {
+    "slug": "neglect-of-probability",
+    "caseStudies": [
+      {
+        "title": "Risk judgments dominated by vivid low-probability threats",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Neglect_of_probability",
+        "summary": "Research summarized under neglect of probability shows that once a feared outcome is vivid enough, people often respond similarly across quite different probability levels.",
+        "whyItFits": "The scenario's psychological force overwhelms the probability information that should have differentiated the choices."
+      },
+      {
+        "title": "Lottery and tiny-risk choices ignore scale differences",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Neglect_of_probability",
+        "summary": "When an outcome is vivid enough, people may pay too much to avoid a tiny risk or too much to chase a tiny chance, flattening distinctions that probability should keep sharp.",
+        "whyItFits": "The emotional weight of the scenario swamps the actual odds."
+      }
+    ]
+  },
+  {
+    "slug": "normalcy-bias",
+    "caseStudies": [
+      {
+        "title": "Disaster underreaction and evacuation delay",
+        "source": "Wikipedia",
+        "year": "Modern disaster research",
+        "url": "https://en.wikipedia.org/wiki/Normalcy_bias",
+        "summary": "Normalcy bias is often used to explain why people delay evacuation or preparation when early warning signs still feel too inconsistent with ordinary life to take fully seriously.",
+        "whyItFits": "The familiar baseline keeps outranking the disturbing evidence until the cost of delay has already grown."
+      },
+      {
+        "title": "Residents wait for one more confirming sign before leaving",
+        "source": "Wikipedia",
+        "year": "Modern disaster research",
+        "url": "https://en.wikipedia.org/wiki/Normalcy_bias",
+        "summary": "People often delay preparation or evacuation because each early warning can still be interpreted as consistent with ordinary life, so action gets postponed until the window is worse.",
+        "whyItFits": "The normal baseline keeps winning successive rounds of interpretation."
+      }
+    ]
+  },
+  {
+    "slug": "omission-bias",
+    "caseStudies": [
+      {
+        "title": "Vaccination and omission-bias scenarios",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Omission_bias",
+        "summary": "People often judge harms caused by intervention more harshly than comparable harms caused by abstaining, including in vaccine-related moral scenarios.",
+        "whyItFits": "The active pathway feels more blameworthy even when the preserved omission path can be just as harmful."
+      },
+      {
+        "title": "Passive disease risk preferred to active side-effect risk",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Omission_bias",
+        "summary": "In health decisions, some people judge harms caused by a chosen intervention as morally worse than similar or greater harms caused by refusing the intervention.",
+        "whyItFits": "The action pathway feels uniquely blameworthy even when it is not uniquely harmful."
+      }
+    ]
+  },
+  {
+    "slug": "optimism-bias",
+    "caseStudies": [
+      {
+        "title": "Comparative-risk optimism studies",
+        "source": "Wikipedia",
+        "year": "Modern psychology research",
+        "url": "https://en.wikipedia.org/wiki/Optimism_bias",
+        "summary": "People often rate themselves as less likely than comparable others to experience negative events and more likely to experience positive ones.",
+        "whyItFits": "The desirable future becomes overrepresented in personal expectation relative to relevant comparators."
+      },
+      {
+        "title": "Smokers, drivers, and founders rate their own downside as unusually low",
+        "source": "Wikipedia",
+        "year": "Modern psychology research",
+        "url": "https://en.wikipedia.org/wiki/Optimism_bias",
+        "summary": "Comparative-risk studies find that people often think their own odds of common negative outcomes are better than those of similar peers, even when base rates give little reason for the gap.",
+        "whyItFits": "Personal futures are being forecast with unusually generous weighting."
+      }
+    ]
+  },
+  {
+    "slug": "outcome-bias",
+    "caseStudies": [
+      {
+        "title": "Same-decision different-outcome evaluations",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Outcome_bias",
+        "summary": "People often rate identical decisions differently when they are told different outcomes, even though the decision quality under uncertainty was held constant.",
+        "whyItFits": "The ending is quietly grading the process instead of merely following it."
+      },
+      {
+        "title": "Medical choices judged by patient result rather than process quality",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Outcome_bias",
+        "summary": "The same treatment choice can be praised as wise after a good outcome and condemned as poor after a bad outcome even when the original evidence and uncertainty were identical.",
+        "whyItFits": "The ending is rewriting the quality score for the process."
+      }
+    ]
+  },
+  {
+    "slug": "present-bias",
+    "caseStudies": [
+      {
+        "title": "Smaller-sooner versus larger-later choice studies",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Hyperbolic_discounting",
+        "summary": "People often reverse preferences in favor of smaller sooner rewards once the immediate option moves close enough to the present, even when they previously preferred the larger later reward.",
+        "whyItFits": "The temporal closeness itself changes the weighting rather than the underlying values alone."
+      },
+      {
+        "title": "Retirement saving keeps losing to immediate consumption",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Present_bias",
+        "summary": "People who sincerely endorse long-term goals can still repeatedly underfund or postpone them when a smaller immediate reward or relief is on the table right now.",
+        "whyItFits": "Temporal nearness is changing the weights, not just revealing stable preferences."
+      }
+    ]
+  },
+  {
+    "slug": "projection-bias",
+    "caseStudies": [
+      {
+        "title": "Hungry-shopper and state-dependent planning examples",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Projection_bias",
+        "summary": "Projection bias is often illustrated by cases where current hunger, heat, mood, or desire leads people to make plans and purchases that their future selves do not actually endorse.",
+        "whyItFits": "The present state is being mistaken for a stable future preference structure."
+      },
+      {
+        "title": "Shoppers buy for the appetite they feel now, not later",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Projection_bias",
+        "summary": "Hungry shoppers routinely buy more food than they later want because they treat the present craving state as a good model of the future self's preferences.",
+        "whyItFits": "The current state is being projected forward as though it were durable."
+      }
+    ]
+  },
+  {
+    "slug": "reactance",
+    "caseStudies": [
+      {
+        "title": "Psychological reactance in persuasion and restriction",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Reactance_(psychology)",
+        "summary": "Research on reactance shows that overt pressure or perceived restriction can create a motivation to restore threatened freedom, including by rejecting the very message being pushed.",
+        "whyItFits": "The push itself becomes part of what the person is now deciding against."
+      },
+      {
+        "title": "Hard-sell pressure turns the message into a threat",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Reactance_(psychology)",
+        "summary": "Strong pressure campaigns can prompt people to reject a recommendation partly because following it would now feel like yielding autonomy rather than choosing freely.",
+        "whyItFits": "The threatened-freedom feeling becomes part of the motivational picture."
+      }
+    ]
+  },
+  {
+    "slug": "social-desirability-bias",
+    "caseStudies": [
+      {
+        "title": "Survey answers that shift under anonymity",
+        "source": "Wikipedia",
+        "year": "Modern measurement research",
+        "url": "https://en.wikipedia.org/wiki/Social-desirability_bias",
+        "summary": "Self-reports on sensitive topics often move when anonymity or indirect questioning changes, suggesting that some of the original answer was shaped by audience pressure rather than by private truth alone.",
+        "whyItFits": "The reporting environment is influencing what gets said, not just what gets believed."
+      },
+      {
+        "title": "Indirect questioning surfaces answers direct surveys miss",
+        "source": "Wikipedia",
+        "year": "Modern measurement research",
+        "url": "https://en.wikipedia.org/wiki/Social-desirability_bias",
+        "summary": "Methods that increase privacy or reduce interviewer judgment often elicit higher reporting of stigmatized attitudes or behaviors than blunt direct questioning does.",
+        "whyItFits": "The answer changes because the audience pressure changes."
+      }
+    ]
+  },
+  {
+    "slug": "spotlight-effect",
+    "caseStudies": [
+      {
+        "title": "The Barry Manilow T-shirt experiment",
+        "source": "Wikipedia",
+        "year": "2000",
+        "url": "https://en.wikipedia.org/wiki/Spotlight_effect",
+        "summary": "People wearing an embarrassing T-shirt often greatly overestimate how many others noticed it, illustrating how personal salience gets mistaken for public salience.",
+        "whyItFits": "The focal person's own awareness of the cue becomes a bad estimate of the audience's attention."
+      },
+      {
+        "title": "Speakers overestimate how visible their nerves are",
+        "source": "Wikipedia",
+        "year": "Modern social cognition",
+        "url": "https://en.wikipedia.org/wiki/Illusion_of_transparency",
+        "summary": "People giving speeches or presentations often assume their anxiety and mistakes are much more visible to the audience than they actually are.",
+        "whyItFits": "Internal salience is being misread as public salience."
+      }
+    ]
+  }
+]
