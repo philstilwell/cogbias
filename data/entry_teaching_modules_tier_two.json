@@ -1,0 +1,938 @@
+[
+  {
+    "slug": "motivated-reasoning",
+    "quickCheck": "If this conclusion pointed the other way, would I still be using the same standards?",
+    "analogyClaim": "This is like running the same court with two rulebooks: one for evidence that helps your side and one for evidence that hurts it.",
+    "analogyResponse": "The courtroom can still look orderly while the verdict was quietly loaded from the start. Fair reasoning has to keep the evidential rules stable across outcomes.",
+    "misuseWarning": "Do not use this label just because someone cares about the answer. Caring is normal. The key sign is asymmetric scrutiny: one conclusion is asked to jump higher evidential bars than the other.",
+    "useLabelWhen": "Use this label when standards, doubt, or interpretation shift noticeably depending on which answer the person wants to preserve.",
+    "teachingGauges": [
+      {
+        "label": "Common in identity-charged topics",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 93,
+        "note": "Especially common where the answer carries social, moral, or ego cost."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 39,
+        "note": "Often clearer after you compare how standards moved across sides."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 85,
+        "note": "It usually feels like rigor, but only in one direction."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 58,
+        "note": "Simple examples are easy; honest self-diagnosis is much harder."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Motivated reasoning rarely feels like cheating. It feels like being appropriately demanding about bad arguments while staying comfortably realistic about friendly ones.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A conclusion becomes socially useful, emotionally relieving, or identity-protective before the evidence review is complete."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Friendly evidence starts to feel sensible and sufficient, while hostile evidence suddenly seems dubious, overcomplicated, or suspiciously sourced."
+        },
+        {
+          "title": "Distortion",
+          "text": "The standards now move with the desired answer, so the process can sound disciplined while quietly defending a prior commitment."
+        },
+        {
+          "title": "Reset",
+          "text": "Write the least welcome conclusion down in plain language and ask what evidence would still make it likelier than your preferred alternative."
+        }
+      ],
+      "repairQuestion": "Which standard am I using here, and would I still accept it if my out-group were using it?"
+    },
+    "caseStudies": [
+      {
+        "title": "Biased assimilation and attitude polarization",
+        "source": "Wikipedia",
+        "year": "1979",
+        "url": "https://en.wikipedia.org/wiki/Biased_assimilation",
+        "summary": "People on opposing sides who read the same mixed evidence about capital punishment often came away more confident in the conclusion they already favored.",
+        "whyItFits": "The asymmetry was not only in what was noticed but in how the same evidence was granted or denied force depending on the desired answer."
+      },
+      {
+        "title": "Identity-protective cognition in risk judgment",
+        "source": "Wikipedia",
+        "year": "Modern research",
+        "url": "https://en.wikipedia.org/wiki/Motivated_reasoning",
+        "summary": "Research summarized under motivated reasoning shows that high reasoning ability can intensify the defense of identity-consistent answers rather than neutralize the pull of identity.",
+        "whyItFits": "The problem is not lack of intelligence. It is intelligence recruited into an uneven evidential fight."
+      }
+    ]
+  },
+  {
+    "slug": "sunk-cost-effect",
+    "quickCheck": "If someone else had already spent this time or money, would I still recommend continuing from here?",
+    "analogyClaim": "This is like staying on a wrong train because getting off would make the ticket feel wasted.",
+    "analogyResponse": "The ticket is already gone either way. The only live question is which track gets you to the better destination from this moment forward.",
+    "misuseWarning": "Do not use this label merely because a project has history. The issue is not that past effort exists. The issue is that past effort is being smuggled in as a forward-looking reason to continue.",
+    "useLabelWhen": "Use this label when the defense of continuation leans on what has already been spent more than on the expected value of the next step.",
+    "teachingGauges": [
+      {
+        "label": "Common in long projects",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 83,
+        "note": "The bias gets stronger as pride, visibility, and elapsed effort accumulate."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 71,
+        "note": "Outsiders often hear the backward-looking justification faster than insiders do."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 78,
+        "note": "Continuing can feel like honor, discipline, or loyalty rather than distortion."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 31,
+        "note": "The logic is easy to teach even when the emotion is hard to overcome."
+      }
+    ],
+    "practiceLab": {
+      "intro": "This bias fuses respect for past effort with justification for future effort. That fusion is emotionally powerful because stopping can feel like insulting the sacrifice that already happened.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A person or team has already invested time, money, status, or identity in a path whose forward-looking case has weakened."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Continuing feels responsible, while stopping feels like waste, humiliation, or disrespect toward the investment already made."
+        },
+        {
+          "title": "Distortion",
+          "text": "Backward-looking sacrifice starts doing the work that future expected value should have been doing."
+        },
+        {
+          "title": "Reset",
+          "text": "Recast the decision from today forward only and ask what course you would choose if none of the prior costs could be recovered, because in reality they cannot."
+        }
+      ],
+      "repairQuestion": "What forward-looking reason remains once the past investment is removed from the justification?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Concorde fallacy",
+        "source": "Wikipedia",
+        "year": "Late 20th century",
+        "url": "https://en.wikipedia.org/wiki/Concorde_fallacy",
+        "summary": "Governments kept funding the Concorde project long after its economic case had weakened, partly because the amount already spent kept acting like a reason to continue.",
+        "whyItFits": "Prior investment became psychologically fused with current justification even though the earlier costs could not be recovered."
+      },
+      {
+        "title": "Classic sunk-cost ticket experiments",
+        "source": "Wikipedia",
+        "year": "1985",
+        "url": "https://en.wikipedia.org/wiki/Sunk_cost",
+        "summary": "Experimental work found that people often persist more when they have paid more, even when the higher price should not change the value of the next unit of action.",
+        "whyItFits": "The added prior cost changes commitment even though it does not improve the future payoff."
+      }
+    ]
+  },
+  {
+    "slug": "status-quo-bias",
+    "quickCheck": "Would this option still feel safest if it were presented as just one alternative rather than as the current arrangement?",
+    "analogyClaim": "This is like treating the furniture layout you inherited from the previous tenant as if it had already been proven optimal.",
+    "analogyResponse": "Familiar placement can feel sensible long before it has earned that feeling. Inherited arrangements need a forward-looking case too.",
+    "misuseWarning": "Do not use this label whenever someone prefers continuity. Continuity can be justified. The distortion begins when the current arrangement receives extra legitimacy simply because it is current.",
+    "useLabelWhen": "Use this label when the burden of proof quietly shifts so the alternative must look overwhelmingly better while the existing option is spared the same scrutiny.",
+    "teachingGauges": [
+      {
+        "label": "Common in institutions",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 88,
+        "note": "Especially strong in systems where changing course carries responsibility and friction."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 55,
+        "note": "Easier to notice once the current option is rewritten as one explicit choice among others."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 82,
+        "note": "Staying put often feels like neutrality rather than like a decision."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 37,
+        "note": "Very teachable when paired with real option rewrites."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Status quo bias works by hiding choice inside continuity. The present arrangement gets to masquerade as the background rather than as a rival proposal that should have to earn its place.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A complex or uncertain decision includes a current arrangement that already feels administratively normal."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Changing now feels like adding risk, responsibility, and disruption, while preserving the current path feels cleaner and safer."
+        },
+        {
+          "title": "Distortion",
+          "text": "The existing option receives a lighter evidential burden than the alternatives, so inertia looks like prudence."
+        },
+        {
+          "title": "Reset",
+          "text": "Rename the current setup as Option A, list genuine alternatives beside it, and compare all paths from today forward under the same standards."
+        }
+      ],
+      "repairQuestion": "What costs belong to preserving the current arrangement that we only keep writing down for the alternatives?"
+    },
+    "caseStudies": [
+      {
+        "title": "Samuelson and Zeckhauser's status quo experiments",
+        "source": "Wikipedia",
+        "year": "1988",
+        "url": "https://en.wikipedia.org/wiki/Status_quo_bias",
+        "summary": "Participants disproportionately preferred options framed as the existing state, even when the same options lost that advantage once the frame changed.",
+        "whyItFits": "The current arrangement was receiving psychological credit for being current rather than for being substantively best."
+      },
+      {
+        "title": "Inherited portfolio allocations stay sticky",
+        "source": "Wikipedia",
+        "year": "Modern finance examples",
+        "url": "https://en.wikipedia.org/wiki/Status_quo_bias",
+        "summary": "Investors and institutions often preserve existing allocations longer than the forward-looking case justifies because reallocation feels like added responsibility.",
+        "whyItFits": "The inherited setup is treated as safer than it really is simply because its risks have become normalized."
+      }
+    ]
+  },
+  {
+    "slug": "default-effect",
+    "quickCheck": "Is this option winning because it is best, or because the architecture quietly preselected it?",
+    "analogyClaim": "This is like assuming the restaurant's prechecked tip amount must be the right one because it was already on the bill.",
+    "analogyResponse": "Preselection can feel like advice or legitimacy even when it is just architecture. A default deserves the same comparison as any explicit option.",
+    "misuseWarning": "Do not use this label for every easy choice. The key sign is that the architecture is quietly endorsing one path by making it the path of least resistance.",
+    "useLabelWhen": "Use this label when a preselected option gains extra uptake because people read its preselection as recommendation, legitimacy, or the costless way to proceed.",
+    "teachingGauges": [
+      {
+        "label": "Common in forms and flows",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 91,
+        "note": "This bias thrives anywhere a form, renewal, or interface can decide what feels normal first."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 76,
+        "note": "Usually visible as soon as the choice architecture is shown explicitly."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 89,
+        "note": "Following the preselected path feels efficient and often morally innocent."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 24,
+        "note": "One of the easiest biases to demonstrate with interface examples."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Default effect is one of the clearest ways architecture reasons for people without sounding like an argument. The path is preloaded, so deliberation begins on an uneven surface.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A choice is embedded in a form, renewal, or interface that has already designated one option as normal."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The preselected path feels like the low-friction, low-blame, probably-recommended option."
+        },
+        {
+          "title": "Distortion",
+          "text": "Selection rates start reflecting architecture and passivity as much as actual preference or value."
+        },
+        {
+          "title": "Reset",
+          "text": "Expose the default as one explicit option among peers and make the comparison as visible as the preselection used to be."
+        }
+      ],
+      "repairQuestion": "If none of the boxes were prechecked, which option would still earn the most support on the merits?"
+    },
+    "caseStudies": [
+      {
+        "title": "Organ donation opt-in versus opt-out defaults",
+        "source": "Wikipedia",
+        "year": "Modern policy comparisons",
+        "url": "https://en.wikipedia.org/wiki/Default_effect",
+        "summary": "Enrollment rates in organ donation and similar systems often shift dramatically when the default changes, even if the substantive options stay the same.",
+        "whyItFits": "The architecture is doing persuasive work that people often mistake for preference."
+      },
+      {
+        "title": "Automatic enrollment and retirement savings participation",
+        "source": "Wikipedia",
+        "year": "Modern workplace policy",
+        "url": "https://en.wikipedia.org/wiki/Default_effect",
+        "summary": "Savings participation often rises sharply when workers are enrolled by default and must actively opt out rather than opt in.",
+        "whyItFits": "The change in uptake shows how much preselection can guide action before explicit deliberation begins."
+      }
+    ]
+  },
+  {
+    "slug": "halo-effect",
+    "quickCheck": "Which one favorable trait or impression is leaking into judgments it has not actually earned?",
+    "analogyClaim": "This is like deciding a whole restaurant is excellent because the front window was beautifully designed.",
+    "analogyResponse": "A polished signal can be real and still fail to license the larger verdict. Good evaluation keeps traits separated long enough to see which ones actually transfer.",
+    "misuseWarning": "Do not use halo effect for every positive impression. The issue is not that one strong trait exists. The issue is that the strong trait is being allowed to color unrelated judgments too quickly.",
+    "useLabelWhen": "Use this label when attractiveness, charisma, prestige, or one visible strength starts inflating judgments about competence, honesty, or overall worth beyond the evidence for those specific dimensions.",
+    "teachingGauges": [
+      {
+        "label": "Common in people judgment",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 90,
+        "note": "Especially active in hiring, leadership judgment, and public image evaluation."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 48,
+        "note": "Often visible only after the rating dimensions are separated."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 87,
+        "note": "Coherence feels efficient, so one good signal easily expands into a whole character read."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 42,
+        "note": "Easy to show, harder to eliminate in live social judgment."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Halo effect compresses evaluation. Instead of holding several traits apart long enough to inspect them, one strong positive cue starts acting like a general-purpose credential.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A person presents one especially favorable cue such as beauty, warmth, eloquence, prestige, or early competence in a visible domain."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Because the first cue feels coherent and attractive, adjacent judgments start to inherit its glow without each one being separately tested."
+        },
+        {
+          "title": "Distortion",
+          "text": "Trait ratings that should have remained independent become fused into a broad positive verdict."
+        },
+        {
+          "title": "Reset",
+          "text": "Separate the dimensions on paper and force each one to cite its own evidence before you average them into an overall impression."
+        }
+      ],
+      "repairQuestion": "What evidence supports this specific trait judgment apart from the first favorable cue I noticed?"
+    },
+    "caseStudies": [
+      {
+        "title": "Thorndike's military rating studies",
+        "source": "Wikipedia",
+        "year": "1920",
+        "url": "https://en.wikipedia.org/wiki/Halo_effect",
+        "summary": "Officers who were rated strongly on one dimension were often rated strongly across many others, even when the dimensions should not have moved together so tightly.",
+        "whyItFits": "A single favorable impression was spilling across trait boundaries instead of staying local to the evidence that earned it."
+      },
+      {
+        "title": "Attractiveness spills into competence judgments",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Halo_effect",
+        "summary": "Research tied to halo effect repeatedly shows that visual attractiveness can inflate judgments about unrelated traits such as intelligence, warmth, or credibility.",
+        "whyItFits": "One socially potent cue begins licensing a much wider verdict than it deserves."
+      }
+    ]
+  },
+  {
+    "slug": "implicit-bias",
+    "quickCheck": "What social cue may be steering this judgment before anyone can give a clean explicit reason for it?",
+    "analogyClaim": "This is like a sorting machine that claims to read only quality while one hidden sensor keeps nudging similar items into different bins.",
+    "analogyResponse": "The machine can still produce confident labels while the hidden cue keeps biasing the path. Clean procedure matters because introspection alone is weak here.",
+    "misuseWarning": "Do not use this label as a total explanation for every unequal outcome. Some disparities have many causes. Use it when fast social cues appear to be exerting influence that direct evidence or explicit standards do not justify.",
+    "useLabelWhen": "Use this label when judgment about a person seems to be quietly shifted by race, gender, age, accent, appearance, or group markers before explicit reasons have carried the weight of the call.",
+    "teachingGauges": [
+      {
+        "label": "Common in fast social judgment",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 86,
+        "note": "Most visible where decisions are quick, high-volume, or lightly structured."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 26,
+        "note": "Hard to diagnose from a single case; easier through patterns and process tests."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 84,
+        "note": "People often experience the resulting judgment as ordinary intuition."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 67,
+        "note": "Teaching has to balance caution, evidence, and process design carefully."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Implicit bias is difficult partly because the person making the judgment may sincerely experience it as fair. The strongest evidence often comes from patterned outcomes or from process changes that reduce cue leakage.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A judgment about a person is made under time pressure, ambiguity, weak structure, or high reliance on first impressions."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The reaction feels like direct reading of merit, fit, danger, or warmth rather than like interpretation shaped by social cues."
+        },
+        {
+          "title": "Distortion",
+          "text": "Identity-linked cues quietly influence who is advanced, trusted, interrupted, doubted, or remembered positively."
+        },
+        {
+          "title": "Reset",
+          "text": "Remove unnecessary identity cues, slow the first pass down, and force evaluators to cite evidence against explicit criteria instead of free-floating impressions."
+        }
+      ],
+      "repairQuestion": "What would this decision look like if the identity cues were hidden for the first pass?"
+    },
+    "caseStudies": [
+      {
+        "title": "Resume callback studies with racially marked names",
+        "source": "Wikipedia",
+        "year": "2004",
+        "url": "https://en.wikipedia.org/wiki/Implicit_stereotype",
+        "summary": "Studies summarized in discussions of implicit stereotype found that equivalent resumes can receive different callback rates when names carry different social signals.",
+        "whyItFits": "Visible identity cues change the treatment of the same apparent qualifications before evaluators can give a neutral-sounding explanation."
+      },
+      {
+        "title": "Blind auditions in orchestras",
+        "source": "Wikipedia",
+        "year": "Modern hiring practice",
+        "url": "https://en.wikipedia.org/wiki/Blind_audition",
+        "summary": "When early-stage auditions hide non-musical identity cues, who advances can change, revealing how much visible social information had been steering judgment.",
+        "whyItFits": "The procedural repair is informative because it reduces the influence of cues that should not have been doing the evaluative work."
+      }
+    ]
+  },
+  {
+    "slug": "negativity-bias",
+    "quickCheck": "Is the bad signal genuinely more diagnostic, or is it just receiving more psychological weight because it is bad?",
+    "analogyClaim": "This is like grading a whole season by replaying only the worst game because mistakes burn brighter than ordinary competence.",
+    "analogyResponse": "The bad game may matter, but it cannot own the entire verdict by itself. A fair read has to restore the base line the negative event pushed out of view.",
+    "misuseWarning": "Do not use this label for every serious warning. Some negative information should dominate. The distortion appears when bad news gets extra weight simply because it is aversive, vivid, or threatening rather than because it is truly more diagnostic.",
+    "useLabelWhen": "Use this label when criticism, threats, losses, or bad episodes begin outweighing equivalent positive or neutral information more than the evidential balance justifies.",
+    "teachingGauges": [
+      {
+        "label": "Common in feedback and conflict",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 92,
+        "note": "Negative cues often dominate attention long after their proportional role should have shrunk."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 53,
+        "note": "Usually easier to see once positive and neutral counts are put back on the page."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 88,
+        "note": "Threat-sensitive weighting often feels like realism rather than skew."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 33,
+        "note": "Concrete before-and-after counts make the pattern very teachable."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Negativity bias does not require drama. It can show up in small weighting asymmetries where one criticism, one risk, or one awkward episode starts dominating the whole evaluation.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A bad outcome, criticism, threat cue, or potential loss enters the scene and pulls attention quickly."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Because the negative signal feels urgent and memorable, it starts to look more revealing than a larger set of ordinary or positive evidence."
+        },
+        {
+          "title": "Distortion",
+          "text": "Evaluation gets organized around the negative cue, making the whole environment seem worse, riskier, or more hostile than the total record supports."
+        },
+        {
+          "title": "Reset",
+          "text": "Count positive, neutral, and negative evidence separately, then ask whether the weighting still looks fair once the denominator returns."
+        }
+      ],
+      "repairQuestion": "What would a neutral observer score here if the worst moment were not allowed to define the whole pattern?"
+    },
+    "caseStudies": [
+      {
+        "title": "Bad is stronger than good",
+        "source": "Wikipedia",
+        "year": "2001",
+        "url": "https://en.wikipedia.org/wiki/Negativity_bias",
+        "summary": "Research collected under the phrase 'bad is stronger than good' shows that negative events, traits, and feedback often have more psychological impact than comparable positives.",
+        "whyItFits": "The asymmetry is not only moral or strategic. It is a weighting pattern that makes bad signals dominate the record."
+      },
+      {
+        "title": "Single negative reviews can dominate broader impressions",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Negativity_bias",
+        "summary": "In many evaluation settings, one strongly negative episode gets remembered and discussed more than many ordinary or positive episodes surrounding it.",
+        "whyItFits": "The negative item does not merely enter the record. It starts owning the record."
+      }
+    ]
+  },
+  {
+    "slug": "naive-realism",
+    "quickCheck": "Am I treating my interpretation as the facts themselves while treating the rival interpretation as bias by default?",
+    "analogyClaim": "This is like looking through a tinted window and insisting the tint is reality because it is the only glass you can see through from your side.",
+    "analogyResponse": "What feels like direct access is often perspective plus interpretation. Good judgment makes the lens visible before it starts moralizing every disagreement.",
+    "misuseWarning": "Do not use this label for every dispute over facts. Some disagreements really are about evidence quality. Use it when one side treats its own reading as simple reality and the rival reading as proof of irrationality or bad faith without first making interpretation visible.",
+    "useLabelWhen": "Use this label when people experience their own perspective as the unfiltered world and interpret disagreement mainly as evidence of bias, ignorance, or hostility in the other person.",
+    "teachingGauges": [
+      {
+        "label": "Common in polarization",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 87,
+        "note": "Especially active where shared facts still allow multiple live readings."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 28,
+        "note": "Hard to detect because the person sincerely experiences the view as plain reality."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 90,
+        "note": "The default human experience is not 'my interpretation' but 'what happened.'"
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 62,
+        "note": "Requires teaching perspective-taking without collapsing into relativism."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Naive realism is hard to catch because it feels like intellectual honesty. The person is not lying about how the world looks from inside the frame. The problem is forgetting that a frame is there.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "An ambiguous event, report, or social conflict allows more than one live interpretation."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "One reading feels so direct and natural that it stops feeling like interpretation and starts feeling like reality itself."
+        },
+        {
+          "title": "Distortion",
+          "text": "Rival views get sorted too quickly into stupidity, propaganda, or bad faith rather than into alternative readings that need comparison."
+        },
+        {
+          "title": "Reset",
+          "text": "State the strongest intelligent rival interpretation in full sentences before judging the motives or competence of the people who hold it."
+        }
+      ],
+      "repairQuestion": "How would the same evidence look if I had to explain why a thoughtful person might read it differently without assuming corruption?"
+    },
+    "caseStudies": [
+      {
+        "title": "Reactive devaluation in negotiation",
+        "source": "Wikipedia",
+        "year": "Modern conflict research",
+        "url": "https://en.wikipedia.org/wiki/Na%C3%AFve_realism_(psychology)",
+        "summary": "Negotiators often judge the same proposal differently depending on who offers it, because their own reading feels like common sense while the rival side's move feels strategic or suspect.",
+        "whyItFits": "The perspective gap is hidden inside the feeling that one's own interpretation is simply the facts."
+      },
+      {
+        "title": "The hostile media effect",
+        "source": "Wikipedia",
+        "year": "Modern media research",
+        "url": "https://en.wikipedia.org/wiki/Hostile_media_effect",
+        "summary": "Opposing groups can watch the same coverage and each experience it as biased against them while regarding their own reading as straightforward.",
+        "whyItFits": "Shared evidence does not feel shared once each side mistakes its own interpretive lens for reality itself."
+      }
+    ]
+  },
+  {
+    "slug": "survivorship-bias",
+    "quickCheck": "Which failures, dropouts, or invisible cases are missing from the sample that feels persuasive right now?",
+    "analogyClaim": "This is like studying only the ships that made it back to port and then writing a theory of what the whole ocean is like.",
+    "analogyResponse": "The visible sample may be real and still be systematically incomplete. Good judgment asks who vanished before the data became visible.",
+    "misuseWarning": "Do not use this label just because a sample is small. The issue is not merely limited data. The issue is that the visible cases are selected by survival, persistence, or publicity in a way that hides the failures that would change the lesson.",
+    "useLabelWhen": "Use this label when success stories, visible winners, or remaining cases are being treated as representative while the missing failures would likely bend the conclusion sharply.",
+    "teachingGauges": [
+      {
+        "label": "Common in success narratives",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 86,
+        "note": "Strong wherever examples arrive through visibility, popularity, or persistence filters."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 60,
+        "note": "Becomes much clearer once the missing denominator is named explicitly."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 80,
+        "note": "The visible winners are exactly the cases people have easiest access to."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 29,
+        "note": "The aircraft example makes the pattern memorable very quickly."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Survivorship bias flatters the visible sample. The stories on hand can be vivid, detailed, and real while still hiding the data that would most weaken the easy lesson.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A lesson is drawn from visible successes, remaining cases, or published examples without first asking what kinds of cases disappeared from view."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Because the survivors are concrete and observable, they start to feel like the natural sample from which to generalize."
+        },
+        {
+          "title": "Distortion",
+          "text": "The conclusion inherits the selection filter and mistakes visibility for representativeness."
+        },
+        {
+          "title": "Reset",
+          "text": "Reconstruct the missing denominator: who failed, dropped out, was never published, or never made it into the dataset you are treating as normal?"
+        }
+      ],
+      "repairQuestion": "What would I learn differently if the missing failures were visible beside the visible successes?"
+    },
+    "caseStudies": [
+      {
+        "title": "Abraham Wald and bullet holes on returning aircraft",
+        "source": "Wikipedia",
+        "year": "World War II",
+        "url": "https://en.wikipedia.org/wiki/Survivorship_bias",
+        "summary": "Analysts first considered reinforcing the parts of planes that showed the most bullet holes, until Wald pointed out that the missing planes were the crucial unseen data.",
+        "whyItFits": "The visible survivors looked like the full sample until the invisible failures were restored conceptually."
+      },
+      {
+        "title": "Performance lessons drawn only from surviving funds and firms",
+        "source": "Wikipedia",
+        "year": "Modern finance and business",
+        "url": "https://en.wikipedia.org/wiki/Survivorship_bias",
+        "summary": "Mutual funds, startups, and careers can look more successful than they are when the failures disappear from the visible sample and the lesson is drawn only from who remains.",
+        "whyItFits": "Selection by survival makes the visible sample look stronger, cleaner, and more repeatable than reality."
+      }
+    ]
+  },
+  {
+    "slug": "authority-bias",
+    "quickCheck": "How much of this judgment is coming from the reasons, and how much is coming from who delivered them?",
+    "analogyClaim": "This is like treating a gold microphone as if it improved the truth of whatever was spoken into it.",
+    "analogyResponse": "Credibility can be relevant, but prestige is not a substitute for issue-specific evidence. A strong source still needs the right kind of support.",
+    "misuseWarning": "Do not use this label whenever expertise matters. Expertise often should matter. The distortion begins when status or prestige gets more weight than domain fit, evidence quality, or argument strength deserves.",
+    "useLabelWhen": "Use this label when deference to rank, fame, institutional aura, or confident delivery starts doing evidential work that should have stayed with the reasons themselves.",
+    "teachingGauges": [
+      {
+        "label": "Common in hierarchies",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 84,
+        "note": "Especially strong when dissent feels socially costly or procedurally awkward."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 52,
+        "note": "Often visible once names and titles are stripped from the recommendation."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 81,
+        "note": "Using prestige as a shortcut can feel efficient and respectful."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 36,
+        "note": "The line between legitimate expertise and overdeference needs careful handling."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Authority bias often sounds like practical trust. The problem is not that source quality matters. The problem is that hierarchy or prestige starts outrunning issue-specific fit.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A recommendation arrives from a person or institution with high status, rank, prestige, or symbolic authority."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The source's standing makes the conclusion feel safer to accept and more awkward to challenge."
+        },
+        {
+          "title": "Distortion",
+          "text": "Borrowed credibility starts substituting for direct evaluation of the reasons, evidence, or domain fit."
+        },
+        {
+          "title": "Reset",
+          "text": "Evaluate the recommendation once with source labels hidden and once with them visible, then compare how much the reasons themselves were doing."
+        }
+      ],
+      "repairQuestion": "If the same claim came from someone unknown, what evidence would I say I still needed?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Milgram obedience experiments",
+        "source": "Wikipedia",
+        "year": "1961 onward",
+        "url": "https://en.wikipedia.org/wiki/Milgram_experiment",
+        "summary": "Participants often continued harmful actions because the institutional authority of the experimenter strongly shaped what felt permissible and required.",
+        "whyItFits": "The pressure of authority changed behavior and judgment even when personal hesitation remained present."
+      },
+      {
+        "title": "Prestige cues dominating weak domain fit",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Authority_bias",
+        "summary": "Authority bias shows up when a famous or high-status figure receives extra deference on issues where the real expertise is only loosely connected to the claim at hand.",
+        "whyItFits": "Status starts impersonating evidence even though domain fit is thin."
+      }
+    ]
+  },
+  {
+    "slug": "false-consensus-effect",
+    "quickCheck": "Am I treating my own view as more common, obvious, or privately shared than the evidence for distribution actually supports?",
+    "analogyClaim": "This is like assuming the whole theater enjoyed the movie because your row laughed at the same scenes you did.",
+    "analogyResponse": "Your local experience is real, but it is still a sample. Good judgment asks how much of the audience you actually observed before upgrading your preference into a norm.",
+    "misuseWarning": "Do not use this label for every mistaken prediction about public opinion. The key sign is that one's own preference quietly becomes the baseline estimate for what most other reasonable people must also think.",
+    "useLabelWhen": "Use this label when people overestimate how widely their own choices, intuitions, or moral reads are shared, especially when disagreement becomes surprising or hard to interpret.",
+    "teachingGauges": [
+      {
+        "label": "Common in groups and online spaces",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 82,
+        "note": "Homogeneous local networks make this bias feel especially natural."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 45,
+        "note": "Usually visible when actual distributions are finally measured."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 86,
+        "note": "Your own view is the easiest anchor for estimating what seems normal."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 41,
+        "note": "Simple to define, but it often travels with homophily and social pressure."
+      }
+    ],
+    "practiceLab": {
+      "intro": "False consensus effect turns familiarity into a distribution estimate. Because your own view is vividly accessible and socially reinforced nearby, it starts to feel much more universal than it is.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "A person wants to estimate what most other people think, choose, or privately prefer while standing inside a partial local sample."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "The person's own preference feels so natural that disagreement starts to look unusual, confused, or rare."
+        },
+        {
+          "title": "Distortion",
+          "text": "Private preference gets upgraded into an overestimate of public consensus."
+        },
+        {
+          "title": "Reset",
+          "text": "Look for actual distribution data or anonymous first-pass responses before treating your local agreement pocket as a population read."
+        }
+      ],
+      "repairQuestion": "What evidence do I have about the wider distribution beyond my own network and the people most comfortable speaking first?"
+    },
+    "caseStudies": [
+      {
+        "title": "The sandwich-board studies",
+        "source": "Wikipedia",
+        "year": "1977",
+        "url": "https://en.wikipedia.org/wiki/False_consensus_effect",
+        "summary": "People who agreed to wear a sandwich board often overestimated how many others would make the same choice, while refusers made the opposite overestimate.",
+        "whyItFits": "Each side used its own preference as a noisy estimator of the population's likely preference."
+      },
+      {
+        "title": "Team silence mistaken for broad agreement",
+        "source": "Wikipedia",
+        "year": "Modern group dynamics",
+        "url": "https://en.wikipedia.org/wiki/False_consensus_effect",
+        "summary": "Groups often overread local conversational ease or silence as evidence that most members privately share the same view.",
+        "whyItFits": "The available local sample is treated like a clean read of wider consensus even though dissent cost and sampling limits remain uninspected."
+      }
+    ]
+  },
+  {
+    "slug": "self-serving-bias",
+    "quickCheck": "Would I tell the same story about this result if the roles or outcomes were reversed?",
+    "analogyClaim": "This is like using one scoreboard when you win and a different rulebook when you lose.",
+    "analogyResponse": "The win may really involve skill and the loss may really involve bad luck sometimes, but a fair account cannot let outcome direction decide the explanatory standards by itself.",
+    "misuseWarning": "Do not use this label whenever people protect their self-image. The issue is more specific: success gets attributed inward and failure outward more than the full evidence warrants.",
+    "useLabelWhen": "Use this label when good outcomes are explained mainly by ability, character, or wisdom while bad outcomes are explained mainly by luck, unfairness, or external obstacles under noticeably weaker scrutiny.",
+    "teachingGauges": [
+      {
+        "label": "Common in self-evaluation",
+        "low": "Rare",
+        "high": "Frequent",
+        "value": 89,
+        "note": "Strong anywhere competence, reputation, or moral standing are on the line."
+      },
+      {
+        "label": "Easy to spot from outside",
+        "low": "Hidden",
+        "high": "Obvious",
+        "value": 57,
+        "note": "The asymmetry is often easier to hear when you compare stories across outcomes."
+      },
+      {
+        "label": "Easy to innocently commit",
+        "low": "Low risk",
+        "high": "Easy slip",
+        "value": 87,
+        "note": "The explanatory split protects dignity and motivation, which makes it feel fair from inside."
+      },
+      {
+        "label": "Teaching difficulty",
+        "low": "Foundational",
+        "high": "Advanced",
+        "value": 35,
+        "note": "The pattern becomes vivid once opposite-outcome examples are paired."
+      }
+    ],
+    "practiceLab": {
+      "intro": "Self-serving bias is a memory and explanation manager for ego costs. It does not need to deny reality entirely. It only needs to distribute credit and blame asymmetrically often enough to keep the self-story comfortable.",
+      "stages": [
+        {
+          "title": "Trigger",
+          "text": "An outcome arrives that could either enhance or threaten the person's competence, status, or moral self-image."
+        },
+        {
+          "title": "Felt certainty",
+          "text": "Success naturally feels diagnostic of the self, while failure naturally feels more contextual, exceptional, or externally caused."
+        },
+        {
+          "title": "Distortion",
+          "text": "Credit and blame are sorted by self-protective convenience rather than by a stable explanatory standard."
+        },
+        {
+          "title": "Reset",
+          "text": "Write the best internal and external explanations for both success and failure before deciding which factors really carried the most weight."
+        }
+      ],
+      "repairQuestion": "What explanation would I give here if the same outcome belonged to a peer I felt competitive with instead of to me?"
+    },
+    "caseStudies": [
+      {
+        "title": "Students attribute good grades inward and bad grades outward",
+        "source": "Wikipedia",
+        "year": "Classic research",
+        "url": "https://en.wikipedia.org/wiki/Self-serving_bias",
+        "summary": "People often explain strong performance by ability or effort while shifting poor performance toward luck, unfair tests, or outside conditions.",
+        "whyItFits": "Outcome direction changes what kind of explanation suddenly feels most persuasive."
+      },
+      {
+        "title": "Athletes narrate wins and losses asymmetrically",
+        "source": "Wikipedia",
+        "year": "Modern examples",
+        "url": "https://en.wikipedia.org/wiki/Self-serving_bias",
+        "summary": "Wins are often explained as proof of preparation, grit, or talent, while losses are more easily framed as officiating, weather, or unlucky breaks.",
+        "whyItFits": "The explanatory burden shifts with ego value rather than staying stable across outcomes."
+      }
+    ]
+  }
+]

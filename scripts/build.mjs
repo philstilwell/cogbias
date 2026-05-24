@@ -8,19 +8,43 @@ const projectRoot = path.resolve(__dirname, "..");
 const dataDir = path.join(projectRoot, "data");
 const siteDir = path.join(projectRoot, "site");
 
-const siteConfig = JSON.parse(await fs.readFile(path.join(dataDir, "site.json"), "utf8"));
-const rawEntries = JSON.parse(await fs.readFile(path.join(dataDir, "biases.json"), "utf8"));
-const editorialEnrichments = JSON.parse(
-  await fs.readFile(path.join(dataDir, "editorial_enrichments.json"), "utf8"),
-);
-const teachingModules = JSON.parse(
-  await fs.readFile(path.join(dataDir, "entry_teaching_modules.json"), "utf8"),
-);
-const learningPathData = JSON.parse(await fs.readFile(path.join(dataDir, "learning_paths.json"), "utf8"));
-const selfCheckData = JSON.parse(await fs.readFile(path.join(dataDir, "self_checks.json"), "utf8"));
-const assessmentBankData = JSON.parse(await fs.readFile(path.join(dataDir, "assessment_bank.json"), "utf8"));
-const promptKitData = JSON.parse(await fs.readFile(path.join(dataDir, "prompt_kits.json"), "utf8"));
-const theoryArticleData = JSON.parse(await fs.readFile(path.join(dataDir, "theory_articles.json"), "utf8"));
+async function readJsonFile(fileName) {
+  return JSON.parse(await fs.readFile(path.join(dataDir, fileName), "utf8"));
+}
+
+async function readJsonArrayFiles(fileNames) {
+  const merged = [];
+
+  for (const fileName of fileNames) {
+    try {
+      const data = await readJsonFile(fileName);
+      if (!Array.isArray(data)) {
+        throw new Error(`Expected "${fileName}" to contain a JSON array.`);
+      }
+      merged.push(...data);
+    } catch (error) {
+      if (error?.code === "ENOENT") {
+        continue;
+      }
+      throw error;
+    }
+  }
+
+  return merged;
+}
+
+const siteConfig = await readJsonFile("site.json");
+const rawEntries = await readJsonFile("biases.json");
+const editorialEnrichments = await readJsonFile("editorial_enrichments.json");
+const teachingModules = await readJsonArrayFiles([
+  "entry_teaching_modules.json",
+  "entry_teaching_modules_tier_two.json",
+]);
+const learningPathData = await readJsonFile("learning_paths.json");
+const selfCheckData = await readJsonFile("self_checks.json");
+const assessmentBankData = await readJsonArrayFiles(["assessment_bank.json", "assessment_bank_tier_two.json"]);
+const promptKitData = await readJsonFile("prompt_kits.json");
+const theoryArticleData = await readJsonArrayFiles(["theory_articles.json", "theory_articles_tier_two.json"]);
 
 function mergeUniqueStrings(values = []) {
   return [...new Set(values.filter(Boolean))];
@@ -41,6 +65,7 @@ function mergeEntryData(baseEntries, enrichments) {
 }
 
 const entries = mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules);
+const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
 
 const siteUrl = String(siteConfig.siteUrl || "").trim();
 const siteUrlWithSlash = siteUrl ? `${siteUrl.replace(/\/+$/, "")}/` : "";
@@ -79,6 +104,47 @@ const theoryArticles = theoryArticleData.map((article) => ({
   ...article,
   relatedEntries: (article.relatedBiases || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
 }));
+
+function buildCaseStudyLibrary(entryList) {
+  const library = new Map();
+
+  for (const entry of entryList) {
+    for (const item of entry.caseStudies || []) {
+      const key = `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
+      const existing = library.get(key);
+
+      if (!existing) {
+        library.set(key, {
+          ...item,
+          entrySlugs: [entry.slug],
+          categories: [...(entry.tasks || [])],
+          patterns: [...(entry.patterns || [])],
+        });
+        continue;
+      }
+
+      existing.entrySlugs = mergeUniqueStrings([...existing.entrySlugs, entry.slug]);
+      existing.categories = mergeUniqueStrings([...existing.categories, ...(entry.tasks || [])]);
+      existing.patterns = mergeUniqueStrings([...existing.patterns, ...(entry.patterns || [])]);
+    }
+  }
+
+  return [...library.values()]
+    .map((item) => ({
+      ...item,
+      entries: item.entrySlugs
+        .map((slug) => entryBySlug.get(slug))
+        .filter(Boolean)
+        .sort((left, right) => left.name.localeCompare(right.name)),
+    }))
+    .sort(
+      (left, right) =>
+        right.entries.length - left.entries.length ||
+        String(left.title || "").localeCompare(String(right.title || "")),
+    );
+}
+
+const caseStudyLibrary = buildCaseStudyLibrary(entries);
 
 for (const entry of entries) {
   for (const taskName of entry.tasks || []) {
@@ -144,7 +210,13 @@ for (const promptKit of promptKitData) {
   }
 }
 
+const seenTheorySlugs = new Set();
 for (const article of theoryArticles) {
+  if (seenTheorySlugs.has(article.slug)) {
+    throw new Error(`Duplicate theory article slug "${article.slug}".`);
+  }
+  seenTheorySlugs.add(article.slug);
+
   for (const slug of article.relatedBiases || []) {
     if (!entryBySlug.has(slug)) {
       throw new Error(`Unknown theory related slug "${slug}" on "${article.slug}".`);
@@ -152,7 +224,13 @@ for (const article of theoryArticles) {
   }
 }
 
+const seenAssessmentIds = new Set();
 for (const item of assessmentBankData) {
+  if (seenAssessmentIds.has(item.id)) {
+    throw new Error(`Duplicate assessment item id "${item.id}".`);
+  }
+  seenAssessmentIds.add(item.id);
+
   if (!entryBySlug.has(item.correctBias)) {
     throw new Error(`Unknown assessment correct bias "${item.correctBias}" on "${item.id}".`);
   }
@@ -239,6 +317,7 @@ function renderNav(prefix, currentId) {
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
     { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
     { id: "assessment", label: "Assessment", href: `${prefix}${siteConfig.assessmentSlug}/` },
+    { id: "case-studies", label: "Case Studies", href: `${prefix}${caseStudySlug}/` },
     { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
     { id: "theory", label: "Theory", href: `${prefix}${siteConfig.theorySlug}/` },
     { id: "about", label: "About", href: `${prefix}about/` },
@@ -290,7 +369,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank*.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -547,10 +626,6 @@ function caseStudiesFor(entry) {
 }
 
 function companionReadingFor(entry) {
-  if (!(entry.caseStudies || []).length) {
-    return [];
-  }
-
   const items = [];
   const relatedTheory = theoryArticlesForEntry(entry, 2).map((article) => ({
     title: article.title,
@@ -752,6 +827,49 @@ function renderTheoryArticleCard(article, prefix = "") {
           </article>`;
 }
 
+function renderCaseStudyCard(item, prefix = "") {
+  const biasNames = item.entries.map((entry) => entry.name);
+  const title = item.url
+    ? `<a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a>`
+    : escapeHtml(item.title);
+
+  return `
+          <article
+            class="category-card case-study-card"
+            data-entry-card
+            data-name="${escapeHtml(item.title || "")}"
+            data-aliases="${escapeHtml(biasNames.join(", "))}"
+            data-categories="${escapeHtml((item.categories || []).join("||"))}"
+            data-patterns="${escapeHtml((item.patterns || []).join("||"))}"
+            data-body="${escapeHtml(
+              [
+                item.summary,
+                item.whyItFits,
+                item.source,
+                item.year,
+                ...biasNames,
+                ...(item.categories || []),
+                ...(item.patterns || []),
+              ]
+                .filter(Boolean)
+                .join(" "),
+            )}"
+          >
+            <h3>${title}</h3>
+            <p class="card-copy">${escapeHtml(item.summary || "")}</p>
+            <p class="muted"><strong>Why it fits:</strong> ${escapeHtml(item.whyItFits || "")}</p>
+            <p class="case-source">${escapeHtml(item.source || "")}${item.year ? ` · ${escapeHtml(item.year)}` : ""}</p>
+            <div class="path-link-row">
+              ${item.entries
+                .map(
+                  (entry) =>
+                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+                )
+                .join("")}
+            </div>
+          </article>`;
+}
+
 function renderHomePage() {
   return renderPage({
     title: siteConfig.brandTitle,
@@ -788,6 +906,10 @@ function renderHomePage() {
               <div class="stat-card">
                 <span class="stat-value">${assessmentBankData.length}</span>
                 <span class="stat-label">Assessment Scenarios</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">${caseStudyLibrary.length}</span>
+                <span class="stat-label">Case Studies</span>
               </div>
             </div>
             <div class="note-panel">
@@ -864,6 +986,19 @@ function renderHomePage() {
               <h4>How it differs from self-checks</h4>
               <p class="muted">Self-checks are preventive field tools you run on yourself. The assessment is a mixed set for practice, calibration, and classroom comparison.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Case studies</h2>
+              <p class="section-copy">Sourced teaching cases help the bias pages feel less abstract. They show where bias pressure becomes visible in hiring, forecasting, policy, meetings, and public interpretation.</p>
+            </div>
+            <a class="inline-link" href="${caseStudySlug}/">Open case study library</a>
+          </div>
+          <div class="category-grid">
+            ${caseStudyLibrary.slice(0, 3).map((item) => renderCaseStudyCard(item)).join("")}
           </div>
         </section>
 
@@ -1232,6 +1367,67 @@ function renderAssessmentPage() {
               <p class="muted">This page builds a mixed scenario set in the browser. If scripting is disabled, you can still study the full reference in <a class="text-link" href="../${siteConfig.sectionSlug}/">All Biases</a>.</p>
             </div>
           </noscript>
+        </section>`,
+  });
+}
+
+function renderCaseStudiesPage() {
+  return renderPage({
+    title: "Case Studies",
+    description: "A searchable library of sourced teaching cases showing where bias pressure becomes visible in practice.",
+    prefix: "../",
+    currentId: "case-studies",
+    routePath: `/${caseStudySlug}/`,
+    breadcrumbs: [
+      { label: "Home", href: "../" },
+      { label: "Case Studies" },
+    ],
+    body: `
+        <section class="detail-section">
+          <p class="eyebrow">Case Studies</p>
+          <h2 class="detail-title">A browsable library of bias teaching cases</h2>
+          <p class="detail-deck">These examples are meant to teach visible bias pressure in live contexts, not to claim mind-reading certainty about every actor in every story. Use them to compare patterns, not to overdiagnose strangers from a distance.</p>
+        </section>
+
+        <div class="two-column section-block">
+          <div class="note-panel">
+            <h4>How to use this page</h4>
+            <p class="muted">Search by bias name, source, or scenario type. Filter by category when you know what kind of judgment failed, and by pattern when you want to compare hidden pulls across contexts.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Why the library matters</h4>
+            <p class="muted">A strong bias site needs concrete public and everyday cases so the label does not stay trapped at the level of definition. Case libraries make comparison teachable.</p>
+          </div>
+        </div>
+
+        <section class="section-block">
+          <div class="note-panel search-panel">
+            <div class="search-row search-row-compact">
+              <input class="search-input" type="search" placeholder="Search case studies, sources, or linked biases..." aria-label="Search case studies" data-search-input />
+              <select class="search-select" data-category-filter aria-label="Filter case studies by category">
+                <option value="">All categories</option>
+                ${tasks.map((task) => `<option value="${escapeHtml(task.name)}">${escapeHtml(task.name)}</option>`).join("")}
+              </select>
+              <select class="search-select" data-pattern-filter aria-label="Filter case studies by pattern">
+                <option value="">All patterns</option>
+                ${patterns.map((pattern) => `<option value="${escapeHtml(pattern.name)}">${escapeHtml(pattern.name)}</option>`).join("")}
+              </select>
+              <button class="search-reset" type="button" data-search-reset>Reset</button>
+            </div>
+            <div class="search-meta">
+              <span data-search-count data-search-unit-singular="case study" data-search-unit-plural="case studies"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="category-grid">
+            ${caseStudyLibrary.map((item) => renderCaseStudyCard(item, "../")).join("")}
+          </div>
+          <div class="note-panel hidden" data-search-empty>
+            <h4>No case studies matched</h4>
+            <p class="muted">Try a broader query, remove one filter, or search by a linked bias such as confirmation bias, survivorship bias, or halo effect.</p>
+          </div>
         </section>`,
   });
 }
@@ -1771,6 +1967,7 @@ function renderBiasDetailPage(entry) {
               <h2 class="section-title">Case studies</h2>
               <p class="section-copy">These sourced cases do not prove what was in someone's head with perfect certainty. They are teaching cases for showing where the bias pressure becomes visible in practice.</p>
             </div>
+            <a class="inline-link" href="../../${caseStudySlug}/?q=${encodeURIComponent(entry.name)}">View related cases</a>
           </div>
           <div class="case-list">
             ${caseStudies
@@ -1939,8 +2136,8 @@ function renderAboutPage() {
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/entry_teaching_modules.json</code> and <code>data/assessment_bank.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
-              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_articles.json</code> for the guided layers.</li>
+              <li><code>data/entry_teaching_modules*.json</code> and <code>data/assessment_bank*.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
+              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>
@@ -2019,6 +2216,7 @@ async function cleanOwnedOutput() {
     siteConfig.pathSlug,
     siteConfig.checkSlug,
     siteConfig.assessmentSlug,
+    caseStudySlug,
     siteConfig.promptSlug,
     siteConfig.theorySlug,
     siteConfig.patternSlug,
@@ -2043,6 +2241,7 @@ async function writeSiteFiles() {
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
   await writeTextFile(`${siteConfig.assessmentSlug}/index.html`, renderAssessmentPage());
+  await writeTextFile(`${caseStudySlug}/index.html`, renderCaseStudiesPage());
   await writeTextFile(`${siteConfig.promptSlug}/index.html`, renderPromptsPage());
   await writeTextFile(`${siteConfig.theorySlug}/index.html`, renderTheoryPage());
   await writeTextFile("countermoves/index.html", renderCountermovesPage());
@@ -2098,6 +2297,7 @@ async function writeSiteFiles() {
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
       `/${siteConfig.assessmentSlug}/`,
+      `/${caseStudySlug}/`,
       `/${siteConfig.promptSlug}/`,
       `/${siteConfig.theorySlug}/`,
       "/countermoves/",

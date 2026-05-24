@@ -39,7 +39,7 @@
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
-          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="paths/">Paths</a><a href="countermoves/">Countermoves</a><a href="check-yourself/">Check Yourself</a><a href="assessment/">Assessment</a><a href="prompts/">Prompts</a><a href="theory/">Theory</a><a href="about/">About</a></nav>
+          <nav class="top-nav" aria-label="Primary"><a href="./" aria-current="page">Home</a><a href="biases/">All Biases</a><a href="categories/">Categories</a><a href="paths/">Paths</a><a href="countermoves/">Countermoves</a><a href="check-yourself/">Check Yourself</a><a href="assessment/">Assessment</a><a href="case-studies/">Case Studies</a><a href="prompts/">Prompts</a><a href="theory/">Theory</a><a href="about/">About</a></nav>
         </div>
       </header>
       <main class="page-wrap">
@@ -71,8 +71,12 @@
                 <span class="stat-label">Self-Audits</span>
               </div>
               <div class="stat-card">
-                <span class="stat-value">18</span>
+                <span class="stat-value">30</span>
                 <span class="stat-label">Assessment Scenarios</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-value">48</span>
+                <span class="stat-label">Case Studies</span>
               </div>
             </div>
             <div class="note-panel">
@@ -263,6 +267,70 @@
               <h4>How it differs from self-checks</h4>
               <p class="muted">Self-checks are preventive field tools you run on yourself. The assessment is a mixed set for practice, calibration, and classroom comparison.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Case studies</h2>
+              <p class="section-copy">Sourced teaching cases help the bias pages feel less abstract. They show where bias pressure becomes visible in hiring, forecasting, policy, meetings, and public interpretation.</p>
+            </div>
+            <a class="inline-link" href="case-studies/">Open case study library</a>
+          </div>
+          <div class="category-grid">
+            
+          <article
+            class="category-card case-study-card"
+            data-entry-card
+            data-name="Abraham Wald and bullet holes on returning aircraft"
+            data-aliases="Survivorship bias"
+            data-categories="Hypothesis Assessment"
+            data-patterns="Outcome"
+            data-body="Analysts first considered reinforcing the parts of planes that showed the most bullet holes, until Wald pointed out that the missing planes were the crucial unseen data. The visible survivors looked like the full sample until the invisible failures were restored conceptually. Wikipedia World War II Survivorship bias Hypothesis Assessment Outcome"
+          >
+            <h3><a href="https://en.wikipedia.org/wiki/Survivorship_bias">Abraham Wald and bullet holes on returning aircraft</a></h3>
+            <p class="card-copy">Analysts first considered reinforcing the parts of planes that showed the most bullet holes, until Wald pointed out that the missing planes were the crucial unseen data.</p>
+            <p class="muted"><strong>Why it fits:</strong> The visible survivors looked like the full sample until the invisible failures were restored conceptually.</p>
+            <p class="case-source">Wikipedia · World War II</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/survivorship-bias/">Survivorship bias</a>
+            </div>
+          </article>
+          <article
+            class="category-card case-study-card"
+            data-entry-card
+            data-name="Athletes narrate wins and losses asymmetrically"
+            data-aliases="Self-serving bias"
+            data-categories="Causal Attribution"
+            data-patterns="Self-Perspective"
+            data-body="Wins are often explained as proof of preparation, grit, or talent, while losses are more easily framed as officiating, weather, or unlucky breaks. The explanatory burden shifts with ego value rather than staying stable across outcomes. Wikipedia Modern examples Self-serving bias Causal Attribution Self-Perspective"
+          >
+            <h3><a href="https://en.wikipedia.org/wiki/Self-serving_bias">Athletes narrate wins and losses asymmetrically</a></h3>
+            <p class="card-copy">Wins are often explained as proof of preparation, grit, or talent, while losses are more easily framed as officiating, weather, or unlucky breaks.</p>
+            <p class="muted"><strong>Why it fits:</strong> The explanatory burden shifts with ego value rather than staying stable across outcomes.</p>
+            <p class="case-source">Wikipedia · Modern examples</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/self-serving-bias/">Self-serving bias</a>
+            </div>
+          </article>
+          <article
+            class="category-card case-study-card"
+            data-entry-card
+            data-name="Attractiveness spills into competence judgments"
+            data-aliases="Halo effect"
+            data-categories="Opinion Reporting"
+            data-patterns="Association"
+            data-body="Research tied to halo effect repeatedly shows that visual attractiveness can inflate judgments about unrelated traits such as intelligence, warmth, or credibility. One socially potent cue begins licensing a much wider verdict than it deserves. Wikipedia Modern social psychology Halo effect Opinion Reporting Association"
+          >
+            <h3><a href="https://en.wikipedia.org/wiki/Halo_effect">Attractiveness spills into competence judgments</a></h3>
+            <p class="card-copy">Research tied to halo effect repeatedly shows that visual attractiveness can inflate judgments about unrelated traits such as intelligence, warmth, or credibility.</p>
+            <p class="muted"><strong>Why it fits:</strong> One socially potent cue begins licensing a much wider verdict than it deserves.</p>
+            <p class="case-source">Wikipedia · Modern social psychology</p>
+            <div class="path-link-row">
+              <a class="path-link-chip" href="biases/halo-effect/">Halo effect</a>
+            </div>
+          </article>
           </div>
         </section>
 
@@ -857,7 +925,7 @@ Situation:
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">Seed taxonomy and broad coverage are drawn from Wikipedia&#39;s List of cognitive biases, then editorially reshaped into a teaching-first reference.</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank*.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: 2026-05-23. Copyright © Phil Stilwell</p>
         </div>
       </footer>

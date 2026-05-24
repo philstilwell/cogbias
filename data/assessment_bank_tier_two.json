@@ -1,0 +1,194 @@
+[
+  {
+    "id": "assessment-019",
+    "title": "The standards move with the answer",
+    "scenario": "A board member demands airtight proof when a proposal threatens her preferred strategy, but accepts much thinner evidence when a similar proposal protects the strategy she already wants.",
+    "biasOptions": ["motivated-reasoning", "confirmation-bias", "status-quo-bias", "naive-realism"],
+    "correctBias": "motivated-reasoning",
+    "moveOptions": [
+      "Set one written evidence standard before discussing which proposal feels more attractive.",
+      "Let each side choose its own standard so the conversation stays flexible.",
+      "Trust the proposal that creates the least emotional discomfort.",
+      "Stop asking for evidence once one side sounds more morally confident."
+    ],
+    "correctMove": "Set one written evidence standard before discussing which proposal feels more attractive.",
+    "biasExplanation": "The issue is not only selective search. The evidential bar itself is moving with the preferred conclusion.",
+    "moveExplanation": "A precommitted standard exposes whether one side is being protected by a friendlier burden of proof."
+  },
+  {
+    "id": "assessment-020",
+    "title": "We already spent too much to stop",
+    "scenario": "A department keeps funding a failing internal tool mainly because cancelling it now would make the last two years of expense and political effort feel humiliating.",
+    "biasOptions": ["sunk-cost-effect", "status-quo-bias", "loss-aversion", "default-effect"],
+    "correctBias": "sunk-cost-effect",
+    "moveOptions": [
+      "Re-evaluate the options from today forward without counting the past investment as a reason to continue.",
+      "Protect morale by refusing to discuss the money and time already spent.",
+      "Continue until the original budget is fully exhausted so the sacrifice means something.",
+      "Judge the tool by how passionately its original sponsors still defend it."
+    ],
+    "correctMove": "Re-evaluate the options from today forward without counting the past investment as a reason to continue.",
+    "biasExplanation": "Past spending is being treated as a forward-looking justification for further spending.",
+    "moveExplanation": "The clean repair is to compare current options on future value rather than on symbolic respect for unrecoverable costs."
+  },
+  {
+    "id": "assessment-021",
+    "title": "Keep the policy unless the replacement is perfect",
+    "scenario": "A team treats the current policy as automatically acceptable, while demanding that any proposed replacement clear a much higher evidential bar before it can even be piloted.",
+    "biasOptions": ["status-quo-bias", "default-effect", "omission-bias", "loss-aversion"],
+    "correctBias": "status-quo-bias",
+    "moveOptions": [
+      "Rewrite the existing policy as Option A and compare it against alternatives under the same decision criteria.",
+      "Assume the current policy earned its place simply by lasting this long.",
+      "Keep the replacement off the table until it can guarantee zero downside.",
+      "Judge the current policy by how familiar it feels to the team."
+    ],
+    "correctMove": "Rewrite the existing policy as Option A and compare it against alternatives under the same decision criteria.",
+    "biasExplanation": "The current arrangement is being spared scrutiny because it is current, not because it has clearly won the comparison.",
+    "moveExplanation": "Making the existing arrangement explicit as one option among peers removes the invisible privilege continuity was getting."
+  },
+  {
+    "id": "assessment-022",
+    "title": "The charming candidate must be strong at everything",
+    "scenario": "After a candidate gives a poised, warm opening answer, interviewers start inflating their ratings of judgment, technical depth, and reliability even in areas they have barely tested.",
+    "biasOptions": ["halo-effect", "fundamental-attribution-error", "authority-bias", "implicit-bias"],
+    "correctBias": "halo-effect",
+    "moveOptions": [
+      "Score each dimension separately and require evidence for every dimension before averaging them into an overall rating.",
+      "Let the strongest first impression stand because it captures fit more naturally than a rubric.",
+      "Ask the most senior interviewer to decide which trait matters most.",
+      "Replace the structured interview with a longer informal conversation."
+    ],
+    "correctMove": "Score each dimension separately and require evidence for every dimension before averaging them into an overall rating.",
+    "biasExplanation": "One favorable cue is spilling over into unrelated judgments that have not earned the same confidence.",
+    "moveExplanation": "Separating dimensions prevents one positive impression from licensing a whole-person verdict too early."
+  },
+  {
+    "id": "assessment-023",
+    "title": "The first-pass screen with visible identity cues",
+    "scenario": "Managers insist they are evaluating only professionalism, but the first-pass review still includes names, photos, and school signals even though those cues are not needed to judge the work sample.",
+    "biasOptions": ["implicit-bias", "halo-effect", "false-consensus-effect", "hostile-attribution-bias"],
+    "correctBias": "implicit-bias",
+    "moveOptions": [
+      "Hide unnecessary identity cues on the first pass and use explicit scoring criteria for the material being judged.",
+      "Keep all the identity cues visible because experienced managers can correct for them mentally.",
+      "Replace the first pass with an unstructured gut-feel discussion.",
+      "Assume any evaluator who denies bias is already neutral enough."
+    ],
+    "correctMove": "Hide unnecessary identity cues on the first pass and use explicit scoring criteria for the material being judged.",
+    "biasExplanation": "Unneeded social markers are being allowed to influence a judgment that is supposed to rest on the work itself.",
+    "moveExplanation": "Masking the cues and tightening the rubric reduces the chance that fast stereotype-linked signals steer the call."
+  },
+  {
+    "id": "assessment-024",
+    "title": "One ugly incident defines the whole vendor",
+    "scenario": "After one painfully visible failure, a client starts describing an entire vendor relationship as a disaster even though the broader service record has been mostly solid and low-drama.",
+    "biasOptions": ["negativity-bias", "availability-heuristic", "loss-aversion", "fundamental-attribution-error"],
+    "correctBias": "negativity-bias",
+    "moveOptions": [
+      "Count the positive, neutral, and negative episodes separately before letting the worst incident own the whole evaluation.",
+      "Use the most painful incident as the only serious evidence because bad events are always more informative.",
+      "Ignore the failure completely so the review stays balanced.",
+      "Judge the relationship by whichever side sounds angrier in the meeting."
+    ],
+    "correctMove": "Count the positive, neutral, and negative episodes separately before letting the worst incident own the whole evaluation.",
+    "biasExplanation": "The bad incident may matter, but it is receiving more global weight than the total record clearly warrants.",
+    "moveExplanation": "Restoring the surrounding base line helps determine whether the negative event is diagnostic or simply dominating attention."
+  },
+  {
+    "id": "assessment-025",
+    "title": "Learning only from the winners on stage",
+    "scenario": "A founder draws strategic lessons from ten celebrated startup stories without asking how many similar startups followed the same playbook and disappeared before anyone invited them onstage.",
+    "biasOptions": ["survivorship-bias", "availability-heuristic", "base-rate-neglect", "optimism-bias"],
+    "correctBias": "survivorship-bias",
+    "moveOptions": [
+      "Reconstruct the hidden denominator by asking how many similar cases failed or vanished before treating the visible winners as representative.",
+      "Focus on the most inspiring winners because the market has already validated them.",
+      "Ignore the failed firms because failure stories are less actionable.",
+      "Assume public visibility is a good filter for truth."
+    ],
+    "correctMove": "Reconstruct the hidden denominator by asking how many similar cases failed or vanished before treating the visible winners as representative.",
+    "biasExplanation": "The visible success stories are being treated as the sample, even though survival is what made them visible in the first place.",
+    "moveExplanation": "Restoring the missing failures is the only way to know whether the lesson came from success or from selection."
+  },
+  {
+    "id": "assessment-026",
+    "title": "Everyone probably agrees with me",
+    "scenario": "A manager assumes most of the team privately supports a new policy because the people he talks to most often support it and because open disagreement in meetings has been sparse.",
+    "biasOptions": ["false-consensus-effect", "naive-realism", "groupthink", "social-desirability-bias"],
+    "correctBias": "false-consensus-effect",
+    "moveOptions": [
+      "Collect anonymous independent responses before treating local conversational ease as evidence of the wider distribution.",
+      "Assume silence means agreement because disagreement would have surfaced otherwise.",
+      "Poll only the people most engaged in the topic because they care the most.",
+      "Use your own preference as the best estimate of what reasonable people probably think."
+    ],
+    "correctMove": "Collect anonymous independent responses before treating local conversational ease as evidence of the wider distribution.",
+    "biasExplanation": "The manager is overestimating how widely his own view is shared based on a partial and socially distorted sample.",
+    "moveExplanation": "Anonymous first-pass data is the quickest way to separate local ease from actual consensus."
+  },
+  {
+    "id": "assessment-027",
+    "title": "The win proves my talent, the loss proves the environment",
+    "scenario": "A salesperson explains a strong quarter as proof of skill and discipline, then explains the next weak quarter almost entirely in terms of bad territory, poor timing, and weak leads.",
+    "biasOptions": ["self-serving-bias", "hindsight-bias", "outcome-bias", "fundamental-attribution-error"],
+    "correctBias": "self-serving-bias",
+    "moveOptions": [
+      "List the strongest internal and external explanations for both outcomes before deciding which factors carried the most weight.",
+      "Assume the better quarter reveals the truth and the weaker quarter is too contaminated by circumstances to analyze.",
+      "Use the more flattering explanation to protect motivation.",
+      "Judge both quarters entirely by whether the salesperson feels confident about them now."
+    ],
+    "correctMove": "List the strongest internal and external explanations for both outcomes before deciding which factors carried the most weight.",
+    "biasExplanation": "Success and failure are being explained through noticeably different standards in a self-protective direction.",
+    "moveExplanation": "Forcing both types of causes onto both outcomes is a direct check against ego-driven credit and blame sorting."
+  },
+  {
+    "id": "assessment-028",
+    "title": "The famous name at the end of the memo",
+    "scenario": "Executives begin treating a recommendation as almost settled once they learn a famous advisor endorsed it, even though the written rationale itself is thin and the advisor's expertise is only adjacent to the problem.",
+    "biasOptions": ["authority-bias", "halo-effect", "groupthink", "framing-effect"],
+    "correctBias": "authority-bias",
+    "moveOptions": [
+      "Evaluate the recommendation once with the source label hidden and ask what support the reasons themselves actually provide.",
+      "Give extra weight to the memo because a famous person would not risk endorsing a weak idea.",
+      "Treat adjacent expertise as close enough for any strategic question.",
+      "Avoid asking follow-up questions so the advisor's confidence is not undermined."
+    ],
+    "correctMove": "Evaluate the recommendation once with the source label hidden and ask what support the reasons themselves actually provide.",
+    "biasExplanation": "Prestige is being allowed to substitute for issue-specific support and domain fit.",
+    "moveExplanation": "Source-blind evaluation helps separate borrowed status from the actual argumentative weight of the memo."
+  },
+  {
+    "id": "assessment-029",
+    "title": "I can explain it, so I must understand it",
+    "scenario": "A student feels certain she understands a public policy after hearing a polished summary, but when asked to explain the mechanism step by step and apply it to a new case, the structure quickly collapses.",
+    "biasOptions": ["illusion-of-explanatory-depth", "overconfidence-effect", "curse-of-knowledge", "belief-bias"],
+    "correctBias": "illusion-of-explanatory-depth",
+    "moveOptions": [
+      "Require a step-by-step explanation plus one transfer case before counting the concept as understood.",
+      "Trust the feeling of fluency because explanations that come smoothly are usually accurate enough.",
+      "Move on once the terminology can be repeated confidently.",
+      "Use the same example again until it sounds even cleaner."
+    ],
+    "correctMove": "Require a step-by-step explanation plus one transfer case before counting the concept as understood.",
+    "biasExplanation": "The learner is mistaking familiarity and fluent recall for deeper structural understanding.",
+    "moveExplanation": "A mechanism walk-through and transfer test reveal whether the understanding can do real cognitive work or only repeat a smooth surface summary."
+  },
+  {
+    "id": "assessment-030",
+    "title": "Leaving the harmful policy untouched feels cleaner",
+    "scenario": "Leaders know a legacy workflow is producing regular low-level harm, but they still resist changing it because any mistake during the transition would feel more directly traceable to them than the ongoing harm of leaving it alone.",
+    "biasOptions": ["omission-bias", "status-quo-bias", "default-effect", "loss-aversion"],
+    "correctBias": "omission-bias",
+    "moveOptions": [
+      "Compare the consequences of action and inaction side by side instead of treating the untouched workflow as morally neutral.",
+      "Assume the safer path is to avoid acting because inaction carries less responsibility.",
+      "Wait until the legacy workflow causes a dramatic crisis and then decide quickly.",
+      "Judge the issue only by whether the transition would produce bad headlines."
+    ],
+    "correctMove": "Compare the consequences of action and inaction side by side instead of treating the untouched workflow as morally neutral.",
+    "biasExplanation": "Inaction is being granted unwarranted moral innocence even though it actively preserves the harmful outcome.",
+    "moveExplanation": "Putting both paths on the same consequence table prevents omission from hiding behind the appearance of passivity."
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "identity-turns-errors-into-defenses",
+    "title": "Identity can turn ordinary errors into defended positions",
+    "summary": "A theory article on how ego, ownership, and prior commitment change not just what people conclude, but how stubbornly they organize reasons around the conclusion.",
+    "intro": "Some distortions are not powered mainly by speed or ignorance. They are powered by how expensive a revision would feel. Once a belief, project, or self-story becomes identity-bearing, error correction starts competing with self-protection.",
+    "sections": [
+      {
+        "heading": "The cost of being wrong is not only factual",
+        "paragraphs": [
+          "A judgment can threaten competence, loyalty, status, or self-respect long before it threatens logic. When that happens, the correction problem changes shape. People are no longer deciding only what is true. They are also deciding what kind of person they will feel like after the revision.",
+          "That is one reason motivated reasoning, self-serving bias, sunk cost effect, and status quo bias often cluster together. Each one can protect a self-relevant arrangement by changing what kind of evidence or cost feels salient."
+        ]
+      },
+      {
+        "heading": "Why defended positions harden",
+        "paragraphs": [
+          "Once revision becomes identity-expensive, the mind becomes inventive. It can move standards, reinterpret losses, inflate past investment, or treat continuity as neutrality. None of those moves need to feel cynical from the inside. They often feel like fairness, loyalty, or realism.",
+          "This is why debiasing cannot rely only on asking people to be more objective. It has to lower the ego cost of updating and separate self-worth from verdict preservation."
+        ],
+        "bullets": [
+          "Identity cost can bend standards before it bends explicit conclusions.",
+          "Past commitment can impersonate evidence for future commitment.",
+          "Good process makes revision feel less like self-erasure."
+        ]
+      },
+      {
+        "heading": "What structural repair looks like here",
+        "paragraphs": [
+          "Decision journals, outside reviewers, premortems, and explicit stopping rules all help because they move some of the burden off private willpower. They create conditions under which revision can happen without feeling like a total personal collapse.",
+          "If a bias site wants to help with defended positions, it has to teach not just what is wrong, but how to make changing course psychologically survivable."
+        ]
+      }
+    ],
+    "relatedBiases": ["motivated-reasoning", "self-serving-bias", "sunk-cost-effect", "status-quo-bias", "default-effect"]
+  },
+  {
+    "slug": "people-judgment-biases-travel-in-packs",
+    "title": "Biases in people judgment rarely arrive one at a time",
+    "summary": "An article on why halo effect, attribution errors, implicit bias, and related distortions tend to compound rather than appear in isolation.",
+    "intro": "People judgment is one of the fastest routes to confident error because multiple shortcuts can stack before anyone notices the pile. A vivid impression, a trait inference, a social cue, and a status signal can all lean the same way and make the final verdict feel unusually obvious.",
+    "sections": [
+      {
+        "heading": "Why social impressions compound so quickly",
+        "paragraphs": [
+          "A favorable first cue can create a halo. A negative outburst can become a trait story. A social marker can steer expectation before explicit evidence is weighed. By the time anyone asks for reasons, the mind is already explaining a judgment that was assembled through several channels at once.",
+          "This is one reason people judgment feels so trustworthy from inside. Multiple biased cues can converge on the same answer and make it feel corroborated."
+        ]
+      },
+      {
+        "heading": "What the stack often looks like",
+        "paragraphs": [
+          "A charismatic person can benefit from halo effect and authority bias at once. A stressful interaction can trigger both negativity bias and fundamental attribution error. Ambiguous identity cues can quietly shape which behavior gets remembered and how it is interpreted.",
+          "When the distortions line up, the combined result feels more than plausible. It feels overdetermined."
+        ],
+        "bullets": [
+          "One cue can change what other cues are even noticed.",
+          "Trait inference often arrives before situational explanation gets a fair hearing.",
+          "Process structure matters more than retrospective sincerity."
+        ]
+      },
+      {
+        "heading": "Why structured evaluation matters",
+        "paragraphs": [
+          "The strongest repair is not to shame judgment out of existence. It is to separate dimensions, slow the first pass, anonymize what can be anonymized, and require evidence against explicit criteria. Good process keeps one social cue from becoming a whole human verdict.",
+          "That is why so many CogBias pages now point toward checklists, blind reviews, and independent scoring rather than just better labels."
+        ]
+      }
+    ],
+    "relatedBiases": ["halo-effect", "fundamental-attribution-error", "implicit-bias", "authority-bias", "negativity-bias", "hostile-attribution-bias"]
+  },
+  {
+    "slug": "visible-success-is-not-the-whole-sample",
+    "title": "Visible success stories are not the whole sample",
+    "summary": "A theory essay on why memorable winners create seductive but incomplete lessons when the failures disappear from view.",
+    "intro": "Success is easy to notice and easy to narrate. Failure often vanishes into silence, withdrawal, nonpublication, or irrelevance. That asymmetry makes visible winners extremely tempting teaching objects and extremely dangerous stand-ins for the full distribution.",
+    "sections": [
+      {
+        "heading": "Why visible samples flatter the lesson",
+        "paragraphs": [
+          "Success stories are not usually false. They are just incomplete. They arrive with detail, confidence, and memorable sequence, which makes them excellent stories and poor denominators.",
+          "Once the visible winners become the sample, survivorship bias and availability heuristic begin helping each other. The memorable cases are also the selected cases."
+        ]
+      },
+      {
+        "heading": "How bad sample logic masquerades as wisdom",
+        "paragraphs": [
+          "Advice built from survivors can sound deeply practical because the narrative is concrete. But the lesson may be tracking who remained visible rather than what actually works across the whole field.",
+          "The same danger appears in business lore, investing, media fame, and career mythmaking. The winners are not lying merely by being present. The lie appears when presence is mistaken for representativeness."
+        ],
+        "bullets": [
+          "Selection can distort a sample even when every visible case is real.",
+          "Vivid winners invite overgeneralization because they are easy to remember and admire.",
+          "A missing denominator is often the real hidden variable."
+        ]
+      },
+      {
+        "heading": "What stronger reasoning looks like",
+        "paragraphs": [
+          "Stronger reasoning asks who disappeared, who never got published, who left the funnel early, and what baseline failure rate surrounds the visible success. The corrective move is not cynicism. It is denominator recovery.",
+          "A site that teaches this well helps readers resist one of the oldest seductions in public reasoning: turning the visible exception into the general rule."
+        ]
+      }
+    ],
+    "relatedBiases": ["survivorship-bias", "availability-heuristic", "base-rate-neglect", "overconfidence-effect", "optimism-bias"]
+  },
+  {
+    "slug": "smooth-explanations-can-hide-thin-understanding",
+    "title": "A smooth explanation can still hide thin understanding",
+    "summary": "A practical article on why fluency, familiarity, and articulate recall can look like mastery long before deeper understanding is present.",
+    "intro": "People often mistake an easy explanation for a deep explanation. Once a concept can be restated smoothly, it starts to feel understood. But verbal fluency is a weak test of whether the structure is really there.",
+    "sections": [
+      {
+        "heading": "Why fluency feels like understanding",
+        "paragraphs": [
+          "Retrieval ease is a seductive cue. If a phrase comes quickly or a mechanism can be summarized in familiar words, the mind often upgrades that smoothness into a judgment of competence.",
+          "This is why illusion of explanatory depth, overconfidence effect, and curse of knowledge fit together so well. Each one treats a feeling of ease as if it were a reliable meter of grasp."
+        ]
+      },
+      {
+        "heading": "Where the illusion breaks",
+        "paragraphs": [
+          "The illusion usually breaks under demand for transfer. Contrast this case with a nearby case. Explain the mechanism without the slogan. Predict what would count against the current reading. Teach it to someone who does not already share the background assumptions.",
+          "These are not cruel tests. They are the first places where understanding has to cash out into structure rather than recital."
+        ],
+        "bullets": [
+          "Recognition is easier than explanation.",
+          "Explanation is easier than transfer.",
+          "Transfer is easier than calibrated performance under uncertainty."
+        ]
+      },
+      {
+        "heading": "What educational sites should do about it",
+        "paragraphs": [
+          "That is why CogBias keeps adding quick checks, near-neighbor contrasts, repair questions, and assessments that ask for the next move rather than just the right noun. The site should keep forcing the distinction between sounding fluent and thinking well.",
+          "If the user leaves with less bluffable understanding, the site is doing its real job."
+        ]
+      }
+    ],
+    "relatedBiases": ["illusion-of-explanatory-depth", "overconfidence-effect", "curse-of-knowledge", "belief-bias", "dunning-kruger-effect"]
+  }
+]
