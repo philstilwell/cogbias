@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "repetition-is-not-corroboration",
+    "title": "Repetition is not corroboration, even when it feels like social proof",
+    "summary": "A theory article on how repetition, uptake, and residue can make weak claims feel progressively more settled without substantially improving the evidence underneath them.",
+    "intro": "One of the hardest media-literacy lessons is that repeated claims can simulate the feel of multi-source support. A story gets circulated, picked up, simplified, corrected badly, and recirculated until the social experience of hearing it begins to masquerade as evidential depth.",
+    "sections": [
+      {
+        "heading": "How weak claims become cognitively sturdy",
+        "paragraphs": [
+          "Availability cascade raises plausibility through repetition. Bandwagon effect adds follow-the-crowd momentum. Continued influence effect keeps the first explanatory frame alive even after it is corrected. By the time all three processes have done their work, people can feel as though they have encountered many reasons when they have mainly encountered one socially reinforced narrative.",
+          "This is why debiasing public claims cannot stop at identifying falsehood. It also has to identify the circulation structure that made the claim feel repeatedly rediscovered."
+        ]
+      },
+      {
+        "heading": "Why corrections so often underperform",
+        "paragraphs": [
+          "Corrections frequently subtract without replacing. They tell people what is no longer true but do not provide a satisfying causal frame for what is true instead. The old explanation remains easier to think with, so it keeps leaking back into reasoning.",
+          "That is one reason 'we already debunked this' so often sounds stronger than it functions. Social and cognitive residue can survive sincere acknowledgment of the correction."
+        ],
+        "bullets": [
+          "Hearing something often is not the same as seeing many strong sources.",
+          "Popularity and explanatory usefulness can both inflate a weak claim.",
+          "Good corrections replace, not merely retract."
+        ]
+      },
+      {
+        "heading": "What a better site and reader should do",
+        "paragraphs": [
+          "Readers need separate boxes for source count, repetition count, and uptake count. They also need a habit of asking what alternative story should fill the space once a bad frame is removed.",
+          "A teaching site should therefore train users not only to ask whether a claim is wrong, but also why it kept feeling right after the fix."
+        ]
+      }
+    ],
+    "relatedBiases": ["availability-cascade", "bandwagon-effect", "continued-influence-effect", "availability-heuristic", "confirmation-bias"]
+  },
+  {
+    "slug": "preferences-are-often-constructed-in-context",
+    "title": "Preferences are often constructed in context, not merely revealed",
+    "summary": "An article on how menus, proxies, defaults, system outputs, and urgency cues can manufacture what later feels like a straightforward preference.",
+    "intro": "People often talk as though preferences pre-exist in clean form and decisions merely reveal them. Real choices are usually noisier. The frame, the proxy, the third option, the automated recommendation, and the pressure to move can all help build the preference being reported.",
+    "sections": [
+      {
+        "heading": "Why context shapes what feels natural",
+        "paragraphs": [
+          "Attribute substitution answers the easier question. Decoy effect changes how options compare. Automation bias gives machine output disproportionate authority. Action bias makes visible movement feel better than deliberate restraint. These are different distortions, but they all show that the context of choosing helps create what later feels like an independent choice.",
+          "This is not a small footnote to decision theory. It changes how we should design interfaces, meetings, menus, and recommendation systems."
+        ]
+      },
+      {
+        "heading": "What manipulated choice often feels like from inside",
+        "paragraphs": [
+          "The experience is not usually 'I am being manipulated.' It is 'this option now looks more reasonable.' The context has already done its work before the chooser names what moved.",
+          "That is why the strongest repair is comparative redesign. Remove the decoy. Hide the recommendation for a first pass. State the target attribute explicitly. Let waiting compete against acting."
+        ],
+        "bullets": [
+          "The easier question can quietly replace the right question.",
+          "A dominated option can change preference without adding value.",
+          "Recommendation and urgency cues can make one option feel pre-validated."
+        ]
+      },
+      {
+        "heading": "What good teaching should emphasize",
+        "paragraphs": [
+          "A bias site should help readers see that clean preference often arrives after the architecture has already been tilted. The more this is understood, the less mysterious many consumer, political, and organizational choices become.",
+          "Choice architecture is not merely cosmetic. It is cognitive environment design."
+        ]
+      }
+    ],
+    "relatedBiases": ["attribute-substitution", "decoy-effect", "automation-bias", "action-bias", "default-effect", "framing-effect"]
+  },
+  {
+    "slug": "self-protection-often-arrives-as-story-repair",
+    "title": "Self-protection often arrives as story repair, not as open defiance",
+    "summary": "A theory essay on how people defend choices, identity, and coherence by editing memory, standards, and self-description rather than by simply declaring that they refuse to change.",
+    "intro": "When beliefs, decisions, and values collide, people do not always respond with blunt denial. More often they engage in narrative repair. The original tension gets softened by better-sounding memory, nicer standards, or a flattering account of where bias supposedly lives.",
+    "sections": [
+      {
+        "heading": "Why contradiction does not stay naked for long",
+        "paragraphs": [
+          "Cognitive dissonance makes contradiction expensive. Choice-supportive bias edits the memory of the choice. Bias blind spot relocates the distortion mainly into other people. These are not separate curiosities. They are overlapping ways of keeping the self-story coherent enough to inhabit comfortably.",
+          "That is why direct correction can feel strangely ineffective. The issue is not always refusal to think. It is the existence of cheaper ways to keep thinking while preserving the current self-story."
+        ]
+      },
+      {
+        "heading": "How self-repair hides inside reasonableness",
+        "paragraphs": [
+          "The revised account often sounds respectable. The choice was wiser than it first looked. The contradiction was never that sharp. The other side is more biased than we are. Because the repairs are intelligible, they are easy to mistake for neutral interpretation.",
+          "A bias site does readers a service when it helps them distinguish psychologically useful coherence from epistemically earned coherence."
+        ],
+        "bullets": [
+          "Narrative repair can look like reflection while still being self-protective.",
+          "Memory, standards, and bias location can all be edited under pressure.",
+          "Good revision requires keeping the original conflict visible long enough."
+        ]
+      },
+      {
+        "heading": "What stronger self-audit looks like",
+        "paragraphs": [
+          "Better self-audit asks what the contradiction really was, what the rejected option really offered, and what a skeptic of one's own story would still insist on preserving. Those questions slow the repair long enough for cleaner learning to happen.",
+          "This is one of the reasons CogBias keeps investing in self-checks and process prompts instead of relying on definitions alone."
+        ]
+      }
+    ],
+    "relatedBiases": ["cognitive-dissonance", "choice-supportive-bias", "bias-blind-spot", "self-serving-bias", "motivated-reasoning"]
+  },
+  {
+    "slug": "one-person-stories-and-big-number-cases-pull-differently",
+    "title": "One-person stories and big-number cases pull judgment very differently",
+    "summary": "An article on why identifiable cases, vivid prototypes, and human-scale stories can overpower larger but more abstract evidence and need deliberate rebalancing.",
+    "intro": "Human cognition is not naturally scope-proportional. The vivid person, the representationally neat story, and the emotionally legible case often dominate what the larger but flatter pattern cannot command by itself.",
+    "sections": [
+      {
+        "heading": "Why one face can outweigh one thousand statistics",
+        "paragraphs": [
+          "Compassion fade shows that care does not scale cleanly with numbers. Conjunction fallacy shows that vividness and representativeness can outrun probability. Availability heuristic helps explain why the memorable case keeps returning first.",
+          "These are not moral failures in a simple sense. They are limits of what vividness naturally tracks."
+        ]
+      },
+      {
+        "heading": "The danger of letting vividness own the verdict",
+        "paragraphs": [
+          "A single face can humanize an issue, but it can also distort what proportionate response requires. A richly detailed scenario can aid understanding, but it can also overpower the broader statistical container it belongs inside. Once vividness becomes the main weight-bearing beam, larger truths go underrepresented.",
+          "This matters in charity, policy, media, medicine, and teaching wherever emotionally legible cases compete with broader distributions."
+        ],
+        "bullets": [
+          "Identifiability is not the same thing as magnitude.",
+          "Narrative fit is not the same thing as probability.",
+          "What is easiest to care about is not always what most deserves care."
+        ]
+      },
+      {
+        "heading": "What better calibration requires",
+        "paragraphs": [
+          "Good calibration keeps both surfaces visible at once: one concrete case and the larger scale, one vivid scenario and the broader probability structure. The goal is not to eliminate human stories, but to stop letting them silently monopolize the judgment.",
+          "That is one of the educational tasks of a site like CogBias: helping readers keep compassion, scale, and probability in the same frame."
+        ]
+      }
+    ],
+    "relatedBiases": ["compassion-fade", "conjunction-fallacy", "availability-heuristic", "base-rate-neglect", "neglect-of-probability"]
+  }
+]

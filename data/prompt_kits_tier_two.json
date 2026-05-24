@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "misinformation-residue-scan",
+    "title": "Misinformation Residue Scan",
+    "intro": "Use this when a claim has already been corrected or contested, but you suspect the first version is still quietly shaping explanation and uptake.",
+    "requirements": "Paste the original claim, the correction if one exists, and the current explanation or conversation that still seems influenced by the earlier version.",
+    "relatedBiases": [
+      "continued-influence-effect",
+      "availability-cascade",
+      "bandwagon-effect",
+      "confirmation-bias"
+    ],
+    "promptLines": [
+      "Analyze the material below as a misinformation-residue scan.",
+      "",
+      "Your tasks:",
+      "1. Restate the original false or disputed frame and the later correction separately.",
+      "2. Explain what explanatory work the original frame was doing for readers or listeners.",
+      "3. Identify signs that the earlier frame is still influencing memory or reasoning after correction.",
+      "4. Suggest a replacement explanation that could occupy the space the misinformation used to fill.",
+      "5. End with three questions that would help a team or reader stop reasoning with the old frame.",
+      "",
+      "Material to scan:",
+      "[PASTE THE CLAIM, CORRECTION, AND CURRENT DISCUSSION HERE]"
+    ]
+  },
+  {
+    "slug": "choice-architecture-audit-plus",
+    "title": "Choice Architecture Audit Plus",
+    "intro": "Use this when a decision may be getting steered by the menu, the frame, the decoy, the proxy question, or the push to act visibly.",
+    "requirements": "Paste the choice, the options, any default or recommended option, and how the options are currently being presented.",
+    "relatedBiases": [
+      "decoy-effect",
+      "attribute-substitution",
+      "action-bias",
+      "automation-bias"
+    ],
+    "promptLines": [
+      "Analyze the situation below as a deeper choice-architecture audit.",
+      "",
+      "Do the following:",
+      "1. Restate the actual decision and the target attribute that should decide it.",
+      "2. Identify which easier proxy, comparison trick, system recommendation, or urgency cue may be steering the choice.",
+      "3. Explain how the current setup could be manufacturing preference rather than revealing it.",
+      "4. Rebuild the decision in a cleaner comparison format that removes the most distorting cue.",
+      "5. End with a better decision protocol for the next pass.",
+      "",
+      "Decision setup:",
+      "[PASTE THE OPTIONS, PRESENTATION, AND CURRENT LEAN HERE]"
+    ]
+  },
+  {
+    "slug": "self-justification-conflict-probe",
+    "title": "Self-Justification Conflict Probe",
+    "intro": "Use this when a person, team, or institution seems to be editing memory, standards, or narrative to make a contradiction easier to live with.",
+    "requirements": "Paste the contradictory commitments, the decision or behavior in question, and the justification currently being used to smooth the conflict.",
+    "relatedBiases": [
+      "cognitive-dissonance",
+      "choice-supportive-bias",
+      "bias-blind-spot",
+      "self-serving-bias"
+    ],
+    "promptLines": [
+      "Analyze the material below as a self-justification and contradiction probe.",
+      "",
+      "Your tasks:",
+      "1. Name the commitments, values, or memories that are currently in tension.",
+      "2. Show how the current narrative reduces discomfort without necessarily resolving the contradiction honestly.",
+      "3. Identify which biases may be editing memory, standards, or self-description.",
+      "4. Separate the psychologically comforting story from the most evidence-responsible story.",
+      "5. End with three questions that would keep the contradiction visible long enough for a cleaner revision.",
+      "",
+      "Material to probe:",
+      "[PASTE THE DECISION, JUSTIFICATION, OR CONFLICT HERE]"
+    ]
+  }
+]

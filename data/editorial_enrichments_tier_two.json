@@ -1,0 +1,470 @@
+[
+  {
+    "slug": "action-bias",
+    "whatItFeelsLike": "Doing something feels like competence, care, or leadership, while waiting can feel like passivity even when waiting would produce the better result.",
+    "examples": {
+      "everyday": "A parent intervenes immediately in a small conflict before enough is known because quick action feels more responsible than observation.",
+      "workplace": "A manager launches a visible initiative after a rough week mainly so the team can see movement, even though the first need is cleaner diagnosis.",
+      "public": "Commentators praise leaders for rapid visible response before asking whether the action actually addressed the real failure mode."
+    },
+    "redFlags": [
+      "The main defense of the choice is that it was better to act than to do nothing.",
+      "Visibility and decisiveness are being treated as substitutes for fit.",
+      "The cost of premature intervention is barely compared with the cost of waiting."
+    ],
+    "reflectionQuestions": [
+      "If I could not be seen acting, would this still look like the best move?",
+      "What information would become available if I delayed action briefly?",
+      "Am I solving the problem or solving the discomfort of not yet acting?"
+    ],
+    "confusions": [
+      {
+        "slug": "reactance",
+        "note": "Reactance resists pressure; action bias prefers visible motion even without coercion."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence inflates certainty; action bias makes movement feel inherently superior to restraint."
+      },
+      {
+        "slug": "omission-bias",
+        "note": "Omission bias privileges inaction morally; action bias privileges action psychologically and performatively."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write one sentence for what waiting would teach you before you default to intervention.",
+      "team": "Ask someone to argue for deliberate inaction or observation as a live option rather than as indecision.",
+      "system": "Use pause rules for ambiguous incidents so action has to compete against explicit watch-and-learn alternatives."
+    },
+    "teachingNote": "This page helps show that motion and judgment are not the same thing. Students often need permission to see restraint as a real decision."
+  },
+  {
+    "slug": "attribute-substitution",
+    "whatItFeelsLike": "The hard judgment disappears and a simpler question quietly takes its place, but the final answer still feels as if it addressed the original problem.",
+    "examples": {
+      "everyday": "A person asked how risky something is starts answering how scary it feels instead.",
+      "workplace": "A hiring panel asked who will perform best starts drifting toward who seemed most polished in the interview room.",
+      "public": "People asked whether a policy will work begin answering whether they like the group proposing it."
+    },
+    "redFlags": [
+      "A difficult judgment turns suspiciously quick and fluent.",
+      "The answer is built from a cue that is easier to sense than the actual target attribute.",
+      "When asked to explain the bridge from the easy cue to the hard verdict, the explanation stays thin."
+    ],
+    "reflectionQuestions": [
+      "What was the original hard question before the easier one replaced it?",
+      "Which cue am I actually measuring right now?",
+      "What evidence would directly answer the target attribute rather than its proxy?"
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability uses ease of recall as evidence; attribute substitution is the broader swap from a hard attribute to an easier one."
+      },
+      {
+        "slug": "halo-effect",
+        "note": "Halo effect lets one positive trait spread; attribute substitution replaces a complex judgment with an easier cue altogether."
+      },
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring clings to the first reference point; attribute substitution answers a different and easier question."
+      }
+    ],
+    "repairMoves": {
+      "solo": "State the target question in plain language and name the proxy you are tempted to use instead.",
+      "team": "Separate the decision criteria and ask which criterion each person is actually using.",
+      "system": "Design review templates that require direct evidence for the target attribute rather than free-form impressions."
+    },
+    "teachingNote": "This entry is a good bridge from classic heuristics into more general process diagnosis because it reveals how many other biases ride on proxy questions."
+  },
+  {
+    "slug": "automation-bias",
+    "whatItFeelsLike": "The automated answer feels like a neutral starting point, and disagreeing with it begins to feel like extra work or extra personal risk.",
+    "examples": {
+      "everyday": "A driver follows the navigation app into the wrong place because the device feels more authoritative than local cues.",
+      "workplace": "An analyst waves through a system recommendation even after noticing a small inconsistency because the model output feels safer than personal override.",
+      "public": "Institutions treat automated scoring as objective enough to excuse not inspecting where the system fit is weak."
+    },
+    "redFlags": [
+      "The automated output is being treated as the default truth rather than one input.",
+      "People notice conflicting evidence but hesitate to override the system.",
+      "The trust level in the tool is more specific than the actual evidence for its domain fit."
+    ],
+    "reflectionQuestions": [
+      "What would I conclude here if the automated output were hidden for the first pass?",
+      "Which conditions make this system less reliable than it sounds?",
+      "Am I using the tool as evidence or as permission not to think harder?"
+    ],
+    "confusions": [
+      {
+        "slug": "authority-bias",
+        "note": "Authority bias defers to status figures; automation bias defers to system output because it feels machine-neutral."
+      },
+      {
+        "slug": "default-effect",
+        "note": "Default effect privileges the preselected option; automation bias privileges the automated recommendation as if it were the natural baseline."
+      },
+      {
+        "slug": "overconfidence-effect",
+        "note": "Overconfidence inflates personal certainty; automation bias outsources certainty to the system."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write your own first-pass judgment before revealing the automated output whenever the workflow allows it.",
+      "team": "Assign explicit responsibility for naming when the system is likely outside its strongest conditions.",
+      "system": "Require reason codes for both accepting and overriding automated recommendations in high-stakes workflows."
+    },
+    "teachingNote": "This page becomes more valuable as AI and scoring systems spread because it helps readers separate tool support from tool surrender."
+  },
+  {
+    "slug": "availability-cascade",
+    "whatItFeelsLike": "Once enough people keep saying the same thing, the belief starts feeling socially and cognitively settled before the evidence actually catches up.",
+    "examples": {
+      "everyday": "A rumor about a school policy keeps circulating until parents begin treating it as basically confirmed because everyone has heard it so often.",
+      "workplace": "A repeated story about why a project failed becomes the accepted account even though the original evidence base was shallow and secondhand.",
+      "public": "A public claim becomes harder to question the more often it is repeated across news, commentary, and conversation."
+    },
+    "redFlags": [
+      "The claim's credibility is rising mainly through repetition and uptake.",
+      "People cite the fact that everyone is talking about it as if that were evidence.",
+      "Later retellings remember the circulation but not the original evidential weakness."
+    ],
+    "reflectionQuestions": [
+      "What was the original evidence before the repetition loop began?",
+      "How much of this belief is being carried by social circulation rather than direct support?",
+      "If the same claim had stayed quiet, would it still look this plausible?"
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability heuristic concerns easy recall in an individual mind; availability cascade describes a social repetition loop that amplifies that effect collectively."
+      },
+      {
+        "slug": "bandwagon-effect",
+        "note": "Bandwagon effect follows what others believe; availability cascade explains how the belief gets socially inflated into seeming more credible in the first place."
+      },
+      {
+        "slug": "continued-influence-effect",
+        "note": "Continued influence effect keeps corrected misinformation alive; availability cascade helps that misinformation spread and harden before the correction lands."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Trace the claim back to its earliest evidential anchor instead of judging it by current circulation volume.",
+      "team": "Separate 'widely repeated' from 'well supported' explicitly in discussion notes.",
+      "system": "Require source chains and evidential summaries for fast-moving public claims before operational decisions are made."
+    },
+    "teachingNote": "This is one of the best pages for showing how individual salience and social amplification can work together."
+  },
+  {
+    "slug": "bandwagon-effect",
+    "whatItFeelsLike": "The crowd's direction starts to feel like the safest and maybe smartest place to stand, even before the reasons are independently inspected.",
+    "examples": {
+      "everyday": "A person starts liking a product more once it seems to be what everyone else is choosing.",
+      "workplace": "A team drifts toward a tool or strategy because rival teams have already adopted it and not joining now feels like lagging behind.",
+      "public": "People treat the popularity of a movement or claim as evidence that the underlying view must be closer to the truth."
+    },
+    "redFlags": [
+      "Popularity is being used as a proxy for merit.",
+      "Independent reasons shrink as social uptake grows.",
+      "People become less willing to inspect the case once adoption passes a visible threshold."
+    ],
+    "reflectionQuestions": [
+      "What would I think here if I did not know how many people already endorsed it?",
+      "Am I following evidence or following visible adoption?",
+      "Which reasons survive if the crowd signal is removed?"
+    ],
+    "confusions": [
+      {
+        "slug": "groupthink",
+        "note": "Groupthink is about pressure inside a decision group; bandwagon effect is broader uptake driven by the momentum of others' beliefs or choices."
+      },
+      {
+        "slug": "false-consensus-effect",
+        "note": "False consensus overestimates agreement; bandwagon effect conforms to agreement once it is perceived."
+      },
+      {
+        "slug": "availability-cascade",
+        "note": "Availability cascade explains how repetition raises plausibility; bandwagon effect is the follow-the-crowd behavior that often follows."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Write your verdict before checking adoption numbers, rankings, or visible sentiment if possible.",
+      "team": "Ask which arguments would still remain if no one knew the popularity signal.",
+      "system": "Hide social counts or delay exposure to them in evaluation workflows that should begin independently."
+    },
+    "teachingNote": "This entry helps differentiate social proof from evidence while still acknowledging that popularity can sometimes carry information without automatically proving merit."
+  },
+  {
+    "slug": "bias-blind-spot",
+    "whatItFeelsLike": "Other people's bias patterns are easy to notice because they look like interpretation, while your own view still feels like direct access to what is simply there.",
+    "examples": {
+      "everyday": "Someone quickly names friends' double standards but treats their own judgment as ordinary common sense.",
+      "workplace": "A team prides itself on being data driven while noticing politics and ego distortions mainly in other departments.",
+      "public": "People diagnose propaganda, tribalism, and motivated reasoning everywhere except in the information environments they already trust."
+    },
+    "redFlags": [
+      "Bias diagnosis points outward much more easily than inward.",
+      "The self-description emphasizes neutrality while rivals are described in psychological terms.",
+      "Calls for debiasing are aimed mainly at the other side."
+    ],
+    "reflectionQuestions": [
+      "Which bias do I find easiest to see in others but hardest to imagine in myself?",
+      "What would someone skeptical of my view say is bending my judgment here?",
+      "If I am less biased than average on this issue, what is the evidence for that unusually flattering conclusion?"
+    ],
+    "confusions": [
+      {
+        "slug": "naive-realism",
+        "note": "Naive realism treats one's view as the facts; bias blind spot adds the asymmetry that others seem more susceptible to distortion than oneself."
+      },
+      {
+        "slug": "self-serving-bias",
+        "note": "Self-serving bias protects outcomes and self-image; bias blind spot protects one's sense of being the comparatively unbiased observer."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias skews evidence search; bias blind spot hides that skew more effectively in oneself than in others."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Name the bias risk on your own side before naming it on the other side.",
+      "team": "Build routines where each person states how their own position could be distorted before critiquing rivals.",
+      "system": "Use paired red-team reviews that require self-critique and out-group critique under the same format."
+    },
+    "teachingNote": "This page is a strong meta-entry because it explains why simply learning bias labels does not automatically make users safer from them."
+  },
+  {
+    "slug": "choice-supportive-bias",
+    "whatItFeelsLike": "Once the choice is yours, memory and evaluation start rearranging themselves so the selected option looks cleaner and the rejected alternatives look weaker than they originally did.",
+    "examples": {
+      "everyday": "After choosing one apartment, a renter begins remembering the chosen place's flaws as smaller and the rejected places' flaws as larger.",
+      "workplace": "A team that picked a vendor later retells the selection process as more decisive and one-sided than the original discussion really was.",
+      "public": "Voters start remembering their own chosen candidate as having always been the clearly better option, even where the original tradeoffs were obvious."
+    },
+    "redFlags": [
+      "The chosen option keeps looking better in memory than it did during the original comparison.",
+      "Rejected alternatives get remembered mainly by their defects.",
+      "Past ambivalence gets compressed into a story of clear superiority."
+    ],
+    "reflectionQuestions": [
+      "What did I actually dislike about the option I chose at the time?",
+      "Am I remembering the rivals fairly, or only as foils for my final decision?",
+      "What record from the original comparison would stop memory from flattering the chosen option?"
+    ],
+    "confusions": [
+      {
+        "slug": "outcome-bias",
+        "note": "Outcome bias flatters decisions because of the result; choice-supportive bias flatters them because they were your choices even before the outcome is fully known."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias protects current beliefs; choice-supportive bias specifically edits memory around already selected options."
+      },
+      {
+        "slug": "cognitive-dissonance",
+        "note": "Cognitive dissonance describes tension among inconsistent commitments; choice-supportive bias is one memory-and-evaluation strategy for reducing that tension after choosing."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Save a short pre-decision note on what each option genuinely offered and cost before the memory edits begin.",
+      "team": "Record the real tradeoffs in the decision memo, not only the final rationale for the winning choice.",
+      "system": "Use decision journals that preserve what the rejected alternatives looked like at the moment of choice."
+    },
+    "teachingNote": "This entry pairs well with postmortem work because it shows how memory starts defending the chosen path almost immediately."
+  },
+  {
+    "slug": "conjunction-fallacy",
+    "whatItFeelsLike": "The richer, more vivid story feels more probable because it seems to fit the person or situation better, even though adding details should not make the event more likely than the broader category.",
+    "examples": {
+      "everyday": "A description of someone seems so specific that people judge the narrower story as more likely than the more general one that contains it.",
+      "workplace": "A team treats a detailed failure chain as more probable than the simpler broader event of the project merely slipping.",
+      "public": "Commentary gives extra probability credit to narratives that feel coherent and representative even when the added conditions should mathematically reduce likelihood."
+    },
+    "redFlags": [
+      "Specificity is being mistaken for probability.",
+      "The more story-like option feels more likely mainly because it is easier to picture.",
+      "People resist the broader category because it feels too plain despite being more probable."
+    ],
+    "reflectionQuestions": [
+      "Does the added detail really add probability, or only vividness?",
+      "Which option contains the other as a subset?",
+      "Am I grading plausibility of the story or probability of the event?"
+    ],
+    "confusions": [
+      {
+        "slug": "base-rate-neglect",
+        "note": "Base-rate neglect ignores the background prevalence; conjunction fallacy specifically violates the rule that adding conditions cannot increase probability."
+      },
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability uses memorable examples; conjunction fallacy uses representativeness and vivid narrative fit to overrate the narrower story."
+      },
+      {
+        "slug": "attribute-substitution",
+        "note": "Attribute substitution can explain part of the mechanism when representativeness or vivid fit is used instead of actual probability."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Translate the story into set language and ask which option is the broader container.",
+      "team": "Force probability judgments to be stated before the narrative embellishment is read aloud.",
+      "system": "Use forecasting templates that separate scenario vividness from numerical likelihood."
+    },
+    "teachingNote": "This page is especially useful for teaching that coherence and probability are not interchangeable, even when the coherent story feels smarter."
+  },
+  {
+    "slug": "continued-influence-effect",
+    "whatItFeelsLike": "The correction is remembered, but the original misinformation still keeps sneaking back into explanation as if it left a residue the retraction never fully cleared.",
+    "examples": {
+      "everyday": "A person repeats a corrected rumor's implied causal story days later because the first version still feels more explanatory than the correction.",
+      "workplace": "A debunked incident narrative keeps shaping discussion because the team still lacks a satisfying replacement explanation.",
+      "public": "Even after a false claim is corrected, commentary and memory keep using it as if part of the story were still basically true."
+    },
+    "redFlags": [
+      "The original false detail keeps reappearing in later explanation.",
+      "People remember that the claim was corrected but still reason with it.",
+      "The correction removed the fact but did not replace the causal story."
+    ],
+    "reflectionQuestions": [
+      "What explanatory gap did the misinformation fill that the correction left empty?",
+      "Am I still using the original story because it remains more narratively satisfying than the retraction?",
+      "What replacement account should occupy the space the false claim used to fill?"
+    ],
+    "confusions": [
+      {
+        "slug": "misinformation-effect",
+        "note": "Misinformation effect changes memory content itself; continued influence effect focuses on corrected misinformation still shaping later reasoning."
+      },
+      {
+        "slug": "availability-cascade",
+        "note": "Availability cascade spreads the claim socially; continued influence effect explains why it keeps affecting reasoning even after correction."
+      },
+      {
+        "slug": "confirmation-bias",
+        "note": "Confirmation bias favors supportive material; continued influence effect can persist even when people acknowledge the correction sincerely."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Replace the false claim with an explicit alternative explanation rather than merely crossing it out mentally.",
+      "team": "When correcting misinformation, say what happened instead and why the first account stuck.",
+      "system": "Design correction protocols that include replacement causal stories, not just retraction language."
+    },
+    "teachingNote": "This page is crucial for media literacy because it shows why 'we already corrected that' is often not enough."
+  },
+  {
+    "slug": "decoy-effect",
+    "whatItFeelsLike": "A comparison that should be about A versus B starts tilting because C makes one option look like the obvious winner by contrast.",
+    "examples": {
+      "everyday": "A buyer suddenly prefers the middle option because a worse nearby option was introduced to make it look especially reasonable.",
+      "workplace": "A pricing or package decision shifts after a dominated offer is added to steer attention toward the target option.",
+      "public": "Choice architecture uses a weak comparison option to make one preferred path look like the smart compromise."
+    },
+    "redFlags": [
+      "Preferences move after a dominated third option appears.",
+      "The newly favored option is winning by contrast rather than by direct merit alone.",
+      "People talk less about A versus B and more about how much better B looks than C."
+    ],
+    "reflectionQuestions": [
+      "Would my preference between A and B stay the same if C vanished?",
+      "Is the new option adding information or only changing the comparison frame?",
+      "Which pairwise comparison actually matters here?"
+    ],
+    "confusions": [
+      {
+        "slug": "default-effect",
+        "note": "Default effect privileges the preselected option; decoy effect changes preference by altering the comparison set."
+      },
+      {
+        "slug": "anchoring-effect",
+        "note": "Anchoring fixes on a first number or frame; decoy effect reshapes preference through asymmetric comparison."
+      },
+      {
+        "slug": "framing-effect",
+        "note": "Framing changes wording or emphasis; decoy effect changes the option set so one choice looks stronger by contrast."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Compare the core options pairwise without the decoy present before choosing.",
+      "team": "Ask whether the third option would still be worth showing if it were not steering preference.",
+      "system": "Audit menus, pricing tables, and proposals for dominated options that exist mainly to manipulate comparison."
+    },
+    "teachingNote": "This entry is one of the strongest demonstrations that preferences are often constructed in context rather than merely revealed."
+  },
+  {
+    "slug": "compassion-fade",
+    "whatItFeelsLike": "One vivid identifiable victim can command moral energy that a much larger abstract group somehow does not, even when the stakes are objectively greater.",
+    "examples": {
+      "everyday": "A person feels a stronger urge to help one named case than a larger but more statistical set of people with the same need.",
+      "workplace": "A team mobilizes around one visible hardship while staying numb to a broader pattern affecting many more people.",
+      "public": "Coverage of one identifiable tragedy drives more response than a larger anonymous disaster described mostly in numbers."
+    },
+    "redFlags": [
+      "Emotional response scales badly with the number of affected people.",
+      "Identifiability is doing more work than total impact.",
+      "Large statistical suffering is treated as cognitively flatter and therefore less urgent."
+    ],
+    "reflectionQuestions": [
+      "How much of my concern is being generated by identifiability rather than magnitude?",
+      "What would this case feel like if the named single victim became a larger anonymous group?",
+      "Am I allowing emotional vividness to underweight larger but less narratively sharp harms?"
+    ],
+    "confusions": [
+      {
+        "slug": "availability-heuristic",
+        "note": "Availability helps explain why vivid cases dominate recall; compassion fade is the moral-response version where larger anonymous groups receive less felt compassion."
+      },
+      {
+        "slug": "negativity-bias",
+        "note": "Negativity bias overweights bad information; compassion fade specifically concerns the non-linear collapse of caring as victims become more numerous and abstract."
+      },
+      {
+        "slug": "scope-neglect",
+        "note": "Scope neglect concerns insensitivity to size differences more broadly; compassion fade is the emotionally specific version tied to helping and moral response."
+      }
+    ],
+    "repairMoves": {
+      "solo": "Translate the named case back into the full scope before deciding how much weight the situation deserves.",
+      "team": "Put one vivid human story next to the total scale data so identifiability and magnitude stay visible together.",
+      "system": "Design reporting and philanthropic decisions so statistical harm is not left emotionally invisible."
+    },
+    "teachingNote": "This page helps users see that moral seriousness and emotional vividness are not linearly aligned."
+  },
+  {
+    "slug": "cognitive-dissonance",
+    "whatItFeelsLike": "Conflicting commitments create pressure that makes reinterpretation, justification, or attitude shift feel easier than holding the contradiction in the open.",
+    "examples": {
+      "everyday": "Someone who sees themselves as health-conscious starts rationalizing a recurring habit that clearly conflicts with that identity.",
+      "workplace": "A team that values evidence finds itself defending a favored project and slowly changes the story about what counts as evidence.",
+      "public": "People confronted with a contradiction between identity and fact often start modifying the meaning of one side rather than accepting the tension plainly."
+    },
+    "redFlags": [
+      "The contradiction is being relieved by reinterpretation rather than examined directly.",
+      "Standards or values are being quietly redefined to reduce tension.",
+      "The person sounds more invested in restoring inner coherence than in testing the conflict honestly."
+    ],
+    "reflectionQuestions": [
+      "What two commitments are currently in tension here?",
+      "How am I relieving the discomfort of contradiction right now?",
+      "What would it look like to keep both sides of the conflict visible without rushing to tidy them up?"
+    ],
+    "confusions": [
+      {
+        "slug": "motivated-reasoning",
+        "note": "Motivated reasoning moves standards to protect desired conclusions; cognitive dissonance names the inner tension that often motivates those moves."
+      },
+      {
+        "slug": "choice-supportive-bias",
+        "note": "Choice-supportive bias edits memory after choosing; cognitive dissonance is the broader conflict pressure that can trigger those repairs."
+      },
+      {
+        "slug": "self-serving-bias",
+        "note": "Self-serving bias distributes credit and blame in ego-friendly ways; cognitive dissonance is the discomfort when beliefs, identity, and behavior stop fitting cleanly together."
+      }
+    ],
+    "repairMoves": {
+      "solo": "State the contradiction in plain language before deciding which part should move and which part should stay.",
+      "team": "Create space where revising a stance does not require total humiliation or identity collapse.",
+      "system": "Preserve written values, assumptions, and commitments so later reinterpretation has to confront the original record."
+    },
+    "teachingNote": "This entry helps explain why people do not merely hold bad views; they often actively reorganize belief and memory to reduce psychological tension."
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "before-you-trust-the-repeat",
+    "title": "Before You Trust The Repeat",
+    "summary": "A quick information check for claims that feel increasingly true because they are circulating smoothly, not because they have been freshly verified.",
+    "question": "What part of this claim's plausibility is coming from repetition, correction failure, or visible uptake rather than from direct support?",
+    "steps": [
+      "Trace the claim back to its earliest evidential source rather than its most repeated retelling.",
+      "Ask whether the correction, if one exists, offered a real replacement explanation or only a retraction.",
+      "Separate source count from repetition count and from popularity count.",
+      "Name what would still support the claim if the social circulation signal were hidden."
+    ],
+    "relatedBiases": [
+      "availability-cascade",
+      "continued-influence-effect",
+      "bandwagon-effect",
+      "availability-heuristic"
+    ]
+  },
+  {
+    "slug": "before-you-let-the-menu-decide",
+    "title": "Before You Let The Menu Decide",
+    "summary": "A choice-architecture check for decisions that may be getting bent by the comparison set, the proxy being used, or the pressure to act visibly.",
+    "question": "Am I choosing the best option, or the option the current frame is making easiest to endorse?",
+    "steps": [
+      "Rewrite the target question so the real decision criterion is explicit.",
+      "Compare the core options pairwise without the decoy, preselection, or prestige cue if possible.",
+      "Ask whether action is being preferred because it is action rather than because it is fit.",
+      "Check what your judgment would be before the system recommendation or crowd signal is shown."
+    ],
+    "relatedBiases": [
+      "attribute-substitution",
+      "decoy-effect",
+      "action-bias",
+      "automation-bias"
+    ]
+  },
+  {
+    "slug": "before-you-tidy-the-story",
+    "title": "Before You Tidy The Story",
+    "summary": "A self-justification check for the moments when memory, standards, or self-description are being rearranged to make a choice or contradiction easier to live with.",
+    "question": "What tension, tradeoff, or contradiction am I trying to make disappear too cheaply?",
+    "steps": [
+      "State the conflict or tradeoff in plain language before you defend either side.",
+      "Recover what you actually thought of the alternatives before the final choice hardened into memory.",
+      "Ask which bias you are most tempted to diagnose in others but exempt in yourself.",
+      "Write what a less flattering but more honest account of the situation would still have to include."
+    ],
+    "relatedBiases": [
+      "cognitive-dissonance",
+      "choice-supportive-bias",
+      "bias-blind-spot",
+      "self-serving-bias"
+    ]
+  }
+]

@@ -43,7 +43,10 @@
     "negativity-bias",
     "naive-realism",
     "hindsight-bias",
-    "survivorship-bias"
+    "survivorship-bias",
+    "bias-blind-spot",
+    "conjunction-fallacy",
+    "continued-influence-effect"
   ],
   "categories": [
     {
@@ -264,6 +267,52 @@
         "hostile-attribution-bias",
         "naive-realism",
         "ingroup-bias"
+      ]
+    },
+    {
+      "title": "Trace The Source Chain",
+      "slug": "trace-the-source-chain",
+      "summary": "Separate original support from repetition and uptake before treating a widely circulated claim as well established.",
+      "steps": [
+        "Find the earliest evidential source you can locate.",
+        "Count independent sources separately from retellings.",
+        "Ask what replacement explanation should exist if the first frame turns out to be wrong."
+      ],
+      "relatedBiases": [
+        "availability-cascade",
+        "continued-influence-effect",
+        "bandwagon-effect"
+      ]
+    },
+    {
+      "title": "Run A Blind First Pass",
+      "slug": "run-a-blind-first-pass",
+      "summary": "Evaluate the core options once before the recommendation, popularity signal, or decoy comparison is allowed to steer you.",
+      "steps": [
+        "State the target criterion in plain language.",
+        "Compare the core options before viewing the recommendation or dominated extra option.",
+        "Only then reveal the extra framing cues and note what changed."
+      ],
+      "relatedBiases": [
+        "decoy-effect",
+        "attribute-substitution",
+        "automation-bias",
+        "bandwagon-effect"
+      ]
+    },
+    {
+      "title": "Preserve The Original Tradeoff",
+      "slug": "preserve-the-original-tradeoff",
+      "summary": "Record the real conflict, tradeoff, and rejected alternatives before memory and self-justification begin polishing the story.",
+      "steps": [
+        "Write the strongest case for the option you rejected or the commitment now in tension.",
+        "State what evidence or values were genuinely pulling in opposite directions.",
+        "Revisit that record before retelling why the final path was obviously right."
+      ],
+      "relatedBiases": [
+        "choice-supportive-bias",
+        "cognitive-dissonance",
+        "bias-blind-spot"
       ]
     }
   ],

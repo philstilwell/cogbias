@@ -47,12 +47,12 @@ async function readJsonArraySeries(prefix) {
 
 const siteConfig = await readJsonFile("site.json");
 const rawEntries = await readJsonFile("biases.json");
-const editorialEnrichments = await readJsonFile("editorial_enrichments.json");
+const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
-const learningPathData = await readJsonFile("learning_paths.json");
-const selfCheckData = await readJsonFile("self_checks.json");
+const learningPathData = await readJsonArraySeries("learning_paths");
+const selfCheckData = await readJsonArraySeries("self_checks");
 const assessmentBankData = await readJsonArraySeries("assessment_bank");
-const promptKitData = await readJsonFile("prompt_kits.json");
+const promptKitData = await readJsonArraySeries("prompt_kits");
 const theoryArticleData = await readJsonArraySeries("theory_articles");
 
 function mergeUniqueStrings(values = []) {
@@ -195,7 +195,13 @@ for (const countermove of siteConfig.countermeasures || []) {
   }
 }
 
+const seenPathSlugs = new Set();
 for (const path of learningPaths) {
+  if (seenPathSlugs.has(path.slug)) {
+    throw new Error(`Duplicate learning path slug "${path.slug}".`);
+  }
+  seenPathSlugs.add(path.slug);
+
   for (const slug of path.biasSlugs || []) {
     if (!entryBySlug.has(slug)) {
       throw new Error(`Unknown learning path slug "${slug}" on path "${path.slug}".`);
@@ -203,7 +209,13 @@ for (const path of learningPaths) {
   }
 }
 
+const seenCheckSlugs = new Set();
 for (const check of selfCheckData) {
+  if (seenCheckSlugs.has(check.slug)) {
+    throw new Error(`Duplicate self-check slug "${check.slug}".`);
+  }
+  seenCheckSlugs.add(check.slug);
+
   for (const slug of check.relatedBiases || []) {
     if (!entryBySlug.has(slug)) {
       throw new Error(`Unknown self-check related slug "${slug}" on "${check.slug}".`);
@@ -211,7 +223,13 @@ for (const check of selfCheckData) {
   }
 }
 
+const seenPromptSlugs = new Set();
 for (const promptKit of promptKitData) {
+  if (seenPromptSlugs.has(promptKit.slug)) {
+    throw new Error(`Duplicate prompt slug "${promptKit.slug}".`);
+  }
+  seenPromptSlugs.add(promptKit.slug);
+
   for (const slug of promptKit.relatedBiases || []) {
     if (!entryBySlug.has(slug)) {
       throw new Error(`Unknown prompt related slug "${slug}" on "${promptKit.slug}".`);
@@ -378,7 +396,7 @@ function renderFooter() {
       <footer class="footer">
         <div class="footer-inner">
           <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/assessment_bank*.json</code>, <code>data/prompt_kits.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
+          <p class="footer-note">Source of truth: <code>data/site.json</code>, <code>data/biases.json</code>, <code>data/editorial_enrichments*.json</code>, <code>data/entry_teaching_modules*.json</code>, <code>data/learning_paths*.json</code>, <code>data/self_checks*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/prompt_kits*.json</code>, <code>data/theory_articles*.json</code>, and <code>scripts/import_wikipedia_biases.py</code>.</p>
           <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
         </div>
       </footer>`;
@@ -2144,9 +2162,9 @@ function renderAboutPage() {
             <ul class="muted">
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
-              <li><code>data/editorial_enrichments.json</code> for richer hand-authored entry sections.</li>
+              <li><code>data/editorial_enrichments*.json</code> for richer hand-authored entry sections.</li>
               <li><code>data/entry_teaching_modules*.json</code> and <code>data/assessment_bank*.json</code> for flagship-page pedagogy and the mixed assessment runner.</li>
-              <li><code>data/learning_paths.json</code>, <code>data/self_checks.json</code>, <code>data/prompt_kits.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
+              <li><code>data/learning_paths*.json</code>, <code>data/self_checks*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>
           </div>

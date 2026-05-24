@@ -1,0 +1,410 @@
+[
+  {
+    "slug": "action-bias",
+    "quickCheck": "Am I solving the problem, or just solving the discomfort of not yet moving?",
+    "analogyClaim": "This is like yanking on every control in turbulence because stillness feels too much like helplessness.",
+    "analogyResponse": "Visible motion can soothe anxiety without improving the outcome. Good intervention has to beat thoughtful restraint, not merely look busier than it.",
+    "misuseWarning": "Do not use this label whenever someone acts quickly. Sometimes speed is exactly right. The issue is that action itself is being treated as evidence of quality.",
+    "useLabelWhen": "Use this label when doing something starts to feel inherently superior to waiting, diagnosing, or preserving optionality.",
+    "teachingGauges": [
+      { "label": "Common in live pressure", "low": "Rare", "high": "Frequent", "value": 79, "note": "Strong where visible leadership and time pressure are fused." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 52, "note": "Often clearer to observers than to the actor who feels virtuous urgency." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 86, "note": "Motion is easy to confuse with responsibility." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 33, "note": "Becomes vivid as soon as waiting is treated as a live option rather than a failure." }
+    ],
+    "practiceLab": {
+      "intro": "Action bias is attractive because agency feels morally and socially superior to visible restraint.",
+      "stages": [
+        { "title": "Trigger", "text": "A problem appears under uncertainty, stress, or observation." },
+        { "title": "Felt certainty", "text": "Quick intervention feels like competence while waiting feels like negligence." },
+        { "title": "Distortion", "text": "Action becomes the default standard instead of one option that has to earn its place." },
+        { "title": "Reset", "text": "Write the best case for watchful inaction or delayed action before committing to visible movement." }
+      ],
+      "repairQuestion": "What would I do here if nobody could see whether I acted immediately?"
+    },
+    "caseStudies": [
+      {
+        "title": "Goalkeeper penalty-kick studies",
+        "source": "Wikipedia",
+        "year": "Modern sports research",
+        "url": "https://en.wikipedia.org/wiki/Action_bias",
+        "summary": "Goalkeepers often dive on penalty kicks even though staying centered can sometimes be statistically better, because visible action feels more defensible than stillness.",
+        "whyItFits": "The action is partly chosen because inaction feels harder to justify socially if the outcome goes badly."
+      }
+    ]
+  },
+  {
+    "slug": "attribute-substitution",
+    "quickCheck": "Which easier question am I answering instead of the one I was actually asked?",
+    "analogyClaim": "This is like grading a book's argument by how elegant the cover feels in your hands.",
+    "analogyResponse": "The easier cue may correlate sometimes, but correlation is not permission to forget the original question.",
+    "misuseWarning": "Do not use this label every time a proxy is used. Proxies can be useful. The problem begins when the proxy quietly replaces the target without acknowledgment.",
+    "useLabelWhen": "Use this label when a hard attribute such as risk, competence, or probability is being answered through a simpler cue like fear, polish, or familiarity.",
+    "teachingGauges": [
+      { "label": "Common in fast judgment", "low": "Rare", "high": "Frequent", "value": 88, "note": "This is one of the hidden engines under many other biases." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 34, "note": "Often only visible after the original question is restated cleanly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 90, "note": "The substitute answer often feels like the original answer." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 57, "note": "Powerful once learned, but more abstract than many surface-level bias labels." }
+    ],
+    "practiceLab": {
+      "intro": "Attribute substitution is a hidden-question swap. The final answer still sounds responsive, but the underlying judgment target has shifted.",
+      "stages": [
+        { "title": "Trigger", "text": "A complex judgment demands effort or unfamiliar calculation." },
+        { "title": "Felt certainty", "text": "A simpler cue offers a fast and confident-seeming answer." },
+        { "title": "Distortion", "text": "The easier cue begins masquerading as direct access to the harder attribute." },
+        { "title": "Reset", "text": "State both the target attribute and the tempting proxy in separate sentences before deciding which one is actually being measured." }
+      ],
+      "repairQuestion": "What evidence would answer the original hard question directly rather than through a shortcut?"
+    },
+    "caseStudies": [
+      {
+        "title": "Risk judged by affect",
+        "source": "Wikipedia",
+        "year": "Modern judgment research",
+        "url": "https://en.wikipedia.org/wiki/Attribute_substitution",
+        "summary": "People often answer how risky something is by answering how good or bad it feels, letting affect stand in for analytic risk judgment.",
+        "whyItFits": "An easier evaluative question replaces the harder target attribute while still feeling like the same judgment."
+      }
+    ]
+  },
+  {
+    "slug": "automation-bias",
+    "quickCheck": "If the system output were hidden, what would my own first pass actually say?",
+    "analogyClaim": "This is like treating the autopilot as if it were the weather.",
+    "analogyResponse": "Automation can inform the route without becoming the sky itself. A tool is still one part of the evidential picture, not the whole landscape.",
+    "misuseWarning": "Do not use this label whenever software is trusted. Some systems deserve significant trust. The issue is overdependence that suppresses correction or independent judgment.",
+    "useLabelWhen": "Use this label when automated recommendations or alerts are getting more deference than their actual reliability and fit justify.",
+    "teachingGauges": [
+      { "label": "Common in tool-heavy work", "low": "Rare", "high": "Frequent", "value": 77, "note": "More important as algorithmic decision support spreads." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 47, "note": "Often visible after an obvious override opportunity was passed up." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 84, "note": "Machine output feels like a low-blame source of certainty." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 44, "note": "Requires teaching both tool value and tool limits at the same time." }
+    ],
+    "practiceLab": {
+      "intro": "Automation bias turns recommendation into gravitational center. The system no longer merely informs the judgment; it narrows what judgment feels permissible.",
+      "stages": [
+        { "title": "Trigger", "text": "An automated output arrives before or during human evaluation." },
+        { "title": "Felt certainty", "text": "The output feels objective and safer to follow than a personally owned override." },
+        { "title": "Distortion", "text": "Human correction weakens, even where contextual evidence points the other way." },
+        { "title": "Reset", "text": "Force one independent pass and one explicit review of the system's likely failure conditions." }
+      ],
+      "repairQuestion": "What domain assumption is the system making here that I may be forgetting to test?"
+    },
+    "caseStudies": [
+      {
+        "title": "Clinical and cockpit automation examples",
+        "source": "Wikipedia",
+        "year": "Modern human-factors research",
+        "url": "https://en.wikipedia.org/wiki/Automation_bias",
+        "summary": "Research on automation bias shows that people may miss errors of omission or commission because the system recommendation becomes the assumed baseline.",
+        "whyItFits": "The automation does not just assist. It begins shaping what the human treats as sufficiently checked."
+      }
+    ]
+  },
+  {
+    "slug": "availability-cascade",
+    "quickCheck": "Would this still seem this plausible if it had not been repeated so much in public?",
+    "analogyClaim": "This is like mistaking the echo in a canyon for evidence that more people have joined the conversation.",
+    "analogyResponse": "Louder circulation can create the feel of corroboration even when the same weak claim is only bouncing around the same surface.",
+    "misuseWarning": "Do not use this label for every popular claim. Sometimes repetition follows strong evidence. The issue is that repetition itself is providing the credibility lift.",
+    "useLabelWhen": "Use this label when public circulation and social uptake are amplifying plausibility faster than direct evidence is.",
+    "teachingGauges": [
+      { "label": "Common in media ecosystems", "low": "Rare", "high": "Frequent", "value": 82, "note": "Especially common when speed and virality outrun verification." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 41, "note": "Usually easier to detect after the source chain is reconstructed." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 88, "note": "Public repetition naturally feels like social confirmation." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 46, "note": "A good entry point for misinformation literacy." }
+    ],
+    "practiceLab": {
+      "intro": "Availability cascade is a social plausibility machine. Repetition and circulation create the impression that many minds and many facts have separately endorsed the same claim.",
+      "stages": [
+        { "title": "Trigger", "text": "A claim is vivid enough to circulate and simple enough to repeat." },
+        { "title": "Felt certainty", "text": "The growing familiarity of the claim starts feeling like growing evidence for the claim." },
+        { "title": "Distortion", "text": "Public visibility and evidential support become harder to distinguish." },
+        { "title": "Reset", "text": "Separate source count, repetition count, and actual evidential count before deciding how much weight the claim deserves." }
+      ],
+      "repairQuestion": "How many genuinely independent sources support this apart from social repetition?"
+    },
+    "caseStudies": [
+      {
+        "title": "Public-risk scares amplified by repetition",
+        "source": "Wikipedia",
+        "year": "Modern public discourse",
+        "url": "https://en.wikipedia.org/wiki/Availability_cascade",
+        "summary": "Availability cascades describe how repeated public claims can gain plausibility and policy traction mainly through visibility and reinforcement.",
+        "whyItFits": "The claim's social uptake becomes part of why it feels increasingly true."
+      }
+    ]
+  },
+  {
+    "slug": "bandwagon-effect",
+    "quickCheck": "If I did not know how many others endorsed this, would my judgment move?",
+    "analogyClaim": "This is like choosing a restaurant because the line itself starts tasting like evidence.",
+    "analogyResponse": "Crowds can contain information, but the crowd is not the meal. Good judgment still asks what the line is a line for.",
+    "misuseWarning": "Do not use this label whenever social proof matters. Sometimes popularity really does signal quality. The issue is when uptake outruns independent scrutiny.",
+    "useLabelWhen": "Use this label when popularity itself is doing too much of the persuasive work.",
+    "teachingGauges": [
+      { "label": "Common in social uptake", "low": "Rare", "high": "Frequent", "value": 81, "note": "Highly visible in markets, politics, and fast sentiment environments." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 56, "note": "Often visible once adoption numbers are hidden from evaluators." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 85, "note": "Popularity feels like a practical shortcut when independent review is costly." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 28, "note": "Very teachable with ordinary consumer and opinion examples." }
+    ],
+    "practiceLab": {
+      "intro": "Bandwagon effect turns visible adoption into an argument. A growing crowd makes independent evaluation feel less necessary and less urgent.",
+      "stages": [
+        { "title": "Trigger", "text": "A belief, product, or stance becomes visibly popular." },
+        { "title": "Felt certainty", "text": "Convergence begins to feel like proof that the option has already survived scrutiny." },
+        { "title": "Distortion", "text": "Adoption momentum starts replacing direct inspection." },
+        { "title": "Reset", "text": "Evaluate the reasons once with the popularity signal removed and again with it visible, then compare the difference." }
+      ],
+      "repairQuestion": "What part of my preference is coming from the option itself rather than from the reassurance of not standing apart?"
+    },
+    "caseStudies": [
+      {
+        "title": "Electoral and consumer momentum examples",
+        "source": "Wikipedia",
+        "year": "Modern politics and markets",
+        "url": "https://en.wikipedia.org/wiki/Bandwagon_effect",
+        "summary": "Bandwagon effects are often discussed where visible growth in support creates more support simply because the growth is visible.",
+        "whyItFits": "The popularity signal itself becomes one of the main causal drivers of later preference."
+      }
+    ]
+  },
+  {
+    "slug": "bias-blind-spot",
+    "quickCheck": "What distortion do I think only the other side is susceptible to here?",
+    "analogyClaim": "This is like carrying a smudged lens cleaner and using it only on everyone else's glasses.",
+    "analogyResponse": "The ability to diagnose distortion in others does not guarantee cleaner vision in yourself. Sometimes it just makes self-exemption easier to narrate.",
+    "misuseWarning": "Do not use this label as a clever way of saying everyone is equally biased in every case. The issue is asymmetry of self-diagnosis, not flat moral equivalence.",
+    "useLabelWhen": "Use this label when bias awareness seems to travel outward much more easily than inward.",
+    "teachingGauges": [
+      { "label": "Common in bias discourse", "low": "Rare", "high": "Frequent", "value": 91, "note": "Paradoxically strong among people who know many bias labels already." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 37, "note": "Hard to detect because self-neutrality is built into the experience." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 92, "note": "One's own view rarely feels like one view among many from inside." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 61, "note": "A meta-bias that can survive shallow literacy about bias." }
+    ],
+    "practiceLab": {
+      "intro": "Bias blind spot is what keeps bias education humbling. The more articulate a person is about others' distortions, the easier self-exemption can become.",
+      "stages": [
+        { "title": "Trigger", "text": "A conflict, debate, or judgment invites psychological explanation." },
+        { "title": "Felt certainty", "text": "Other people look like interpreters while the self still looks like the witness." },
+        { "title": "Distortion", "text": "Debiasing becomes a tool for diagnosing rivals instead of disciplining one's own process." },
+        { "title": "Reset", "text": "State the strongest bias risk on your own side before naming it on the opposing side." }
+      ],
+      "repairQuestion": "Which bias label gives me the strongest feeling of superiority when I apply it to others?"
+    },
+    "caseStudies": [
+      {
+        "title": "People rate themselves as less biased than others",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Bias_blind_spot",
+        "summary": "Research on bias blind spot finds that people often judge themselves as less susceptible to bias than other people even while endorsing the general reality of bias.",
+        "whyItFits": "The concept is accepted in the abstract but self-application lags far behind other-application."
+      }
+    ]
+  },
+  {
+    "slug": "choice-supportive-bias",
+    "quickCheck": "How much of my memory of this choice is now defending the fact that it was my choice?",
+    "analogyClaim": "This is like editing the travel brochure after you already bought the ticket.",
+    "analogyResponse": "The destination may still be worthwhile, but post-choice memory often starts making the purchase look cleaner than the original tradeoff really was.",
+    "misuseWarning": "Do not use this label whenever someone remains satisfied with a decision. The issue is memory drift and post-choice revaluation, not mere commitment.",
+    "useLabelWhen": "Use this label when chosen options are remembered as having been stronger and unchosen ones as weaker than the original comparison justified.",
+    "teachingGauges": [
+      { "label": "Common after commitment", "low": "Rare", "high": "Frequent", "value": 76, "note": "Shows up wherever choices become tied to identity or public commitment." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 43, "note": "Often visible when old notes are compared to later retellings." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 88, "note": "Memory naturally wants coherence after commitment." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 36, "note": "Very teachable through pre-commitment note-taking and later comparison." }
+    ],
+    "practiceLab": {
+      "intro": "Choice-supportive bias is one way the mind turns a messy decision into a cleaner autobiographical story.",
+      "stages": [
+        { "title": "Trigger", "text": "A choice has been made and alternatives are now closed or socially costly to revisit." },
+        { "title": "Felt certainty", "text": "The chosen option begins to feel more obviously right than it did at decision time." },
+        { "title": "Distortion", "text": "Memory edits reduce ambivalence and flatter the chosen path." },
+        { "title": "Reset", "text": "Compare the live memory to a preserved record of the original tradeoffs before letting the later story become history." }
+      ],
+      "repairQuestion": "What did the rejected option genuinely have going for it at the time I chose against it?"
+    },
+    "caseStudies": [
+      {
+        "title": "Post-choice reevaluation studies",
+        "source": "Wikipedia",
+        "year": "Modern memory research",
+        "url": "https://en.wikipedia.org/wiki/Choice-supportive_bias",
+        "summary": "People often remember selected options as better than they originally judged them and rejected options as worse after the fact.",
+        "whyItFits": "Commitment invites memory repair in favor of the chosen path."
+      }
+    ]
+  },
+  {
+    "slug": "conjunction-fallacy",
+    "quickCheck": "Am I calling the narrower story more probable just because it feels more representative?",
+    "analogyClaim": "This is like thinking a decorated branch is bigger than the tree because it is more interesting to look at.",
+    "analogyResponse": "Interesting stories can fit well and still belong inside a larger category that remains more probable. Specificity is not probability.",
+    "misuseWarning": "Do not use this label every time someone tells a detailed story. The issue is the mathematical mistake of rating the specific conjunction above the broader set that contains it.",
+    "useLabelWhen": "Use this label when narrative fit or representativeness makes the richer option feel more likely than the more general one.",
+    "teachingGauges": [
+      { "label": "Common in probability talk", "low": "Rare", "high": "Frequent", "value": 71, "note": "Especially active when stories are vivid and categories are abstract." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 50, "note": "Clear once the set relation is named explicitly." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 84, "note": "Representativeness feels like a strong cue if the math is not foregrounded." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 35, "note": "One of the best biases for teaching the distance between coherence and probability." }
+    ],
+    "practiceLab": {
+      "intro": "Conjunction fallacy is what happens when narrative fit outruns set logic.",
+      "stages": [
+        { "title": "Trigger", "text": "A specific story feels highly representative of a person or event." },
+        { "title": "Felt certainty", "text": "The richer description seems more likely because it seems more revealing." },
+        { "title": "Distortion", "text": "Specificity gets mistaken for probability, and the narrower event outranks the broader container." },
+        { "title": "Reset", "text": "Ask which option contains the other, then remember that the container cannot be less probable than one of its subsets." }
+      ],
+      "repairQuestion": "Which option is the superset here, and why am I letting the more vivid subset feel stronger?"
+    },
+    "caseStudies": [
+      {
+        "title": "The Linda problem",
+        "source": "Wikipedia",
+        "year": "1983",
+        "url": "https://en.wikipedia.org/wiki/Conjunction_fallacy",
+        "summary": "In the famous Linda problem, many people judge a more specific description of Linda as more probable than the broader one that logically contains it.",
+        "whyItFits": "Representativeness and vivid fit defeat the simpler probability rule."
+      }
+    ]
+  },
+  {
+    "slug": "continued-influence-effect",
+    "quickCheck": "What part of the old false story is still doing reasoning work because the correction never replaced it?",
+    "analogyClaim": "This is like removing a broken beam from a bridge diagram without drawing a new support line, then wondering why everyone still imagines the old structure.",
+    "analogyResponse": "Retractions often subtract. Good corrections also rebuild. Otherwise the first explanatory frame keeps living in the empty space.",
+    "misuseWarning": "Do not use this label whenever someone remembers the original rumor. The key issue is that corrected misinformation still shapes explanation and inference.",
+    "useLabelWhen": "Use this label when people acknowledge the correction but continue reasoning as if part of the first false account remained true.",
+    "teachingGauges": [
+      { "label": "Common in misinformation", "low": "Rare", "high": "Frequent", "value": 83, "note": "Especially important where corrections are late, thin, or non-explanatory." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 39, "note": "Often only visible when the person's later inferences are examined closely." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 87, "note": "People can sincerely accept a correction and still reason with the old story." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 48, "note": "A powerful media-literacy concept because it explains why debunking can feel incomplete." }
+    ],
+    "practiceLab": {
+      "intro": "Continued influence effect is the residue problem of misinformation. A correction can remove a claim without removing the explanatory work the claim was doing.",
+      "stages": [
+        { "title": "Trigger", "text": "A vivid misinformation frame arrives early and fills an explanatory gap." },
+        { "title": "Felt certainty", "text": "The original account keeps a cognitive advantage because it remains narratively useful." },
+        { "title": "Distortion", "text": "Later reasoning still leans on the old frame even after the person endorses the correction." },
+        { "title": "Reset", "text": "Replace the false claim with a satisfying alternative explanation instead of offering retraction alone." }
+      ],
+      "repairQuestion": "What explanation should occupy the slot the misinformation used to fill?"
+    },
+    "caseStudies": [
+      {
+        "title": "Corrected fire-warehouse narratives",
+        "source": "Wikipedia",
+        "year": "Modern cognitive psychology",
+        "url": "https://en.wikipedia.org/wiki/Continued_influence_effect",
+        "summary": "People can continue citing corrected details from a fire story in later inferences when the correction does not provide a strong replacement explanation.",
+        "whyItFits": "The mind keeps using the first causal frame because the retraction alone did not rebuild the story."
+      }
+    ]
+  },
+  {
+    "slug": "decoy-effect",
+    "quickCheck": "Would my preference stay put if the dominated third option disappeared?",
+    "analogyClaim": "This is like preferring one painting over another because a third, clearly weaker painting was hung next to only one of them.",
+    "analogyResponse": "The third painting changed the contrast, not the intrinsic quality of the first two. Context can build preference without improving the option.",
+    "misuseWarning": "Do not use this label every time an extra option appears. The issue is asymmetric dominance that changes preference between the original options.",
+    "useLabelWhen": "Use this label when a worse third option is steering preference toward a target option by making it look comparatively stronger.",
+    "teachingGauges": [
+      { "label": "Common in choice architecture", "low": "Rare", "high": "Frequent", "value": 74, "note": "Common in menus, pricing, proposals, and interface design." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 62, "note": "Often obvious once the dominated option is removed from the display." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 80, "note": "Constructed preference feels like discovered preference in the moment." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 31, "note": "Very teachable through side-by-side product examples." }
+    ],
+    "practiceLab": {
+      "intro": "Decoy effect shows that preferences are not always waiting inside us fully formed. They can be built through asymmetrical comparison.",
+      "stages": [
+        { "title": "Trigger", "text": "A third option is added that is clearly inferior to one main option but not the other." },
+        { "title": "Felt certainty", "text": "The target option suddenly feels like the balanced or obviously superior choice." },
+        { "title": "Distortion", "text": "Preference shifts because the comparison frame changed, not because the core merits changed." },
+        { "title": "Reset", "text": "Strip the decoy out and compare the original options directly before committing." }
+      ],
+      "repairQuestion": "Which preference here survives if I only evaluate the original pair?"
+    },
+    "caseStudies": [
+      {
+        "title": "Asymmetric-dominance marketing experiments",
+        "source": "Wikipedia",
+        "year": "Modern behavioral economics",
+        "url": "https://en.wikipedia.org/wiki/Decoy_effect",
+        "summary": "Experiments on the decoy effect show that adding a dominated option can reliably shift choice toward the target it makes look stronger by contrast.",
+        "whyItFits": "The added option changes preference without adding genuine value."
+      }
+    ]
+  },
+  {
+    "slug": "compassion-fade",
+    "quickCheck": "Would I still care this much if the same harm were represented statistically rather than personally?",
+    "analogyClaim": "This is like lighting a candle for one face and letting a whole dark hillside disappear because it has no single face attached to it.",
+    "analogyResponse": "Identifiable stories matter, but scale matters too. Moral seriousness should not collapse just because the victims become more numerous and less narratively sharp.",
+    "misuseWarning": "Do not use this label whenever one story is used to humanize an issue. The distortion begins when the larger invisible scope loses too much weight simply because it is statistical.",
+    "useLabelWhen": "Use this label when compassion scales badly with the number of affected people and the identifiability of the victims dominates the response.",
+    "teachingGauges": [
+      { "label": "Common in public response", "low": "Rare", "high": "Frequent", "value": 73, "note": "Highly relevant in media, philanthropy, and policy communication." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 54, "note": "Often visible when one vivid case overwhelms a far larger statistical harm." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 86, "note": "Human attention is naturally drawn toward the identifiable and concrete." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 42, "note": "Needs careful handling so statistical scope is not treated as emotionally optional." }
+    ],
+    "practiceLab": {
+      "intro": "Compassion fade reveals that moral energy is not naturally proportional. Identifiability concentrates feeling while large anonymous harms often flatten out.",
+      "stages": [
+        { "title": "Trigger", "text": "A single vivid victim and a larger anonymous set compete for attention." },
+        { "title": "Felt certainty", "text": "The one face feels more morally real and therefore more urgent than the larger count." },
+        { "title": "Distortion", "text": "Magnitude loses influence because identifiability and narrative sharpness dominate response." },
+        { "title": "Reset", "text": "Keep one concrete story and one scope frame on the page together so the emotional vividness does not erase the larger scale." }
+      ],
+      "repairQuestion": "What response would the full scale deserve if I were not allowed to compress it into one emotionally manageable case?"
+    },
+    "caseStudies": [
+      {
+        "title": "Identifiable-victim effect and large-scale helping",
+        "source": "Wikipedia",
+        "year": "Modern decision research",
+        "url": "https://en.wikipedia.org/wiki/Compassion_fade",
+        "summary": "Studies on compassion fade show that people can respond more strongly to one identifiable victim than to larger numbers of anonymous victims.",
+        "whyItFits": "Emotional salience fails to scale with total harm."
+      }
+    ]
+  },
+  {
+    "slug": "cognitive-dissonance",
+    "quickCheck": "What contradiction am I trying to tidy up before I have really examined it?",
+    "analogyClaim": "This is like hearing two notes clash and reaching for any chord that makes the tension stop, whether or not it is the right music.",
+    "analogyResponse": "Relief from tension is not the same thing as truth. Contradiction sometimes needs to stay visible long enough for the real revision target to become clear.",
+    "misuseWarning": "Do not use this label for every uncomfortable disagreement. The issue is a psychologically costly inconsistency that starts motivating reinterpretation, justification, or selective updating.",
+    "useLabelWhen": "Use this label when people are relieving the discomfort of contradiction by changing stories, standards, or memories rather than confronting the inconsistency directly.",
+    "teachingGauges": [
+      { "label": "Common in identity conflict", "low": "Rare", "high": "Frequent", "value": 84, "note": "Especially strong where values, self-image, and behavior collide." },
+      { "label": "Easy to spot from outside", "low": "Hidden", "high": "Obvious", "value": 36, "note": "Often hard to see because the repairs feel like ordinary explanation from inside." },
+      { "label": "Easy to innocently commit", "low": "Low risk", "high": "Easy slip", "value": 89, "note": "Coherence repair can feel more like sanity than like distortion." },
+      { "label": "Teaching difficulty", "low": "Foundational", "high": "Advanced", "value": 54, "note": "A core concept that becomes much clearer through concrete cases of self-justification." }
+    ],
+    "practiceLab": {
+      "intro": "Cognitive dissonance is the pressure field around inconsistency. Many later biases can be understood as ways of reducing that pressure without openly admitting the revision.",
+      "stages": [
+        { "title": "Trigger", "text": "Belief, behavior, identity, or evidence stop fitting together cleanly." },
+        { "title": "Felt certainty", "text": "The tension feels expensive enough that some fast repair becomes attractive." },
+        { "title": "Distortion", "text": "Interpretation, memory, or standards shift to restore coherence more cheaply than direct revision would." },
+        { "title": "Reset", "text": "Name the conflicting commitments explicitly and ask which one really deserves revision rather than patching the contradiction indirectly." }
+      ],
+      "repairQuestion": "Which part of this tension would I revise if reducing discomfort were not allowed to make the choice for me?"
+    },
+    "caseStudies": [
+      {
+        "title": "Effort-justification and dissonance reduction research",
+        "source": "Wikipedia",
+        "year": "Modern social psychology",
+        "url": "https://en.wikipedia.org/wiki/Cognitive_dissonance",
+        "summary": "Classic dissonance research shows that people often revise attitudes or rationales after costly effort or contradictory behavior in order to reduce inner inconsistency.",
+        "whyItFits": "The repair is aimed at restoring coherence, not merely at discovering a neutral truth."
+      }
+    ]
+  }
+]

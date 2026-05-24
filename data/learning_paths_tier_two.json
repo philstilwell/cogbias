@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "misinformation-memory-and-crowds",
+    "title": "Misinformation, Memory, And Crowds",
+    "summary": "A path for the way repeated claims spread, harden, survive correction, and recruit social uptake long after the original evidence deserved it.",
+    "audience": "Best for media literacy, moderation, public reasoning, classrooms, and anyone working in information-rich environments.",
+    "whenToUse": "Use this path when a claim is gaining traction partly because it is circulating well rather than because it has been carefully verified.",
+    "guidingQuestion": "How do repetition, correction failure, and crowd uptake combine to make weak claims feel increasingly settled?",
+    "biasSlugs": [
+      "availability-cascade",
+      "bandwagon-effect",
+      "continued-influence-effect",
+      "availability-heuristic",
+      "confirmation-bias",
+      "bias-blind-spot"
+    ]
+  },
+  {
+    "slug": "comparison-traps-and-choice-architecture",
+    "title": "Comparison Traps And Choice Architecture",
+    "summary": "A path for the biases that reshape preference by changing the frame, the menu, the proxy, or the amount of visible motion in the decision process.",
+    "audience": "Best for product design, pricing, purchasing, strategy, and anyone building or choosing among options.",
+    "whenToUse": "Use this path when you suspect the choice set itself is manufacturing preference rather than merely revealing it.",
+    "guidingQuestion": "What in the frame or comparison structure is deciding the choice before the merits are cleanly weighed?",
+    "biasSlugs": [
+      "attribute-substitution",
+      "decoy-effect",
+      "default-effect",
+      "action-bias",
+      "automation-bias",
+      "conjunction-fallacy"
+    ]
+  },
+  {
+    "slug": "self-justification-and-meta-bias",
+    "title": "Self-Justification And Meta-Bias",
+    "summary": "A path for the distortions that protect choices, identities, and self-descriptions by editing memory, standards, or the location of bias itself.",
+    "audience": "Best for coaching, teaching, leadership review, therapy-adjacent reflection, and intellectual self-discipline.",
+    "whenToUse": "Use this path when the real work is not spotting another person's bias, but seeing how your own story is defending itself.",
+    "guidingQuestion": "How do people protect coherence and self-respect without fully admitting that protection is happening?",
+    "biasSlugs": [
+      "cognitive-dissonance",
+      "choice-supportive-bias",
+      "bias-blind-spot",
+      "self-serving-bias",
+      "motivated-reasoning",
+      "belief-bias"
+    ]
+  }
+]

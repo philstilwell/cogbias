@@ -1,0 +1,162 @@
+[
+  {
+    "id": "assessment-041",
+    "title": "Doing something feels like leadership",
+    "scenario": "A director insists on launching an immediate visible intervention after a confusing incident even though the team has not yet established what actually failed and waiting one day would reveal much more.",
+    "biasOptions": ["action-bias", "reactance", "overconfidence-effect", "omission-bias"],
+    "correctBias": "action-bias",
+    "moveOptions": [
+      "Write the best case for waiting briefly and for acting now before treating visible motion as the default sign of responsibility.",
+      "Act immediately because observation always looks weak during uncertainty.",
+      "Choose the option that generates the most visible activity in the first hour.",
+      "Ignore the value of diagnosis because speed itself is the main proof of competence."
+    ],
+    "correctMove": "Write the best case for waiting briefly and for acting now before treating visible motion as the default sign of responsibility.",
+    "biasExplanation": "The pressure is not simply uncertainty. It is the feeling that action is inherently better than well-justified restraint.",
+    "moveExplanation": "The repair is to force visible action to compete against deliberate waiting as a real option rather than a presumed failure."
+  },
+  {
+    "id": "assessment-042",
+    "title": "Risk gets replaced by fear",
+    "scenario": "A team discussing cyber risk keeps answering how dangerous a scenario feels instead of how probable it actually is, and the emotional force of the scenario quietly becomes the verdict.",
+    "biasOptions": ["attribute-substitution", "neglect-of-probability", "availability-heuristic", "ambiguity-effect"],
+    "correctBias": "attribute-substitution",
+    "moveOptions": [
+      "State the original target question and the easier proxy question separately before continuing the judgment.",
+      "Keep using emotional intensity because it is the clearest shortcut to practical truth.",
+      "Assume that any scenario that feels dangerous is already the right risk estimate.",
+      "Replace the probability discussion with a vote on who feels most uneasy."
+    ],
+    "correctMove": "State the original target question and the easier proxy question separately before continuing the judgment.",
+    "biasExplanation": "The hard target attribute of risk is being replaced by the easier felt attribute of fear or vividness.",
+    "moveExplanation": "The first correction is to make the hidden question swap explicit so the team can return to the real target attribute."
+  },
+  {
+    "id": "assessment-043",
+    "title": "The system already decided it for us",
+    "scenario": "A reviewer notices that the automated triage tool has likely misread a case, but still leaves the recommendation untouched because overriding the system feels riskier than accepting it.",
+    "biasOptions": ["automation-bias", "authority-bias", "default-effect", "overconfidence-effect"],
+    "correctBias": "automation-bias",
+    "moveOptions": [
+      "Require an independent first-pass judgment or an explicit review of likely model failure conditions before finalizing the recommendation.",
+      "Trust the system because machine output is usually more neutral than human correction.",
+      "Avoid overrides unless many people already disagree with the tool.",
+      "Assume that hesitation to override is itself evidence that the tool is probably right."
+    ],
+    "correctMove": "Require an independent first-pass judgment or an explicit review of likely model failure conditions before finalizing the recommendation.",
+    "biasExplanation": "The automated output is receiving extra authority beyond what the reviewer actually believes the evidence supports.",
+    "moveExplanation": "The repair is to protect human comparison space so the system output does not silently become the only acceptable baseline."
+  },
+  {
+    "id": "assessment-044",
+    "title": "Everyone has heard it by now",
+    "scenario": "A weak public claim is treated as basically established because it has been repeated across several conversations and feeds for weeks, even though most mentions trace back to the same thin origin story.",
+    "biasOptions": ["availability-cascade", "bandwagon-effect", "continued-influence-effect", "confirmation-bias"],
+    "correctBias": "availability-cascade",
+    "moveOptions": [
+      "Separate source count, repetition count, and uptake count before treating the claim as strongly supported.",
+      "Count every retelling as fresh corroboration because independent repetition is how truth normally spreads.",
+      "Judge the claim by how difficult it would now be to oppose in public.",
+      "Assume that social persistence means the original evidence no longer matters much."
+    ],
+    "correctMove": "Separate source count, repetition count, and uptake count before treating the claim as strongly supported.",
+    "biasExplanation": "The claim is gaining plausibility through circulation and repetition rather than through genuinely independent evidential support.",
+    "moveExplanation": "Disaggregating the kinds of reinforcement exposes whether the feeling of corroboration is mostly social echo."
+  },
+  {
+    "id": "assessment-045",
+    "title": "The crowd already settled it",
+    "scenario": "An investor begins favoring an asset mainly because adoption is visibly rising and not joining now feels increasingly like missing what so many others have already validated.",
+    "biasOptions": ["bandwagon-effect", "availability-cascade", "false-consensus-effect", "optimism-bias"],
+    "correctBias": "bandwagon-effect",
+    "moveOptions": [
+      "Evaluate the reasons once without the popularity signal and then compare that judgment to the crowd-aware version.",
+      "Treat the growth in participation as enough evidence that deeper review is mostly unnecessary.",
+      "Assume that visible adoption is better than independent analysis because markets already aggregate truth.",
+      "Increase commitment as the crowd grows so you do not get left behind."
+    ],
+    "correctMove": "Evaluate the reasons once without the popularity signal and then compare that judgment to the crowd-aware version.",
+    "biasExplanation": "The increasing popularity itself is becoming a major reason for endorsement.",
+    "moveExplanation": "Hiding the uptake cue for a clean first pass tests how much of the judgment is really about the asset rather than about convergence."
+  },
+  {
+    "id": "assessment-046",
+    "title": "The bias is always on the other side",
+    "scenario": "A discussion group becomes highly skilled at naming motivated reasoning and tribal distortion in opponents, but almost never uses the same vocabulary to examine its own position.",
+    "biasOptions": ["bias-blind-spot", "naive-realism", "self-serving-bias", "ingroup-bias"],
+    "correctBias": "bias-blind-spot",
+    "moveOptions": [
+      "Require each participant to name the strongest bias risk on their own side before diagnosing the opposing side.",
+      "Assume that people who know more bias vocabulary are automatically less susceptible to bias themselves.",
+      "Focus only on opposing distortions because self-critique usually weakens the case publicly.",
+      "Treat the group's confidence in its own neutrality as sufficient evidence that the blind spot is elsewhere."
+    ],
+    "correctMove": "Require each participant to name the strongest bias risk on their own side before diagnosing the opposing side.",
+    "biasExplanation": "Bias diagnosis is traveling outward far more easily than inward.",
+    "moveExplanation": "Symmetric self-application is the cleanest test of whether bias analysis is functioning as discipline rather than only as weaponry."
+  },
+  {
+    "id": "assessment-047",
+    "title": "The chosen option keeps looking better in memory",
+    "scenario": "Months after choosing a software stack, a team remembers the winning option as having been clearly superior and the rejected options as much weaker than their original notes actually show.",
+    "biasOptions": ["choice-supportive-bias", "outcome-bias", "cognitive-dissonance", "hindsight-bias"],
+    "correctBias": "choice-supportive-bias",
+    "moveOptions": [
+      "Compare the current memory of the options against a preserved record of the original tradeoffs before retelling the choice story.",
+      "Assume later confidence proves the team saw the choice clearly all along.",
+      "Treat memory of the rejected options as unreliable because only the winning option matters now.",
+      "Delete the old comparison notes so the team can align on one cleaner narrative."
+    ],
+    "correctMove": "Compare the current memory of the options against a preserved record of the original tradeoffs before retelling the choice story.",
+    "biasExplanation": "The memory of the choice is being edited in favor of the selected option.",
+    "moveExplanation": "A preserved original record is the strongest check against post-choice memory repair."
+  },
+  {
+    "id": "assessment-048",
+    "title": "The richer story must be more likely",
+    "scenario": "A committee judges a detailed and very representative-sounding failure chain as more probable than the simpler, broader event of the launch just going badly in some way.",
+    "biasOptions": ["conjunction-fallacy", "base-rate-neglect", "attribute-substitution", "planning-fallacy"],
+    "correctBias": "conjunction-fallacy",
+    "moveOptions": [
+      "Identify which option is the broader set and remember that adding extra conditions cannot make the narrower event more probable than its container.",
+      "Prefer the richer scenario because more detail usually means a more precise probability estimate.",
+      "Judge probability by how easy the scenario is to imagine unfolding step by step.",
+      "Treat representativeness as stronger evidence than set logic whenever the story is vivid enough."
+    ],
+    "correctMove": "Identify which option is the broader set and remember that adding extra conditions cannot make the narrower event more probable than its container.",
+    "biasExplanation": "Specificity and narrative fit are outranking the basic probability relation between a set and one of its subsets.",
+    "moveExplanation": "Reinstating the set relation is the direct repair when coherence has started impersonating likelihood."
+  },
+  {
+    "id": "assessment-049",
+    "title": "The correction landed, but the old explanation still runs",
+    "scenario": "After a rumor is debunked, people stop repeating the exact false claim but continue drawing conclusions that still depend on the original rumor's causal story.",
+    "biasOptions": ["continued-influence-effect", "availability-cascade", "misinformation-effect", "confirmation-bias"],
+    "correctBias": "continued-influence-effect",
+    "moveOptions": [
+      "Provide a replacement explanation for what happened instead of only saying the earlier claim was false.",
+      "Keep correcting the original sentence and assume the reasoning will fix itself automatically.",
+      "Ignore the need for a new explanation because removing the false detail should already be enough.",
+      "Treat any later leakage as proof that people preferred the falsehood ideologically."
+    ],
+    "correctMove": "Provide a replacement explanation for what happened instead of only saying the earlier claim was false.",
+    "biasExplanation": "The corrected misinformation is still carrying explanatory force because the retraction did not rebuild the story.",
+    "moveExplanation": "Replacement explanations are often necessary because pure subtraction leaves the first causal frame alive."
+  },
+  {
+    "id": "assessment-050",
+    "title": "The contradiction is getting polished away",
+    "scenario": "A leader who values transparent evidence begins quietly redefining what counts as sufficient proof once the data starts threatening a project she publicly championed.",
+    "biasOptions": ["cognitive-dissonance", "motivated-reasoning", "self-serving-bias", "choice-supportive-bias"],
+    "correctBias": "cognitive-dissonance",
+    "moveOptions": [
+      "State the conflicting commitments explicitly and decide which one actually deserves revision instead of letting the tension be relieved indirectly through moving standards.",
+      "Soften the definition of evidence until both the project and the self-image can be preserved together.",
+      "Treat the discomfort as proof that critics are arguing in bad faith.",
+      "Focus on defending the project first and examine the contradiction only after momentum is restored."
+    ],
+    "correctMove": "State the conflicting commitments explicitly and decide which one actually deserves revision instead of letting the tension be relieved indirectly through moving standards.",
+    "biasExplanation": "The leader is not simply choosing a side. She is reducing the discomfort of inconsistency by altering the standards around the project.",
+    "moveExplanation": "Naming the contradiction openly is the first step toward deciding what should genuinely change instead of letting covert repair do the work."
+  }
+]
