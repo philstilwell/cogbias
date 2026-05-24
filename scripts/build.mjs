@@ -119,6 +119,53 @@ function mergeUniqueStrings(values = []) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function mergeUniqueObjects(values = [], keyForItem) {
+  const merged = new Map();
+
+  for (const item of values.filter(Boolean)) {
+    const key = keyForItem(item);
+    const prior = merged.get(key);
+    merged.set(key, prior ? { ...prior, ...item } : item);
+  }
+
+  return [...merged.values()];
+}
+
+function mergeEntryOverlay(base = {}, overlay = {}) {
+  const merged = { ...base, ...overlay };
+
+  if (base.aliases || overlay.aliases) {
+    merged.aliases = mergeUniqueStrings([...(base.aliases || []), ...(overlay.aliases || [])]);
+  }
+
+  if (base.related || overlay.related) {
+    merged.related = mergeUniqueStrings([...(base.related || []), ...(overlay.related || [])]);
+  }
+
+  if (base.confusions || overlay.confusions) {
+    merged.confusions = mergeUniqueObjects(
+      [...(base.confusions || []), ...(overlay.confusions || [])],
+      (item) => item.slug || item.name || item.note || JSON.stringify(item),
+    );
+  }
+
+  if (base.caseStudies || overlay.caseStudies) {
+    merged.caseStudies = mergeUniqueObjects(
+      [...(base.caseStudies || []), ...(overlay.caseStudies || [])],
+      (item) => `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`,
+    );
+  }
+
+  if (base.sourceTrail || overlay.sourceTrail) {
+    merged.sourceTrail = mergeUniqueObjects(
+      [...(base.sourceTrail || []), ...(overlay.sourceTrail || [])],
+      (item) => `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}::${String(item.source || "").trim().toLowerCase()}`,
+    );
+  }
+
+  return merged;
+}
+
 function sortByTrackAndSequence(left, right) {
   const leftTrack = curriculumTrackBySlug.get(left.track || "")?.order || Number.POSITIVE_INFINITY;
   const rightTrack = curriculumTrackBySlug.get(right.track || "")?.order || Number.POSITIVE_INFINITY;
@@ -130,16 +177,19 @@ function sortByTrackAndSequence(left, right) {
 }
 
 function mergeEntryData(baseEntries, enrichments) {
-  const enrichmentsBySlug = new Map(enrichments.map((entry) => [entry.slug, entry]));
+  const enrichmentsBySlug = new Map();
+
+  for (const enrichment of enrichments) {
+    enrichmentsBySlug.set(
+      enrichment.slug,
+      mergeEntryOverlay(enrichmentsBySlug.get(enrichment.slug) || {}, enrichment),
+    );
+  }
+
   return baseEntries.map((entry) => {
     const enrichment = enrichmentsBySlug.get(entry.slug);
     if (!enrichment) return entry;
-    return {
-      ...entry,
-      ...enrichment,
-      aliases: mergeUniqueStrings([...(entry.aliases || []), ...(enrichment.aliases || [])]),
-      related: mergeUniqueStrings([...(entry.related || []), ...(enrichment.related || [])]),
-    };
+    return mergeEntryOverlay(entry, enrichment);
   });
 }
 

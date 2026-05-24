@@ -149,6 +149,42 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
   activateTab(0);
 }
 
+for (const promptBlock of document.querySelectorAll(".prompt-details .prompt-block")) {
+  promptBlock.tabIndex = -1;
+
+  const toolbar = document.createElement("div");
+  toolbar.className = "prompt-toolbar";
+
+  const button = document.createElement("button");
+  button.className = "button button-secondary button-compact prompt-copy-button";
+  button.type = "button";
+  button.textContent = "Copy prompt";
+
+  button.addEventListener("click", async () => {
+    const text = promptBlock.textContent || "";
+    const originalLabel = button.textContent;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      button.textContent = "Copied";
+      button.classList.add("copied");
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+        button.classList.remove("copied");
+      }, 1800);
+    } catch {
+      button.textContent = "Select text";
+      promptBlock.focus?.();
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 1800);
+    }
+  });
+
+  toolbar.append(button);
+  promptBlock.before(toolbar);
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
