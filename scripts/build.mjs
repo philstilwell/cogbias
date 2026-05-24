@@ -234,22 +234,54 @@ const tasks = siteConfig.categories
 const categoryPalette = ["#2f82c2", "#f5b700", "#178f70", "#df7b35", "#6f72d8", "#c64f7a", "#0f766e", "#a16207"];
 const categoryColors = new Map(tasks.map((task, index) => [task.name, categoryPalette[index % categoryPalette.length]]));
 
+const biasMapDimensions = [
+  { slug: "common", label: "Common in context", low: "Rare", high: "Frequent" },
+  { slug: "spot", label: "Easy to spot from outside", low: "Hidden", high: "Obvious" },
+  { slug: "commit", label: "Easy to innocently commit", low: "Low risk", high: "Easy slip" },
+  { slug: "teaching", label: "Teaching difficulty", low: "Foundational", high: "Advanced" },
+];
+
 function findTeachingGauge(entry, label) {
   const normalizedLabel = String(label || "").trim().toLowerCase();
   return (entry.teachingGauges || []).find((gauge) => String(gauge.label || "").trim().toLowerCase() === normalizedLabel);
 }
 
+function findBiasMapGauge(entry, dimension) {
+  if (dimension.slug === "common") {
+    return (entry.teachingGauges || []).find((gauge) => String(gauge.label || "").trim().toLowerCase().startsWith("common in "));
+  }
+
+  return findTeachingGauge(entry, dimension.label);
+}
+
 function buildBiasMapPoints() {
   return entries
     .map((entry) => {
-      const spotGauge = findTeachingGauge(entry, "Easy to spot from outside");
-      const commitGauge = findTeachingGauge(entry, "Easy to innocently commit");
       const category = (entry.tasks || [])[0] || "Uncategorized";
       const categoryMeta = taskByName.get(category);
-      const x = Number(spotGauge?.value);
-      const y = Number(commitGauge?.value);
+      const dimensions = Object.fromEntries(
+        biasMapDimensions
+          .map((dimension) => {
+            const gauge = findBiasMapGauge(entry, dimension);
+            const value = Number(gauge?.value);
 
-      if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+            if (!Number.isFinite(value)) return null;
+
+            return [
+              dimension.slug,
+              {
+                value,
+                label: gauge?.label || dimension.label,
+                low: gauge?.low || dimension.low,
+                high: gauge?.high || dimension.high,
+                note: gauge?.note || "",
+              },
+            ];
+          })
+          .filter(Boolean),
+      );
+
+      if (Object.keys(dimensions).length < 2) return null;
 
       return {
         slug: entry.slug,
@@ -258,11 +290,8 @@ function buildBiasMapPoints() {
         category,
         categorySlug: categoryMeta?.slug || "",
         color: categoryColors.get(category) || "#54728b",
-        x,
-        y,
         summary: entry.summary || "",
-        xNote: spotGauge?.note || "",
-        yNote: commitGauge?.note || "",
+        dimensions,
       };
     })
     .filter(Boolean)
@@ -1744,12 +1773,9 @@ function renderBiasMapPage() {
     .filter((category) => category.count > 0);
 
   const data = {
-    xLabel: "Easy to spot from outside",
-    xLow: "Hidden",
-    xHigh: "Obvious",
-    yLabel: "Easy to innocently commit",
-    yLow: "Low risk",
-    yHigh: "Easy slip",
+    dimensions: biasMapDimensions,
+    defaultX: "spot",
+    defaultY: "commit",
     points,
     categories,
   };
@@ -1767,8 +1793,8 @@ function renderBiasMapPage() {
     body: `
         <section class="detail-section">
           <p class="eyebrow">Bias Map</p>
-          <h2 class="detail-title">Where biases sit by visibility and temptation.</h2>
-          <p class="detail-deck">This map plots entries with both teaching-gauge estimates. The horizontal axis asks how easy the bias is to spot from the outside; the vertical axis asks how easy it is to innocently commit. Colors follow the site’s category layer.</p>
+          <h2 class="detail-title">Where biases sit across teaching dimensions.</h2>
+          <p class="detail-deck">This map plots entries across any two teaching-gauge dimensions. Choose the horizontal and vertical axes, then use color to keep the category layer visible.</p>
         </section>
 
         <section class="section-block bias-map-shell" data-bias-map-shell>
@@ -1776,15 +1802,37 @@ function renderBiasMapPage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Interactive bias map</h2>
-              <p class="section-copy">Hover, focus, or click a dot to inspect it. Use the controls to isolate one category or find a specific bias.</p>
+              <p class="section-copy">Hover, focus, or click a dot to inspect it. Choose any two dimensions, isolate one category, or find a specific bias.</p>
             </div>
-            <span class="teaching-pill">${points.length} plotted biases</span>
+            <span class="teaching-pill" data-bias-map-count>${points.length} plotted biases</span>
           </div>
 
           <div class="bias-map-controls">
             <label>
               <span>Search</span>
               <input class="search-input" type="search" placeholder="Find a bias..." data-bias-map-search />
+            </label>
+            <label>
+              <span>X axis</span>
+              <select class="search-select" data-bias-map-x-axis>
+                ${biasMapDimensions
+                  .map(
+                    (dimension) =>
+                      `<option value="${escapeHtml(dimension.slug)}"${dimension.slug === data.defaultX ? " selected" : ""}>${escapeHtml(dimension.label)}</option>`,
+                  )
+                  .join("")}
+              </select>
+            </label>
+            <label>
+              <span>Y axis</span>
+              <select class="search-select" data-bias-map-y-axis>
+                ${biasMapDimensions
+                  .map(
+                    (dimension) =>
+                      `<option value="${escapeHtml(dimension.slug)}"${dimension.slug === data.defaultY ? " selected" : ""}>${escapeHtml(dimension.label)}</option>`,
+                  )
+                  .join("")}
+              </select>
             </label>
             <label>
               <span>Category</span>
@@ -1800,13 +1848,13 @@ function renderBiasMapPage() {
 
           <div class="bias-map-layout">
             <div class="bias-map-visual note-panel">
-              <svg class="bias-map-plot" data-bias-map-plot role="img" aria-label="Scatter plot of cognitive biases by outside visibility and innocent-commitment risk"></svg>
-              <p class="search-empty bias-map-empty hidden" data-bias-map-empty>No plotted biases match those filters.</p>
+              <svg class="bias-map-plot" data-bias-map-plot role="img" aria-label="Scatter plot of cognitive biases by selected teaching dimensions"></svg>
+              <p class="search-empty bias-map-empty hidden" data-bias-map-empty>No plotted biases match those axes and filters.</p>
             </div>
             <aside class="bias-map-side">
               <div class="note-panel bias-map-detail" data-bias-map-detail>
                 <h4>Choose a dot</h4>
-                <p class="muted">Each point is a bias page. Select one to see its category, score pair, notes, and a link into the full entry.</p>
+                <p class="muted">Each point is a bias page. Select one to see its category, selected score pair, gauge notes, and a link into the full entry.</p>
               </div>
               <div class="note-panel bias-map-legend" data-bias-map-legend>
                 <h4>Categories</h4>
@@ -1826,12 +1874,12 @@ function renderBiasMapPage() {
 
           <div class="two-column section-block">
             <div class="note-panel">
-              <h4>How to read the upper-left</h4>
-              <p class="muted">High vertical and low horizontal scores mark biases that are easy to fall into but harder for outsiders to notice. These often need process checks before the judgment hardens.</p>
+              <h4>How to read the quadrants</h4>
+              <p class="muted">The quadrant labels update with your selected axes, so the upper-left always means low on the horizontal dimension and high on the vertical one.</p>
             </div>
             <div class="note-panel">
-              <h4>How to read the upper-right</h4>
-              <p class="muted">High scores on both axes mark familiar traps: people may recognize them in others and still slip into them without a deliberate countermeasure.</p>
+              <h4>Why switch axes</h4>
+              <p class="muted">The default view highlights visibility and temptation. Switching axes helps surface teaching difficulty, live frequency, and which categories cluster together under different practical questions.</p>
             </div>
           </div>
         </section>`,

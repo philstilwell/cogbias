@@ -2277,7 +2277,7 @@ img {
 
 .bias-map-controls {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(220px, 0.6fr) auto;
+  grid-template-columns: minmax(220px, 1.1fr) repeat(3, minmax(170px, 0.7fr)) auto;
   gap: 12px;
   align-items: end;
   margin-bottom: 18px;
@@ -2526,6 +2526,10 @@ img {
 
   .assessment-feedback-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bias-map-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

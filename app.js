@@ -213,14 +213,20 @@ const biasMapDataNode = document.querySelector("#bias-map-data");
 if (biasMapShell && biasMapDataNode) {
   const biasMapPlot = biasMapShell.querySelector("[data-bias-map-plot]");
   const biasMapSearch = biasMapShell.querySelector("[data-bias-map-search]");
+  const biasMapXAxis = biasMapShell.querySelector("[data-bias-map-x-axis]");
+  const biasMapYAxis = biasMapShell.querySelector("[data-bias-map-y-axis]");
   const biasMapCategory = biasMapShell.querySelector("[data-bias-map-category]");
   const biasMapReset = biasMapShell.querySelector("[data-bias-map-reset]");
   const biasMapDetail = biasMapShell.querySelector("[data-bias-map-detail]");
   const biasMapEmpty = biasMapShell.querySelector("[data-bias-map-empty]");
+  const biasMapCount = biasMapShell.querySelector("[data-bias-map-count]");
   const legendButtons = Array.from(biasMapShell.querySelectorAll("[data-bias-map-legend-category]"));
   const svgNamespace = "http://www.w3.org/2000/svg";
   const mapData = JSON.parse(biasMapDataNode.textContent || "{}");
   const points = Array.isArray(mapData.points) ? mapData.points : [];
+  const dimensions = Array.isArray(mapData.dimensions) ? mapData.dimensions : [];
+  const defaultXAxis = mapData.defaultX || dimensions[0]?.slug || "";
+  const defaultYAxis = mapData.defaultY || dimensions.find((dimension) => dimension.slug !== defaultXAxis)?.slug || "";
   const chart = {
     width: 920,
     height: 600,
@@ -246,6 +252,57 @@ if (biasMapShell && biasMapDataNode) {
     return String(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   }
 
+  function getDimension(slug) {
+    return dimensions.find((dimension) => dimension.slug === slug) || dimensions[0] || null;
+  }
+
+  function currentAxisSlugs() {
+    return {
+      x: biasMapXAxis?.value || defaultXAxis,
+      y: biasMapYAxis?.value || defaultYAxis,
+    };
+  }
+
+  function gaugeFor(point, axisSlug) {
+    return point?.dimensions?.[axisSlug] || null;
+  }
+
+  function hasGaugeValue(point, axisSlug) {
+    return Number.isFinite(Number(gaugeFor(point, axisSlug)?.value));
+  }
+
+  function normalizePointSearchText(point) {
+    const gaugeText = Object.values(point.dimensions || {})
+      .map((gauge) => [gauge.label, gauge.low, gauge.high, gauge.note, gauge.value].join(" "))
+      .join(" ");
+
+    return normalizeSearchText([point.name, point.category, point.summary, gaugeText].join(" "));
+  }
+
+  function enforceDistinctAxes(changedAxis) {
+    if (!biasMapXAxis || !biasMapYAxis || biasMapXAxis.value !== biasMapYAxis.value) return;
+
+    const replacement = dimensions.find((dimension) => dimension.slug !== biasMapXAxis.value)?.slug || "";
+    if (!replacement) return;
+
+    if (changedAxis === "x") {
+      biasMapYAxis.value = replacement;
+    } else {
+      biasMapXAxis.value = replacement;
+    }
+  }
+
+  function syncAxisOptionStates() {
+    if (!biasMapXAxis || !biasMapYAxis) return;
+
+    Array.from(biasMapXAxis.options).forEach((option) => {
+      option.disabled = option.value === biasMapYAxis.value;
+    });
+    Array.from(biasMapYAxis.options).forEach((option) => {
+      option.disabled = option.value === biasMapXAxis.value;
+    });
+  }
+
   function xPosition(value) {
     return chart.margin.left + (clampScore(value) / 100) * plotWidth;
   }
@@ -265,6 +322,12 @@ if (biasMapShell && biasMapDataNode) {
   function renderDetail(point) {
     if (!biasMapDetail || !point) return;
 
+    const { x, y } = currentAxisSlugs();
+    const xDimension = getDimension(x);
+    const yDimension = getDimension(y);
+    const xGauge = gaugeFor(point, x);
+    const yGauge = gaugeFor(point, y);
+
     biasMapDetail.innerHTML = `
       <p class="eyebrow">Selected bias</p>
       <h4>${escapeHtml(point.name)}</h4>
@@ -274,34 +337,30 @@ if (biasMapShell && biasMapDataNode) {
       </p>
       <div class="bias-map-score-pair">
         <div>
-          <span>${escapeHtml(mapData.xLabel)}</span>
-          <strong>${escapeHtml(point.x)}</strong>
+          <span>${escapeHtml(xDimension?.label || xGauge?.label || "X axis")}</span>
+          <strong>${escapeHtml(xGauge?.value ?? "")}</strong>
         </div>
         <div>
-          <span>${escapeHtml(mapData.yLabel)}</span>
-          <strong>${escapeHtml(point.y)}</strong>
+          <span>${escapeHtml(yDimension?.label || yGauge?.label || "Y axis")}</span>
+          <strong>${escapeHtml(yGauge?.value ?? "")}</strong>
         </div>
       </div>
       <p class="muted">${escapeHtml(point.summary)}</p>
-      <p class="muted"><strong>Visibility note:</strong> ${escapeHtml(point.xNote || "No note available.")}</p>
-      <p class="muted"><strong>Temptation note:</strong> ${escapeHtml(point.yNote || "No note available.")}</p>
+      <p class="muted"><strong>${escapeHtml(xGauge?.label || xDimension?.label || "X axis")} note:</strong> ${escapeHtml(xGauge?.note || "No note available.")}</p>
+      <p class="muted"><strong>${escapeHtml(yGauge?.label || yDimension?.label || "Y axis")} note:</strong> ${escapeHtml(yGauge?.note || "No note available.")}</p>
       <p><a class="inline-link" href="../${escapeHtml(point.href)}">Open bias page</a></p>`;
   }
 
   function currentFilteredPoints() {
     const query = normalizeSearchText(biasMapSearch?.value || "");
     const category = biasMapCategory?.value || "";
+    const { x, y } = currentAxisSlugs();
 
     return points.filter((point) => {
       const matchesCategory = !category || point.categorySlug === category;
-      const matchesQuery =
-        !query ||
-        [point.name, point.category, point.summary, point.xNote, point.yNote]
-          .join(" ")
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, " ")
-          .includes(query);
-      return matchesCategory && matchesQuery;
+      const matchesAxes = hasGaugeValue(point, x) && hasGaugeValue(point, y);
+      const matchesQuery = !query || normalizePointSearchText(point).includes(query);
+      return matchesCategory && matchesAxes && matchesQuery;
     });
   }
 
@@ -322,11 +381,15 @@ if (biasMapShell && biasMapDataNode) {
   function drawBiasMap() {
     if (!biasMapPlot) return;
 
+    const { x, y } = currentAxisSlugs();
+    const xDimension = getDimension(x);
+    const yDimension = getDimension(y);
     const filteredPoints = currentFilteredPoints();
     const selectedPoint =
       filteredPoints.find((point) => point.slug === selectedSlug) || filteredPoints[0] || null;
 
     selectedSlug = selectedPoint?.slug || "";
+    syncAxisOptionStates();
     legendButtons.forEach((button) => {
       const active = (button.dataset.biasMapLegendCategory || "") === (biasMapCategory?.value || "");
       button.classList.toggle("is-active", active);
@@ -335,6 +398,9 @@ if (biasMapShell && biasMapDataNode) {
     biasMapPlot.replaceChildren();
     biasMapPlot.setAttribute("viewBox", `0 0 ${chart.width} ${chart.height}`);
     biasMapEmpty?.classList.toggle("hidden", filteredPoints.length !== 0);
+    if (biasMapCount) {
+      biasMapCount.textContent = `${filteredPoints.length} plotted ${filteredPoints.length === 1 ? "bias" : "biases"}`;
+    }
 
     const plotLeft = chart.margin.left;
     const plotRight = chart.width - chart.margin.right;
@@ -372,18 +438,18 @@ if (biasMapShell && biasMapDataNode) {
     biasMapPlot.append(svgElement("line", { x1: plotLeft, y1: plotBottom, x2: plotRight, y2: plotBottom, class: "bias-map-axis" }));
     biasMapPlot.append(svgElement("line", { x1: plotLeft, y1: plotTop, x2: plotLeft, y2: plotBottom, class: "bias-map-axis" }));
 
-    drawAxisLabel(mapData.xLabel || "Easy to spot from outside", chart.width / 2, chart.height - 22);
-    drawAxisLabel(mapData.yLabel || "Easy to innocently commit", 32, chart.height / 2, { rotate: -90 });
-    drawAxisLabel(mapData.xLow || "Hidden", plotLeft, plotBottom + 54, { anchor: "start", className: "bias-map-end-label" });
-    drawAxisLabel(mapData.xHigh || "Obvious", plotRight, plotBottom + 54, { anchor: "end", className: "bias-map-end-label" });
-    drawAxisLabel(mapData.yLow || "Low risk", yEndLabelX, plotBottom + 34, { anchor: "start", className: "bias-map-end-label" });
-    drawAxisLabel(mapData.yHigh || "Easy slip", yEndLabelX, plotTop - 14, { anchor: "start", className: "bias-map-end-label" });
+    drawAxisLabel(xDimension?.label || "X axis", chart.width / 2, chart.height - 22);
+    drawAxisLabel(yDimension?.label || "Y axis", 32, chart.height / 2, { rotate: -90 });
+    drawAxisLabel(xDimension?.low || "Low", plotLeft, plotBottom + 54, { anchor: "start", className: "bias-map-end-label" });
+    drawAxisLabel(xDimension?.high || "High", plotRight, plotBottom + 54, { anchor: "end", className: "bias-map-end-label" });
+    drawAxisLabel(yDimension?.low || "Low", yEndLabelX, plotBottom + 34, { anchor: "start", className: "bias-map-end-label" });
+    drawAxisLabel(yDimension?.high || "High", yEndLabelX, plotTop - 14, { anchor: "start", className: "bias-map-end-label" });
 
     const quadrantLabels = [
-      { text: "Hidden + easy slip", x: plotLeft + 18, y: plotTop + 28, anchor: "start" },
-      { text: "Obvious + easy slip", x: plotRight - 18, y: plotTop + 28, anchor: "end" },
-      { text: "Hidden + lower risk", x: plotLeft + 18, y: plotBottom - 18, anchor: "start" },
-      { text: "Obvious + lower risk", x: plotRight - 18, y: plotBottom - 18, anchor: "end" },
+      { text: `${xDimension?.low || "Low"} + ${yDimension?.high || "High"}`, x: plotLeft + 18, y: plotTop + 28, anchor: "start" },
+      { text: `${xDimension?.high || "High"} + ${yDimension?.high || "High"}`, x: plotRight - 18, y: plotTop + 28, anchor: "end" },
+      { text: `${xDimension?.low || "Low"} + ${yDimension?.low || "Low"}`, x: plotLeft + 18, y: plotBottom - 18, anchor: "start" },
+      { text: `${xDimension?.high || "High"} + ${yDimension?.low || "Low"}`, x: plotRight - 18, y: plotBottom - 18, anchor: "end" },
     ];
 
     quadrantLabels.forEach((item) => {
@@ -398,12 +464,14 @@ if (biasMapShell && biasMapDataNode) {
     });
 
     filteredPoints.forEach((point) => {
+      const xGauge = gaugeFor(point, x);
+      const yGauge = gaugeFor(point, y);
       const hash = hashString(point.slug);
       const jitterX = ((hash % 9) - 4) * 0.75;
       const jitterY = (((Math.floor(hash / 9) % 9) - 4) * 0.75);
       const circle = svgElement("circle", {
-        cx: xPosition(point.x) + jitterX,
-        cy: yPosition(point.y) + jitterY,
+        cx: xPosition(xGauge?.value) + jitterX,
+        cy: yPosition(yGauge?.value) + jitterY,
         r: point.slug === selectedSlug ? 8.5 : 6,
         class: point.slug === selectedSlug ? "bias-map-point selected" : "bias-map-point",
         fill: point.color,
@@ -411,7 +479,7 @@ if (biasMapShell && biasMapDataNode) {
         role: "button",
         "data-slug": point.slug,
         "data-category": point.categorySlug,
-        "aria-label": `${point.name}: ${mapData.xLabel} ${point.x}, ${mapData.yLabel} ${point.y}, ${point.category}`,
+        "aria-label": `${point.name}: ${xDimension?.label || "X axis"} ${xGauge?.value}, ${yDimension?.label || "Y axis"} ${yGauge?.value}, ${point.category}`,
       });
       const title = svgElement("title");
       title.textContent = `${point.name} (${point.category})`;
@@ -440,9 +508,19 @@ if (biasMapShell && biasMapDataNode) {
   }
 
   biasMapSearch?.addEventListener("input", drawBiasMap);
+  biasMapXAxis?.addEventListener("change", () => {
+    enforceDistinctAxes("x");
+    drawBiasMap();
+  });
+  biasMapYAxis?.addEventListener("change", () => {
+    enforceDistinctAxes("y");
+    drawBiasMap();
+  });
   biasMapCategory?.addEventListener("change", drawBiasMap);
   biasMapReset?.addEventListener("click", () => {
     if (biasMapSearch) biasMapSearch.value = "";
+    if (biasMapXAxis) biasMapXAxis.value = defaultXAxis;
+    if (biasMapYAxis) biasMapYAxis.value = defaultYAxis;
     if (biasMapCategory) biasMapCategory.value = "";
     selectedSlug = points[0]?.slug || "";
     drawBiasMap();
@@ -458,6 +536,9 @@ if (biasMapShell && biasMapDataNode) {
     });
   });
 
+  if (biasMapXAxis && defaultXAxis) biasMapXAxis.value = defaultXAxis;
+  if (biasMapYAxis && defaultYAxis) biasMapYAxis.value = defaultYAxis;
+  enforceDistinctAxes("x");
   drawBiasMap();
 }
 
