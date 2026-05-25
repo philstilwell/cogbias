@@ -7,6 +7,8 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataDir = path.join(projectRoot, "data");
 const siteDir = path.join(projectRoot, "site");
+const assetsDirName = "assets";
+const biasPosterDirName = `${assetsDirName}/bias-posters`;
 const brandDirName = "brand";
 const brandMarkPath = `${brandDirName}/cogbias-mark.svg`;
 const faviconSvgPath = brandMarkPath;
@@ -96,7 +98,22 @@ async function readJsonArraySeries(prefix) {
   return readJsonArrayFiles(fileNames);
 }
 
+async function readBiasPosterSlugs() {
+  try {
+    const fileNames = await fs.readdir(path.join(siteDir, biasPosterDirName));
+    return new Set(
+      fileNames
+        .map((fileName) => fileName.match(/^bias-(.+)-poster\.jpg$/)?.[1])
+        .filter(Boolean),
+    );
+  } catch (error) {
+    if (error.code === "ENOENT") return new Set();
+    throw error;
+  }
+}
+
 const siteConfig = await readJsonFile("site.json");
+const biasPosterSlugs = await readBiasPosterSlugs();
 const rawEntries = await readJsonFile("biases.json");
 const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
@@ -1186,7 +1203,50 @@ function renderPills(entry) {
   return `${taskPills}${patternPills}${domainPills}`;
 }
 
+function biasPosterPath(entry) {
+  return `${biasPosterDirName}/bias-${entry.slug}-poster.jpg`;
+}
+
+function hasBiasPoster(entry) {
+  return biasPosterSlugs.has(entry.slug);
+}
+
+function renderBiasPosterImage(entry, prefix = "", className = "bias-poster-image", eager = false) {
+  const loading = eager ? "eager" : "lazy";
+  const fetchPriority = eager ? ' fetchpriority="high"' : "";
+  return `<img class="${className}" src="${prefix}${biasPosterPath(entry)}" alt="Poster illustration for ${escapeHtml(entry.name)}" width="768" height="1152" loading="${loading}" decoding="async"${fetchPriority} />`;
+}
+
+function renderDetailIllustration(entry) {
+  if (!hasBiasPoster(entry)) {
+    return `
+            <div class="illustration-placeholder">
+              <p class="illustration-placeholder-kicker">${escapeHtml(siteConfig.illustrationPlaceholderTitle)}</p>
+              <div class="illustration-placeholder-art" aria-hidden="true">
+                <div class="illustration-ring"></div>
+                <div class="illustration-grid-mark"></div>
+              </div>
+              <p class="muted">${escapeHtml(siteConfig.illustrationPlaceholderBody)}</p>
+            </div>`;
+  }
+
+  return `
+            <figure class="detail-illustration-shell">
+              ${renderBiasPosterImage(entry, "../../", "detail-illustration-image", true)}
+              <figcaption class="detail-illustration-copy">
+                <p class="detail-illustration-label">Featured Illustration</p>
+                <p class="detail-illustration-text">A vintage teaching poster for ${escapeHtml(entry.name)}, built to make the bias visible before the technical label has to do all the work.</p>
+              </figcaption>
+            </figure>`;
+}
+
 function renderBiasCard(entry, prefix = "") {
+  const poster = hasBiasPoster(entry)
+    ? `<a class="entry-card-visual" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/" aria-label="Open ${escapeHtml(entry.name)}">
+                ${renderBiasPosterImage(entry, prefix, "entry-card-image")}
+              </a>`
+    : "";
+
   return `
           <article
             class="entry-card"
@@ -1208,6 +1268,7 @@ function renderBiasCard(entry, prefix = "") {
                 .join(" "),
             )}"
           >
+            ${poster}
             <h3><a href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a></h3>
             <p class="card-copy">${escapeHtml(entry.summary)}</p>
             <div class="pill-row">
@@ -3367,14 +3428,7 @@ function renderBiasDetailPage(entry) {
             </div>
           </div>
           <aside class="hero-panel hero-side detail-side-stack">
-            <div class="illustration-placeholder">
-              <p class="illustration-placeholder-kicker">${escapeHtml(siteConfig.illustrationPlaceholderTitle)}</p>
-              <div class="illustration-placeholder-art" aria-hidden="true">
-                <div class="illustration-ring"></div>
-                <div class="illustration-grid-mark"></div>
-              </div>
-              <p class="muted">${escapeHtml(siteConfig.illustrationPlaceholderBody)}</p>
-            </div>
+            ${renderDetailIllustration(entry)}
             <div class="note-panel">
               <h4>Source Trail</h4>
               <p class="muted">
@@ -3933,6 +3987,10 @@ function renderNotFoundPage() {
 async function copySiteAssets() {
   await fs.copyFile(path.join(siteDir, "styles.css"), path.join(projectRoot, "styles.css"));
   await fs.copyFile(path.join(siteDir, "app.js"), path.join(projectRoot, "app.js"));
+  await fs.cp(path.join(siteDir, assetsDirName), path.join(projectRoot, assetsDirName), {
+    recursive: true,
+    force: true,
+  });
   await fs.cp(path.join(siteDir, brandDirName), path.join(projectRoot, brandDirName), {
     recursive: true,
     force: true,
@@ -3952,6 +4010,7 @@ async function cleanOwnedOutput() {
     "404.html",
     "styles.css",
     "app.js",
+    assetsDirName,
     brandDirName,
     "about",
     "biases",
