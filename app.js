@@ -142,6 +142,7 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
     panels.forEach((panel, panelIndex) => {
       const active = panelIndex === index;
       panel.classList.toggle("active", active);
+      panel.classList.toggle("hidden", !active);
       panel.hidden = !active;
     });
   }

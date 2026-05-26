@@ -2065,6 +2065,7 @@ img {
 .lab-tab-shell {
   display: grid;
   gap: 16px;
+  padding-top: 12px;
 }
 
 .lab-tablist {
@@ -2100,6 +2101,11 @@ img {
 
 .lab-panel {
   display: block;
+}
+
+.lab-panel[hidden],
+.lab-panel.hidden {
+  display: none !important;
 }
 
 .lab-panel-kicker {
