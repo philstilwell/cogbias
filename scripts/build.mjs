@@ -116,6 +116,7 @@ const siteConfig = await readJsonFile("site.json");
 const biasPosterSlugs = await readBiasPosterSlugs();
 const rawEntries = await readJsonFile("biases.json");
 const biasCardSummaryOverrides = await readJsonFile("bias_card_summaries.json");
+const biasIllustrationCaptions = await readJsonFile("bias_illustration_captions.json");
 const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
 const entrySourceData = await readJsonArraySeries("entry_sources");
@@ -270,12 +271,20 @@ function buildBiasCardSummary(entry) {
   );
 }
 
+function illustrationCaptionFor(entry) {
+  return (
+    biasIllustrationCaptions[entry.slug] ||
+    `A vintage teaching poster for ${entry.name}, built to make the bias visible before the technical label has to do all the work.`
+  );
+}
+
 const entries = mergeEntryData(
   mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules),
   entrySourceData,
 ).map((entry) => ({
   ...entry,
   cardSummary: buildBiasCardSummary(entry),
+  illustrationCaption: illustrationCaptionFor(entry),
 }));
 const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
 const domainHubSlug = siteConfig.domainHubSlug || "contexts";
@@ -1296,7 +1305,7 @@ function renderDetailIllustration(entry) {
               ${renderBiasPosterImage(entry, "../../", "detail-illustration-image", true)}
               <figcaption class="detail-illustration-copy">
                 <p class="detail-illustration-label">Featured Illustration</p>
-                <p class="detail-illustration-text">A vintage teaching poster for ${escapeHtml(entry.name)}, built to make the bias visible before the technical label has to do all the work.</p>
+                <p class="detail-illustration-text">${escapeHtml(entry.illustrationCaption)}</p>
               </figcaption>
             </figure>`;
 }
