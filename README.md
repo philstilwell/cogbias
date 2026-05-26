@@ -16,9 +16,8 @@ Static GitHub Pages site generator for a cognitive-biases sister site to LogFall
   - `compare/` for high-confusion distinction guides between nearby bias labels.
   - `teaching-kits/` for printable lessons and workshops assembled from the guided layers.
   - `prompts/` for bias-aware AI prompt kits.
-  - `theory/` for short framing essays with linked empirical anchors from the flagship bias pages.
-- `coverage/` for an editorial dashboard that shows which entries need more sources, cases, assessments, or guided support.
-- Flagship bias pages now carry explicit source trails in addition to case studies, practice labs, and companion theory links.
+  - `theory/` for short framing essays that connect the bias pages to larger teaching and debiasing themes.
+- `coverage/` for an editorial dashboard that shows which entries need more cases, assessments, or guided support.
 - Illustration placeholders already reserved on bias detail pages for future image production.
 
 ## Source Of Truth
@@ -29,9 +28,8 @@ Static GitHub Pages site generator for a cognitive-biases sister site to LogFall
   - `data/biases.json`
 - Richer hand-authored editorial sections for selected core entries:
   - `data/editorial_enrichments*.json`
-- Flagship-page teaching modules and source trails:
+- Flagship-page teaching modules:
   - `data/entry_teaching_modules*.json`
-  - `data/entry_sources*.json`
 - Curated learning paths:
   - `data/learning_paths*.json`
   - `data/path_curriculum*.json`
@@ -69,14 +67,13 @@ The published GitHub Pages output lives at the repo root.
 
 - Use the imported catalog for wide coverage.
 - Use `data/editorial_enrichments*.json` to deepen important entries without losing the broad index.
-- Use `data/entry_sources*.json` to keep flagship pages traceable to the literature while preserving the site's clarity-first tone.
 - Use path and self-check curriculum metadata to turn the catalog into a progression rather than a flat library.
 - Use learning paths, self-checks, comparison guides, teaching kits, prompt kits, theory notes, and assessment tiers to make the site feel like a real guided resource rather than a flat reference.
 - Keep the image placeholder layout intact until the illustration set is ready.
 
 ## Next Likely Steps
 
-1. Use `coverage/` to choose the next tranche of source trails and case studies.
+1. Use `coverage/` to choose the next tranche of case studies and guided enrichments.
 2. Expand the long-tail editorial layer with more hand-authored `editorial_enrichments` tiers.
 3. Add custom image assets into the reserved illustration slots when the image set is ready.
 4. Add classroom-ready downloads or slide decks after the printable kit pages have been tested.

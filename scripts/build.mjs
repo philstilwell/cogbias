@@ -2250,7 +2250,6 @@ function renderDomainHubsIndexPage() {
 function renderDomainHubDetailPage(hub) {
   const prefix = "../../";
   const hubCaseStudies = domainCaseStudiesFor(hub);
-  const hubSources = domainSourceTrailFor(hub);
 
   return renderPage({
     title: hub.title,
@@ -2375,21 +2374,7 @@ function renderDomainHubDetailPage(hub) {
             : ""
         }
 
-        ${
-          hubSources.length
-            ? `<section class="section-block">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Source anchors</h2>
-              <p class="section-copy">A short trail into the research behind the most central bias pages in this domain.</p>
-            </div>
-          </div>
-          <div class="category-grid">
-            ${hubSources.map((item) => renderSourceCard(item, prefix)).join("")}
-          </div>
-        </section>`
-            : ""
-        }`,
+        `,
   });
 }
 
@@ -2717,7 +2702,6 @@ function renderTeachingKitDetailPage(kit) {
 function coverageRecordsForEntries() {
   return entries
     .map((entry) => {
-      const sourceCount = sourceTrailFor(entry, { includeSeed: false }).length;
       const caseCount = caseStudiesFor(entry).length;
       const assessmentCount = assessmentBank.filter((item) => item.correctBias === entry.slug).length;
       const pathCount = pathObjectsForEntry(entry).length;
@@ -2730,14 +2714,12 @@ function coverageRecordsForEntries() {
         entry.analogyClaim,
         entry.teachingGauges?.length,
         entry.caseStudies?.length,
-        entry.sourceTrail?.length,
         entry.practiceLab,
         entry.useLabelWhen,
       ].filter(Boolean).length;
       const score = Math.min(
         100,
-        sourceCount * 8 +
-          caseCount * 7 +
+        caseCount * 7 +
           assessmentCount * 4 +
           pathCount * 5 +
           checkCount * 5 +
@@ -2751,7 +2733,6 @@ function coverageRecordsForEntries() {
         score >= 70 ? "Flagship-ready" : score >= 40 ? "Strong scaffold" : score >= 20 ? "Needs enrichment" : "Catalog-only";
       return {
         entry,
-        sourceCount,
         caseCount,
         assessmentCount,
         pathCount,
@@ -2779,7 +2760,6 @@ function renderCoverageRecordCard(record, prefix = "") {
             <div class="teaching-pill-row">
               <span class="teaching-pill">${escapeHtml(record.status)}</span>
               <span class="teaching-pill">${record.score}/100</span>
-              <span class="teaching-pill">${record.sourceCount} sources</span>
               <span class="teaching-pill">${record.caseCount} cases</span>
               <span class="teaching-pill">${record.assessmentCount} assessments</span>
               <span class="teaching-pill">${record.comparisonCount} comparisons</span>
@@ -2798,7 +2778,7 @@ function renderCoveragePage() {
 
   return renderPage({
     title: "Coverage Map",
-    description: "Editorial coverage dashboard for sources, cases, assessments, context hubs, kits, and comparison guides.",
+    description: "Editorial coverage dashboard for cases, assessments, context hubs, kits, and comparison guides.",
     prefix: "../",
     currentId: "about",
     routePath: `/${coverageSlug}/`,
@@ -2811,7 +2791,7 @@ function renderCoveragePage() {
           <div class="detail-section">
             <p class="eyebrow">Coverage Map</p>
             <h2 class="detail-title">A living audit of how much editorial support each bias has.</h2>
-            <p class="detail-deck">The catalog is intentionally wide. This page makes the depth unevenness visible so future passes can target source trails, cases, assessments, comparisons, and teaching kits where they will matter most.</p>
+            <p class="detail-deck">The catalog is intentionally wide. This page makes the depth unevenness visible so future passes can target cases, assessments, comparisons, and teaching kits where they will matter most.</p>
           </div>
           <aside class="hero-panel hero-side">
             <p class="eyebrow">Current Depth</p>
@@ -2832,7 +2812,7 @@ function renderCoveragePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Featured entries needing the next pass</h2>
-              <p class="section-copy">These are important public-facing pages that still have room for more sourcing, cases, assessments, or comparison support.</p>
+              <p class="section-copy">These are important public-facing pages that still have room for more cases, assessments, comparison support, or guided scaffolding.</p>
             </div>
           </div>
           <div class="category-grid">
@@ -2856,7 +2836,7 @@ function renderCoveragePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">How the score works</h2>
-              <p class="section-copy">This is an editorial planning heuristic, not a truth score. It rewards source trails, case studies, assessment items, path/check/prompt links, context hubs, comparison guides, kits, and hand-authored page modules.</p>
+              <p class="section-copy">This is an editorial planning heuristic, not a truth score. It rewards case studies, assessment items, path/check/prompt links, context hubs, comparison guides, kits, and hand-authored page modules.</p>
             </div>
           </div>
           <div class="two-column">
@@ -3277,7 +3257,6 @@ function renderTheoryPage() {
 }
 
 function renderTheoryArticlePage(article) {
-  const empiricalAnchors = theorySourceTrailFor(article);
   return renderPage({
     title: article.title,
     description: article.summary,
@@ -3311,23 +3290,6 @@ function renderTheoryArticlePage(article) {
               </section>`,
           )
           .join("")}
-
-        ${
-          empiricalAnchors.length
-            ? `
-        <section class="section-block" id="source-trail">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Empirical anchors</h2>
-              <p class="section-copy">Theory pages are editorial synthesis. These direct sources from the related bias pages keep the larger claims tied to the underlying literature.</p>
-            </div>
-          </div>
-          <div class="category-grid">
-            ${empiricalAnchors.map((item) => renderSourceCard(item, "../../")).join("")}
-          </div>
-        </section>`
-            : ""
-        }
 
         <section class="section-block">
           <div class="section-header">
@@ -3442,8 +3404,6 @@ function renderBiasDetailPage(entry) {
   const repairMoves = repairMovesFor(entry);
   const confusions = confusionsFor(entry);
   const caseStudies = caseStudiesFor(entry);
-  const sourceTrail = sourceTrailFor(entry);
-  const curatedSourceCount = sourceTrail.filter((item) => item.kind !== "Seed taxonomy").length;
   const companionReading = companionReadingFor(entry);
   const paths = pathObjectsForEntry(entry);
   const checks = selfChecksForEntry(entry);
@@ -3489,17 +3449,6 @@ function renderBiasDetailPage(entry) {
                 <p class="detail-card-label">Coverage depth</p>
                 <p class="detail-card-value">${escapeHtml(entryPromptEffort(entry))}</p>
               </div>
-            </div>
-            <div class="note-panel detail-inline-source">
-              <h4>Source Trail</h4>
-              <p class="muted">
-                ${
-                  curatedSourceCount
-                    ? `This flagship page now carries ${curatedSourceCount} curated source${curatedSourceCount === 1 ? "" : "s"} plus the seed taxonomy reference.`
-                    : "This entry currently relies on the seed taxonomy reference while deeper sourcing is added."
-                }
-              </p>
-              <p><a class="text-link" href="#source-trail">Open the source trail</a></p>
             </div>
             <div class="path-link-row path-link-row-spaced">
               ${paths
@@ -3816,23 +3765,6 @@ function renderBiasDetailPage(entry) {
             : ""
         }
 
-        ${
-          sourceTrail.length
-            ? `
-        <section class="section-block" id="source-trail">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Source trail</h2>
-              <p class="section-copy">Use these sources to move from the teaching page into the underlying literature and seed reference material. The site is still written for clarity first, but the stronger pages should also be traceable.</p>
-            </div>
-          </div>
-          <div class="category-grid">
-            ${sourceTrail.map((item) => renderSourceCard(item)).join("")}
-          </div>
-        </section>`
-            : ""
-        }
-
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -3999,7 +3931,7 @@ function renderAboutPage() {
               <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
               <li><code>data/biases.json</code> for generated coverage.</li>
               <li><code>data/editorial_enrichments*.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/entry_teaching_modules*.json</code>, <code>data/entry_sources*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, and <code>data/comparison_guides*.json</code> for flagship-page pedagogy, source trails, scenario practice, and nearby-label distinctions.</li>
+              <li><code>data/entry_teaching_modules*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, and <code>data/comparison_guides*.json</code> for flagship-page pedagogy, scenario practice, and nearby-label distinctions.</li>
               <li><code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/teaching_kits*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
               <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
             </ul>

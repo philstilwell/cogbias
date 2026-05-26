@@ -397,44 +397,21 @@ img {
 
 .entry-card-visual {
   display: block;
-  margin: -8px -8px 16px;
-  overflow: hidden;
-  border: 1px solid rgba(17, 52, 88, 0.18);
-  border-radius: 18px;
-  background: #111111;
-  box-shadow: 0 14px 28px rgba(14, 35, 57, 0.12);
+  margin: 0 0 16px;
+  border-radius: 0;
+  background: transparent;
 }
 
 .entry-card-image {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 3;
-  max-height: 320px;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 220ms ease, filter 220ms ease;
+  height: auto;
+  border-radius: 0;
+  transition: none;
 }
 
 .entry-card-visual:hover .entry-card-image,
 .entry-card-visual:focus-visible .entry-card-image {
-  transform: scale(1.025);
-  filter: saturate(1.06);
-}
-
-.page-bias-index .entry-card-visual {
-  border-radius: 0;
-  background: transparent;
-}
-
-.page-bias-index .entry-card-image {
-  height: auto;
-  aspect-ratio: auto;
-  max-height: none;
-  object-fit: initial;
-}
-
-.page-bias-index .entry-card-visual:hover .entry-card-image,
-.page-bias-index .entry-card-visual:focus-visible .entry-card-image {
   transform: none;
   filter: none;
 }
@@ -519,21 +496,6 @@ img {
     radial-gradient(circle at 86% 18%, rgba(47, 130, 194, 0.16), transparent 25%),
     radial-gradient(circle at 12% 82%, rgba(211, 161, 38, 0.12), transparent 25%),
     #fff;
-}
-
-.source-card {
-  background:
-    linear-gradient(180deg, rgba(47, 130, 194, 0.08), transparent 48%),
-    #fff;
-}
-
-.source-meta {
-  margin: 0 0 10px;
-  color: #0e4672;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .card-copy {
@@ -656,10 +618,6 @@ img {
 .detail-side-stack {
   display: grid;
   gap: 18px;
-}
-
-.detail-inline-source {
-  margin-top: 18px;
 }
 
 .illustration-placeholder {
