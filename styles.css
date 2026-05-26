@@ -421,6 +421,21 @@ img {
   filter: saturate(1.06);
 }
 
+.page-bias-index .entry-card-visual {
+  border-radius: 0;
+}
+
+.page-bias-index .entry-card-image {
+  max-height: none;
+  object-fit: contain;
+}
+
+.page-bias-index .entry-card-visual:hover .entry-card-image,
+.page-bias-index .entry-card-visual:focus-visible .entry-card-image {
+  transform: none;
+  filter: none;
+}
+
 .category-card::before,
 .fallacy-card::before,
 .entry-card::before,

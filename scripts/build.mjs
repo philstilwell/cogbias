@@ -837,13 +837,14 @@ function renderFooter() {
       </footer>`;
 }
 
-function renderPage({ title, description, prefix, currentId, breadcrumbs, body, routePath }) {
+function renderPage({ title, description, prefix, currentId, breadcrumbs, body, routePath, bodyClass = "" }) {
+  const bodyClassAttr = bodyClass ? ` class="${escapeHtml(bodyClass)}"` : "";
   return `<!doctype html>
 <html lang="en">
   <head>
 ${renderHead({ title, description, prefix, routePath })}
   </head>
-  <body>
+  <body${bodyClassAttr}>
     <div class="site-shell">
 ${renderMasthead(prefix, currentId)}
       <main class="page-wrap">
@@ -1952,6 +1953,7 @@ function renderBiasIndexPage() {
     description: `Search and compare ${siteConfig.entryLabelPlural} by category and pattern.`,
     prefix: "../",
     currentId: "biases",
+    bodyClass: "page-bias-index",
     routePath: `/${siteConfig.sectionSlug}/`,
     breadcrumbs: [
       { label: "Home", href: "../" },
