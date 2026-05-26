@@ -423,11 +423,14 @@ img {
 
 .page-bias-index .entry-card-visual {
   border-radius: 0;
+  background: transparent;
 }
 
 .page-bias-index .entry-card-image {
+  height: auto;
+  aspect-ratio: auto;
   max-height: none;
-  object-fit: contain;
+  object-fit: initial;
 }
 
 .page-bias-index .entry-card-visual:hover .entry-card-image,
