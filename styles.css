@@ -658,6 +658,10 @@ img {
   gap: 18px;
 }
 
+.detail-inline-source {
+  margin-top: 18px;
+}
+
 .illustration-placeholder {
   border: 1px solid var(--line);
   border-radius: 18px;

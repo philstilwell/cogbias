@@ -3490,6 +3490,17 @@ function renderBiasDetailPage(entry) {
                 <p class="detail-card-value">${escapeHtml(entryPromptEffort(entry))}</p>
               </div>
             </div>
+            <div class="note-panel detail-inline-source">
+              <h4>Source Trail</h4>
+              <p class="muted">
+                ${
+                  curatedSourceCount
+                    ? `This flagship page now carries ${curatedSourceCount} curated source${curatedSourceCount === 1 ? "" : "s"} plus the seed taxonomy reference.`
+                    : "This entry currently relies on the seed taxonomy reference while deeper sourcing is added."
+                }
+              </p>
+              <p><a class="text-link" href="#source-trail">Open the source trail</a></p>
+            </div>
             <div class="path-link-row path-link-row-spaced">
               ${paths
                 .map(
@@ -3501,17 +3512,6 @@ function renderBiasDetailPage(entry) {
           </div>
           <aside class="hero-panel hero-side detail-side-stack">
             ${renderDetailIllustration(entry)}
-            <div class="note-panel">
-              <h4>Source Trail</h4>
-              <p class="muted">
-                ${
-                  curatedSourceCount
-                    ? `This flagship page now carries ${curatedSourceCount} curated source${curatedSourceCount === 1 ? "" : "s"} plus the seed taxonomy reference.`
-                    : "This entry currently relies on the seed taxonomy reference while deeper sourcing is added."
-                }
-              </p>
-              <p><a class="text-link" href="#source-trail">Open the source trail</a></p>
-            </div>
           </aside>
         </section>
 
