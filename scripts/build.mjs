@@ -115,6 +115,7 @@ async function readBiasPosterSlugs() {
 const siteConfig = await readJsonFile("site.json");
 const biasPosterSlugs = await readBiasPosterSlugs();
 const rawEntries = await readJsonFile("biases.json");
+const biasCardSummaryOverrides = await readJsonFile("bias_card_summaries.json");
 const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
 const entrySourceData = await readJsonArraySeries("entry_sources");
@@ -213,10 +214,69 @@ function mergeEntryData(baseEntries, enrichments) {
   });
 }
 
+function normalizeBiasCardSummary(summary) {
+  let text = String(summary || "")
+    .replace(/\[[^\]]*\]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const cutoffPatterns = [
+    /Also known as\b/i,
+    /The opposite bias\b/i,
+    /See also\b/i,
+    /For example\b/i,
+    /An example of this is\b/i,
+    /People are more likely\b/i,
+    /In other words\b/i,
+    /It was named after\b/i,
+    /Also recency bias\b/i,
+  ];
+
+  for (const pattern of cutoffPatterns) {
+    const match = text.match(pattern);
+    if (match?.index != null) {
+      text = text.slice(0, match.index).trim();
+    }
+  }
+
+  text = text
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const firstSentence = text.split(/(?<=[.?!])\s+/)[0]?.trim();
+  text = firstSentence || text;
+
+  text = text
+    .replace(/^A person's tendency to /i, "The tendency to ")
+    .replace(/^A tendency for people to /i, "The tendency to ")
+    .replace(/^A tendency to /i, "The tendency to ")
+    .replace(/^The tendency,?\s+/i, "The tendency ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .trim();
+
+  if (text && !/[.?!]$/.test(text)) {
+    text += ".";
+  }
+
+  return text;
+}
+
+function buildBiasCardSummary(entry) {
+  return (
+    entry.cardSummary ||
+    biasCardSummaryOverrides[entry.slug] ||
+    normalizeBiasCardSummary(entry.summary || "")
+  );
+}
+
 const entries = mergeEntryData(
   mergeEntryData(mergeEntryData(rawEntries, editorialEnrichments), teachingModules),
   entrySourceData,
-);
+).map((entry) => ({
+  ...entry,
+  cardSummary: buildBiasCardSummary(entry),
+}));
 const caseStudySlug = siteConfig.caseStudySlug || "case-studies";
 const domainHubSlug = siteConfig.domainHubSlug || "contexts";
 const comparisonGuideSlug = siteConfig.comparisonGuideSlug || "compare";
@@ -307,7 +367,7 @@ function buildBiasMapPoints() {
         category,
         categorySlug: categoryMeta?.slug || "",
         color: categoryColors.get(category) || "#54728b",
-        summary: entry.summary || "",
+        summary: entry.cardSummary || entry.summary || "",
         dimensions,
       };
     })
@@ -1258,6 +1318,7 @@ function renderBiasCard(entry, prefix = "") {
             data-patterns="${escapeHtml((entry.patterns || []).join("||"))}"
             data-body="${escapeHtml(
               [
+                entry.cardSummary,
                 entry.summary,
                 entry.mechanism,
                 entry.distortion,
@@ -1271,7 +1332,7 @@ function renderBiasCard(entry, prefix = "") {
           >
             ${poster}
             <h3><a href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a></h3>
-            <p class="card-copy">${escapeHtml(entry.summary)}</p>
+            <p class="card-copy">${escapeHtml(entry.cardSummary || entry.summary)}</p>
             <div class="pill-row">
               ${renderPills(entry)}
             </div>
@@ -2702,7 +2763,7 @@ function renderCoverageRecordCard(record, prefix = "") {
   return `
           <article class="category-card coverage-card">
             <h3><a href="${prefix}${siteConfig.sectionSlug}/${record.entry.slug}/">${escapeHtml(record.entry.name)}</a></h3>
-            <p class="card-copy">${escapeHtml(record.entry.summary)}</p>
+            <p class="card-copy">${escapeHtml(record.entry.cardSummary || record.entry.summary)}</p>
             <div class="coverage-meter" style="--coverage:${record.score};">
               <span></span>
             </div>
