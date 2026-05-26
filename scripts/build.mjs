@@ -185,6 +185,20 @@ function mergeEntryOverlay(base = {}, overlay = {}) {
     );
   }
 
+  if (base.classicDemonstrations || overlay.classicDemonstrations) {
+    merged.classicDemonstrations = mergeUniqueObjects(
+      [...(base.classicDemonstrations || []), ...(overlay.classicDemonstrations || [])],
+      (item) => `${String(item.title || "").trim().toLowerCase()}::${String(item.summary || "").trim().toLowerCase()}`,
+    );
+  }
+
+  if (base.appliedContexts || overlay.appliedContexts) {
+    merged.appliedContexts = mergeUniqueObjects(
+      [...(base.appliedContexts || []), ...(overlay.appliedContexts || [])],
+      (item) => `${String(item.title || "").trim().toLowerCase()}::${String(item.summary || "").trim().toLowerCase()}`,
+    );
+  }
+
   return merged;
 }
 
@@ -3656,6 +3670,8 @@ function renderBiasDetailPage(entry) {
   const repairMoves = repairMovesFor(entry);
   const confusions = confusionsFor(entry);
   const caseStudies = caseStudiesFor(entry);
+  const classicDemonstrations = entry.classicDemonstrations || [];
+  const appliedContexts = entry.appliedContexts || [];
   const companionReading = companionReadingFor(entry);
   const directPaths = pathObjectsForEntry(entry);
   const pathLinks = pathLinksForEntry(entry);
@@ -4177,6 +4193,58 @@ function renderBiasDetailPage(entry) {
                         : ""
                     }
                     ${formatCaseStudySource(item) ? `<p class="case-source">${escapeHtml(formatCaseStudySource(item))}</p>` : ""}
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
+        ${
+          !caseStudies.length && classicDemonstrations.length
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Classic demonstrations</h2>
+              <p class="section-copy">These entries are usually taught most clearly through controlled demonstrations rather than through broad public case studies. The point is to show the memory pattern cleanly before it gets buried in narrative noise.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${classicDemonstrations
+              .map(
+                (item) => `
+                  <article class="category-card">
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p class="card-copy">${escapeHtml(item.summary)}</p>
+                    <p class="muted"><strong>Why it matters:</strong> ${escapeHtml(item.whyItMatters)}</p>
+                  </article>`,
+              )
+              .join("")}
+          </div>
+        </section>`
+            : ""
+        }
+
+        ${
+          !caseStudies.length && appliedContexts.length
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Applied contexts</h2>
+              <p class="section-copy">These pages are more useful when tied to interview design, lineup practice, and recall reliability than when padded with generic anecdotes. Use these contexts to see where the distortion matters in live judgment.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${appliedContexts
+              .map(
+                (item) => `
+                  <article class="category-card">
+                    <h3>${escapeHtml(item.title)}</h3>
+                    <p class="card-copy">${escapeHtml(item.summary)}</p>
+                    <p class="muted"><strong>Why it matters:</strong> ${escapeHtml(item.whyItMatters)}</p>
                   </article>`,
               )
               .join("")}

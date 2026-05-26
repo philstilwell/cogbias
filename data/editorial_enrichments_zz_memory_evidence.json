@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "generation-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Generate versus read",
+        "summary": "Learners are asked to complete a word, antonym, or phrase themselves in one condition and simply read the finished item in another. Later recall is usually stronger for the self-generated items.",
+        "whyItMatters": "The memory advantage comes from production and active retrieval work, not just from extra exposure time."
+      },
+      {
+        "title": "Make your own example",
+        "summary": "Students who create their own example, label, or paraphrase of a concept tend to remember it better than peers who only receive a polished example from the teacher.",
+        "whyItMatters": "This turns the bias into a design principle for lessons, notes, and study prompts: asking for generation changes encoding."
+      }
+    ]
+  },
+  {
+    "slug": "self-relevance-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Does this describe me?",
+        "summary": "People judge whether a list of traits applies to themselves, to another person, or only to a surface feature like letter shape. Later recall is strongest for the self-related judgments.",
+        "whyItMatters": "The effect shows that self-reference is not just interesting content. It changes how deeply information is organized in memory."
+      },
+      {
+        "title": "Personal connection encoding",
+        "summary": "A neutral fact or concept is remembered better when learners explicitly connect it to their own goals, history, or likely future use than when they rehearse it impersonally.",
+        "whyItMatters": "This is why reflection prompts that ask “What does this mean for me?” often outperform passive review."
+      }
+    ]
+  },
+  {
+    "slug": "placement-bias",
+    "summary": "The tendency to remember your own relative standing in a way that preserves a familiar self-comparison story.",
+    "classicDemonstrations": [
+      {
+        "title": "Recalled comparative ratings",
+        "summary": "People rate themselves against peers on several traits or skills, then later reconstruct those ratings from memory. The remembered placements often come back cleaner and more self-consistent than the originals.",
+        "whyItMatters": "The bias is not only in the first comparison. Memory itself helps stabilize a flattering or identity-protective ranking."
+      },
+      {
+        "title": "Easy versus hard ability lists",
+        "summary": "When the task list makes above-average or below-average judgments feel natural, people later remember their comparative placement in the same direction even when the original ratings were more mixed.",
+        "whyItMatters": "This shows how recall can preserve a social self-story rather than an exact record of earlier judgments."
+      }
+    ]
+  },
+  {
+    "slug": "cross-race-effect",
+    "summary": "The tendency to distinguish faces of your own race more accurately than faces of other races.",
+    "appliedContexts": [
+      {
+        "title": "Lineup construction and administration",
+        "summary": "Cross-race identification calls for careful filler selection, blind administration, and clean witness instructions because the witness may have had weaker face-level discrimination from the start.",
+        "whyItMatters": "It shifts the focus from sincerity to conditions. A confident witness can still be working from a thinner perceptual record."
+      },
+      {
+        "title": "Interview timing and exposure records",
+        "summary": "Investigators should record viewing conditions, delay, stress, and cross-race context before treating an identification as especially strong.",
+        "whyItMatters": "Reliability depends on exposure quality and delay, not just on whether the witness sounds certain afterward."
+      }
+    ]
+  },
+  {
+    "slug": "gender-differences-in-eyewitness-memory",
+    "summary": "The tendency for witnesses to remember more detail about someone of the same gender under some conditions.",
+    "appliedContexts": [
+      {
+        "title": "Interview design for witness recall",
+        "summary": "Interviewers should document what the witness actually had time and attention to encode instead of assuming the same level of person-detail recall across all targets.",
+        "whyItMatters": "The page is most useful as a reminder that recall quality can vary systematically with who was observed, not just with how honest the witness is."
+      },
+      {
+        "title": "Lineup confidence versus detail quality",
+        "summary": "When person-memory detail varies by witness-target gender match, confidence should be checked against the original statement and exposure conditions rather than treated as a free-standing signal of accuracy.",
+        "whyItMatters": "This keeps the practical lesson on reliability, not on a simplistic claim that one witness group is universally better."
+      }
+    ]
+  }
+]
