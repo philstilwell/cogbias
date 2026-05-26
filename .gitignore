@@ -1,2 +1,4 @@
 .DS_Store
 production-assets/
+__pycache__/
+*.pyc
