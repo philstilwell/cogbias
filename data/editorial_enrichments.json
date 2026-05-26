@@ -1629,7 +1629,7 @@
       "team": "Ask one person to test the reasoning structure independently of whether the group likes the endpoint.",
       "system": "Teach argument review as a separate step from agreement review so conclusion appeal cannot do both jobs at once."
     },
-    "teachingNote": "This entry forms a direct conceptual bridge back to LogFall because it shows how cognitive bias can corrupt logical evaluation before a formal fallacy label is ever applied."
+    "teachingNote": "This entry is especially useful because it shows how agreement with a conclusion can quietly corrupt evaluation of the reasoning itself."
   },
   {
     "slug": "curse-of-knowledge",

@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "anthropomorphism",
+    "summary": "The tendency to attribute human thoughts, feelings, or intentions to animals, objects, or systems."
+  },
+  {
+    "slug": "assumed-similarity-bias",
+    "summary": "The tendency to assume other people are more similar to you than they really are."
+  },
+  {
+    "slug": "attribute-substitution",
+    "summary": "The tendency to answer a hard question by unconsciously replacing it with an easier one."
+  },
+  {
+    "slug": "ballot-order-effect",
+    "summary": "The tendency for candidates listed first on a ballot to receive a small voting advantage."
+  },
+  {
+    "slug": "ben-franklin-effect",
+    "summary": "The tendency to like someone more after doing that person a favor."
+  },
+  {
+    "slug": "boundary-extension",
+    "summary": "The tendency to remember a scene as having included more surrounding space than was actually shown."
+  },
+  {
+    "slug": "compromise-effect-choices-affected-if-presented-as-extreme-or-average",
+    "name": "Compromise effect",
+    "summary": "The tendency for an option to seem better when it appears as a middle compromise between extremes."
+  },
+  {
+    "slug": "consistency-bias",
+    "summary": "The tendency to remember past attitudes or behavior as more consistent with the present than they really were."
+  },
+  {
+    "slug": "conservatism-or-regressive-bias",
+    "name": "Regressive bias",
+    "summary": "The tendency to remember high values as lower and low values as higher, pulling estimates back toward the middle."
+  },
+  {
+    "slug": "cryptomnesia",
+    "summary": "The tendency to mistake an old memory or borrowed idea for a new original thought."
+  },
+  {
+    "slug": "curse-of-knowledge",
+    "summary": "The tendency for informed people to underestimate how hard it is for less-informed people to follow or predict the same material."
+  },
+  {
+    "slug": "decoy-effect",
+    "summary": "The tendency for a worse third option to shift preference toward a nearby target option."
+  },
+  {
+    "slug": "extension-neglect",
+    "summary": "The tendency to ignore quantity or scope when judging a total outcome."
+  },
+  {
+    "slug": "false-memory",
+    "summary": "The tendency to remember imagined, suggested, or reconstructed events as if they had actually happened."
+  },
+  {
+    "slug": "generation-effect",
+    "summary": "The tendency to remember information better when you generated it yourself."
+  },
+  {
+    "slug": "humor-effect",
+    "summary": "The tendency to remember humorous material more easily than plain material."
+  },
+  {
+    "slug": "hyperbolic-discounting",
+    "summary": "The tendency to give disproportionate weight to immediate payoffs over larger later ones."
+  },
+  {
+    "slug": "illusion-of-asymmetric-insight",
+    "summary": "The tendency to think you understand other people better than they understand you."
+  },
+  {
+    "slug": "implicit-association",
+    "summary": "The tendency for automatic associations to shape response speed and judgment even without deliberate endorsement."
+  },
+  {
+    "slug": "impostor-syndrome",
+    "summary": "The tendency to doubt one's competence and fear being exposed as a fraud despite evidence of ability."
+  },
+  {
+    "slug": "levels-of-processing-effect",
+    "summary": "The tendency for information processed more deeply to be remembered better."
+  },
+  {
+    "slug": "loss-aversion",
+    "summary": "The tendency to feel losses more strongly than equivalent gains."
+  },
+  {
+    "slug": "misinterpreted-effort-hypothesis",
+    "summary": "The tendency to treat effortful learning as ineffective even when it produces stronger long-term retention."
+  },
+  {
+    "slug": "modality-effect",
+    "summary": "The tendency for the last items in a sequence to be remembered better when heard than when read."
+  },
+  {
+    "slug": "moral-credential",
+    "summary": "The tendency to treat a prior good deed as permission for later worse behavior."
+  },
+  {
+    "slug": "naive-cynicism",
+    "summary": "The tendency to expect other people to be more self-interested or biased than they really are."
+  },
+  {
+    "slug": "next-in-line-effect",
+    "summary": "The tendency for recall to worsen while waiting for your turn to speak because attention shifts to performance."
+  },
+  {
+    "slug": "observer-expectancy-effect",
+    "summary": "The tendency for a researcher's expectations to influence how data are observed, elicited, or interpreted."
+  },
+  {
+    "slug": "outgroup-favoritism",
+    "summary": "The tendency for some disadvantaged groups to rate outgroups more favorably than their own group."
+  },
+  {
+    "slug": "outgroup-homogeneity-bias",
+    "summary": "The tendency to see members of other groups as more similar to one another than members of your own group."
+  },
+  {
+    "slug": "part-list-cueing-effect",
+    "summary": "The tendency for being shown some items from a list to make the remaining items harder to recall."
+  },
+  {
+    "slug": "peakend-rule",
+    "summary": "The tendency to judge an experience mainly by its peak and its ending rather than by its full duration."
+  },
+  {
+    "slug": "prevention-bias",
+    "summary": "The tendency to treat prevention spending as buying more safety than equally effective detection or response spending."
+  },
+  {
+    "slug": "primacy-effect",
+    "summary": "The tendency to remember the first items in a sequence especially well."
+  },
+  {
+    "slug": "processing-difficulty-effect",
+    "summary": "The tendency for slightly harder-to-process material to be remembered better because it receives more effortful attention."
+  },
+  {
+    "slug": "rhyme-as-reason-effect",
+    "summary": "The tendency to judge rhyming statements as more truthful or convincing."
+  },
+  {
+    "slug": "self-relevance-effect",
+    "summary": "The tendency to remember information better when it relates to yourself."
+  },
+  {
+    "slug": "serial-position-effect",
+    "summary": "The tendency to remember the beginning and end of a sequence better than the middle."
+  },
+  {
+    "slug": "spacing-effect",
+    "summary": "The tendency to remember information better when repetitions are spread out over time."
+  },
+  {
+    "slug": "stereotype-bias-or-stereotypical-bias",
+    "name": "Stereotype memory bias",
+    "summary": "The tendency for memory to drift toward familiar racial, gender, or social stereotypes."
+  },
+  {
+    "slug": "stereotyping",
+    "summary": "The tendency to assign group-based traits to an individual without enough individual evidence."
+  },
+  {
+    "slug": "subjective-validation",
+    "summary": "The tendency to accept statements as true when they fit your beliefs, hopes, or impressions."
+  },
+  {
+    "slug": "suggestibility",
+    "summary": "The tendency for questions or cues from others to shape what is later remembered as your own memory."
+  },
+  {
+    "slug": "tachypsychia",
+    "summary": "The tendency for time to seem to speed up or slow down during acute stress or danger."
+  },
+  {
+    "slug": "verbatim-effect",
+    "summary": "The tendency to remember the gist of what was said better than the exact wording."
+  },
+  {
+    "slug": "von-restorff-effect",
+    "summary": "The tendency to remember an item better when it stands out from the rest."
+  },
+  {
+    "slug": "zeigarnik-effect",
+    "summary": "The tendency to remember unfinished or interrupted tasks better than completed ones."
+  },
+  {
+    "slug": "zero-sum-bias",
+    "summary": "The tendency to see gains for one side as requiring losses for another even when both could benefit."
+  }
+]

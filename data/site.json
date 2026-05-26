@@ -23,8 +23,8 @@
   "brandMonogram": "CB",
   "brandSubtitle": "A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.",
   "heroTitle": "Cognitive biases made clearer, more teachable, and easier to interrupt.",
-  "heroLead": "CogBias is a practical reference for spotting the recurring distortions that bend estimation, memory, attribution, and choice long before anyone states a public argument out loud. The architecture borrows the teaching feel of LogFall, but the site is tuned for private judgment, social perception, postmortems, scenario assessment, and debiasing process design.",
-  "sourceAttribution": "Seed taxonomy and broad coverage are drawn from Wikipedia's List of cognitive biases, then editorially reshaped into a teaching-first reference.",
+  "heroLead": "CogBias is a practical reference for the recurring distortions that bend estimation, memory, attribution, and choice. It is built for readers who want clearer labels, sharper comparisons, and process moves that actually reduce error.",
+  "sourceAttribution": "A teaching-first guide to cognitive bias, judgment traps, and debiasing moves.",
   "illustrationPlaceholderTitle": "Illustration Placeholder",
   "illustrationPlaceholderBody": "A custom visual plate will live here once the image set is produced. The layout is already reserved so future images can drop in without reshaping the page.",
   "featured": [
@@ -329,14 +329,14 @@
       "Simple client-side filtering"
     ],
     "rewrite": [
-      "Shift the taxonomy from fallacy families to Wikipedia-seeded bias categories and patterns",
+      "Shift the taxonomy from fallacy families to seed-taxonomy bias categories and patterns",
       "Tune page framing around distorted judgment instead of public argument structure",
       "Reserve illustration slots now so the later image set lands cleanly",
       "Use generic fallbacks for broad coverage while keeping richer hand-authored pages for core biases"
     ],
     "add": [
       "Pattern pages alongside category pages",
-      "Source links back to the Wikipedia seed taxonomy",
+      "Source links back to the seed taxonomy",
       "Image placeholders on detail pages",
       "A more extensive imported catalog with future editorial layering",
       "Mixed scenario assessment, context-specific practice modes, comparison guides, and flagship-page teaching modules"

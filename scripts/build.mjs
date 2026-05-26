@@ -271,6 +271,58 @@ function buildBiasCardSummary(entry) {
   );
 }
 
+function buildSearchBody(entry) {
+  const seen = new Set();
+  return [
+    entry.cardSummary,
+    entry.summary,
+    entry.mechanism,
+    entry.distortion,
+    entry.commonTrigger,
+    ...(entry.tasks || []),
+    ...(entry.patterns || []),
+  ]
+    .map((item) => String(item || "").trim())
+    .filter(Boolean)
+    .filter((item) => {
+      const key = item.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .join(" ");
+}
+
+function sanitizeMechanismText(text = "") {
+  const normalized = String(text || "").trim();
+  if (!normalized) return "";
+  if (/^(Wikipedia groups this bias under|This entry sits under)\b/i.test(normalized)) {
+    return "";
+  }
+  return normalized;
+}
+
+function isWikipediaUrl(value = "") {
+  return /(^https?:\/\/)?([a-z0-9-]+\.)?wikipedia\.org\//i.test(String(value || "").trim());
+}
+
+function publicExternalUrl(value = "") {
+  const url = String(value || "").trim();
+  if (!url || isWikipediaUrl(url)) return "";
+  return url;
+}
+
+function sanitizeVisibleSourceLabel(value = "") {
+  const label = String(value || "").trim();
+  if (!label) return "";
+  if (/wikipedia/i.test(label)) return "";
+  return label;
+}
+
+function formatCaseStudySource(item = {}) {
+  return [sanitizeVisibleSourceLabel(item.source), String(item.year || "").trim()].filter(Boolean).join(" · ");
+}
+
 function illustrationCaptionFor(entry) {
   return (
     biasIllustrationCaptions[entry.slug] ||
@@ -283,6 +335,11 @@ const entries = mergeEntryData(
   entrySourceData,
 ).map((entry) => ({
   ...entry,
+  mechanism: sanitizeMechanismText(entry.mechanism),
+  caseStudies: (entry.caseStudies || []).map((item) => ({
+    ...item,
+    source: sanitizeVisibleSourceLabel(item.source),
+  })),
   cardSummary: buildBiasCardSummary(entry),
   illustrationCaption: illustrationCaptionFor(entry),
 }));
@@ -303,12 +360,6 @@ const taskByName = new Map(siteConfig.categories.map((task) => [task.name, task]
 const patternBySlug = new Map(siteConfig.patterns.map((pattern) => [pattern.slug, pattern]));
 const patternByName = new Map(siteConfig.patterns.map((pattern) => [pattern.name, pattern]));
 const entryBySlug = new Map(entries.map((entry) => [entry.slug, entry]));
-const buildDate = new Intl.DateTimeFormat("en-CA", {
-  timeZone: "America/New_York",
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-}).format(new Date());
 
 const tasks = siteConfig.categories
   .map((task) => ({
@@ -839,18 +890,13 @@ function renderHead({ title, description, prefix, routePath }) {
 function renderNav(prefix, currentId) {
   const navItems = [
     { id: "home", label: "Home", href: `${prefix}` || "./" },
-    { id: "biases", label: "All Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
+    { id: "biases", label: "Biases", href: `${prefix}${siteConfig.sectionSlug}/` },
     { id: "categories", label: "Categories", href: `${prefix}categories/` },
     { id: "contexts", label: "Contexts", href: `${prefix}${domainHubSlug}/` },
-    { id: "map", label: "Map", href: `${prefix}${biasMapSlug}/` },
     { id: "compare", label: "Compare", href: `${prefix}${comparisonGuideSlug}/` },
-    { id: "kits", label: "Kits", href: `${prefix}${teachingKitSlug}/` },
+    { id: "map", label: "Map", href: `${prefix}${biasMapSlug}/` },
     { id: "paths", label: "Paths", href: `${prefix}${siteConfig.pathSlug}/` },
-    { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
-    { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
     { id: "assessment", label: "Assessment", href: `${prefix}${siteConfig.assessmentSlug}/` },
-    { id: "case-studies", label: "Case Studies", href: `${prefix}${caseStudySlug}/` },
-    { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
     { id: "theory", label: "Theory", href: `${prefix}${siteConfig.theorySlug}/` },
     { id: "about", label: "About", href: `${prefix}about/` },
   ];
@@ -861,6 +907,32 @@ function renderNav(prefix, currentId) {
       return `<a href="${item.href}"${ariaCurrent}>${escapeHtml(item.label)}</a>`;
     })
     .join("")}</nav>`;
+}
+
+function renderFooter(prefix, currentId) {
+  const footerLinks = [
+    { id: "kits", label: "Teaching Kits", href: `${prefix}${teachingKitSlug}/` },
+    { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
+    { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
+    { id: "case-studies", label: "Case Studies", href: `${prefix}${caseStudySlug}/` },
+    { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
+  ];
+
+  return `
+      <footer class="footer">
+        <div class="footer-inner">
+          <nav class="footer-link-row" aria-label="Secondary">
+            ${footerLinks
+              .map((item) => {
+                const ariaCurrent = item.id === currentId ? ' aria-current="page"' : "";
+                return `<a href="${item.href}"${ariaCurrent}>${escapeHtml(item.label)}</a>`;
+              })
+              .join("")}
+          </nav>
+          <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
+          <p class="footer-note">${escapeHtml(siteConfig.copyrightNotice)}</p>
+        </div>
+      </footer>`;
 }
 
 function renderMasthead(prefix, currentId) {
@@ -896,16 +968,6 @@ function renderMasthead(prefix, currentId) {
       </header>`;
 }
 
-function renderFooter() {
-  return `
-      <footer class="footer">
-        <div class="footer-inner">
-          <p class="footer-note">${escapeHtml(siteConfig.sourceAttribution)}</p>
-          <p class="footer-note">Last build: ${escapeHtml(buildDate)}. ${escapeHtml(siteConfig.copyrightNotice)}</p>
-        </div>
-      </footer>`;
-}
-
 function renderPage({ title, description, prefix, currentId, breadcrumbs, body, routePath, bodyClass = "" }) {
   const bodyClassAttr = bodyClass ? ` class="${escapeHtml(bodyClass)}"` : "";
   return `<!doctype html>
@@ -920,7 +982,7 @@ ${renderMasthead(prefix, currentId)}
         ${breadcrumbs ? renderBreadcrumbs(breadcrumbs) : ""}
 ${body}
       </main>
-${renderFooter()}
+${renderFooter(prefix, currentId)}
     </div>
   </body>
 </html>
@@ -944,7 +1006,7 @@ function entryDomains(entry) {
 }
 
 function entryPromptEffort(entry) {
-  return entry.effort || (entry.signals ? "Deep dive" : "Catalog entry");
+  return entry.effort || (entry.signals ? "Field guide" : "Quick reference");
 }
 
 function relatedEntriesFor(entry, limit = 6) {
@@ -1015,6 +1077,11 @@ function sentenceCase(value = "") {
   return value.charAt(0).toLowerCase() + value.slice(1);
 }
 
+function truncateText(value = "", maxLength = 180) {
+  if (!value || value.length <= maxLength) return value;
+  return `${value.slice(0, Math.max(0, maxLength - 1)).trimEnd().replace(/[.,;:!?-]+$/, "")}…`;
+}
+
 function pathObjectsForEntry(entry) {
   return learningPaths.filter((path) => (path.biasSlugs || []).includes(entry.slug));
 }
@@ -1037,6 +1104,129 @@ function comparisonGuidesForEntry(entry, limit = 3) {
 
 function teachingKitsForEntry(entry, limit = 3) {
   return teachingKits.filter((kit) => (kit.biasSlugs || []).includes(entry.slug)).slice(0, limit);
+}
+
+function assessmentItemsForEntry(entry, limit = 2) {
+  return assessmentBank.filter((item) => item.correctBias === entry.slug).slice(0, limit);
+}
+
+function overlapCount(left = [], right = []) {
+  const rightSet = new Set(right);
+  return left.filter((item) => rightSet.has(item)).length;
+}
+
+function contextSignalsForEntry(entry) {
+  const relatedEntries = relatedEntriesFor(entry, 8);
+  return {
+    relatedEntries,
+    relatedSlugs: new Set(relatedEntries.map((candidate) => candidate.slug)),
+    tasks: entry.tasks || [],
+    patterns: entry.patterns || [],
+  };
+}
+
+function scoreLinkedBiasGroup(entry, linkedSlugs = [], signals = contextSignalsForEntry(entry)) {
+  let score = 0;
+  const seen = new Set();
+
+  for (const slug of linkedSlugs.filter(Boolean)) {
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+
+    if (slug === entry.slug) score += 100;
+    if (signals.relatedSlugs.has(slug)) score += 18;
+    if ((entry.related || []).includes(slug)) score += 8;
+
+    const linkedEntry = entryBySlug.get(slug);
+    if (!linkedEntry) continue;
+    score += overlapCount(linkedEntry.tasks || [], signals.tasks) * 5;
+    score += overlapCount(linkedEntry.patterns || [], signals.patterns) * 4;
+  }
+
+  return score;
+}
+
+function resolveLinkedResources({
+  entry,
+  directItems = [],
+  allItems = [],
+  linkedSlugsForItem = () => [],
+  keyForItem = (item) => item.slug || item.id || item.title,
+  limit = 2,
+  minScore = 18,
+}) {
+  const direct = directItems.slice(0, limit).map((item) => ({ item, inferred: false }));
+  if (direct.length >= limit) return direct;
+
+  const directKeys = new Set(directItems.map((item) => keyForItem(item)));
+  const signals = contextSignalsForEntry(entry);
+  const inferred = allItems
+    .filter((item) => !directKeys.has(keyForItem(item)))
+    .map((item) => ({
+      item,
+      inferred: true,
+      score: scoreLinkedBiasGroup(entry, linkedSlugsForItem(item), signals),
+    }))
+    .filter((item) => item.score >= minScore)
+    .sort(
+      (left, right) =>
+        right.score - left.score ||
+        String(left.item.title || left.item.name || left.item.slug || left.item.id || "").localeCompare(
+          String(right.item.title || right.item.name || right.item.slug || right.item.id || ""),
+        ),
+    )
+    .slice(0, Math.max(0, limit - direct.length))
+    .map(({ item, inferred }) => ({ item, inferred }));
+
+  return [...direct, ...inferred];
+}
+
+function pathLinksForEntry(entry, limit = 2) {
+  return resolveLinkedResources({
+    entry,
+    directItems: pathObjectsForEntry(entry),
+    allItems: learningPaths,
+    linkedSlugsForItem: (item) => item.biasSlugs || [],
+    keyForItem: (item) => item.slug,
+    limit,
+    minScore: 18,
+  });
+}
+
+function selfCheckLinksForEntry(entry, limit = 2) {
+  return resolveLinkedResources({
+    entry,
+    directItems: selfChecksForEntry(entry),
+    allItems: selfChecks,
+    linkedSlugsForItem: (item) => item.relatedBiases || [],
+    keyForItem: (item) => item.slug,
+    limit,
+    minScore: 18,
+  });
+}
+
+function assessmentLinksForEntry(entry, limit = 2) {
+  return resolveLinkedResources({
+    entry,
+    directItems: assessmentItemsForEntry(entry, limit),
+    allItems: assessmentBank,
+    linkedSlugsForItem: (item) => [item.correctBias].filter(Boolean),
+    keyForItem: (item) => item.id,
+    limit,
+    minScore: 16,
+  });
+}
+
+function teachingKitLinksForEntry(entry, limit = 2) {
+  return resolveLinkedResources({
+    entry,
+    directItems: teachingKitsForEntry(entry, limit),
+    allItems: teachingKits,
+    linkedSlugsForItem: (item) => item.biasSlugs || [],
+    keyForItem: (item) => item.slug,
+    limit,
+    minScore: 20,
+  });
 }
 
 function examplesFor(entry) {
@@ -1127,6 +1317,19 @@ function quickCheckFor(entry) {
   return reflectionQuestionsFor(entry)[0] || entry.firstCountermove || "What comparison would most improve this judgment?";
 }
 
+function mechanismSnapshotFor(entry) {
+  if (entry.mechanism) return entry.mechanism;
+
+  const task = entryTaskObjects(entry)[0];
+  const pattern = entryPatternObjects(entry)[0];
+  const taskLabel = (task?.name || "judgment").toLowerCase();
+  const patternText = pattern?.description
+    ? sentenceCase(pattern.description).replace(/\.$/, "")
+    : "the easiest cue starts masquerading as enough evidence";
+
+  return `In ${taskLabel} problems, ${patternText} before a fuller check catches up.`;
+}
+
 function practiceLabFor(entry) {
   if (entry.practiceLab) return entry.practiceLab;
 
@@ -1162,7 +1365,67 @@ function practiceLabFor(entry) {
 }
 
 function caseStudiesFor(entry) {
-  return entry.caseStudies || [];
+  const direct = (entry.caseStudies || []).map((item) => ({
+    ...item,
+    inferred: false,
+    relatedEntries: [],
+  }));
+
+  if (direct.length >= 2) return direct;
+
+  const directKeys = new Set(
+    direct.map((item) => `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`),
+  );
+  const signals = contextSignalsForEntry(entry);
+
+  const inferred = caseStudyLibrary
+    .filter((item) => !item.entrySlugs.includes(entry.slug))
+    .filter((item) => {
+      const key = `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
+      return !directKeys.has(key);
+    })
+    .map((item) => {
+      const relatedEntries = (item.entries || []).filter((candidate) => signals.relatedSlugs.has(candidate.slug));
+      const score =
+        relatedEntries.length * 14 +
+        overlapCount(item.categories || [], entry.tasks || []) * 4 +
+        overlapCount(item.patterns || [], entry.patterns || []) * 3;
+      return {
+        ...item,
+        inferred: true,
+        relatedEntries,
+        score,
+      };
+    })
+    .filter((item) => item.score >= 7)
+    .sort((left, right) => right.score - left.score || String(left.title || "").localeCompare(String(right.title || "")))
+    .slice(0, Math.max(0, 2 - direct.length))
+    .map(({ score, ...item }) => item);
+
+  const seenKeys = new Set([
+    ...directKeys,
+    ...inferred.map(
+      (item) => `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`,
+    ),
+  ]);
+
+  const borrowed = relatedEntriesFor(entry, 8)
+    .flatMap((candidate) =>
+      (candidate.caseStudies || []).map((item) => ({
+        ...item,
+        inferred: true,
+        relatedEntries: [candidate],
+      })),
+    )
+    .filter((item) => {
+      const key = `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
+      if (seenKeys.has(key)) return false;
+      seenKeys.add(key);
+      return true;
+    })
+    .slice(0, Math.max(0, 2 - direct.length - inferred.length));
+
+  return [...direct, ...inferred, ...borrowed];
 }
 
 function sourceTrailFor(entry, { includeSeed = true } = {}) {
@@ -1172,12 +1435,12 @@ function sourceTrailFor(entry, { includeSeed = true } = {}) {
     sources.push({
       kind: "Seed taxonomy",
       title: `${entry.name} reference article`,
-      source: entry.sourceLabel || "Wikipedia",
+      source: sanitizeVisibleSourceLabel(entry.sourceLabel),
       year: "",
       href: entry.sourceUrl || "https://en.wikipedia.org/wiki/List_of_cognitive_biases",
       note:
         siteConfig.sourceAttribution ||
-        "Seed taxonomy and broad coverage are drawn from Wikipedia's List of cognitive biases.",
+        "Seed taxonomy and broad coverage are drawn from a wide imported cognitive-bias catalog, then editorially reshaped into a teaching-first reference.",
     });
   }
 
@@ -1325,19 +1588,7 @@ function renderBiasCard(entry, prefix = "") {
             data-aliases="${escapeHtml((entry.aliases || []).join(", "))}"
             data-categories="${escapeHtml((entry.tasks || []).join("||"))}"
             data-patterns="${escapeHtml((entry.patterns || []).join("||"))}"
-            data-body="${escapeHtml(
-              [
-                entry.cardSummary,
-                entry.summary,
-                entry.mechanism,
-                entry.distortion,
-                entry.commonTrigger,
-                ...(entry.tasks || []),
-                ...(entry.patterns || []),
-              ]
-                .filter(Boolean)
-                .join(" "),
-            )}"
+            data-body="${escapeHtml(buildSearchBody(entry))}"
           >
             ${poster}
             <h3><a href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a></h3>
@@ -1536,8 +1787,10 @@ function renderTheoryArticleCard(article, prefix = "") {
 
 function renderCaseStudyCard(item, prefix = "") {
   const biasNames = item.entries.map((entry) => entry.name);
-  const title = item.url
-    ? `<a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a>`
+  const titleUrl = publicExternalUrl(item.url);
+  const sourceLine = formatCaseStudySource(item);
+  const title = titleUrl
+    ? `<a href="${escapeHtml(titleUrl)}">${escapeHtml(item.title)}</a>`
     : escapeHtml(item.title);
 
   return `
@@ -1552,8 +1805,7 @@ function renderCaseStudyCard(item, prefix = "") {
               [
                 item.summary,
                 item.whyItFits,
-                item.source,
-                item.year,
+                sourceLine,
                 ...biasNames,
                 ...(item.categories || []),
                 ...(item.patterns || []),
@@ -1565,7 +1817,7 @@ function renderCaseStudyCard(item, prefix = "") {
             <h3>${title}</h3>
             <p class="card-copy">${escapeHtml(item.summary || "")}</p>
             <p class="muted"><strong>Why it fits:</strong> ${escapeHtml(item.whyItFits || "")}</p>
-            <p class="case-source">${escapeHtml(item.source || "")}${item.year ? ` · ${escapeHtml(item.year)}` : ""}</p>
+            ${sourceLine ? `<p class="case-source">${escapeHtml(sourceLine)}</p>` : ""}
             <div class="path-link-row">
               ${item.entries
                 .map(
@@ -1718,15 +1970,15 @@ function renderHomePage() {
         <section class="detail-section section-block">
           <p class="eyebrow">Judgment Before Argument</p>
           <h2 class="section-title">Bias work starts earlier than fallacy work.</h2>
-          <p class="section-copy">Many of these distortions fire in prediction, attribution, recall, hiring, planning, and self-report before anyone offers a polished public argument. That is why this site keeps LogFall’s practical teaching feel but shifts the diagnostic center of gravity toward private judgment and debiasing process.</p>
+          <p class="section-copy">Many of these distortions fire in prediction, attribution, recall, hiring, planning, and self-report before anyone offers a polished public argument. This site is built for that earlier layer, where better labels need to lead to better judgment.</p>
           <div class="two-column section-block">
             <div class="note-panel">
-              <h4>Broad coverage first</h4>
-              <p class="muted">This version deliberately starts wide. The imported catalog is designed to give the site real reference value immediately, with richer editorial passes layered onto core entries over time.</p>
+              <h4>Wide enough to be useful</h4>
+              <p class="muted">The catalog is intentionally broad, so readers can find obscure labels without losing the shorter teaching routes for the most important ones.</p>
             </div>
             <div class="note-panel">
-              <h4>Images are planned</h4>
-              <p class="muted">Illustration slots are already reserved on the detail pages so a future image set can be added without disturbing the layout.</p>
+              <h4>Poster-style teaching aids</h4>
+              <p class="muted">Each bias page uses a poster-style illustration to make the pattern easier to recognize before the terminology has to carry the lesson by itself.</p>
             </div>
           </div>
         </section>
@@ -1757,7 +2009,7 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Learning paths</h2>
-              <p class="section-copy">These curated routes are the closest analogue to LogFall's teaching paths: smaller, more purposeful sequences for a specific job of thinking, now grouped into foundational, applied, and teaching tiers.</p>
+              <p class="section-copy">These curated routes are grouped into foundational, applied, and teaching tiers so readers can move from core labels to live judgment work without getting lost in the full catalog.</p>
             </div>
             <a class="inline-link" href="${siteConfig.pathSlug}/">Open all paths</a>
           </div>
@@ -1816,7 +2068,7 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Featured biases</h2>
-              <p class="section-copy">A teaching-first starter selection drawn from the larger imported catalog.</p>
+              <p class="section-copy">A strong starting set for everyday judgment, evidence review, social perception, forecasting, and decision-making.</p>
             </div>
             <a class="inline-link" href="${siteConfig.sectionSlug}/">See the full index</a>
           </div>
@@ -1829,7 +2081,7 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Categories</h2>
-              <p class="section-copy">These follow the broad task groupings used in the Wikipedia seed taxonomy.</p>
+              <p class="section-copy">These group biases by the part of judgment they most often distort: estimation, decision, explanation, recall, evidence review, or self-report.</p>
             </div>
             <a class="inline-link" href="categories/">Open categories</a>
           </div>
@@ -1842,7 +2094,7 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Patterns</h2>
-              <p class="section-copy">The pattern layer gives the site a second axis of comparison, similar to how LogFall uses more than one way of organizing related errors.</p>
+              <p class="section-copy">Patterns cut across categories and help separate similar-looking biases by the kind of pull that is doing the real work.</p>
             </div>
             <a class="inline-link" href="${siteConfig.patternSlug}/">Open patterns</a>
           </div>
@@ -1855,7 +2107,7 @@ function renderHomePage() {
           <div class="section-header">
             <div>
               <h2 class="section-title">Prompt kits</h2>
-              <p class="section-copy">Bias-aware AI prompts modeled on the practical spirit of LogFall's prompt section, but tuned for decisions, forecasting, people judgment, and media calibration.</p>
+              <p class="section-copy">Bias-aware AI prompts for widening the frame in decisions, forecasting, people judgment, moderation, and media reading.</p>
             </div>
             <a class="inline-link" href="${siteConfig.promptSlug}/">Open prompt kits</a>
           </div>
@@ -2078,7 +2330,7 @@ function renderCategoryIndexPage() {
           <div class="detail-section">
             <p class="eyebrow">Categories</p>
             <h2 class="detail-title">Six broad kinds of judgment trouble</h2>
-            <p class="detail-deck">These category pages track the top-level task groupings from the Wikipedia seed taxonomy, then reframe them for a teaching-first reference site.</p>
+            <p class="detail-deck">These category pages group biases by the kind of judgment they most often distort, making it easier to compare nearby labels before the diagnosis hardens.</p>
           </div>
           <aside class="hero-panel hero-side">
             <p class="eyebrow">How To Use Them</p>
@@ -3245,7 +3497,7 @@ function renderTheoryPage() {
         <section class="detail-section">
           <p class="eyebrow">Theory</p>
           <h2 class="detail-title">Related articles on how to teach, compare, and interrupt biases well</h2>
-          <p class="detail-deck">CogBias borrows LogFall's practical teaching instinct, but the underlying object is different. These articles explain how bias work differs from fallacy work, why debiasing is mainly a design problem, and how to teach calibration without turning the topic into jargon theater.</p>
+          <p class="detail-deck">These articles explain how bias work differs from mere label memorization, why debiasing is often a design problem, and how to teach calibration without turning the topic into jargon theater.</p>
         </section>
 
         <section class="section-block">
@@ -3405,12 +3657,156 @@ function renderBiasDetailPage(entry) {
   const confusions = confusionsFor(entry);
   const caseStudies = caseStudiesFor(entry);
   const companionReading = companionReadingFor(entry);
-  const paths = pathObjectsForEntry(entry);
-  const checks = selfChecksForEntry(entry);
+  const directPaths = pathObjectsForEntry(entry);
+  const pathLinks = pathLinksForEntry(entry);
+  const checkLinks = selfCheckLinksForEntry(entry);
+  const assessmentLinks = assessmentLinksForEntry(entry);
   const gauges = entry.teachingGauges || [];
-  const promptKits = promptKitsForEntry(entry);
   const entryComparisonGuides = comparisonGuidesForEntry(entry);
-  const entryTeachingKits = teachingKitsForEntry(entry);
+  const entryTeachingKits = teachingKitLinksForEntry(entry);
+  const countDirectResources = (items = []) => items.filter((item) => !item.inferred).length;
+  const renderContextResourceItem = ({ href = "", title, description = "", kicker = "" }) => `
+    <article class="context-resource-item">
+      ${kicker ? `<p class="context-resource-kicker">${escapeHtml(kicker)}</p>` : ""}
+      <p class="context-resource-title">${
+        href ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>` : escapeHtml(title)
+      }</p>
+      ${description ? `<p class="context-resource-text">${escapeHtml(description)}</p>` : ""}
+    </article>`;
+  const contextCards = [];
+
+  if (pathLinks.length) {
+    const directPathCount = countDirectResources(pathLinks);
+    contextCards.push(`
+            <article class="category-card">
+              <h3>Learning paths</h3>
+              <p class="card-copy">${escapeHtml(
+                directPathCount === 0
+                  ? "This bias does not yet have a dedicated path, but these nearby paths are usually the clearest place to see the same family of distortion in motion."
+                  : directPathCount === pathLinks.length
+                    ? directPathCount === 1
+                      ? "Follow the related path to see where this bias most often travels with nearby distortions."
+                      : `${directPathCount} related paths place this bias beside the distortions it most often travels with in practice.`
+                    : "This bias appears directly in one guided sequence and also in nearby paths that frame the same judgment problem from a slightly wider angle.",
+              )}</p>
+              <div class="context-resource-list">
+                ${pathLinks
+                  .map(({ item, inferred }) =>
+                    renderContextResourceItem({
+                      href: `../../${siteConfig.pathSlug}/${item.slug}/`,
+                      title: item.title,
+                      description: item.whenToUse || item.guidingQuestion || item.summary,
+                      kicker: inferred ? "Nearby path" : "Direct path",
+                    }),
+                  )
+                  .join("")}
+              </div>
+            </article>`);
+  }
+
+  if (checkLinks.length) {
+    const directCheckCount = countDirectResources(checkLinks);
+    contextCards.push(`
+            <article class="category-card">
+              <h3>Self-checks</h3>
+              <p class="card-copy">${escapeHtml(
+                directCheckCount === 0
+                  ? "This bias does not yet have its own dedicated self-check, but these nearby audits usually catch the same kind of drift before it hardens."
+                  : directCheckCount === checkLinks.length
+                    ? directCheckCount === 1
+                      ? "Use this short audit when you suspect this bias is starting to steer the call."
+                      : "These short audits help catch this bias before it hardens into a verdict, forecast, or decision."
+                    : "These audits combine direct and nearby checks so you can test the label itself and the broader judgment pattern around it.",
+              )}</p>
+              <div class="context-resource-list">
+                ${checkLinks
+                  .map(({ item, inferred }) =>
+                    renderContextResourceItem({
+                      href: `../../${siteConfig.checkSlug}/#${item.slug}`,
+                      title: item.title,
+                      description: item.question || item.summary,
+                      kicker: inferred ? "Nearby audit" : "Direct audit",
+                    }),
+                  )
+                  .join("")}
+              </div>
+            </article>`);
+  }
+
+  if (entryTeachingKits.length) {
+    const directKitCount = countDirectResources(entryTeachingKits);
+    contextCards.push(`
+            <article class="category-card">
+              <h3>Teaching kits</h3>
+              <p class="card-copy">${escapeHtml(
+                directKitCount === 0
+                  ? "This bias is not yet the named center of its own kit, but it already appears in nearby workshop material that teaches the same pressure in context."
+                  : directKitCount === entryTeachingKits.length
+                    ? directKitCount === 1
+                      ? "This bias is featured in a printable lesson or workshop packet."
+                      : `${directKitCount} printable lessons or workshop packets use this bias in context.`
+                    : "These workshop packets mix direct coverage with nearby classroom material that makes the same distortion easier to teach.",
+              )}</p>
+              <div class="context-resource-list">
+                ${entryTeachingKits
+                  .map(({ item, inferred }) =>
+                    renderContextResourceItem({
+                      href: `../../${teachingKitSlug}/${item.slug}/`,
+                      title: item.title,
+                      description: item.summary,
+                      kicker: inferred ? "Nearby workshop" : "Direct workshop",
+                    }),
+                  )
+                  .join("")}
+              </div>
+            </article>`);
+  }
+
+  if (assessmentLinks.length) {
+    const directAssessmentCount = countDirectResources(assessmentLinks);
+    contextCards.push(`
+            <article class="category-card">
+              <h3>Assessment</h3>
+              <p class="card-copy">${escapeHtml(
+                directAssessmentCount === 0
+                  ? "There is no dedicated scenario for this bias yet, but these nearby cases test the same kind of pressure and repair move."
+                  : directAssessmentCount === assessmentLinks.length
+                    ? directAssessmentCount === 1
+                      ? "Practice diagnosing this bias from a mixed scenario instead of from the label alone."
+                      : `${directAssessmentCount} mixed scenarios let you diagnose this bias from the case rather than the heading.`
+                    : "These scenarios mix direct and nearby cases so you can practice the label itself and the broader judgment pattern around it.",
+              )}</p>
+              <div class="context-resource-list">
+                ${assessmentLinks
+                  .map(({ item, inferred }) =>
+                    renderContextResourceItem({
+                      title: item.title,
+                      description: truncateText(item.scenario, 180),
+                      kicker: inferred ? "Nearby scenario" : "Direct scenario",
+                    }),
+                  )
+                  .join("")}
+              </div>
+              <div class="path-link-row">
+                <a class="path-link-chip" href="../../${siteConfig.assessmentSlug}/?focus=${entry.slug}">Start a focused assessment set</a>
+              </div>
+            </article>`);
+  }
+
+  const contextSection = contextCards.length
+    ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Use it in context</h2>
+              <p class="section-copy">These linked tools turn the page into practice instead of leaving it at the level of definition.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            ${contextCards.join("")}
+          </div>
+        </section>`
+    : "";
 
   return renderPage({
     title: entry.name,
@@ -3446,18 +3842,22 @@ function renderBiasDetailPage(entry) {
                 <p class="detail-card-value">${escapeHtml(entry.firstCountermove || "Slow down the decision process before deciding what the label should be.")}</p>
               </div>
               <div class="note-panel">
-                <p class="detail-card-label">Coverage depth</p>
+                <p class="detail-card-label">Best use</p>
                 <p class="detail-card-value">${escapeHtml(entryPromptEffort(entry))}</p>
               </div>
             </div>
-            <div class="path-link-row path-link-row-spaced">
-              ${paths
+            ${
+              directPaths.length
+                ? `<div class="path-link-row path-link-row-spaced">
+              ${directPaths
                 .map(
                   (path) =>
                     `<a class="path-link-chip" href="../../${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a>`,
                 )
                 .join("")}
-            </div>
+            </div>`
+                : ""
+            }
           </div>
           <aside class="hero-panel hero-side detail-side-stack">
             ${renderDetailIllustration(entry)}
@@ -3471,7 +3871,7 @@ function renderBiasDetailPage(entry) {
           </div>
           <div class="note-panel">
             <h4>Mechanism snapshot</h4>
-            <p class="muted">${escapeHtml(entry.mechanism || "This bias changes what feels most plausible before the full evidence or decision process has been fairly inspected.")}</p>
+            <p class="muted">${escapeHtml(mechanismSnapshotFor(entry))}</p>
           </div>
         </div>
 
@@ -3744,7 +4144,13 @@ function renderBiasDetailPage(entry) {
           <div class="section-header">
             <div>
               <h2 class="section-title">Case studies</h2>
-              <p class="section-copy">These sourced cases do not prove what was in someone's head with perfect certainty. They are teaching cases for showing where the bias pressure becomes visible in practice.</p>
+              <p class="section-copy">${escapeHtml(
+                countDirectResources(caseStudies) === caseStudies.length
+                  ? "These sourced cases do not prove what was in someone's head with perfect certainty. They are teaching cases for showing where the bias pressure becomes visible in practice."
+                  : countDirectResources(caseStudies) > 0
+                    ? "These sourced cases include a few closely related examples where that helps make the same pressure visible in practice."
+                    : "These sourced cases come from closely related biases and help show the same kind of pressure while a direct case for this page catches up.",
+              )}</p>
             </div>
             <a class="inline-link" href="../../${caseStudySlug}/?q=${encodeURIComponent(entry.name)}">View related cases</a>
           </div>
@@ -3753,10 +4159,24 @@ function renderBiasDetailPage(entry) {
               .map(
                 (item) => `
                   <article class="case-item">
-                    <p class="case-title"><a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a></p>
+                    <p class="case-title">${
+                      publicExternalUrl(item.url)
+                        ? `<a href="${escapeHtml(publicExternalUrl(item.url))}">${escapeHtml(item.title)}</a>`
+                        : escapeHtml(item.title)
+                    }</p>
                     <p class="case-summary">${escapeHtml(item.summary)}</p>
                     <p class="case-summary muted"><strong>Why it fits:</strong> ${escapeHtml(item.whyItFits)}</p>
-                    <p class="case-source">${escapeHtml(item.source)}${item.year ? ` · ${escapeHtml(item.year)}` : ""}</p>
+                    ${
+                      item.inferred && item.relatedEntries?.length
+                        ? `<p class="case-summary muted"><strong>Related through:</strong> ${escapeHtml(
+                            item.relatedEntries
+                              .slice(0, 2)
+                              .map((relatedEntry) => relatedEntry.name)
+                              .join(", "),
+                          )}</p>`
+                        : ""
+                    }
+                    ${formatCaseStudySource(item) ? `<p class="case-source">${escapeHtml(formatCaseStudySource(item))}</p>` : ""}
                   </article>`,
               )
               .join("")}
@@ -3765,75 +4185,7 @@ function renderBiasDetailPage(entry) {
             : ""
         }
 
-        <section class="section-block">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Use it in context</h2>
-              <p class="section-copy">Once you know the bias, these nearby tools help you use the page in a real workflow rather than as a static definition.</p>
-            </div>
-          </div>
-          <div class="category-grid">
-            <article class="category-card">
-              <h3>Learning paths</h3>
-              <p class="card-copy">Curated sequences where this bias commonly appears alongside a few predictable neighbors.</p>
-              <div class="path-link-row">
-                ${paths
-                  .map(
-                    (path) =>
-                      `<a class="path-link-chip" href="../../${siteConfig.pathSlug}/${path.slug}/">${escapeHtml(path.title)}</a>`,
-                  )
-                  .join("")}
-              </div>
-            </article>
-            <article class="category-card">
-              <h3>Self-checks</h3>
-              <p class="card-copy">Short audits you can run before the distortion hardens into a decision, a verdict, or a post-hoc story.</p>
-              <div class="path-link-row">
-                ${checks
-                  .map(
-                    (check) =>
-                      `<a class="path-link-chip" href="../../${siteConfig.checkSlug}/#${check.slug}">${escapeHtml(check.title)}</a>`,
-                  )
-                  .join("")}
-              </div>
-            </article>
-            <article class="category-card">
-              <h3>Prompt kits</h3>
-              <p class="card-copy">Bias-aware AI prompts that widen the frame instead of simply endorsing the first preferred conclusion.</p>
-              <div class="path-link-row">
-                ${promptKits
-                  .map(
-                    (promptKit) =>
-                      `<a class="path-link-chip" href="../../${siteConfig.promptSlug}/#${promptKit.slug}">${escapeHtml(promptKit.title)}</a>`,
-                  )
-                  .join("")}
-              </div>
-            </article>
-            ${
-              entryTeachingKits.length
-                ? `<article class="category-card">
-              <h3>Teaching kits</h3>
-              <p class="card-copy">Printable lessons and workshop packets where this bias appears in context.</p>
-              <div class="path-link-row">
-                ${entryTeachingKits
-                  .map(
-                    (kit) =>
-                      `<a class="path-link-chip" href="../../${teachingKitSlug}/${kit.slug}/">${escapeHtml(kit.title)}</a>`,
-                  )
-                  .join("")}
-              </div>
-            </article>`
-                : ""
-            }
-            <article class="category-card">
-              <h3>Assessment</h3>
-              <p class="card-copy">A mixed scenario set that can quietly pull this bias into the question bank without announcing the answer in the title first.</p>
-              <div class="path-link-row">
-                <a class="path-link-chip" href="../../${siteConfig.assessmentSlug}/?focus=${entry.slug}">Open a mixed assessment set that includes this bias</a>
-              </div>
-            </article>
-          </div>
-        </section>
+        ${contextSection}
 
         ${
           companionReading.length
@@ -3902,10 +4254,9 @@ function renderCountermovesPage() {
 }
 
 function renderAboutPage() {
-  const roadmap = siteConfig.roadmap;
   return renderPage({
-    title: "About This Starter",
-    description: "How CogBias uses a Wikipedia seed taxonomy while growing into a fuller teaching resource.",
+    title: "About CogBias",
+    description: "What CogBias is for, how to use it, and how the site is organized.",
     prefix: "../",
     currentId: "about",
     routePath: "/about/",
@@ -3916,53 +4267,77 @@ function renderAboutPage() {
     body: `
         <section class="detail-section">
           <p class="eyebrow">About</p>
-          <h2 class="detail-title">Wide taxonomy first, then richer guided use</h2>
-          <p class="detail-deck">CogBias begins with the Wikipedia cognitive-bias list as a wide seed taxonomy, then reshapes that material into a teaching-first site with paths, self-audits, prompt kits, theory notes, and deeper editorial treatment of especially important bias pages.</p>
+          <h2 class="detail-title">A field guide to recurring errors in judgment</h2>
+          <p class="detail-deck">CogBias is built for readers who want more than a list of names. It combines definitions, comparisons, practice tools, theory pieces, and teaching materials so a bias label can lead to a better question or a better procedure.</p>
         </section>
 
         <div class="two-column section-block">
           <div class="note-panel">
-            <h4>Why this architecture works</h4>
-            <p class="muted">The site can now grow in three directions at once: broader coverage through the imported catalog, deeper coverage through hand-authored upgrades, and stronger usability through path pages and procedural tools.</p>
+            <h4>What the site is for</h4>
+            <p class="muted">Use CogBias when you need to spot a distortion, compare nearby labels, teach the difference, or change a workflow that keeps reproducing the same kind of judgment error.</p>
           </div>
           <div class="note-panel">
-            <h4>Files to edit first</h4>
+            <h4>Best ways to begin</h4>
             <ul class="muted">
-              <li><code>data/site.json</code> for branding, featured entries, taxonomy copy, and countermoves.</li>
-              <li><code>data/biases.json</code> for generated coverage.</li>
-              <li><code>data/editorial_enrichments*.json</code> for richer hand-authored entry sections.</li>
-              <li><code>data/entry_teaching_modules*.json</code>, <code>data/assessment_bank*.json</code>, <code>data/assessment_metadata*.json</code>, and <code>data/comparison_guides*.json</code> for flagship-page pedagogy, scenario practice, and nearby-label distinctions.</li>
-              <li><code>data/learning_paths*.json</code>, <code>data/path_curriculum*.json</code>, <code>data/self_checks*.json</code>, <code>data/self_check_curriculum*.json</code>, <code>data/teaching_kits*.json</code>, <code>data/prompt_kits*.json</code>, and <code>data/theory_articles*.json</code> for the guided layers.</li>
-              <li><code>scripts/import_wikipedia_biases.py</code> for refreshing the seed catalog.</li>
+              <li>Start with a context hub if you know the setting but not the label.</li>
+              <li>Use comparison guides when two nearby biases seem plausible.</li>
+              <li>Use learning paths when you want a guided route instead of a full index.</li>
+              <li>Use self-checks and assessment when you want practice rather than explanation alone.</li>
             </ul>
-            <p><a class="text-link" href="../${coverageSlug}/">Open the editorial coverage map</a></p>
           </div>
         </div>
 
         <section class="section-block">
           <div class="section-header">
             <div>
-              <h2 class="section-title">What stayed, what changed</h2>
-              <p class="section-copy">The point was to keep the feel of LogFall while changing the intellectual center of gravity.</p>
+              <h2 class="section-title">How the site is organized</h2>
+              <p class="section-copy">Different parts of the site do different jobs, so readers can move from identification to comparison to practice without losing the thread.</p>
             </div>
           </div>
           <div class="two-column">
             <div class="note-panel">
-              <h4>Keep</h4>
-              <ul class="muted">${roadmap.keep.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <h4>Bias pages</h4>
+              <p class="muted">Each entry aims to do four things well: define the bias, show what it feels like from inside, distinguish it from close neighbors, and offer a better process.</p>
             </div>
             <div class="note-panel">
-              <h4>Rewrite</h4>
-              <ul class="muted">${roadmap.rewrite.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <h4>Contexts and comparisons</h4>
+              <p class="muted">Context hubs group biases by real settings such as news reading, meetings, teaching, relationships, and product work. Comparison guides slow down the most common nearby-label confusions.</p>
             </div>
             <div class="note-panel">
-              <h4>Add</h4>
-              <ul class="muted">${roadmap.add.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <h4>Practice tools</h4>
+              <p class="muted">Self-checks, assessment sets, countermoves, and teaching kits are there to change what people actually do, not just what they can define.</p>
             </div>
             <div class="note-panel">
-              <h4>Defer</h4>
-              <ul class="muted">${roadmap.defer.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <h4>Theory and prompts</h4>
+              <p class="muted">Theory pages explain the deeper structure behind the labels. Prompt kits help readers widen the frame when AI tools are part of the workflow.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">How to read a bias page</h2>
+              <p class="section-copy">The strongest way to use the site is to move from recognition to contrast to repair.</p>
+            </div>
+          </div>
+          <div class="category-grid">
+            <article class="category-card">
+              <h3>Start with the quick check</h3>
+              <p class="card-copy">Use the entry question or snapshot to decide whether the label is even live before reading the rest of the page into the situation.</p>
+            </article>
+            <article class="category-card">
+              <h3>Look at the illustration and examples</h3>
+              <p class="card-copy">The posters and examples are there to make the hidden pull visible in ordinary situations, not just in textbook definitions.</p>
+            </article>
+            <article class="category-card">
+              <h3>Compare close neighbors</h3>
+              <p class="card-copy">Nearby confusions usually matter more than isolated definitions. If two labels feel plausible, stop and compare them directly.</p>
+            </article>
+            <article class="category-card">
+              <h3>End with a process move</h3>
+              <p class="card-copy">The goal is not just to name the bias. It is to change the question, sequence, default, room structure, or review habit that keeps reproducing it.</p>
+            </article>
           </div>
         </section>`,
   });
@@ -4053,7 +4428,6 @@ async function writeSiteFiles() {
   await writeTextFile(`${domainHubSlug}/index.html`, renderDomainHubsIndexPage());
   await writeTextFile(`${comparisonGuideSlug}/index.html`, renderComparisonGuidesPage());
   await writeTextFile(`${teachingKitSlug}/index.html`, renderTeachingKitsPage());
-  await writeTextFile(`${coverageSlug}/index.html`, renderCoveragePage());
   await writeTextFile(`${biasMapSlug}/index.html`, renderBiasMapPage());
   await writeTextFile(`${siteConfig.pathSlug}/index.html`, renderPathsIndexPage());
   await writeTextFile(`${siteConfig.checkSlug}/index.html`, renderCheckYourselfPage());
@@ -4138,7 +4512,6 @@ async function writeSiteFiles() {
       `/${domainHubSlug}/`,
       `/${comparisonGuideSlug}/`,
       `/${teachingKitSlug}/`,
-      `/${coverageSlug}/`,
       `/${biasMapSlug}/`,
       `/${siteConfig.pathSlug}/`,
       `/${siteConfig.checkSlug}/`,
