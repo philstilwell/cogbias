@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "compromise-effect-choices-affected-if-presented-as-extreme-or-average",
+    "name": "Compromise effect",
+    "publicSlug": "compromise-effect",
+    "editorialFamilies": [
+      "choice-architecture-and-defaults",
+      "product-and-policy-choice",
+      "decision-under-uncertainty"
+    ]
+  },
+  {
+    "slug": "conservatism-or-regressive-bias",
+    "name": "Regressive bias",
+    "publicSlug": "regressive-bias",
+    "editorialFamilies": [
+      "memory-and-recall",
+      "experimental-memory-effects"
+    ]
+  },
+  {
+    "slug": "stereotype-bias-or-stereotypical-bias",
+    "name": "Stereotype memory bias",
+    "publicSlug": "stereotype-memory-bias",
+    "editorialFamilies": [
+      "eyewitness-and-person-memory",
+      "memory-and-recall",
+      "people-judgment-and-attribution"
+    ]
+  },
+  {
+    "slug": "gender-differences-in-eyewitness-memory",
+    "publicSlug": "gender-eyewitness-memory",
+    "editorialFamilies": [
+      "eyewitness-and-person-memory",
+      "memory-and-recall"
+    ]
+  }
+]

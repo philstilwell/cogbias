@@ -129,6 +129,7 @@ const assessmentBankData = await readJsonArraySeries("assessment_bank");
 const assessmentMetadataData = await readJsonArraySeries("assessment_metadata");
 const comparisonGuideData = await readJsonArraySeries("comparison_guides");
 const teachingKitData = await readJsonArraySeries("teaching_kits");
+const teachingKitMetaData = await readJsonArraySeries("teaching_kit_meta");
 const promptKitData = await readJsonArraySeries("prompt_kits");
 const theoryArticleData = await readJsonArraySeries("theory_articles");
 
@@ -197,6 +198,39 @@ function mergeEntryOverlay(base = {}, overlay = {}) {
       [...(base.appliedContexts || []), ...(overlay.appliedContexts || [])],
       (item) => `${String(item.title || "").trim().toLowerCase()}::${String(item.summary || "").trim().toLowerCase()}`,
     );
+  }
+
+  if (base.editorialFamilies || overlay.editorialFamilies) {
+    merged.editorialFamilies = mergeUniqueStrings([...(base.editorialFamilies || []), ...(overlay.editorialFamilies || [])]);
+  }
+
+  return merged;
+}
+
+function mergeSeriesRecord(base = {}, overlay = {}) {
+  const merged = { ...base, ...overlay };
+
+  for (const [key, overlayValue] of Object.entries(overlay)) {
+    const baseValue = base[key];
+    if (
+      Array.isArray(baseValue) &&
+      Array.isArray(overlayValue) &&
+      [...baseValue, ...overlayValue].every((item) => typeof item === "string")
+    ) {
+      merged[key] = mergeUniqueStrings([...baseValue, ...overlayValue]);
+    }
+  }
+
+  return merged;
+}
+
+function buildMergedMetadataMap(items = [], keyField) {
+  const merged = new Map();
+
+  for (const item of items) {
+    const key = item?.[keyField];
+    if (!key) continue;
+    merged.set(key, mergeSeriesRecord(merged.get(key) || {}, item));
   }
 
   return merged;
@@ -363,9 +397,10 @@ const comparisonGuideSlug = siteConfig.comparisonGuideSlug || "compare";
 const teachingKitSlug = siteConfig.teachingKitSlug || "teaching-kits";
 const coverageSlug = siteConfig.coverageSlug || "coverage";
 const biasMapSlug = siteConfig.biasMapSlug || "map";
-const pathCurriculumBySlug = new Map(pathCurriculumData.map((item) => [item.slug, item]));
-const selfCheckCurriculumBySlug = new Map(selfCheckCurriculumData.map((item) => [item.slug, item]));
-const assessmentMetadataById = new Map(assessmentMetadataData.map((item) => [item.id, item]));
+const pathCurriculumBySlug = buildMergedMetadataMap(pathCurriculumData, "slug");
+const selfCheckCurriculumBySlug = buildMergedMetadataMap(selfCheckCurriculumData, "slug");
+const assessmentMetadataById = buildMergedMetadataMap(assessmentMetadataData, "id");
+const teachingKitMetaBySlug = buildMergedMetadataMap(teachingKitMetaData, "slug");
 
 const siteUrl = String(siteConfig.siteUrl || "").trim();
 const siteUrlWithSlash = siteUrl ? `${siteUrl.replace(/\/+$/, "")}/` : "";
@@ -374,6 +409,114 @@ const taskByName = new Map(siteConfig.categories.map((task) => [task.name, task]
 const patternBySlug = new Map(siteConfig.patterns.map((pattern) => [pattern.slug, pattern]));
 const patternByName = new Map(siteConfig.patterns.map((pattern) => [pattern.name, pattern]));
 const entryBySlug = new Map(entries.map((entry) => [entry.slug, entry]));
+
+const editorialFamilies = [
+  { slug: "foundational-core", label: "Core survey" },
+  { slug: "decision-under-uncertainty", label: "Decision under uncertainty" },
+  { slug: "loss-ownership-and-omission", label: "Loss, ownership, and omission" },
+  { slug: "choice-architecture-and-defaults", label: "Choice architecture" },
+  { slug: "product-and-policy-choice", label: "Product and policy choice" },
+  { slug: "evidence-and-explanation", label: "Evidence and explanation" },
+  { slug: "misinformation-and-public-claims", label: "Public claims and repetition" },
+  { slug: "people-judgment-and-attribution", label: "People judgment" },
+  { slug: "conflict-and-tribe", label: "Conflict and social threat" },
+  { slug: "group-pressure-and-belonging", label: "Group pressure and belonging" },
+  { slug: "confidence-and-understanding", label: "Confidence and understanding" },
+  { slug: "self-justification-and-meta-bias", label: "Self-justification" },
+  { slug: "retrospection-and-postmortem", label: "Retrospection and postmortems" },
+  { slug: "memory-and-recall", label: "Memory and recall" },
+  { slug: "experimental-memory-effects", label: "Experimental memory effects" },
+  { slug: "eyewitness-and-person-memory", label: "Eyewitness and person memory" },
+];
+const editorialFamilyBySlug = new Map(editorialFamilies.map((family) => [family.slug, family]));
+
+function entryRouteSlug(entry) {
+  return String(entry?.publicSlug || entry?.slug || "").trim() || String(entry?.slug || "").trim();
+}
+
+function entryHref(entry, prefix = "") {
+  return `${prefix}${siteConfig.sectionSlug}/${entryRouteSlug(entry)}/`;
+}
+
+function entryRoutePath(entry) {
+  return `/${siteConfig.sectionSlug}/${entryRouteSlug(entry)}/`;
+}
+
+function entryLegacyRoutePath(entry) {
+  return `/${siteConfig.sectionSlug}/${entry.slug}/`;
+}
+
+function entryEditorialFamilies(entry) {
+  const tasks = new Set(entry.tasks || []);
+  const slug = String(entry.slug || "");
+  const families = new Set(entry.editorialFamilies || []);
+
+  if (tasks.has("Recall")) families.add("memory-and-recall");
+
+  if (/(anchoring-effect|base-rate-neglect|overconfidence-effect|planning-fallacy|loss-aversion|framing-effect|omission-bias|default-effect|status-quo-bias|sunk-cost-effect|gamblers-fallacy|illusion-of-control|optimism-bias|pseudocertainty-effect|insensitivity-to-sample-size)/.test(slug)) {
+    families.add("decision-under-uncertainty");
+  }
+  if (tasks.has("Recall") && /(boundary-extension|cue-dependent-forgetting|generation-effect|humor-effect|levels-of-processing-effect|modality-effect|part-list-cueing-effect|placement-bias|primacy-effect|processing-difficulty-effect|self-relevance-effect|serial-position-effect|spacing-effect|tip-of-the-tongue|verbatim-effect|von-restorff-effect)/.test(slug)) {
+    families.add("experimental-memory-effects");
+  }
+  if (/(cross-race-effect|gender-differences-in-eyewitness-memory|stereotype-bias-or-stereotypical-bias)/.test(slug)) {
+    families.add("eyewitness-and-person-memory");
+  }
+  if (/(availability-heuristic|availability-cascade|continued-influence-effect|illusory-truth-effect|frequency-illusion|base-rate-neglect|survivorship-bias|negativity-bias|apophenia|clustering-illusion|confirmation-bias|backfire-effect)/.test(slug)) {
+    families.add("misinformation-and-public-claims");
+  }
+  if (/(confirmation-bias|base-rate-neglect|survivorship-bias|apophenia|clustering-illusion|conjunction-fallacy|attribute-substitution|congruence-bias|belief-bias|conservatism-bias|scope-neglect|extension-neglect|continued-influence-effect)/.test(slug)) {
+    families.add("evidence-and-explanation");
+  }
+  if (/(default-effect|status-quo-bias|decoy-effect|compromise-effect-choices-affected-if-presented-as-extreme-or-average|framing-effect|anchoring-effect|automation-bias|surrogation)/.test(slug)) {
+    families.add("product-and-policy-choice");
+    families.add("choice-architecture-and-defaults");
+  }
+  if (/(groupthink|shared-information-bias|social-desirability-bias|bandwagon-effect|authority-bias|cheerleader-effect)/.test(slug)) {
+    families.add("group-pressure-and-belonging");
+  }
+  if (/(fundamental-attribution-error|halo-effect|implicit-bias|implicit-association|hostile-attribution-bias|ingroup-bias|outgroup-homogeneity-bias|naive-realism|ultimate-attribution-error|group-attribution-error|projection-bias|false-consensus-effect|stereotyping|stereotype-bias-or-stereotypical-bias|cross-race-effect|gender-differences-in-eyewitness-memory)/.test(slug)) {
+    families.add("people-judgment-and-attribution");
+  }
+  if (/(hostile-attribution-bias|ingroup-bias|outgroup-homogeneity-bias|naive-realism|ultimate-attribution-error|groupthink|social-desirability-bias|authority-bias)/.test(slug)) {
+    families.add("conflict-and-tribe");
+  }
+  if (/(illusion-of-explanatory-depth|dunning-kruger-effect|fluency-heuristic|illusion-of-learning|curse-of-knowledge)/.test(slug)) {
+    families.add("confidence-and-understanding");
+  }
+  if (/(sunk-cost-effect|endowment-effect|loss-aversion|omission-bias|default-effect|status-quo-bias)/.test(slug)) {
+    families.add("loss-ownership-and-omission");
+  }
+  if (/(cognitive-dissonance|choice-supportive-bias|bias-blind-spot|self-serving-bias|consistency-bias|egocentric-bias)/.test(slug)) {
+    families.add("self-justification-and-meta-bias");
+  }
+  if (/(hindsight-bias|outcome-bias|rosy-retrospection|consistency-bias|choice-supportive-bias|self-serving-bias)/.test(slug)) {
+    families.add("retrospection-and-postmortem");
+  }
+
+  return [...families];
+}
+
+function resourceEditorialFamilies(item) {
+  return mergeUniqueStrings(item?.editorialFamilies || []);
+}
+
+function sharedEditorialFamilies(entry, item) {
+  const entryFamilies = new Set(entryEditorialFamilies(entry));
+  return resourceEditorialFamilies(item).filter((slug) => entryFamilies.has(slug));
+}
+
+function editorialFamilyLabel(slug) {
+  return editorialFamilyBySlug.get(slug)?.label || sentenceCase(String(slug || "").replace(/-/g, " "));
+}
+
+function assertKnownEditorialFamilies(ownerLabel, families = []) {
+  for (const slug of families) {
+    if (!editorialFamilyBySlug.has(slug)) {
+      throw new Error(`Unknown editorial family "${slug}" on ${ownerLabel}.`);
+    }
+  }
+}
 
 const tasks = siteConfig.categories
   .map((task) => ({
@@ -437,7 +580,7 @@ function buildBiasMapPoints() {
       return {
         slug: entry.slug,
         name: entry.name,
-        href: `${siteConfig.sectionSlug}/${entry.slug}/`,
+        href: entryHref(entry),
         category,
         categorySlug: categoryMeta?.slug || "",
         color: categoryColors.get(category) || "#54728b",
@@ -462,6 +605,7 @@ const learningPaths = learningPathData
     return {
       ...path,
       ...curriculum,
+      editorialFamilies: mergeUniqueStrings([...(path.editorialFamilies || []), ...(curriculum.editorialFamilies || [])]),
       trackMeta: curriculumTrackBySlug.get(curriculum.track || "applied") || curriculumTracks[1],
       members: (path.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
     };
@@ -474,6 +618,7 @@ const selfChecks = selfCheckData
     return {
       ...check,
       ...curriculum,
+      editorialFamilies: mergeUniqueStrings([...(check.editorialFamilies || []), ...(curriculum.editorialFamilies || [])]),
       trackMeta: curriculumTrackBySlug.get(curriculum.track || "applied") || curriculumTracks[1],
     };
   })
@@ -502,6 +647,7 @@ const assessmentBank = assessmentBankData.map((item) => {
   return {
     ...item,
     ...metadata,
+    editorialFamilies: mergeUniqueStrings([...(metadata.editorialFamilies || []), ...(correctEntry ? entryEditorialFamilies(correctEntry) : [])]),
     difficulty,
     difficultyMeta: assessmentDifficultyBySlug.get(difficulty) || assessmentDifficulties[1],
     categories: [...(correctEntry?.tasks || [])],
@@ -516,14 +662,19 @@ const comparisonGuides = comparisonGuideData.map((guide) => ({
 }));
 const comparisonGuideBySlug = new Map(comparisonGuides.map((guide) => [guide.slug, guide]));
 
-const teachingKits = teachingKitData.map((kit) => ({
-  ...kit,
-  hub: domainHubBySlug.get(kit.contextSlug),
-  entries: (kit.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
-  paths: (kit.pathSlugs || []).map((slug) => pathBySlug.get(slug)).filter(Boolean),
-  selfChecks: (kit.selfCheckSlugs || []).map((slug) => selfCheckBySlug.get(slug)).filter(Boolean),
-  comparisons: (kit.comparisonSlugs || []).map((slug) => comparisonGuideBySlug.get(slug)).filter(Boolean),
-}));
+const teachingKits = teachingKitData.map((kit) => {
+  const meta = teachingKitMetaBySlug.get(kit.slug) || {};
+  return {
+    ...kit,
+    ...meta,
+    editorialFamilies: mergeUniqueStrings([...(kit.editorialFamilies || []), ...(meta.editorialFamilies || [])]),
+    hub: domainHubBySlug.get(kit.contextSlug),
+    entries: (kit.biasSlugs || []).map((slug) => entryBySlug.get(slug)).filter(Boolean),
+    paths: (kit.pathSlugs || []).map((slug) => pathBySlug.get(slug)).filter(Boolean),
+    selfChecks: (kit.selfCheckSlugs || []).map((slug) => selfCheckBySlug.get(slug)).filter(Boolean),
+    comparisons: (kit.comparisonSlugs || []).map((slug) => comparisonGuideBySlug.get(slug)).filter(Boolean),
+  };
+});
 const teachingKitBySlug = new Map(teachingKits.map((kit) => [kit.slug, kit]));
 
 const theoryArticles = theoryArticleData.map((article) => ({
@@ -596,7 +747,25 @@ for (const item of assessmentMetadataData) {
   }
 }
 
+for (const item of teachingKitMetaData) {
+  if (!(teachingKitData || []).some((kit) => kit.slug === item.slug)) {
+    throw new Error(`Unknown teaching-kit metadata slug "${item.slug}".`);
+  }
+}
+
+const routeSlugOwners = new Map();
 for (const entry of entries) {
+  const routeSlug = entryRouteSlug(entry);
+  const owner = routeSlugOwners.get(routeSlug);
+  if (owner && owner !== entry.slug) {
+    throw new Error(`Route slug collision between "${owner}" and "${entry.slug}" on "${routeSlug}".`);
+  }
+  routeSlugOwners.set(routeSlug, entry.slug);
+}
+
+for (const entry of entries) {
+  assertKnownEditorialFamilies(`entry "${entry.slug}"`, entry.editorialFamilies || []);
+
   for (const taskName of entry.tasks || []) {
     if (!taskByName.has(taskName)) {
       throw new Error(`Unknown task "${taskName}" on entry "${entry.slug}".`);
@@ -642,6 +811,7 @@ for (const path of learningPaths) {
     throw new Error(`Duplicate learning path slug "${path.slug}".`);
   }
   seenPathSlugs.add(path.slug);
+  assertKnownEditorialFamilies(`path "${path.slug}"`, path.editorialFamilies || []);
 
   for (const slug of path.biasSlugs || []) {
     if (!entryBySlug.has(slug)) {
@@ -672,6 +842,7 @@ for (const check of selfChecks) {
     throw new Error(`Duplicate self-check slug "${check.slug}".`);
   }
   seenCheckSlugs.add(check.slug);
+  assertKnownEditorialFamilies(`self-check "${check.slug}"`, check.editorialFamilies || []);
 
   for (const slug of check.relatedBiases || []) {
     if (!entryBySlug.has(slug)) {
@@ -760,6 +931,7 @@ for (const kit of teachingKits) {
     throw new Error(`Duplicate teaching kit slug "${kit.slug}".`);
   }
   seenTeachingKitSlugs.add(kit.slug);
+  assertKnownEditorialFamilies(`teaching kit "${kit.slug}"`, kit.editorialFamilies || []);
 
   if (kit.contextSlug && !domainHubBySlug.has(kit.contextSlug)) {
     throw new Error(`Unknown teaching kit context slug "${kit.contextSlug}" on "${kit.slug}".`);
@@ -792,6 +964,10 @@ for (const kit of teachingKits) {
   if (kit.assessmentContext && !domainHubBySlug.has(kit.assessmentContext)) {
     throw new Error(`Unknown teaching kit assessment context "${kit.assessmentContext}" on "${kit.slug}".`);
   }
+}
+
+for (const item of assessmentBank) {
+  assertKnownEditorialFamilies(`assessment "${item.id}"`, item.editorialFamilies || []);
 }
 
 const seenTheorySlugs = new Set();
@@ -929,7 +1105,7 @@ function renderFooter(prefix, currentId) {
     { id: "check", label: "Check Yourself", href: `${prefix}${siteConfig.checkSlug}/` },
     { id: "countermoves", label: "Countermoves", href: `${prefix}countermoves/` },
     { id: "case-studies", label: "Case Studies", href: `${prefix}${caseStudySlug}/` },
-    { id: "prompts", label: "Prompts", href: `${prefix}${siteConfig.promptSlug}/` },
+    { id: "prompts", label: "AI Prompt Kits", href: `${prefix}${siteConfig.promptSlug}/` },
   ];
 
   return `
@@ -998,6 +1174,24 @@ ${body}
       </main>
 ${renderFooter(prefix, currentId)}
     </div>
+  </body>
+</html>
+`;
+}
+
+function renderRedirectDocument({ title, targetPath }) {
+  const absoluteTarget = siteUrlWithSlash ? absoluteUrlForRoute(targetPath) : targetPath;
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=${escapeHtml(targetPath)}" />
+    <link rel="canonical" href="${escapeHtml(absoluteTarget)}" />
+    <title>${escapeHtml(pageTitle(title))}</title>
+    <script>window.location.replace(${JSON.stringify(targetPath)});</script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="${escapeHtml(targetPath)}">${escapeHtml(absoluteTarget)}</a>.</p>
   </body>
 </html>
 `;
@@ -1136,28 +1330,34 @@ function contextSignalsForEntry(entry) {
     relatedSlugs: new Set(relatedEntries.map((candidate) => candidate.slug)),
     tasks: entry.tasks || [],
     patterns: entry.patterns || [],
+    editorialFamilies: entryEditorialFamilies(entry),
   };
 }
 
 function scoreLinkedBiasGroup(entry, linkedSlugs = [], signals = contextSignalsForEntry(entry)) {
-  let score = 0;
   const seen = new Set();
+  let bestScore = 0;
+  let secondaryHits = 0;
 
   for (const slug of linkedSlugs.filter(Boolean)) {
     if (seen.has(slug)) continue;
     seen.add(slug);
 
-    if (slug === entry.slug) score += 100;
-    if (signals.relatedSlugs.has(slug)) score += 18;
-    if ((entry.related || []).includes(slug)) score += 8;
-
+    let localScore = 0;
+    if (slug === entry.slug) localScore += 100;
+    if (signals.relatedSlugs.has(slug)) localScore += 18;
+    if ((entry.related || []).includes(slug)) localScore += 10;
     const linkedEntry = entryBySlug.get(slug);
-    if (!linkedEntry) continue;
-    score += overlapCount(linkedEntry.tasks || [], signals.tasks) * 5;
-    score += overlapCount(linkedEntry.patterns || [], signals.patterns) * 4;
+    if (linkedEntry) {
+      localScore += overlapCount(linkedEntry.tasks || [], signals.tasks) * 5;
+      localScore += overlapCount(linkedEntry.patterns || [], signals.patterns) * 4;
+    }
+
+    if (localScore > 0) secondaryHits += 1;
+    bestScore = Math.max(bestScore, localScore);
   }
 
-  return score;
+  return bestScore + Math.min(6, Math.max(0, secondaryHits - 1) * 2);
 }
 
 function resolveLinkedResources({
@@ -1165,22 +1365,29 @@ function resolveLinkedResources({
   directItems = [],
   allItems = [],
   linkedSlugsForItem = () => [],
+  editorialFamiliesForItem = () => [],
   keyForItem = (item) => item.slug || item.id || item.title,
   limit = 2,
   minScore = 18,
 }) {
-  const direct = directItems.slice(0, limit).map((item) => ({ item, inferred: false }));
+  const direct = directItems.slice(0, limit).map((item) => ({ item, inferred: false, score: 100 }));
   if (direct.length >= limit) return direct;
 
   const directKeys = new Set(directItems.map((item) => keyForItem(item)));
   const signals = contextSignalsForEntry(entry);
   const inferred = allItems
     .filter((item) => !directKeys.has(keyForItem(item)))
-    .map((item) => ({
-      item,
-      inferred: true,
-      score: scoreLinkedBiasGroup(entry, linkedSlugsForItem(item), signals),
-    }))
+    .map((item) => {
+      const linkedSlugs = linkedSlugsForItem(item);
+      const familyMatches = sharedEditorialFamilies(entry, { editorialFamilies: editorialFamiliesForItem(item) });
+      return {
+        item,
+        inferred: true,
+        explicitMatch: linkedSlugs.some((slug) => slug === entry.slug || (entry.related || []).includes(slug)),
+        familyMatches,
+        score: scoreLinkedBiasGroup(entry, linkedSlugs, signals) + familyMatches.length * 14,
+      };
+    })
     .filter((item) => item.score >= minScore)
     .sort(
       (left, right) =>
@@ -1190,9 +1397,26 @@ function resolveLinkedResources({
         ),
     )
     .slice(0, Math.max(0, limit - direct.length))
-    .map(({ item, inferred }) => ({ item, inferred }));
+    .map(({ item, inferred, score, explicitMatch, familyMatches }) => ({
+      item,
+      inferred,
+      score,
+      explicitMatch,
+      familyMatches,
+    }));
 
   return [...direct, ...inferred];
+}
+
+function shouldShowResolvedResources(items = [], { strongThreshold = 30, minimumThreshold = 24 } = {}) {
+  if (!items.length) return false;
+  if (items.some((item) => !item.inferred)) return true;
+  const scores = items.map((item) => Number(item.score || 0));
+  return (
+    items.some((item) => item.explicitMatch || (item.familyMatches || []).length >= 2) &&
+    Math.max(...scores) >= strongThreshold &&
+    Math.min(...scores) >= minimumThreshold
+  );
 }
 
 function pathLinksForEntry(entry, limit = 2) {
@@ -1201,9 +1425,10 @@ function pathLinksForEntry(entry, limit = 2) {
     directItems: pathObjectsForEntry(entry),
     allItems: learningPaths,
     linkedSlugsForItem: (item) => item.biasSlugs || [],
+    editorialFamiliesForItem: (item) => item.editorialFamilies || [],
     keyForItem: (item) => item.slug,
     limit,
-    minScore: 18,
+    minScore: 22,
   });
 }
 
@@ -1213,9 +1438,10 @@ function selfCheckLinksForEntry(entry, limit = 2) {
     directItems: selfChecksForEntry(entry),
     allItems: selfChecks,
     linkedSlugsForItem: (item) => item.relatedBiases || [],
+    editorialFamiliesForItem: (item) => item.editorialFamilies || [],
     keyForItem: (item) => item.slug,
     limit,
-    minScore: 18,
+    minScore: 22,
   });
 }
 
@@ -1225,9 +1451,10 @@ function assessmentLinksForEntry(entry, limit = 2) {
     directItems: assessmentItemsForEntry(entry, limit),
     allItems: assessmentBank,
     linkedSlugsForItem: (item) => [item.correctBias].filter(Boolean),
+    editorialFamiliesForItem: (item) => item.editorialFamilies || [],
     keyForItem: (item) => item.id,
     limit,
-    minScore: 16,
+    minScore: 20,
   });
 }
 
@@ -1237,9 +1464,10 @@ function teachingKitLinksForEntry(entry, limit = 2) {
     directItems: teachingKitsForEntry(entry, limit),
     allItems: teachingKits,
     linkedSlugsForItem: (item) => item.biasSlugs || [],
+    editorialFamiliesForItem: (item) => item.editorialFamilies || [],
     keyForItem: (item) => item.slug,
     limit,
-    minScore: 20,
+    minScore: 24,
   });
 }
 
@@ -1400,46 +1628,32 @@ function caseStudiesFor(entry) {
     })
     .map((item) => {
       const relatedEntries = (item.entries || []).filter((candidate) => signals.relatedSlugs.has(candidate.slug));
+      const entryLevelMatches = (item.entries || []).filter(
+        (candidate) =>
+          overlapCount(candidate.tasks || [], entry.tasks || []) > 0 &&
+          overlapCount(candidate.patterns || [], entry.patterns || []) > 0,
+      );
+      const explicitlyRelated = (item.entrySlugs || []).some((slug) => (entry.related || []).includes(slug));
       const score =
-        relatedEntries.length * 14 +
-        overlapCount(item.categories || [], entry.tasks || []) * 4 +
-        overlapCount(item.patterns || [], entry.patterns || []) * 3;
+        (explicitlyRelated ? 18 : 0) +
+        relatedEntries.length * 10 +
+        entryLevelMatches.length * 8;
       return {
         ...item,
         inferred: true,
         relatedEntries,
+        entryLevelMatches,
+        explicitlyRelated,
         score,
       };
     })
-    .filter((item) => item.score >= 7)
+    .filter((item) => item.explicitlyRelated || item.entryLevelMatches.length > 0)
+    .filter((item) => item.score >= 18)
     .sort((left, right) => right.score - left.score || String(left.title || "").localeCompare(String(right.title || "")))
     .slice(0, Math.max(0, 2 - direct.length))
-    .map(({ score, ...item }) => item);
+    .map(({ score, entryLevelMatches, explicitlyRelated, ...item }) => item);
 
-  const seenKeys = new Set([
-    ...directKeys,
-    ...inferred.map(
-      (item) => `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`,
-    ),
-  ]);
-
-  const borrowed = relatedEntriesFor(entry, 8)
-    .flatMap((candidate) =>
-      (candidate.caseStudies || []).map((item) => ({
-        ...item,
-        inferred: true,
-        relatedEntries: [candidate],
-      })),
-    )
-    .filter((item) => {
-      const key = `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
-      if (seenKeys.has(key)) return false;
-      seenKeys.add(key);
-      return true;
-    })
-    .slice(0, Math.max(0, 2 - direct.length - inferred.length));
-
-  return [...direct, ...inferred, ...borrowed];
+  return [...direct, ...inferred];
 }
 
 function sourceTrailFor(entry, { includeSeed = true } = {}) {
@@ -1519,8 +1733,7 @@ function renderEntryLinkChips(slugs = [], prefix = "") {
     .map((slug) => entryBySlug.get(slug))
     .filter(Boolean)
     .map(
-      (entry) =>
-        `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
+      (entry) => `<a class="path-link-chip" href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a>`,
     )
     .join("");
 }
@@ -1589,7 +1802,7 @@ function renderDetailIllustration(entry) {
 
 function renderBiasCard(entry, prefix = "") {
   const poster = hasBiasPoster(entry)
-    ? `<a class="entry-card-visual" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/" aria-label="Open ${escapeHtml(entry.name)}">
+    ? `<a class="entry-card-visual" href="${entryHref(entry, prefix)}" aria-label="Open ${escapeHtml(entry.name)}">
                 ${renderBiasPosterImage(entry, prefix, "entry-card-image")}
               </a>`
     : "";
@@ -1605,7 +1818,7 @@ function renderBiasCard(entry, prefix = "") {
             data-body="${escapeHtml(buildSearchBody(entry))}"
           >
             ${poster}
-            <h3><a href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a></h3>
+            <h3><a href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a></h3>
             <p class="card-copy">${escapeHtml(entry.cardSummary || entry.summary)}</p>
             <div class="pill-row">
               ${renderPills(entry)}
@@ -1649,10 +1862,7 @@ function renderCountermoveCard(countermove, prefix = "") {
               ${(countermove.relatedBiases || [])
                 .map((slug) => entryBySlug.get(slug))
                 .filter(Boolean)
-                .map(
-                  (entry) =>
-                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
-                )
+                .map((entry) => `<a class="path-link-chip" href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a>`)
                 .join("")}
             </div>
           </article>`;
@@ -1682,7 +1892,7 @@ function renderDomainHubCard(hub, prefix = "") {
             <div class="teaching-pill-row">
               <span class="teaching-pill">${hub.entries.length} ${escapeHtml(siteConfig.entryLabelPlural)}</span>
               <span class="teaching-pill">${hub.paths.length} paths</span>
-              <span class="teaching-pill">${hub.promptKits.length} prompts</span>
+              <span class="teaching-pill">${hub.promptKits.length} AI prompts</span>
             </div>
             <p class="muted">${escapeHtml(hub.guidingQuestion)}</p>
             <p class="muted">${escapeHtml(hub.audience)}</p>
@@ -1697,10 +1907,7 @@ function renderComparisonGuideCard(guide, prefix = "") {
             <p class="muted"><strong>Quick rule:</strong> ${escapeHtml(guide.quickRule)}</p>
             <div class="path-link-row">
               ${guide.entries
-                .map(
-                  (entry) =>
-                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
-                )
+                .map((entry) => `<a class="path-link-chip" href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a>`)
                 .join("")}
             </div>
           </article>`;
@@ -1757,7 +1964,7 @@ function renderPromptCard(promptKit, prefix = "") {
               ${renderEntryLinkChips(promptKit.relatedBiases || [], prefix)}
             </div>
             <details class="prompt-details">
-              <summary>Open prompt</summary>
+              <summary>Open optional prompt</summary>
               <pre class="prompt-block">${escapeHtml(promptText)}</pre>
             </details>
           </article>`;
@@ -1790,10 +1997,7 @@ function renderTheoryArticleCard(article, prefix = "") {
             <div class="path-link-row">
               ${article.relatedEntries
                 .slice(0, 3)
-                .map(
-                  (entry) =>
-                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
-                )
+                .map((entry) => `<a class="path-link-chip" href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a>`)
                 .join("")}
             </div>
           </article>`;
@@ -1834,10 +2038,7 @@ function renderCaseStudyCard(item, prefix = "") {
             ${sourceLine ? `<p class="case-source">${escapeHtml(sourceLine)}</p>` : ""}
             <div class="path-link-row">
               ${item.entries
-                .map(
-                  (entry) =>
-                    `<a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${entry.slug}/">${escapeHtml(entry.name)}</a>`,
-                )
+                .map((entry) => `<a class="path-link-chip" href="${entryHref(entry, prefix)}">${escapeHtml(entry.name)}</a>`)
                 .join("")}
             </div>
           </article>`;
@@ -1852,7 +2053,7 @@ function renderSourceCard(item, prefix = "") {
             <p class="card-copy">${escapeHtml(item.note || "")}</p>
             ${
               item.relatedEntry
-                ? `<div class="path-link-row"><a class="path-link-chip" href="${prefix}${siteConfig.sectionSlug}/${item.relatedEntry.slug}/">${escapeHtml(item.relatedEntry.name)}</a></div>`
+                ? `<div class="path-link-row"><a class="path-link-chip" href="${entryHref(item.relatedEntry, prefix)}">${escapeHtml(item.relatedEntry.name)}</a></div>`
                 : ""
             }
           </article>`;
@@ -1937,7 +2138,7 @@ function renderHomePage() {
             </div>
             <div class="note-panel" style="margin-top:12px;">
               <h4>3. Change the process</h4>
-              <p class="muted">Use the self-checks, countermoves, and prompt kits to modify the workflow that keeps reproducing the distortion.</p>
+              <p class="muted">Use the self-checks and countermoves first, then reach for the optional AI prompt kits when a concrete case would benefit from a wider frame.</p>
             </div>
           </aside>
         </section>
@@ -2120,10 +2321,10 @@ function renderHomePage() {
         <section class="section-block">
           <div class="section-header">
             <div>
-              <h2 class="section-title">Prompt kits</h2>
-              <p class="section-copy">Bias-aware AI prompts for widening the frame in decisions, forecasting, people judgment, moderation, and media reading.</p>
+              <h2 class="section-title">Optional AI prompt kits</h2>
+              <p class="section-copy">These are secondary tools for moments when you want a model to widen the frame after you have already written the case clearly and concretely.</p>
             </div>
-            <a class="inline-link" href="${siteConfig.promptSlug}/">Open prompt kits</a>
+            <a class="inline-link" href="${siteConfig.promptSlug}/">Browse AI prompt kits</a>
           </div>
           <div class="category-grid">
             ${promptKitData.slice(0, 2).map((promptKit) => renderPromptCard(promptKit)).join("")}
@@ -2614,8 +2815,8 @@ function renderDomainHubDetailPage(hub) {
         <section class="section-block">
           <div class="section-header">
             <div>
-              <h2 class="section-title">Prompt kits for this domain</h2>
-              <p class="section-copy">Use these after you have written the concrete case clearly enough for a model to help widen the frame.</p>
+              <h2 class="section-title">Optional AI prompt kits for this domain</h2>
+              <p class="section-copy">Use these only after the concrete case is written clearly enough for a model to widen the frame instead of merely echoing it.</p>
             </div>
           </div>
           <div class="category-grid prompt-grid">
@@ -2706,10 +2907,7 @@ function renderComparisonGuideDetailPage(guide) {
           <p class="detail-deck">${escapeHtml(guide.summary)}</p>
           <div class="hero-actions">
             ${guide.entries
-              .map(
-                (entry) =>
-                  `<a class="button button-secondary" href="../../${siteConfig.sectionSlug}/${entry.slug}/">Study ${escapeHtml(entry.name)}</a>`,
-              )
+              .map((entry) => `<a class="button button-secondary" href="${entryHref(entry, "../../")}">Study ${escapeHtml(entry.name)}</a>`)
               .join("")}
           </div>
         </section>
@@ -3018,7 +3216,7 @@ function coverageRecordsForEntries() {
 function renderCoverageRecordCard(record, prefix = "") {
   return `
           <article class="category-card coverage-card">
-            <h3><a href="${prefix}${siteConfig.sectionSlug}/${record.entry.slug}/">${escapeHtml(record.entry.name)}</a></h3>
+            <h3><a href="${entryHref(record.entry, prefix)}">${escapeHtml(record.entry.name)}</a></h3>
             <p class="card-copy">${escapeHtml(record.entry.cardSummary || record.entry.summary)}</p>
             <div class="coverage-meter" style="--coverage:${record.score};">
               <span></span>
@@ -3262,11 +3460,11 @@ function renderAssessmentPage() {
     ...item,
     difficultyLabel: item.difficultyMeta?.name || "Applied",
     correctBiasName: entryBySlug.get(item.correctBias)?.name || item.correctBias,
-    correctBiasHref: `../${siteConfig.sectionSlug}/${item.correctBias}/`,
+    correctBiasHref: entryBySlug.get(item.correctBias) ? entryHref(entryBySlug.get(item.correctBias), "../") : `../${siteConfig.sectionSlug}/${item.correctBias}/`,
     biasOptions: item.biasOptions.map((slug) => ({
       slug,
       name: entryBySlug.get(slug)?.name || slug,
-      href: `../${siteConfig.sectionSlug}/${slug}/`,
+      href: entryBySlug.get(slug) ? entryHref(entryBySlug.get(slug), "../") : `../${siteConfig.sectionSlug}/${slug}/`,
     })),
   }));
 
@@ -3461,25 +3659,25 @@ function renderCaseStudiesPage() {
 
 function renderPromptsPage() {
   return renderPage({
-    title: "Prompt Kits",
-    description: "Bias-aware AI prompts for decisions, forecasts, postmortems, people judgment, and media review.",
+    title: "AI Prompt Kits",
+    description: "Optional AI prompts for widening the frame in decisions, forecasts, postmortems, people judgment, and media review.",
     prefix: "../",
     currentId: "prompts",
     routePath: `/${siteConfig.promptSlug}/`,
     breadcrumbs: [
       { label: "Home", href: "../" },
-      { label: "Prompt Kits" },
+      { label: "AI Prompt Kits" },
     ],
     body: `
         <section class="detail-section">
-          <p class="eyebrow">Prompts</p>
-          <h2 class="detail-title">Prompt kits for catching bias without outsourcing your judgment</h2>
-          <p class="detail-deck">These are designed to make an AI model slow the structure of the reasoning process. The goal is not to let the model decide for you. The goal is to expose what your current process may be skipping.</p>
+          <p class="eyebrow">Optional AI Prompts</p>
+          <h2 class="detail-title">Optional prompt kits for widening the frame without outsourcing your judgment</h2>
+          <p class="detail-deck">These are secondary tools, not the center of the site. Use them when a live decision, forecast, or dispute is already concrete enough that a model can surface missing comparisons instead of flattering your first frame.</p>
         </section>
 
         <div class="two-column section-block">
           <div class="note-panel">
-            <h4>Best use</h4>
+              <h4>Best use</h4>
             <p class="muted">Use these after you have written the live decision, forecast, or case as concretely as possible. Vague prompts produce flattering but low-value outputs.</p>
           </div>
           <div class="note-panel">
@@ -3673,6 +3871,15 @@ function renderBiasDetailPage(entry) {
   const classicDemonstrations = entry.classicDemonstrations || [];
   const appliedContexts = entry.appliedContexts || [];
   const companionReading = companionReadingFor(entry);
+  const slugfesterFeature = publicExternalUrl(entry.slugfesterFeature?.href)
+    ? {
+        title: entry.slugfesterFeature.title || `See ${entry.name} on Slugfester`,
+        summary:
+          entry.slugfesterFeature.summary ||
+          `Slugfester has a parallel reference page for ${entry.name}, offering another compact way to teach and compare the same pattern.`,
+        href: publicExternalUrl(entry.slugfesterFeature.href),
+      }
+    : null;
   const directPaths = pathObjectsForEntry(entry);
   const pathLinks = pathLinksForEntry(entry);
   const checkLinks = selfCheckLinksForEntry(entry);
@@ -3681,6 +3888,14 @@ function renderBiasDetailPage(entry) {
   const entryComparisonGuides = comparisonGuidesForEntry(entry);
   const entryTeachingKits = teachingKitLinksForEntry(entry);
   const countDirectResources = (items = []) => items.filter((item) => !item.inferred).length;
+  const directCaseStudyCount = countDirectResources(caseStudies);
+  const showClassicDemonstrations = classicDemonstrations.length > 0 && directCaseStudyCount === 0;
+  const showAppliedContexts = appliedContexts.length > 0 && directCaseStudyCount === 0 && !showClassicDemonstrations;
+  const showCaseStudies = caseStudies.length > 0 && !showClassicDemonstrations && !showAppliedContexts;
+  const showPathCard = shouldShowResolvedResources(pathLinks, { strongThreshold: 30, minimumThreshold: 26 });
+  const showCheckCard = shouldShowResolvedResources(checkLinks, { strongThreshold: 30, minimumThreshold: 26 });
+  const showTeachingKitCard = shouldShowResolvedResources(entryTeachingKits, { strongThreshold: 32, minimumThreshold: 28 });
+  const showAssessmentCard = shouldShowResolvedResources(assessmentLinks, { strongThreshold: 28, minimumThreshold: 24 });
   const renderContextResourceItem = ({ href = "", title, description = "", kicker = "" }) => `
     <article class="context-resource-item">
       ${kicker ? `<p class="context-resource-kicker">${escapeHtml(kicker)}</p>` : ""}
@@ -3689,9 +3904,11 @@ function renderBiasDetailPage(entry) {
       }</p>
       ${description ? `<p class="context-resource-text">${escapeHtml(description)}</p>` : ""}
     </article>`;
+  const inferredResourceKicker = (directLabel, fallbackLabel, familyMatches = []) =>
+    familyMatches.length ? `${fallbackLabel} · ${editorialFamilyLabel(familyMatches[0])}` : directLabel;
   const contextCards = [];
 
-  if (pathLinks.length) {
+  if (showPathCard) {
     const directPathCount = countDirectResources(pathLinks);
     contextCards.push(`
             <article class="category-card">
@@ -3707,12 +3924,12 @@ function renderBiasDetailPage(entry) {
               )}</p>
               <div class="context-resource-list">
                 ${pathLinks
-                  .map(({ item, inferred }) =>
+                  .map(({ item, inferred, familyMatches }) =>
                     renderContextResourceItem({
                       href: `../../${siteConfig.pathSlug}/${item.slug}/`,
                       title: item.title,
                       description: item.whenToUse || item.guidingQuestion || item.summary,
-                      kicker: inferred ? "Nearby path" : "Direct path",
+                      kicker: inferred ? inferredResourceKicker("Nearby path", "Same path family", familyMatches) : "Direct path",
                     }),
                   )
                   .join("")}
@@ -3720,7 +3937,7 @@ function renderBiasDetailPage(entry) {
             </article>`);
   }
 
-  if (checkLinks.length) {
+  if (showCheckCard) {
     const directCheckCount = countDirectResources(checkLinks);
     contextCards.push(`
             <article class="category-card">
@@ -3736,12 +3953,12 @@ function renderBiasDetailPage(entry) {
               )}</p>
               <div class="context-resource-list">
                 ${checkLinks
-                  .map(({ item, inferred }) =>
+                  .map(({ item, inferred, familyMatches }) =>
                     renderContextResourceItem({
                       href: `../../${siteConfig.checkSlug}/#${item.slug}`,
                       title: item.title,
                       description: item.question || item.summary,
-                      kicker: inferred ? "Nearby audit" : "Direct audit",
+                      kicker: inferred ? inferredResourceKicker("Nearby audit", "Same audit family", familyMatches) : "Direct audit",
                     }),
                   )
                   .join("")}
@@ -3749,7 +3966,7 @@ function renderBiasDetailPage(entry) {
             </article>`);
   }
 
-  if (entryTeachingKits.length) {
+  if (showTeachingKitCard) {
     const directKitCount = countDirectResources(entryTeachingKits);
     contextCards.push(`
             <article class="category-card">
@@ -3765,12 +3982,12 @@ function renderBiasDetailPage(entry) {
               )}</p>
               <div class="context-resource-list">
                 ${entryTeachingKits
-                  .map(({ item, inferred }) =>
+                  .map(({ item, inferred, familyMatches }) =>
                     renderContextResourceItem({
                       href: `../../${teachingKitSlug}/${item.slug}/`,
                       title: item.title,
                       description: item.summary,
-                      kicker: inferred ? "Nearby workshop" : "Direct workshop",
+                      kicker: inferred ? inferredResourceKicker("Nearby workshop", "Same workshop family", familyMatches) : "Direct workshop",
                     }),
                   )
                   .join("")}
@@ -3778,7 +3995,7 @@ function renderBiasDetailPage(entry) {
             </article>`);
   }
 
-  if (assessmentLinks.length) {
+  if (showAssessmentCard) {
     const directAssessmentCount = countDirectResources(assessmentLinks);
     contextCards.push(`
             <article class="category-card">
@@ -3794,11 +4011,11 @@ function renderBiasDetailPage(entry) {
               )}</p>
               <div class="context-resource-list">
                 ${assessmentLinks
-                  .map(({ item, inferred }) =>
+                  .map(({ item, inferred, familyMatches }) =>
                     renderContextResourceItem({
                       title: item.title,
                       description: truncateText(item.scenario, 180),
-                      kicker: inferred ? "Nearby scenario" : "Direct scenario",
+                      kicker: inferred ? inferredResourceKicker("Nearby scenario", "Same scenario family", familyMatches) : "Direct scenario",
                     }),
                   )
                   .join("")}
@@ -3829,7 +4046,7 @@ function renderBiasDetailPage(entry) {
     description: entry.summary,
     prefix: "../../",
     currentId: "biases",
-    routePath: `/${siteConfig.sectionSlug}/${entry.slug}/`,
+    routePath: entryRoutePath(entry),
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "All Biases", href: "../" },
@@ -4116,7 +4333,7 @@ function renderBiasDetailPage(entry) {
               .map(
                 (item) => `
                   <article class="category-card">
-                    <h3><a href="../../${siteConfig.sectionSlug}/${item.entry.slug}/">${escapeHtml(item.entry.name)}</a></h3>
+                    <h3><a href="${entryHref(item.entry, "../../")}">${escapeHtml(item.entry.name)}</a></h3>
                     ${
                       item.looksSimilarBecause
                         ? `<p class="card-copy"><strong>Why it looks similar:</strong> ${escapeHtml(item.looksSimilarBecause)}</p>`
@@ -4154,16 +4371,16 @@ function renderBiasDetailPage(entry) {
         </section>
 
         ${
-          caseStudies.length
+          showCaseStudies
             ? `
         <section class="section-block">
           <div class="section-header">
             <div>
               <h2 class="section-title">Case studies</h2>
               <p class="section-copy">${escapeHtml(
-                countDirectResources(caseStudies) === caseStudies.length
+                directCaseStudyCount === caseStudies.length
                   ? "These sourced cases do not prove what was in someone's head with perfect certainty. They are teaching cases for showing where the bias pressure becomes visible in practice."
-                  : countDirectResources(caseStudies) > 0
+                  : directCaseStudyCount > 0
                     ? "These sourced cases include a few closely related examples where that helps make the same pressure visible in practice."
                     : "These sourced cases come from closely related biases and help show the same kind of pressure while a direct case for this page catches up.",
               )}</p>
@@ -4202,7 +4419,7 @@ function renderBiasDetailPage(entry) {
         }
 
         ${
-          !caseStudies.length && classicDemonstrations.length
+          showClassicDemonstrations
             ? `
         <section class="section-block">
           <div class="section-header">
@@ -4228,7 +4445,7 @@ function renderBiasDetailPage(entry) {
         }
 
         ${
-          !caseStudies.length && appliedContexts.length
+          showAppliedContexts
             ? `
         <section class="section-block">
           <div class="section-header">
@@ -4254,6 +4471,27 @@ function renderBiasDetailPage(entry) {
         }
 
         ${contextSection}
+
+        ${
+          slugfesterFeature
+            ? `
+        <section class="section-block">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Special feature</h2>
+              <p class="section-copy">This bias is also featured on Slugfester, a companion site with its own reference format and teaching angle.</p>
+            </div>
+          </div>
+          <article class="note-panel">
+            <h4>${escapeHtml(slugfesterFeature.title)}</h4>
+            <p class="muted">${escapeHtml(slugfesterFeature.summary)}</p>
+            <div class="path-link-row">
+              <a class="button button-secondary button-compact" href="${escapeHtml(slugfesterFeature.href)}" target="_blank" rel="noopener noreferrer">Open on Slugfester</a>
+            </div>
+          </article>
+        </section>`
+            : ""
+        }
 
         ${
           companionReading.length
@@ -4376,8 +4614,8 @@ function renderAboutPage() {
               <p class="muted">Self-checks, assessment sets, countermoves, and teaching kits are there to change what people actually do, not just what they can define.</p>
             </div>
             <div class="note-panel">
-              <h4>Theory and prompts</h4>
-              <p class="muted">Theory pages explain the deeper structure behind the labels. Prompt kits help readers widen the frame when AI tools are part of the workflow.</p>
+              <h4>Theory and optional AI prompts</h4>
+              <p class="muted">Theory pages explain the deeper structure behind the labels. The AI prompt kits are optional add-ons for readers who want help widening the frame after the case is already concrete.</p>
             </div>
           </div>
         </section>
@@ -4508,7 +4746,16 @@ async function writeSiteFiles() {
   await writeTextFile("404.html", renderNotFoundPage());
 
   for (const entry of entries) {
-    await writeTextFile(`${siteConfig.sectionSlug}/${entry.slug}/index.html`, renderBiasDetailPage(entry));
+    await writeTextFile(`${siteConfig.sectionSlug}/${entryRouteSlug(entry)}/index.html`, renderBiasDetailPage(entry));
+    if (entryRouteSlug(entry) !== entry.slug) {
+      await writeTextFile(
+        `${siteConfig.sectionSlug}/${entry.slug}/index.html`,
+        renderRedirectDocument({
+          title: entry.name,
+          targetPath: entryRoutePath(entry),
+        }),
+      );
+    }
   }
 
   for (const task of tasks) {
@@ -4589,7 +4836,7 @@ async function writeSiteFiles() {
       `/${siteConfig.theorySlug}/`,
       "/countermoves/",
       "/about/",
-      ...entries.map((entry) => `/${siteConfig.sectionSlug}/${entry.slug}/`),
+      ...entries.map((entry) => entryRoutePath(entry)),
       ...tasks.map((task) => `/categories/${task.slug}/`),
       ...patterns.map((pattern) => `/${siteConfig.patternSlug}/${pattern.slug}/`),
       ...domainHubs.map((hub) => `/${domainHubSlug}/${hub.slug}/`),

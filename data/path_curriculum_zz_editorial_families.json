@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "start-here",
+    "editorialFamilies": [
+      "foundational-core",
+      "decision-under-uncertainty",
+      "evidence-and-explanation",
+      "people-judgment-and-attribution"
+    ]
+  },
+  {
+    "slug": "decision-under-uncertainty",
+    "editorialFamilies": [
+      "decision-under-uncertainty"
+    ]
+  },
+  {
+    "slug": "evidence-and-explanation",
+    "editorialFamilies": [
+      "evidence-and-explanation",
+      "misinformation-and-public-claims"
+    ]
+  },
+  {
+    "slug": "people-judgment",
+    "editorialFamilies": [
+      "people-judgment-and-attribution",
+      "conflict-and-tribe"
+    ]
+  },
+  {
+    "slug": "loss-ownership-and-omission",
+    "editorialFamilies": [
+      "loss-ownership-and-omission",
+      "choice-architecture-and-defaults"
+    ]
+  },
+  {
+    "slug": "confidence-and-understanding",
+    "editorialFamilies": [
+      "confidence-and-understanding",
+      "experimental-memory-effects"
+    ]
+  },
+  {
+    "slug": "after-the-outcome",
+    "editorialFamilies": [
+      "retrospection-and-postmortem",
+      "self-justification-and-meta-bias"
+    ]
+  },
+  {
+    "slug": "conflict-threat-and-tribe",
+    "editorialFamilies": [
+      "conflict-and-tribe",
+      "people-judgment-and-attribution"
+    ]
+  },
+  {
+    "slug": "misinformation-memory-and-crowds",
+    "editorialFamilies": [
+      "misinformation-and-public-claims",
+      "memory-and-recall"
+    ]
+  },
+  {
+    "slug": "comparison-traps-and-choice-architecture",
+    "editorialFamilies": [
+      "choice-architecture-and-defaults",
+      "product-and-policy-choice"
+    ]
+  },
+  {
+    "slug": "social-pressure-and-belonging",
+    "editorialFamilies": [
+      "group-pressure-and-belonging",
+      "conflict-and-tribe"
+    ]
+  },
+  {
+    "slug": "self-justification-and-meta-bias",
+    "editorialFamilies": [
+      "self-justification-and-meta-bias",
+      "retrospection-and-postmortem"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "before-you-decide",
+    "editorialFamilies": [
+      "decision-under-uncertainty",
+      "loss-ownership-and-omission"
+    ]
+  },
+  {
+    "slug": "before-you-predict",
+    "editorialFamilies": [
+      "decision-under-uncertainty",
+      "confidence-and-understanding"
+    ]
+  },
+  {
+    "slug": "before-you-judge-a-person",
+    "editorialFamilies": [
+      "people-judgment-and-attribution",
+      "conflict-and-tribe"
+    ]
+  },
+  {
+    "slug": "before-you-share-the-story",
+    "editorialFamilies": [
+      "misinformation-and-public-claims",
+      "evidence-and-explanation"
+    ]
+  },
+  {
+    "slug": "before-you-explain-what-happened",
+    "editorialFamilies": [
+      "retrospection-and-postmortem",
+      "evidence-and-explanation"
+    ]
+  },
+  {
+    "slug": "after-you-were-surprised",
+    "editorialFamilies": [
+      "retrospection-and-postmortem",
+      "decision-under-uncertainty"
+    ]
+  },
+  {
+    "slug": "before-you-treat-the-default-as-neutral",
+    "editorialFamilies": [
+      "choice-architecture-and-defaults",
+      "loss-ownership-and-omission"
+    ]
+  },
+  {
+    "slug": "before-you-read-hostility-into-it",
+    "editorialFamilies": [
+      "conflict-and-tribe",
+      "people-judgment-and-attribution"
+    ]
+  },
+  {
+    "slug": "before-you-call-it-obvious",
+    "editorialFamilies": [
+      "confidence-and-understanding",
+      "experimental-memory-effects"
+    ]
+  },
+  {
+    "slug": "before-you-trust-the-repeat",
+    "editorialFamilies": [
+      "misinformation-and-public-claims",
+      "memory-and-recall"
+    ]
+  },
+  {
+    "slug": "before-you-let-the-menu-decide",
+    "editorialFamilies": [
+      "choice-architecture-and-defaults",
+      "product-and-policy-choice"
+    ]
+  },
+  {
+    "slug": "before-you-go-with-the-room",
+    "editorialFamilies": [
+      "group-pressure-and-belonging",
+      "conflict-and-tribe"
+    ]
+  },
+  {
+    "slug": "before-you-tidy-the-story",
+    "editorialFamilies": [
+      "self-justification-and-meta-bias",
+      "retrospection-and-postmortem"
+    ]
+  }
+]

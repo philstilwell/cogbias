@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "ambiguity-effect",
+    "slugfesterFeature": {
+      "title": "See ambiguity effect on Slugfester",
+      "summary": "Slugfester carries a parallel reference entry for this bias, giving readers another angle on how uncertainty and unclear options distort judgment.",
+      "href": "https://slugfester.com/reference/bias/ambiguity-effect/"
+    }
+  },
+  {
+    "slug": "authority-bias",
+    "slugfesterFeature": {
+      "title": "See authority bias on Slugfester",
+      "summary": "Slugfester’s version is a useful companion when you want a second framing of how status, prestige, and deference bend what gets accepted as true.",
+      "href": "https://slugfester.com/reference/bias/authority-bias/"
+    }
+  },
+  {
+    "slug": "base-rate-neglect",
+    "slugfesterFeature": {
+      "title": "See base-rate neglect on Slugfester",
+      "summary": "This companion entry adds another teaching lens on what happens when vivid specifics crowd out the broader statistical backdrop.",
+      "href": "https://slugfester.com/reference/bias/base-rate-neglect/"
+    }
+  },
+  {
+    "slug": "belief-bias",
+    "slugfesterFeature": {
+      "title": "See belief bias on Slugfester",
+      "summary": "Slugfester’s reference page offers a complementary way to teach the gap between whether a conclusion feels right and whether the reasoning actually holds.",
+      "href": "https://slugfester.com/reference/bias/belief-bias/"
+    }
+  },
+  {
+    "slug": "confirmation-bias",
+    "slugfesterFeature": {
+      "title": "See confirmation bias on Slugfester",
+      "summary": "This cross-link introduces a parallel reference page on Slugfester, useful for readers who want another presentation of selective evidence-seeking in action.",
+      "href": "https://slugfester.com/reference/bias/confirmation-bias/"
+    }
+  },
+  {
+    "slug": "scope-neglect",
+    "slugfesterFeature": {
+      "title": "See scope neglect on Slugfester",
+      "summary": "Slugfester’s take makes a good companion when teaching how quantity, scale, and total impact can disappear behind a simpler emotional response.",
+      "href": "https://slugfester.com/reference/bias/scope-neglect/"
+    }
+  },
+  {
+    "slug": "subjective-validation",
+    "slugfesterFeature": {
+      "title": "See subjective validation on Slugfester",
+      "summary": "This linked entry gives a second presentation of how a statement can feel personally true because it fits hopes, impressions, or prior beliefs.",
+      "href": "https://slugfester.com/reference/bias/subjective-validation/"
+    }
+  }
+]

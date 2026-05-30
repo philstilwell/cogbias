@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "media-literacy-bias-lab",
+    "editorialFamilies": [
+      "misinformation-and-public-claims",
+      "evidence-and-explanation"
+    ]
+  },
+  {
+    "slug": "meeting-dissent-reset",
+    "editorialFamilies": [
+      "group-pressure-and-belonging",
+      "conflict-and-tribe"
+    ]
+  },
+  {
+    "slug": "confidence-vs-understanding-classroom",
+    "editorialFamilies": [
+      "confidence-and-understanding",
+      "experimental-memory-effects"
+    ]
+  },
+  {
+    "slug": "relationship-conflict-attribution-reset",
+    "editorialFamilies": [
+      "people-judgment-and-attribution",
+      "conflict-and-tribe",
+      "self-justification-and-meta-bias"
+    ]
+  },
+  {
+    "slug": "product-choice-architecture-audit",
+    "editorialFamilies": [
+      "choice-architecture-and-defaults",
+      "product-and-policy-choice",
+      "loss-ownership-and-omission"
+    ]
+  }
+]

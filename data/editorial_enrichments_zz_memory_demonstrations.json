@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "boundary-extension",
+    "classicDemonstrations": [
+      {
+        "title": "Recall the edges",
+        "summary": "Participants study a close-up scene, then later choose between the original image and a wider version that includes more background. People often remember the wider framing as the one they saw.",
+        "whyItMatters": "The error shows that memory is reconstructive even for simple scenes. It fills beyond the frame instead of storing only what was present."
+      },
+      {
+        "title": "Draw what you saw",
+        "summary": "After a brief scene exposure, participants sketch or describe the picture from memory. Their reconstructions commonly add surrounding space that was never shown.",
+        "whyItMatters": "The extra borders are not random decoration. They reveal a predictable tendency to remember scenes as more complete than they were."
+      }
+    ]
+  },
+  {
+    "slug": "cue-dependent-forgetting",
+    "classicDemonstrations": [
+      {
+        "title": "Same list, different room",
+        "summary": "People learn material in one physical or mental context, then try to recall it later after the cues have changed. Recall usually worsens when the retrieval setting no longer resembles the original one.",
+        "whyItMatters": "The memory did not vanish. Access to it weakened because the path back to it changed."
+      },
+      {
+        "title": "State-dependent retrieval",
+        "summary": "Learners encode information while holding one mood, task frame, or sensory cue, then retrieve under a different one. Matching the original cue set tends to help recall.",
+        "whyItMatters": "What looks like pure forgetting can actually be a cue mismatch between encoding and retrieval."
+      }
+    ]
+  },
+  {
+    "slug": "levels-of-processing-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Sound versus meaning",
+        "summary": "One group answers shallow questions about a word's appearance or sound, while another answers deeper questions about its meaning or use. Later memory is usually stronger for the meaning-focused group.",
+        "whyItMatters": "The effect distinguishes exposure from encoding quality. Processing for meaning makes the memory trace more durable."
+      },
+      {
+        "title": "Use it in a sentence",
+        "summary": "Learners remember material better when they must connect it to a real sentence, example, or personal explanation than when they merely notice its surface form.",
+        "whyItMatters": "Depth here means organized interpretation, not just longer study time."
+      }
+    ]
+  },
+  {
+    "slug": "modality-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Heard ending versus read ending",
+        "summary": "Participants receive similar lists, except that one ending is presented aloud and the other is presented visually. The heard ending is often recalled better, especially for the final items.",
+        "whyItMatters": "The last part of a sequence is not remembered equally across formats. Modality changes the recency advantage."
+      },
+      {
+        "title": "Mixed-format serial recall",
+        "summary": "In short serial-recall tasks, shifting some items from print to speech improves memory for the most recent positions while leaving the rest of the list less changed.",
+        "whyItMatters": "The effect helps separate a format advantage from a general intelligence or attention story."
+      }
+    ]
+  },
+  {
+    "slug": "part-list-cueing-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Some clues block the rest",
+        "summary": "People study a category list, then are later shown part of that list as cues during recall. Those partial cues often make the uncued items harder to retrieve.",
+        "whyItMatters": "More help is not always better help. A few supplied items can disrupt the person's own retrieval plan."
+      },
+      {
+        "title": "Category members on the page",
+        "summary": "When experimenters provide several members of a studied category, participants commonly recall fewer of the remaining members than peers who receive no partial cue list.",
+        "whyItMatters": "The cue set competes with the learner's internal organization rather than simply adding support."
+      }
+    ]
+  },
+  {
+    "slug": "processing-difficulty-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Desirable difficulty at encoding",
+        "summary": "Learners study material that is slightly harder to process, such as text that demands more effortful reading or retrieval. Later memory can improve relative to an easier, more fluent condition.",
+        "whyItMatters": "Ease of processing is not the same as strength of learning. Some friction creates better retention."
+      },
+      {
+        "title": "Harder now, stickier later",
+        "summary": "When two study formats feel different in immediate comfort, the more effortful version often wins on delayed recall even if learners predict the opposite at the time.",
+        "whyItMatters": "The demonstration explains why comfortable study can be misleading when judging what will last."
+      }
+    ]
+  },
+  {
+    "slug": "serial-position-effect",
+    "classicDemonstrations": [
+      {
+        "title": "First and last advantage",
+        "summary": "Participants hear or read a list of items and then recall as many as they can. Recall usually clusters at the beginning and the end, with a dip in the middle positions.",
+        "whyItMatters": "The effect is a structural property of sequence memory, not just a quirk of one word list."
+      },
+      {
+        "title": "Middle items disappear first",
+        "summary": "As list length grows, the least remembered items are often the ones that never received the early-position advantage or the late-position freshness advantage.",
+        "whyItMatters": "It helps explain why order itself can distort what feels memorable or important."
+      }
+    ]
+  },
+  {
+    "slug": "spacing-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Crammed versus spaced review",
+        "summary": "Two groups get the same total exposure to material, but one receives massed repetitions while the other receives them spaced over time. Delayed recall typically favors the spaced condition.",
+        "whyItMatters": "The difference comes from timing, not from total minutes alone."
+      },
+      {
+        "title": "Repeated contact with gaps",
+        "summary": "Even when study sessions feel less smooth, separating them with delays produces stronger long-run memory than clustering them together in one burst.",
+        "whyItMatters": "The effect turns a common study inconvenience into a design principle for real learning."
+      }
+    ]
+  },
+  {
+    "slug": "verbatim-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Meaning survives wording",
+        "summary": "Participants hear a statement and later must recognize either the exact sentence or a paraphrase with the same gist. People often retain the meaning more reliably than the original wording.",
+        "whyItMatters": "Memory stores interpretation better than surface form, which matters for testimony, teaching, and argument recall."
+      },
+      {
+        "title": "Quote the idea, not the sentence",
+        "summary": "When people retell what they heard, they usually preserve the point while letting exact phrases drift. The retelling can stay functionally accurate while still ceasing to be verbatim.",
+        "whyItMatters": "This helps explain why confident recall of the message should not be confused with confidence about the wording."
+      }
+    ]
+  },
+  {
+    "slug": "von-restorff-effect",
+    "classicDemonstrations": [
+      {
+        "title": "The isolated item",
+        "summary": "A mostly uniform list contains one item that differs sharply in color, category, or format. That standout item is usually recalled better than its neighbors.",
+        "whyItMatters": "Distinctiveness changes retrieval odds even when the underlying list is otherwise similar."
+      },
+      {
+        "title": "One thing breaks the pattern",
+        "summary": "When a sequence is visually or conceptually repetitive, a single unusual item becomes easier to retrieve later because it had a cleaner route to attention and storage.",
+        "whyItMatters": "The demonstration is useful for separating importance from salience. What stands out is not always what matters most."
+      }
+    ]
+  },
+  {
+    "slug": "tip-of-the-tongue",
+    "classicDemonstrations": [
+      {
+        "title": "Partial access without the word",
+        "summary": "Participants are asked for a low-frequency name or term and often report knowing it while being unable to produce it. They may still retrieve the first letter, rhythm, or similar-sounding words.",
+        "whyItMatters": "The state shows that retrieval can be partly active without reaching full recall."
+      },
+      {
+        "title": "Blocked by near neighbors",
+        "summary": "When related sound patterns or competitor words are active, people can feel close to the target while repeatedly failing to retrieve it.",
+        "whyItMatters": "The failure is not mere ignorance. It is a specific form of incomplete access under competition."
+      }
+    ]
+  },
+  {
+    "slug": "humor-effect",
+    "classicDemonstrations": [
+      {
+        "title": "Funny list versus plain list",
+        "summary": "Participants study material with comparable content, except that one set is made humorous and the other is neutral. The humorous material is often remembered better later.",
+        "whyItMatters": "Humor changes encoding and distinctiveness, not just enjoyment."
+      },
+      {
+        "title": "The vivid joke line",
+        "summary": "When one item in a set carries surprise, amusement, or comic incongruity, it tends to become more retrievable than nearby plain items.",
+        "whyItMatters": "The demonstration helps explain why emotional vividness can improve recall without necessarily improving judgment."
+      }
+    ]
+  },
+  {
+    "slug": "primacy-effect",
+    "classicDemonstrations": [
+      {
+        "title": "The opening items stick",
+        "summary": "In free recall of a list, the earliest items are often remembered especially well because they received the first uninterrupted pass through attention and rehearsal.",
+        "whyItMatters": "Order alone can make first information feel truer or more central than later information."
+      },
+      {
+        "title": "First impression encoding",
+        "summary": "When several facts arrive in sequence, the earliest ones can anchor the remembered picture and make later updates harder to integrate evenly.",
+        "whyItMatters": "The effect links basic sequence memory to impression formation and narrative framing."
+      }
+    ]
+  }
+]
