@@ -1041,6 +1041,125 @@ function absoluteUrlForRoute(routePath) {
   return new URL(routePath.replace(/^\//, ""), siteUrlWithSlash).href;
 }
 
+function absoluteUrlForAsset(assetPath) {
+  if (!siteUrlWithSlash) return "";
+  return new URL(String(assetPath || "").replace(/^\//, ""), siteUrlWithSlash).href;
+}
+
+function normalizeMetaDescription(value = "", maxLength = 160) {
+  const text = String(value || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return truncateText(text || siteConfig.brandSubtitle, maxLength);
+}
+
+function resolveAbsoluteUrl(href = "", routePath = "/") {
+  const rawHref = String(href || "").trim();
+  if (!rawHref) return "";
+  if (/^https?:\/\//i.test(rawHref)) return rawHref;
+  const baseUrl = absoluteUrlForRoute(routePath) || siteUrlWithSlash;
+  if (!baseUrl) return rawHref;
+  return new URL(rawHref, baseUrl).href;
+}
+
+function buildPublisherSchema() {
+  const logoUrl = absoluteUrlForAsset(`/${androidChrome512Path}`);
+  return {
+    "@type": "Organization",
+    name: siteConfig.brandTitle,
+    url: siteConfig.siteUrl,
+    ...(logoUrl
+      ? {
+          logo: {
+            "@type": "ImageObject",
+            url: logoUrl,
+          },
+        }
+      : {}),
+  };
+}
+
+function buildBreadcrumbSchema(items = [], routePath = "/") {
+  if (!items.length || !siteUrlWithSlash) return null;
+
+  const itemListElement = items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.label,
+    item: resolveAbsoluteUrl(item.href || routePath, routePath),
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement,
+  };
+}
+
+function buildWebPageSchema({ title, description, routePath, kind = "WebPage" }) {
+  const url = absoluteUrlForRoute(routePath);
+  return {
+    "@context": "https://schema.org",
+    "@type": kind,
+    name: pageTitle(title),
+    description: normalizeMetaDescription(description),
+    ...(url ? { url } : {}),
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.brandTitle,
+      url: siteConfig.siteUrl,
+    },
+    inLanguage: "en-US",
+  };
+}
+
+function buildWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.brandTitle,
+    url: siteConfig.siteUrl,
+    description: normalizeMetaDescription(siteConfig.heroLead || siteConfig.brandSubtitle),
+    inLanguage: "en-US",
+    publisher: buildPublisherSchema(),
+  };
+}
+
+function buildDefinedTermSchema(entry) {
+  const slugfesterUrl = publicExternalUrl(entry.slugfesterFeature?.href);
+  const url = absoluteUrlForRoute(entryRoutePath(entry));
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: entry.name,
+    description: normalizeMetaDescription(entry.summary),
+    termCode: entryRouteSlug(entry),
+    ...(url ? { url } : {}),
+    inDefinedTermSet: absoluteUrlForRoute(`/${siteConfig.sectionSlug}/`) || undefined,
+    ...(entry.aliases?.length ? { alternateName: entry.aliases } : {}),
+    ...(slugfesterUrl ? { sameAs: [slugfesterUrl] } : {}),
+  };
+}
+
+function buildArticleSchema(article, routePath) {
+  const url = absoluteUrlForRoute(routePath);
+  const imageUrl = absoluteUrlForAsset(`/${androidChrome512Path}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: normalizeMetaDescription(article.summary),
+    ...(url ? { url } : {}),
+    ...(imageUrl ? { image: [imageUrl] } : {}),
+    author: {
+      "@type": "Person",
+      name: siteConfig.author,
+    },
+    publisher: buildPublisherSchema(),
+    inLanguage: "en-US",
+  };
+}
+
 function renderBreadcrumbs(items = []) {
   if (!items.length) return "";
 
@@ -1055,17 +1174,53 @@ function renderBreadcrumbs(items = []) {
     .join("")}</div>`;
 }
 
-function renderHead({ title, description, prefix, routePath }) {
+function renderHead({
+  title,
+  description,
+  prefix,
+  routePath,
+  robots = "index,follow,max-image-preview:large",
+  ogType = "website",
+  socialImagePath = `/${androidChrome512Path}`,
+  socialImageAlt = `${siteConfig.brandTitle} logo`,
+  socialImageWidth,
+  socialImageHeight,
+  structuredData = [],
+}) {
+  const normalizedDescription = normalizeMetaDescription(description);
   const absoluteUrl = absoluteUrlForRoute(routePath);
   const canonical = absoluteUrl ? `<link rel="canonical" href="${absoluteUrl}" />` : "";
+  const socialImageUrl = absoluteUrlForAsset(socialImagePath);
+  const structuredDataScripts = structuredData
+    .filter(Boolean)
+    .map(
+      (item) => `    <script type="application/ld+json">${safeJsonForScript(item)}</script>`,
+    )
+    .join("\n");
 
   return `    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(pageTitle(title))}</title>
-    <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="description" content="${escapeHtml(normalizedDescription)}" />
     <meta name="author" content="${escapeHtml(siteConfig.author)}" />
     <meta name="application-name" content="${escapeHtml(siteConfig.siteName)}" />
     <meta name="theme-color" content="#0e2339" />
+    <meta name="robots" content="${escapeHtml(robots)}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="${escapeHtml(ogType)}" />
+    <meta property="og:site_name" content="${escapeHtml(siteConfig.brandTitle)}" />
+    <meta property="og:title" content="${escapeHtml(pageTitle(title))}" />
+    <meta property="og:description" content="${escapeHtml(normalizedDescription)}" />
+    ${absoluteUrl ? `<meta property="og:url" content="${escapeHtml(absoluteUrl)}" />` : ""}
+    ${socialImageUrl ? `<meta property="og:image" content="${escapeHtml(socialImageUrl)}" />` : ""}
+    ${socialImageUrl ? `<meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}" />` : ""}
+    <meta name="twitter:card" content="${socialImageUrl ? "summary_large_image" : "summary"}" />
+    <meta name="twitter:title" content="${escapeHtml(pageTitle(title))}" />
+    <meta name="twitter:description" content="${escapeHtml(normalizedDescription)}" />
+    ${socialImageUrl ? `<meta name="twitter:image" content="${escapeHtml(socialImageUrl)}" />` : ""}
+    ${socialImageUrl ? `<meta name="twitter:image:alt" content="${escapeHtml(socialImageAlt)}" />` : ""}
+    ${socialImageWidth ? `<meta property="og:image:width" content="${escapeHtml(String(socialImageWidth))}" />` : ""}
+    ${socialImageHeight ? `<meta property="og:image:height" content="${escapeHtml(String(socialImageHeight))}" />` : ""}
     ${canonical}
     <link rel="icon" href="${prefix}${faviconIcoPath}" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="${prefix}${faviconSvgPath}" />
@@ -1074,7 +1229,7 @@ function renderHead({ title, description, prefix, routePath }) {
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}${appleTouchIconPath}" />
     <link rel="manifest" href="${prefix}site.webmanifest" />
     <link rel="stylesheet" href="${prefix}styles.css" />
-    <script defer src="${prefix}app.js"></script>`;
+    <script defer src="${prefix}app.js"></script>${structuredDataScripts ? `\n${structuredDataScripts}` : ""}`;
 }
 
 function renderNav(prefix, currentId) {
@@ -1158,12 +1313,47 @@ function renderMasthead(prefix, currentId) {
       </header>`;
 }
 
-function renderPage({ title, description, prefix, currentId, breadcrumbs, body, routePath, bodyClass = "" }) {
+function renderPage({
+  title,
+  description,
+  prefix,
+  currentId,
+  breadcrumbs,
+  body,
+  routePath,
+  bodyClass = "",
+  robots = "index,follow,max-image-preview:large",
+  ogType = "website",
+  socialImagePath = `/${androidChrome512Path}`,
+  socialImageAlt = `${siteConfig.brandTitle} logo`,
+  socialImageWidth = 512,
+  socialImageHeight = 512,
+  pageSchemaType = "WebPage",
+  structuredData = [],
+}) {
   const bodyClassAttr = bodyClass ? ` class="${escapeHtml(bodyClass)}"` : "";
+  const effectiveDescription = normalizeMetaDescription(description);
+  const autoStructuredData = [
+    buildWebPageSchema({ title, description: effectiveDescription, routePath, kind: pageSchemaType }),
+    buildBreadcrumbSchema(breadcrumbs, routePath),
+    ...structuredData,
+  ].filter(Boolean);
   return `<!doctype html>
 <html lang="en">
   <head>
-${renderHead({ title, description, prefix, routePath })}
+${renderHead({
+  title,
+  description: effectiveDescription,
+  prefix,
+  routePath,
+  robots,
+  ogType,
+  socialImagePath,
+  socialImageAlt,
+  socialImageWidth,
+  socialImageHeight,
+  structuredData: autoStructuredData,
+})}
   </head>
   <body${bodyClassAttr}>
     <div class="site-shell">
@@ -1185,6 +1375,7 @@ function renderRedirectDocument({ title, targetPath }) {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
     <meta http-equiv="refresh" content="0; url=${escapeHtml(targetPath)}" />
     <link rel="canonical" href="${escapeHtml(absoluteTarget)}" />
     <title>${escapeHtml(pageTitle(title))}</title>
@@ -2073,10 +2264,12 @@ function renderCurriculumTrackCard(track, itemCount, label, href) {
 function renderHomePage() {
   return renderPage({
     title: siteConfig.brandTitle,
-    description: siteConfig.brandSubtitle,
+    description: siteConfig.heroLead || siteConfig.brandSubtitle,
     prefix: "",
     currentId: "home",
     routePath: "/",
+    ogType: "website",
+    structuredData: [buildWebsiteSchema()],
     body: `
         <section class="hero">
           <div class="hero-panel">
@@ -2492,6 +2685,7 @@ function renderBiasIndexPage() {
     currentId: "biases",
     bodyClass: "page-bias-index",
     routePath: `/${siteConfig.sectionSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "All Biases" },
@@ -2536,6 +2730,7 @@ function renderCategoryIndexPage() {
     prefix: "../",
     currentId: "categories",
     routePath: "/categories/",
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Categories" },
@@ -2568,6 +2763,7 @@ function renderPatternIndexPage() {
     prefix: "../",
     currentId: "patterns",
     routePath: `/${siteConfig.patternSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Patterns" },
@@ -2600,6 +2796,7 @@ function renderPathsIndexPage() {
     prefix: "../",
     currentId: "paths",
     routePath: `/${siteConfig.pathSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Learning Paths" },
@@ -2692,6 +2889,7 @@ function renderDomainHubsIndexPage() {
     prefix: "../",
     currentId: "contexts",
     routePath: `/${domainHubSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [{ label: "Home", href: "../" }, { label: "Contexts" }],
     body: `
         <section class="detail-section">
@@ -2724,6 +2922,7 @@ function renderDomainHubDetailPage(hub) {
     prefix,
     currentId: "contexts",
     routePath: `/${domainHubSlug}/${hub.slug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "Contexts", href: "../" },
@@ -2852,6 +3051,7 @@ function renderComparisonGuidesPage() {
     prefix: "../",
     currentId: "compare",
     routePath: `/${comparisonGuideSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Compare Biases" },
@@ -3007,6 +3207,7 @@ function renderTeachingKitsPage() {
     prefix: "../",
     currentId: "kits",
     routePath: `/${teachingKitSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Teaching Kits" },
@@ -3324,6 +3525,7 @@ function renderPathDetailPage(path) {
     prefix: "../../",
     currentId: "paths",
     routePath: `/${siteConfig.pathSlug}/${path.slug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "Paths", href: "../" },
@@ -3603,6 +3805,7 @@ function renderCaseStudiesPage() {
     prefix: "../",
     currentId: "case-studies",
     routePath: `/${caseStudySlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Case Studies" },
@@ -3664,6 +3867,7 @@ function renderPromptsPage() {
     prefix: "../",
     currentId: "prompts",
     routePath: `/${siteConfig.promptSlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "AI Prompt Kits" },
@@ -3701,6 +3905,7 @@ function renderTheoryPage() {
     prefix: "../",
     currentId: "theory",
     routePath: `/${siteConfig.theorySlug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Theory" },
@@ -3721,12 +3926,16 @@ function renderTheoryPage() {
 }
 
 function renderTheoryArticlePage(article) {
+  const routePath = `/${siteConfig.theorySlug}/${article.slug}/`;
   return renderPage({
     title: article.title,
     description: article.summary,
     prefix: "../../",
     currentId: "theory",
-    routePath: `/${siteConfig.theorySlug}/${article.slug}/`,
+    routePath,
+    pageSchemaType: "WebPage",
+    ogType: "article",
+    structuredData: [buildArticleSchema(article, routePath)],
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "Theory", href: "../" },
@@ -3776,6 +3985,7 @@ function renderCategoryDetailPage(task) {
     prefix: "../../",
     currentId: "categories",
     routePath: `/categories/${task.slug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "Categories", href: "../" },
@@ -3818,6 +4028,7 @@ function renderPatternDetailPage(pattern) {
     prefix: "../../",
     currentId: "patterns",
     routePath: `/${siteConfig.patternSlug}/${pattern.slug}/`,
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "Patterns", href: "../" },
@@ -3896,6 +4107,7 @@ function renderBiasDetailPage(entry) {
   const showCheckCard = shouldShowResolvedResources(checkLinks, { strongThreshold: 30, minimumThreshold: 26 });
   const showTeachingKitCard = shouldShowResolvedResources(entryTeachingKits, { strongThreshold: 32, minimumThreshold: 28 });
   const showAssessmentCard = shouldShowResolvedResources(assessmentLinks, { strongThreshold: 28, minimumThreshold: 24 });
+  const routePath = entryRoutePath(entry);
   const renderContextResourceItem = ({ href = "", title, description = "", kicker = "" }) => `
     <article class="context-resource-item">
       ${kicker ? `<p class="context-resource-kicker">${escapeHtml(kicker)}</p>` : ""}
@@ -4046,7 +4258,13 @@ function renderBiasDetailPage(entry) {
     description: entry.summary,
     prefix: "../../",
     currentId: "biases",
-    routePath: entryRoutePath(entry),
+    routePath,
+    ogType: "article",
+    socialImagePath: hasBiasPoster(entry) ? `/${biasPosterPath(entry)}` : `/${androidChrome512Path}`,
+    socialImageAlt: hasBiasPoster(entry) ? `Poster illustration for ${entry.name}` : `${siteConfig.brandTitle} logo`,
+    socialImageWidth: hasBiasPoster(entry) ? 768 : 512,
+    socialImageHeight: hasBiasPoster(entry) ? 1152 : 512,
+    structuredData: [buildDefinedTermSchema(entry)],
     breadcrumbs: [
       { label: "Home", href: "../../" },
       { label: "All Biases", href: "../" },
@@ -4540,6 +4758,7 @@ function renderCountermovesPage() {
     prefix: "../",
     currentId: "countermoves",
     routePath: "/countermoves/",
+    pageSchemaType: "CollectionPage",
     breadcrumbs: [
       { label: "Home", href: "../" },
       { label: "Countermoves" },
@@ -4656,6 +4875,7 @@ function renderNotFoundPage() {
     prefix: "",
     currentId: "home",
     routePath: "/404.html",
+    robots: "noindex,nofollow,noarchive",
     body: `
         <section class="detail-section">
           <p class="eyebrow">404</p>
