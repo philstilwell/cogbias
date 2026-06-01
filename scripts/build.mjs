@@ -1174,6 +1174,9 @@ function renderBreadcrumbs(items = []) {
     .join("")}</div>`;
 }
 
+const cloudflareAnalyticsSnippet =
+  `    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1209b6d9dcef440e9631d6f539e844c0"}'></script><!-- End Cloudflare Web Analytics -->`;
+
 function renderHead({
   title,
   description,
@@ -1229,7 +1232,8 @@ function renderHead({
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}${appleTouchIconPath}" />
     <link rel="manifest" href="${prefix}site.webmanifest" />
     <link rel="stylesheet" href="${prefix}styles.css" />
-    <script defer src="${prefix}app.js"></script>${structuredDataScripts ? `\n${structuredDataScripts}` : ""}`;
+    <script defer src="${prefix}app.js"></script>
+${cloudflareAnalyticsSnippet}${structuredDataScripts ? `\n${structuredDataScripts}` : ""}`;
 }
 
 function renderNav(prefix, currentId) {
@@ -1380,6 +1384,7 @@ function renderRedirectDocument({ title, targetPath }) {
     <link rel="canonical" href="${escapeHtml(absoluteTarget)}" />
     <title>${escapeHtml(pageTitle(title))}</title>
     <script>window.location.replace(${JSON.stringify(targetPath)});</script>
+${cloudflareAnalyticsSnippet}
   </head>
   <body>
     <p>Redirecting to <a href="${escapeHtml(targetPath)}">${escapeHtml(absoluteTarget)}</a>.</p>
