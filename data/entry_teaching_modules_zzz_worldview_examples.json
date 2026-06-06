@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "agent-detection-bias",
+    "caseStudies": [
+      {
+        "title": "Information and mind in an apologetics argument",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2023-02-24",
+        "url": "https://crossexamined.org/he-gets-us-why-dont-we-get-him-plus-qa/",
+        "summary": "A worldview-debate example treats code-like biological information as naturally pointing to an authoring mind, using familiar human messages as the comparison point.",
+        "whyItFits": "This is a candidate example of agent detection because meaningful-looking structure is read as intentional agency before non-agent causal pathways are fully compared. The classification weakens if the argument explicitly compares live causal models rather than relying on code-and-message intuitions."
+      }
+    ]
+  },
+  {
+    "slug": "motivated-reasoning",
+    "caseStudies": [
+      {
+        "title": "Deconstruction explained through hidden motive",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2024-01-26",
+        "url": "https://crossexamined.org/the-deconstruction-of-christianity-with-alisa-childers-and-tim-barnett/",
+        "summary": "In a discussion of Christian deconstruction, evidence claims are questioned as possibly driven by feelings, hurt, or emotional orientation rather than by reasons.",
+        "whyItFits": "This is a candidate motivated-reasoning example because disagreement is explained by a desired or emotionally easier conclusion before the offered evidence is evaluated. The pastoral version is fairer when motive questions supplement, rather than replace, argument assessment."
+      }
+    ]
+  },
+  {
+    "slug": "bias-blind-spot",
+    "caseStudies": [
+      {
+        "title": "Prior commitments diagnosed asymmetrically",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2025-04-22",
+        "url": "https://podcast.show/cross_examined/episode/144837389/",
+        "summary": "A resurrection-evidence discussion describes Muslims and atheists as potentially closed to the evidence because of prior worldview commitments.",
+        "whyItFits": "This is a candidate bias-blind-spot example because prior commitments are treated as a problem for outgroups while the same diagnostic lens may not be applied to Christian commitments. The observation becomes stronger if all sides' priors and standards are examined symmetrically."
+      }
+    ]
+  },
+  {
+    "slug": "base-rate-neglect",
+    "caseStudies": [
+      {
+        "title": "Miracle possibility and event probability",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2023-06-02",
+        "url": "https://crossexamined.org/are-miracles-impossible-because-they-violate-natural-laws/",
+        "summary": "A miracle argument says that if God exists, miracles are possible, then moves toward evaluating resurrection claims in that opened possibility space.",
+        "whyItFits": "This is a candidate base-rate-neglect example when possibility starts to override questions about rarity, testimony, alternatives, and event-specific probability. It is less vulnerable if used only to answer an absolute impossibility claim."
+      }
+    ]
+  },
+  {
+    "slug": "declinism",
+    "caseStudies": [
+      {
+        "title": "Cultural change framed as social collapse",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2023-06-20",
+        "url": "https://crossexamined.org/what-does-it-really-mean-to-be-woke-with-seth-dillon-of-the-babylon-bee/",
+        "summary": "A cultural-critique episode presents a rival ideology mainly through threat, coercion, inversion of values, and broad social decline.",
+        "whyItFits": "This is a candidate declinism example because alarming features become the dominant interpretive frame for cultural change. The critique becomes stronger when it defines the target precisely and distinguishes documented harms from global crisis language."
+      }
+    ]
+  },
+  {
+    "slug": "fundamental-attribution-error",
+    "caseStudies": [
+      {
+        "title": "Harsh criticism explained as internal weakness",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2024-08-20",
+        "url": "https://podcast.show/cross_examined/episode/135174685/",
+        "summary": "In a discussion of harsh atheist criticism, strong tone is interpreted as possible compensation for weak logic, insecurity, or resistance.",
+        "whyItFits": "This is a candidate fundamental-attribution-error example because behavior is explained by character, emotion, or motive while situational factors and substantive reasons may be underweighted. Tone analysis is more defensible when kept separate from argument quality."
+      }
+    ]
+  },
+  {
+    "slug": "confirmation-bias",
+    "caseStudies": [
+      {
+        "title": "Natural laws accepted as friendly evidence",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2024-04-18",
+        "url": "https://crossexamined.org/why-objections-dont-defeat-the-truth-of-god/",
+        "summary": "A worldview argument treats natural laws and intelligibility as evidence for God while portraying atheist explanations as simply assuming the laws of nature.",
+        "whyItFits": "This is a candidate confirmation-bias example because friendly evidence is allowed to confirm the preferred hypothesis while the rival position is framed less fully. The classification depends on whether rival explanations are compared under shared criteria."
+      }
+    ]
+  },
+  {
+    "slug": "authority-bias",
+    "caseStudies": [
+      {
+        "title": "Biblical authority as a public moral anchor",
+        "source": "Frank Turek, I Don't Have Enough FAITH to Be an ATHEIST",
+        "inferenceScope": "direct-only",
+        "year": "2023-03-10",
+        "url": "https://crossexamined.org/is-what-you-do-more-important-than-what-you-believe-with-alisa-childers-and-natasha-crain/",
+        "summary": "A moral-discussion episode argues that judgments about what is good, right, true, and harmful need to be rooted in biblical authority.",
+        "whyItFits": "This is an intentionally borderline authority-bias example. Scripture can be a legitimate internal authority in confessional theology; the bias risk appears when ingroup authority is treated as a shortcut for public justification across worldviews."
+      }
+    ]
+  }
+]

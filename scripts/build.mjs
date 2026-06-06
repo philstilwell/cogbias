@@ -1818,6 +1818,7 @@ function caseStudiesFor(entry) {
 
   const inferred = caseStudyLibrary
     .filter((item) => !item.entrySlugs.includes(entry.slug))
+    .filter((item) => item.inferenceScope !== "direct-only")
     .filter((item) => {
       const key = `${String(item.url || "").trim().toLowerCase()}::${String(item.title || "").trim().toLowerCase()}`;
       return !directKeys.has(key);
@@ -2865,6 +2866,7 @@ function domainCaseStudiesFor(hub, limit = 6) {
   const hubSlugs = new Set(hub.biasSlugs || []);
   return caseStudyLibrary
     .filter((item) => item.entries.some((entry) => hubSlugs.has(entry.slug)))
+    .filter((item) => item.inferenceScope !== "direct-only")
     .slice(0, limit);
 }
 
