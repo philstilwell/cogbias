@@ -1244,6 +1244,7 @@ img {
 
 .detail-comic-shell {
   margin: 0;
+  padding: 20px;
   background: #111111;
   color: #ffffff;
 }
@@ -1264,21 +1265,13 @@ img {
 }
 
 .detail-comic-caption {
-  padding: 18px 20px;
-}
-
-.detail-comic-full-link {
-  color: #b5e2ff;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.detail-comic-full-link:hover {
+  margin-top: 12px;
   color: #ffffff;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
-.detail-comic-link:focus-visible,
-.detail-comic-full-link:focus-visible {
+.detail-comic-link:focus-visible {
   outline: 3px solid #f6be4f;
   outline-offset: 4px;
 }
@@ -2727,7 +2720,8 @@ img {
     padding: 18px;
   }
 
-  .detail-illustration-shell {
+  .detail-illustration-shell,
+  .detail-comic-shell {
     padding: 15px;
   }
 

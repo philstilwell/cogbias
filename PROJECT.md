@@ -66,7 +66,7 @@ Important data layers:
 - Keep the LogFall-adjacent visual language, but with CogBias blue and gold branding.
 - Show every bias with a full 2:3 poster image and square image corners.
 - Show the matching Mira & Dex comic below the existing poster. On desktop, stack Quick check, Mechanism snapshot, classification, and Reference use in the left column, ending alongside the illustration column. On mobile, show introduction, illustrations, then these notes in one column.
-- Both the comic itself and its "View larger image" link open the full-resolution export in a new tab.
+- Embed each comic in a black section with visible padding. A short caption directly below says "Click the image to view a larger version." Only the image links to the full-resolution export; there is no separate title or link block.
 - Keep prompts as a secondary tool, not a primary navigation pillar.
 - Do not show weak inferred case studies or generic context blocks on thin pages.
 - Use `Classic demonstrations` or `Applied contexts` for experimental-memory pages where a normal case-study block would be misleading.

@@ -2005,12 +2005,9 @@ function renderDetailComic(entry) {
   return `
             <figure class="detail-comic-shell">
               <a class="detail-comic-link" href="${imageHref}" target="_blank" rel="noopener" aria-label="View larger ${escapeHtml(entry.name)} comic (opens in a new tab)">
-                <img class="detail-comic-image" src="../../${comic.preview}" srcset="../../${comic.preview} 768w, ${imageHref} 1024w" sizes="(max-width: 720px) calc(100vw - 62px), (max-width: 980px) calc(100vw - 110px), 400px" width="${comic.width}" height="${comic.height}" alt="${escapeHtml(comic.alt)}" loading="lazy" decoding="async" />
+                <img class="detail-comic-image" src="../../${comic.preview}" srcset="../../${comic.preview} 768w, ${imageHref} 1024w" sizes="(max-width: 720px) calc(100vw - 92px), (max-width: 980px) calc(100vw - 130px), 320px" width="${comic.width}" height="${comic.height}" alt="${escapeHtml(comic.alt)}" loading="lazy" decoding="async" />
               </a>
-              <figcaption class="detail-comic-caption">
-                <p class="detail-illustration-label">A bias in action · Mira &amp; Dex</p>
-                <a class="detail-comic-full-link" href="${imageHref}" target="_blank" rel="noopener" aria-label="View larger ${escapeHtml(entry.name)} comic (opens in a new tab)">View larger image <span aria-hidden="true">↗</span></a>
-              </figcaption>
+              <figcaption class="detail-comic-caption">Click the image to view a larger version.</figcaption>
             </figure>`;
 }
 

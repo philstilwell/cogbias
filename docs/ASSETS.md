@@ -8,7 +8,7 @@ All 241 bias pages include a new comic below the existing poster. The source col
 - `site/assets/bias-comics/` holds web exports; the build copies these to `assets/bias-comics/`.
 - `{public-slug}-comic.webp`: 768 × 1152 preview, WebP quality 88.
 - `{public-slug}-comic-full.webp`: 1024 × 1536 larger image, WebP quality 94.
-- The full image is linked from both the comic and its caption. Responsive image selection can also serve it on denser screens.
+- The comic itself links to the full image. A simple caption directly underneath says "Click the image to view a larger version." The image and caption share a padded black section; there is no separate title or link block. Responsive image selection can also serve the full image on denser screens.
 - Images retain the entire page, square corners, and any embedded color profile. They load lazily and have reserved dimensions to avoid shifting the layout.
 
 To import reviewed additions or revisions, run `python3 scripts/import_comics.py /path/to/COGBIAS`, then `node scripts/build.mjs`. The importer uses the installed `cwebp` encoder, validates complete one-to-one coverage, and skips unchanged masters. Commit the manifest and both source and generated web exports together.
