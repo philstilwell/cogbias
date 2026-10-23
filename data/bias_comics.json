@@ -1,0 +1,2171 @@
+{
+  "action-bias": {
+    "number": 1,
+    "preview": "assets/bias-comics/action-bias-comic.webp",
+    "full": "assets/bias-comics/action-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Action bias illustrated by Mira and Dex. The urge to act can override evidence that waiting is the better choice.",
+    "sourceSha256": "7767590101fd8dd1092045541618b5f0da22162fa628850cc301e15b29fc6130"
+  },
+  "additive-bias": {
+    "number": 2,
+    "preview": "assets/bias-comics/additive-bias-comic.webp",
+    "full": "assets/bias-comics/additive-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Additive bias illustrated by Mira and Dex. We often search for things to add before considering what to remove.",
+    "sourceSha256": "62a6236881475573112ed08823fbc28ec93cb6df6dcb8f399cd17819be542d56"
+  },
+  "aestheticusability-effect": {
+    "number": 3,
+    "preview": "assets/bias-comics/aestheticusability-effect-comic.webp",
+    "full": "assets/bias-comics/aestheticusability-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Aesthetic–usability effect illustrated by Mira and Dex. Attractive design can make a product feel more usable than it is.",
+    "sourceSha256": "286a48b884558a6e3f7a391ec4aa950598599bdc6c0f28f928970762fd0760ce"
+  },
+  "agent-detection-bias": {
+    "number": 4,
+    "preview": "assets/bias-comics/agent-detection-bias-comic.webp",
+    "full": "assets/bias-comics/agent-detection-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Agent detection bias illustrated by Mira and Dex. We can infer an intentional agent before testing ordinary physical causes.",
+    "sourceSha256": "5fbfb2171c4cbd296adb8d34342c806259a7598aa664bedf380439e069b0aac2"
+  },
+  "ambiguity-effect": {
+    "number": 5,
+    "preview": "assets/bias-comics/ambiguity-effect-comic.webp",
+    "full": "assets/bias-comics/ambiguity-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ambiguity effect illustrated by Mira and Dex. Unclear probabilities can make an option feel worse without evidence that it is.",
+    "sourceSha256": "4b21ee3ebfb05f3662982b0957651ff981e1eaf29fec77ff0bf21ab4ea743773"
+  },
+  "anchoring-effect": {
+    "number": 6,
+    "preview": "assets/bias-comics/anchoring-effect-comic.webp",
+    "full": "assets/bias-comics/anchoring-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Anchoring effect illustrated by Mira and Dex. An irrelevant starting number can pull later estimates toward itself.",
+    "sourceSha256": "c003f77a776188e72b3d70d0eb7db15d8971f722684634b512bdeb0916238a84"
+  },
+  "anthropocentric-thinking": {
+    "number": 7,
+    "preview": "assets/bias-comics/anthropocentric-thinking-comic.webp",
+    "full": "assets/bias-comics/anthropocentric-thinking-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Anthropocentric thinking illustrated by Mira and Dex. Human experience can be a misleading starting point for understanding other organisms.",
+    "sourceSha256": "a576f7b92652ed5caf9ae6398b71d087863f673e2ef238c7b853b9aebdac9eb6"
+  },
+  "anthropomorphism": {
+    "number": 8,
+    "preview": "assets/bias-comics/anthropomorphism-comic.webp",
+    "full": "assets/bias-comics/anthropomorphism-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Anthropomorphism illustrated by Mira and Dex. We can assign human feelings and intentions to things that do not have them.",
+    "sourceSha256": "4f7d77fa4bdda0edf0bdfa93a80ca719950c807cf8f98a37e833ab5e04202634"
+  },
+  "apophenia": {
+    "number": 9,
+    "preview": "assets/bias-comics/apophenia-comic.webp",
+    "full": "assets/bias-comics/apophenia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Apophenia illustrated by Mira and Dex. Coincidences can feel like meaningful connections even without a real link.",
+    "sourceSha256": "c14c0aa347cee9af424974fde9792418bb1b4b4182981d424c8b81999dac449c"
+  },
+  "assumed-similarity-bias": {
+    "number": 10,
+    "preview": "assets/bias-comics/assumed-similarity-bias-comic.webp",
+    "full": "assets/bias-comics/assumed-similarity-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Assumed similarity bias illustrated by Mira and Dex. We can assume other people share our preferences more than they actually do.",
+    "sourceSha256": "111a4ed60d919cd83783e5139cb2001cd33f2adf394fbbf411a41ce2d992a99c"
+  },
+  "attentional-bias": {
+    "number": 11,
+    "preview": "assets/bias-comics/attentional-bias-comic.webp",
+    "full": "assets/bias-comics/attentional-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Attentional bias illustrated by Mira and Dex. Current concerns can direct attention toward matching cues and away from other information.",
+    "sourceSha256": "87ceb6416630603bdcbc0ee0c5e6577fc0baf3fec9afd7d01009c9514db284c8"
+  },
+  "attribute-substitution": {
+    "number": 12,
+    "preview": "assets/bias-comics/attribute-substitution-comic.webp",
+    "full": "assets/bias-comics/attribute-substitution-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Attribute substitution illustrated by Mira and Dex. A difficult judgment can be replaced by an easier question without our noticing.",
+    "sourceSha256": "c34f9c30aff5b376028647fc169e3234a29d4d31411ae21380ac25e974a615f4"
+  },
+  "authority-bias": {
+    "number": 13,
+    "preview": "assets/bias-comics/authority-bias-comic.webp",
+    "full": "assets/bias-comics/authority-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Authority bias illustrated by Mira and Dex. A source's status can receive more weight than its relevant expertise warrants.",
+    "sourceSha256": "b3dd23977a88cc88a07c6d8a474e56600f705d2dc70bc0e27b34e5f3c669fc9c"
+  },
+  "automation-bias": {
+    "number": 14,
+    "preview": "assets/bias-comics/automation-bias-comic.webp",
+    "full": "assets/bias-comics/automation-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Automation bias illustrated by Mira and Dex. Automation can receive excessive trust even when direct evidence contradicts it.",
+    "sourceSha256": "96dcc76419c2cfec5ffe206ecf8fe4f7abb222efa10a46aa4e843081b332ea99"
+  },
+  "availability-cascade": {
+    "number": 15,
+    "preview": "assets/bias-comics/availability-cascade-comic.webp",
+    "full": "assets/bias-comics/availability-cascade-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Availability cascade illustrated by Mira and Dex. Public repetition and social uptake can make a belief seem increasingly credible.",
+    "sourceSha256": "04586f2a8ca5365ef8955c6c2d98989c42784c16e5b9cd317b54f521b4103882"
+  },
+  "availability-heuristic": {
+    "number": 16,
+    "preview": "assets/bias-comics/availability-heuristic-comic.webp",
+    "full": "assets/bias-comics/availability-heuristic-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Availability heuristic illustrated by Mira and Dex. Events that come readily to mind can feel more frequent or likely.",
+    "sourceSha256": "0dd93ca10f657b694a8f170570b1d014dd102f162770bf0f8d49cf5617e4c7f1"
+  },
+  "backfire-effect": {
+    "number": 17,
+    "preview": "assets/bias-comics/backfire-effect-comic.webp",
+    "full": "assets/bias-comics/backfire-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Backfire effect illustrated by Mira and Dex. Sometimes a correction strengthens a threatened belief. This response is not inevitable.",
+    "sourceSha256": "4bfbb3056aec9b7ecf8e3f4c07b0be145bf9014143bc1c2affeea744e93d3d20"
+  },
+  "ballot-order-effect": {
+    "number": 18,
+    "preview": "assets/bias-comics/ballot-order-effect-comic.webp",
+    "full": "assets/bias-comics/ballot-order-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ballot order effect illustrated by Mira and Dex. Being listed first can give a candidate an advantage unrelated to merit.",
+    "sourceSha256": "54289d6284462cc4251d935e621c5ff2252851eacd69eefa5689ea544e44800d"
+  },
+  "bandwagon-effect": {
+    "number": 19,
+    "preview": "assets/bias-comics/bandwagon-effect-comic.webp",
+    "full": "assets/bias-comics/bandwagon-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Bandwagon effect illustrated by Mira and Dex. Other people's choices can become the reason for our own.",
+    "sourceSha256": "fe4219640c6d2cf8db4d349bb766bc05576142e1c0090c3fdf87e6bb80810517"
+  },
+  "barnum-effect": {
+    "number": 20,
+    "preview": "assets/bias-comics/barnum-effect-comic.webp",
+    "full": "assets/bias-comics/barnum-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Barnum effect illustrated by Mira and Dex. Vague, broadly applicable descriptions can feel uniquely accurate about ourselves.",
+    "sourceSha256": "21ac3eeab7bf7df21099c8f1b63830472353857c9ef47c855460c0573b621efb"
+  },
+  "base-rate-neglect": {
+    "number": 21,
+    "preview": "assets/bias-comics/base-rate-neglect-comic.webp",
+    "full": "assets/bias-comics/base-rate-neglect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Base-rate neglect illustrated by Mira and Dex. Vivid individual details can crowd out information about how common each possibility is.",
+    "sourceSha256": "d848bcef305bc0b1259b6a941452f30c2b2b320bb8d67d78545afab683b280b5"
+  },
+  "belief-bias": {
+    "number": 22,
+    "preview": "assets/bias-comics/belief-bias-comic.webp",
+    "full": "assets/bias-comics/belief-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Belief bias illustrated by Mira and Dex. A believable conclusion can make an invalid argument feel stronger.",
+    "sourceSha256": "6c6a50d5c8fc5ab00ed9f39182ac497767cf9e08f7b64e2930536dac75a68a8b"
+  },
+  "ben-franklin-effect": {
+    "number": 23,
+    "preview": "assets/bias-comics/ben-franklin-effect-comic.webp",
+    "full": "assets/bias-comics/ben-franklin-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ben Franklin effect illustrated by Mira and Dex. Doing someone a favor can increase our liking for that person.",
+    "sourceSha256": "93ba5841a409c424bdfac4cba6faef04a189a88bdfc9ad6cd3814dc8c639fdb2"
+  },
+  "berksons-paradox": {
+    "number": 24,
+    "preview": "assets/bias-comics/berksons-paradox-comic.webp",
+    "full": "assets/bias-comics/berksons-paradox-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Berkson's paradox illustrated by Mira and Dex. Conditioning on selection can create a misleading relationship between otherwise unrelated traits.",
+    "sourceSha256": "ee8f004ab23ba46044cc10725cc8bc27f9e84f26adc1dbb18b1e53d13790f569"
+  },
+  "bias-blind-spot": {
+    "number": 25,
+    "preview": "assets/bias-comics/bias-blind-spot-comic.webp",
+    "full": "assets/bias-comics/bias-blind-spot-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Bias blind spot illustrated by Mira and Dex. We can recognize bias in other people while overlooking it in ourselves.",
+    "sourceSha256": "6c9c93b0fabbef4e715e5536d312d25e7fcd66426346f0bbd890398edcf6de21"
+  },
+  "bizarreness-effect": {
+    "number": 26,
+    "preview": "assets/bias-comics/bizarreness-effect-comic.webp",
+    "full": "assets/bias-comics/bizarreness-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Bizarreness effect illustrated by Mira and Dex. Bizarre material can be easier to remember than ordinary material in some settings.",
+    "sourceSha256": "0c56604548adebbc1455c5f07c10fd513306e21386887cbc3939f9142f2c9035"
+  },
+  "boundary-extension": {
+    "number": 27,
+    "preview": "assets/bias-comics/boundary-extension-comic.webp",
+    "full": "assets/bias-comics/boundary-extension-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Boundary extension illustrated by Mira and Dex. We can remember a scene as including more surrounding space than we actually saw.",
+    "sourceSha256": "6aac74e9c54b78a9657ae2a1ebec9469e162532d79dd619ff7fa2f6a4d196757"
+  },
+  "cheerleader-effect": {
+    "number": 28,
+    "preview": "assets/bias-comics/cheerleader-effect-comic.webp",
+    "full": "assets/bias-comics/cheerleader-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Cheerleader effect illustrated by Mira and Dex. A face can seem more attractive in a group than when viewed alone.",
+    "sourceSha256": "ae8e1518162601374bd5336bd238c3b2294c8592eb1ef0b2b55919eaff563a53"
+  },
+  "childhood-amnesia": {
+    "number": 29,
+    "preview": "assets/bias-comics/childhood-amnesia-comic.webp",
+    "full": "assets/bias-comics/childhood-amnesia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Childhood amnesia illustrated by Mira and Dex. Adults usually retain few autobiographical memories from their earliest childhood years.",
+    "sourceSha256": "6dec8370f05a625a2dcaa60ff902f98d5f60d7376166b873d5d020687e4d00b5"
+  },
+  "choice-supportive-bias": {
+    "number": 30,
+    "preview": "assets/bias-comics/choice-supportive-bias-comic.webp",
+    "full": "assets/bias-comics/choice-supportive-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Choice-supportive bias illustrated by Mira and Dex. After choosing, we can remember the chosen option more favorably than the record supports.",
+    "sourceSha256": "f0e4bb7b88dc02fb3aecb42b8137dd0cfbaea03ce8395b2bda379c73d29f9f92"
+  },
+  "clustering-illusion": {
+    "number": 31,
+    "preview": "assets/bias-comics/clustering-illusion-comic.webp",
+    "full": "assets/bias-comics/clustering-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Clustering illusion illustrated by Mira and Dex. We can give small clusters in random data more meaning than they deserve.",
+    "sourceSha256": "8511d931dfb1e37526b25e582851e817a3417b456bba2a60b129561c9bb10428"
+  },
+  "cognitive-dissonance": {
+    "number": 32,
+    "preview": "assets/bias-comics/cognitive-dissonance-comic.webp",
+    "full": "assets/bias-comics/cognitive-dissonance-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Cognitive dissonance illustrated by Mira and Dex. Conflicting beliefs and behavior can create discomfort that invites rationalization or change.",
+    "sourceSha256": "55fb0b4ff585504fa65b9d9b43674fbee1724d794ddaf2807d8d36d18983f325"
+  },
+  "common-source-bias": {
+    "number": 33,
+    "preview": "assets/bias-comics/common-source-bias-comic.webp",
+    "full": "assets/bias-comics/common-source-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Common source bias illustrated by Mira and Dex. Multiple reports can share one source, making apparent corroboration misleading.",
+    "sourceSha256": "5cca75ab68555ed5d6f3ffe5ac2da4c77afe2ee2ea1162d450db1b363e39e19f"
+  },
+  "compassion-fade": {
+    "number": 34,
+    "preview": "assets/bias-comics/compassion-fade-comic.webp",
+    "full": "assets/bias-comics/compassion-fade-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Compassion fade illustrated by Mira and Dex. Compassion can weaken as victims become a larger, less identifiable group.",
+    "sourceSha256": "63248bdb7c2b2bf811ce27b57a806343e74d9e5654fd74c54b8ce7c5ef82cc66"
+  },
+  "compromise-effect-choices-affected-if-presented-as-extreme-or-average": {
+    "number": 35,
+    "preview": "assets/bias-comics/compromise-effect-comic.webp",
+    "full": "assets/bias-comics/compromise-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Compromise effect illustrated by Mira and Dex. An option can become more attractive simply because it now occupies the middle.",
+    "sourceSha256": "b6fd82d81fdd0429986f35852813dc1bd7f4c8b0a4f1ab384109a849c63cc491"
+  },
+  "confirmation-bias": {
+    "number": 36,
+    "preview": "assets/bias-comics/confirmation-bias-comic.webp",
+    "full": "assets/bias-comics/confirmation-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Confirmation bias illustrated by Mira and Dex. We can seek and retain supporting evidence more readily than evidence that challenges us.",
+    "sourceSha256": "37483f39374ce263e0639eee38250f0309bfab99dbbb4f6efdb0a78a1387d636"
+  },
+  "congruence-bias": {
+    "number": 37,
+    "preview": "assets/bias-comics/congruence-bias-comic.webp",
+    "full": "assets/bias-comics/congruence-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Congruence bias illustrated by Mira and Dex. Testing only confirming cases can leave competing explanations unexamined.",
+    "sourceSha256": "b89017dbd597eb5711c3ee25f64dffd8291c37e141d43b03eb4c956dc97d0f39"
+  },
+  "conjunction-fallacy": {
+    "number": 38,
+    "preview": "assets/bias-comics/conjunction-fallacy-comic.webp",
+    "full": "assets/bias-comics/conjunction-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Conjunction fallacy illustrated by Mira and Dex. A more detailed combination cannot be more probable than one of its own conditions.",
+    "sourceSha256": "97e4ba2c7f34cccf2f43045e6e3c68602bf46e6d9f91868d3f8709760cd1c1c3"
+  },
+  "conservatism-bias": {
+    "number": 39,
+    "preview": "assets/bias-comics/conservatism-bias-comic.webp",
+    "full": "assets/bias-comics/conservatism-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Conservatism bias illustrated by Mira and Dex. We can revise a belief too little when substantial new evidence arrives.",
+    "sourceSha256": "1e0748d568035594cbd13d9e6789c9b19c33a9942ddbd718161f59f2b0f8fdee"
+  },
+  "consistency-bias": {
+    "number": 40,
+    "preview": "assets/bias-comics/consistency-bias-comic.webp",
+    "full": "assets/bias-comics/consistency-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Consistency bias illustrated by Mira and Dex. Present attitudes can make past attitudes seem more consistent than they were.",
+    "sourceSha256": "10f96917a8175e83fa82b18d6c03c13fb4ce2b5f6ce6a951b1a66ffcf5ecdad0"
+  },
+  "context-neglect-bias": {
+    "number": 41,
+    "preview": "assets/bias-comics/context-neglect-bias-comic.webp",
+    "full": "assets/bias-comics/context-neglect-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Context neglect bias illustrated by Mira and Dex. A technically neat solution can fail when people's actual circumstances are ignored.",
+    "sourceSha256": "3be17239022e2e9dbd359dd864baa686f58eeb3b0324ce7479878e058faa9b4d"
+  },
+  "continued-influence-effect": {
+    "number": 42,
+    "preview": "assets/bias-comics/continued-influence-effect-comic.webp",
+    "full": "assets/bias-comics/continued-influence-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Continued influence effect illustrated by Mira and Dex. Corrected misinformation can continue influencing later reasoning.",
+    "sourceSha256": "028390a09c3f9e64391c11365e366d394997f433e650eddae6ba259143058354"
+  },
+  "contrast-effect": {
+    "number": 43,
+    "preview": "assets/bias-comics/contrast-effect-comic.webp",
+    "full": "assets/bias-comics/contrast-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Contrast effect illustrated by Mira and Dex. A recent contrasting stimulus can change how the next one appears.",
+    "sourceSha256": "b258bb5052f00bba82dc45e1c1473cc5fe2345aaa0feb27756325192461de470"
+  },
+  "courtesy-bias": {
+    "number": 44,
+    "preview": "assets/bias-comics/courtesy-bias-comic.webp",
+    "full": "assets/bias-comics/courtesy-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Courtesy bias illustrated by Mira and Dex. An expressed opinion can shift toward politeness to avoid offending someone.",
+    "sourceSha256": "e34ee716838749dece923c9f69b020c843e236b5ec97ccb527aa067dffff948c"
+  },
+  "cross-race-effect": {
+    "number": 45,
+    "preview": "assets/bias-comics/cross-race-effect-comic.webp",
+    "full": "assets/bias-comics/cross-race-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Cross-race effect illustrated by Mira and Dex. Experience and familiarity can affect face recognition; people remain distinct individuals.",
+    "sourceSha256": "dd6677b930030802176f7cae2bd9eb164a25f7634246293cf140e5517575e777"
+  },
+  "cryptomnesia": {
+    "number": 46,
+    "preview": "assets/bias-comics/cryptomnesia-comic.webp",
+    "full": "assets/bias-comics/cryptomnesia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Cryptomnesia illustrated by Mira and Dex. A remembered idea can feel original when its source has been forgotten.",
+    "sourceSha256": "fd51e22a6e8d88b12a33b809b4f7416eec997e7bd23906ffc74e751fa796bfec"
+  },
+  "cue-dependent-forgetting": {
+    "number": 47,
+    "preview": "assets/bias-comics/cue-dependent-forgetting-comic.webp",
+    "full": "assets/bias-comics/cue-dependent-forgetting-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Cue-dependent forgetting illustrated by Mira and Dex. Recall can weaken without the cues associated with learning.",
+    "sourceSha256": "799dce79ed4c7b44df43b63ee32f37576ebef38bf4ba150e13af75a3d3494918"
+  },
+  "curse-of-knowledge": {
+    "number": 48,
+    "preview": "assets/bias-comics/curse-of-knowledge-comic.webp",
+    "full": "assets/bias-comics/curse-of-knowledge-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Curse of knowledge illustrated by Mira and Dex. Knowing something well can make a beginner's difficulties harder to imagine.",
+    "sourceSha256": "13fa9a81f478181d9637f33bd8f6b7f8b9846998c19c3bbfe2b20b49b3940432"
+  },
+  "declinism": {
+    "number": 49,
+    "preview": "assets/bias-comics/declinism-comic.webp",
+    "full": "assets/bias-comics/declinism-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Declinism illustrated by Mira and Dex. A favorable view of the past can combine with an unjustifiably gloomy view of the future.",
+    "sourceSha256": "8ec1e236b07327d8f4469407af362d61b559241edd371d9c91eb41479f260b58"
+  },
+  "decoy-effect": {
+    "number": 50,
+    "preview": "assets/bias-comics/decoy-effect-comic.webp",
+    "full": "assets/bias-comics/decoy-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Decoy effect illustrated by Mira and Dex. An inferior third option can make a nearby target option more attractive.",
+    "sourceSha256": "e64a510758c239b04dd8809b82e770f251bfdfd18eda261dbe22b158da1a8b8b"
+  },
+  "default-effect": {
+    "number": 51,
+    "preview": "assets/bias-comics/default-effect-comic.webp",
+    "full": "assets/bias-comics/default-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Default effect illustrated by Mira and Dex. A preselected option can become a choice simply because it is already selected.",
+    "sourceSha256": "5d23e75b9c1e3031926f4799270537ccd025341634e66182babdb5086c7ecf6e"
+  },
+  "defensive-attribution-hypothesis": {
+    "number": 52,
+    "preview": "assets/bias-comics/defensive-attribution-hypothesis-comic.webp",
+    "full": "assets/bias-comics/defensive-attribution-hypothesis-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Defensive attribution hypothesis illustrated by Mira and Dex. Perceived similarity to someone involved in a mishap can influence the blame assigned.",
+    "sourceSha256": "6e73cecc648a125695f41a754c09d319d3b4fcbe7fe5ba7e38cc59e80d73b833"
+  },
+  "denomination-effect": {
+    "number": 53,
+    "preview": "assets/bias-comics/denomination-effect-comic.webp",
+    "full": "assets/bias-comics/denomination-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Denomination effect illustrated by Mira and Dex. The denomination of money can affect willingness to spend the same total.",
+    "sourceSha256": "3336a054b3cfa5ec3d6c16241585f1643ce9916c0df76c606831214f8249fc0f"
+  },
+  "disposition-effect": {
+    "number": 54,
+    "preview": "assets/bias-comics/disposition-effect-comic.webp",
+    "full": "assets/bias-comics/disposition-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Disposition effect illustrated by Mira and Dex. We can prefer selling gains while holding losses because of the purchase-price reference point.",
+    "sourceSha256": "f6e07b4a9dae8e8cce38c7a4a05a32bb503c2124eed57dcb6c205be9af7c1467"
+  },
+  "distinction-bias": {
+    "number": 55,
+    "preview": "assets/bias-comics/distinction-bias-comic.webp",
+    "full": "assets/bias-comics/distinction-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Distinction bias illustrated by Mira and Dex. Side-by-side comparison can exaggerate differences that matter little when options are experienced separately.",
+    "sourceSha256": "eea2ea66980c80166d06957eeaad9d0351135facccc3bd93153aa3d073819fdb"
+  },
+  "domain-neglect": {
+    "number": 56,
+    "preview": "assets/bias-comics/domain-neglect-comic.webp",
+    "full": "assets/bias-comics/domain-neglect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Domain neglect illustrated by Mira and Dex. Reasoning in an unfamiliar field can fail when relevant domain knowledge is ignored.",
+    "sourceSha256": "a9f43871b2b2582440e6f92110cb646f7943fe4604736bd0d47684ca391d2976"
+  },
+  "doubling-back-aversion": {
+    "number": 57,
+    "preview": "assets/bias-comics/doubling-back-aversion-comic.webp",
+    "full": "assets/bias-comics/doubling-back-aversion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Doubling-back aversion illustrated by Mira and Dex. Avoiding a return over old ground can keep us on a longer route.",
+    "sourceSha256": "9ea509d485e60432773603f56834d621b0c85bd1649781747b13ac348fbd5b6a"
+  },
+  "dread-aversion": {
+    "number": 58,
+    "preview": "assets/bias-comics/dread-aversion-comic.webp",
+    "full": "assets/bias-comics/dread-aversion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Dread aversion illustrated by Mira and Dex. Anticipated dread can strongly influence when we choose to face an unpleasant event.",
+    "sourceSha256": "3652c9330e284b807a15c07740abbaeb391600f87ef50ab94e66b324aa941d49"
+  },
+  "dunning-kruger-effect": {
+    "number": 59,
+    "preview": "assets/bias-comics/dunning-kruger-effect-comic.webp",
+    "full": "assets/bias-comics/dunning-kruger-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Dunning-Kruger effect illustrated by Mira and Dex. Limited skill can make both performance and self-assessment harder to judge accurately.",
+    "sourceSha256": "c511f0b6bb5f5055e75b120f64233e8e20a2f162952b019582cbd23022c535f0"
+  },
+  "duration-neglect": {
+    "number": 60,
+    "preview": "assets/bias-comics/duration-neglect-comic.webp",
+    "full": "assets/bias-comics/duration-neglect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Duration neglect illustrated by Mira and Dex. The length of an experience can receive surprisingly little weight in its overall evaluation.",
+    "sourceSha256": "b6b117aeec32cd93d279928c98ee557da260efee972da909b435d5706259025d"
+  },
+  "effort-justification": {
+    "number": 61,
+    "preview": "assets/bias-comics/effort-justification-comic.webp",
+    "full": "assets/bias-comics/effort-justification-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Effort justification illustrated by Mira and Dex. Effort invested in obtaining an outcome can inflate how highly we value it.",
+    "sourceSha256": "235773cbc40020e091d1c5c10c725482bad7a41655ddac47ce8ac39ceae6eb2e"
+  },
+  "egocentric-bias": {
+    "number": 62,
+    "preview": "assets/bias-comics/egocentric-bias-comic.webp",
+    "full": "assets/bias-comics/egocentric-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Egocentric bias illustrated by Mira and Dex. Our own perspective is easier to access and can receive disproportionate weight.",
+    "sourceSha256": "12d5f5537b7455af3bdeafd9265666da67531b6eabbb7225befff94c1f38fbe7"
+  },
+  "embodiment-bias": {
+    "number": 63,
+    "preview": "assets/bias-comics/embodiment-bias-comic.webp",
+    "full": "assets/bias-comics/embodiment-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Embodiment bias illustrated by Mira and Dex. Our bodily capacities can shape what seems easy, reachable, or practical.",
+    "sourceSha256": "a61d61b0b17e011c4c64d8ede4696c0ee49c9e48f50d0f3d694524ddcb050655"
+  },
+  "end-of-history-illusion": {
+    "number": 64,
+    "preview": "assets/bias-comics/end-of-history-illusion-comic.webp",
+    "full": "assets/bias-comics/end-of-history-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "End-of-history illusion illustrated by Mira and Dex. We can recognize substantial past change while underestimating how much we may change again.",
+    "sourceSha256": "6cc6b352fc5d35b64c4b50273499b920fc62b422615a506a48c9cbd5b3e04951"
+  },
+  "endowment-effect": {
+    "number": 65,
+    "preview": "assets/bias-comics/endowment-effect-comic.webp",
+    "full": "assets/bias-comics/endowment-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Endowment effect illustrated by Mira and Dex. Ownership alone can increase how much value we place on an object.",
+    "sourceSha256": "648c91b17ec928f47711edbd5d12267d0bdf55be26b9d66ac55524cbfecce24e"
+  },
+  "euphoric-recall": {
+    "number": 66,
+    "preview": "assets/bias-comics/euphoric-recall-comic.webp",
+    "full": "assets/bias-comics/euphoric-recall-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Euphoric recall illustrated by Mira and Dex. Pleasant recollection can overshadow the negative parts of a past experience.",
+    "sourceSha256": "67941f574b5abe14a52cee4a612a5f0d1886384ab491418dc31eb6cbf6975aea"
+  },
+  "exaggerated-expectation": {
+    "number": 67,
+    "preview": "assets/bias-comics/exaggerated-expectation-comic.webp",
+    "full": "assets/bias-comics/exaggerated-expectation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Exaggerated expectation illustrated by Mira and Dex. Expectations can overshoot the size of the outcome that actually occurs.",
+    "sourceSha256": "3a38296a2702563c6c4ee50f35dfc50d701db1945df37d6a007f88daa5e04161"
+  },
+  "experimenters-bias": {
+    "number": 68,
+    "preview": "assets/bias-comics/experimenters-bias-comic.webp",
+    "full": "assets/bias-comics/experimenters-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Experimenter's bias illustrated by Mira and Dex. Researchers' expectations can influence which observations receive trust or attention.",
+    "sourceSha256": "efba3a8b0a65d6bb1c7d9ddf23d4026047304ac29497efc5f25e20e035d7e30f"
+  },
+  "extension-neglect": {
+    "number": 69,
+    "preview": "assets/bias-comics/extension-neglect-comic.webp",
+    "full": "assets/bias-comics/extension-neglect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Extension neglect illustrated by Mira and Dex. Quantity or sample size can receive too little weight in a judgment.",
+    "sourceSha256": "b92d92ae844fcb6e0d18c125e421381f7daaf38f5e63ab50dbbdccdee7f268e6"
+  },
+  "extrinsic-incentives-bias": {
+    "number": 70,
+    "preview": "assets/bias-comics/extrinsic-incentives-bias-comic.webp",
+    "full": "assets/bias-comics/extrinsic-incentives-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Extrinsic incentives bias illustrated by Mira and Dex. We can credit ourselves with inner motivation while assigning external motives to others.",
+    "sourceSha256": "213aad53ed066ebdc1ab7db0511932861466f0ee909d9778045583a201ce6d18"
+  },
+  "fading-affect-bias": {
+    "number": 71,
+    "preview": "assets/bias-comics/fading-affect-bias-comic.webp",
+    "full": "assets/bias-comics/fading-affect-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Fading affect bias illustrated by Mira and Dex. The emotion attached to unpleasant memories can fade faster than emotion attached to pleasant ones.",
+    "sourceSha256": "99aceb6bb0f453c1941061823ef2842e760bcd444f7514ace918ac3dcd2e5f4c"
+  },
+  "false-consensus-effect": {
+    "number": 72,
+    "preview": "assets/bias-comics/false-consensus-effect-comic.webp",
+    "full": "assets/bias-comics/false-consensus-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "False consensus effect illustrated by Mira and Dex. We can overestimate how many people share our views and preferences.",
+    "sourceSha256": "bf29055f6c01621acd49b009cd9db568eba9f0c0a104cb9e17656de461a24579"
+  },
+  "false-memory": {
+    "number": 73,
+    "preview": "assets/bias-comics/false-memory-comic.webp",
+    "full": "assets/bias-comics/false-memory-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "False memory illustrated by Mira and Dex. Imagination and reconstruction can sometimes be mistaken for memories of real events.",
+    "sourceSha256": "79e467400ae765508ff2e41d99390e10c87c29de8ddaec17bdb24eecf8469ba8"
+  },
+  "false-priors": {
+    "number": 74,
+    "preview": "assets/bias-comics/false-priors-comic.webp",
+    "full": "assets/bias-comics/false-priors-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "False priors illustrated by Mira and Dex. An incorrect prior belief can distort how new evidence is interpreted.",
+    "sourceSha256": "27d9db2a555aa0277c02ddb3214113b3403be923194e42039dba63c4ff125ac1"
+  },
+  "false-uniqueness-bias": {
+    "number": 75,
+    "preview": "assets/bias-comics/false-uniqueness-bias-comic.webp",
+    "full": "assets/bias-comics/false-uniqueness-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "False uniqueness bias illustrated by Mira and Dex. We can overestimate how unusual our ideas, qualities, or projects are.",
+    "sourceSha256": "7053b6312a23b32828e22c3ce123b49635687cc3f074f9d93032f3b8d3e35037"
+  },
+  "fluency-heuristic": {
+    "number": 76,
+    "preview": "assets/bias-comics/fluency-heuristic-comic.webp",
+    "full": "assets/bias-comics/fluency-heuristic-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Fluency heuristic illustrated by Mira and Dex. Information that is easier to process can feel more credible or appealing.",
+    "sourceSha256": "6177d61e8ec49c7f252e459a6ef7b6b824a0686ff0bcd4ff3941538fdaa006ff"
+  },
+  "form-function-attribution-bias": {
+    "number": 77,
+    "preview": "assets/bias-comics/form-function-attribution-bias-comic.webp",
+    "full": "assets/bias-comics/form-function-attribution-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Form function attribution bias illustrated by Mira and Dex. A robot's appearance can prompt mistaken expectations about its actual abilities.",
+    "sourceSha256": "55c483b76265625f2a3308f42b5b309a1b0821ba169975dec5d60a9ae397513c"
+  },
+  "framing-effect": {
+    "number": 78,
+    "preview": "assets/bias-comics/framing-effect-comic.webp",
+    "full": "assets/bias-comics/framing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Framing effect illustrated by Mira and Dex. Equivalent information can produce different judgments when described differently.",
+    "sourceSha256": "33eba8e8d319b7f7c62f0a5a87bb0b27fb84f0b76ddf9b2d513af23d92e9590b"
+  },
+  "frequency-illusion": {
+    "number": 79,
+    "preview": "assets/bias-comics/frequency-illusion-comic.webp",
+    "full": "assets/bias-comics/frequency-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Frequency illusion illustrated by Mira and Dex. Newly noticed things can feel newly common because we have started paying attention.",
+    "sourceSha256": "22c9a85e31e7e2d61d0d27e3f519db49094da3a46a23c5d8a5a7da28b60bd03a"
+  },
+  "functional-fixedness": {
+    "number": 80,
+    "preview": "assets/bias-comics/functional-fixedness-comic.webp",
+    "full": "assets/bias-comics/functional-fixedness-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Functional fixedness illustrated by Mira and Dex. An object's familiar purpose can hide other useful ways to use it.",
+    "sourceSha256": "df68cee4e417c6f680cce7203d485a99cdb65180972f7b30f8e94c7600eefb72"
+  },
+  "fundamental-attribution-error": {
+    "number": 81,
+    "preview": "assets/bias-comics/fundamental-attribution-error-comic.webp",
+    "full": "assets/bias-comics/fundamental-attribution-error-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Fundamental attribution error illustrated by Mira and Dex. We can overread other people's behavior as character and underread the situation.",
+    "sourceSha256": "e9b71fdfbc2ea648516df95a0d1248e5a88008668a7d2feb9b9f64ac1c51510d"
+  },
+  "g-i-joe-fallacy": {
+    "number": 82,
+    "preview": "assets/bias-comics/g-i-joe-fallacy-comic.webp",
+    "full": "assets/bias-comics/g-i-joe-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "G. I. Joe fallacy illustrated by Mira and Dex. Knowing about a bias does not automatically prevent it from influencing us.",
+    "sourceSha256": "aef69ada4784abbbbc35c9e59a000be4e789e4403c769cc64fdf2bfb2195c87a"
+  },
+  "gamblers-fallacy": {
+    "number": 83,
+    "preview": "assets/bias-comics/gamblers-fallacy-comic.webp",
+    "full": "assets/bias-comics/gamblers-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Gambler's fallacy illustrated by Mira and Dex. Independent random events do not owe us a balancing outcome.",
+    "sourceSha256": "7fc399bf0b021714b3d2a78148448bf0e06d2e541b83685596be6ca0084c3c49"
+  },
+  "gender-bias": {
+    "number": 84,
+    "preview": "assets/bias-comics/gender-bias-comic.webp",
+    "full": "assets/bias-comics/gender-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Gender bias illustrated by Mira and Dex. Gender assumptions can influence judgments beyond what a person's actual work shows.",
+    "sourceSha256": "579b3e45d07f6bc8b60351cdc40dc49dfbf3fcc3eb95340c7926705107a058e6"
+  },
+  "gender-differences-in-eyewitness-memory": {
+    "number": 85,
+    "preview": "assets/bias-comics/gender-eyewitness-memory-comic.webp",
+    "full": "assets/bias-comics/gender-eyewitness-memory-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Gender differences in eyewitness memory illustrated by Mira and Dex. Gender-related familiarity and attention can affect eyewitness detail under some conditions.",
+    "sourceSha256": "f78567294e2d02ea2226c197604a0c03dd339ea29fd5d114dad40873402adbd2"
+  },
+  "generation-effect": {
+    "number": 86,
+    "preview": "assets/bias-comics/generation-effect-comic.webp",
+    "full": "assets/bias-comics/generation-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Generation effect illustrated by Mira and Dex. Information we generate ourselves can be easier to remember.",
+    "sourceSha256": "57dc6ab63c83c8a437facd53ff920b17ac34fced60b9d07d155dbadcc12b79ca"
+  },
+  "google-effect": {
+    "number": 87,
+    "preview": "assets/bias-comics/google-effect-comic.webp",
+    "full": "assets/bias-comics/google-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Google effect illustrated by Mira and Dex. Expecting easy online access can reduce memory for the information itself.",
+    "sourceSha256": "da7bd35ac432db5fe458becfb6b018accc739e656511cfb5511c18a3a4bd1583"
+  },
+  "group-attribution-error": {
+    "number": 88,
+    "preview": "assets/bias-comics/group-attribution-error-comic.webp",
+    "full": "assets/bias-comics/group-attribution-error-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Group attribution error illustrated by Mira and Dex. One person's traits or one collective decision can be wrongly projected onto a whole group.",
+    "sourceSha256": "5591b347633c49ee0c2dc349e48e807169ad40f03b8a65eb26c35bcbeb65a3b2"
+  },
+  "groupshift": {
+    "number": 89,
+    "preview": "assets/bias-comics/groupshift-comic.webp",
+    "full": "assets/bias-comics/groupshift-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Groupshift illustrated by Mira and Dex. Group discussion can strengthen an initial lean toward risk or caution.",
+    "sourceSha256": "7b214889d3ad51909c6c1b9433d3ee69c793230d34cc7a69ff433add5fd31737"
+  },
+  "groupthink": {
+    "number": 90,
+    "preview": "assets/bias-comics/groupthink-comic.webp",
+    "full": "assets/bias-comics/groupthink-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Groupthink illustrated by Mira and Dex. Protecting group harmony can suppress critical evaluation and dissent.",
+    "sourceSha256": "f3052fc8e4ec5de15a26618dbd05d8fd576d74f79d042f818f443b439859f128"
+  },
+  "halo-effect": {
+    "number": 91,
+    "preview": "assets/bias-comics/halo-effect-comic.webp",
+    "full": "assets/bias-comics/halo-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Halo effect illustrated by Mira and Dex. One admired quality can spill into judgments about unrelated qualities.",
+    "sourceSha256": "ebe0be287398fa01fd42344b6ee241c37b1e68653e116116749e534c17cc951e"
+  },
+  "hardeasy-effect": {
+    "number": 92,
+    "preview": "assets/bias-comics/hardeasy-effect-comic.webp",
+    "full": "assets/bias-comics/hardeasy-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hard–easy effect illustrated by Mira and Dex. We can be overconfident on hard tasks and underconfident on easy ones.",
+    "sourceSha256": "52417e5428e86657a9895194bff0b1d5eb7750f8d7ac8d988068388e98ce6591"
+  },
+  "hedonic-recall-bias": {
+    "number": 93,
+    "preview": "assets/bias-comics/hedonic-recall-bias-comic.webp",
+    "full": "assets/bias-comics/hedonic-recall-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hedonic recall bias illustrated by Mira and Dex. Current satisfaction can distort how pleasant or unpleasant the past seems.",
+    "sourceSha256": "9883eb19a42fb92f289acaf8f0513d1513c15cdc30224ea07ee70fc0ed2a1a84"
+  },
+  "hindsight-bias": {
+    "number": 94,
+    "preview": "assets/bias-comics/hindsight-bias-comic.webp",
+    "full": "assets/bias-comics/hindsight-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hindsight bias illustrated by Mira and Dex. Once an outcome is known, it can seem more predictable than it was beforehand.",
+    "sourceSha256": "9c255297d0f0996fe28b37b6f7f966ae93b44545d7e6a001e5a5b70624745c41"
+  },
+  "hostile-attribution-bias": {
+    "number": 95,
+    "preview": "assets/bias-comics/hostile-attribution-bias-comic.webp",
+    "full": "assets/bias-comics/hostile-attribution-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hostile attribution bias illustrated by Mira and Dex. Ambiguous behavior can be interpreted as hostile before the evidence supports that reading.",
+    "sourceSha256": "b1dc7ffa888fef9ea6d0164298dd20fa2d44366ae011947adc8b6b829f044284"
+  },
+  "hot-cold-empathy-gap": {
+    "number": 96,
+    "preview": "assets/bias-comics/hot-cold-empathy-gap-comic.webp",
+    "full": "assets/bias-comics/hot-cold-empathy-gap-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hot-cold empathy gap illustrated by Mira and Dex. A calm or comfortable state can make stronger future drives difficult to anticipate.",
+    "sourceSha256": "714d0916b4bb009b4767f998ea72114d6c8ff52ab92866ce3dd11b99b29f109b"
+  },
+  "hot-hand-fallacy": {
+    "number": 97,
+    "preview": "assets/bias-comics/hot-hand-fallacy-comic.webp",
+    "full": "assets/bias-comics/hot-hand-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hot-hand fallacy illustrated by Mira and Dex. A run of random successes can be mistaken for an increased chance of further success.",
+    "sourceSha256": "af25bb37a04fc5302eafc59213f35bd477be2861362fee5d17d7e2d30f1ee088"
+  },
+  "humor-effect": {
+    "number": 98,
+    "preview": "assets/bias-comics/humor-effect-comic.webp",
+    "full": "assets/bias-comics/humor-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Humor effect illustrated by Mira and Dex. Humorous material can be more memorable than otherwise comparable information.",
+    "sourceSha256": "6baba58a5248758e29c4080cb8ee17b2788d4c13f72a586630a0a0d11724bbd6"
+  },
+  "hyperbolic-discounting": {
+    "number": 99,
+    "preview": "assets/bias-comics/hyperbolic-discounting-comic.webp",
+    "full": "assets/bias-comics/hyperbolic-discounting-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Hyperbolic discounting illustrated by Mira and Dex. Preferences can reverse when a smaller reward becomes immediately available.",
+    "sourceSha256": "5d5fb08269638ac7e7f91e61292cb1baf3a84350620ab3262ab4a4fa10a78842"
+  },
+  "illusion-of-asymmetric-insight": {
+    "number": 100,
+    "preview": "assets/bias-comics/illusion-of-asymmetric-insight-comic.webp",
+    "full": "assets/bias-comics/illusion-of-asymmetric-insight-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of asymmetric insight illustrated by Mira and Dex. We can believe we understand others better than they understand us.",
+    "sourceSha256": "d8ce14e8c805dc3abb5ae527df413d1846b8ea38953f990204a96916580ae95b"
+  },
+  "illusion-of-control": {
+    "number": 101,
+    "preview": "assets/bias-comics/illusion-of-control-comic.webp",
+    "full": "assets/bias-comics/illusion-of-control-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of control illustrated by Mira and Dex. We can overestimate our influence over outcomes controlled largely by chance.",
+    "sourceSha256": "76739c0ee58dddf888b152ecde9103df5ca020c3be0fa8415d3dfd7b8ec25b52"
+  },
+  "illusion-of-explanatory-depth": {
+    "number": 102,
+    "preview": "assets/bias-comics/illusion-of-explanatory-depth-comic.webp",
+    "full": "assets/bias-comics/illusion-of-explanatory-depth-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of explanatory depth illustrated by Mira and Dex. A feeling of understanding can exceed our ability to explain the mechanism.",
+    "sourceSha256": "d001cc04f90d4b4508be4f0bacebbf4f3dc98fefe5706ad8b0feae7238df04e2"
+  },
+  "illusion-of-learning": {
+    "number": 103,
+    "preview": "assets/bias-comics/illusion-of-learning-comic.webp",
+    "full": "assets/bias-comics/illusion-of-learning-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of learning illustrated by Mira and Dex. An explanation feeling clear does not guarantee that we can use it independently.",
+    "sourceSha256": "247e3dd109a3c03e347196ce0dfa3e7bb2876f0125827e3a3f9daaf7b7ac8942"
+  },
+  "illusion-of-transparency": {
+    "number": 104,
+    "preview": "assets/bias-comics/illusion-of-transparency-comic.webp",
+    "full": "assets/bias-comics/illusion-of-transparency-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of transparency illustrated by Mira and Dex. Our feelings and thoughts can seem more visible to others than they are.",
+    "sourceSha256": "427f99333117a96c17a6eec54acbb87a85ca52642e98a86eebb7b2d1d6333989"
+  },
+  "illusion-of-validity": {
+    "number": 105,
+    "preview": "assets/bias-comics/illusion-of-validity-comic.webp",
+    "full": "assets/bias-comics/illusion-of-validity-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusion of validity illustrated by Mira and Dex. A consistent-looking set of clues can produce more confidence than its predictive value deserves.",
+    "sourceSha256": "ca64061b5d4a23214859f075c0908be87170f662db7b1558d9e6a3ef6affb32a"
+  },
+  "illusory-correlation": {
+    "number": 106,
+    "preview": "assets/bias-comics/illusory-correlation-comic.webp",
+    "full": "assets/bias-comics/illusory-correlation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusory correlation illustrated by Mira and Dex. We can perceive a relationship that the full pattern of evidence does not support.",
+    "sourceSha256": "71b35aeccd635bcda440ecd7884fc852f62f39864327403a62eb1b804e7ba850"
+  },
+  "illusory-superiority": {
+    "number": 107,
+    "preview": "assets/bias-comics/illusory-superiority-comic.webp",
+    "full": "assets/bias-comics/illusory-superiority-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusory superiority illustrated by Mira and Dex. We can overestimate our desirable qualities relative to other people.",
+    "sourceSha256": "9aafa14e06cce283bfb840d16be030581f315e835b27b55e296ce86968211fae"
+  },
+  "illusory-truth-effect": {
+    "number": 108,
+    "preview": "assets/bias-comics/illusory-truth-effect-comic.webp",
+    "full": "assets/bias-comics/illusory-truth-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Illusory truth effect illustrated by Mira and Dex. Repeated statements can feel truer because they become easier to process.",
+    "sourceSha256": "4f20a9b40ed05825609db34654dea490c07ae33cf3ecf0d358a899e96fdebdc8"
+  },
+  "impact-bias": {
+    "number": 109,
+    "preview": "assets/bias-comics/impact-bias-comic.webp",
+    "full": "assets/bias-comics/impact-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Impact bias illustrated by Mira and Dex. We can overestimate the intensity or duration of future feelings.",
+    "sourceSha256": "8ace2ae34ea5bae2a01d94ae2bbe212f09c41e5a597fefaec289145d06234ba4"
+  },
+  "implicit-association": {
+    "number": 110,
+    "preview": "assets/bias-comics/implicit-association-comic.webp",
+    "full": "assets/bias-comics/implicit-association-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Implicit association illustrated by Mira and Dex. Response speed can reflect how strongly ideas are associated in memory.",
+    "sourceSha256": "9668dbe19f0645a80ebcb42bda78389f386fe55a3e17ceb16327a2a2dc8f9893"
+  },
+  "implicit-bias": {
+    "number": 111,
+    "preview": "assets/bias-comics/implicit-bias-comic.webp",
+    "full": "assets/bias-comics/implicit-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Implicit bias illustrated by Mira and Dex. Unnoticed associations can influence how we interpret and treat other people.",
+    "sourceSha256": "bcdbb56bd73985937a6f5bbd6aa6954c2b1bb384d41a86f6d6bc5227316537e4"
+  },
+  "impostor-syndrome": {
+    "number": 112,
+    "preview": "assets/bias-comics/impostor-syndrome-comic.webp",
+    "full": "assets/bias-comics/impostor-syndrome-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Impostor Syndrome illustrated by Mira and Dex. People can doubt demonstrated competence and fear being exposed despite evidence of ability.",
+    "sourceSha256": "b94f7c97c2ef02076823097be2a2262eee0c526187d6dab8f858da4847b3abe1"
+  },
+  "information-bias": {
+    "number": 113,
+    "preview": "assets/bias-comics/information-bias-comic.webp",
+    "full": "assets/bias-comics/information-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Information bias illustrated by Mira and Dex. Seeking more information can feel useful even when it cannot affect the decision.",
+    "sourceSha256": "7700d97a1ef613488f9871c5bb0a1ee17e952d29672d9df42289919427fb1ed7"
+  },
+  "ingroup-bias": {
+    "number": 114,
+    "preview": "assets/bias-comics/ingroup-bias-comic.webp",
+    "full": "assets/bias-comics/ingroup-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ingroup bias illustrated by Mira and Dex. Membership in our own group can receive an advantage beyond the evidence.",
+    "sourceSha256": "884b89777cef44b90963bebc992e03ab1b1b1cdaaa74f1dac4d06eb3d6e7a081"
+  },
+  "insensitivity-to-sample-size": {
+    "number": 115,
+    "preview": "assets/bias-comics/insensitivity-to-sample-size-comic.webp",
+    "full": "assets/bias-comics/insensitivity-to-sample-size-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Insensitivity to sample size illustrated by Mira and Dex. Small samples vary more, so a few observations deserve less confidence.",
+    "sourceSha256": "329452e20ac0ff05f12c0daa2f5d8de260ba3ef5f8599cca8b2393d8f0f4e43a"
+  },
+  "intentionality-bias": {
+    "number": 116,
+    "preview": "assets/bias-comics/intentionality-bias-comic.webp",
+    "full": "assets/bias-comics/intentionality-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Intentionality bias illustrated by Mira and Dex. We can attribute intention to actions that may have been accidental.",
+    "sourceSha256": "001249e228fcf1dd1acb0396213293ef2f94b148f3cbd35b29b22529b7f6e2d9"
+  },
+  "interoceptive-bias": {
+    "number": 117,
+    "preview": "assets/bias-comics/interoceptive-bias-comic.webp",
+    "full": "assets/bias-comics/interoceptive-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Interoceptive bias illustrated by Mira and Dex. Hunger, fatigue, pain, and other bodily states can alter our judgments.",
+    "sourceSha256": "910f29fae6d7de5ca33062109ec3a80e5db51398dcacb0b78a9b206ad3dad936"
+  },
+  "just-world-fallacy": {
+    "number": 118,
+    "preview": "assets/bias-comics/just-world-fallacy-comic.webp",
+    "full": "assets/bias-comics/just-world-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Just-world fallacy illustrated by Mira and Dex. A desire for a fair world can lead us to assign undeserved blame to people who suffer.",
+    "sourceSha256": "9145648f27e7fa298fb25538f8fb198b740bee26c24879252e46a8c3779d7d61"
+  },
+  "lag-effect": {
+    "number": 119,
+    "preview": "assets/bias-comics/lag-effect-comic.webp",
+    "full": "assets/bias-comics/lag-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Lag effect illustrated by Mira and Dex. Spacing study sessions can support retention better than massing the same study time.",
+    "sourceSha256": "6830f17a936eddd189f89a3b1e30ec0dbb038073f4c97b61d5b634647dfcfd79"
+  },
+  "law-of-the-instrument": {
+    "number": 120,
+    "preview": "assets/bias-comics/law-of-the-instrument-comic.webp",
+    "full": "assets/bias-comics/law-of-the-instrument-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Law of the instrument illustrated by Mira and Dex. A familiar tool or method can be applied where another approach fits better.",
+    "sourceSha256": "357c94479875a7d8a6b114cc04363d14f9187f90713ef944777194fbb3ec4eeb"
+  },
+  "less-is-better-effect": {
+    "number": 121,
+    "preview": "assets/bias-comics/less-is-better-effect-comic.webp",
+    "full": "assets/bias-comics/less-is-better-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Less-is-better effect illustrated by Mira and Dex. Separate evaluation can favor a smaller attractive set over a larger one.",
+    "sourceSha256": "8bc36bc609dbe0b6caea12a5d572113684bbe48714cbe48470b9c71760cb16dd"
+  },
+  "leveling-and-sharpening": {
+    "number": 122,
+    "preview": "assets/bias-comics/leveling-and-sharpening-comic.webp",
+    "full": "assets/bias-comics/leveling-and-sharpening-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Leveling and sharpening illustrated by Mira and Dex. Retelling can remove some details while emphasizing or exaggerating others.",
+    "sourceSha256": "161416c40ce375b905a85f9c4f29c84b56416222af4215e3d830d90ceffb7cf5"
+  },
+  "levels-of-processing-effect": {
+    "number": 123,
+    "preview": "assets/bias-comics/levels-of-processing-effect-comic.webp",
+    "full": "assets/bias-comics/levels-of-processing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Levels-of-processing effect illustrated by Mira and Dex. Thinking about meaning can strengthen memory more than shallow processing.",
+    "sourceSha256": "54f7bf90f8f117c859f69a3fb996e0a4e9e8f53ad6cb01aced24efb28c62a65e"
+  },
+  "list-length-effect": {
+    "number": 124,
+    "preview": "assets/bias-comics/list-length-effect-comic.webp",
+    "full": "assets/bias-comics/list-length-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "List-length effect illustrated by Mira and Dex. Longer lists can yield more recalled items but a smaller proportion recalled.",
+    "sourceSha256": "7ca4582650d01d52cc6d524d425115b1c9e8ffd124427093e551b00522bf60f4"
+  },
+  "loss-aversion": {
+    "number": 125,
+    "preview": "assets/bias-comics/loss-aversion-comic.webp",
+    "full": "assets/bias-comics/loss-aversion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Loss aversion illustrated by Mira and Dex. A loss can feel worse than an equivalent gain feels good.",
+    "sourceSha256": "69cc71116fb63df419e7e94e5453d650562fd790974d0bd260d80471e3a2ef42"
+  },
+  "memory-inhibition": {
+    "number": 126,
+    "preview": "assets/bias-comics/memory-inhibition-comic.webp",
+    "full": "assets/bias-comics/memory-inhibition-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Memory inhibition illustrated by Mira and Dex. Seeing part of a learned list can sometimes make its remaining items harder to recall.",
+    "sourceSha256": "c9a2db7f7bc45a1bcc44c0cc1d87b94ba4987a9a24fac3e1c093ae7ffa782a0d"
+  },
+  "mere-exposure-effect": {
+    "number": 127,
+    "preview": "assets/bias-comics/mere-exposure-effect-comic.webp",
+    "full": "assets/bias-comics/mere-exposure-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Mere exposure effect illustrated by Mira and Dex. Repeated exposure can increase liking or comfort even without new reasons.",
+    "sourceSha256": "82f087df8c751cb79ebca799dfdc76a18382ffab113a181099931a6dd9eda763"
+  },
+  "misinformation-effect": {
+    "number": 128,
+    "preview": "assets/bias-comics/misinformation-effect-comic.webp",
+    "full": "assets/bias-comics/misinformation-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Misinformation effect illustrated by Mira and Dex. Information received after an event can alter memory of the event itself.",
+    "sourceSha256": "64e7d85f4c5fb3fd320abbbacc560cf0a8865dd4a3440b3ceb5e204c93e6bf79"
+  },
+  "misinterpreted-effort-hypothesis": {
+    "number": 129,
+    "preview": "assets/bias-comics/misinterpreted-effort-hypothesis-comic.webp",
+    "full": "assets/bias-comics/misinterpreted-effort-hypothesis-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Misinterpreted-effort hypothesis illustrated by Mira and Dex. Learning that feels effortful can be mistaken for learning that is ineffective.",
+    "sourceSha256": "10c08afb3679dfa13cc6589ebfbb771ea8f165c9e2f5072ba8987af3c1598ba5"
+  },
+  "modality-effect": {
+    "number": 130,
+    "preview": "assets/bias-comics/modality-effect-comic.webp",
+    "full": "assets/bias-comics/modality-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Modality effect illustrated by Mira and Dex. The final items of a list can be recalled better when heard than when read.",
+    "sourceSha256": "a548838905d02bbc1b76ad92a4800709732b3d495ad890872d3686d59bb00594"
+  },
+  "money-illusion": {
+    "number": 131,
+    "preview": "assets/bias-comics/money-illusion-comic.webp",
+    "full": "assets/bias-comics/money-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Money illusion illustrated by Mira and Dex. A larger money amount can hide a decline in purchasing power.",
+    "sourceSha256": "3c4f334ae131d928c56ec60f39561427ccd5cea290b75c4de6e8a5c9b50b906f"
+  },
+  "mood-congruent-memory-bias": {
+    "number": 132,
+    "preview": "assets/bias-comics/mood-congruent-memory-bias-comic.webp",
+    "full": "assets/bias-comics/mood-congruent-memory-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Mood-congruent memory bias illustrated by Mira and Dex. Current mood can make emotionally matching memories easier to retrieve.",
+    "sourceSha256": "496162dca1318ef97afe686a15127deb2027538a3b96ca76f58ecaa3a724e940"
+  },
+  "moral-credential": {
+    "number": 133,
+    "preview": "assets/bias-comics/moral-credential-comic.webp",
+    "full": "assets/bias-comics/moral-credential-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Moral credential illustrated by Mira and Dex. A prior good deed can become an excuse for later behavior we would otherwise reject.",
+    "sourceSha256": "8a96c2cbb7a1ef886fa34a523741d035d751e6cd211724f246e79df6494e44d3"
+  },
+  "moral-luck": {
+    "number": 134,
+    "preview": "assets/bias-comics/moral-luck-comic.webp",
+    "full": "assets/bias-comics/moral-luck-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Moral luck illustrated by Mira and Dex. Luck in an outcome can affect moral judgments about otherwise similar conduct.",
+    "sourceSha256": "5df0e42a13189608efc06975080596936e83edf6cca0fb19405fe6eea02c371a"
+  },
+  "motivated-reasoning": {
+    "number": 135,
+    "preview": "assets/bias-comics/motivated-reasoning-comic.webp",
+    "full": "assets/bias-comics/motivated-reasoning-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Motivated reasoning illustrated by Mira and Dex. A desired conclusion can bend how evidence is evaluated and explained.",
+    "sourceSha256": "cdf55be210aa9d1b772104999285a514f9d254632319a6b8c2775794a289ee3a"
+  },
+  "motonormativity": {
+    "number": 136,
+    "preview": "assets/bias-comics/motonormativity-comic.webp",
+    "full": "assets/bias-comics/motonormativity-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Motonormativity illustrated by Mira and Dex. Normalizing car use can make its harms less noticeable than comparable harms from other sources.",
+    "sourceSha256": "73f255b0e3f346daa685435d5fd326879fa354c37ce2f1ee052b634578b847e6"
+  },
+  "naive-cynicism": {
+    "number": 137,
+    "preview": "assets/bias-comics/naive-cynicism-comic.webp",
+    "full": "assets/bias-comics/naive-cynicism-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Naïve cynicism illustrated by Mira and Dex. We can expect more self-serving distortion in others than in ourselves.",
+    "sourceSha256": "7bd402a57b1287ac00d3e5050ce63f2e0191bb4d7ea3b09023778e1a921efdb6"
+  },
+  "naive-realism": {
+    "number": 138,
+    "preview": "assets/bias-comics/naive-realism-comic.webp",
+    "full": "assets/bias-comics/naive-realism-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Naïve realism illustrated by Mira and Dex. We can treat our own perspective as plain reality and disagreement as others' error.",
+    "sourceSha256": "208bd7f70dcc61802c369f9d0b973bce5dd7d5327be643495d3b171d51bfd6d1"
+  },
+  "negativity-bias": {
+    "number": 139,
+    "preview": "assets/bias-comics/negativity-bias-comic.webp",
+    "full": "assets/bias-comics/negativity-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Negativity bias illustrated by Mira and Dex. Negative information can receive more psychological weight than comparable positive information.",
+    "sourceSha256": "90e359d084e75d4007dfd241b91089fcda6662a5c75a6a0286a6178c19527a76"
+  },
+  "neglect-of-probability": {
+    "number": 140,
+    "preview": "assets/bias-comics/neglect-of-probability-comic.webp",
+    "full": "assets/bias-comics/neglect-of-probability-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Neglect of probability illustrated by Mira and Dex. Vivid possible consequences can crowd out the probability that they will occur.",
+    "sourceSha256": "6f98a0e12c4794ffaa6af51daf1b667c3a4c5d853fea87f467aacd0708d316ad"
+  },
+  "next-in-line-effect": {
+    "number": 141,
+    "preview": "assets/bias-comics/next-in-line-effect-comic.webp",
+    "full": "assets/bias-comics/next-in-line-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Next-in-line effect illustrated by Mira and Dex. Preparing our own turn can impair memory for the person who speaks just before us.",
+    "sourceSha256": "35e2a4674ba2b310323e8e8b00d0bc777f94300ab64d4b3c7312eece58f54645"
+  },
+  "non-adaptive-choice-switching": {
+    "number": 142,
+    "preview": "assets/bias-comics/non-adaptive-choice-switching-comic.webp",
+    "full": "assets/bias-comics/non-adaptive-choice-switching-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Non-adaptive choice switching illustrated by Mira and Dex. A bad outcome can prompt abandoning the better option even when conditions have not changed.",
+    "sourceSha256": "2243c5df94afc7a10bcc6c58c066e1240bd5780991d0c276a5da2dbf8f07cbfd"
+  },
+  "normalcy-bias": {
+    "number": 143,
+    "preview": "assets/bias-comics/normalcy-bias-comic.webp",
+    "full": "assets/bias-comics/normalcy-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Normalcy bias illustrated by Mira and Dex. Expecting familiar normality can delay recognition of a changed situation.",
+    "sourceSha256": "454467c90ce092ee8f57b65c31a35b467a1f94f13365d5a387a9323fc05f6e56"
+  },
+  "not-invented-here": {
+    "number": 144,
+    "preview": "assets/bias-comics/not-invented-here-comic.webp",
+    "full": "assets/bias-comics/not-invented-here-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Not invented here illustrated by Mira and Dex. An outside origin can become a reason to reject a useful idea.",
+    "sourceSha256": "3fcae93842b36ec9c877858831f7698c26c83752ee9f5f60890ed80eeee77ff2"
+  },
+  "objectivity-illusion": {
+    "number": 145,
+    "preview": "assets/bias-comics/objectivity-illusion-comic.webp",
+    "full": "assets/bias-comics/objectivity-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Objectivity illusion illustrated by Mira and Dex. Feeling objective does not guarantee that our judgments are free from bias.",
+    "sourceSha256": "831cd86d9746a3e1da35f956e5a74fd9275a9c15920a6cfae6bd0066e0f7c874"
+  },
+  "observer-expectancy-effect": {
+    "number": 146,
+    "preview": "assets/bias-comics/observer-expectancy-effect-comic.webp",
+    "full": "assets/bias-comics/observer-expectancy-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Observer-expectancy effect illustrated by Mira and Dex. An observer's expectations can unintentionally shape procedures and measurements.",
+    "sourceSha256": "3f242ca4f91b9d888b10d52c2790b1db0bd846f54e8d1778f3005445065c02d9"
+  },
+  "omission-bias": {
+    "number": 147,
+    "preview": "assets/bias-comics/omission-bias-comic.webp",
+    "full": "assets/bias-comics/omission-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Omission bias illustrated by Mira and Dex. Harm caused by inaction can seem more acceptable than comparable harm caused by action.",
+    "sourceSha256": "a80f9e1b5d05e76c7f73a6ae56b7402ed084a68613143409e4f90177aece5ec2"
+  },
+  "optimism-bias": {
+    "number": 148,
+    "preview": "assets/bias-comics/optimism-bias-comic.webp",
+    "full": "assets/bias-comics/optimism-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Optimism bias illustrated by Mira and Dex. We can overestimate favorable outcomes and underestimate difficulties for our own plans.",
+    "sourceSha256": "eb1555eb8bfc813e9e91495e163ba69c9bffc0ae922d160a82fc136488b43409"
+  },
+  "ostrich-effect": {
+    "number": 149,
+    "preview": "assets/bias-comics/ostrich-effect-comic.webp",
+    "full": "assets/bias-comics/ostrich-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ostrich effect illustrated by Mira and Dex. Avoiding unwelcome information can feel better briefly while leaving the underlying problem unaddressed.",
+    "sourceSha256": "d181b91fdb11505b18d386c911745637c07c09ba24185b3e740103bb84463dff"
+  },
+  "outcome-bias": {
+    "number": 150,
+    "preview": "assets/bias-comics/outcome-bias-comic.webp",
+    "full": "assets/bias-comics/outcome-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Outcome bias illustrated by Mira and Dex. A lucky result can make a poor decision process look better than it was.",
+    "sourceSha256": "fa0a0c7fd866cdccd8a882af6d571a2419b335c83ba127dda960f9295d0f8aae"
+  },
+  "outgroup-favoritism": {
+    "number": 151,
+    "preview": "assets/bias-comics/outgroup-favoritism-comic.webp",
+    "full": "assets/bias-comics/outgroup-favoritism-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Outgroup favoritism illustrated by Mira and Dex. Outside-group status can sometimes receive an advantage over one's own group.",
+    "sourceSha256": "1c29ac6b94e4d84c6cd8083d41ee2f38229357bbac0e07f7472a590c8d4a73e4"
+  },
+  "outgroup-homogeneity-bias": {
+    "number": 152,
+    "preview": "assets/bias-comics/outgroup-homogeneity-bias-comic.webp",
+    "full": "assets/bias-comics/outgroup-homogeneity-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Outgroup homogeneity bias illustrated by Mira and Dex. We can see less variation within other groups than within our own.",
+    "sourceSha256": "9fbdc8692ab95120c76737b7a00dd8f8b82fed37fed8ccf9cf9b98c8c961939a"
+  },
+  "overconfidence-effect": {
+    "number": 153,
+    "preview": "assets/bias-comics/overconfidence-effect-comic.webp",
+    "full": "assets/bias-comics/overconfidence-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Overconfidence effect illustrated by Mira and Dex. Confidence can exceed what the evidence justifies.",
+    "sourceSha256": "a3a2257ab1a99ddadf640a810f9b50ceca9b9a3f5033a01387c3a14ae7ad05e3"
+  },
+  "pareidolia": {
+    "number": 154,
+    "preview": "assets/bias-comics/pareidolia-comic.webp",
+    "full": "assets/bias-comics/pareidolia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Pareidolia illustrated by Mira and Dex. Ambiguous visual patterns can look like familiar faces or objects.",
+    "sourceSha256": "bd531d3fc2961c6741945110c7f428b324d75c9f5a503cf3f4fdcb9a9f613f3b"
+  },
+  "part-list-cueing-effect": {
+    "number": 155,
+    "preview": "assets/bias-comics/part-list-cueing-effect-comic.webp",
+    "full": "assets/bias-comics/part-list-cueing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Part-list cueing effect illustrated by Mira and Dex. Partial-list cues can sometimes interfere with recall of the remaining items.",
+    "sourceSha256": "687d4f26caa51e6b34f1db724c8fb593a95f30caef444709acfb5c89c3af5cb8"
+  },
+  "peakend-rule": {
+    "number": 156,
+    "preview": "assets/bias-comics/peakend-rule-comic.webp",
+    "full": "assets/bias-comics/peakend-rule-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Peak–end rule illustrated by Mira and Dex. The peak and the ending can strongly influence our memory of an experience.",
+    "sourceSha256": "85e785d36e5644a584f04af12fa22ad74c1b6f3e32af0d8c2bad00f0c05e726d"
+  },
+  "perky-effect": {
+    "number": 157,
+    "preview": "assets/bias-comics/perky-effect-comic.webp",
+    "full": "assets/bias-comics/perky-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Perky effect illustrated by Mira and Dex. A faint perceived image can influence imagery while being mistaken for imagination.",
+    "sourceSha256": "60959434b355abcccca0fddd2c86aa14c12d74157b3ddc6290dc53954b5b3622"
+  },
+  "persistence": {
+    "number": 158,
+    "preview": "assets/bias-comics/persistence-comic.webp",
+    "full": "assets/bias-comics/persistence-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Persistence illustrated by Mira and Dex. Distressing memories can recur involuntarily after the event has ended.",
+    "sourceSha256": "a2cec1b0595d7294a64a18db4d51f97e545e52bc7df2f8de3c97668e52887580"
+  },
+  "pessimism-bias": {
+    "number": 159,
+    "preview": "assets/bias-comics/pessimism-bias-comic.webp",
+    "full": "assets/bias-comics/pessimism-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Pessimism bias illustrated by Mira and Dex. We can overestimate the likelihood of unfavorable outcomes.",
+    "sourceSha256": "d21b6e255ceff3c3612e912a7de2e770d1c9e20cc2c38012cce156773881e969"
+  },
+  "phantom-effect": {
+    "number": 160,
+    "preview": "assets/bias-comics/phantom-effect-comic.webp",
+    "full": "assets/bias-comics/phantom-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Phantom effect illustrated by Mira and Dex. An unavailable option can continue influencing choices among the options we actually have.",
+    "sourceSha256": "9ad00b788a7f9bed235822d7fcd45f1cf826cf8fc412fc183b75c6df99ac549b"
+  },
+  "picture-superiority-effect": {
+    "number": 161,
+    "preview": "assets/bias-comics/picture-superiority-effect-comic.webp",
+    "full": "assets/bias-comics/picture-superiority-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Picture superiority effect illustrated by Mira and Dex. Pictures can be easier to remember than equivalent information presented only as words.",
+    "sourceSha256": "2e13eaec8a5956c3586744d5a5529e61e49f8b5cae1efa1397f894874eb19965"
+  },
+  "placement-bias": {
+    "number": 162,
+    "preview": "assets/bias-comics/placement-bias-comic.webp",
+    "full": "assets/bias-comics/placement-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Placement bias illustrated by Mira and Dex. Self-placement against others can follow our own strengths and weaknesses without adequate comparison.",
+    "sourceSha256": "367452622a85a77b7554d237a7c1474cb0bf8a70fb62b93a1e7fdee0305e369f"
+  },
+  "plan-continuation-bias": {
+    "number": 163,
+    "preview": "assets/bias-comics/plan-continuation-bias-comic.webp",
+    "full": "assets/bias-comics/plan-continuation-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Plan continuation bias illustrated by Mira and Dex. A once-reasonable plan can persist after circumstances make it unsuitable.",
+    "sourceSha256": "c70097dd8ad5891541733ffd53a64783b665dd442c412214dd1fccf560883101"
+  },
+  "planning-fallacy": {
+    "number": 164,
+    "preview": "assets/bias-comics/planning-fallacy-comic.webp",
+    "full": "assets/bias-comics/planning-fallacy-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Planning fallacy illustrated by Mira and Dex. We can underestimate task duration by overlooking delays and necessary steps.",
+    "sourceSha256": "316f11fe60543a26f3adf90d243aec4b8cdf9df3d353f7c81844ec0e2997db47"
+  },
+  "plant-blindness": {
+    "number": 165,
+    "preview": "assets/bias-comics/plant-blindness-comic.webp",
+    "full": "assets/bias-comics/plant-blindness-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Plant blindness illustrated by Mira and Dex. Plants can fade into the background of our attention despite their importance.",
+    "sourceSha256": "2ac6a03d96e5d61bb78dd630db59d6761d1f98b5e8e65f93c8eb05f540b97bf5"
+  },
+  "positivity-effect": {
+    "number": 166,
+    "preview": "assets/bias-comics/positivity-effect-comic.webp",
+    "full": "assets/bias-comics/positivity-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Positivity effect illustrated by Mira and Dex. Older adults can show a relative preference for positive information in memory.",
+    "sourceSha256": "80cfed3d5fe6b448907743d6ee106feb5955b60ad7425920431a9801e2c90233"
+  },
+  "present-bias": {
+    "number": 167,
+    "preview": "assets/bias-comics/present-bias-comic.webp",
+    "full": "assets/bias-comics/present-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Present bias illustrated by Mira and Dex. Immediate costs and rewards can outweigh larger later consequences.",
+    "sourceSha256": "e14ae320d664e1f6bb11393c39e8664af12fdde9c58dfc28e568cb521abcae0c"
+  },
+  "prevention-bias": {
+    "number": 168,
+    "preview": "assets/bias-comics/prevention-bias-comic.webp",
+    "full": "assets/bias-comics/prevention-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Prevention bias illustrated by Mira and Dex. Prevention can be favored beyond what its effectiveness relative to detection or response warrants.",
+    "sourceSha256": "b3db2d3c163aa5e998f269a5de22a7ad441e59134beafd02b820ba7f999c45c4"
+  },
+  "primacy-effect": {
+    "number": 169,
+    "preview": "assets/bias-comics/primacy-effect-comic.webp",
+    "full": "assets/bias-comics/primacy-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Primacy effect illustrated by Mira and Dex. Items near the beginning of a sequence can have a memory advantage.",
+    "sourceSha256": "f34549349388261d51c80e11e4f7b51ced1b7567a3321bea37931e2d876292cd"
+  },
+  "pro-innovation-bias": {
+    "number": 170,
+    "preview": "assets/bias-comics/pro-innovation-bias-comic.webp",
+    "full": "assets/bias-comics/pro-innovation-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Pro-innovation bias illustrated by Mira and Dex. Excitement about an innovation can overshadow its limitations and possible drawbacks.",
+    "sourceSha256": "0eafa1586e3b6143907d89bb4515c6c3c4f028b4d25ea0ed9f6c5a3bdccf9efa"
+  },
+  "probability-matching": {
+    "number": 171,
+    "preview": "assets/bias-comics/probability-matching-comic.webp",
+    "full": "assets/bias-comics/probability-matching-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Probability matching illustrated by Mira and Dex. Matching choice frequencies to outcome frequencies can perform worse than always choosing the likelier outcome.",
+    "sourceSha256": "dd050b3e380cef0a560c94e5663b0f1a55df0c2e58f1e6e1485956dfb4048425"
+  },
+  "processing-difficulty-effect": {
+    "number": 172,
+    "preview": "assets/bias-comics/processing-difficulty-effect-comic.webp",
+    "full": "assets/bias-comics/processing-difficulty-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Processing difficulty effect illustrated by Mira and Dex. Some forms of effortful processing can strengthen later memory.",
+    "sourceSha256": "a1233d553afe4a869f5ddd1da9121946e85fe8e2d1543b3f618cc23a84c72ace"
+  },
+  "projection-bias": {
+    "number": 173,
+    "preview": "assets/bias-comics/projection-bias-comic.webp",
+    "full": "assets/bias-comics/projection-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Projection bias illustrated by Mira and Dex. We can assume our future preferences will resemble our current state too closely.",
+    "sourceSha256": "a76624d2c32cefa8384f16064bed154536d5ffb32f4944468dfe126fbf898724"
+  },
+  "proportionality-bias": {
+    "number": 174,
+    "preview": "assets/bias-comics/proportionality-bias-comic.webp",
+    "full": "assets/bias-comics/proportionality-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Proportionality bias illustrated by Mira and Dex. We can expect a large event to require a correspondingly large or elaborate cause.",
+    "sourceSha256": "723a2bb259c40539729be79b69f326452c2aa9b9b41bcfad7e0cd5dd0b32710a"
+  },
+  "pseudocertainty-effect": {
+    "number": 175,
+    "preview": "assets/bias-comics/pseudocertainty-effect-comic.webp",
+    "full": "assets/bias-comics/pseudocertainty-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Pseudocertainty effect illustrated by Mira and Dex. An outcome can feel certain when we mentally set aside an earlier unresolved risk.",
+    "sourceSha256": "098a502e1bb537be6502a9a526ccd9dd7ad0992b6bdba11f36041043ad44ac83"
+  },
+  "puritanical-bias": {
+    "number": 176,
+    "preview": "assets/bias-comics/puritanical-bias-comic.webp",
+    "full": "assets/bias-comics/puritanical-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Puritanical bias illustrated by Mira and Dex. A moral-failure explanation can crowd out the social conditions shaping behavior.",
+    "sourceSha256": "15b1ebffccb0b915b15cc50d62fe770d1d518c14c4381e9f76d350a3990316e5"
+  },
+  "pygmalion-effect": {
+    "number": 177,
+    "preview": "assets/bias-comics/pygmalion-effect-comic.webp",
+    "full": "assets/bias-comics/pygmalion-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Pygmalion effect illustrated by Mira and Dex. Others' expectations can affect performance through the opportunities and treatment they provide.",
+    "sourceSha256": "dc9481592636b40bd916ea8e48591028264c775e05de944e0aa0ac51a671e172"
+  },
+  "quantification-bias": {
+    "number": 178,
+    "preview": "assets/bias-comics/quantification-bias-comic.webp",
+    "full": "assets/bias-comics/quantification-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Quantification bias illustrated by Mira and Dex. Measurable quantities can receive more weight than important values that are harder to quantify.",
+    "sourceSha256": "7fed9210ab0c510710f130af8c9b7fc96c1ae0f7049e1196348b53e33f831f9a"
+  },
+  "reactance": {
+    "number": 179,
+    "preview": "assets/bias-comics/reactance-comic.webp",
+    "full": "assets/bias-comics/reactance-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Reactance illustrated by Mira and Dex. A perceived threat to freedom can increase attraction to the restricted choice.",
+    "sourceSha256": "2e4607fccf4b0a103d521c686cbfdcc496f89d800962eea64b1954d3bdea4174"
+  },
+  "reactive-devaluation": {
+    "number": 180,
+    "preview": "assets/bias-comics/reactive-devaluation-comic.webp",
+    "full": "assets/bias-comics/reactive-devaluation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Reactive devaluation illustrated by Mira and Dex. A proposal can seem worse simply because it came from an adversary.",
+    "sourceSha256": "053cc13e4e65a6f9858e424dde79be09d192612937e4b0958870b0738d698141"
+  },
+  "recency-effect": {
+    "number": 181,
+    "preview": "assets/bias-comics/recency-effect-comic.webp",
+    "full": "assets/bias-comics/recency-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Recency effect illustrated by Mira and Dex. Items at the end of a sequence can be especially easy to recall immediately.",
+    "sourceSha256": "0ccb03d773424ae48c492434fcc634647147ee7b1e93305af4984cc6dea42db9"
+  },
+  "recency-illusion": {
+    "number": 182,
+    "preview": "assets/bias-comics/recency-illusion-comic.webp",
+    "full": "assets/bias-comics/recency-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Recency illusion illustrated by Mira and Dex. Recently noticing a phenomenon can make it seem recently created.",
+    "sourceSha256": "e9eae8e2f682652566aa6e450030e7633718f857155c4201f8889c59ad797906"
+  },
+  "conservatism-or-regressive-bias": {
+    "number": 183,
+    "preview": "assets/bias-comics/regressive-bias-comic.webp",
+    "full": "assets/bias-comics/regressive-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Regressive bias illustrated by Mira and Dex. Recalled extreme values can drift toward more moderate values.",
+    "sourceSha256": "9a75201f8efe828f74205cf84a1e21608e338aa832470151d6502cccb9cd05c1"
+  },
+  "reminiscence-bump": {
+    "number": 184,
+    "preview": "assets/bias-comics/reminiscence-bump-comic.webp",
+    "full": "assets/bias-comics/reminiscence-bump-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Reminiscence bump illustrated by Mira and Dex. People often recall many autobiographical events from adolescence and early adulthood.",
+    "sourceSha256": "4106bfb74516ab0c0bd72c629c7b04ced23c8608ce37a9fc1c3bc2e87790c5e6"
+  },
+  "repetition-blindness": {
+    "number": 185,
+    "preview": "assets/bias-comics/repetition-blindness-comic.webp",
+    "full": "assets/bias-comics/repetition-blindness-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Repetition blindness illustrated by Mira and Dex. Rapidly repeated items can be missed as separate occurrences.",
+    "sourceSha256": "d73908f16427261d6ba52e5d5012d07f0bc2b5e7b0625b43f20fafca9a64ff49"
+  },
+  "restraint-bias": {
+    "number": 186,
+    "preview": "assets/bias-comics/restraint-bias-comic.webp",
+    "full": "assets/bias-comics/restraint-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Restraint bias illustrated by Mira and Dex. We can overestimate our ability to resist temptation when it is present.",
+    "sourceSha256": "e1d28fc2f3d1802f0620231620b6c883b5fdccda52e88e9ed4c530adbd94ecf6"
+  },
+  "rhyme-as-reason-effect": {
+    "number": 187,
+    "preview": "assets/bias-comics/rhyme-as-reason-effect-comic.webp",
+    "full": "assets/bias-comics/rhyme-as-reason-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Rhyme as reason effect illustrated by Mira and Dex. Rhyming statements can feel more convincing without stronger evidence.",
+    "sourceSha256": "b4f19f0fea2d8d74fc5d506dd6f6d20a916c3566bde4b13ef11e80a6d745a0d1"
+  },
+  "risk-compensation": {
+    "number": 188,
+    "preview": "assets/bias-comics/risk-compensation-comic.webp",
+    "full": "assets/bias-comics/risk-compensation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Risk compensation illustrated by Mira and Dex. Feeling protected can encourage behavior that gives back some of the safety benefit.",
+    "sourceSha256": "5e4714c9434ec5c8d6568c6fa70225af840b8d889c253fbfe61a6f6b4ce864fb"
+  },
+  "rosy-retrospection": {
+    "number": 189,
+    "preview": "assets/bias-comics/rosy-retrospection-comic.webp",
+    "full": "assets/bias-comics/rosy-retrospection-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Rosy retrospection illustrated by Mira and Dex. Past experiences can be remembered as more pleasant than they felt at the time.",
+    "sourceSha256": "ff364d2773635b8c5227fc0d97cb9e03fbab1a994011aaf1f6e6294255edb8e8"
+  },
+  "salience-bias": {
+    "number": 190,
+    "preview": "assets/bias-comics/salience-bias-comic.webp",
+    "full": "assets/bias-comics/salience-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Salience bias illustrated by Mira and Dex. Striking information can capture attention at the expense of less vivid but relevant details.",
+    "sourceSha256": "24dce89b1d57c07be8f1e17b1c52613049d0d5d7f56a5f7171eaf3607a6610c5"
+  },
+  "saying-is-believing-effect": {
+    "number": 191,
+    "preview": "assets/bias-comics/saying-is-believing-effect-comic.webp",
+    "full": "assets/bias-comics/saying-is-believing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Saying is believing effect illustrated by Mira and Dex. Adapting a message to an audience can shift what we later remember as our own view.",
+    "sourceSha256": "82d1294a96ae94e167b9ff55fa379e3799ac3ba4c0c0062d8e7c57b05898788d"
+  },
+  "scope-neglect": {
+    "number": 192,
+    "preview": "assets/bias-comics/scope-neglect-comic.webp",
+    "full": "assets/bias-comics/scope-neglect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Scope neglect illustrated by Mira and Dex. Our response can change too little when the scale of a problem changes greatly.",
+    "sourceSha256": "bd026e1e00eb188e689d8f3ec17b79a579d7823eba8a2a75668ea4ffc4825968"
+  },
+  "selection-bias": {
+    "number": 193,
+    "preview": "assets/bias-comics/selection-bias-comic.webp",
+    "full": "assets/bias-comics/selection-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Selection bias illustrated by Mira and Dex. A sample selected in a skewed way may not represent the population of interest.",
+    "sourceSha256": "0309c40c8753cc88dada2e0eaaf91b5e51726c62ac41b059a514a09daafebd62"
+  },
+  "selective-perception": {
+    "number": 194,
+    "preview": "assets/bias-comics/selective-perception-comic.webp",
+    "full": "assets/bias-comics/selective-perception-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Selective perception illustrated by Mira and Dex. Expectations can influence what we notice and how we interpret it.",
+    "sourceSha256": "6c7a09463af729aefea19d94ac15edfde616412b56456262d2276b8a2e045b2d"
+  },
+  "self-relevance-effect": {
+    "number": 195,
+    "preview": "assets/bias-comics/self-relevance-effect-comic.webp",
+    "full": "assets/bias-comics/self-relevance-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Self-relevance effect illustrated by Mira and Dex. Information linked to ourselves can receive a memory advantage.",
+    "sourceSha256": "54ecc772cfa82e0730e8e37cea71daa6823b6ae4544beac8cdb02794004f9908"
+  },
+  "self-serving-bias": {
+    "number": 196,
+    "preview": "assets/bias-comics/self-serving-bias-comic.webp",
+    "full": "assets/bias-comics/self-serving-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Self-serving bias illustrated by Mira and Dex. We can claim credit for success while shifting responsibility for failure outward.",
+    "sourceSha256": "6b61d2c8c320949f9bde098e5cd37a5af82e9331f74decd705d2d9c5c4b97fba"
+  },
+  "semmelweis-reflex": {
+    "number": 197,
+    "preview": "assets/bias-comics/semmelweis-reflex-comic.webp",
+    "full": "assets/bias-comics/semmelweis-reflex-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Semmelweis reflex illustrated by Mira and Dex. Evidence can be rejected too quickly because it conflicts with an established framework.",
+    "sourceSha256": "212f401f36e15285e116f0a66600bf153f9553f220806fb26dc110e5c65bf19d"
+  },
+  "serial-position-effect": {
+    "number": 198,
+    "preview": "assets/bias-comics/serial-position-effect-comic.webp",
+    "full": "assets/bias-comics/serial-position-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Serial position effect illustrated by Mira and Dex. Items at the beginning and end of a sequence often outlast those in the middle.",
+    "sourceSha256": "863521d30593c797f52ff849b430396edf2e98df2abb780e9ec398ce2aea719d"
+  },
+  "sexual-overperception-bias": {
+    "number": 199,
+    "preview": "assets/bias-comics/sexual-overperception-bias-comic.webp",
+    "full": "assets/bias-comics/sexual-overperception-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Sexual overperception bias illustrated by Mira and Dex. Ambiguous friendliness can be mistaken for sexual interest; assumptions are not confirmation.",
+    "sourceSha256": "f33943225c226e53bdb65a1d9f468588f258539bdf039694782df946cc860caf"
+  },
+  "shared-information-bias": {
+    "number": 200,
+    "preview": "assets/bias-comics/shared-information-bias-comic.webp",
+    "full": "assets/bias-comics/shared-information-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Shared information bias illustrated by Mira and Dex. Groups can overdiscuss shared facts while neglecting information held by only one member.",
+    "sourceSha256": "dbdd9bd341a8f5f91d883fdaebce1cde4eef9f9a6d7f8dd27937a784fced1d22"
+  },
+  "social-comparison-bias": {
+    "number": 201,
+    "preview": "assets/bias-comics/social-comparison-bias-comic.webp",
+    "full": "assets/bias-comics/social-comparison-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Social comparison bias illustrated by Mira and Dex. We can favor candidates who feel less threatening to our own strengths.",
+    "sourceSha256": "cf9711647f460cee7d37142ad3e7c3ebedf7651617410c267b399ff61f629940"
+  },
+  "social-cryptomnesia": {
+    "number": 202,
+    "preview": "assets/bias-comics/social-cryptomnesia-comic.webp",
+    "full": "assets/bias-comics/social-cryptomnesia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Social cryptomnesia illustrated by Mira and Dex. A society can remember a change while forgetting the people who helped bring it about.",
+    "sourceSha256": "6d4e40326ed6dd8f5fcd383e21a90597d62be445c26f6b6ded811d4d85d4d341"
+  },
+  "social-desirability-bias": {
+    "number": 203,
+    "preview": "assets/bias-comics/social-desirability-bias-comic.webp",
+    "full": "assets/bias-comics/social-desirability-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Social desirability bias illustrated by Mira and Dex. We can report more approved behavior and less embarrassing behavior than the record supports.",
+    "sourceSha256": "78ca7fbb980003fe93070721fbe4078d5bc83daab24379771c80044c9b65326a"
+  },
+  "source-confusion": {
+    "number": 204,
+    "preview": "assets/bias-comics/source-confusion-comic.webp",
+    "full": "assets/bias-comics/source-confusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Source confusion illustrated by Mira and Dex. We can remember information while confusing where or how we learned it.",
+    "sourceSha256": "df653ed6044e83f7d51b5bce847eb050648e35cd3acc5335ef5b7b4f515b2e7f"
+  },
+  "spacing-effect": {
+    "number": 205,
+    "preview": "assets/bias-comics/spacing-effect-comic.webp",
+    "full": "assets/bias-comics/spacing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Spacing effect illustrated by Mira and Dex. Learning spread across time can support longer retention than one concentrated exposure.",
+    "sourceSha256": "28de0267035db9d90db8d57165993dde5e202794ecc1e4c483caddb2a807a544"
+  },
+  "spotlight-effect": {
+    "number": 206,
+    "preview": "assets/bias-comics/spotlight-effect-comic.webp",
+    "full": "assets/bias-comics/spotlight-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Spotlight effect illustrated by Mira and Dex. We can overestimate how much other people notice our appearance or mistakes.",
+    "sourceSha256": "3518b654209182b6465c40e1511acf9e66ab993358c46fab499ac66ef355a92f"
+  },
+  "status-quo-bias": {
+    "number": 207,
+    "preview": "assets/bias-comics/status-quo-bias-comic.webp",
+    "full": "assets/bias-comics/status-quo-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Status quo bias illustrated by Mira and Dex. The existing arrangement can receive preference merely because it is already in place.",
+    "sourceSha256": "602b1fb1c3b242e6de821cc9473e58ff2de44e4c902392e3e94342d3a54a98e7"
+  },
+  "stereotype-bias-or-stereotypical-bias": {
+    "number": 208,
+    "preview": "assets/bias-comics/stereotype-memory-bias-comic.webp",
+    "full": "assets/bias-comics/stereotype-memory-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Stereotype memory bias illustrated by Mira and Dex. Memory can drift toward familiar stereotypes rather than the details actually observed.",
+    "sourceSha256": "91648261eb012342fcf170a60ce074424f730f98df0198c1ec8792fcbef61910"
+  },
+  "stereotyping": {
+    "number": 209,
+    "preview": "assets/bias-comics/stereotyping-comic.webp",
+    "full": "assets/bias-comics/stereotyping-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Stereotyping illustrated by Mira and Dex. A group label can substitute for evidence about an individual.",
+    "sourceSha256": "517a849f5320644bb632ad2bb8b9cf184480a1295df441231ae16787477e9a6e"
+  },
+  "subadditivity-effect": {
+    "number": 210,
+    "preview": "assets/bias-comics/subadditivity-effect-comic.webp",
+    "full": "assets/bias-comics/subadditivity-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Subadditivity effect illustrated by Mira and Dex. Separate estimates for exclusive possibilities can add up to more than the estimate for their whole.",
+    "sourceSha256": "e744b0981428dd91ec5caf151d54e4c2de0ddc82938882bbef335bcd1eef082d"
+  },
+  "subjective-validation": {
+    "number": 211,
+    "preview": "assets/bias-comics/subjective-validation-comic.webp",
+    "full": "assets/bias-comics/subjective-validation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Subjective validation illustrated by Mira and Dex. A claim can feel valid because it fits our beliefs or experience, without adequate independent evidence.",
+    "sourceSha256": "f663b7a13c56a7d5656cbd826dc1b7acaa6924e1079e01c8c350774f01ddf6dc"
+  },
+  "suffix-effect": {
+    "number": 212,
+    "preview": "assets/bias-comics/suffix-effect-comic.webp",
+    "full": "assets/bias-comics/suffix-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Suffix effect illustrated by Mira and Dex. An irrelevant sound after a spoken list can reduce the memory advantage of its final items.",
+    "sourceSha256": "29e2d165133aa73a88fee66ef3fe31de246f48811589d4eff761878fb33eeec8"
+  },
+  "suggestibility": {
+    "number": 213,
+    "preview": "assets/bias-comics/suggestibility-comic.webp",
+    "full": "assets/bias-comics/suggestibility-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Suggestibility illustrated by Mira and Dex. Suggested details can become incorporated into later recollection.",
+    "sourceSha256": "a3bf2bf3e34699b04965d7e17af3222929cddf1a17b83dd22996197b4a2beea0"
+  },
+  "sunk-cost-effect": {
+    "number": 214,
+    "preview": "assets/bias-comics/sunk-cost-effect-comic.webp",
+    "full": "assets/bias-comics/sunk-cost-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Sunk cost effect illustrated by Mira and Dex. Past investment can keep us committed after the forward-looking case has weakened.",
+    "sourceSha256": "4fb102b1216c5fa5f7fd7d7e4e1336147583765890fd67fe2786b3d5fe44ba68"
+  },
+  "surrogation": {
+    "number": 215,
+    "preview": "assets/bias-comics/surrogation-comic.webp",
+    "full": "assets/bias-comics/surrogation-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Surrogation illustrated by Mira and Dex. A measure of a goal can quietly become a substitute for the goal itself.",
+    "sourceSha256": "d79ab58475f1689035e3a3765b5431abf2f4b0d91c4f922e4b9e0742c051754d"
+  },
+  "survivorship-bias": {
+    "number": 216,
+    "preview": "assets/bias-comics/survivorship-bias-comic.webp",
+    "full": "assets/bias-comics/survivorship-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Survivorship bias illustrated by Mira and Dex. Visible successes can mislead when the failures that dropped out are missing.",
+    "sourceSha256": "5aa4ef39d67bbe5d0b922ddf02b334d399ffc0de81c933104ed7bbe3d750479a"
+  },
+  "system-justification": {
+    "number": 217,
+    "preview": "assets/bias-comics/system-justification-comic.webp",
+    "full": "assets/bias-comics/system-justification-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "System justification illustrated by Mira and Dex. We can defend an existing social arrangement because it feels established and legitimate.",
+    "sourceSha256": "620b8968afe372f0e6fd755f0ab0ed209a31a3c5d00757b897a00eab877becda"
+  },
+  "systematic-bias": {
+    "number": 218,
+    "preview": "assets/bias-comics/systematic-bias-comic.webp",
+    "full": "assets/bias-comics/systematic-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Systematic bias illustrated by Mira and Dex. Unequal regression toward a baseline can systematically distort comparisons.",
+    "sourceSha256": "bc728f61fe89d838f6c57cc77b215b322fffc76a56c26a268449bc25511a3c7d"
+  },
+  "tachypsychia": {
+    "number": 219,
+    "preview": "assets/bias-comics/tachypsychia-comic.webp",
+    "full": "assets/bias-comics/tachypsychia-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Tachypsychia illustrated by Mira and Dex. Intense stress or arousal can change how quickly time seems to pass.",
+    "sourceSha256": "a65738686128a42db6d68e99a493df9785f32224c1d6ac267e9dd4b90c1c7876"
+  },
+  "teleological-bias": {
+    "number": 220,
+    "preview": "assets/bias-comics/teleological-bias-comic.webp",
+    "full": "assets/bias-comics/teleological-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Teleological bias illustrated by Mira and Dex. A useful role can be mistaken for the purpose that explains a natural thing's existence.",
+    "sourceSha256": "eecff55db8810c57b43c52975c9241c17a1e01fbdb9d85ef0f8ae79f08c066a6"
+  },
+  "telescoping-effect": {
+    "number": 221,
+    "preview": "assets/bias-comics/telescoping-effect-comic.webp",
+    "full": "assets/bias-comics/telescoping-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Telescoping effect illustrated by Mira and Dex. Events can be remembered as more recent or more distant than they actually were.",
+    "sourceSha256": "6939f49ed7f210294552fd2db0f85badf40b53cd5ee17af5105bcb9e285374bc"
+  },
+  "testing-effect": {
+    "number": 222,
+    "preview": "assets/bias-comics/testing-effect-comic.webp",
+    "full": "assets/bias-comics/testing-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Testing effect illustrated by Mira and Dex. Practicing retrieval can strengthen later memory more than rereading alone.",
+    "sourceSha256": "a7e06ca9dbd38a6cb5401c4196c86f29bd5ce21fe5176ec5f251033649363b8f"
+  },
+  "third-person-effect": {
+    "number": 223,
+    "preview": "assets/bias-comics/third-person-effect-comic.webp",
+    "full": "assets/bias-comics/third-person-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Third-person effect illustrated by Mira and Dex. We can expect media messages to influence others more than ourselves.",
+    "sourceSha256": "9b55bed04656bb5ea4cf22ed736f99de538233ecd2c090138b2ae5ffb22f7a3d"
+  },
+  "time-saving-bias": {
+    "number": 224,
+    "preview": "assets/bias-comics/time-saving-bias-comic.webp",
+    "full": "assets/bias-comics/time-saving-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Time-saving bias illustrated by Mira and Dex. Equal speed increases do not produce equal time savings; the starting speed matters.",
+    "sourceSha256": "b02f6852b600b30e3baeb669f9f5fa07f85f6bd0683101261ee0d96e235dc2d0"
+  },
+  "tip-of-the-tongue": {
+    "number": 225,
+    "preview": "assets/bias-comics/tip-of-the-tongue-comic.webp",
+    "full": "assets/bias-comics/tip-of-the-tongue-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Tip of the tongue illustrated by Mira and Dex. We can partly retrieve a memory while the exact word remains inaccessible.",
+    "sourceSha256": "2537d265197a72b56d48de09517873700f0cd49945759cabe398b35520c4a48d"
+  },
+  "trait-ascription-bias": {
+    "number": 226,
+    "preview": "assets/bias-comics/trait-ascription-bias-comic.webp",
+    "full": "assets/bias-comics/trait-ascription-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Trait ascription bias illustrated by Mira and Dex. We can see our own behavior as variable while treating other people's traits as more fixed.",
+    "sourceSha256": "a0902baddec3ebd65e302a9aeb27603731ae8fdb881a488ea8d97c8c76e3f23d"
+  },
+  "travis-syndrome": {
+    "number": 227,
+    "preview": "assets/bias-comics/travis-syndrome-comic.webp",
+    "full": "assets/bias-comics/travis-syndrome-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Travis syndrome illustrated by Mira and Dex. The present moment can feel more unique, important, or permanent than the evidence warrants.",
+    "sourceSha256": "d715d39020fecaf1d7841ea357a4f317a38d830f3232c9d549e2e8abfb6d7392"
+  },
+  "truth-bias": {
+    "number": 228,
+    "preview": "assets/bias-comics/truth-bias-comic.webp",
+    "full": "assets/bias-comics/truth-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Truth bias illustrated by Mira and Dex. We often begin by accepting communicated information before checking its accuracy.",
+    "sourceSha256": "1b4c9e3f488053d2ad7c79de39b42462b3bbc6bc9ee56dda46012dd0db8589bc"
+  },
+  "turkey-illusion": {
+    "number": 229,
+    "preview": "assets/bias-comics/turkey-illusion-comic.webp",
+    "full": "assets/bias-comics/turkey-illusion-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Turkey illusion illustrated by Mira and Dex. A long stable pattern does not guarantee that a sudden break cannot occur.",
+    "sourceSha256": "7b1be59ca2e6a613694c38677ed5d7caf1a1a6f9b5e48ae4c2c52aef1ed2aa93"
+  },
+  "ultimate-attribution-error": {
+    "number": 230,
+    "preview": "assets/bias-comics/ultimate-attribution-error-comic.webp",
+    "full": "assets/bias-comics/ultimate-attribution-error-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Ultimate attribution error illustrated by Mira and Dex. We can explain our group's mistakes situationally while treating another group's mistakes as character.",
+    "sourceSha256": "478b11916da5d55b34c4e1f699a968e4626f7ece11b4e30d3a1b9d313ccbc50e"
+  },
+  "unit-bias": {
+    "number": 231,
+    "preview": "assets/bias-comics/unit-bias-comic.webp",
+    "full": "assets/bias-comics/unit-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Unit bias illustrated by Mira and Dex. A standard package or serving can seem like the right amount simply because it is one unit.",
+    "sourceSha256": "4a22bd42e38985317bda39dcf71f7ab105f5338597db706aca4c26a474588c5a"
+  },
+  "value-selection-bias": {
+    "number": 232,
+    "preview": "assets/bias-comics/value-selection-bias-comic.webp",
+    "full": "assets/bias-comics/value-selection-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Value selection bias illustrated by Mira and Dex. Available numbers can attract answers even when the task requires deriving a different value.",
+    "sourceSha256": "ee3854924bd80a389b2bca808ad94920d32acf6aba8fdd0f12370806985f6feb"
+  },
+  "verbatim-effect": {
+    "number": 233,
+    "preview": "assets/bias-comics/verbatim-effect-comic.webp",
+    "full": "assets/bias-comics/verbatim-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Verbatim effect illustrated by Mira and Dex. We often retain the general meaning better than the exact wording.",
+    "sourceSha256": "0c8f00a4c176623767a64067001bc38d48b5991661f70afd8b6b923dba93163b"
+  },
+  "von-restorff-effect": {
+    "number": 234,
+    "preview": "assets/bias-comics/von-restorff-effect-comic.webp",
+    "full": "assets/bias-comics/von-restorff-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Von Restorff effect illustrated by Mira and Dex. An item that differs from its surroundings can receive a memory advantage.",
+    "sourceSha256": "807862bee8aeb5c02d3e239771a93b4fb7e25989d8be5835cdcf44c1494f5689"
+  },
+  "weberfechner-law": {
+    "number": 235,
+    "preview": "assets/bias-comics/weberfechner-law-comic.webp",
+    "full": "assets/bias-comics/weberfechner-law-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Weber–Fechner law illustrated by Mira and Dex. A fixed change is often less noticeable against a larger starting quantity.",
+    "sourceSha256": "f14e4487683f668cc80265286fa5b3de269abf13799f0f5927f1269239a17ea8"
+  },
+  "well-travelled-road-effect": {
+    "number": 236,
+    "preview": "assets/bias-comics/well-travelled-road-effect-comic.webp",
+    "full": "assets/bias-comics/well-travelled-road-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Well travelled road effect illustrated by Mira and Dex. Familiar routes can feel shorter in duration than unfamiliar ones.",
+    "sourceSha256": "c09c1a761045f272b230e53d1bf73439599e3ee26f72698a99cf7a614b185fd8"
+  },
+  "women-are-wonderful-effect": {
+    "number": 237,
+    "preview": "assets/bias-comics/women-are-wonderful-effect-comic.webp",
+    "full": "assets/bias-comics/women-are-wonderful-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Women are wonderful effect illustrated by Mira and Dex. Positive gender stereotypes can still replace evidence about individual people.",
+    "sourceSha256": "d9384fe1865a7e1c1eb823fbb71b84466539fd7e7e2772ed41e6ecb55b02a9f7"
+  },
+  "worse-than-average-effect": {
+    "number": 238,
+    "preview": "assets/bias-comics/worse-than-average-effect-comic.webp",
+    "full": "assets/bias-comics/worse-than-average-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Worse-than-average effect illustrated by Mira and Dex. Difficulty can make us underestimate our performance relative to others facing the same challenge.",
+    "sourceSha256": "2dc4a877df20ba1fb08a36ce687a6b502d143d64cf711ea5b07d609cc302ae06"
+  },
+  "zeigarnik-effect": {
+    "number": 239,
+    "preview": "assets/bias-comics/zeigarnik-effect-comic.webp",
+    "full": "assets/bias-comics/zeigarnik-effect-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Zeigarnik effect illustrated by Mira and Dex. Interrupted or unfinished tasks can remain especially accessible in memory.",
+    "sourceSha256": "8eea17c26b6f0833130516f7bbc1934faa208bc04a21330cd7153951c4f84c5e"
+  },
+  "zero-risk-bias": {
+    "number": 240,
+    "preview": "assets/bias-comics/zero-risk-bias-comic.webp",
+    "full": "assets/bias-comics/zero-risk-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Zero-risk bias illustrated by Mira and Dex. Eliminating a small risk can feel better than making a larger reduction in another risk.",
+    "sourceSha256": "d3788a58963dbe694a451312f775ddd479f7363b2f0d1052f12305042a0f2163"
+  },
+  "zero-sum-bias": {
+    "number": 241,
+    "preview": "assets/bias-comics/zero-sum-bias-comic.webp",
+    "full": "assets/bias-comics/zero-sum-bias-comic-full.webp",
+    "width": 1024,
+    "height": 1536,
+    "alt": "Zero-sum bias illustrated by Mira and Dex. One person's gain does not always require another person's loss.",
+    "sourceSha256": "2476a4d19d6badac23f341a48e00129b067b6a4644e480810a11166710c71715"
+  }
+}

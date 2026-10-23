@@ -10,6 +10,7 @@ CogBias is a static GitHub Pages site at [cogbias.site](https://cogbias.site/) f
 - Custom domain: `CNAME` contains `cogbias.site`
 - Catalog: `241` cognitive bias pages
 - Images: `241 / 241` poster JPEGs published in `assets/bias-posters/`
+- Comics: `241 / 241` Mira & Dex comics, with optimized previews and linked `1024 × 1536` versions in `assets/bias-comics/`
 - Generated output: root-level HTML, CSS, JS, sitemap, manifest, brand assets, and poster assets
 
 ## Project Docs
@@ -44,6 +45,8 @@ The generator reads source material from `data/`, shared frontend files from `si
 - `site/assets/bias-posters/`: deployable poster JPEGs copied to root as `assets/bias-posters/`
 - `site/brand/`: deployable logo, favicon, and manifest icon source copied to root as `brand/`
 - `data/*.json`: catalog, enrichments, paths, assessments, comparison guides, teaching kits, theory articles, captions, and cross-site features
+- `data/bias_comics.json`: complete comic-to-entry mapping, alternative text, and source checksums
+- `site/assets/bias-comics/`: comic previews and full-resolution WebP exports; copied to root by the build
 
 ## Notes
 

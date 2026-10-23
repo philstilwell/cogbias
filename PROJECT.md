@@ -19,6 +19,7 @@ The site should feel like a finished editorial learning resource, not a raw taxo
 
 - `241` cognitive bias entries
 - `241` deployed poster JPEGs
+- `241` Mira & Dex comics, each with a `768 × 1152` preview and a linked `1024 × 1536` WebP
 - `75` assessment scenarios
 - `19` theory articles
 - `10` comparison guides
@@ -64,12 +65,14 @@ Important data layers:
 - Use the custom `cogbias.site` domain as the primary canonical site URL.
 - Keep the LogFall-adjacent visual language, but with CogBias blue and gold branding.
 - Show every bias with a full 2:3 poster image and square image corners.
+- Show the matching Mira & Dex comic below the existing poster. On desktop, stack Quick check, Mechanism snapshot, classification, and Reference use in the left column, ending alongside the illustration column. On mobile, show introduction, illustrations, then these notes in one column.
+- Both the comic itself and its "View larger image" link open the full-resolution export in a new tab.
 - Keep prompts as a secondary tool, not a primary navigation pillar.
 - Do not show weak inferred case studies or generic context blocks on thin pages.
 - Use `Classic demonstrations` or `Applied contexts` for experimental-memory pages where a normal case-study block would be misleading.
 - Do not show public source-trail blocks on bias pages.
 - Use `What's happening here` rather than the LogFall-style "That's like saying" language.
-- Keep image masters in ignored local production assets; deploy only optimized JPEGs.
+- Keep image masters in local production assets or the source collection; deploy optimized JPEGs for posters and WebP for comics.
 
 ## Build And Verification
 

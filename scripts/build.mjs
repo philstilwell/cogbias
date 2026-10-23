@@ -117,6 +117,7 @@ const biasPosterSlugs = await readBiasPosterSlugs();
 const rawEntries = await readJsonFile("biases.json");
 const biasCardSummaryOverrides = await readJsonFile("bias_card_summaries.json");
 const biasIllustrationCaptions = await readJsonFile("bias_illustration_captions.json");
+const biasComics = await readJsonFile("bias_comics.json");
 const editorialEnrichments = await readJsonArraySeries("editorial_enrichments");
 const teachingModules = await readJsonArraySeries("entry_teaching_modules");
 const entrySourceData = await readJsonArraySeries("entry_sources");
@@ -1993,6 +1994,22 @@ function renderDetailIllustration(entry) {
               <figcaption class="detail-illustration-copy">
                 <p class="detail-illustration-label">Featured Illustration</p>
                 <p class="detail-illustration-text">${escapeHtml(entry.illustrationCaption)}</p>
+              </figcaption>
+            </figure>`;
+}
+
+function renderDetailComic(entry) {
+  const comic = biasComics[entry.slug];
+  if (!comic) throw new Error(`Missing comic for "${entry.slug}".`);
+  const imageHref = `../../${comic.full}`;
+  return `
+            <figure class="detail-comic-shell">
+              <a class="detail-comic-link" href="${imageHref}" target="_blank" rel="noopener" aria-label="View larger ${escapeHtml(entry.name)} comic (opens in a new tab)">
+                <img class="detail-comic-image" src="../../${comic.preview}" srcset="../../${comic.preview} 768w, ${imageHref} 1024w" sizes="(max-width: 720px) calc(100vw - 62px), (max-width: 980px) calc(100vw - 110px), 400px" width="${comic.width}" height="${comic.height}" alt="${escapeHtml(comic.alt)}" loading="lazy" decoding="async" />
+              </a>
+              <figcaption class="detail-comic-caption">
+                <p class="detail-illustration-label">A bias in action · Mira &amp; Dex</p>
+                <a class="detail-comic-full-link" href="${imageHref}" target="_blank" rel="noopener" aria-label="View larger ${escapeHtml(entry.name)} comic (opens in a new tab)">View larger image <span aria-hidden="true">↗</span></a>
               </figcaption>
             </figure>`;
 }
@@ -4278,8 +4295,8 @@ function renderBiasDetailPage(entry) {
       { label: entry.name },
     ],
     body: `
-        <section class="detail-hero detail-hero-wide">
-          <div class="detail-section">
+        <section class="detail-hero detail-hero-wide bias-overview">
+          <div class="detail-section bias-overview-intro">
             <p class="eyebrow">Cognitive Bias</p>
             <h2 class="detail-title">${escapeHtml(entry.name)}</h2>
             <p class="detail-deck">${escapeHtml(entry.summary)}</p>
@@ -4317,21 +4334,34 @@ function renderBiasDetailPage(entry) {
                 : ""
             }
           </div>
-          <aside class="hero-panel hero-side detail-side-stack">
+          <aside class="hero-panel hero-side detail-side-stack bias-overview-media" aria-label="Illustrations of ${escapeHtml(entry.name)}">
             ${renderDetailIllustration(entry)}
+            ${renderDetailComic(entry)}
           </aside>
+          <div class="bias-overview-notes">
+            <div class="note-panel">
+              <h4>Quick check</h4>
+              <p class="muted">${escapeHtml(quickCheck)}</p>
+            </div>
+            <div class="note-panel">
+              <h4>Mechanism snapshot</h4>
+              <p class="muted">${escapeHtml(mechanismSnapshotFor(entry))}</p>
+            </div>
+            <div class="note-panel">
+              <h4>How this entry is classified</h4>
+              <ul class="muted">
+                ${taskObjects.map((task) => `<li><strong>${escapeHtml(task.name)}:</strong> ${escapeHtml(task.description)}</li>`).join("")}
+                ${patternObjects.map((pattern) => `<li><strong>${escapeHtml(pattern.name)}:</strong> ${escapeHtml(pattern.description)}</li>`).join("")}
+              </ul>
+            </div>
+            <div class="note-panel">
+              <h4>Reference use</h4>
+              <p class="muted">${entry.analogyClaim && entry.analogyResponse
+                ? "Use the quick check, caveat, and nearby confusions together. The fastest diagnosis is often the noisiest one."
+                : "Use the quick check and reflection questions before locking the label. Nearby entries often share the same outer appearance while differing in what actually drives the distortion."}</p>
+            </div>
+          </div>
         </section>
-
-        <div class="two-column section-block">
-          <div class="note-panel">
-            <h4>Quick check</h4>
-            <p class="muted">${escapeHtml(quickCheck)}</p>
-          </div>
-          <div class="note-panel">
-            <h4>Mechanism snapshot</h4>
-            <p class="muted">${escapeHtml(mechanismSnapshotFor(entry))}</p>
-          </div>
-        </div>
 
         ${
           gauges.length
@@ -4380,46 +4410,6 @@ function renderBiasDetailPage(entry) {
           <div class="note-panel">
             <h4>Use the label only when...</h4>
             <p class="muted">${escapeHtml(entry.useLabelWhen)}</p>
-          </div>
-        </div>`
-            : `
-        <div class="two-column section-block">
-          <div class="note-panel">
-            <h4>How this entry is classified</h4>
-            <ul class="muted">
-              ${taskObjects
-                .map((task) => `<li><strong>${escapeHtml(task.name)}:</strong> ${escapeHtml(task.description)}</li>`)
-                .join("")}
-              ${patternObjects
-                .map((pattern) => `<li><strong>${escapeHtml(pattern.name)}:</strong> ${escapeHtml(pattern.description)}</li>`)
-                .join("")}
-            </ul>
-          </div>
-          <div class="note-panel">
-            <h4>Reference use</h4>
-            <p class="muted">Use the quick check and reflection questions before locking the label. Nearby entries often share the same outer appearance while differing in what actually drives the distortion.</p>
-          </div>
-        </div>`
-        }
-
-        ${
-          entry.analogyClaim && entry.analogyResponse
-            ? `
-        <div class="two-column section-block">
-          <div class="note-panel">
-            <h4>How this entry is classified</h4>
-            <ul class="muted">
-              ${taskObjects
-                .map((task) => `<li><strong>${escapeHtml(task.name)}:</strong> ${escapeHtml(task.description)}</li>`)
-                .join("")}
-              ${patternObjects
-                .map((pattern) => `<li><strong>${escapeHtml(pattern.name)}:</strong> ${escapeHtml(pattern.description)}</li>`)
-                .join("")}
-            </ul>
-          </div>
-          <div class="note-panel">
-            <h4>Reference use</h4>
-            <p class="muted">Use the quick check, caveat, and nearby confusions together. The fastest diagnosis is often the noisiest one.</p>
           </div>
         </div>`
             : ""
