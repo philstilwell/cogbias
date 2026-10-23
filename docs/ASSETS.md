@@ -54,3 +54,22 @@ data/bias_illustration_captions.json
 ```
 
 When a poster is replaced, review the matching caption so the page text describes the actual image rather than a prior concept.
+
+## Brightness, Contrast, And Color Review — 2026-10-23
+
+All 241 posters were visually reviewed. The 74 darker posters were adjusted from
+their original 1024 × 1536 PNG masters; the other 167 web images were left unchanged.
+The reference images were Mood-congruent memory bias, Moral credential, Moral luck,
+Motonormativity, and Naïve cynicism, as selected by the site owner.
+
+The correction uses smooth tonal curves and a moderated color adjustment to match
+the references' cream highlights, dark outlines, and blue/gold colors. It changes
+brightness, contrast, and saturation without regenerating artwork or lettering.
+The original masters are preserved. Corrected full-resolution PNGs, a before/after
+comparison, and the per-image audit are kept locally in
+`production-assets/brightness-review/` (ignored by Git).
+
+Web exports remain 768 × 1152 progressive JPEGs at their existing paths, with their
+original compression settings and an embedded sRGB color profile. Source and
+generated copies must continue to match. For any further correction, start from
+an original PNG rather than applying the adjustment again to an edited JPEG.
