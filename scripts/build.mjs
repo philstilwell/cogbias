@@ -1183,6 +1183,7 @@ function renderHead({
   description,
   prefix,
   routePath,
+  stylesheetVersion = "",
   robots = "index,follow,max-image-preview:large",
   ogType = "website",
   socialImagePath = `/${androidChrome512Path}`,
@@ -1232,7 +1233,7 @@ function renderHead({
     <link rel="icon" type="image/png" sizes="16x16" href="${prefix}${favicon16Path}" />
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}${appleTouchIconPath}" />
     <link rel="manifest" href="${prefix}site.webmanifest" />
-    <link rel="stylesheet" href="${prefix}styles.css" />
+    <link rel="stylesheet" href="${prefix}styles.css${stylesheetVersion ? `?v=${encodeURIComponent(stylesheetVersion)}` : ""}" />
     <script defer src="${prefix}app.js"></script>
 ${cloudflareAnalyticsSnippet}${structuredDataScripts ? `\n${structuredDataScripts}` : ""}`;
 }
@@ -1326,6 +1327,7 @@ function renderPage({
   breadcrumbs,
   body,
   routePath,
+  stylesheetVersion = "",
   bodyClass = "",
   robots = "index,follow,max-image-preview:large",
   ogType = "website",
@@ -1351,6 +1353,7 @@ ${renderHead({
   description: effectiveDescription,
   prefix,
   routePath,
+  stylesheetVersion,
   robots,
   ogType,
   socialImagePath,
@@ -2289,6 +2292,7 @@ function renderHomePage() {
     prefix: "",
     currentId: "home",
     routePath: "/",
+    stylesheetVersion: "book-teaser-1",
     ogType: "website",
     structuredData: [buildWebsiteSchema()],
     body: `
