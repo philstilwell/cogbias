@@ -253,6 +253,91 @@ img {
   align-self: start;
 }
 
+.hero-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-self: stretch;
+  gap: 26px;
+  min-width: 0;
+}
+
+.book-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  border: 1px solid #b8d5e9;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(212, 235, 251, 0.9));
+  box-shadow: var(--shadow);
+}
+
+.book-cover-link {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  justify-self: center;
+}
+
+.book-cover-link:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 6px;
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(16, 34, 56, 0.12);
+  box-shadow: 6px 12px 24px rgba(16, 34, 56, 0.19);
+}
+
+.book-teaser-status {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.book-teaser-title {
+  margin: 0;
+  font-family: "Baskerville", "Georgia", serif;
+  font-size: clamp(1.85rem, 2.8vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.book-teaser-subtitle {
+  margin: 12px 0 0;
+  color: var(--accent-deep);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.book-teaser-author {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.book-teaser-description {
+  margin: 18px 0 0;
+  font-size: 1rem;
+}
+
+.book-teaser-note {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #b8d5e9;
+  color: #3e607c;
+  font-size: 0.88rem;
+}
+
 .hero-title {
   margin: 0;
   font-family: "Baskerville", "Georgia", serif;
@@ -2701,6 +2786,20 @@ img {
 }
 
 @media (max-width: 720px) {
+  .book-teaser {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 26px 22px;
+  }
+
+  .book-cover-link {
+    max-width: 240px;
+  }
+
+  .book-teaser-title {
+    font-size: 2.2rem;
+  }
+
   .brand-row {
     flex-direction: column;
     align-items: flex-start;

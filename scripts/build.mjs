@@ -2282,6 +2282,7 @@ function renderCurriculumTrackCard(track, itemCount, label, href) {
 }
 
 function renderHomePage() {
+  const book = siteConfig.forthcomingBook;
   return renderPage({
     title: siteConfig.brandTitle,
     description: siteConfig.heroLead || siteConfig.brandSubtitle,
@@ -2292,18 +2293,33 @@ function renderHomePage() {
     structuredData: [buildWebsiteSchema()],
     body: `
         <section class="hero">
-          <div class="hero-panel">
-            <h2 class="hero-title">${escapeHtml(siteConfig.heroTitle)}</h2>
-            <p class="hero-lead">${escapeHtml(siteConfig.heroLead)}</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
-              <a class="button button-secondary" href="${domainHubSlug}/">Browse Contexts</a>
-              <a class="button button-secondary" href="${biasMapSlug}/">Open Bias Map</a>
-              <a class="button button-secondary" href="${comparisonGuideSlug}/">Compare Biases</a>
-              <a class="button button-secondary" href="${teachingKitSlug}/">Use Teaching Kits</a>
-              <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
-              <a class="button button-secondary" href="${siteConfig.assessmentSlug}/">Take Assessment</a>
+          <div class="hero-main">
+            <div class="hero-panel">
+              <h2 class="hero-title">${escapeHtml(siteConfig.heroTitle)}</h2>
+              <p class="hero-lead">${escapeHtml(siteConfig.heroLead)}</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="${siteConfig.sectionSlug}/">Browse All Biases</a>
+                <a class="button button-secondary" href="${domainHubSlug}/">Browse Contexts</a>
+                <a class="button button-secondary" href="${biasMapSlug}/">Open Bias Map</a>
+                <a class="button button-secondary" href="${comparisonGuideSlug}/">Compare Biases</a>
+                <a class="button button-secondary" href="${teachingKitSlug}/">Use Teaching Kits</a>
+                <a class="button button-secondary" href="${siteConfig.pathSlug}/">Browse Paths</a>
+                <a class="button button-secondary" href="${siteConfig.assessmentSlug}/">Take Assessment</a>
+              </div>
             </div>
+            <section class="book-teaser" aria-labelledby="book-teaser-title">
+              <a class="book-cover-link" href="${escapeHtml(book.coverImage)}" aria-label="View the cover of ${escapeHtml(book.title)}">
+                <img class="book-cover" src="${escapeHtml(book.coverImage)}" alt="${escapeHtml(book.coverAlt)}" width="800" height="1200" loading="lazy" decoding="async" />
+              </a>
+              <div class="book-teaser-copy">
+                <p class="book-teaser-status">Forthcoming book</p>
+                <h2 id="book-teaser-title" class="book-teaser-title">${escapeHtml(book.title)}</h2>
+                <p class="book-teaser-subtitle">${escapeHtml(book.subtitle)}</p>
+                <p class="book-teaser-author">By ${escapeHtml(book.author)}</p>
+                <p class="book-teaser-description">${escapeHtml(book.description)}</p>
+                <p class="book-teaser-note">Publication details coming soon.</p>
+              </div>
+            </section>
           </div>
           <aside class="hero-panel hero-side">
             <p class="eyebrow">At A Glance</p>

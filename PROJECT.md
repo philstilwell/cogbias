@@ -68,6 +68,7 @@ Important data layers:
 - Show the matching Mira & Dex comic below the existing poster. On desktop, stack Quick check, Mechanism snapshot, classification, and Reference use in the left column, ending alongside the illustration column. On mobile, show introduction, illustrations, then these notes in one column.
 - Embed each comic in a black section with visible padding. A short caption directly below says "Click the image to view a larger version." Only the image links to the full-resolution export; there is no separate title or link block.
 - Keep prompts as a secondary tool, not a primary navigation pillar.
+- Feature the forthcoming *Dodging Cognitive Biases* book beneath the homepage introduction, using the approved front cover. Edit its title, subtitle, author, description, and image details in `data/site.json` under `forthcomingBook`. The web cover is an 800 × 1200 JPEG in `site/assets/books/`, exported from the existing Kindle front cover; the book's production masters remain outside the website repository.
 - Do not show weak inferred case studies or generic context blocks on thin pages.
 - Use `Classic demonstrations` or `Applied contexts` for experimental-memory pages where a normal case-study block would be misleading.
 - Do not show public source-trail blocks on bias pages.

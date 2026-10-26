@@ -24,6 +24,14 @@
   "brandSubtitle": "A practical cognitive-bias site with clear definitions, learning paths, assessments, self-audits, and debiasing tools.",
   "heroTitle": "Cognitive biases made clearer, more teachable, and easier to interrupt.",
   "heroLead": "CogBias is a practical reference for the recurring distortions that bend estimation, memory, attribution, and choice. It is built for readers who want clearer labels, sharper comparisons, and process moves that actually reduce error.",
+  "forthcomingBook": {
+    "title": "Dodging Cognitive Biases",
+    "subtitle": "Detecting and Defusing Human Biases Before Life's Choices",
+    "author": "Phil Stilwell",
+    "description": "Catch your thinking in the act. Explore 240 patterns through illustrated entries and 720 everyday stories of hobbies, romance, and career—with practical questions to help you spot the shortcuts steering your choices.",
+    "coverImage": "assets/books/dodging-cognitive-biases-cover.jpg",
+    "coverAlt": "Dodging Cognitive Biases book cover, with a group of characters dodging giant golden machine gears."
+  },
   "sourceAttribution": "A teaching-first guide to cognitive bias, judgment traps, and debiasing moves.",
   "illustrationPlaceholderTitle": "Illustration Placeholder",
   "illustrationPlaceholderBody": "A custom visual plate will live here once the image set is produced. The layout is already reserved so future images can drop in without reshaping the page.",
