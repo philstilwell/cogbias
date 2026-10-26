@@ -2361,7 +2361,7 @@ function renderHomePage() {
                 <span class="stat-label">Case Studies</span>
               </div>
             </div>
-            <div class="note-panel">
+            <div class="note-panel" style="margin-top:24px;">
               <h4>1. Start with a path</h4>
               <p class="muted">Use a curated path when you know the context but not the label: decision-making, people judgment, evidence review, or postmortems.</p>
             </div>
