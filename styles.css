@@ -330,12 +330,16 @@ img {
   font-size: 1rem;
 }
 
-.book-teaser-note {
-  margin: 18px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid #b8d5e9;
-  color: #3e607c;
-  font-size: 0.88rem;
+.book-teaser-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.book-teaser-actions .button:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 4px;
 }
 
 .hero-title {

@@ -2285,14 +2285,14 @@ function renderCurriculumTrackCard(track, itemCount, label, href) {
 }
 
 function renderHomePage() {
-  const book = siteConfig.forthcomingBook;
+  const book = siteConfig.featuredBook;
   return renderPage({
     title: siteConfig.brandTitle,
     description: siteConfig.heroLead || siteConfig.brandSubtitle,
     prefix: "",
     currentId: "home",
     routePath: "/",
-    stylesheetVersion: "book-teaser-1",
+    stylesheetVersion: "book-kindle-1",
     ogType: "website",
     structuredData: [buildWebsiteSchema()],
     body: `
@@ -2312,16 +2312,18 @@ function renderHomePage() {
               </div>
             </div>
             <section class="book-teaser" aria-labelledby="book-teaser-title">
-              <a class="book-cover-link" href="${escapeHtml(book.coverImage)}" aria-label="View the cover of ${escapeHtml(book.title)}">
+              <a class="book-cover-link" href="${escapeHtml(book.kindleUrl)}" aria-label="Find ${escapeHtml(book.title)} on Amazon Kindle">
                 <img class="book-cover" src="${escapeHtml(book.coverImage)}" alt="${escapeHtml(book.coverAlt)}" width="800" height="1200" loading="lazy" decoding="async" />
               </a>
               <div class="book-teaser-copy">
-                <p class="book-teaser-status">Forthcoming book</p>
+                <p class="book-teaser-status">Available on Amazon Kindle</p>
                 <h2 id="book-teaser-title" class="book-teaser-title">${escapeHtml(book.title)}</h2>
                 <p class="book-teaser-subtitle">${escapeHtml(book.subtitle)}</p>
                 <p class="book-teaser-author">By ${escapeHtml(book.author)}</p>
                 <p class="book-teaser-description">${escapeHtml(book.description)}</p>
-                <p class="book-teaser-note">Publication details coming soon.</p>
+                <div class="book-teaser-actions">
+                  <a class="button button-primary" href="${escapeHtml(book.kindleUrl)}" aria-label="Find the Kindle eBook on Amazon">Kindle eBook</a>
+                </div>
               </div>
             </section>
           </div>
