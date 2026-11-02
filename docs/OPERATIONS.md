@@ -64,3 +64,5 @@ GitHub Pages serves from the repository root. The generated output must be commi
 5. Commit source and generated output together.
 6. Push `main`.
 7. Spot-check `https://cogbias.site/` after GitHub Pages updates.
+
+For About-page-only copy and related-resource links, use `node scripts/build.mjs --about-only`; it preserves other generated pages and assets. The full build still generates the About page as usual.

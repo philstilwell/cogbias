@@ -4855,6 +4855,16 @@ function renderAboutPage() {
           </div>
         </section>
 
+        <section class="section-block" id="slugfester">
+          <div class="section-header"><div>
+            <h2 class="section-title">Test your reading of public debates with Slugfester</h2>
+            <p class="section-copy"><a href="https://slugfester.com/">Slugfester</a>, another project by Phil Stilwell, examines public debates with AI-assisted argument scorecards, source links and critiques. It offers a practical setting for checking whether your judgment changes when an argument supports a view you favor.</p>
+          </div></div>
+          <div class="note-panel">
+            <p class="muted">Read <a href="https://slugfester.com/insights/debate-evidence/">what Slugfester’s debate assessments reveal about evidence</a>, then inspect one original exchange before accepting its score. Ask what would change your assessment, whether you apply the same evidential standard to both sides, and whether your confidence exceeds the available support. The scorecards assess presented reasoning; they do not establish a speaker’s motives or diagnose a psychological bias from a low score.</p>
+          </div>
+        </section>
+
         <section class="section-block">
           <div class="section-header">
             <div>
@@ -5093,4 +5103,12 @@ ${routePaths
   }
 }
 
-await writeSiteFiles();
+const buildArgs = process.argv.slice(2);
+if (buildArgs.length === 1 && buildArgs[0] === "--about-only") {
+  await writeTextFile("about/index.html", renderAboutPage());
+  console.log("Built About page.");
+} else if (!buildArgs.length) {
+  await writeSiteFiles();
+} else {
+  throw new Error("Supported option: --about-only");
+}
