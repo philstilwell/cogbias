@@ -28,7 +28,12 @@
     "title": "Dodging Cognitive Biases",
     "subtitle": "Detecting and Defusing Human Biases Before Life's Choices",
     "author": "Phil Stilwell",
-    "kindleUrl": "https://www.amazon.com/dp/B0HPZ4B25N",
+    "amazonUrl": "https://www.amazon.com/dp/B0HPZ4B25N",
+    "editions": [
+      { "label": "Kindle eBook", "url": "https://www.amazon.com/dp/B0HPZ41JFH" },
+      { "label": "Paperback", "url": "https://www.amazon.com/dp/B0HPZ4B25N" },
+      { "label": "Hardcover", "url": "https://www.amazon.com/dp/B0HPZ7B9DM" }
+    ],
     "description": "Catch your thinking in the act. Explore 240 patterns through illustrated entries and 720 everyday stories of hobbies, romance, and career—with practical questions to help you spot the shortcuts steering your choices.",
     "coverImage": "assets/books/dodging-cognitive-biases-cover.jpg",
     "coverAlt": "Dodging Cognitive Biases book cover, with a group of characters dodging giant golden machine gears."

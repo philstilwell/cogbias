@@ -2292,7 +2292,7 @@ function renderHomePage() {
     prefix: "",
     currentId: "home",
     routePath: "/",
-    stylesheetVersion: "book-kindle-1",
+    stylesheetVersion: "book-amazon-1",
     ogType: "website",
     structuredData: [buildWebsiteSchema()],
     body: `
@@ -2312,17 +2312,17 @@ function renderHomePage() {
               </div>
             </div>
             <section class="book-teaser" aria-labelledby="book-teaser-title">
-              <a class="book-cover-link" href="${escapeHtml(book.kindleUrl)}" aria-label="Find ${escapeHtml(book.title)} on Amazon Kindle">
+              <a class="book-cover-link" href="${escapeHtml(book.amazonUrl)}" aria-label="Find ${escapeHtml(book.title)} on Amazon">
                 <img class="book-cover" src="${escapeHtml(book.coverImage)}" alt="${escapeHtml(book.coverAlt)}" width="800" height="1200" loading="lazy" decoding="async" />
               </a>
               <div class="book-teaser-copy">
-                <p class="book-teaser-status">Available on Amazon Kindle</p>
+                <p class="book-teaser-status">Available on Amazon</p>
                 <h2 id="book-teaser-title" class="book-teaser-title">${escapeHtml(book.title)}</h2>
                 <p class="book-teaser-subtitle">${escapeHtml(book.subtitle)}</p>
                 <p class="book-teaser-author">By ${escapeHtml(book.author)}</p>
                 <p class="book-teaser-description">${escapeHtml(book.description)}</p>
-                <div class="book-teaser-actions">
-                  <a class="button button-primary" href="${escapeHtml(book.kindleUrl)}" aria-label="Find the Kindle eBook on Amazon">Kindle eBook</a>
+                <div class="book-teaser-actions" aria-label="Book editions on Amazon">
+                  ${book.editions.map((edition, index) => `<a class="button ${index === 0 ? "button-primary" : "button-secondary"}" href="${escapeHtml(edition.url)}" aria-label="Find the ${escapeHtml(edition.label)} on Amazon">${escapeHtml(edition.label)}</a>`).join("\n                  ")}
                 </div>
               </div>
             </section>

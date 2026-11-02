@@ -333,8 +333,15 @@ img {
 .book-teaser-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   margin-top: 22px;
+}
+
+.book-teaser-actions .button {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .book-teaser-actions .button:focus-visible {
